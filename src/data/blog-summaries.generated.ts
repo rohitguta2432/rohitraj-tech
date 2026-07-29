@@ -3,6 +3,68 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "codex-security-vs-snyk-semgrep-codeql-2026",
+    "title": "OpenAI Codex Security vs Snyk vs Semgrep vs CodeQL: What the New Open-Source Scanner Actually Changes (2026)",
+    "date": "2026-07-29",
+    "excerpt": "OpenAI open-sourced Codex Security under Apache-2.0 — a CLI and TypeScript SDK that builds a threat model of your repo, then runs an isolated validator to prove a finding is exploitable before it reports it. Here's how that differs from Snyk, Semgrep and CodeQL, the real commands, and the three cases where I'd still reach for Semgrep instead.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "codex security vs snyk",
+      "openai codex security cli",
+      "codex security vs semgrep",
+      "sast tools comparison 2026",
+      "ai code security scanner",
+      "codex security github actions",
+      "semgrep vs codeql vs snyk"
+    ],
+    "coverImage": {
+      "src": "/images/notes/codex-security-vs-snyk-semgrep-codeql-2026-cover.jpg",
+      "alt": "Constellation of glowing nodes with one fractured red node illustrating AI code security vulnerability scanning"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
+    "slug": "block-buzz-agent-collaboration-platform-guide-2026",
+    "title": "Block's Buzz (2026 Guide): Self-Host the Workspace Where AI Agents Are Teammates, Not Bots",
+    "date": "2026-07-24",
+    "excerpt": "Block released Buzz on July 21, 2026 — an Apache-2.0, self-hostable workspace built on Nostr where AI agents join channels as cryptographically-signed members, not permission-restricted bots. It hit 7,600+ GitHub stars in three days. The launch coverage tells you what it is; this guide shows you how to actually run it: the exact install path, how to onboard a Claude Code or Codex agent with its own keypair, where Buzz genuinely beats Slack-plus-bots, the compliance gaps that should keep it out of production today, and the hardening checklist the same week's OpenAI–Hugging Face incident makes non-negotiable.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "block buzz",
+      "buzz agent collaboration platform",
+      "buzz self-hosted setup",
+      "ai agents as teammates",
+      "nostr agent identity",
+      "buzz vs slack ai agents",
+      "multi-agent workspace 2026",
+      "block buzz claude code"
+    ],
+    "coverImage": {
+      "src": "/images/notes/block-buzz-agent-collaboration-platform-guide-2026-cover.jpg",
+      "alt": "GitHub social card for block/buzz illustrating the Buzz agent collaboration platform repository"
+    }
+  },
+  {
+    "slug": "gemini-3-6-flash-vs-3-5-flash-lite-guide-2026",
+    "title": "Gemini 3.6 Flash vs 3.5 Flash-Lite: Which One to Ship — and the Price Hike Nobody Leads With (2026)",
+    "date": "2026-07-23",
+    "excerpt": "Google's July 21 drop is an efficiency release, not an intelligence release: Gemini 3.6 Flash scores the same Intelligence Index as 3.5 Flash but finishes tasks in half the time at a lower per-task cost — while Flash-Lite quietly got a 67% output-price increase. Here's the real per-task math, the migration code, and the tier decision I'd actually ship.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "gemini 3.6 flash vs 3.5 flash-lite",
+      "gemini 3.6 flash",
+      "gemini 3.5 flash-lite pricing",
+      "gemini 3.6 flash api migration",
+      "gemini 3.5 flash cyber",
+      "gemini 3.6 flash benchmarks",
+      "gemini flash-lite price increase"
+    ],
+    "coverImage": {
+      "src": "/images/notes/gemini-3-6-flash-vs-3-5-flash-lite-guide-2026-cover.jpg",
+      "alt": "Particle swarm splitting into two divergent glowing streams illustrating Gemini 3.6 Flash vs 3.5 Flash-Lite tier choice"
+    }
+  },
+  {
     "slug": "ai-dev-week-2026-30",
     "title": "This Week in AI Dev: Kimi K3 Lands and Cursor Springs a 0-Day (Week 30 of 2026)",
     "date": "2026-07-21",

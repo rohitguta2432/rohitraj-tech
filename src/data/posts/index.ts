@@ -128,6 +128,7 @@ import { omnirouteAiGatewayReview2026 } from './omniroute-ai-gateway-review-2026
 import { aiDevWeek2026W30 } from './ai-dev-week-2026-30';
 import { gemini36FlashVs35FlashLiteGuide2026 } from './gemini-3-6-flash-vs-3-5-flash-lite-guide-2026';
 import { blockBuzzAgentCollaborationPlatformGuide2026 } from './block-buzz-agent-collaboration-platform-guide-2026';
+import { codexSecurityVsSnykSemgrepCodeql2026 } from './codex-security-vs-snyk-semgrep-codeql-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -257,6 +258,7 @@ const allPosts: BlogPost[] = [
   aiDevWeek2026W30,
   gemini36FlashVs35FlashLiteGuide2026,
   blockBuzzAgentCollaborationPlatformGuide2026,
+  codexSecurityVsSnykSemgrepCodeql2026,
 ];
 
 // Validate all posts at module load time
