@@ -3,6 +3,28 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-dev-week-2026-31",
+    "title": "This Week in AI Dev: Agent Skills Went GA, Then the Benchmark Landed (Week 31 of 2026)",
+    "date": "2026-07-30",
+    "excerpt": "Week 31 of 2026 shipped one story twice. GitHub made agent skills and MCP generally available in Copilot code review, Google added hooks to Gemini Managed Agents — and on the same day, a benchmark showed the best model follows a written policy document just 36.2% of the time, while a self-propagating worm walked through Copilot for Word. Plus what Kimi K3 really costs to run locally (594 GB floor) and the 250B sleeper release you can actually serve.",
+    "readingTime": "7 min read",
+    "keywords": [
+      "ai dev tools this week",
+      "copilot code review agent skills",
+      "gemini managed agents hooks",
+      "handbook.md benchmark agents",
+      "copilot for word prompt injection worm",
+      "kimi k3 gguf local vram",
+      "solar-open2-250b upstage",
+      "ai dev week 31 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-31-cover.jpg",
+      "alt": "Glowing neural lattice sealed inside a translucent faceted shell illustrating AI agent skills and governance in week 31 of 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "codex-security-vs-snyk-semgrep-codeql-2026",
     "title": "OpenAI Codex Security vs Snyk vs Semgrep vs CodeQL: What the New Open-Source Scanner Actually Changes (2026)",
     "date": "2026-07-29",

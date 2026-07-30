@@ -18,7 +18,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (128 posts)
+## All Engineering Notes (129 posts)
 
 - [OpenAI Codex Security vs Snyk vs Semgrep vs CodeQL: What the New Open-Source Scanner Actually Changes (2026)](https://rohitraj.tech/en/notes/codex-security-vs-snyk-semgrep-codeql-2026)
 - [Block's Buzz (2026 Guide): Self-Host the Workspace Where AI Agents Are Teammates, Not Bots](https://rohitraj.tech/en/notes/block-buzz-agent-collaboration-platform-guide-2026)
@@ -166,6 +166,7 @@
 - [MCP Goes Stateless: Migrate Your Server Before the 2026-07-28 Spec](https://rohitraj.tech/en/notes/mcp-stateless-spec-migration-guide-2026)
 - [OmniRoute Review (2026): Is the 20k-Star Free AI Gateway Worth It vs OpenRouter & LiteLLM?](https://rohitraj.tech/en/notes/omniroute-ai-gateway-review-2026)
 - [This Week in AI Dev: Kimi K3 Lands and Cursor Springs a 0-Day (Week 30 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-30)
+- [This Week in AI Dev: Agent Skills Went GA, Then the Benchmark Landed (Week 31 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-31)
 
 ## Services
 
