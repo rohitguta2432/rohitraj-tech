@@ -130,6 +130,7 @@ import { gemini36FlashVs35FlashLiteGuide2026 } from './gemini-3-6-flash-vs-3-5-f
 import { blockBuzzAgentCollaborationPlatformGuide2026 } from './block-buzz-agent-collaboration-platform-guide-2026';
 import { codexSecurityVsSnykSemgrepCodeql2026 } from './codex-security-vs-snyk-semgrep-codeql-2026';
 import { aiDevWeek2026W31 } from './ai-dev-week-2026-31';
+import { deepseekDsparkSpeculativeDecodingLlamacpp2026 } from './deepseek-dspark-speculative-decoding-llamacpp-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -261,6 +262,7 @@ const allPosts: BlogPost[] = [
   blockBuzzAgentCollaborationPlatformGuide2026,
   codexSecurityVsSnykSemgrepCodeql2026,
   aiDevWeek2026W31,
+  deepseekDsparkSpeculativeDecodingLlamacpp2026,
 ];
 
 // Validate all posts at module load time

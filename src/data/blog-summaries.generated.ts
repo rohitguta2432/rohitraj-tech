@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "deepseek-dspark-speculative-decoding-llamacpp-2026",
+    "title": "DeepSeek DSpark in llama.cpp: How to Get 2x Local Inference on V4-Flash-0731 (2026)",
+    "date": "2026-08-03",
+    "excerpt": "llama.cpp merged DeepSeek V4 DSpark support on August 2, 2026 — the docs still say Qwen3-only. Here are the actual flags, the measured 39.95 to 79.93 tokens/sec jump, why the config with the higher acceptance rate is the slower one, and the RAM you need before any of it matters.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "deepseek dspark speculative decoding",
+      "dspark llama.cpp",
+      "deepseek v4 flash 0731",
+      "llama.cpp speculative decoding guide",
+      "spec-type draft-dspark",
+      "deepseek v4 flash vram requirements",
+      "local llm speculative decoding 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/deepseek-dspark-speculative-decoding-llamacpp-2026-cover.jpg",
+      "alt": "Swarm of luminous particles surging ahead of a dense glowing core illustrating DSpark speculative decoding for local LLM inference"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "ai-dev-week-2026-31",
     "title": "This Week in AI Dev: Agent Skills Went GA, Then the Benchmark Landed (Week 31 of 2026)",
     "date": "2026-07-30",
