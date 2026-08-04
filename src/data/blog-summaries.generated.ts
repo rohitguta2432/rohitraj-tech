@@ -3,6 +3,28 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-dev-week-2026-32",
+    "title": "This Week in AI Dev: Everything Got Smaller, and Six CVEs Turned Out to Be Fake (Week 32 of 2026)",
+    "date": "2026-08-04",
+    "excerpt": "Week 32 of 2026 was a compression week. MiniMax-H3 shipped open weights that fall from 123.6 GB to 42.5 GB, Cloudflare doubled Kimi K2.6 context to 1.37M tokens with an FP8 KV cache, and AirLLM hit 27.5k stars streaming a 2.8T model through 4 GB of VRAM. Meanwhile JFrog found 54 of 55 SQLite CVEs from one repo were AI-generated fiction — one briefly scored a CVSS 10.0.",
+    "readingTime": "6 min read",
+    "keywords": [
+      "ai dev tools this week",
+      "minimax h3 vram requirements",
+      "cloudflare workers ai fp8 kv cache",
+      "qwen3.8-max benchmarks",
+      "ai generated fake cves sqlite",
+      "airllm large model low vram",
+      "github copilot model deprecations september 2026",
+      "ai dev week 32 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-32-cover.jpg",
+      "alt": "Swarm of luminous particles collapsing into one dense core illustrating AI model compression in week 32 of 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "deepseek-dspark-speculative-decoding-llamacpp-2026",
     "title": "DeepSeek DSpark in llama.cpp: How to Get 2x Local Inference on V4-Flash-0731 (2026)",
     "date": "2026-08-03",

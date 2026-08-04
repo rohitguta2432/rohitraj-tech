@@ -131,6 +131,7 @@ import { blockBuzzAgentCollaborationPlatformGuide2026 } from './block-buzz-agent
 import { codexSecurityVsSnykSemgrepCodeql2026 } from './codex-security-vs-snyk-semgrep-codeql-2026';
 import { aiDevWeek2026W31 } from './ai-dev-week-2026-31';
 import { deepseekDsparkSpeculativeDecodingLlamacpp2026 } from './deepseek-dspark-speculative-decoding-llamacpp-2026';
+import { aiDevWeek2026W32 } from './ai-dev-week-2026-32';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -263,6 +264,7 @@ const allPosts: BlogPost[] = [
   codexSecurityVsSnykSemgrepCodeql2026,
   aiDevWeek2026W31,
   deepseekDsparkSpeculativeDecodingLlamacpp2026,
+  aiDevWeek2026W32,
 ];
 
 // Validate all posts at module load time

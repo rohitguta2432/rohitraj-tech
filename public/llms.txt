@@ -9,7 +9,7 @@
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [AI Agents](https://rohitraj.tech/en/agents): Live, autonomous AI agents you can try in the browser
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 80 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 81 technical case-study posts
 
 ## Featured Projects
 
@@ -18,7 +18,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (130 posts)
+## All Engineering Notes (131 posts)
 
 - [OpenAI Codex Security vs Snyk vs Semgrep vs CodeQL: What the New Open-Source Scanner Actually Changes (2026)](https://rohitraj.tech/en/notes/codex-security-vs-snyk-semgrep-codeql-2026)
 - [DeepSeek DSpark in llama.cpp: How to Get 2x Local Inference on V4-Flash-0731 (2026)](https://rohitraj.tech/en/notes/deepseek-dspark-speculative-decoding-llamacpp-2026)
@@ -168,6 +168,7 @@
 - [OmniRoute Review (2026): Is the 20k-Star Free AI Gateway Worth It vs OpenRouter & LiteLLM?](https://rohitraj.tech/en/notes/omniroute-ai-gateway-review-2026)
 - [This Week in AI Dev: Kimi K3 Lands and Cursor Springs a 0-Day (Week 30 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-30)
 - [This Week in AI Dev: Agent Skills Went GA, Then the Benchmark Landed (Week 31 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-31)
+- [This Week in AI Dev: Everything Got Smaller, and Six CVEs Turned Out to Be Fake (Week 32 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-32)
 
 ## Services
 
