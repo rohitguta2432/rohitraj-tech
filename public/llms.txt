@@ -18,8 +18,9 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (131 posts)
+## All Engineering Notes (132 posts)
 
+- [Shieldstral vs Llama Guard vs OpenAI Moderation API: A Self-Hosted Content Moderation Guide (2026)](https://rohitraj.tech/en/notes/shieldstral-vs-llama-guard-openai-moderation-2026)
 - [OpenAI Codex Security vs Snyk vs Semgrep vs CodeQL: What the New Open-Source Scanner Actually Changes (2026)](https://rohitraj.tech/en/notes/codex-security-vs-snyk-semgrep-codeql-2026)
 - [DeepSeek DSpark in llama.cpp: How to Get 2x Local Inference on V4-Flash-0731 (2026)](https://rohitraj.tech/en/notes/deepseek-dspark-speculative-decoding-llamacpp-2026)
 - [Block's Buzz (2026 Guide): Self-Host the Workspace Where AI Agents Are Teammates, Not Bots](https://rohitraj.tech/en/notes/block-buzz-agent-collaboration-platform-guide-2026)

@@ -132,6 +132,7 @@ import { codexSecurityVsSnykSemgrepCodeql2026 } from './codex-security-vs-snyk-s
 import { aiDevWeek2026W31 } from './ai-dev-week-2026-31';
 import { deepseekDsparkSpeculativeDecodingLlamacpp2026 } from './deepseek-dspark-speculative-decoding-llamacpp-2026';
 import { aiDevWeek2026W32 } from './ai-dev-week-2026-32';
+import { shieldstralVsLlamaGuardOpenaiModeration2026 } from './shieldstral-vs-llama-guard-openai-moderation-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -265,6 +266,7 @@ const allPosts: BlogPost[] = [
   aiDevWeek2026W31,
   deepseekDsparkSpeculativeDecodingLlamacpp2026,
   aiDevWeek2026W32,
+  shieldstralVsLlamaGuardOpenaiModeration2026,
 ];
 
 // Validate all posts at module load time

@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "shieldstral-vs-llama-guard-openai-moderation-2026",
+    "title": "Shieldstral vs Llama Guard vs OpenAI Moderation API: A Self-Hosted Content Moderation Guide (2026)",
+    "date": "2026-08-05",
+    "excerpt": "Mistral released Shieldstral on August 4, 2026 — a 3B open-weights safety classifier that reads your moderation policy at inference time instead of training on fixed categories. Here's how it actually compares to Llama Guard and the OpenAI Moderation API, the real self-host commands, and the one case where I'd still reach for a fixed taxonomy instead.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "shieldstral vs llama guard",
+      "shieldstral vs openai moderation api",
+      "self-hosted content moderation 2026",
+      "mistral shieldstral guide",
+      "open source content moderation model",
+      "ai content moderation for mvp",
+      "llama guard vs openai moderation api"
+    ],
+    "coverImage": {
+      "src": "/images/notes/shieldstral-vs-llama-guard-openai-moderation-2026-cover.jpg",
+      "alt": "Glowing shield-shaped lattice guarding a data stream illustrating self-hosted AI content moderation"
+    },
+    "relatedProject": "scamrakshak"
+  },
+  {
     "slug": "ai-dev-week-2026-32",
     "title": "This Week in AI Dev: Everything Got Smaller, and Six CVEs Turned Out to Be Fake (Week 32 of 2026)",
     "date": "2026-08-04",
