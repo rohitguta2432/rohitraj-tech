@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "cloudflare-computer-vs-sandbox-agent-guide-2026",
+    "title": "Cloudflare Computer vs Cloudflare Sandbox: Which Agent Runtime Should You Actually Use? (2026)",
+    "date": "2026-08-07",
+    "excerpt": "Cloudflare shipped @cloudflare/computer on August 3 and it hit #1 on GitHub trending with 2,802 stars in a day — four months after Sandboxes went GA. Cloudflare's own docs never compare the two, so here's the decision table, working wrangler.jsonc code, and the preview-status caveat the launch coverage buries.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "cloudflare computer vs sandbox",
+      "cloudflare computer",
+      "ai agent sandbox cloudflare workers",
+      "cloudflare durable object filesystem",
+      "cloudflare agent runtime 2026",
+      "e2b alternative 2026",
+      "ai agent code execution"
+    ],
+    "coverImage": {
+      "src": "/images/notes/cloudflare-computer-vs-sandbox-agent-guide-2026-cover.jpg",
+      "alt": "Glowing crystalline chip with branching filaments illustrating Cloudflare Computer agent runtime vs Sandbox"
+    },
+    "relatedProject": "rohitrajTech"
+  },
+  {
     "slug": "tencentdb-agent-memory-team-hub-review-2026",
     "title": "TencentDB Agent Memory v2.0 Review: A Self-Hosted Team Memory Hub for AI Agents (2026)",
     "date": "2026-08-06",
