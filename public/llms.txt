@@ -18,7 +18,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (134 posts)
+## All Engineering Notes (135 posts)
 
 - [Shieldstral vs Llama Guard vs OpenAI Moderation API: A Self-Hosted Content Moderation Guide (2026)](https://rohitraj.tech/en/notes/shieldstral-vs-llama-guard-openai-moderation-2026)
 - [OpenAI Codex Security vs Snyk vs Semgrep vs CodeQL: What the New Open-Source Scanner Actually Changes (2026)](https://rohitraj.tech/en/notes/codex-security-vs-snyk-semgrep-codeql-2026)
@@ -172,6 +172,7 @@
 - [This Week in AI Dev: Everything Got Smaller, and Six CVEs Turned Out to Be Fake (Week 32 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-32)
 - [TencentDB Agent Memory v2.0 Review: A Self-Hosted Team Memory Hub for AI Agents (2026)](https://rohitraj.tech/en/notes/tencentdb-agent-memory-team-hub-review-2026)
 - [Cloudflare Computer vs Cloudflare Sandbox: Which Agent Runtime Should You Actually Use? (2026)](https://rohitraj.tech/en/notes/cloudflare-computer-vs-sandbox-agent-guide-2026)
+- [Prime Agent: The RLM + Continual Harness Guide (And When to Skip It) — 2026](https://rohitraj.tech/en/notes/prime-agent-rlm-continual-harness-guide-2026)
 
 ## Services
 

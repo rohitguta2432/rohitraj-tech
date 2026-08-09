@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "prime-agent-rlm-continual-harness-guide-2026",
+    "title": "Prime Agent: The RLM + Continual Harness Guide (And When to Skip It) — 2026",
+    "date": "2026-08-09",
+    "excerpt": "Prime Intellect open-sourced Prime Agent on August 5, 2026 and it hit #1 on GitHub trending with +2,483 stars in 24 hours. It scores 95.5% on ARC-AGI-3 with Opus 5 — above the 95.4% human expert baseline. Here's what a Recursive Language Model actually is, the code that makes it different, and the line in the README that should stop you shipping it to production this week.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "prime agent rlm continual harness",
+      "prime agent vs claude code",
+      "recursive language model agent",
+      "self-improving coding agent",
+      "primeintellect prime agent",
+      "programmatic tool calling agent",
+      "open source ai coding agent 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/prime-agent-rlm-continual-harness-guide-2026-cover.jpg",
+      "alt": "Low-poly constellation of glowing cyan nodes illustrating Prime Agent RLM recursive coding agent harness"
+    },
+    "relatedProject": "rohitrajTech"
+  },
+  {
     "slug": "cloudflare-computer-vs-sandbox-agent-guide-2026",
     "title": "Cloudflare Computer vs Cloudflare Sandbox: Which Agent Runtime Should You Actually Use? (2026)",
     "date": "2026-08-07",

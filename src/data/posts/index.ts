@@ -135,6 +135,7 @@ import { aiDevWeek2026W32 } from './ai-dev-week-2026-32';
 import { shieldstralVsLlamaGuardOpenaiModeration2026 } from './shieldstral-vs-llama-guard-openai-moderation-2026';
 import { tencentdbAgentMemoryTeamHubReview2026 } from './tencentdb-agent-memory-team-hub-review-2026';
 import { cloudflareComputerVsSandboxAgentGuide2026 } from './cloudflare-computer-vs-sandbox-agent-guide-2026';
+import { primeAgentRlmContinualHarnessGuide2026 } from './prime-agent-rlm-continual-harness-guide-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -271,6 +272,7 @@ const allPosts: BlogPost[] = [
   shieldstralVsLlamaGuardOpenaiModeration2026,
   tencentdbAgentMemoryTeamHubReview2026,
   cloudflareComputerVsSandboxAgentGuide2026,
+  primeAgentRlmContinualHarnessGuide2026,
 ];
 
 // Validate all posts at module load time
