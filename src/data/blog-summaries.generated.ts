@@ -3,6 +3,28 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-dev-week-2026-33",
+    "title": "This Week in AI Dev: Models Day, Stolen Reasoning, and a $16,000 GPU (Week 33 of 2026)",
+    "date": "2026-08-13",
+    "excerpt": "Week 33 of 2026 put three frontier models on the table inside 48 hours — DeepSeek V4 Pro at 1.6T params under MIT, Grok 4.6 one point behind Claude Opus 5, Meta back in open weights with Muse-Glimmer-30B. Then a paper showed the encrypted reasoning those closed models hide can be decoded by a weaker sibling model, and 315,320 scraped blocks gave up 182 credentials.",
+    "readingTime": "7 min read",
+    "keywords": [
+      "ai dev tools this week",
+      "deepseek v4 pro 0813 pricing",
+      "grok 4.6 benchmarks",
+      "stealing reasoning traces llm",
+      "agent plugins 1.0 copilot",
+      "muse glimmer 30b open weights",
+      "rtx pro 6000 price increase",
+      "ai dev week 33 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-33-cover.jpg",
+      "alt": "Liquid-metal spheres fracturing into particle streams illustrating AI dev tool releases in week 33 of 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "prime-agent-rlm-continual-harness-guide-2026",
     "title": "Prime Agent: The RLM + Continual Harness Guide (And When to Skip It) — 2026",
     "date": "2026-08-09",
