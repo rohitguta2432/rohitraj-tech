@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "deepseek-harness-vs-claude-code-codex-cli-2026",
+    "title": "DeepSeek Harness vs Claude Code vs Codex CLI: The v0.1 Developer Preview, Honestly — 2026",
+    "date": "2026-08-14",
+    "excerpt": "DeepSeek open-sourced its agent harness on August 13, 2026 under MIT — 572 points on Hacker News in a day. Every page currently ranking for \"DeepSeek Harness vs Claude Code\" describes a different, older product. Here is what v0.1 actually ships: the Cordis plugin kernel, the real cordis.yml keys, 53 built-in tools, and the one config default that decides whether it touches your repo.",
+    "readingTime": "14 min read",
+    "keywords": [
+      "deepseek harness vs claude code",
+      "deepseek harness",
+      "deepseek dsh agent harness",
+      "cordis plugin kernel",
+      "open source coding agent 2026",
+      "codex cli alternative",
+      "model agnostic agent harness"
+    ],
+    "coverImage": {
+      "src": "/images/notes/deepseek-harness-vs-claude-code-codex-cli-2026-cover.jpg",
+      "alt": "Constellation of glowing teal and violet modular nodes illustrating DeepSeek Harness plugin agent architecture"
+    },
+    "relatedProject": "rohitrajTech"
+  },
+  {
     "slug": "ai-dev-week-2026-33",
     "title": "This Week in AI Dev: Models Day, Stolen Reasoning, and a $16,000 GPU (Week 33 of 2026)",
     "date": "2026-08-13",
