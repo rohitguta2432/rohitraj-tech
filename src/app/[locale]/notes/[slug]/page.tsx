@@ -4,7 +4,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blog-posts";
-import { getDictionary, isValidLocale, locales, type Locale } from "@/lib/i18n";
+import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
 import { createPageMetadata, generateBlogPostingSchema, generateBreadcrumbSchema, generateFAQSchema, generateTechArticleSchema, extractFAQsFromSections, SITE_CONFIG } from "@/lib/seo-config";
 import type { Metadata } from "next";
 
