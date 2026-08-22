@@ -513,7 +513,7 @@ export const projects: Project[] = [
         name: "rohitraj.tech",
         problem: "Engineering work is often invisible. Portfolios show polished results but not the thinking behind them.",
         solves: "A living project directory that documents problems, trade-offs, and architectural decisions in real-time.",
-        techStack: ["Next.js 16", "React 19", "TypeScript", "Vercel"],
+        techStack: ["Next.js 16", "React 19", "TypeScript", "AWS Amplify"],
         status: "active",
         repoUrl: "https://github.com/rohitguta2432/backendscale",
         details: {
@@ -522,7 +522,7 @@ export const projects: Project[] = [
                 "Next.js 16 with App Router for optimal performance",
                 "Minimal design language inspired by documentation sites",
                 "GitHub-backed content sourced from actual repositories",
-                "Static generation with Vercel deployment"
+                "Static generation with AWS Amplify deployment"
             ],
             decisions: [
                 "Documentation-first aesthetic over flashy portfolio style",

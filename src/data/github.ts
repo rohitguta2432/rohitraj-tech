@@ -153,7 +153,7 @@ export const projectNotes: ProjectNote[] = [
             "Static generation means content updates require redeployment",
             "Minimal dependencies reduce maintenance burden but limit feature velocity"
         ],
-        currentState: "Production — deployed on Vercel",
+        currentState: "Production — deployed on AWS Amplify",
         repoUrl: "https://github.com/rohitguta2432/backendscale",
         category: "frontend"
     },
