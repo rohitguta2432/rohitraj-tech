@@ -515,7 +515,7 @@ export const projects: Project[] = [
         solves: "A living project directory that documents problems, trade-offs, and architectural decisions in real-time.",
         techStack: ["Next.js 16", "React 19", "TypeScript", "AWS Amplify"],
         status: "active",
-        repoUrl: "https://github.com/rohitguta2432/backendscale",
+        repoUrl: "https://github.com/rohitguta2432/rohitraj-tech",
         details: {
             businessImpact: "Hiring decisions are made based on visible artifacts. A traditional portfolio shows what you built, but not how you think. This site exposes the engineering process itself.",
             approach: [
@@ -687,7 +687,7 @@ export const repos = [
         name: "backendscale",
         description: "This site (rohitraj.tech) — personal engineering directory",
         modules: ["src/app", "src/components", "src/data"],
-        url: "https://github.com/rohitguta2432/backendscale"
+        url: "https://github.com/rohitguta2432/rohitraj-tech"
     },
     {
         name: "clinicai",

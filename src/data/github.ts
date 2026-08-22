@@ -8,10 +8,10 @@ export type { Repository, Contribution, ProjectNote } from '@/types/github';
 export const repositories: Repository[] = [
     {
         name: "backendscale",
-        fullName: "rohitguta2432/backendscale",
+        fullName: "rohitguta2432/rohitraj-tech",
         description: "Personal engineering site and project directory (rohitraj.tech)",
         language: "TypeScript",
-        url: "https://github.com/rohitguta2432/backendscale",
+        url: "https://github.com/rohitguta2432/rohitraj-tech",
         createdAt: "2026-01-31",
         updatedAt: "2026-01-31",
         status: "active",
@@ -98,7 +98,7 @@ export const contributions: Contribution[] = [
         title: "rohitraj.tech Redesign",
         type: "open-source",
         repo: "backendscale",
-        repoUrl: "https://github.com/rohitguta2432/backendscale",
+        repoUrl: "https://github.com/rohitguta2432/rohitraj-tech",
         summary: "Complete redesign from consultancy landing page to engineer-centric project directory with documentation-first aesthetic.",
         impact: "Live at rohitraj.tech",
         modules: ["src/app", "src/components", "src/data"],
@@ -154,7 +154,7 @@ export const projectNotes: ProjectNote[] = [
             "Minimal dependencies reduce maintenance burden but limit feature velocity"
         ],
         currentState: "Production — deployed on AWS Amplify",
-        repoUrl: "https://github.com/rohitguta2432/backendscale",
+        repoUrl: "https://github.com/rohitguta2432/rohitraj-tech",
         category: "frontend"
     },
     {
