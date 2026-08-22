@@ -15,14 +15,13 @@ interface BlogPostPageProps {
     params: Promise<{ locale: string; slug: string }>;
 }
 
+// Prerender only the primary locale at build time. Post bodies are English for
+// every locale, so prerendering hi/fr/de/ar multiplied the build output 5x
+// (~320 MB) and blew past AWS Amplify's 220 MB deploy-bundle limit. Other
+// locales still resolve — Next renders them on first request and caches the
+// result (dynamicParams defaults to true).
 export async function generateStaticParams() {
-    const params = [];
-    for (const locale of locales) {
-        for (const post of blogPosts) {
-            params.push({ locale, slug: post.slug });
-        }
-    }
-    return params;
+    return blogPosts.map((post) => ({ locale: "en", slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
