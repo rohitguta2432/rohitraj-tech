@@ -7,7 +7,7 @@ export type { Repository, Contribution, ProjectNote } from '@/types/github';
 // Repositories sourced from https://api.github.com/users/rohitguta2432/repos
 export const repositories: Repository[] = [
     {
-        name: "backendscale",
+        name: "rohitraj-tech",
         fullName: "rohitguta2432/rohitraj-tech",
         description: "Personal engineering site and project directory (rohitraj.tech)",
         language: "TypeScript",
@@ -97,7 +97,7 @@ export const contributions: Contribution[] = [
     {
         title: "rohitraj.tech Redesign",
         type: "open-source",
-        repo: "backendscale",
+        repo: "rohitraj-tech",
         repoUrl: "https://github.com/rohitguta2432/rohitraj-tech",
         summary: "Complete redesign from consultancy landing page to engineer-centric project directory with documentation-first aesthetic.",
         impact: "Live at rohitraj.tech",
@@ -139,7 +139,7 @@ export const contributions: Contribution[] = [
 export const projectNotes: ProjectNote[] = [
     {
         slug: "backendscale-architecture",
-        projectName: "backendscale (rohitraj.tech)",
+        projectName: "rohitraj-tech (rohitraj.tech)",
         whyExists: "Engineering work is often invisible. Traditional portfolios show polished results but not the thinking process.",
         coreTechnicalChallenge: "Creating a documentation-first design system that feels like internal engineering docs while remaining visually professional.",
         architectureSnapshot: [
