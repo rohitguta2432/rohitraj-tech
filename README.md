@@ -29,8 +29,14 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Hosted on AWS Amplify Hosting (app `d222exnwyksjmg`, `ap-south-1`). Every push to `main` triggers a build + deploy automatically — no manual deploy step.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Watch a build:
+
+```bash
+aws amplify list-jobs --app-id d222exnwyksjmg --branch-name main --profile mine
+```
+
+Note: blog posts are prerendered for `en` only (other locales render on demand) to stay under Amplify's 220 MB deploy-bundle limit — see `src/app/[locale]/notes/[slug]/page.tsx`.
