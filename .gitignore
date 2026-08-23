@@ -44,3 +44,6 @@ next-env.d.ts
 # local code-intel indexes
 .codegraph/
 graphify-out/
+
+# Design-direction canvas working files (seeded artifact, not part of the build)
+.design-directions/
