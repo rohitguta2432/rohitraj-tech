@@ -5,6 +5,8 @@
 
 export interface AIProjectSummary {
     title: string;
+    /** Matches a slug in @/data/projects so the landing card can deep-link to /projects/<slug>. */
+    slug: string;
     problem: string;
     solution: string;
     techStack: string[];
@@ -19,6 +21,7 @@ export interface AIProjectSummary {
 export const aiProjectSummaries: AIProjectSummary[] = [
     {
         title: "MyFinancial — Personal Financial Advisor",
+        slug: "myfinancial",
         problem: "Financial planning in India is fragmented across banks, insurance, and tax documents. Most tools require sharing sensitive data with third parties.",
         solution: "Privacy-first PWA that consolidates financial data locally via a 6-step wizard — Profile, Income, Assets, Liabilities, Insurance, Tax — with real-time advisory metrics like Financial Runway and Savings Rate.",
         techStack: ["React 19", "Vite 7", "Tailwind CSS 4", "Zustand", "Dexie (IndexedDB)", "Spring Boot 3.x", "Java 21", "PostgreSQL"],
@@ -35,6 +38,7 @@ export const aiProjectSummaries: AIProjectSummary[] = [
     },
     {
         title: "PropCheck — AI Property Trust Score for India",
+        slug: "propcheck",
         problem: "Indian property buyers lose lakhs to fraudulent listings on Magicbricks, 99acres, Housing.com, and NoBroker. Fake RERA numbers, recycled stock photos, and inflated pricing slip past buyers because no neutral tool exists to verify a listing in seconds.",
         solution: "Paste any listing URL — the AI engine scrapes the page (with an LLM parsing fallback when sites are SPA or rate-limited), cross-checks 8 trust signals against Karnataka RERA, a locality price index, and a perceptual-image database, and returns a 0–100 Trust Score with explainable red flags in 30 seconds.",
         techStack: ["Next.js 14", "Tailwind CSS", "FastAPI 0.115", "Python 3.12", "PostgreSQL 16", "SQLAlchemy 2", "httpx", "BeautifulSoup4", "imagehash", "OpenRouter (Gemma 4 31B)", "Chrome MV3"],
@@ -51,6 +55,7 @@ export const aiProjectSummaries: AIProjectSummary[] = [
     },
     {
         title: "StellarMIND — Chat-to-SQL with pgvector",
+        slug: "stellarmind",
         problem: "Business users need to query databases without knowing SQL. Existing tools lack context-aware query generation and safety guarantees.",
         solution: "Spring Boot MCP server that converts natural language questions into read-only SQL using LLM with retrieval-augmented context from pgvector.",
         techStack: ["Spring Boot", "Spring AI", "PostgreSQL", "pgvector", "MCP Protocol", "OpenAI"],
@@ -66,6 +71,7 @@ export const aiProjectSummaries: AIProjectSummary[] = [
     },
     {
         title: "MicroItinerary — AI Travel Planner",
+        slug: "microitinerary",
         problem: "Travel apps optimize for proximity and ratings. They don't consider human energy levels, group dynamics, or budget constraints intelligently.",
         solution: "AI-powered PWA that generates personalized annual travel itineraries with intelligent destination suggestions, cost estimation in INR, and Splitwise-style expense splitting.",
         techStack: ["React 18", "Vite", "Spring Boot 3.2.2", "Java 21", "PostgreSQL 16", "Redis", "OpenAI GPT-4"],
@@ -80,6 +86,7 @@ export const aiProjectSummaries: AIProjectSummary[] = [
     },
     {
         title: "Agent Autopsy — Forensic Debugger for Failed AI Agent Runs",
+        slug: "agent-autopsy",
         problem: "Most AI agent failures are silent — the run completes, the status code is green, and the result is still wrong. Observability platforms show you the trace, but never the cause of death.",
         solution: "Paste a dead agent's transcript (JSON, JSONL, or raw logs) and get an instant forensic report that names the failure signature — death loop, error blindness, ghost tool, flatline, or context bloat — plus a local-LLM pathologist's note for deeper root cause. 100% local; nothing leaves your machine.",
         techStack: ["Next.js 16", "TypeScript", "App Router", "Ollama (qwen3:14b)", "Vitest"],
@@ -95,6 +102,7 @@ export const aiProjectSummaries: AIProjectSummary[] = [
     },
     {
         title: "tinyvoice — Fine-Tune a Model in Your Own Voice in an Afternoon",
+        slug: "tinyvoice",
         problem: "Training your own language model sounds like a PhD job that needs a GPU cluster, so most developers never try. The tooling looks intimidating from the outside.",
         solution: "A 0.5B-parameter model fine-tuned to write in my voice — trained in about three minutes on a laptop, on 28 of my own posts, with no GPU and no cloud. A side-by-side web UI streams the stock model against the tuned one so you can see exactly what fine-tuning changes.",
         techStack: ["MLX", "Qwen2.5-0.5B (4-bit LoRA)", "Python", "FastAPI", "Server-Sent Events"],
@@ -110,6 +118,7 @@ export const aiProjectSummaries: AIProjectSummary[] = [
     },
     {
         title: "snap3d — One Photo In, an Editable 3D Model Out",
+        slug: "snap3d",
         problem: "A photo shows you one side of an object; the other five sides are a guess. Turning a single 2D image into a usable 3D model normally needs a photogrammetry rig or hours of manual modeling.",
         solution: "Drop one photo and Claude Fable 5 infers depth and hidden geometry, then rebuilds the object as a parametric scene of named parts rendered live in Three.js. Because every part is named, you keep editing in plain English — 'make the wheels huge', 'paint it neon green' — and export to .obj for Blender or Unity.",
         techStack: ["Claude Fable 5", "Three.js", "Node.js (zero-dep stdlib)", "JavaScript"],

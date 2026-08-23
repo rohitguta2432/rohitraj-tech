@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { agents, type AgentShowcase } from "@/data/agents";
+import ShowcaseCard from "@/components/ShowcaseCard";
 import type { Locale } from "@/lib/i18n";
 
 const GithubIcon = () => (
@@ -10,7 +11,7 @@ const GithubIcon = () => (
 function AgentCard({ agent, index, locale, variant }: { agent: AgentShowcase; index: number; locale: Locale; variant: "teaser" | "full" }) {
     const demoHref = variant === "full" ? "#try" : `/${locale}/agents#try`;
     return (
-        <article className="ai-project-card agent-card group">
+        <article id={agent.slug} className="ai-project-card agent-card group" style={{ scrollMarginTop: "6rem" }}>
             <div className="ai-project-number">
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <div className="ai-project-number-line" />
@@ -110,7 +111,17 @@ interface AgentsProps {
     variant?: "teaser" | "full";
 }
 
+/**
+ * Agents shown on the home page before handing off to /agents. The teaser used to
+ * render all of them at full length, which alone was 8,674px of the landing page.
+ */
+const TEASER_COUNT = 6;
+
 export default function Agents({ locale, variant = "teaser" }: AgentsProps) {
+    const isTeaser = variant === "teaser";
+    const shown = isTeaser ? agents.slice(0, TEASER_COUNT) : agents;
+    const liveDemos = agents.filter((a) => a.demo).length;
+
     return (
         <section id="agents" className="ai-projects-section">
             <div className="container">
@@ -118,20 +129,38 @@ export default function Agents({ locale, variant = "teaser" }: AgentsProps) {
                     <span className="ai-projects-eyebrow">AI Agent Host</span>
                     <h2 className="ai-projects-heading">Autonomous agents, aimed at billion-dollar markets</h2>
                     <p className="ai-projects-subheading">
-                        Not chatbots — agents that decide, call tools, and finish a job on their own. Seven of them run live in the Agent Host.
+                        Not chatbots — agents that decide, call tools, and finish a job on their own.{" "}
+                        {liveDemos} of them run live in the Agent Host.
                     </p>
                 </div>
 
-                <div className="ai-projects-list">
-                    {agents.map((agent, i) => (
-                        <AgentCard key={agent.slug} agent={agent} index={i} locale={locale} variant={variant} />
-                    ))}
-                </div>
+                {isTeaser ? (
+                    <div className="showcase-grid">
+                        {shown.map((agent) => (
+                            <ShowcaseCard
+                                key={agent.slug}
+                                title={agent.name}
+                                href={`/${locale}/agents#${agent.slug}`}
+                                status={agent.status}
+                                highlight={agent.marketSize.split(" · ")[0]}
+                                techStack={agent.techStack}
+                                liveUrl={agent.liveUrl}
+                                repoUrl={agent.repoUrl}
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <div className="ai-projects-list">
+                        {shown.map((agent, i) => (
+                            <AgentCard key={agent.slug} agent={agent} index={i} locale={locale} variant={variant} />
+                        ))}
+                    </div>
+                )}
 
-                {variant === "teaser" && (
-                    <div className="ai-projects-footer">
+                {isTeaser && (
+                    <div className="showcase-actions">
                         <Link href={`/${locale}/agents`} className="btn btn-primary">
-                            Open the Agent Host — try a live agent →
+                            All {agents.length} agents — try one live &rarr;
                         </Link>
                     </div>
                 )}

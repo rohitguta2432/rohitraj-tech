@@ -52,7 +52,7 @@ const mockDict: HomeDictionary = {
 
 describe('AIProjects', () => {
   it('renders without crashing', () => {
-    render(<AIProjects dict={mockDict} />);
+    render(<AIProjects dict={mockDict} locale="en" />);
     expect(screen.getByText('Production-Ready AI Systems')).toBeInTheDocument();
   });
 });

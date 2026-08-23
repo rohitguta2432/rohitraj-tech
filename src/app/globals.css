@@ -4840,3 +4840,203 @@ code,
 .resolvr-compare-self td:first-child {
   color: var(--accent);
 }
+
+/* ============================================================
+   Showcase grid — compact project / agent cards (landing page)
+
+   Replaces the full-length one-per-row list on the home page. The
+   previous layout rendered 17 cards at 700-1435px each: 17,060px of a
+   22,212px page (24.7 screens at 900px tall). The write-ups live on
+   /projects/<slug> and /agents, so the home page scans and hands off.
+   ============================================================ */
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.showcase-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition:
+    border-color 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.showcase-card:hover,
+.showcase-card:focus-within {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -12px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+/* Whole card is the primary target; the outbound links sit above it. */
+.showcase-card-link {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.showcase-card-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.showcase-card-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.showcase-card-name {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  text-wrap: balance;
+}
+
+.showcase-card:hover .showcase-card-name {
+  color: var(--accent);
+}
+
+.showcase-card-top .ai-project-status {
+  flex-shrink: 0;
+}
+
+.showcase-card-descriptor {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  /* Titles vary in length; cap at three lines so the grid rows stay even. */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.showcase-card-highlight {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.showcase-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  /* Push the footer down so cards of differing text length align at the bottom. */
+  margin-top: auto;
+  padding-top: 0.25rem;
+}
+
+.showcase-card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  min-width: 0;
+}
+
+.showcase-chip {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1;
+  padding: 0.3125rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.showcase-chip--more {
+  border-style: dashed;
+}
+
+.showcase-card-links {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.showcase-card-out {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  /* Pad to a 44px touch target without changing the visual rhythm: the extra
+     height is absorbed by the negative margin. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.25rem;
+  margin: -12px -0.25rem;
+}
+
+.showcase-card-out:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Section footer: the handoff to the full listings. */
+.showcase-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1.75rem;
+}
+
+.showcase-count {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-card {
+    transition: border-color 180ms ease;
+  }
+
+  .showcase-card:hover,
+  .showcase-card:focus-within {
+    transform: none;
+  }
+}
+
+/* Visually hidden, still read by screen readers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

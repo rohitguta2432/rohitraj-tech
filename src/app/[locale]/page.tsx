@@ -44,7 +44,7 @@ export default async function Home({ params }: Props) {
             <main id="main">
                 <Hero dict={dict.home} locale={locale as Locale} />
                 <HireBlock dict={dict.home} locale={locale as Locale} />
-                <AIProjects dict={dict.home} />
+                <AIProjects dict={dict.home} locale={locale} />
                 <Agents locale={locale as Locale} variant="teaser" />
                 <ProcessTimeline dict={dict.home} />
                 <ReliabilitySection dictionary={dict.home} locale={locale as Locale} />
