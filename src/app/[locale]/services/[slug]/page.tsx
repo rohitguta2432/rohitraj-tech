@@ -34,7 +34,9 @@ export async function generateMetadata({ params }: ServicePageProps) {
         service.metaTitle,
         service.metaDescription,
         `/services/${slug}`,
-        locale
+        locale,
+        // English-only body in every locale — see createPageMetadata({ translated })
+        { translated: false }
     );
 }
 

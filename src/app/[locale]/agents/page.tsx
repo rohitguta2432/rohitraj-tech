@@ -18,7 +18,7 @@ const DESCRIPTION =
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale } = await params;
     if (!isValidLocale(locale)) return {};
-    return createPageMetadata(TITLE, DESCRIPTION, "/agents", locale);
+    return createPageMetadata(TITLE, DESCRIPTION, "/agents", locale, { translated: false });
 }
 
 export default async function AgentsPage({ params }: Props) {

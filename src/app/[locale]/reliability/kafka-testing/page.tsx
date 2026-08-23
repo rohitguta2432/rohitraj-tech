@@ -39,7 +39,7 @@ const SEO_KEYWORDS = [
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale } = await params;
     if (!isValidLocale(locale)) return {};
-    const meta = createPageMetadata(SEO_TITLE, SEO_DESCRIPTION, PAGE_PATH, locale);
+    const meta = createPageMetadata(SEO_TITLE, SEO_DESCRIPTION, PAGE_PATH, locale, { translated: false });
     return {
         ...meta,
         keywords: SEO_KEYWORDS,

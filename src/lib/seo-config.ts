@@ -461,15 +461,35 @@ export function createPageMetadata(
         image?: { src: string; alt: string };
         /** Override the meta description (e.g. trimmed-to-160 version of post excerpt). */
         metaDescription?: string;
+        /**
+         * Whether this route's BODY content is actually localised.
+         *
+         * Only the site chrome is translated via `content/<locale>/*.json`; long-form
+         * content (blog posts, service pages, project case studies) ships English in
+         * every locale. Advertising those as hreflang alternates published ~550
+         * near-duplicate URLs, which is what stalled indexation (Google last fetched
+         * the sitemap 2026-06-28 and reported "URL is unknown" for most posts).
+         *
+         * When false, non-English variants canonicalise to the `/en` URL and emit no
+         * hreflang cluster, so signals consolidate on one indexable page per route.
+         * Flip back to true for a route once its body is genuinely translated.
+         */
+        translated?: boolean;
     } = {}
 ): Metadata {
     // path should be the route without locale prefix, e.g. '/about' or '/projects'
-    const canonical = `${SITE_CONFIG.url}/${locale}${path}`;
-    const languages: Record<string, string> = {};
-    for (const loc of SUPPORTED_LOCALES) {
-        languages[loc] = `${SITE_CONFIG.url}/${loc}${path}`;
+    const isTranslated = options.translated !== false;
+    const canonical = isTranslated
+        ? `${SITE_CONFIG.url}/${locale}${path}`
+        : `${SITE_CONFIG.url}/en${path}`;
+    let languages: Record<string, string> | undefined;
+    if (isTranslated) {
+        languages = {};
+        for (const loc of SUPPORTED_LOCALES) {
+            languages[loc] = `${SITE_CONFIG.url}/${loc}${path}`;
+        }
+        languages['x-default'] = `${SITE_CONFIG.url}/en${path}`;
     }
-    languages['x-default'] = `${SITE_CONFIG.url}/en${path}`;
 
     // Truncate description for meta tags (Google SERP truncates at ~158 chars).
     // The full description still ships in body text; only the head meta is shortened.

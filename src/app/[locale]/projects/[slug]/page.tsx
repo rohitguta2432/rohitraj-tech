@@ -35,7 +35,9 @@ export async function generateMetadata({ params }: ProjectPageProps) {
         `${project.name} | Rohit Raj`,
         project.problem,
         `/projects/${slug}`,
-        locale
+        locale,
+        // English-only body in every locale — see createPageMetadata({ translated })
+        { translated: false }
     );
 }
 

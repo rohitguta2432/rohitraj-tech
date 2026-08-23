@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "deepseek-v4-flash-vision-exp-api-guide-2026",
+    "title": "DeepSeek-V4-Flash-Vision-Exp API Guide: Limits, Pricing, and the 800px Trap (2026)",
+    "date": "2026-08-23",
+    "excerpt": "DeepSeek put image input on its V4-Flash API on August 21, 2026 as deepseek-v4-flash-vision-exp: 284B/13B-active MoE, 1M context, every image capped at 384 tokens at plain V4-Flash rates. Here is the working-developer read — the three ways to send an image, the limits that return 400, the 800×800 downscale that quietly breaks dense OCR, a cost table against Gemini 3.7 Flash and Qwen3.8-Max, and how I would wire it behind a router so the cheap path never becomes the only path.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "deepseek-v4-flash-vision-exp",
+      "deepseek v4 flash vision api",
+      "deepseek vision api image input",
+      "deepseek v4 flash vision pricing",
+      "deepseek vision api limits",
+      "deepseek vision vs gemini 3.7 flash",
+      "cheapest vision api for agents 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/deepseek-v4-flash-vision-exp-api-guide-2026-cover.jpg",
+      "alt": "Crystalline lens of glowing particles focusing light illustrating the DeepSeek-V4-Flash-Vision-Exp multimodal API"
+    },
+    "relatedProject": "vaani"
+  },
+  {
     "slug": "deepseek-harness-vs-claude-code-codex-cli-2026",
     "title": "DeepSeek Harness vs Claude Code vs Codex CLI: The v0.1 Developer Preview, Honestly — 2026",
     "date": "2026-08-14",

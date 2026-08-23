@@ -53,6 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!isValidLocale(locale)) return {};
     const meta = createPageMetadata(SEO_TITLE, SEO_DESCRIPTION, PAGE_PATH, locale, {
         image: { src: SCREENSHOT, alt: "Resolvr — self-hosted AI customer support agent running on local Ollama" },
+        translated: false,
     });
     return {
         ...meta,

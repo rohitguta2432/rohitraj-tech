@@ -45,6 +45,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
                 // The body still shows the full excerpt; meta description is the trimmed
                 // SERP-display version (≤158 chars) so Google doesn't truncate mid-sentence.
                 // createPageMetadata handles the truncation internally.
+                // Post bodies are English in every locale, so non-en URLs canonicalise
+                // to /en and emit no hreflang cluster.
+                translated: false,
             }
         ),
         keywords: post.keywords,
