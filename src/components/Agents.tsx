@@ -159,7 +159,7 @@ export default function Agents({ locale, variant = "teaser" }: AgentsProps) {
 
                 {isTeaser && (
                     <div className="showcase-actions">
-                        <Link href={`/${locale}/agents`} className="btn btn-primary">
+                        <Link href={`/${locale}/agents`} className="btn btn-secondary">
                             All {agents.length} agents — try one live &rarr;
                         </Link>
                     </div>

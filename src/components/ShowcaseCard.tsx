@@ -77,7 +77,15 @@ export default function ShowcaseCard({
                             {tech}
                         </span>
                     ))}
-                    {overflow > 0 && <span className="showcase-chip showcase-chip--more">+{overflow}</span>}
+                    {overflow > 0 && (
+                        <span
+                            className="showcase-chip showcase-chip--more"
+                            title={techStack.slice(MAX_CHIPS).join(", ")}
+                        >
+                            <span aria-hidden="true">+{overflow}</span>
+                            <span className="sr-only">{`and ${overflow} more: ${techStack.slice(MAX_CHIPS).join(", ")}`}</span>
+                        </span>
+                    )}
                 </div>
 
                 {(liveUrl || repoUrl) && (

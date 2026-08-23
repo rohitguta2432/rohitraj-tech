@@ -16,6 +16,11 @@
   --accent-hover: #2563eb;
   --accent-light: rgba(59, 130, 246, 0.1);
   --success: #22c55e;
+  /* Text-safe variants. --success and --accent are tuned for fills and borders and
+     fail WCAG AA as small text on white (2.28:1 and 3.52:1). Use these whenever the
+     colour carries words. */
+  --success-text: #15803d;
+  --accent-text: #1d4ed8;
   --warning: #f59e0b;
   --error: #dc2626;
   --neutral: #a3a3a3;
@@ -37,6 +42,8 @@
     --accent-hover: #93bbfd;
     --accent-light: rgba(96, 165, 250, 0.15);
     --success: #4ade80;
+    --success-text: #4ade80;
+    --accent-text: #93bbfd;
     --warning: #fbbf24;
     --error: #f87171;
     --neutral: #737373;
@@ -658,6 +665,7 @@ section {
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
 }
 
@@ -1678,7 +1686,7 @@ code,
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
   margin-bottom: 0.75rem;
 }
 
@@ -1788,7 +1796,7 @@ code,
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
   margin-bottom: 0.75rem;
 }
 
@@ -1909,7 +1917,7 @@ code,
 .ai-project-status--active,
 .ai-project-status--production,
 .ai-project-status--live {
-  color: var(--success);
+  color: var(--success-text);
   background: color-mix(in srgb, var(--success) 12%, transparent);
 }
 
@@ -2133,7 +2141,7 @@ code,
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
   background: var(--accent-light);
   padding: 6px 14px;
   border-radius: 100px;
@@ -3123,7 +3131,7 @@ code,
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
   margin-bottom: 0.6rem;
 }
 
@@ -3257,7 +3265,7 @@ code,
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
   margin-bottom: 0.6rem;
 }
 
@@ -4901,7 +4909,7 @@ code,
 .showcase-card-name {
   margin: 0;
   font-size: 1.0625rem;
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.015em;
   color: var(--text-primary);

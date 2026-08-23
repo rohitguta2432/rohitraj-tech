@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { HomeDictionary } from "@/lib/i18n";
 import { aiProjectSummaries } from '@/data/ai-projects';
+import { projects } from '@/data/projects';
 import ShowcaseCard from "@/components/ShowcaseCard";
 
 interface AIProjectsProps {
@@ -17,7 +18,6 @@ const TEASER_COUNT = 6;
 
 export default function AIProjects({ dict, locale }: AIProjectsProps) {
     const shown = aiProjectSummaries.slice(0, TEASER_COUNT);
-    const remaining = aiProjectSummaries.length - shown.length;
 
     return (
         <section id="ai-projects" className="ai-projects-section">
@@ -48,11 +48,15 @@ export default function AIProjects({ dict, locale }: AIProjectsProps) {
                 </div>
 
                 <div className="showcase-actions">
-                    <Link href={`/${locale}/projects`} className="btn btn-primary">
-                        {remaining > 0 ? `All ${aiProjectSummaries.length} projects` : "All projects"} &rarr;
+                    {/* Count comes from the full projects catalogue, not this teaser slice —
+                        /projects lists every one, and quoting the slice length contradicted
+                        the hero's shipped-product count. */}
+                    <Link href={`/${locale}/projects`} className="btn btn-secondary">
+                        All {projects.length} projects &rarr;
                     </Link>
+                    {/* readNotes already ends in an arrow; do not append another. */}
                     <Link href={`/${locale}/notes`} className="btn btn-secondary">
-                        {dict.aiProjects.readNotes} &rarr;
+                        {dict.aiProjects.readNotes}
                     </Link>
                 </div>
             </div>
