@@ -114,12 +114,11 @@ export default function WorkIndex({ locale }: { locale: string }) {
         <section id="work" className="widx">
             <div className="container">
                 <header className="widx-head">
-                    <h2 className="widx-h2">
-                        Shipped work, with the repo behind every line.
-                    </h2>
+                    <h2 className="widx-h2">All of it is public.</h2>
                     <p className="widx-sub">
-                        {projects.length} products and {agents.length} autonomous agents, each one
-                        documented and publicly readable. No case studies you can&rsquo;t verify.
+                        {projects.length} products and {agents.length} autonomous agents. Every one
+                        has a live URL or an open repo, so nothing here is a case study you have to
+                        take my word for.
                     </p>
                 </header>
 

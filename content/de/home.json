@@ -1,8 +1,8 @@
 {
     "hero": {
         "subtitle": "Ein Founding Engineer aus Indien, der End-to-End auf jedem Stack liefert — KI, Backend, Mobile, Blockchain, iOS, Web3 — ohne die Kosten eines Teams.",
-        "titleLine1": "Bringen Sie Ihr KI-MVP in 6 Wochen live.",
-        "titleLine2": "KI-MVP in 6 Wochen live. Jedes Produkt unten ist ausgeliefert und dokumentiert.",
+        "titleLine1": "Ein Entwickler.",
+        "titleLine2": "Das ganze Produkt.",
         "bookCallCta": "Kostenloses 30-Min-Gespräch buchen",
         "trustPills": [
             "Senior-Engineer · GitHub ab Tag eins",
@@ -30,7 +30,8 @@
                     "description": "Entscheidungen, Kompromisse und Fehler öffentlich dokumentieren"
                 }
             }
-        }
+        },
+        "deck": "Backend, Frontend, Infrastruktur und die KI-Schicht — gebaut von der Person, mit der Sie sprechen. In sechs Wochen live, und jedes Repository unten können Sie vorher lesen."
     },
     "aiProjects": {
         "sectionTitle": "KI Projekte",

@@ -19,8 +19,9 @@ jest.mock('next/image', () => {
 const mockDict: HomeDictionary = {
   hero: {
     subtitle: '',
-    titleLine1: 'Get your AI MVP live in 6 weeks.',
-    titleLine2: '29 products shipped, every one documented.',
+    titleLine1: 'One engineer.',
+    titleLine2: 'Whole product.',
+    deck: 'Backend, frontend, infrastructure and the AI layer.',
     approach: {
       title: 'My Approach',
       items: {
@@ -53,6 +54,9 @@ const mockDict: HomeDictionary = {
 describe('Hero', () => {
   it('renders without crashing', () => {
     render(<Hero dict={mockDict} locale={'en' as Locale} />);
-    expect(screen.getByText('Get your AI MVP live in 6 weeks.')).toBeInTheDocument();
+    // The headline is split across a <br>, so match on the heading's own text.
+    const heading = screen.getByRole('heading', { level: 1 });
+    expect(heading).toHaveTextContent('One engineer.');
+    expect(heading).toHaveTextContent('Whole product.');
   });
 });

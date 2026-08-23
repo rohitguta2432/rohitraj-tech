@@ -73,6 +73,7 @@ export interface HomeDictionary {
         subtitle: string;
         titleLine1: string;
         titleLine2: string;
+        deck?: string;
         bookCallCta?: string;
         trustPills?: string[];
         approach: {

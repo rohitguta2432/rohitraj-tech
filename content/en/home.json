@@ -13,8 +13,8 @@
     },
     "hero": {
         "subtitle": "Founding engineer for hire in India — ships end-to-end on any stack (AI, backend, mobile, blockchain, iOS, web3) without the cost of a team.",
-        "titleLine1": "Founding Engineer for Hire in India.",
-        "titleLine2": "AI MVP live in 6 weeks. Every product below is shipped, documented and open to inspect.",
+        "titleLine1": "One engineer.",
+        "titleLine2": "Whole product.",
         "bookCallCta": "Book free 30-min call",
         "trustPills": [
             "Senior engineer · GitHub from day one",
@@ -42,7 +42,8 @@
                     "description": "Document decisions, trade-offs, and failures publicly"
                 }
             }
-        }
+        },
+        "deck": "Backend, frontend, infrastructure and the AI layer — built by the person you actually talk to. Live in six weeks, and every repo below is open to read before you email me."
     },
     "aiProjects": {
         "sectionTitle": "AI Projects",

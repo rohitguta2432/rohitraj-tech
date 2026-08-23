@@ -1,26 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  /* Light Documentation Theme */
-  --bg: #fafafa;
-  --bg-alt: #f5f5f5;
-  --surface: #ffffff;
-  --surface-hover: #f9fafb;
-  --card-bg: #ffffff;
-  --border: #e5e5e5;
-  --border-hover: #d4d4d4;
-  --text-primary: #171717;
-  --text-secondary: #525252;
-  --text-muted: #737373;
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
-  --accent-light: rgba(59, 130, 246, 0.1);
+  /* Warm paper + vermilion. Replaces the grey/blue documentation palette: the
+     old one was neutral in the sense of having no opinion, and a page whose job
+     is to make one person memorable cannot afford that. Vermilion carries the
+     brand; the neutrals are tinted toward it rather than toward grey. */
+  --bg: #FBF6EF;
+  --bg-alt: #F5EDE3;
+  --surface: #FFFCF8;
+  --surface-hover: #F7EFE5;
+  --card-bg: #FFFCF8;
+  --border: #E6DBCC;
+  --border-hover: #D3C4AF;
+  --text-primary: #1A1512;
+  --text-secondary: #4E453D;
+  --text-muted: #6E6358;
+  --accent: #B7300F;
+  --accent-hover: #8F2409;
+  --accent-light: rgba(183, 48, 15, 0.09);
+  /* Flood colour for the hero and the closing band. */
+  --brand-flood: #B7300F;
+  --brand-deep: #A02709;
+  --on-brand: #FFF4E8;
   --success: #22c55e;
   /* Text-safe variants. --success and --accent are tuned for fills and borders and
      fail WCAG AA as small text on white (2.28:1 and 3.52:1). Use these whenever the
      colour carries words. */
   --success-text: #15803d;
-  --accent-text: #1d4ed8;
+  --accent-text: #A02709;
   --warning: #f59e0b;
   --error: #dc2626;
   --neutral: #a3a3a3;
@@ -28,22 +35,26 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0a0a0a;
-    --bg-alt: #141414;
-    --surface: #1a1a1a;
-    --surface-hover: #262626;
-    --card-bg: #1a1a1a;
-    --border: #2e2e2e;
-    --border-hover: #404040;
-    --text-primary: #f5f5f5;
-    --text-secondary: #d4d4d4;
-    --text-muted: #a3a3a3;
-    --accent: #60a5fa;
-    --accent-hover: #93bbfd;
-    --accent-light: rgba(96, 165, 250, 0.15);
+    --bg: #14100E;
+    --bg-alt: #1B1613;
+    --surface: #201A16;
+    --surface-hover: #2A221D;
+    --card-bg: #201A16;
+    --border: #352B24;
+    --border-hover: #4A3C32;
+    --text-primary: #FBF3E9;
+    --text-secondary: #D5C9BC;
+    --text-muted: #A29485;
+    /* Vermilion lifted for a dark ground: #B7300F only reaches 1.7:1 here. */
+    --accent: #F2703F;
+    --accent-hover: #FF8B5E;
+    --accent-light: rgba(242, 112, 63, 0.16);
+    /* --brand-flood deliberately does NOT change with the theme. */
+    --brand-deep: #8F2409;
+    --on-brand: #FFF4E8;
     --success: #4ade80;
     --success-text: #4ade80;
-    --accent-text: #93bbfd;
+    --accent-text: #F2703F;
     --warning: #fbbf24;
     --error: #f87171;
     --neutral: #737373;
@@ -119,7 +130,7 @@ a:hover {
 
 /* Layout */
 .container {
-  max-width: 1000px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -4887,7 +4898,7 @@ code,
 }
 
 .widx-head {
-  max-width: 34ch;
+  max-width: 48rem;
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
@@ -5230,119 +5241,234 @@ code,
   color: color-mix(in srgb, var(--bg) 62%, var(--text-primary));
 }
 
-/* ---------- Hero: lede + shipped-work ledger ---------- */
+/* ---------- Hero: the poster ----------
+   One vermilion field, one condensed headline, one button. Picked from four
+   directions on a design canvas; the alternative light-page-with-a-stats-box
+   read as the same SaaS template every generated portfolio ships. */
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 4.5rem);
-  align-items: start;
+.poster {
+  position: relative;
+  overflow: hidden;
+  background: var(--brand-flood);
+  color: var(--on-brand);
+  border-bottom: none;
+  padding: 0;
 }
 
-.hero-lede {
-  min-width: 0;
+/* Offset disc: gives the flood some depth so it is a field, not a swatch. */
+.poster-orb {
+  position: absolute;
+  right: -14%;
+  top: -34%;
+  width: min(58vw, 700px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--brand-deep);
+  pointer-events: none;
 }
 
-/* Headline carries the page on its own now that the restating paragraph above it
-   is gone; the deck sits underneath where a deck belongs. */
-.hero-title {
-  font-size: clamp(2.5rem, 5.4vw, 4rem);
-  line-height: 1.02;
-  letter-spacing: -0.04em;
-  margin-bottom: 1rem;
-  text-wrap: balance;
+.poster-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: min(88vh, 780px);
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
 }
 
-.hero-deck {
-  max-width: 44ch;
-  margin: 0 0 2rem;
-  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+.poster-eyebrow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.poster-eyebrow span:last-child {
+  font-weight: 400;
+  opacity: 0.92;
+}
+
+.poster-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 0 2.5rem;
+}
+
+.poster-title {
+  font-family: var(--font-display), "Haettenschweiler", "Arial Narrow", sans-serif;
+  font-weight: 800;
+  /* Condensed faces carry far more size than a grotesque before they shout. */
+  font-size: clamp(3.25rem, 10.5vw, 8.5rem);
+  line-height: 0.82;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--on-brand);
+}
+
+.poster-deck {
+  max-width: 46ch;
+  margin: 1.75rem 0 0;
+  /* Explicit: a global `p` rule sets --text-secondary and out-specifies
+     inheritance from .poster, which rendered the deck at 1.52:1 on the flood. */
+  color: var(--on-brand);
+  font-size: clamp(1rem, 1.5vw, 1.1875rem);
   line-height: 1.5;
-  color: var(--text-secondary);
+  opacity: 0.92;
   text-wrap: pretty;
 }
 
-.hero-actions {
+.poster-actions {
+  display: flex;
   align-items: center;
-  gap: 1.25rem;
-  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2.125rem;
 }
 
-/* Secondary action is a link, not a second button — one button on the page means
-   one thing. */
-.hero-alt {
+.poster-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 1.625rem;
+  background: var(--on-brand);
+  color: var(--brand-flood);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 180ms ease;
+}
+
+.poster-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px -12px rgba(0, 0, 0, 0.5);
+}
+
+.poster-alt {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   min-height: 44px;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  text-decoration: none;
-  border-bottom: 1px solid var(--border-hover);
-}
-
-.hero-alt:hover {
-  color: var(--accent-text);
-  border-bottom-color: var(--accent-text);
-}
-
-/* The ledger replaces a decorative stock-style PNG. Counts are derived from the
-   project and agent data, so they cannot drift from the index below. */
-.hero-ledger {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--card-bg);
-  padding: 1.25rem 1.375rem 1.125rem;
-}
-
-.hero-ledger-list {
-  margin: 0;
-}
-
-.hero-ledger-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.6875rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.hero-ledger-row:last-of-type {
-  border-bottom: none;
-}
-
-.hero-ledger-row dt {
   font-size: 0.8125rem;
-  color: var(--text-secondary);
+  color: var(--on-brand);
+  opacity: 0.95;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 244, 232, 0.5);
 }
 
-.hero-ledger-row dd {
+.poster-alt:hover {
+  opacity: 1;
+  border-bottom-color: var(--on-brand);
+}
+
+.poster-counters {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
   margin: 0;
-  font-family: var(--font-mono);
+  padding-top: 1.125rem;
+  border-top: 2px solid var(--on-brand);
+}
+
+.poster-counter dd {
+  margin: 0;
+}
+
+.poster-counter-value {
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  line-height: 1;
+}
+
+.poster-counter-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.92;
+  margin-top: 0.25rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 720px) {
+  .poster-inner {
+    min-height: 0;
+    padding-bottom: 2.5rem;
+  }
+
+  .poster-counters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 1rem;
+  }
+
+  .poster-orb {
+    right: -30%;
+    top: -12%;
+    width: 80vw;
+  }
+}
+
+/* Section headings adopt the display face so the poster's voice carries down
+   the page instead of stopping at the fold. */
+.widx-h2,
+.closing-h2 {
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.9;
+  font-size: clamp(2.25rem, 5.5vw, 4rem);
+}
+
+.widx-name {
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 700;
   font-size: 1.375rem;
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
 }
 
-.hero-ledger-foot {
-  margin: 0.875rem 0 0;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: var(--text-muted);
+.closing {
+  background: var(--brand-flood);
+  color: var(--on-brand);
 }
 
-@media (max-width: 860px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
+.closing-h2,
+.closing .btn-primary {
+  color: var(--on-brand);
+}
 
-  /* Proof before pills on a phone: the ledger is the argument, the pills are
-     the footnotes. */
-  .hero-ledger {
-    order: 2;
-  }
+.closing-body {
+  color: rgba(255, 244, 232, 0.9);
+}
+
+.closing .btn-primary {
+  background: var(--on-brand);
+  color: var(--brand-flood);
+  border-color: var(--on-brand);
+}
+
+.closing .btn-primary:hover {
+  background: #fff;
+  border-color: #fff;
+}
+
+.closing-alt {
+  color: rgba(255, 244, 232, 0.86);
+  border-bottom-color: rgba(255, 244, 232, 0.38);
+}
+
+.closing-alt:hover {
+  color: var(--on-brand);
+  border-bottom-color: var(--on-brand);
+}
+
+.closing-fineprint {
+  color: rgba(255, 244, 232, 0.92);
 }
