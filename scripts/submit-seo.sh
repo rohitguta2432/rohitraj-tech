@@ -89,6 +89,9 @@ cat /tmp/indexnow-yandex.out 2>/dev/null; echo
 echo
 if [ -f "${GOOGLE_INDEXING_KEY_FILE}" ]; then
   echo "==> Google Indexing API (service account: ${GOOGLE_INDEXING_KEY_FILE})"
+  echo "    NOTE: Google officially honours this API only for JobPosting and"
+  echo "    BroadcastEvent pages. HTTP 200 means 'request accepted', NOT"
+  echo "    'will be indexed'. Trust the URL Inspection check below instead."
   TOKEN=$(python3 - "${GOOGLE_INDEXING_KEY_FILE}" <<'PY'
 import json, sys, time, base64, hmac, hashlib, urllib.request, urllib.parse
 
@@ -169,5 +172,16 @@ if [ ! -f "${GOOGLE_INDEXING_KEY_FILE}" ]; then
   done
 fi
 
+
+# ---------- Real indexation check (URL Inspection API) ----------
+# The only signal that tells the truth about whether Google has the URL.
+# Between 2026-06-28 and 2026-08-23 this pipeline printed "Google Index: 200 OK"
+# on every run while Google had discovered nothing: 16 of 20 sampled posts came
+# back "URL is unknown to Google". Never treat the Indexing API 200 as proof.
+echo
+if [ -f "${GOOGLE_INDEXING_KEY_FILE}" ]; then
+  echo "==> URL Inspection (actual index status)"
+  python3 "$(dirname "$0")/gsc-inspect.py" "${GOOGLE_INDEXING_KEY_FILE}" "${URLS[@]}"
+fi
 echo
 echo "==> Done."
