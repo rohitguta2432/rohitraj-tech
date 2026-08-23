@@ -52,7 +52,9 @@ export default function SubscribeForm({ locale, translations }: SubscribeFormPro
 
         const result = await subscribeEmail(email, locale);
 
+        let ok = false;
         if (result.success) {
+            ok = true;
             setStatus('success');
             setMessage(translations.success);
             setEmail('');
@@ -63,11 +65,12 @@ export default function SubscribeForm({ locale, translations }: SubscribeFormPro
             setMessage(result.error || translations.error);
         }
 
-        // Reset after 3 seconds
+        // Success clears quickly; an error may carry a fallback email address, so
+        // give people long enough to actually read and act on it.
         setTimeout(() => {
             setStatus('idle');
             setMessage('');
-        }, 3000);
+        }, ok ? 3000 : 12000);
     };
 
     return (
