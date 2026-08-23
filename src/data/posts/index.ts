@@ -138,6 +138,7 @@ import { cloudflareComputerVsSandboxAgentGuide2026 } from './cloudflare-computer
 import { primeAgentRlmContinualHarnessGuide2026 } from './prime-agent-rlm-continual-harness-guide-2026';
 import { aiDevWeek2026W33 } from './ai-dev-week-2026-33';
 import { deepseekHarnessVsClaudeCodeCodexCli2026 } from './deepseek-harness-vs-claude-code-codex-cli-2026';
+import { deepseekV4FlashVisionExpApiGuide2026 } from './deepseek-v4-flash-vision-exp-api-guide-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -277,6 +278,7 @@ const allPosts: BlogPost[] = [
   primeAgentRlmContinualHarnessGuide2026,
   aiDevWeek2026W33,
   deepseekHarnessVsClaudeCodeCodexCli2026,
+  deepseekV4FlashVisionExpApiGuide2026,
 ];
 
 // Validate all posts at module load time
