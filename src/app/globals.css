@@ -26,7 +26,8 @@
   /* Text-safe variants. --success and --accent are tuned for fills and borders and
      fail WCAG AA as small text on white (2.28:1 and 3.52:1). Use these whenever the
      colour carries words. */
-  --success-text: #15803d;
+  --success-text: #146631;
+  --warning-text: #8A5300;
   --accent-text: #A02709;
   --warning: #f59e0b;
   --error: #dc2626;
@@ -54,6 +55,7 @@
     --on-brand: #FFF4E8;
     --success: #4ade80;
     --success-text: #4ade80;
+    --warning-text: #FBBF24;
     --accent-text: #F2703F;
     --warning: #fbbf24;
     --error: #f87171;
@@ -498,7 +500,7 @@ section {
 
 .status-active {
   background: color-mix(in srgb, var(--success) 10%, transparent);
-  color: var(--success);
+  color: var(--success-text);
 }
 
 .status-active::before {
@@ -507,7 +509,7 @@ section {
 
 .status-iterating {
   background: color-mix(in srgb, var(--warning) 10%, transparent);
-  color: var(--warning);
+  color: var(--warning-text);
 }
 
 .status-iterating::before {
@@ -1581,7 +1583,7 @@ code,
 }
 
 .subscribe-message.success {
-  color: var(--success);
+  color: var(--success-text);
   background: color-mix(in srgb, var(--success) 10%, transparent);
 }
 
@@ -1918,7 +1920,7 @@ code,
 }
 
 .ai-project-status--development {
-  color: var(--warning);
+  color: var(--warning-text);
   background: color-mix(in srgb, var(--warning) 12%, transparent);
 }
 
@@ -1953,7 +1955,7 @@ code,
   gap: 0.375rem;
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--success);
+  color: var(--success-text);
   text-decoration: none;
   padding: 0.2rem 0.55rem;
   border: 1px solid color-mix(in srgb, var(--success) 40%, transparent);
@@ -2042,7 +2044,7 @@ code,
 }
 
 .ai-project-label--solution {
-  color: var(--success);
+  color: var(--success-text);
 }
 
 .ai-project-label--ai {
@@ -3489,7 +3491,7 @@ code,
   font-family: var(--font-mono);
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--success);
+  color: var(--success-text);
 }
 
 .agent-live-hint {
@@ -3960,12 +3962,12 @@ code,
 
 .scan-grade--ok {
   background: color-mix(in srgb, var(--success) 16%, transparent);
-  color: var(--success);
+  color: var(--success-text);
 }
 
 .scan-grade--warn {
   background: color-mix(in srgb, var(--warning) 18%, transparent);
-  color: var(--warning);
+  color: var(--warning-text);
 }
 
 .scan-grade--bad {
@@ -4005,7 +4007,7 @@ code,
 
 .sev-pill--medium {
   background: color-mix(in srgb, var(--warning) 16%, transparent);
-  color: var(--warning);
+  color: var(--warning-text);
 }
 
 .sev-pill--low {
@@ -4015,12 +4017,12 @@ code,
 
 .sev-pill--ok {
   background: color-mix(in srgb, var(--success) 16%, transparent);
-  color: var(--success);
+  color: var(--success-text);
 }
 
 .sev-pill--warn {
   background: color-mix(in srgb, var(--warning) 16%, transparent);
-  color: var(--warning);
+  color: var(--warning-text);
 }
 
 .scan-findings {
@@ -4208,12 +4210,12 @@ code,
 
 .fs-overall--ok {
   background: color-mix(in srgb, var(--success) 14%, transparent);
-  color: var(--success);
+  color: var(--success-text);
 }
 
 .fs-overall--warn {
   background: color-mix(in srgb, var(--warning) 16%, transparent);
-  color: var(--warning);
+  color: var(--warning-text);
 }
 
 .fs-overall--bad {
@@ -4512,7 +4514,7 @@ code,
 }
 
 .cad-check--ok .cad-check-icon {
-  color: var(--success);
+  color: var(--success-text);
 }
 
 .cad-check--bad .cad-check-icon {
@@ -5471,4 +5473,10 @@ code,
 
 .closing-fineprint {
   color: rgba(255, 244, 232, 0.92);
+}
+
+/* Icon slots collapse when their emoji were removed, rather than leaving a gap. */
+.rel-benefit-icon:empty,
+.rel-case-icon:empty {
+  display: none;
 }

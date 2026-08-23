@@ -61,9 +61,9 @@ const testTypes = [
 ];
 
 const benefits = [
-    { icon: '📊', title: 'Capacity Planning', body: "Know your system's limits before you hit them. Make data-driven scaling decisions based on actual performance curves." },
-    { icon: '🔍', title: 'Bottleneck Identification', body: 'Pinpoint exactly where performance degrades. Database queries? Thread pools? Network I/O? Load testing reveals the answer.' },
-    { icon: '✅', title: 'SLA Validation', body: 'Prove that your system meets latency and throughput SLAs under realistic load. Ship with confidence.' },
+    { icon: '', title: 'Capacity Planning', body: "Know your system's limits before you hit them. Make data-driven scaling decisions based on actual performance curves." },
+    { icon: '', title: 'Bottleneck Identification', body: 'Pinpoint exactly where performance degrades. Database queries? Thread pools? Network I/O? Load testing reveals the answer.' },
+    { icon: '', title: 'SLA Validation', body: 'Prove that your system meets latency and throughput SLAs under realistic load. Ship with confidence.' },
 ];
 
 const faqs = [
@@ -122,8 +122,8 @@ export default async function LoadTestingPage({ params }: Props) {
                             <span aria-hidden="true">→</span>
                             <span className="rel-breadcrumb-current">Load Testing</span>
                         </nav>
-                        <span className="rel-eyebrow" style={{ background: 'rgba(249, 115, 22, 0.1)', color: '#f97316', borderColor: 'rgba(249, 115, 22, 0.25)' }}>
-                            <span aria-hidden="true">⚡</span> Load Testing
+                        <span className="rel-eyebrow" style={{ background: 'var(--accent-light)', color: 'var(--accent-text)', borderColor: 'color-mix(in srgb, var(--accent) 30%, transparent)' }}>
+                            Load Testing
                         </span>
                         <h1 className="rel-headline">Performance Validation with k6</h1>
                         <p className="rel-lead">
@@ -167,7 +167,6 @@ export default async function LoadTestingPage({ params }: Props) {
                     <div className="container">
                         <div className="rel-case">
                             <div className="rel-case-head">
-                                <span className="rel-case-icon" aria-hidden="true">⚡</span>
                                 <div>
                                     <h2>Real Use Case: 500 Concurrent Queries on a Text2SQL API</h2>
                                     <p>How load testing revealed hidden bottlenecks in the AI query pipeline</p>

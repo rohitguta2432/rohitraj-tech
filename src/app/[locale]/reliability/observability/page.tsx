@@ -76,9 +76,9 @@ const metricFamilies = [
 ];
 
 const benefits = [
-    { icon: '🎯', title: 'SLO Tracking', body: "Define and track Service Level Objectives. Know when you're burning error budget before SLA violations occur." },
-    { icon: '🔍', title: 'Incident Response', body: 'Correlate metrics across services during incidents. Identify root causes faster with historical data and trend analysis.' },
-    { icon: '📊', title: 'Capacity Planning', body: 'Use historical trends to predict resource needs. Scale proactively based on data, not guesswork.' },
+    { icon: '', title: 'SLO Tracking', body: "Define and track Service Level Objectives. Know when you're burning error budget before SLA violations occur." },
+    { icon: '', title: 'Incident Response', body: 'Correlate metrics across services during incidents. Identify root causes faster with historical data and trend analysis.' },
+    { icon: '', title: 'Capacity Planning', body: 'Use historical trends to predict resource needs. Scale proactively based on data, not guesswork.' },
 ];
 
 const faqs = [
@@ -138,8 +138,8 @@ export default async function ObservabilityPage({ params }: Props) {
                             <span aria-hidden="true">→</span>
                             <span className="rel-breadcrumb-current">Observability</span>
                         </nav>
-                        <span className="rel-eyebrow" style={{ background: 'rgba(34, 197, 94, 0.1)', color: '#22c55e', borderColor: 'rgba(34, 197, 94, 0.25)' }}>
-                            <span aria-hidden="true">📊</span> Observability
+                        <span className="rel-eyebrow" style={{ background: 'var(--accent-light)', color: 'var(--accent-text)', borderColor: 'color-mix(in srgb, var(--accent) 30%, transparent)' }}>
+                            Observability
                         </span>
                         <h1 className="rel-headline">Production Observability with Prometheus + Grafana</h1>
                         <p className="rel-lead">
@@ -189,7 +189,7 @@ export default async function ObservabilityPage({ params }: Props) {
                     <div className="container">
                         <div className="rel-case">
                             <div className="rel-case-head">
-                                <span className="rel-case-icon" aria-hidden="true">🚀</span>
+                                <span className="rel-case-icon" aria-hidden="true"></span>
                                 <div>
                                     <h2>Real Use Case: Text2SQL Query Engine SLOs</h2>
                                     <p>How observability held 99.5% query accuracy for an AI-powered NL-to-SQL system</p>
@@ -203,7 +203,7 @@ export default async function ObservabilityPage({ params }: Props) {
                             </dl>
                             <div className="rel-grid-2" style={{ marginTop: '1rem' }}>
                                 <article className="rel-card">
-                                    <h3 className="rel-card-title">🤖 LLM Pipeline Metrics</h3>
+                                    <h3 className="rel-card-title"> LLM Pipeline Metrics</h3>
                                     <ul className="rel-metric-list">
                                         <li>Token usage per request</li>
                                         <li>LLM response latency (p50, p95, p99)</li>
@@ -211,7 +211,7 @@ export default async function ObservabilityPage({ params }: Props) {
                                     </ul>
                                 </article>
                                 <article className="rel-card">
-                                    <h3 className="rel-card-title">📊 Query Accuracy Metrics</h3>
+                                    <h3 className="rel-card-title">Query Accuracy Metrics</h3>
                                     <ul className="rel-metric-list">
                                         <li>SQL syntax validation rate</li>
                                         <li>Query execution success rate</li>

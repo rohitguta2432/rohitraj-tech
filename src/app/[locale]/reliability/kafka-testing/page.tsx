@@ -76,9 +76,9 @@ const solutions = [
 ];
 
 const benefits = [
-    { icon: '🎯', title: 'Deterministic Tests', body: 'Control exact message order and timing. Tests that pass once will pass every time.' },
-    { icon: '🛡️', title: 'Safe Failure Testing', body: 'Simulate catastrophic failures without risking production data. Test disaster recovery procedures with confidence.' },
-    { icon: '⚡', title: 'Fast Feedback', body: 'Embedded Kafka starts in seconds. Run full integration tests in CI without external dependencies.' },
+    { icon: '', title: 'Deterministic Tests', body: 'Control exact message order and timing. Tests that pass once will pass every time.' },
+    { icon: '', title: 'Safe Failure Testing', body: 'Simulate catastrophic failures without risking production data. Test disaster recovery procedures with confidence.' },
+    { icon: '', title: 'Fast Feedback', body: 'Embedded Kafka starts in seconds. Run full integration tests in CI without external dependencies.' },
 ];
 
 const faqs = [
@@ -156,8 +156,8 @@ export default async function KafkaTestingPage({ params }: Props) {
                             <span aria-hidden="true">→</span>
                             <span className="rel-breadcrumb-current">Kafka Testing</span>
                         </nav>
-                        <span className="rel-eyebrow" style={{ background: 'rgba(139, 92, 246, 0.1)', color: '#8b5cf6', borderColor: 'rgba(139, 92, 246, 0.25)' }}>
-                            <span aria-hidden="true">📨</span> Event-Driven Testing
+                        <span className="rel-eyebrow" style={{ background: 'var(--accent-light)', color: 'var(--accent-text)', borderColor: 'color-mix(in srgb, var(--accent) 30%, transparent)' }}>
+                            Event-Driven Testing
                         </span>
                         <h1 className="rel-headline">Embedded Kafka Consumer Testing in Spring Boot</h1>
                         <p className="rel-lead">
@@ -206,7 +206,7 @@ export default async function KafkaTestingPage({ params }: Props) {
                             {challenges.map(c => (
                                 <article key={c.title} className="rel-card rel-card-danger">
                                     <h3 className="rel-card-title">
-                                        <span className="rel-card-mark" aria-hidden="true">✕</span>
+                                        <span className="rel-card-mark" aria-hidden="true"></span>
                                         {c.title}
                                     </h3>
                                     <p>{c.body}</p>
@@ -238,7 +238,6 @@ export default async function KafkaTestingPage({ params }: Props) {
                     <div className="container">
                         <div className="rel-case">
                             <div className="rel-case-head">
-                                <span className="rel-case-icon" aria-hidden="true">📨</span>
                                 <div>
                                     <h2>Real Use Case: Text2SQL Query Ordering Bug</h2>
                                     <p>How Kafka testing caught a race condition that would&apos;ve caused incorrect query results</p>
@@ -259,7 +258,7 @@ sendQuery(sessionId="user-123", query="Show sales by region",       partition=0)
 sendQuery(sessionId="user-123", query="Filter to Q4 only",          partition=1);
 sendQuery(sessionId="user-123", query="Add year-over-year compare", partition=2);
 
-// ❌ Assertion failed: queries processed out of order!`}</code></pre>
+//  Assertion failed: queries processed out of order!`}</code></pre>
                             </div>
                             <dl className="rel-case-body">
                                 <dt>Fix</dt>

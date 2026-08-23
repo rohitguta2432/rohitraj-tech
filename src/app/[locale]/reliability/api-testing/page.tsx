@@ -65,9 +65,9 @@ const features = [
 ];
 
 const benefits = [
-    { icon: '🛡️', title: 'Regression Prevention', body: 'Detect breaking changes before they reach production. Every deployment is validated against the contract.' },
-    { icon: '📋', title: 'Living Documentation', body: 'Postman collections are executable docs. New developers see how the API works by running the suite.' },
-    { icon: '🔄', title: 'CI/CD Integration', body: 'Newman runs in pipelines, blocking deployments if contracts are violated. Automated enforcement, zero manual intervention.' },
+    { icon: '', title: 'Regression Prevention', body: 'Detect breaking changes before they reach production. Every deployment is validated against the contract.' },
+    { icon: '', title: 'Living Documentation', body: 'Postman collections are executable docs. New developers see how the API works by running the suite.' },
+    { icon: '', title: 'CI/CD Integration', body: 'Newman runs in pipelines, blocking deployments if contracts are violated. Automated enforcement, zero manual intervention.' },
 ];
 
 const faqs = [
@@ -127,7 +127,7 @@ export default async function APITestingPage({ params }: Props) {
                             <span className="rel-breadcrumb-current">API Testing</span>
                         </nav>
                         <span className="rel-eyebrow" style={{ background: 'rgba(59, 130, 246, 0.1)', color: 'var(--accent)', borderColor: 'rgba(59, 130, 246, 0.25)' }}>
-                            <span aria-hidden="true">🔗</span> API Contract Testing
+                            API Contract Testing
                         </span>
                         <h1 className="rel-headline">Contract Testing with Postman + Newman</h1>
                         <p className="rel-lead">
@@ -188,7 +188,6 @@ export default async function APITestingPage({ params }: Props) {
                     <div className="container">
                         <div className="rel-case">
                             <div className="rel-case-head">
-                                <span className="rel-case-icon" aria-hidden="true">🔗</span>
                                 <div>
                                     <h2>Real Use Case: Text2SQL Query API Validation</h2>
                                     <p>How contract testing caught a breaking response-format change before production deploy</p>
@@ -206,7 +205,7 @@ export default async function APITestingPage({ params }: Props) {
                                 <div className="rel-code-title">Newman CI output</div>
                                 <pre><code>{`AssertionError: expected undefined to exist (generatedSQL)
   at Object.eval (test-script.js:15)
-✘ POST /api/query [200 OK, 645ms] — 1 assertion failed`}</code></pre>
+ POST /api/query [200 OK, 645ms] — 1 assertion failed`}</code></pre>
                             </div>
                             <dl className="rel-case-body">
                                 <dt>Impact</dt>
