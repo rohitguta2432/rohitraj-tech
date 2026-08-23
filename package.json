@@ -12,6 +12,7 @@
     "gen:blog-summaries": "tsx scripts/generate-blog-summaries.ts"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1116.0",
     "@struktoai/mirage-node": "^0.0.1",
     "@supabase/supabase-js": "^2.93.3",
     "next": "16.1.6",
