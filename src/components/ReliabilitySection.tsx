@@ -31,7 +31,7 @@ export default function ReliabilitySection({ dictionary, locale }: ReliabilitySe
 
                 {/* Cards Grid */}
                 <div className="reliability-grid">
-                    {cardConfigs.map((config) => {
+                    {cardConfigs.map((config, cardIndex) => {
                         const card = reliability.cards[config.key];
                         return (
                             <article
@@ -40,7 +40,7 @@ export default function ReliabilitySection({ dictionary, locale }: ReliabilitySe
                                 style={{ "--accent-color": config.accentColor } as React.CSSProperties}
                             >
                                 <div className="reliability-card-header">
-                                    <span className="reliability-card-icon">{config.icon}</span>
+                                    <span className="reliability-card-icon" aria-hidden="true">{String(cardIndex + 1).padStart(2, "0")}</span>
                                     <div>
                                         <h3 className="reliability-card-title">{card.title}</h3>
                                         <span className="reliability-card-subtitle">{card.subtitle}</span>

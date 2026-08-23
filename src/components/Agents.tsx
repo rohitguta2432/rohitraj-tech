@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { agents, type AgentShowcase } from "@/data/agents";
-import ShowcaseCard from "@/components/ShowcaseCard";
 import type { Locale } from "@/lib/i18n";
 
 const GithubIcon = () => (
@@ -134,28 +133,11 @@ export default function Agents({ locale, variant = "teaser" }: AgentsProps) {
                     </p>
                 </div>
 
-                {isTeaser ? (
-                    <div className="showcase-grid">
-                        {shown.map((agent) => (
-                            <ShowcaseCard
-                                key={agent.slug}
-                                title={agent.name}
-                                href={`/${locale}/agents#${agent.slug}`}
-                                status={agent.status}
-                                highlight={agent.marketSize.split(" · ")[0]}
-                                techStack={agent.techStack}
-                                liveUrl={agent.liveUrl}
-                                repoUrl={agent.repoUrl}
-                            />
-                        ))}
-                    </div>
-                ) : (
-                    <div className="ai-projects-list">
-                        {shown.map((agent, i) => (
-                            <AgentCard key={agent.slug} agent={agent} index={i} locale={locale} variant={variant} />
-                        ))}
-                    </div>
-                )}
+                <div className="ai-projects-list">
+                    {shown.map((agent, i) => (
+                        <AgentCard key={agent.slug} agent={agent} index={i} locale={locale} variant={variant} />
+                    ))}
+                </div>
 
                 {isTeaser && (
                     <div className="showcase-actions">

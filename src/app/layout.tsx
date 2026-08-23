@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Noto_Sans_Arabic } from "next/font/google";
+import { Archivo, JetBrains_Mono, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import { defaultMetadata, generateAllSchemas } from "@/lib/seo-config";
 
-const inter = Inter({
+// Archivo over Inter: Inter is the default every generated portfolio ships, and its
+// even, low-contrast forms give a display headline nothing to hold on to. Archivo is a
+// grotesque with actual tension in the caps and a variable weight axis, so one family
+// can carry the whole scale through weight contrast instead of a timid display pairing.
+const archivo = Archivo({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
+  axes: ["wdth"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -51,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${notoArabic.variable}`}>
+    <html lang="en" className={`${archivo.variable} ${jetbrainsMono.variable} ${notoArabic.variable}`}>
       <head>
         {/* JSON-LD Structured Data for SEO */}
         <JsonLdSchema />

@@ -1,12 +1,12 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HireBlock from "@/components/HireBlock";
-import AIProjects from "@/components/AIProjects";
-import Agents from "@/components/Agents";
+import WorkIndex from "@/components/WorkIndex";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import ReliabilitySection from "@/components/ReliabilitySection";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
+import ClosingCta from "@/components/ClosingCta";
 import Footer from "@/components/Footer";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
 import { webSiteSchema, generateFAQSchema } from "@/lib/seo-config";
@@ -44,12 +44,12 @@ export default async function Home({ params }: Props) {
             <main id="main">
                 <Hero dict={dict.home} locale={locale as Locale} />
                 <HireBlock dict={dict.home} locale={locale as Locale} />
-                <AIProjects dict={dict.home} locale={locale} />
-                <Agents locale={locale as Locale} variant="teaser" />
+                <WorkIndex locale={locale} />
                 <ProcessTimeline dict={dict.home} />
                 <ReliabilitySection dictionary={dict.home} locale={locale as Locale} />
                 <Testimonials />
                 <FAQ dict={dict.home} />
+                <ClosingCta locale={locale} />
             </main>
             <Footer dict={dict.common} locale={locale as Locale} />
         </>
