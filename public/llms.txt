@@ -9,7 +9,7 @@
 - [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
 - [AI Agents](https://rohitraj.tech/en/agents): Live, autonomous AI agents you can try in the browser
 - [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 81 technical case-study posts
+- [Engineering Notes](https://rohitraj.tech/en/notes): 82 technical case-study posts
 
 ## Featured Projects
 
@@ -18,7 +18,7 @@
 - [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (138 posts)
+## All Engineering Notes (139 posts)
 
 - [Shieldstral vs Llama Guard vs OpenAI Moderation API: A Self-Hosted Content Moderation Guide (2026)](https://rohitraj.tech/en/notes/shieldstral-vs-llama-guard-openai-moderation-2026)
 - [OpenAI Codex Security vs Snyk vs Semgrep vs CodeQL: What the New Open-Source Scanner Actually Changes (2026)](https://rohitraj.tech/en/notes/codex-security-vs-snyk-semgrep-codeql-2026)
@@ -173,6 +173,7 @@
 - [This Week in AI Dev: Models Day, Stolen Reasoning, and a $16,000 GPU (Week 33 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-33)
 - [DeepSeek Harness vs Claude Code vs Codex CLI: The v0.1 Developer Preview, Honestly — 2026](https://rohitraj.tech/en/notes/deepseek-harness-vs-claude-code-codex-cli-2026)
 - [DeepSeek-V4-Flash-Vision-Exp API Guide: Limits, Pricing, and the 800px Trap (2026)](https://rohitraj.tech/en/notes/deepseek-v4-flash-vision-exp-api-guide-2026)
+- [Qwen3.8-27B as Your Local Coding Agent: 24GB Setup, Quant Pick, and Claude Code Wiring (2026)](https://rohitraj.tech/en/notes/qwen3-8-27b-local-coding-agent-claude-code-2026)
 - [TencentDB Agent Memory v2.0 Review: A Self-Hosted Team Memory Hub for AI Agents (2026)](https://rohitraj.tech/en/notes/tencentdb-agent-memory-team-hub-review-2026)
 - [Cloudflare Computer vs Cloudflare Sandbox: Which Agent Runtime Should You Actually Use? (2026)](https://rohitraj.tech/en/notes/cloudflare-computer-vs-sandbox-agent-guide-2026)
 - [Prime Agent: The RLM + Continual Harness Guide (And When to Skip It) — 2026](https://rohitraj.tech/en/notes/prime-agent-rlm-continual-harness-guide-2026)

@@ -139,6 +139,7 @@ import { primeAgentRlmContinualHarnessGuide2026 } from './prime-agent-rlm-contin
 import { aiDevWeek2026W33 } from './ai-dev-week-2026-33';
 import { deepseekHarnessVsClaudeCodeCodexCli2026 } from './deepseek-harness-vs-claude-code-codex-cli-2026';
 import { deepseekV4FlashVisionExpApiGuide2026 } from './deepseek-v4-flash-vision-exp-api-guide-2026';
+import { qwen3827bLocalCodingAgentClaudeCode2026 } from './qwen3-8-27b-local-coding-agent-claude-code-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -279,6 +280,7 @@ const allPosts: BlogPost[] = [
   aiDevWeek2026W33,
   deepseekHarnessVsClaudeCodeCodexCli2026,
   deepseekV4FlashVisionExpApiGuide2026,
+  qwen3827bLocalCodingAgentClaudeCode2026,
 ];
 
 // Validate all posts at module load time
