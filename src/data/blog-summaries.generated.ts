@@ -3,6 +3,48 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-dev-week-2026-35",
+    "title": "This Week in AI Dev: The Price War Reaches Anthropic's Flagship (Week 35 of 2026)",
+    "date": "2026-08-25",
+    "excerpt": "Anthropic's priciest model took 8.0% of its own customers' spend in July while Opus 4.8 took 28.0%. OpenAI extended a discount to November. A 22.4 GB quant claims Opus-class coding. Week 35 is the week the AI price war stopped being a headline and started being a routing decision.",
+    "readingTime": "7 min read",
+    "keywords": [
+      "ai model price war august 2026",
+      "ai dev tools this week",
+      "gpt-5.6 sol pricing",
+      "glm-5.3 open weights",
+      "tiel-coder 35b a3b",
+      "best local coding model august 2026",
+      "xiaomi ai cube specs",
+      "ai dev week 35 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-35-cover.jpg",
+      "alt": "Descending cascade of glowing liquid-metal spheres illustrating the collapsing cost of frontier AI in 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
+    "slug": "qwen3-8-27b-local-coding-agent-claude-code-2026",
+    "title": "Qwen3.8-27B as Your Local Coding Agent: 24GB Setup, Quant Pick, and Claude Code Wiring (2026)",
+    "date": "2026-08-24",
+    "excerpt": "Qwen3.8-27B is the first Apache-2.0 model that scores 61.7 on SWE-bench Pro and still fits on one 24GB GPU. Here is the working-developer build: which of the 790 GGUF quants to actually download (with KL-divergence data), the llama-server flags that matter, wiring it into Qwen Code natively and Claude Code through a router, the cost math against a cloud agent subscription, and the context-window ceiling nobody puts in the headline.",
+    "readingTime": "14 min read",
+    "keywords": [
+      "qwen3.8-27b local coding agent",
+      "qwen3.8 27b claude code",
+      "qwen3.8-27b gguf which quant",
+      "run qwen3.8 27b locally",
+      "qwen3.8-27b vram requirements",
+      "local llm coding agent 2026",
+      "qwen3.8-27b vs claude code"
+    ],
+    "coverImage": {
+      "src": "/images/notes/qwen3-8-27b-local-coding-agent-claude-code-2026-cover.jpg",
+      "alt": "Glowing silicon chip with a neural lattice rising from it illustrating the Qwen3.8-27B local coding agent setup"
+    }
+  },
+  {
     "slug": "deepseek-v4-flash-vision-exp-api-guide-2026",
     "title": "DeepSeek-V4-Flash-Vision-Exp API Guide: Limits, Pricing, and the 800px Trap (2026)",
     "date": "2026-08-23",
