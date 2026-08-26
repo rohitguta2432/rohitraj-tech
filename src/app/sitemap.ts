@@ -42,6 +42,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const projectRoutes = projects.map((project) => `/projects/${project.slug}`);
     const serviceRoutes = ["/services", ...services.map((service) => `/services/${service.slug}`)];
 
+    // Build a slug → real-date map for projects that carry an explicit `updated`
+    // date, so a newly added project advertises a real lastmod instead of the
+    // static anchor. Google treats a stale lastmod on a brand-new URL as a
+    // reason to deprioritise the recrawl.
+    const projectDateBySlug = new Map<string, Date>();
+    for (const project of projects) {
+        if (project.updated) projectDateBySlug.set(project.slug, new Date(project.updated));
+    }
+
     // Build a slug → real-date map for posts so each post has its own lastModified
     const postDateBySlug = new Map<string, Date>();
     for (const post of blogPosts) {
@@ -61,7 +70,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         if (route.startsWith("/notes/")) {
             const slug = route.replace("/notes/", "");
             lastModified = postDateBySlug.get(slug) ?? now;
-        } else if (route.startsWith("/projects/") || route.startsWith("/services/")) {
+        } else if (route.startsWith("/projects/")) {
+            const slug = route.replace("/projects/", "");
+            lastModified = projectDateBySlug.get(slug) ?? staticAnchor;
+        } else if (route.startsWith("/services/")) {
             lastModified = staticAnchor;
         }
 

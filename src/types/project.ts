@@ -16,6 +16,8 @@ export const projectSchema = z.object({
     caption: z.string(),
   })).optional(),
   videoUrl: z.string().optional(),
+  /** ISO date of the last meaningful change; feeds <lastmod> in the sitemap. */
+  updated: z.string().optional(),
   details: z.object({
     businessImpact: z.string(),
     approach: z.array(z.string()),

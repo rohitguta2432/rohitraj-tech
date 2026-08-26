@@ -667,6 +667,7 @@ export const projects: Project[] = [
         aiApproach: "A generator script walks the local personal skills directory and every installed plugin skill, reads each SKILL.md front-matter, and writes a committed snapshot at data/skills.json. The /api/graph route reshapes that snapshot into nodes, links, categories, and stats at build time — so a deployed build ships the map without ever needing to read a machine-local skills directory.",
         image: "/images/projects/agentic-os-poster.jpg",
         videoUrl: "/videos/agentic-os.mp4",
+        updated: "2026-08-26",
         details: {
             businessImpact: "Teams adopting agent tooling install skills and plugins faster than they can audit them, then wonder why the agent picks the wrong one. Agentic OS turns an invisible capability surface into a picture you can point at in a review — what exists, what clusters together, and what nobody wrote on purpose.",
             approach: [
@@ -705,6 +706,7 @@ export const projects: Project[] = [
         aiApproach: "Every stage is a separate headless claude -p session with no shared context — the reviewer has never seen the plan, the builder has never seen the acceptance criteria. Advancement is gated on a real artifact check, not a model self-report: spec files non-empty, every checklist box ticked, verify.json PASS, review.json APPROVE, test command exit 0. A runner retries a failed stage a bounded number of times, then parks the run BLOCKED with a written diagnosis. A SQLite registry plus per-run events.jsonl is the source of truth; the dashboard reads both, and run correctness never depends on the server being up.",
         image: "/images/projects/claude-autodev-poster.jpg",
         videoUrl: "/videos/claude-autodev.mp4",
+        updated: "2026-08-26",
         details: {
             businessImpact: "The gap between an AI-written diff and shippable software is spec, review, and test discipline — exactly the parts teams skip when the agent looks confident. claude-autodev makes those parts mandatory gates, so an unattended run either produces a reviewed, tested PR or stops with a diagnosis instead of a false green.",
             approach: [
@@ -745,6 +747,7 @@ export const projects: Project[] = [
         aiApproach: "One fast router LLM call classifies the question into agent, language, place, and commodity. The chosen specialist — crop advisor, pest and disease, weather and irrigation, mandi price analyst, govt schemes, or soil health — fetches the live data its domain needs and streams a grounded answer token by token. Keyless by default: Ollama locally so nothing leaves the machine, Open-Meteo for forecasts, and the data.gov.in public sample key for daily mandi prices, with an optional Anthropic provider for a hosted model. Mandi lookups degrade gracefully from state plus commodity, to commodity, to latest records. Implements the AgroAskAI multi-agent framework as working open source.",
         image: "/images/projects/kisansathi-poster.jpg",
         videoUrl: "/videos/kisansathi.mp4",
+        updated: "2026-08-26",
         details: {
             businessImpact: "India has more smallholder farmers than any advisory service can staff, and the ones who need advice most are furthest from a key, a card, or reliable bandwidth. A keyless multi-agent assistant that answers in Hindi with today's mandi price is deployable on a village kiosk, not just a demo laptop.",
             approach: [
@@ -785,6 +788,7 @@ export const projects: Project[] = [
         aiApproach: "Deterministic economics first, LLM second. Five rule-based detectors quantify each leak in money terms — high food cost, price lag where plate cost rose at least 5% in 30 days with no menu move, bleeding bestseller, dead weight, and kitchen waste — and each dish keeps only its biggest leak so overlapping detectors never double-count the monthly total. A local Ollama model then writes the ranked action plan on top of those numbers; if Ollama is down it silently falls back to rule-based advice, so the agent always answers.",
         image: "/images/projects/marginchef-poster.jpg",
         videoUrl: "/videos/marginchef.mp4",
+        updated: "2026-08-26",
         details: {
             businessImpact: "An independent restaurant losing two points of margin to unrepriced dishes is losing real money every month it goes unnoticed. MarginChef converts a POS export into a ranked list of fixes with a rupee or dollar figure attached to each — the difference between knowing food costs are up and knowing which three dishes to reprice on Monday.",
             approach: [
@@ -825,6 +829,7 @@ export const projects: Project[] = [
         aiApproach: "Agents coordinate through a GraphRAG store rather than by passing blobs of text. Merge-on-write normalizes entity names so two researchers who discover the same thing converge on one node. Retrieval is graph-aware — embed the query, take the top-k nodes, expand to their neighbours, hand the subgraph to the Synthesizer — which is what lets the swarm answer multi-hop questions. Every agent action is an event streamed over SSE, so the interface is a live view of the run. Runs deterministic with zero config for demos, or against Anthropic or a local Ollama model for real research.",
         image: "/images/projects/quorum-poster.jpg",
         videoUrl: "/videos/quorum.mp4",
+        updated: "2026-08-26",
         details: {
             businessImpact: "Research questions that matter are multi-hop, and a single-model loop answers them confidently and wrongly. A swarm with an explicit Critic and a shared graph makes the reasoning inspectable — you can see which entity connected to which, and which agent found it.",
             approach: [
@@ -865,6 +870,7 @@ export const projects: Project[] = [
         aiApproach: "The model drafts the pattern; the app proves it. Auto-generated positive and negative examples run live against the candidate regex, so a too-loose pattern is caught the moment it matches something it should not — the LLM is never the last word. Talks to any OpenAI-compatible chat endpoint, defaulting to a local Ollama model so no text and no API key leave the machine, with hosted providers a pure env-var swap.",
         image: "/images/projects/regexforge-poster.jpg",
         videoUrl: "/videos/regexforge.mp4",
+        updated: "2026-08-26",
         details: {
             businessImpact: "A wrong regex in a validator or a log parser fails quietly and in production. Shipping the pattern together with generated counter-examples turns a guess into something a reviewer can check in seconds.",
             approach: [
@@ -905,6 +911,7 @@ export const projects: Project[] = [
         aiApproach: "Server-side fetch strips a docs page to readable text; PDFs route through a single-file Python backend using pypdf for extraction. A local Ollama model then writes the full SKILL.md — frontmatter, trigger phrases, usage, recipes, gotchas — streamed token by token to the page. Any Ollama chat model works: smaller models cook faster, bigger ones write better skills. Without the optional PDF backend, URL mode still works and PDF requests fail with a clear message rather than silently.",
         image: "/images/projects/skillet-poster.jpg",
         videoUrl: "/videos/skillet.mp4",
+        updated: "2026-08-26",
         details: {
             businessImpact: "Every tool a team adopts is a skill nobody has time to write, so agents keep using tools badly. Skillet makes the distillation step a paste-and-download, which is the difference between a team having three good skills and thirty.",
             approach: [
@@ -943,6 +950,7 @@ export const projects: Project[] = [
         aiApproach: "No LLM in the critical path — per-item statistical demand forecasting with a safety margin, then a deterministic four-step loop: ingest sales, forecast demand, explode recipes, compare theoretical versus actual usage. Leaks surface as a ranked board priced in the operator's currency. The bundled demo dataset ships 120 days of sales for a fictional cafe with two planted leaks, so the detection is verifiable rather than asserted.",
         image: "/images/projects/ladle-poster.jpg",
         videoUrl: "/videos/ladle.mp4",
+        updated: "2026-08-26",
         details: {
             businessImpact: "Nory, Winnow, Leanpath, MarketMan, and Tenzo solve this problem for restaurants that can afford a per-location subscription. Ladle is the open-source alternative for the ones that cannot — the same three morning answers, self-hosted, with the data staying on the operator's own machine.",
             approach: [
@@ -983,6 +991,7 @@ export const projects: Project[] = [
         aiApproach: "No AI — this one is deliberately a rendering and interaction problem. Every furniture piece is a handful of boxes and cylinders in a readable source file, scenes save to localStorage so nothing leaves the machine, and the 15-second orbit clip is recorded client-side with the native MediaRecorder API rather than a server.",
         image: "/images/projects/casita-poster.jpg",
         videoUrl: "/videos/casita.mp4",
+        updated: "2026-08-26",
         details: {
             businessImpact: "The useful version of home design for most people is not CAD — it is five minutes of moving a sofa around before buying it. Casita is that, with a zero-friction path from opening a tab to a shareable orbit video.",
             approach: [
@@ -1023,6 +1032,7 @@ export const projects: Project[] = [
         aiApproach: "No runtime AI — the interesting work is graphics and systems engineering. Terrain comes from seeded simplex noise with temperature and moisture fields driving biomes; chunk generation runs on a per-frame budget so streaming never hitches; only faces adjacent to air get triangles, with opaque and translucent water meshed separately per chunk; block targeting uses an exact Amanatides-Woo voxel DDA raycast. A cinematic demo mode flies a deterministic camera path and performs scripted world edits, which is how the demo video is recorded unattended.",
         image: "/images/projects/voxelforge-poster.jpg",
         videoUrl: "/videos/voxelforge.mp4",
+        updated: "2026-08-26",
         details: {
             businessImpact: "This is the reference answer to a question a lot of engineers are asking right now — what the agent-built demo looks like when it is built as real software instead of a one-file toy. Every subsystem is separated, named, and readable.",
             approach: [
@@ -1065,6 +1075,7 @@ export const projects: Project[] = [
         aiApproach: "The LLM never writes code — it emits roughly twelve clamped numbers against a published parameter contract, and every value is validated before it reaches the renderer, so a hallucinating model cannot break the frame. With Ollama running, a real model interprets the phrase; without it, a zero-dependency rules engine composes the same parameters from regex, so the demo works with no key and no install. Anything that can emit that JSON can drive the ocean, which makes the model swappable by design.",
         image: "/images/projects/prompt-ocean-poster.jpg",
         videoUrl: "/videos/prompt-ocean.mp4",
+        updated: "2026-08-26",
         details: {
             businessImpact: "A clean demonstration of the pattern generative interfaces should use: let the model choose parameters inside a validated contract, and let deterministic code own the rendering. The result degrades to a rules engine instead of failing, which is what makes it shippable.",
             approach: [
@@ -1106,6 +1117,7 @@ export const projects: Project[] = [
         aiApproach: "No AI — pure kinematics. Analytic 3-DOF leg IK solves coxa yaw with atan2 and treats femur and tibia as a planar two-link problem via the law of cosines, six legs at 60 fps. The gait engine expresses tripod, ripple, and wave as phase offsets plus a per-leg duty factor; during stance each foot moves backward in the body frame at exactly body velocity, so feet never slide on the ground. Swing is a smoothstep return with a sinusoidal lift. Correctness is checked by an IK-to-FK round-trip self-test in the test suite.",
         image: "/images/projects/hexapod-sim-poster.jpg",
         videoUrl: "/videos/hexapod-sim.mp4",
+        updated: "2026-08-26",
         details: {
             businessImpact: "A working reference implementation of legged-robot IK and gait sequencing that runs in a tab. Useful for anyone building an actual hexapod, and a far better teaching artifact than a diagram because the parameters are live.",
             approach: [
@@ -1147,6 +1159,7 @@ export const projects: Project[] = [
         aiApproach: "Two pre-trained MediaPipe models download into the browser on first load — FaceLandmarker for 478 points, 52 expression blendshapes, and a head transform, and HandLandmarker for 21 points per hand with handedness. Everything runs on-device; nothing leaves the machine. The app is a requestAnimationFrame loop that draws the camera frame, runs both models, and annotates a canvas. The readouts are deliberately honest: the smile percentage is literally the model's mouthSmileLeft score, the emotion label is a one-line threshold check, and open-versus-closed hands are plain geometry — a hand is open when three or more fingertips sit farther from the wrist than their middle joints.",
         image: "/images/projects/avatar-sync-poster.jpg",
         videoUrl: "/videos/avatar-sync.mp4",
+        updated: "2026-08-26",
         details: {
             businessImpact: "A zero-setup base for VTuber puppeteering, gesture-controlled interfaces, and attention or drowsiness experiments — the part everyone rebuilds, already working and readable in a single file.",
             approach: [
