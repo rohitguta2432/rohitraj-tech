@@ -18,7 +18,7 @@ import { projects } from "@/data/projects";
  * 300px-wide card that has to be scrolled past twelve times.
  */
 
-type Row = {
+export type Row = {
     id: string;
     name: string;
     descriptor: string;
@@ -66,7 +66,7 @@ const AGENT_ROWS: Row[] = agents.slice(0, 6).map((a) => {
     };
 });
 
-function IndexRow({ row, n, locale }: { row: Row; n: number; locale: string }) {
+export function IndexRow({ row, n, locale }: { row: Row; n: number; locale: string }) {
     return (
         <li className="widx-row" style={{ "--row-i": n } as React.CSSProperties}>
             <Link href={`/${locale}${row.href}`} className="widx-hit">

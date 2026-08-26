@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HireBlock from "@/components/HireBlock";
 import WorkIndex from "@/components/WorkIndex";
+import WritingIndex from "@/components/WritingIndex";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import ReliabilitySection from "@/components/ReliabilitySection";
 import Testimonials from "@/components/Testimonials";
@@ -45,6 +46,7 @@ export default async function Home({ params }: Props) {
                 <Hero dict={dict.home} locale={locale as Locale} />
                 <HireBlock dict={dict.home} locale={locale as Locale} />
                 <WorkIndex locale={locale} />
+                <WritingIndex locale={locale} />
                 <ProcessTimeline dict={dict.home} />
                 <ReliabilitySection dictionary={dict.home} locale={locale as Locale} />
                 <Testimonials />
