@@ -139,7 +139,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                                     </video>
                                     <div className="project-image-caption">
                                         <span className="caption-icon">▶</span>
-                                        <span>15-second product demo</span>
+                                        <span>Product demo</span>
                                     </div>
                                 </div>
                             </div>
