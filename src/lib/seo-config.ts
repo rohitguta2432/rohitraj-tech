@@ -499,9 +499,19 @@ export function createPageMetadata(
     const ogImageUrl = resolveImageUrl(options.image?.src);
     const ogImageAlt = options.image?.alt ?? 'Rohit Raj — Founding Engineer & AI Systems Architect';
 
+    // A non-English URL for a route whose body is English is a duplicate of the
+    // /en page, and canonical alone has not been enough: GSC shows
+    // /ar/notes/expo-av-... outranking its own /en original for the same query,
+    // and /de/ + /ar/ both competing on "how to run diffusiongemma locally".
+    // Three URLs split the signals for one piece of content. noindex removes the
+    // duplicates from the index outright; follow keeps their internal links
+    // flowing so the /en original still inherits the equity.
+    const isEnglishBodyDuplicate = !isTranslated && locale !== 'en';
+
     return {
         title,
         description: metaDesc,
+        ...(isEnglishBodyDuplicate ? { robots: { index: false, follow: true } } : {}),
         openGraph: {
             title,
             description: metaDesc,

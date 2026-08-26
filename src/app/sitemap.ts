@@ -42,6 +42,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const projectRoutes = projects.map((project) => `/projects/${project.slug}`);
     const serviceRoutes = ["/services", ...services.map((service) => `/services/${service.slug}`)];
 
+    // Hub routes are generated from data files, so their real lastmod is the
+    // freshest item they list — not the date someone last touched the page
+    // component. Deriving it keeps these dates honest without anyone
+    // remembering to bump an anchor.
+    const maxDate = (dates: Date[], fallback: Date) =>
+        dates.length ? new Date(Math.max(...dates.map((d) => d.getTime()))) : fallback;
+
     // Build a slug → real-date map for projects that carry an explicit `updated`
     // date, so a newly added project advertises a real lastmod instead of the
     // static anchor. Google treats a stale lastmod on a brand-new URL as a
@@ -59,6 +66,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
     const blogRoutes = blogPosts.map((post) => `/notes/${post.slug}`);
 
+    const latestProjectDate = maxDate([...projectDateBySlug.values()], staticAnchor);
+    const latestPostDate = maxDate([...postDateBySlug.values()], staticAnchor);
+    const hubDates: Record<string, Date> = {
+        "": maxDate([latestProjectDate, latestPostDate], staticAnchor),
+        "/projects": latestProjectDate,
+        "/repos": latestProjectDate,
+        "/notes": latestPostDate,
+    };
+
     const allRoutes = [...staticRoutes, ...projectRoutes, ...serviceRoutes, ...blogRoutes];
 
     const sitemap: MetadataRoute.Sitemap = [];
@@ -66,7 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Only include English URLs to maximize crawl budget on a new domain.
     // Non-English pages were causing "Discovered – currently not indexed" (90 pages).
     for (const route of allRoutes) {
-        let lastModified: Date = staticAnchor;
+        let lastModified: Date = hubDates[route] ?? staticAnchor;
         if (route.startsWith("/notes/")) {
             const slug = route.replace("/notes/", "");
             lastModified = postDateBySlug.get(slug) ?? now;
