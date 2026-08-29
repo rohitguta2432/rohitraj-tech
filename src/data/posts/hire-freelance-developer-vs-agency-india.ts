@@ -22,7 +22,7 @@ This doesn't apply if your project genuinely needs five concurrent workstreams o
     },
     {
       heading: 'I\'ve Been on Both Sides',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Hire a freelance developer when your project is well-defined, your budget is under thirty thousand dollars, and you want direct communication with the person writing your code. Hire an agency when you need five or more developers working simultaneously, have compliance requirements like HIPAA or SOC2, or need formal SLA guarantees for uptime and support.
 

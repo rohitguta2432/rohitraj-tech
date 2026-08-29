@@ -31,7 +31,7 @@ Stripe wins only when ≥60% of revenue is foreign cards or your stack already u
     },
     {
       heading: 'Razorpay vs Stripe for Indian MVPs in 2026',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 **The short answer:** if your customers pay in INR, Razorpay wins on cost by a factor of 4-5x. Stripe wins only when foreign cards dominate.
 

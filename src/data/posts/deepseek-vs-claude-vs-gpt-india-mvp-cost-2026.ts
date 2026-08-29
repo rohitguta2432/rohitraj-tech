@@ -28,7 +28,7 @@ export const deepseekVsClaudeVsGptIndiaMvpCost2026: BlogPost = {
     },
     {
       heading: 'What Just Changed on 2026-05-22',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 DeepSeek had been running a 75% off promotion on V4 Pro since the model launched. The promo was scheduled to expire on 2026-05-31 15:59 UTC. Two days ago, the official [API docs page](https://api-docs.deepseek.com/quick_start/pricing) was quietly updated — the expiration was removed and the discount converted to standard pricing. [Engadget](https://www.engadget.com/2180062/deepseek-permanently-reduces-the-price-of-its-flagship-v4-model-by-75-percent/), [The Tech Portal](https://thetechportal.com/2026/05/23/chinas-deepseek-permanently-cuts-prices-of-flagship-v4-pro-ai-model-by-75/), and [TheNextWeb](https://thenextweb.com/news/deepseek-v4-pro-price-cut-75-percent) all confirmed within 24 hours. The HN front-page thread hit 437 points and 250 comments.
 

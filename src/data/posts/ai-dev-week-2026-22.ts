@@ -27,7 +27,7 @@ export const aiDevWeek2026W22: BlogPost = {
     },
     {
       heading: 'Why This Week Matters Together',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 This isn't six unrelated drops — there's a thread. Three of the six this week (DeepSeek's permanent cut, Reasonix's open coding agent, NuExtract3's open VLM) push the **cost-of-AI floor toward zero for routine dev workloads**. The other three (Copilot Auto, Gemini Managed Agents, Cursor 3 parallel) push the **interface up the stack** — you stop picking models and start describing tasks.
 

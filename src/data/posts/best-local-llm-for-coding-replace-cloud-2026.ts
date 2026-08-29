@@ -28,7 +28,7 @@ export const bestLocalLlmForCodingReplaceCloud2026: BlogPost = {
         },
         {
             heading: "Best Local LLM for Coding in 2026: When It Actually Replaces Claude and GPT",
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 This week two threads hit the Hacker News front page within a day of each other and asked the same question from opposite directions. One — "[Has anyone replaced Claude/GPT with a local model for daily coding?](https://news.ycombinator.com/item?id=48542100)" — pulled **1,245 points and 534 comments**. The other, "[Running local models is good now](https://vickiboykis.com/2026/06/15/running-local-models-is-good-now/)", pulled **1,135 points**. When a topic owns two front-page slots in 48 hours, the underlying capability has shifted, not just the discourse.
 

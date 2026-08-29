@@ -19,7 +19,7 @@ export const ideaToPlayStoreSanatanappArchitecture: BlogPost = {
     },
 {
       heading: 'Week 1: Problem Discovery & Design',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To ship a React Native app from idea to Google Play Store in 4 weeks, use Expo managed workflow with EAS Build for zero native configuration, bundle text content as JSON files for offline-first delivery, stream audio from public domain sources via expo-av, and store local state in expo-sqlite. This approach produces a production app under 15MB with $0/month running costs and a $25 one-time Play Store developer fee.
 

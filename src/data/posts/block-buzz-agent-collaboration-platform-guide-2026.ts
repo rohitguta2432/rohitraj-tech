@@ -28,7 +28,7 @@ export const blockBuzzAgentCollaborationPlatformGuide2026: BlogPost = {
         },
         {
             heading: 'Block shipped Buzz — why does a "Slack for agents" matter now?',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **July 21, 2026**, Block (Jack Dorsey's company, the team behind the Goose agent framework) released [Buzz](https://github.com/block/buzz), announced in an official post as ["where humans and agents work together"](https://block.xyz/inside/introducing-buzz-where-humans-and-agents-work-together). Three days later it sits at **7,606 GitHub stars — 2,162 of them added in a single day** — near the top of GitHub's daily trending list.
 

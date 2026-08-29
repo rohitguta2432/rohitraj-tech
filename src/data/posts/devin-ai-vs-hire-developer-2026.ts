@@ -29,7 +29,7 @@ export const devinAiVsHireDeveloper2026: BlogPost = {
     },
 {
       heading: 'Devin AI vs Hiring a Developer in 2026: The Honest Answer',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For production MVPs in 2026, **Devin alone will not ship your product**. The math that actually works is to pair Devin Core ($20/month) or Team ($500/month) with a founding engineer (₹2L–3L/month in India, roughly $2,400–$3,600). Devin reliably delivers about 70% of a feature; an experienced engineer closes the remaining 30% — edge cases, integrations, product judgment, customer-feedback rewrites.
 

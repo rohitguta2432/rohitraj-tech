@@ -27,7 +27,7 @@ export const supabaseRlsProductionBugsNeedRealEngineer2026: BlogPost = {
     },
 {
       heading: 'Your Supabase RLS Just Leaked Production Data — The 5 Bugs Every Vibe-Coded App Hits in 2026',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If your Supabase project was scaffolded by [Lovable](/en/notes/lovable-app-production-bugs-need-real-engineer-2026), Bolt, or Cursor, your row-level security is almost certainly broken in at least one of five predictable ways. The fix is not another prompt. The fix is a senior engineer who reads the SQL and tests the policies against a real anon-key client.
 

@@ -27,7 +27,7 @@ export const aiDevWeek2026W23: BlogPost = {
     },
     {
       heading: 'Why This Week Matters Together',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 There are two forces pulling on the same six drops this week. The first is **capability moving up the stack**: Claude Opus 4.8 lifts the model ceiling, Codex CLI graduated Goal Mode to a default autonomous runtime, and the MCP next-spec RC re-architected the protocol to be **stateless** so agent servers run like normal web services — the agent layer growing up, less glue and more production-shaped infrastructure.
 

@@ -18,7 +18,7 @@ export const whyYourMvpShouldCostUnder10k: BlogPost = {
     },
 {
       heading: 'Why Should Your MVP Cost Under $10,000?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Your MVP should cost under $10,000 because the entire purpose of an MVP is to test your riskiest business assumption with minimal investment. A realistic budget is $5,000-$8,500 for a 4-6 week build using a free-tier stack (Supabase, Vercel, Stripe). Anything above $10K means you are overbuilding before validation — spending money on features that users may never want. Ship fast, learn, then invest more based on real data.
 

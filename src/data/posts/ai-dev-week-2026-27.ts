@@ -29,7 +29,7 @@ export const aiDevWeek2026W27: BlogPost = {
     },
     {
       heading: 'Why This Week Is the Local-Agent Stack Growing Up',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 There's a layer of every AI-news cycle the headlines skip — not the models, but the unglamorous plumbing that turns a downloaded checkpoint into something that actually does work. This was the seven days that plumbing finally caught up with the models it has to wrap.
 

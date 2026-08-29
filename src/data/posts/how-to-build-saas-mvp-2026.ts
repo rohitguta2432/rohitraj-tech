@@ -18,7 +18,7 @@ export const howToBuildSaasMvp2026: BlogPost = {
     },
 {
       heading: 'What Is a SaaS MVP and How Do You Build One?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To build a SaaS MVP in 2026, focus on 1-3 core features, use a free-tier stack (Next.js, Supabase, Vercel, Stripe), and launch in 6 weeks for $5,000-$8,500. The key approach is ruthless scope discipline — build only what proves people will pay, skip everything else, and iterate based on real user feedback after launch.
 

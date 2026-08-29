@@ -29,7 +29,7 @@ export const aiDevWeek2026W30: BlogPost = {
     },
     {
       heading: 'Why Week 30 Was Two Stories at Once',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Two currents crossed this week. The first: the biggest open-weights drops of 2026 came from Chinese labs — Moonshot's Kimi K3 and Alibaba's Qwen 3.8 both claim frontier-adjacent scores, and Baidu quietly put an open OCR model at the top of Hugging Face's charts. The models are getting bigger, cheaper to call, and — the part that matters for builders — open enough to run yourself.
 

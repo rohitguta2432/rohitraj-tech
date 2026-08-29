@@ -30,7 +30,7 @@ export const cloudflareComputerVsSandboxAgentGuide2026: BlogPost = {
     {
       heading:
         'Cloudflare Shipped Two Agent Runtimes in Four Months. Nobody Told You Which One to Pick',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **August 3, 2026** Cloudflare published a blog post titled *"Your agent needs a computer, not a container"* and open-sourced [\`@cloudflare/computer\`](https://github.com/cloudflare/computer) alongside it. Four days later the repo is at **4,992 stars and 250 forks**, sitting at **#1 on GitHub trending after gaining 2,802 stars in a single day**. Two days after that, Cloudflare launched **[Cloudflare OS](https://blog.cloudflare.com/cloudflare-os/)**, an open-source agent workspace for enterprises, which took the front page of Hacker News at **648 points and 321 comments**.
 

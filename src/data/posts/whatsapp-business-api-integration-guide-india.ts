@@ -19,7 +19,7 @@ export const whatsappBusinessApiIntegrationGuideIndia: BlogPost = {
     },
 {
       heading: 'Why WhatsApp API Matters for Indian Businesses',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To integrate the WhatsApp Business API for an Indian startup, choose a Business Solution Provider like Twilio or Gupshup (or connect directly via Meta Cloud API), set up a webhook-based backend to receive and process incoming messages, design pre-approved message templates for outbound communications, and follow Meta's strict 24-hour session window rules to avoid getting your number banned. Monthly costs for a small business start as low as 85 INR for Meta fees alone.
 

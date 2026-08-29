@@ -29,7 +29,7 @@ export const openaiVsClaudeVsGeminiApiCostIndiaMvp2026: BlogPost = {
     },
     {
       heading: 'OpenAI vs Claude vs Gemini API — the real cost for an India MVP in 2026',
-      content: `By [Rohit Raj](/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Most "OpenAI vs Claude vs Gemini" posts you find on the SERP today rank prices in dollars, ignore India-specific friction, and pretend prompt caching does not exist. Founders here pay in INR, get billed in USD, lose ~3% to forex, owe 18% GST on imported services, and the CA flags 2% TDS on every foreign invoice over ₹50K. That changes which provider actually wins.
 

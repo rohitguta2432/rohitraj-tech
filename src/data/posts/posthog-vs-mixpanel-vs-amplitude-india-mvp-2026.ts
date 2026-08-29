@@ -30,7 +30,7 @@ Skip all three and use Plausible or GA4 if you only need page-view counts.`,
     },
     {
       heading: 'PostHog vs Mixpanel vs Amplitude — Which One Should You Pick for an India MVP in 2026?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you are picking a product analytics tool for an India MVP in 2026, the honest answer is PostHog for almost every engineering-led founder, Mixpanel for PM-led teams under 100K events/month, and Amplitude only after Series A. I have shipped analytics for four India-stack projects in the last 18 months — the [myFinancial](/en) personal-finance PWA (which tracks ~12,000 events per active user per month), a multi-tenant retail [SaaS on Spring Boot](/en/notes/build-multi-tenant-saas-spring-boot-java-21), a Sanskrit-to-SQL research tool, and a clinic-booking flow on the [WhatsApp Business API](/en/notes/whatsapp-business-api-integration-guide-india). I ended up on PostHog three out of four times, and the one exception was a clinic that needed a non-technical receptionist to read funnel charts.
 

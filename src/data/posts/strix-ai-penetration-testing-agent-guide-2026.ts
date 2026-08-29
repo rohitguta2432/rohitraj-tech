@@ -28,7 +28,7 @@ export const strixAiPenetrationTestingAgentGuide2026: BlogPost = {
         },
         {
             heading: 'Strix: The Open-Source AI Pentester That Proves Every Bug (2026 Guide)',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Most security tools tell you what *might* be wrong. A static scanner flags a line, hands you a CVSS score, and leaves you to figure out whether it's real. Half the time it isn't — and your team learns to ignore the dashboard. That "alert fatigue" is the actual security problem at most startups: not a lack of findings, but a flood of findings nobody trusts enough to fix.
 

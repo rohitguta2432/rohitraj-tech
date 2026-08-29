@@ -30,7 +30,7 @@ export const openNotebookVsKhojVsSurfsenseNotebooklm2026: BlogPost = {
     {
       heading:
         'Self-Hosted NotebookLM Alternatives: Open Notebook vs Khoj vs SurfSense',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **June 7, 2026**, the top repository on GitHub Trending wasn't a new model or an agent framework — it was [Open Notebook](https://github.com/lfnovo/open-notebook), an open-source reimplementation of Google's NotebookLM that gained **+794 stars in a single day** to cross **26,684 total**. NotebookLM's pitch is simple and sticky: drop in your PDFs, papers, and web pages, then chat with them, summarize them, and even generate a podcast from them. The problem is equally simple — it's a Google cloud product, so your confidential documents leave your infrastructure.
 

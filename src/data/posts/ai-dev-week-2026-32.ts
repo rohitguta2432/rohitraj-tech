@@ -30,7 +30,7 @@ export const aiDevWeek2026W32: BlogPost = {
     },
     {
       heading: 'Why the Frontier Got Bigger and Everything Else Got Smaller',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Four of this week's seven drops are the same engineering move in different clothing: take a model nobody can afford to serve, and make it fit. MiniMax pruned 40% of its parameters into a lookup table. Cloudflare halved a KV cache and quartered a weight file. AirLLM refuses to load more than one layer at a time. Only Qwen went the other way.
 

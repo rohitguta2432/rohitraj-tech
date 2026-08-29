@@ -19,7 +19,7 @@ export const microservicesVsMonolithStartup: BlogPost = {
     },
 {
       heading: 'The Microservices Trap',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Most startups should start with a monolith. A well-structured monolith deployed as a single application is faster to develop, easier to debug, cheaper to run, and simpler to deploy than microservices. Microservices only make sense when you have twenty or more engineers, need independent scaling for specific components, or require different technology stacks for different parts of your system.
 

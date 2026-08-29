@@ -19,7 +19,7 @@ export const postgresqlVsMongodbStartup2026: BlogPost = {
     },
 {
       heading: 'The Debate That Won\'t Die',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 PostgreSQL is the better database for most startups because it handles relational data, JSON documents, full-text search, and vector embeddings in a single system with full ACID transactions. MongoDB is the better choice when your data is genuinely document-shaped, your schema changes constantly during rapid prototyping, or you need horizontal sharding across regions from day one.
 

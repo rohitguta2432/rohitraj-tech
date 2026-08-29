@@ -30,7 +30,7 @@ export const aiDevWeek2026W31: BlogPost = {
     },
     {
       heading: 'Why This Week the Releases and the Research Are One Story',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Two vendors shipped the same idea within 24 hours: you govern an agent by writing a file. GitHub put \`SKILL.md\` on every pull request; Google put an agent config in \`.agents/\`. On July 28, a 65-task benchmark found agents mostly don't obey long written policies, and a researcher published a worm that rides inside Word documents because a model can't separate instructions from content.
 

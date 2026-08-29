@@ -28,7 +28,7 @@ export const diffusionGemmaTextDiffusionLlmGuide2026: BlogPost = {
     },
     {
       heading: "DiffusionGemma: Google's bet that text doesn't have to be written left to right",
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **June 10, 2026**, Google [open-sourced DiffusionGemma](https://developers.googleblog.com/diffusiongemma-the-developer-guide/) — the first member of the Gemma family that generates text by **diffusion** rather than by the autoregressive, one-token-at-a-time process every mainstream LLM has used since GPT-2. Instead of writing a sentence word by word, DiffusionGemma starts with a 256-token canvas of placeholder tokens and **refines the whole block in parallel** over a handful of denoising passes, the same way an image-diffusion model resolves a picture out of noise.
 

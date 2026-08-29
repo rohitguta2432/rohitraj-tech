@@ -23,7 +23,7 @@ Neither is "better." If your team already ships in one stack, that's the right a
     },
     {
       heading: 'Why This Debate Still Matters',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Spring Boot is better for startups building complex backend systems with heavy business logic, enterprise integrations, or CPU-intensive processing like AI pipelines and analytics. Node.js is better for startups that need to ship a simple API fast, want a single language across frontend and backend, and are building I/O-heavy applications like real-time chat or notification services.
 

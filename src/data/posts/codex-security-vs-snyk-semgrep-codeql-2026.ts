@@ -29,7 +29,7 @@ export const codexSecurityVsSnykSemgrepCodeql2026: BlogPost = {
     },
     {
       heading: 'OpenAI Just Open-Sourced Its Own Code Scanner — Here Is What Changed',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 OpenAI released [\`openai/codex-security\`](https://github.com/openai/codex-security) as an open-source project under the **Apache-2.0 license** — a CLI and TypeScript SDK for "finding, validating, and fixing security vulnerabilities in your code." The tool had been in research preview since **March 2026**; the open-sourcing is what put it on the [Hacker News front page at 554 points](https://news.ycombinator.com/item?id=49096188) and past **4.1k stars with 111 commits on main**.
 

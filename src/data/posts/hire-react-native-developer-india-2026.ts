@@ -30,7 +30,7 @@ Skip React Native entirely if your app needs deep Bluetooth, AR, or 120fps anima
     },
     {
       heading: 'Hire React Native Developer India 2026 — The Honest Cost Math Before You Sign Anything',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you are looking to hire a React Native developer in India in 2026, your three real options cost wildly different amounts and produce wildly different things. A founding engineer ships a complete cross-platform MVP — Android, iOS, backend wiring, store submission — in 4 to 8 weeks for a fixed ₹6 to ₹9 lakh. A Bangalore or Pune agency quotes the same scope at ₹22 to ₹35 lakh, takes 14 to 18 weeks, and routes you through a project manager who has never written a line of code. A Toptal or Upwork freelancer charges ₹3,500 to ₹6,000 per hour and needs you to do the architecture yourself.
 

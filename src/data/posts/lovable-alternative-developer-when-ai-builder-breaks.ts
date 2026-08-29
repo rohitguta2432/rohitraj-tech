@@ -27,7 +27,7 @@ export const lovableAlternativeDeveloperWhenAiBuilderBreaks: BlogPost = {
     },
 {
       heading: 'Why Every "Lovable Alternative" List Is Wrong for Founders in Trouble',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If your Lovable app is already broken in production, the right alternative is not another AI builder — it is a human developer who can read your exported code in 48 hours and tell you whether to fix it or rebuild. Every "10 best Lovable alternatives" blog post is written for founders shopping *before* they commit. If you are past that point and you have 200 paying users on an app that fell over last Tuesday, switching to Bolt will not save you.
 

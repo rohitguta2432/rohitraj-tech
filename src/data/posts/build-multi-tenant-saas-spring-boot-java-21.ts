@@ -19,7 +19,7 @@ export const buildMultiTenantSaasSpringBootJava21: BlogPost = {
     },
 {
       heading: 'India\'s Retail Problem: 90% Unorganized',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built RetailOS, a multi-tenant retail SaaS platform using Spring Boot 3.4 and Java 21 with 12 Maven modules covering billing, inventory, GST-compliant invoicing, khata credit ledger, and offline sync with conflict resolution — designed specifically for India's unorganized retail sector where 90% of shops still run on paper registers and enterprise POS systems cost more than small shop owners can afford.
 

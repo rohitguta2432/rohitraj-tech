@@ -30,7 +30,7 @@ Skip Flutter if your app needs deep CallKit, complex WebRTC, or live AR — Reac
     },
     {
       heading: 'Hire Flutter Developer India 2026 — The Cost Math Before You Sign A Contract',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Flutter has won the cross-platform race in India in 2026. Three of the last five FinTech and consumer apps I scoped for clients picked Flutter over React Native — better UI consistency on low-end Android, faster animation on mid-tier devices, and one widget tree that ships pixel-identical on iOS and Android. If you are now trying to hire a Flutter developer in India, the three live options are structurally different and cost wildly different amounts.
 

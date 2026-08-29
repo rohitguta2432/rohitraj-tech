@@ -28,7 +28,7 @@ export const gemini36FlashVs35FlashLiteGuide2026: BlogPost = {
     },
     {
       heading: 'Gemini 3.6 Flash vs 3.5 Flash-Lite: What Google Actually Shipped',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **July 21, 2026**, Google released three models at once: **Gemini 3.6 Flash**, **Gemini 3.5 Flash-Lite**, and **Gemini 3.5 Flash Cyber** ([official announcement](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/)). The Hacker News thread crossed 740 points within a day, and most of the coverage read the headline benchmarks and stopped.
 

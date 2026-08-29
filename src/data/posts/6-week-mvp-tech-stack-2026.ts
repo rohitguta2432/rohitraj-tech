@@ -27,7 +27,7 @@ export const sixWeekMvpTechStack2026: BlogPost = {
     },
 {
       heading: '6-Week MVP Tech Stack in 2026 — The Boring Choices That Actually Ship',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you spend a week debating Next.js vs Remix, Postgres vs Mongo, or Vercel vs Fly, you have already lost 16% of your 6-week sprint. The right MVP stack in 2026 is opinionated, conservative, and boring on purpose. Every decision below is one I have shipped 5+ MVPs on. The reasoning is in the post — but the executive answer is: pick the boring choice every time.
 

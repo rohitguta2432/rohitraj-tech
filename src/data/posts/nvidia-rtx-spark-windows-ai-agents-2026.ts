@@ -28,7 +28,7 @@ export const nvidiaRtxSparkWindowsAiAgents2026: BlogPost = {
         },
         {
             heading: 'NVIDIA RTX Spark + Windows — What Microsoft’s Local-AI Superchip Means for Developers',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Two announcements landed inside a week and they are the same story told from two stages. At Computex 2026, NVIDIA and Microsoft [reinvented the Windows PC around a superchip called RTX Spark](https://nvidianews.nvidia.com/news/nvidia-microsoft-windows-pcs-agents-rtx-spark). A few days later in San Francisco, Satya Nadella opened Build 2026 by [declaring a "new paradigm"](https://www.startuphub.ai/ai-news/artificial-intelligence/2026/nadella-on-ai-microsoft-build-2026-ai-insights) — AI that stops answering prompts and starts running the work. RTX Spark is the silicon that makes the second claim more than a slide.
 

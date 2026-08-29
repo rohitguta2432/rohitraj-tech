@@ -27,7 +27,7 @@ export const openrouterVsLitellmVsPortkeyIndiaMvp2026: BlogPost = {
     },
     {
       heading: 'OpenRouter vs LiteLLM vs Portkey: Picking the Right LLM Gateway in 2026',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On May 28, 2026, OpenRouter [announced a $113M Series B](https://openrouter.ai/announcements/series-b) led by CapitalG (Alphabet's growth fund), with NVIDIA's NVentures, ServiceNow, MongoDB, Snowflake, and Databricks Ventures joining a16z and Menlo. That is a strange amount of money for what is, on the surface, an API proxy. The raise is really a bet on a category: the **LLM gateway** — the layer that sits between your application and the dozens of model providers you might call.
 

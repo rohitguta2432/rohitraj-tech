@@ -72,7 +72,7 @@ export default async function AboutPage({ params }: Props) {
                         <div className="about-avatar">
                             <Image
                                 src="/images/rohit.jpg"
-                                alt="Rohit Raj — Founding Engineer & AI Systems Architect"
+                                alt="Rohit Raj — AI Consultant · Forward Deployed Engineer"
                                 width={360}
                                 height={360}
                                 className="about-avatar-img"

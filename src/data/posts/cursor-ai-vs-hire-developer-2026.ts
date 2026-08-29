@@ -28,7 +28,7 @@ export const cursorAiVsHireDeveloper2026: BlogPost = {
     },
 {
       heading: 'Cursor AI vs Hiring a Developer in 2026 — The Honest Answer Up Front',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If your codebase is under 15K lines, has no PCI or HIPAA scope, and a senior engineer is reviewing every Cursor diff before it merges, Cursor Pro at $20 per month is the single best productivity buy a solo founder can make in 2026. The crossover happens the moment Cursor stops being a copilot and starts being the entire engineering team — its Agent mode burns 5 to 10 premium requests per multi-step task, the $20 credit pool depletes by the second week of focused work, and Pro+ at $60 or Ultra at $200 still does not buy you architectural judgment.
 

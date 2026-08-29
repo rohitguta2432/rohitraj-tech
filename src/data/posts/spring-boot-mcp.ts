@@ -23,7 +23,7 @@ This doesn't apply if your AI integration is single-client and unlikely to grow 
     },
     {
       heading: 'What Is MCP and Why Should You Care?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To build an MCP server with Spring Boot, add the spring-ai-mcp-server-spring-boot-starter dependency, annotate your service methods with @Tool, and configure stdio or HTTP/SSE transport in application.yml. Spring AI auto-discovers your tools and exposes them via the Model Context Protocol, letting any compatible AI assistant — Claude, GPT-4, or custom agents — call your backend functions without bespoke integration code.
 

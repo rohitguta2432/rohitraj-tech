@@ -19,7 +19,7 @@ export const buildOnDeviceAiScamDetectorAndroidGemma: BlogPost = {
     },
 {
       heading: 'India\'s ₹1,750 Crore Scam Problem',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built ScamRakshak, an on-device AI scam detector for Android using a 3-tier inference engine — Gemma 4 LLM via ML Kit GenAI for contextual analysis, LiteRT binary classifier for broad device support, and a regex fallback engine for universal coverage — with zero network permissions, Hindi-first bilingual output, and four input modes (text, screenshot OCR, URL analysis, UPI ID verification) to protect India's 500 million Hindi-speaking smartphone users from digital fraud.
 

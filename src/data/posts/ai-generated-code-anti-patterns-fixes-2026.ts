@@ -27,7 +27,7 @@ export const aiGeneratedCodeAntiPatternsFixes2026: BlogPost = {
     },
     {
       heading: 'AI-Generated Code Anti-Patterns: The 9 Bugs Hiding in Vibe-Coded Apps',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 AI coding agents have changed what one founder can ship in a weekend. Cursor + Claude, Lovable, Bolt, v0, Replit Agent, GitHub Copilot — all of them now generate 70% of a working MVP from a prompt. That part is genuinely extraordinary, and this post is not "AI builders are bad." They are not.
 

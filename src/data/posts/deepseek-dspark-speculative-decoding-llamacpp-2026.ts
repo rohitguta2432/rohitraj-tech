@@ -29,7 +29,7 @@ export const deepseekDsparkSpeculativeDecodingLlamacpp2026: BlogPost = {
     },
     {
       heading: 'llama.cpp Just Got 2x Faster on DeepSeek V4 — and the Docs Have Not Caught Up',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **August 2, 2026**, maintainer \`am17an\` merged [PR #25784, "DeepseekV4 MTP + DSpark"](https://github.com/ggml-org/llama.cpp/pull/25784) into llama.cpp master. It landed exactly two days after DeepSeek released **DeepSeek-V4-Flash-0731** — a 284B-parameter mixture-of-experts model with **13B active parameters per token** and a **1M-token context window**, published under the **MIT license** ([release coverage](https://www.marktechpost.com/2026/07/31/deepseek-upgrades-deepseek-v4-flash-0731-with-major-agentic-and-coding-gains/)).
 

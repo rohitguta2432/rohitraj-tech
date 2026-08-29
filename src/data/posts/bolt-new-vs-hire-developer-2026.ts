@@ -32,7 +32,7 @@ This crossover doesn't apply if your app stays simple, internal-only, or never s
     },
     {
       heading: 'Bolt.new vs Hiring a Developer in 2026 — The Honest Answer Up Front',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If your project will stay under 10K lines of code, has no payment edge cases, and you are still proving the idea, Bolt.new at $25 per month beats hiring a developer every time. The crossover happens the moment you onboard real users — Bolt's complex-app success rate drops to 31% above a certain complexity threshold, and a single Supabase auth bug routinely burns 5 to 8 million tokens before it is fixed. At that point a senior developer at $40 per hour for two weeks is cheaper than the token refill plus your lost weekend.
 

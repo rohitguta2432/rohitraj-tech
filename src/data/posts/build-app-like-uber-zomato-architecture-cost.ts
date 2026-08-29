@@ -18,7 +18,7 @@ export const buildAppLikeUberZomatoArchitectureCost: BlogPost = {
     },
 {
       heading: 'How Much Does It Cost to Build an App Like Uber or Zomato?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Building an on-demand marketplace MVP like Uber or Zomato costs ₹8,50,000-₹14,00,000 ($10,000-$17,000) with a freelance developer in India, taking 10-14 weeks. This includes a customer app, provider app, admin panel, payment integration, and live location tracking. Monthly running costs start at just ₹2,000-₹4,000 ($25-$50) for your first 1,000 users. Agencies quote ₹20-40 lakhs for the same scope because they sell the fantasy of replicating Uber's full platform.
 

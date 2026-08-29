@@ -28,7 +28,7 @@ export const vibethinker3bTinyReasoningModelGuide2026: BlogPost = {
         },
         {
             heading: 'VibeThinker-3B: A 3B Reasoning Model That Rivals 671B Giants (2026)',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 The headline writing itself this week is "a 3B model matches a 671B model." That is technically true on one benchmark and quietly misleading on the rest, and the gap between those two readings is the whole reason [VentureBeat ran a piece](https://venturebeat.com/technology/why-weibos-tiny-vibethinker-3b-has-the-ai-world-arguing-over-benchmarks-again) titled "Why Weibo's tiny VibeThinker-3B has the AI world arguing over benchmarks again." So this is not a launch recap. It is a builder's read on what is actually real here, what is benchmark theater, and whether a 3B reasoning model earns a slot in anything you ship.
 

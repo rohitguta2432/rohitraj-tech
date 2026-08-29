@@ -28,7 +28,7 @@ export const inkling975bRunLocallyVramGuide2026: BlogPost = {
         },
         {
             heading: 'Inkling 975B: free weights, $46,206-a-month hardware',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Forty-six thousand dollars a month. That's what the machine costs.
 

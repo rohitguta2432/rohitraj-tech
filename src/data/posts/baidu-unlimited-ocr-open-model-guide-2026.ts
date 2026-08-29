@@ -28,7 +28,7 @@ export const baiduUnlimitedOcrOpenModelGuide2026: BlogPost = {
         },
         {
             heading: 'Baidu Unlimited-OCR: The Open-Source Model That Reads 40+ Page Documents in One Pass (2026)',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Every OCR model has the same dirty secret: it slows down the longer the document gets. Feed a vision-language OCR model a 40-page contract and its key-value (KV) cache grows with every token it generates — so memory climbs and throughput sags right when you need it most, on exactly the long documents that are painful to process by hand. That "memory wall" is why most production OCR pipelines quietly chop documents into single pages, run them independently, and then try to stitch the structure back together afterward.
 

@@ -19,7 +19,7 @@ export const buildEnterpriseDealMatchingPlatformSpringBootNextjs: BlogPost = {
     },
 {
       heading: 'The Problem: Deal Networks Run on Spreadsheets',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built SynFlow, a full-stack enterprise deal matching platform using Spring Boot 3.4, Next.js 14, and GPT-4o that automatically scores and matches investor profiles to deals using a rule-based algorithm with AI-powered profile extraction from unstructured LinkedIn text — replacing the spreadsheets and manual introductions that dominate private deal networks today.
 

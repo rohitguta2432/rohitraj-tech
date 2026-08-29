@@ -29,7 +29,7 @@ export const replitAgentVsHireDeveloper2026: BlogPost = {
     },
 {
       heading: 'Replit Agent vs Hiring a Developer in 2026: The Honest Answer',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For a real production MVP in 2026, **Replit Agent alone will not get you across the finish line**. The combination that actually ships is Replit Agent on the $25/month Core plan for prototyping and one-off scripts, paired with a senior engineer (₹2L–3L/month in India, roughly $2,400–$3,600) for the production rebuild. Replit Agent reliably ships a demo. A senior engineer turns that demo into a product your customers can pay for.
 

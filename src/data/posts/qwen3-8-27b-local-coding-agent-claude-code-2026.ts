@@ -29,7 +29,7 @@ export const qwen3827bLocalCodingAgentClaudeCode2026: BlogPost = {
     {
       heading:
         'Qwen3.8-27B as a Local Coding Agent: What Changed on August 14',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 The interesting number on the [Qwen3.8-27B model card](https://huggingface.co/Qwen/Qwen3.8-27B) is not the benchmark headline. It is the intersection of three facts that have never been true of one model at the same time: **61.7 on SWE-bench Pro**, a **17.92GB** 4-bit file, and an **Apache 2.0** license. Agentic-coding scores in that range belonged to cloud models you rent per token; models that fit a single consumer GPU used to top out as autocomplete. Alibaba's Qwen team released the model on **August 14, 2026**, and ten days later it sits at **#1 trending on Hugging Face** with **790 quantized derivatives** already published.
 

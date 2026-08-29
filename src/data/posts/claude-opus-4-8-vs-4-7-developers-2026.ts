@@ -27,7 +27,7 @@ export const claudeOpus48Vs47Developers2026: BlogPost = {
         },
         {
             heading: 'Claude Opus 4.8 vs 4.7 for Developers — What Changed and Should You Upgrade',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Anthropic dropped [Claude Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8) this morning — May 28, 2026 — and the announcement and the news coverage are both doing the same thing: listing benchmark numbers without telling a working developer whether to actually change anything in their codebase today. I ship client MVPs on Claude Code and the Anthropic Messages API every week, so this is the question I care about: is this a real upgrade, or a leaderboard bump I can ignore until the next sprint?
 

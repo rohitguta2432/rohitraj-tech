@@ -29,7 +29,7 @@ export const whatIsHarnessEngineeringCodex2026: BlogPost = {
         },
         {
             heading: 'What Is Harness Engineering? OpenAI’s Agent-First Codex Playbook',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 OpenAI published an essay called [Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/) back in **February 2026**, and this week it climbed back onto the Hacker News front page with **286 points and ~200 comments** — a sign that the idea is finally landing now that the tooling caught up to it. The essay documents a five-month internal experiment: a small team shipped a production beta containing roughly **a million lines of code without writing a single line of it by hand**, driving everything through Codex. [InfoQ’s coverage](https://www.infoq.com/news/2026/02/openai-harness-engineering-codex/) called it a blueprint for large-scale agent-driven development, and it reads like one.
 

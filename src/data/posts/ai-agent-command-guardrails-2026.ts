@@ -28,7 +28,7 @@ export const aiAgentCommandGuardrails2026: BlogPost = {
         },
         {
             heading: 'Stop Your AI Coding Agent Running rm -rf: Command Guardrails Compared (2026)',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 You hand a coding agent a boring chore — "clean up the build artifacts" — walk away to refill your coffee, and come back to a terminal that has helpfully run \`rm -rf\` one directory too high. The agent wasn't hacked. It wasn't tricked. It did exactly what you asked, in the most efficient way it could find, with none of the flinch a human developer has learned from getting burned once. There's a **[documented case of a Claude Code user whose cleanup task executed \`rm -rf ~/\` and wiped their home directory](https://www.reddit.com/r/ClaudeAI/)** — hours of uncommitted work, gone in one confident tool call.
 

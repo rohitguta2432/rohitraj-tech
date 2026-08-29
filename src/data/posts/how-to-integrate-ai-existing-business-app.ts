@@ -19,7 +19,7 @@ export const howToIntegrateAiExistingBusinessApp: BlogPost = {
     },
 {
       heading: 'Can You Add AI to an Existing App Without Rebuilding It?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Yes — integrating AI into your existing business application does not require a rewrite. The most practical approach is to add AI as a new layer alongside your current system. Start with semantic search or automated reports (1-3 weeks, under $2,000), then graduate to chat interfaces if needed. Your existing database, API, and frontend all stay intact while AI reads from and enhances what you already have.
 

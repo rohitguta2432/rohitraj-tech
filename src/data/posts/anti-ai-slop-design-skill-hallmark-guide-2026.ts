@@ -28,7 +28,7 @@ export const antiAiSlopDesignSkillHallmarkGuide2026: BlogPost = {
         },
         {
             heading: 'Every AI-built site looks the same — and now there is a skill for that',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 You have seen it, and you can spot it in about two seconds. An AI coding agent ships you a landing page: **Inter** for every word, a **purple-to-cyan gradient** somewhere near the top, a row of **six identical rounded cards**, a subtle **bounce on every hover**, and a hero that says "Build faster with AI." Different prompt, different product, same page. This look now has a name — *AI slop* — and this week it got a dedicated antidote.
 

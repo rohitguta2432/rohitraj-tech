@@ -28,7 +28,7 @@ export const aiAgentPaymentsX402VsAp22026: BlogPost = {
         },
         {
             heading: 'AI Agent Payments in 2026: x402 vs AP2 — How to Let Your Agent Actually Pay',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 The thing that broke in 2026 is the assumption baked into every payment system since the web began: that a **human clicks "buy."** Autonomous agents do not click. They send HTTP requests, and the moment one of them needs to pay for an API call, a GPU-minute, or another agent's output, the entire card-and-checkout stack falls over. The fix that actually shipped is **x402**, a payment protocol built directly on the long-dormant HTTP 402 status code, and by **May 2026 it had settled roughly $43.5M across 161M+ transactions** ([AgentLux's May 2026 tally](https://agentlux.ai/blog/the-agent-payments-showdown-x402-vs-ap2-vs-mpp-vs-acp-in-2026)).
 

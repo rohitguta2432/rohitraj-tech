@@ -30,7 +30,7 @@ export const aiDevWeek2026W35: BlogPost = {
     },
     {
       heading: 'Why Every Drop This Week Points the Same Direction',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Six unrelated things happened this week — a spend dataset, a pricing-page footnote, a withheld weights release, a community quant, a leaderboard position, and a chip announcement. They are the same story told six times.
 

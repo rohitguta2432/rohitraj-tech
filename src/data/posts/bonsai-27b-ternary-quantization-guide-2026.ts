@@ -28,7 +28,7 @@ export const bonsai27bTernaryQuantizationGuide2026: BlogPost = {
         },
         {
             heading: 'Bonsai 27B: what a 27B model on a phone actually costs you',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **July 14, 2026**, PrismML published 1-bit and ternary compressions of Qwen3.6-27B and called the result [Bonsai 27B](https://prismml.com/news/bonsai-27b). The headline wrote itself, and Hacker News obliged: *"a 27B-class model that runs on a phone"* hit **498 points and 184 comments** within a day. The ternary build is **5.9 GB**. The 1-bit build is **3.9 GB**. Both are Apache 2.0. Both ship with a 262K-token context.
 

@@ -28,7 +28,7 @@ export const hireIosDeveloperIndiaMvp2026: BlogPost = {
     },
     {
       heading: 'Hire iOS Developer India 2026 — Why The Native Decision Is Harder Than It Looks',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Native iOS in 2026 is a deliberate choice, not a default. React Native 0.78 and Flutter 3.27 on Impeller have closed the visual gap with Swift to the point that, pre-PMF, most founders cannot justify the native cost premium. The teams that still pick native iOS in India this year are doing it for one of three reasons: HealthKit, CallKit, or CarPlay integrations the cross-platform plugins do not handle cleanly; a brand that demands pixel-perfect iOS-native feel on day one; or an Apple Watch / Vision Pro companion shipping alongside iPhone.
 

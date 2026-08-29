@@ -28,7 +28,7 @@ export const appleSpeechAnalyzerVsWhisperOnDeviceStt2026: BlogPost = {
         },
         {
             heading: 'Apple finally has a great speech API — and told you nothing about it',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Apple did a strange thing with SpeechAnalyzer. They replaced the decade-old \`SFSpeechRecognizer\`, shipped a genuinely modern on-device transcription stack in **iOS 26 and macOS 26**, demoed it at [WWDC25](https://developer.apple.com/videos/play/wwdc2025/277/), and then published **not a single word error rate**. The API landed with marketing adjectives — "fast", "on-device", "long-form" — and zero measured accuracy.
 

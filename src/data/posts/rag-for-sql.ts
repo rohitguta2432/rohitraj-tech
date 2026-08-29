@@ -23,7 +23,7 @@ This doesn't apply to small schemas (under ~10 tables) — there, prompt stuffin
     },
     {
       heading: 'The Problem With Prompt Stuffing',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To improve LLM-to-SQL accuracy on production databases, use RAG with pgvector to retrieve only relevant table schemas instead of stuffing the entire schema into the prompt. Embed each table's metadata — column names, types, constraints, and sample data — as vectors, then retrieve the top-5 most relevant chunks based on the user's natural language question. This approach more than doubles SQL generation accuracy while cutting token usage by 75%.
 

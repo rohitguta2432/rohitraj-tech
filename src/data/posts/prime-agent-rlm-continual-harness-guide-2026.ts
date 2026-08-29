@@ -30,7 +30,7 @@ export const primeAgentRlmContinualHarnessGuide2026: BlogPost = {
     {
       heading:
         'Prime Intellect Shipped a Coding Agent That Rewrites Its Own Scaffolding. Here Is What That Actually Means',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **August 5, 2026**, Prime Intellect published [*"Prime Agent: A self-improving RLM agent"*](https://www.primeintellect.ai/blog/prime-agent) and open-sourced the harness under **MIT**. Four days later the repo sits at **9.4k stars** and took **#1 on GitHub trending after gaining 2,483 stars in a single day** — the largest daily gain in the agent-tooling category this week.
 

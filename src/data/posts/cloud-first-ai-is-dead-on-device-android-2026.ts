@@ -19,7 +19,7 @@ export const cloudFirstAiIsDeadOnDeviceAndroid2026: BlogPost = {
     },
 {
       heading: 'The Cloud-First Era Is Over',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built ScamRakshak, a fully offline Android scam detection app using a 3-tier AI inference engine — Gemma 4 on-device LLM, LiteRT binary classifier, and regex fallback — with zero network permissions, proving that production-grade AI apps no longer need cloud APIs for natural language processing tasks on mobile devices.
 

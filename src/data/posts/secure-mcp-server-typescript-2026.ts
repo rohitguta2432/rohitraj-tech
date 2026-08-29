@@ -27,7 +27,7 @@ export const secureMcpServerTypescript2026: BlogPost = {
         },
         {
             heading: 'Build a Secure MCP Server in TypeScript — The Post-Copilot Defense Playbook (2026)',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I have shipped Spring Boot MCP servers ([here's the Java one](/en/notes/spring-boot-mcp)) into client MVPs for the last six months, and watched the MCP TypeScript ecosystem move faster than any framework I have built on since Next.js 13's app-router rewrite. The Anthropic-published SDK is now at **v1.29.0** as of **March 30, 2026**, with v2 in pre-alpha and v1.x still the explicit prod recommendation per the [official typescript-sdk README](https://github.com/modelcontextprotocol/typescript-sdk).
 

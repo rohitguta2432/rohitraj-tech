@@ -29,7 +29,7 @@ export const aiDevWeek2026W28: BlogPost = {
     },
     {
       heading: 'Why This Week Points One Direction: Cheaper Agents',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Most weeks in AI are a pile of unrelated launches. This one had a spine. Read the six drops below back to back and they all answer the same question a working developer actually asks: *how do I get real agent behavior without a frontier-model bill or a data-center GPU?*
 

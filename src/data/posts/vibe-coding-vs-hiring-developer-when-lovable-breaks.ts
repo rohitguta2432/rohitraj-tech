@@ -30,7 +30,7 @@ This doesn't apply to internal tools, prototypes, or apps that intentionally sta
     },
     {
       heading: 'Should You Keep Vibe Coding or Hire a Developer in 2026?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Keep vibe coding when your app has under 500 active users, no custom auth, standard Stripe payments, and your iteration loop is fast enough to ship daily. Hire a developer — ideally a senior contractor on a fixed sprint — when any two of these are true: Lovable or Bolt breaks the same feature every time you try to extend it, your auth or payments need customization the tool cannot express, you are entering a regulated domain, or your AI coding loop has slowed to less than one working feature per day.
 

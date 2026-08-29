@@ -19,7 +19,7 @@ export const upiFraud805CroreWhyIBuiltOfflineScamDetector: BlogPost = {
     },
 {
       heading: 'The Numbers Are Staggering',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built ScamRakshak, an offline Android scam detector with zero network permissions that uses on-device AI (Gemma 4 LLM, LiteRT classifier, and regex fallback) to analyze suspicious UPI messages, URLs, and screenshots in Hindi and English — because India lost 805 crore to UPI fraud this year and every existing solution requires internet that 40% of vulnerable users lack.
 

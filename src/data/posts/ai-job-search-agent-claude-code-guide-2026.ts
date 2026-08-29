@@ -28,7 +28,7 @@ export const aiJobSearchAgentClaudeCodeGuide2026: BlogPost = {
     },
     {
       heading: 'ai-job-search: The Viral Claude Code Job Agent, Explained',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On July 8, 2026, a repository called [ai-job-search](https://github.com/MadsLorentzen/ai-job-search) by Mads Lorentzen picked up **more than 5,000 GitHub stars in twenty-four hours** — the single biggest one-day gain on GitHub's trending page that day — pushing it past **15,700 stars and 4,100 forks** in total. The pitch is disarmingly simple: fork it, fill in your profile, and let Claude "evaluate jobs, tailor CVs, write cover letters, and prepare you for interviews."
 

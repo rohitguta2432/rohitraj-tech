@@ -28,7 +28,7 @@ export const lovableAppProductionBugsNeedRealEngineer2026: BlogPost = {
     },
     {
       heading: 'When Your Lovable App Hits Production — The 5 Bugs That Always Need a Real Engineer in 2026',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Vibe-coding platforms (Lovable, Bolt, v0, Cursor + Claude, Replit Agent) ship 70% of a working MVP in a weekend. The first 100 users do not surface the bugs. By user 500, the same five categories of bugs always appear — auth edge cases, row-level security holes, payment webhooks, performance regressions, schema migration disasters. None of these can be fixed with another vibe-coding prompt. Each one requires a senior engineer who can read the generated code, find the gap, and write the fix.
 

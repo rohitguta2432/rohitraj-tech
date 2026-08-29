@@ -28,7 +28,7 @@ export const claudeCodeVsHireDeveloper2026: BlogPost = {
     },
 {
       heading: 'Claude Code vs Hiring a Developer in 2026',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 **The short answer:** Claude Code is the most capable agentic coding CLI shipped in 2026. For a solo founder writing prototypes, internal tools, scripts, and exploratory features, $20/month of Claude Code Pro is the best price-to-output ratio that has ever existed for software. For shipping a real product that customers pay for, in production, with users complaining at 2 AM, you still need a human engineer. The CLI is a developer **multiplier**, not a developer **replacement**. The math gets interesting at the intersection of those two truths.
 

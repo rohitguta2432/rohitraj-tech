@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'About Rohit Raj - Founding Engineer & AI Systems Architect';
+export const alt = 'About Rohit Raj - AI Consultant · Forward Deployed Engineer';
 export const size = {
     width: 1200,
     height: 630,

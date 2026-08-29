@@ -30,7 +30,7 @@ export const aiNewsApril2026WhatFoundersShouldBuild: BlogPost = {
     },
 {
       heading: 'Why Another April 2026 AI Roundup?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Because every other one is a list. Crescendo, devFlokers, HumAI, TechCrunch, BuildEZ, MeanCEO — all good sources, all ordered the same way: date, company, model name, one-line summary. Useful for a morning scroll. Useless if you are deciding what to ship next quarter.
 

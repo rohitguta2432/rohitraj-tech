@@ -27,7 +27,7 @@ export const foundingEngineerIndiaVsToptalArcUplers2026: BlogPost = {
     },
 {
       heading: 'Hire a Founding Engineer in India — Direct vs Toptal, Arc, Uplers in 2026',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you have searched "hire founding engineer India" recently, the top 5 SERP results are all marketplaces: Toptal, Arc, Uplers, Second Talent, HighCircl. Each promises a vetted senior in 24-72 hours. Each takes a 30-50% markup on top of the engineer's rate. Each adds 2-4 weeks of recruiter screening before you see a candidate. None publishes the engineer's portfolio publicly.
 

@@ -2,7 +2,14 @@ import type { Metadata } from 'next';
 
 // High-Intent Keywords for Founder/Startup Audience
 export const SEO_KEYWORDS = [
-    // Primary High-Intent Keywords
+    // Primary High-Intent Keywords (FDE consulting pivot 2026-08-29)
+    'AI Consultant',
+    'Forward Deployed Engineer',
+    'Hire Forward Deployed Engineer',
+    'Fractional Forward Deployed Engineer',
+    'Fractional AI Engineer',
+    'MCP Integration Consultant',
+    'Claude Code Consultant',
     'Founding Engineer for Hire in India',
     'Founding Engineer for Hire India',
     'Hire a Founding Engineer India',
@@ -99,7 +106,7 @@ export const defaultMetadata: Metadata = {
                 url: SITE_CONFIG.images.og,
                 width: 1200,
                 height: 630,
-                alt: 'Rohit Raj - Founding Engineer & AI Systems Architect',
+                alt: 'Rohit Raj - AI Consultant · Forward Deployed Engineer',
             },
         ],
     },
@@ -135,8 +142,8 @@ export const personSchema = {
     url: SITE_CONFIG.url,
     email: SITE_CONFIG.author.email,
     image: `${SITE_CONFIG.url}/og-image.png`,
-    jobTitle: 'Founding Engineer for Hire in India — AI Systems Architect',
-    description: 'Founding engineer for hire in India. Backend + AI engineer with 10+ years shipping production AI MVPs, distributed architectures, and custom AI systems for early-stage startups worldwide.',
+    jobTitle: 'AI Consultant · Forward Deployed Engineer',
+    description: 'AI consultant working as a forward deployed engineer: embedded with client teams, shipping AI agents, MCP integrations, and LLM features to production — with evaluation suites proving they work. 10+ years shipping production systems.',
     address: {
         '@type': 'PostalAddress',
         addressLocality: 'Pune',
@@ -156,6 +163,11 @@ export const personSchema = {
         'https://x.com/rohitraj2482',
     ],
     knowsAbout: [
+        'Forward Deployed Engineering',
+        'Model Context Protocol (MCP)',
+        'AI Agents',
+        'LLM Evaluation',
+        'Claude API',
         'Agentic AI Development',
         'Text-to-SQL Systems',
         'RAG (Retrieval Augmented Generation)',
@@ -203,8 +215,8 @@ export const serviceSchema = {
         name: 'Rohit Raj',
         url: SITE_CONFIG.url,
     },
-    name: 'Founding Engineer for Hire in India — AI MVP in 6 Weeks',
-    description: 'End-to-end founding engineer service from India: ship a production AI MVP in 6 weeks. Backend, mobile, AI, infra — one senior engineer, full code ownership.',
+    name: 'AI Consulting & Forward Deployed Engineering',
+    description: 'AI consulting delivered forward-deployed: one senior engineer embedded with your team, shipping agents, MCP integrations, and LLM features to production. Fractional retainer or fixed-scope pilot; full code ownership.',
     areaServed: [
         { '@type': 'Country', name: 'India' },
         { '@type': 'Place', name: 'Worldwide' },
@@ -497,7 +509,7 @@ export function createPageMetadata(
 
     // Resolve page image. Fall back to site OG image so social cards never render naked.
     const ogImageUrl = resolveImageUrl(options.image?.src);
-    const ogImageAlt = options.image?.alt ?? 'Rohit Raj — Founding Engineer & AI Systems Architect';
+    const ogImageAlt = options.image?.alt ?? 'Rohit Raj — AI Consultant · Forward Deployed Engineer';
 
     // A non-English URL for a route whose body is English is a duplicate of the
     // /en page, and canonical alone has not been enough: GSC shows

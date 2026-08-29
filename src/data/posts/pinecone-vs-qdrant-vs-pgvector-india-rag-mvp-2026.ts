@@ -24,11 +24,11 @@ export const pineconeVsQdrantVsPgvectorIndiaRagMvp2026: BlogPost = {
   sections: [
         {
       heading: 'TL;DR',
-      content: `At 500K embeddings for an Indian RAG MVP, Pinecone Standard costs ~₹6,200/month, self-hosted Qdrant runs ~₹1,400/month on Hetzner, and pgvector inside the Postgres you already pay for adds ₹0. Here is the real cost math, recall benchmark on a Hindi+English corpus, and the migration story when you outgrow each. By Rohit Raj — Founding Engineer · 10+ yrs MVP shipping · LinkedIn`,
+      content: `At 500K embeddings for an Indian RAG MVP, Pinecone Standard costs ~₹6,200/month, self-hosted Qdrant runs ~₹1,400/month on Hetzner, and pgvector inside the Postgres you already pay for adds ₹0. Here is the real cost math, recall benchmark on a Hindi+English corpus, and the migration story when you outgrow each. By Rohit Raj — AI Consultant · Forward Deployed Engineer · LinkedIn`,
     },
 {
       heading: 'Pinecone vs Qdrant vs pgvector — Which Vector DB for India RAG MVP (2026)',
-      content: `By [Rohit Raj](/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 ## TL;DR
 

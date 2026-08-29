@@ -19,7 +19,7 @@ export const pwaOfflineSync: BlogPost = {
     },
 {
       heading: 'Why Offline-First Matters for Travel Apps',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To build an offline-first PWA, you need three layers working together: a service worker with cache-first strategy for static assets and network-first for API data, IndexedDB (via Dexie.js) as the local source of truth for structured data, and the Background Sync API to queue write operations while offline and replay them automatically when connectivity returns. This pattern ensures your app works fully offline without degraded functionality.
 

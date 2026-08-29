@@ -29,7 +29,7 @@ export const ornith1SelfImprovingCodingModelGuide2026: BlogPost = {
         },
         {
             heading: 'Ornith-1.0: The Self-Improving Open-Source Coding Model, Tested (2026)',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **June 25, 2026**, a team called [DeepReinforce](https://deep-reinforce.com/ornith_1_0.html) dropped **Ornith-1.0** — a family of open-source coding models spanning **9B Dense, 31B Dense, 35B MoE, and 397B MoE**, all under a plain **MIT license**, all post-trained on top of Gemma 4 and Qwen 3.5. It hit [#1 on r/LocalLLaMA](https://news.ycombinator.com/item?id=48722052) and trended across Hugging Face within days.
 

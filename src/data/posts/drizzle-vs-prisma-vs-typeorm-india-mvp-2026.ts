@@ -29,7 +29,7 @@ export const drizzleVsPrismaVsTypeormIndiaMvp2026: BlogPost = {
     },
     {
       heading: 'Drizzle vs Prisma vs TypeORM — the real ORM pick for an India MVP in 2026',
-      content: `By [Rohit Raj](/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Every "which TypeScript ORM" comparison on the SERP today is either a generic stack-trendiness post from a Western publication or a Drizzle marketing piece that quietly ignores Prisma's introspection wins. Indian founders pay the actual price for picking wrong — Vercel function cold starts get worse from Mumbai because the function is served from Singapore or Frankfurt, every extra MB of bundle adds latency on India's flaky last-mile, and a slow migration story burns a sprint when you need to ship.
 

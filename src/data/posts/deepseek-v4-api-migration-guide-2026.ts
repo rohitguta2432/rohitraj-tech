@@ -27,7 +27,7 @@ export const deepseekV4ApiMigrationGuide2026: BlogPost = {
         },
         {
             heading: 'DeepSeek V4 API Migration: What Breaks on July 24, 2026',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 There's a special category of API change that doesn't trend on Hacker News but quietly breaks thousands of production systems on a scheduled date. DeepSeek's model-name retirement is the next one on the calendar: on **July 24, 2026 at 15:59 UTC**, the \`deepseek-chat\` and \`deepseek-reasoner\` identifiers stop resolving. Not "deprecated with a warning header." Not "redirected to the nearest equivalent." [DeepSeek's own words](https://api-docs.deepseek.com/news/news260424/): *"fully retired and inaccessible."*
 

@@ -22,7 +22,7 @@ These numbers don't apply if you need a 5+ person team, formal SLAs, or HIPAA/SO
     },
     {
       heading: 'How Much Does It Really Cost to Build a Mobile App in India?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Building a mobile app in India costs between $3,000 and $30,000 when you hire a senior freelance developer directly — far less than the $50,000-$500,000 agencies quote. A simple utility app runs $3,000-$6,000, an MVP with auth and database costs $7,000-$12,000, and a complex app with AI, payments, and real-time features ranges from $12,000-$30,000. The key is cutting out agency overhead.
 

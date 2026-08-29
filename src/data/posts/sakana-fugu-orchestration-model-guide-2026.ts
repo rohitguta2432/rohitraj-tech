@@ -28,7 +28,7 @@ export const sakanaFuguOrchestrationModelGuide2026: BlogPost = {
         },
         {
             heading: 'Sakana Fugu: The Orchestration Model That Commands Other LLMs (2026)',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For about two years, the standard architecture advice for a serious LLM product has been the same: do not call one model directly — put a router in front of it. Cheap model for the easy turns, a frontier model for the hard ones, a fallback for when a provider returns a 502. I have built that layer by hand for half a dozen clients. On June 22, 2026, [Sakana AI](https://sakana.ai/fugu/) shipped a product that collapses that whole pattern into a single API call: **Sakana Fugu**, an orchestration model that selects, delegates to, and combines other models for you.
 

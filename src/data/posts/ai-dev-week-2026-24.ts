@@ -29,7 +29,7 @@ export const aiDevWeek2026W24: BlogPost = {
     },
     {
       heading: 'Why This Week Matters Together',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For two years "AI coding tool" meant something that helped you type faster. Week 24 is where that definition broke. OpenAI's Codex stopped being an autocomplete-on-steroids and became a thing that **ships a running app** — Sites hosts it, Annotations edits it in place, and six role plugins point it at non-engineering work. The engine to run that kind of agent cheaply also landed the same 72 hours: **three open-weight models** (MiniMax M3, Gemma 4 12B, NVIDIA Nemotron 3 Ultra) that you can self-host instead of renting.
 

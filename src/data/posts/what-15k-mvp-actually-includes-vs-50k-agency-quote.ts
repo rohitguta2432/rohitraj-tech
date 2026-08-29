@@ -27,7 +27,7 @@ export const what15kMvpActuallyIncludesVs50kAgencyQuote: BlogPost = {
     },
 {
       heading: 'What a $15K MVP Actually Includes — vs. the $50K Agency Quote You Just Got',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you have just received a $50K-$120K agency quote for an MVP, this post is the line-item breakdown of where that money goes — and how the same scope ships at $15K-$30K with a senior contractor in 6 weeks. The gap is not magic. It is overhead, markup, and project-management theater that does not touch your codebase.
 

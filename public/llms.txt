@@ -1,6 +1,6 @@
-# Rohit Raj — Founding Engineer & AI Systems Architect
+# Rohit Raj — AI Consultant · Forward Deployed Engineer
 
-> Backend engineer with 6+ years experience building production AI systems, distributed architectures, and mobile apps for startups. Based in India, available worldwide.
+> AI consultant working as a forward deployed engineer: embedded with client teams, shipping AI agents, MCP integrations, and LLM features to production — with evaluation suites proving they work. Based in Pune, India; remote worldwide. Hire: https://rohitraj.tech/en/hire
 
 Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-full.txt
 

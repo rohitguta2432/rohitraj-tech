@@ -28,7 +28,7 @@ export const nvidiaLocateAnything3bVisualGroundingGuide2026: BlogPost = {
         },
         {
             heading: 'NVIDIA LocateAnything-3B: The Open Visual Grounding Model That Beats YOLO (2026 Guide)',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For a decade, "detect this thing in an image" meant training a detector on a fixed list of classes. YOLO is brilliant at that, but it only knows the labels you trained it on — ask it for "the Add to Cart button that turns grey when the form is invalid" and it has nothing to say. The moment you needed an open-ended, describe-it-in-words query, you were stuck stitching together a captioner, a segmenter, and a lot of glue.
 

@@ -27,7 +27,7 @@ export const sixWeekMvpSprintWeekByWeekBreakdown: BlogPost = {
     },
 {
       heading: '6-Week MVP Sprint — Week-by-Week Breakdown of What Actually Ships',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 A 6-week MVP sprint is not a 6-week project with marketing copy on top. It is a fixed-scope, fixed-price contract where the scope doc is locked on day one, the deploy happens on day 42, and the founder gets a production app with auth, billing, and a working core feature set. Every week has a single output. If the output is wrong, we cut scope — never extend the timeline.
 

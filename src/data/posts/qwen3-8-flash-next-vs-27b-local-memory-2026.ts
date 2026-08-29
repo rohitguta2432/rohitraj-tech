@@ -29,7 +29,7 @@ export const qwen38FlashNextVs27bLocalMemory2026: BlogPost = {
     {
       heading:
         'Qwen3.8-Flash-Next vs Qwen3.8-27B: What Actually Changed on August 26',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Alibaba's Qwen team released [Qwen3.8-Flash-Next](https://github.com/QwenLM/Qwen3.8-Flash-Next) on **August 26, 2026**. Within seventy-two hours it was **#1 trending on Hugging Face** with **4.18k likes** — roughly **2.8× the like count of the next model on the board** — and r/LocalLLaMA had six separate top-of-day threads about it, most of them arguing about memory rather than quality.
 

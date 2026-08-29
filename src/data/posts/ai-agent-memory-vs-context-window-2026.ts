@@ -28,7 +28,7 @@ export const aiAgentMemoryVsContextWindow2026: BlogPost = {
         },
         {
             heading: "AI Agent Memory vs Context Window: Why a Bigger Window Isn't Memory",
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For two years the answer to "my agent forgets things" was "buy a bigger context window." That era is over. In mid-2026 the people actually shipping production agents — memory vendors, coding-agent teams, infra builders — have converged on a single, slightly deflating conclusion: **the long-context arms race ended without a winner, and persistent structured memory is the real differentiator** ([Zencoder, May 18 2026](https://zencoder.ai/newsletter/the-context-engine-ai-coding-agents)).
 

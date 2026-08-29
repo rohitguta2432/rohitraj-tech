@@ -28,7 +28,7 @@ export const opencodeVsClaudeCodeCursor2026: BlogPost = {
     },
     {
       heading: 'OpenCode vs Claude Code vs Cursor: The Best AI Coding Agent in 2026?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 As of **June 12, 2026**, the most-starred AI coding agent on GitHub is not Claude Code, not Cursor, and not OpenAI's Codex CLI — it is **OpenCode**, sitting at **172,198 stars** under an MIT license ([Morph LLM's June rankings](https://www.morphllm.com/ai-coding-agent)). It shipped **v1.17.4 today**, and LogRocket's June power rankings called it the first major shake-up in the coding-agent category since Cursor's last rebuild.
 

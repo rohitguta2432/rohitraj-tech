@@ -19,7 +19,7 @@ export const reactNativeVsFlutter2026: BlogPost = {
     },
 {
       heading: 'The State of Cross-Platform in 2026',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 React Native is the better choice for startups that need to ship fast across iOS and Android with a single JavaScript codebase, especially if you already have web developers who know React. Flutter is the better choice for apps that demand pixel-perfect custom UI, complex animations, and consistent rendering across every platform including desktop and embedded devices.
 

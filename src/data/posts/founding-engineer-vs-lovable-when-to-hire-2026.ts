@@ -26,7 +26,7 @@ export const foundingEngineerVsLovableWhenToHire2026: BlogPost = {
     },
 {
       heading: 'Founding Engineer or Lovable — Which One Should You Pick in 2026?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Pick Lovable (or Bolt, v0, Cursor) if you are a pre-PMF founder who needs to validate a single idea for under $100. Hire a founding engineer if you have product-market fit, raised capital, and need someone on the cap table to build the company with you. If you are in the middle — validated idea, no funding yet, MVP is live but breaking — hire a senior contractor on a 6-week sprint instead.
 

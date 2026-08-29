@@ -27,7 +27,7 @@ export const claudeCodePluginsContextEngineering2026: BlogPost = {
     },
     {
       heading: 'Why 6 of Today\'s Top 15 GitHub Trends Are Claude Code Plugins',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On 2026-05-23 I opened [github.com/trending](https://github.com/trending?since=daily) and counted. Of the top 15 repositories, six are Claude Code ecosystem tools — knowledge graphs, official plugin directories, skill libraries, and MCP servers wrapping dev tools. Not "AI-adjacent." Specifically Claude Code.
 

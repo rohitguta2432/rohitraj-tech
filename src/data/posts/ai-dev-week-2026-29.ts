@@ -29,7 +29,7 @@ export const aiDevWeek2026W29: BlogPost = {
     },
     {
       heading: 'Why Week 29 Was About Running Fleets, Not Building Agents',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Six months ago the hard question was "how do I build one good agent?" This week's launches assume you already have five running at once — and now you need to review their work, cap their token bills, watch them side by side, sandbox their shell access, and read their output as something better than a wall of text.
 

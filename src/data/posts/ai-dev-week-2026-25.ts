@@ -29,7 +29,7 @@ export const aiDevWeek2026W25: BlogPost = {
     },
     {
       heading: "Why This Week's Drops Matter Together",
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For three days in June, the most capable model Anthropic had ever released was live — and then it wasn't. Week 25 is the first time we've watched a government reach into the market and pull a *deployed* frontier model off the shelf. That single event reframes the rest of the week: if the frontier can vanish on 24 hours' notice, a self-hostable fallback stops being a cost argument and becomes a **continuity** argument.
 

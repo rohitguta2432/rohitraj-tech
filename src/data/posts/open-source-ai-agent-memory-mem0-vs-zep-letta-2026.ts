@@ -28,7 +28,7 @@ export const openSourceAiAgentMemoryMem0VsZepLetta2026: BlogPost = {
     },
     {
       heading: 'Why Agent Memory Is the Real 2026 Bottleneck',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 When a *memory library* — not a frontier model — is the week's breakout GitHub repo, the industry has told you where the hard problem moved. [**MemPalace**](https://github.com/MemPalace/mempalace) crossed **~54.1k stars** and cut **v3.4.0 on June 6, 2026**, and it did it on a single, almost rude claim: **96.6% R@5 on the LongMemEval benchmark with zero API calls** — no cloud, no embeddings bill, running on your laptop.
 

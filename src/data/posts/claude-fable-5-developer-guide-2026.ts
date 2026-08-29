@@ -28,7 +28,7 @@ export const claudeFable5DeveloperGuide2026: BlogPost = {
     },
     {
       heading: 'Claude Fable 5: Pricing, the API, and When to Use It vs Opus 4.8',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **June 9, 2026**, Anthropic [released Claude Fable 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) — the public face of a new model family it calls **Mythos-class**, and, by its own description, more capable than anything Anthropic has previously made generally available. The same announcement introduced **Claude Mythos 5**, the unsafeguarded sibling, which stays locked behind a restricted-access program. Fable is the one you and I can actually call today.
 

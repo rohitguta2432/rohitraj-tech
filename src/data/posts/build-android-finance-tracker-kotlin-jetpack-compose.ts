@@ -19,7 +19,7 @@ export const buildAndroidFinanceTrackerKotlinJetpackCompose: BlogPost = {
     },
 {
       heading: 'Why Another Finance App?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built FinBaby, an offline-first Android finance tracker using Kotlin and Jetpack Compose that automatically imports bank SMS messages from 50+ Indian banks, parses transaction amounts and merchants using regex, auto-categorizes spending, and provides 50/30/20 budgeting with smart saving tips — all without a backend server, cloud account, or bank API linking.
 

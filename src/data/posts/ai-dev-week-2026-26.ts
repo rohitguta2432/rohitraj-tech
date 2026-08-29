@@ -29,7 +29,7 @@ export const aiDevWeek2026W26: BlogPost = {
     },
     {
       heading: 'Why This Week\'s Drops Add Up to One Trend',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Last week a government pulled Fable 5 off the shelf and the lesson was continuity. Week 26 is the opposite story: capability arriving, and arriving *cheaply*. For the first time the strongest open-weights coding model on the public leaderboards isn't a generation behind the closed frontier — it's level with it, at a fraction of the per-token price.
 

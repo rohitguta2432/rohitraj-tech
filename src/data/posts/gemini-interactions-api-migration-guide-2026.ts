@@ -28,7 +28,7 @@ export const geminiInteractionsApiMigrationGuide2026: BlogPost = {
         },
         {
             heading: 'Gemini Interactions API: The Migration Guide from generateContent (2026)',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Google changed the default way you talk to Gemini, and most teams haven't noticed yet. The [Gemini Interactions API hit general availability in 2026](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/), and Google didn't just add an endpoint — it made Interactions [the default interface for Gemini models and agents](https://the-decoder.com/google-makes-interactions-api-the-default-interface-for-gemini-models-and-agents/), with \`generateContent\` demoted to "still fully supported, but no longer where the new features land."
 

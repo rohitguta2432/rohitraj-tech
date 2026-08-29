@@ -19,7 +19,7 @@ export const buildingMultilanguageReactNativeAppExpo: BlogPost = {
     },
 {
       heading: 'The Problem: 5 Apps Where 1 Should Exist',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Building a multi-language React Native app with Expo SDK 52 requires separating UI i18n (using react-i18next for ~80 string keys) from content i18n (inline translations embedded directly in JSON data files). This approach, combined with bundled JSON for offline text and expo-av for streamed audio, lets you ship a 5-language app under 15MB with zero backend costs and full offline support on day one.
 

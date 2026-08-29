@@ -28,7 +28,7 @@ export const kimiK27CodeVsClaudeOpusGpt2026: BlogPost = {
         },
         {
             heading: 'Kimi K2.7-Code vs Claude Opus 4.8 and GPT-5.5: Is the 1T Open Coding Model Worth It?',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **June 12, 2026**, Moonshot AI quietly pushed [**Kimi K2.7-Code** to Hugging Face](https://huggingface.co/moonshotai/Kimi-K2.7-Code) — a coding-specialised, open-weight model with **1 trillion total parameters, 32B activated per token**, and a **256K-token context window**. Within 48 hours it was the second-most-trending model on Hugging Face and on the Hacker News front page, and seven "complete guides" had already shipped. That velocity is the story as much as the model is.
 

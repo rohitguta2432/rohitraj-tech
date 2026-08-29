@@ -10,7 +10,7 @@ export async function GET() {
     const baseUrl = "https://rohitraj.tech";
 
     const header = [
-        "# Rohit Raj — Founding Engineer & AI Systems Architect",
+        "# Rohit Raj — AI Consultant · Forward Deployed Engineer",
         "",
         "> Full-content companion to /llms.txt (llms.txt spec). Every engineering",
         "> note on this site in plain markdown, newest first. Each post's canonical",

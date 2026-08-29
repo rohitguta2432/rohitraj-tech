@@ -29,7 +29,7 @@ export const glm52VsClaudeOpusCodingAgent2026: BlogPost = {
         },
         {
             heading: 'GLM-5.2 vs Claude Opus 4.8: Should You Switch Your Coding Agent? (2026)',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For the first time, the question "can I run my coding agent on an open-weights model and not feel it?" has a real answer, and the answer is mostly yes. [GLM-5.2](https://z.ai/blog/glm-5.2) from Z.ai (formerly Zhipu) hit the top of [Hugging Face's trending list](https://huggingface.co/zai-org/GLM-5.2) the week it dropped — ~2,500 likes and a community GGUF build within days — and two of the front-page Hacker News threads about it were the same comparison everyone is making: GLM-5.2 vs Claude Opus.
 

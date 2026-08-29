@@ -28,7 +28,7 @@ export const gpt56SolTerraLunaApiGuide2026: BlogPost = {
     },
     {
       heading: 'GPT-5.6 Sol vs Terra vs Luna: What OpenAI Actually Shipped',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 **GPT-5.6** hit general availability on **July 9, 2026** (after a June 26 preview), and the real story is not a benchmark score — it is a **product-shape change**. The single GPT-5.5 model is gone. In its place are three named tiers you have to choose between on every API call: **Sol** (the flagship), **Terra** (the balanced everyday model), and **Luna** (the cheap, low-latency one), plus a high-effort variant called **Sol Ultra** that runs **four agents in parallel by default** and reconciles their answers. The official launch note is at [openai.com](https://openai.com/index/gpt-5-6/); the cleanest third-party teardown is [DigitalApplied's GA write-up](https://www.digitalapplied.com/blog/gpt-5-6-sol-terra-luna-public-ga).
 

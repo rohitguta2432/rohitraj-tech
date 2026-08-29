@@ -28,7 +28,7 @@ export const omnirouteAiGatewayReview2026: BlogPost = {
         },
         {
             heading: 'A 20k-star AI gateway appeared overnight — is it real?',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Every few weeks a repository detonates on GitHub Trending, and the honest question for a working developer is never "how many stars?" — it is "does this survive contact with my actual workflow?" [OmniRoute](https://github.com/diegosouzapw/OmniRoute) is this week's detonation: it went from roughly 1,300 stars in a single day to **north of 20,000** as I write this, sitting at the top of the daily trending list. The pitch is seductive — "one endpoint, 268+ providers, 500+ models, free."
 

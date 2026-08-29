@@ -28,7 +28,7 @@ export const mcpServerAuthenticationOauthGuide2026: BlogPost = {
         },
         {
             heading: 'MCP Server Authentication in 2026: OAuth 2.1, Zero-Touch Enterprise OAuth, and What to Actually Ship',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For most of the last two years, "auth on an MCP server" meant one of two things: nothing at all, or a hardcoded API key in a header. That was fine when every MCP server ran locally over STDIO and the only client was your own desktop. It stopped being fine the moment MCP servers went remote and multi-tenant — the moment a server at \`https://mcp.yourcompany.com\` started accepting connections from clients you do not control, acting on data you are legally responsible for.
 

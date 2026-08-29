@@ -30,7 +30,7 @@ export const deepseekV4FlashVisionExpApiGuide2026: BlogPost = {
     {
       heading:
         'DeepSeek-V4-Flash-Vision-Exp: What the Cheapest Vision API of 2026 Actually Does',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **August 21, 2026**, DeepSeek published a short [release note](https://api-docs.deepseek.com/news/news260821/) and a [vision guide](https://api-docs.deepseek.com/guides/vision/) announcing that image input is live on the API Platform under a new model id, \`deepseek-v4-flash-vision-exp\`. The [Hacker News thread](https://news.ycombinator.com/item?id=49386163) hit **494 points and 153 comments** the same day. That is a lot of attention for what is, on paper, a flag flip: same endpoint, same SDKs, same price, plus an image block in the message.
 

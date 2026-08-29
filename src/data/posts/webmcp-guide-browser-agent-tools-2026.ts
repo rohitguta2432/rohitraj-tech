@@ -28,7 +28,7 @@ export const webmcpGuideBrowserAgentTools2026: BlogPost = {
         },
         {
             heading: 'WebMCP Guide 2026: Turn Your Website Into Tools for Browser AI Agents',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For two years the agentic-browsing story has been the same sad loop: an AI agent opens your site, takes a screenshot, guesses which pixels are a button, clicks, re-screenshots, guesses again. It is slow, it breaks the moment you ship a redesign, and it has no idea whether "Submit" charged a card or saved a draft. **WebMCP** — short for Web Model Context Protocol — is Google's answer, and as of this month it is no longer a demo: it is in a public [origin trial](https://developer.chrome.com/docs/ai/webmcp) you can run on real users.
 

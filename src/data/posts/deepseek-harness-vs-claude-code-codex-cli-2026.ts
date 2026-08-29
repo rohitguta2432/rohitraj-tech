@@ -30,7 +30,7 @@ export const deepseekHarnessVsClaudeCodeCodexCli2026: BlogPost = {
     {
       heading:
         'DeepSeek Open-Sourced the Harness, Not Just the Weights. That Is the Actual Story',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **August 13, 2026**, DeepSeek published the [DeepSeek Harness developer preview](https://deepseek.com/harness/en/) and put the source on [GitHub under MIT](https://github.com/deepseek-ai/deepseek-harness). Within a day it was at **572 points across 247 comments** on [Hacker News](https://news.ycombinator.com/item?id=49285244) and sitting top-of-day on r/LocalLLaMA. This landed the same week as V4-Pro — which I covered in [this week's roundup](/en/notes/ai-dev-week-2026-33) — but the harness is the more interesting half of the drop.
 

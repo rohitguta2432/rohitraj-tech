@@ -28,7 +28,7 @@ export const runDiffusionGemmaLocallyVllm2026: BlogPost = {
         },
         {
             heading: 'Running DiffusionGemma locally: the build half of the story',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 [My earlier post](/en/notes/diffusiongemma-text-diffusion-llm-guide-2026) covered what DiffusionGemma is — a 26B Mixture-of-Experts that generates a 256-token block in parallel by denoising instead of writing left to right — and when the speed-for-quality trade is worth it. This post is the part a working dev actually needs once they've decided to try it: **how do you stand up a real local endpoint, and what do the diffusion-specific knobs do?**
 

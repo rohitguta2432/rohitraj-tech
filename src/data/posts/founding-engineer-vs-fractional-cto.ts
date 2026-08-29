@@ -27,7 +27,7 @@ export const foundingEngineerVsFractionalCto: BlogPost = {
     },
 {
       heading: 'Founding Engineer or Fractional CTO — What Does Your Startup Actually Need?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Hire a founding engineer if you have an idea and no product. Hire a fractional CTO if you have a product, a team, and a technical decision that will cost you $100K+ to unwind. Most pre-seed founders think they need a fractional CTO because the word "CTO" sounds like the missing piece. They do not. They need someone who writes code.
 

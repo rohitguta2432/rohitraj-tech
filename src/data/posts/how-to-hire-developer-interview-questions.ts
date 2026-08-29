@@ -18,7 +18,7 @@ export const howToHireDeveloperInterviewQuestions: BlogPost = {
     },
 {
       heading: 'Why Does Hiring a Developer Go Wrong So Often?',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To hire a good software developer, ask for live project demos, question their tech stack reasoning, verify their deployment and security approach, and insist on milestone-based payments. The 10 questions below filter out unreliable developers before you sign a contract — whether you are technical or not. Focus on evidence of shipped products, clear communication, and a structured work process.
 

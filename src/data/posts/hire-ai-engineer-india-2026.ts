@@ -29,7 +29,7 @@ export const hireAiEngineerIndia2026: BlogPost = {
     },
     {
       heading: 'Hire an AI Engineer in India in 2026 — Real Costs, the 2026 Stack, and the Sprint Alternative That Beats Both',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you searched "hire AI engineer India" in May 2026, the top 5 SERP results are all marketplaces — Turing, Toptal, Arc, Uplers, and Talent500 — pitching a vetted senior AI engineer in 72 hours for $80-$160 per hour. None of them tell you the real number: an experienced AI engineer in India costs $45K-$95K per year full-time, $8K-$14K per month on a retainer, or $15K-$25K flat for a 6-week production sprint. Compare that to the US, where the same role pays $180K-$280K base plus equity plus stock refresh — roughly 4x the cash and 10x the equity dilution.
 

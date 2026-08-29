@@ -28,7 +28,7 @@ export const gitlostAiAgentPromptInjectionDefense2026: BlogPost = {
     },
     {
       heading: 'GitLost: When Your Coding Agent Follows the Attacker Instead of You',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On July 7, 2026, security firm Noma Labs published [GitLost](https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/), showing how an outsider could make **GitHub's own AI agent** hand over private source code. The setup is almost insultingly simple: the attacker opens a normal-looking **issue on a public repo** that belongs to a target organisation, and hides a command inside the issue text. When the org's Agentic Workflow picks up that issue, the agent reads the instruction, walks into a **private** repo the workflow token can see, and pastes what it finds back as a **public comment** — where anyone can read it. [The Register](https://www.theregister.com/security/2026/07/07/github-ai-agent-leaks-private-repos-when-asked-nicely/) summarised it perfectly: the agent leaks private repos "when asked nicely."
 

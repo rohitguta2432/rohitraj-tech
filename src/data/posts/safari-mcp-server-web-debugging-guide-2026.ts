@@ -28,7 +28,7 @@ export const safariMcpServerWebDebuggingGuide2026: BlogPost = {
         },
         {
             heading: 'Safari MCP Server: Apple\'s Official Debugger vs the Community Tools (2026 Guide)',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Describing a rendering bug to a coding agent is a lossy process. You type "the button looks off-center in Safari," the agent nods along, and it's still guessing at pixels it has never actually seen. **Apple just closed that gap.** Safari Technology Preview 247, released July 1, 2026, ships an official **Model Context Protocol (MCP) server** built into the browser — so the agent can connect to a running Safari window, take its own screenshot, read the actual DOM, and check the console itself instead of trusting your description.
 

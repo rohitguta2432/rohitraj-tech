@@ -30,7 +30,7 @@ Skip multi-agent entirely if a single GPT-4o call with three tool definitions do
     },
     {
       heading: 'LangGraph vs CrewAI vs AutoGen — The Honest Answer Before You Pip Install',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you are picking a multi-agent framework for an India MVP in 2026, the honest answer is LangGraph for anything that will see real users, CrewAI for a 30-day prototype, and AutoGen almost never. I have shipped agent systems on all three across four client projects in the last 18 months — a Sanskrit-to-SQL RAG pipeline ([rag-for-sql](/en/projects)), an enterprise deal-matching engine on Spring Boot, an on-device scam detector, and a finance research assistant inside [myFinancial](/en). The frameworks are not equivalent; they fail in very different ways at very different price points.
 

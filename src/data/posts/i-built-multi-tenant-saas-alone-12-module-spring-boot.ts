@@ -19,7 +19,7 @@ export const iBuiltMultiTenantSaasAlone12ModuleSpringBoot: BlogPost = {
     },
 {
       heading: 'One Engineer. Twelve Modules. Zero Shortcuts.',
-      content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built RetailOS — a complete multi-tenant retail SaaS platform with 12 Maven modules covering authentication, billing, inventory, GST invoicing, khata credit ledger, and offline sync — entirely as a solo engineer using Spring Boot 3.4 and Java 21, proving that the right monorepo architecture lets one developer ship what most teams need five to ten engineers to build.
 

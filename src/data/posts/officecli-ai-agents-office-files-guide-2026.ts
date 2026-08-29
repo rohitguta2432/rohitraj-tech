@@ -29,7 +29,7 @@ export const officecliAiAgentsOfficeFilesGuide2026: BlogPost = {
         },
         {
             heading: 'OfficeCLI: Give AI Agents Real Control of Word, Excel & PowerPoint',
-            content: `By [Rohit Raj](/en/about) — Founding Engineer · 10+ yrs MVP shipping · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Ask any LLM to "make me a spreadsheet" and you get the same disappointment: it writes you a beautiful *description* of a spreadsheet, or a Markdown table it cannot save, or — if you wired up a library — a \`.xlsx\` where every cell holds the literal string \`=XIRR(...)\` because nobody ever computed it. The gap between "an agent that talks about Office files" and "an agent that ships a real, formula-correct workbook a human can open in Excel" has been embarrassingly wide for two years.
 
