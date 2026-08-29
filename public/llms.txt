@@ -2,6 +2,8 @@
 
 > Backend engineer with 6+ years experience building production AI systems, distributed architectures, and mobile apps for startups. Based in India, available worldwide.
 
+Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-full.txt
+
 ## Key Pages
 
 - [Homepage](https://rohitraj.tech/en): Portfolio overview with AI projects and reliability engineering
