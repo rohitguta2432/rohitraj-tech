@@ -40,3 +40,11 @@ aws amplify list-jobs --app-id d222exnwyksjmg --branch-name main --profile mine
 ```
 
 Note: blog posts are prerendered for `en` only (other locales render on demand) to stay under Amplify's 220 MB deploy-bundle limit — see `src/app/[locale]/notes/[slug]/page.tsx`.
+
+---
+
+### 🤝 Work with me
+
+I'm an **AI Consultant · Forward Deployed Engineer** — I embed with teams and ship AI to production: agents, MCP integrations, and LLM features, with evals proving they work.
+
+**→ [rohitraj.tech/en/hire](https://rohitraj.tech/en/hire)**
