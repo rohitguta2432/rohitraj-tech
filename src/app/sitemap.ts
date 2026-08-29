@@ -9,11 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const now = new Date();
 
     // Static routes — anchor bumps when the homepage/static sections get a meaningful update
-    const staticAnchor = new Date("2026-05-27");
+    const staticAnchor = new Date("2026-08-29");
     const staticRoutes = [
         "",
         "/about",
         "/contact",
+        "/hire",
         "/agents",
         "/agents/resolvr",
         "/projects",

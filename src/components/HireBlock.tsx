@@ -7,17 +7,17 @@ interface HireBlockProps {
 }
 
 const FALLBACK: NonNullable<HomeDictionary["hire"]> = {
-    eyebrow: "Founding Engineer for Hire",
-    heading: "A founding engineer for hire in India — without the cost of a team.",
+    eyebrow: "AI Consultant · Forward Deployed Engineer",
+    heading: "An AI consultant who embeds with your team — and ships to production.",
     intro:
-        "Most early-stage founders need one senior engineer who can ship the whole stack: AI, backend, mobile, infra, and the awkward integrations in between. That is exactly the gap a founding engineer for hire in India closes — at 30–40% of the cost of a US contractor and with daily timezone overlap on Slack or WhatsApp.",
+        "Most companies don't need another AI strategy deck. They need one senior engineer inside their Slack and their repo who finds where AI creates value and builds it — agents, MCP integrations, LLM features — until it runs in production with evals proving it. That is forward deployed engineering, and it is how I work.",
     points: [
-        "Senior full-stack + AI engineer, based in Pune, India — shipping to startups worldwide.",
-        "End-to-end ownership: backend, frontend, mobile, infra, observability, deployment.",
-        "Production AI MVP live in 6 weeks; first commit pushed to your GitHub on day 5.",
-        "You own the code, the IP, and the repo from week 1 — MIT or commercial license.",
+        "AI Consultant · Forward Deployed Engineer — based in Pune, India, working with companies worldwide.",
+        "Embedded delivery: your repo, your standups, your infrastructure — from day one.",
+        "Agents, MCP servers, and LLM features shipped with evaluation suites, not vibes.",
+        "Fractional retainer (2 days/week) or fixed-scope pilot — you own the code and IP throughout.",
     ],
-    cta: "Book a free 30-min call",
+    cta: "Book a free 30-min scoping call",
 };
 
 export default function HireBlock({ dict, locale }: HireBlockProps) {
@@ -59,7 +59,7 @@ export default function HireBlock({ dict, locale }: HireBlockProps) {
                         ))}
                     </ul>
                     <div>
-                        <Link href={`/${locale}/contact`} className="btn btn-primary">
+                        <Link href={`/${locale}/hire`} className="btn btn-primary">
                             {hire.cta}
                         </Link>
                     </div>

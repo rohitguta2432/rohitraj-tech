@@ -492,4 +492,170 @@ export const services: Service[] = [
  ],
  cta: "Book a Free Scoping Call",
  },
+ {
+ slug: "forward-deployed-engineer",
+ title: "Forward Deployed Engineer (AI)",
+ metaTitle: "Hire a Forward Deployed Engineer | Fractional & Contract AI FDE | Rohit Raj",
+ metaDescription:
+ "Hire a forward deployed engineer who embeds with your team and ships AI to production — agents, MCP integrations, LLM features. Fractional (2 days/week) or fixed-scope pilot. India-based, worldwide remote.",
+ headline: "AI That Actually Reaches Production — Not Another Stalled Pilot",
+ subheadline:
+ "A forward deployed engineer embeds inside your company, learns your workflows, and builds AI systems through to production. Not advice from the sidelines — working software in your repo.",
+ problem:
+ "Your company knows AI should be doing more, but pilots keep dying in the demo stage. Agencies hand over a proof-of-concept and disappear. Advisory consultants produce slide decks, not systems. In-house engineers are busy keeping the product running. What's missing is one senior engineer who sits inside your context — your data, your compliance rules, your users — and owns an AI system from first prompt to production traffic. That is what a forward deployed engineer does, and hiring one full-time costs a senior-AI-hire salary you may not need yet.",
+ whatYouGet: [
+ "An AI consultant who works as a forward deployed engineer — embedded in your Slack, your standups, your codebase",
+ "Production AI systems: agents, RAG pipelines, LLM features, MCP tool integrations — shipped, monitored, and owned to stability",
+ "Two engagement models: fractional (2 days/week, ongoing) or a fixed-scope pilot with a defined production outcome",
+ "Evaluation harnesses before launch — every agent ships with evals, not vibes",
+ "Your stack, your repo, your IP — I work inside your GitHub from day one",
+ "Weekly written progress notes a non-technical founder can read",
+ "Handoff documentation so your team can run the system without me",
+ ],
+ techStack: [
+ "Claude API",
+ "MCP",
+ "AI Agents",
+ "RAG",
+ "Evals",
+ "TypeScript",
+ "Python",
+ "AWS",
+ ],
+ timeline: "Fractional: ongoing, 2 days/week. Pilot: fixed scope.",
+ costRange: "Scoped per engagement",
+ portfolioSlugs: ["agentic-os", "claude-autodev"],
+ faqs: [
+ {
+ question: "What does a forward deployed engineer actually do?",
+ answer: "A forward deployed engineer (FDE) is a senior engineer placed directly inside a customer's environment to build and own a system through to production — the model Palantir pioneered and AI companies like OpenAI and Anthropic now hire for aggressively. Instead of receiving requirements and delivering a artifact months later, an FDE sits in your meetings, learns how your team actually works, finds where AI creates value, and ships working software inside your infrastructure. The role combines software engineering with domain understanding: less 'here is a recommendation', more 'here is the system, running, with your data'.",
+ },
+ {
+ question: "How is this different from hiring an AI consultant or an agency?",
+ answer: "A traditional consultant advises — you still need someone to build. An agency builds — but from outside your context, usually handing off a demo that your team then struggles to productionize. A forward deployed engineer does both halves: consults on where AI fits, then personally builds it to production inside your environment. You get one accountable person, not a deck or a handoff.",
+ },
+ {
+ question: "What is a fractional forward deployed engineer?",
+ answer: "Fractional means you get a fraction of my week — typically 2 focused days — on an ongoing retainer, instead of hiring a full-time senior AI engineer. You get the output that matters (agents built, LLM features shipped, integrations running) without the salary, hiring lag, or long-term commitment. Most companies' AI workload doesn't need five days a week; it needs two good ones, consistently.",
+ },
+ {
+ question: "Should I hire a freelance FDE or go fractional?",
+ answer: "Freelance framing fits one-off, well-scoped tasks: a single integration, a proof-of-concept sprint. Fractional fits what AI work actually is: iterative, embedded, and ongoing — systems need tuning after they meet real users. I structure engagements as either a fixed-scope pilot (you want proof first) or a fractional retainer (you want sustained delivery). Both come with production ownership, not task completion.",
+ },
+ {
+ question: "How fast can you start, and what happens first?",
+ answer: "First step is a scoping call — free, 30 minutes, NDA signed beforehand if you want. Within the first week of an engagement I'm in your repo and your Slack, and the first working slice ships within the first two weeks: something real in staging touching your actual data, not a slide about what could be built.",
+ },
+ ],
+ cta: "Book a Scoping Call",
+ },
+ {
+ slug: "mcp-integration-consultant",
+ title: "MCP Integration Consultant",
+ metaTitle: "MCP Integration Consultant | Hire an MCP Expert | Custom MCP Servers | Rohit Raj",
+ metaDescription:
+ "Hire an MCP integration consultant to connect AI agents to your APIs, data, and internal tools. Custom Model Context Protocol servers designed, built, and deployed to production — with security and evals.",
+ headline: "Connect Your AI Agents to the Systems That Run Your Business",
+ subheadline:
+ "Model Context Protocol (MCP) is how AI agents reach your APIs, databases, and internal tools. I design, build, and deploy production MCP servers — securely, with evals, inside your stack.",
+ problem:
+ "Your team wants Claude, ChatGPT, or internal agents to actually use your systems — read the CRM, file the ticket, query the warehouse. MCP is the open standard that makes this possible, but most MCP servers stop at 'works on my machine': no auth model, no permission boundaries, no tests, no observability. Wiring an LLM to production systems without those is how companies end up in incident reviews. You need someone who has shipped MCP servers with real guardrails, not a first-timer learning on your infrastructure.",
+ whatYouGet: [
+ "Custom MCP servers connecting your agents to internal APIs, databases, and third-party tools",
+ "Security design first: authentication, scoped permissions, input validation, audit logging",
+ "Tool definitions engineered for reliable agent use — schemas an LLM cannot misread",
+ "Evaluation suite proving the agent uses each tool correctly before production",
+ "Deployment into your infrastructure (AWS, GCP, on-prem) with monitoring",
+ "Team handoff: documentation and a working session so your engineers own it",
+ "Advisory option: architecture review of MCP servers your team is already building",
+ ],
+ techStack: [
+ "MCP",
+ "Claude API",
+ "TypeScript",
+ "Python",
+ "OAuth",
+ "Docker",
+ "AWS",
+ ],
+ timeline: "First production MCP server: 1-4 weeks",
+ costRange: "Scoped per engagement",
+ portfolioSlugs: ["rag-for-sql", "agent-autopsy"],
+ faqs: [
+ {
+ question: "What is MCP and why does my company need it?",
+ answer: "Model Context Protocol is an open standard (introduced by Anthropic, now adopted across the industry) that lets AI models securely call tools — your APIs, databases, file systems, SaaS products. Without it, every AI-to-system connection is a custom one-off integration. With it, you build one MCP server per system and every MCP-capable agent can use it. If you want AI that does things rather than just answers questions, MCP is the plumbing.",
+ },
+ {
+ question: "Why hire an MCP consultant instead of having my team build it?",
+ answer: "Your team absolutely can build MCP servers — the protocol is open. What an experienced consultant adds is everything around the happy path: permission scoping so an agent can read but never delete, injection-resistant tool descriptions, rate limiting, audit trails, and eval suites that catch when a model misuses a tool. I've built these guardrails before, so you skip the expensive first-timer mistakes. I also offer a review-only engagement if your team builds and I audit.",
+ },
+ {
+ question: "Is it safe to give an AI agent access to production systems?",
+ answer: "Only with boundaries — and that is most of the real work. Safe MCP deployments use scoped credentials (least privilege per tool), read-only defaults, human confirmation gates on destructive actions, input validation on every tool call, and logging of everything the agent touches. I design those boundaries first and demo the failure cases before anything reaches production.",
+ },
+ {
+ question: "Can you also build the agent, not just the MCP server?",
+ answer: "Yes. MCP work is usually one half of a larger engagement: the server connects your systems, the agent uses them to do the job — triage tickets, reconcile invoices, draft responses. As a forward deployed engineer I build both sides and the evals that prove the loop works end to end.",
+ },
+ ],
+ cta: "Discuss Your Integration",
+ },
+ {
+ slug: "fractional-ai-engineer",
+ title: "Fractional AI Engineer",
+ metaTitle: "Fractional AI Engineer | India · Remote Worldwide | Hire Part-Time AI Talent | Rohit Raj",
+ metaDescription:
+ "Hire a fractional AI engineer — senior AI delivery a few days a week without a full-time salary. Agents, LLM features, RAG, Claude Code workflows, shipped to production. India-based, remote worldwide.",
+ headline: "Senior AI Engineering, a Few Days a Week — Without the Full-Time Hire",
+ subheadline:
+ "You have real AI work to ship, but not enough to justify a permanent senior salary. A fractional AI engineer gives you consistent, senior-level delivery on a part-week retainer.",
+ problem:
+ "Somewhere between 'we should use AI' and 'we have a full AI team' is where most companies actually live: a backlog of LLM features, an agent idea that would save real money, a RAG search that half-works. A full-time senior AI engineer is a large salary plus months of hiring. Interns and generalist freelancers produce demos that collapse under real users. The fractional model fixes the mismatch — you buy two or three days a week of someone who has shipped production AI, and the backlog actually moves.",
+ whatYouGet: [
+ "A senior AI engineer on retainer — consistent days each week, not ad-hoc task work",
+ "Production delivery: AI agents, LLM features, RAG pipelines, workflow automation",
+ "Claude Code consulting: agentic development workflows, custom skills, MCP tooling for your engineering team",
+ "Evals and monitoring for every system shipped — you can see it working",
+ "Embedded ways of working: your repo, your Slack, your standup",
+ "Priority ordering of your AI backlog by ROI, revisited monthly",
+ "Zero lock-in: documented handoff whenever you hire full-time",
+ ],
+ techStack: [
+ "Claude API",
+ "Claude Code",
+ "AI Agents",
+ "RAG",
+ "MCP",
+ "TypeScript",
+ "Python",
+ "PostgreSQL",
+ ],
+ timeline: "Ongoing retainer, 2-3 days/week",
+ costRange: "Scoped per engagement",
+ portfolioSlugs: ["agentic-os", "rag-for-sql"],
+ faqs: [
+ {
+ question: "What exactly does 'fractional' mean here?",
+ answer: "You hire a fraction of my week — typically two or three fixed days — on a monthly retainer. Those days are yours: same standups, same repo, same accountability as an employee, without the full-time salary, equity, or hiring pipeline. I work with a small number of clients at once so each gets real, focused days rather than context-switched hours.",
+ },
+ {
+ question: "How is a fractional AI engineer different from a freelancer?",
+ answer: "A freelancer completes tasks you define. A fractional engineer takes ownership of outcomes: I help decide what to build, build it, measure it in production, and iterate. The engagement is continuous rather than gig-shaped, which matters for AI systems — they need tuning after contact with real users, and a task-based freelancer is gone by then.",
+ },
+ {
+ question: "Can you train my existing team on Claude Code and AI-assisted development?",
+ answer: "Yes — this is an increasingly common part of engagements. I set up Claude Code for your team: custom skills for your codebase, MCP servers for your internal tools, agent workflows for repetitive engineering work, and guardrails so AI-written code meets your review bar. Your engineers ship faster with AI instead of watching me do it.",
+ },
+ {
+ question: "Do you work with companies outside India?",
+ answer: "Yes — I'm based in Pune, India and work remote-first with companies worldwide. For US and EU clients that means significant daily timezone overlap plus async written updates. Contracts and IP assignment are structured for international engagements; NDAs signed before any scoping conversation.",
+ },
+ {
+ question: "When should I hire full-time instead of fractional?",
+ answer: "When the AI workload consistently fills a full week and shapes your core product roadmap, hire full-time — and I'll help you do it: writing the job spec, interviewing candidates, and handing over a documented, monitored system rather than a mystery codebase. Fractional is the bridge that gets you to that point without burning a year of salary finding out.",
+ },
+ ],
+ cta: "Start the Conversation",
+ },
 ];

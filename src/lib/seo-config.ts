@@ -44,8 +44,8 @@ export const SEO_KEYWORDS = [
 // Base Site Configuration
 export const SITE_CONFIG = {
     name: 'Rohit Raj',
-    title: 'Founding Engineer for Hire in India — AI MVP in 6 Weeks | Rohit Raj',
-    description: 'Founding engineer for hire in India. Senior full-stack + AI engineer who ships your production MVP live in 6 weeks. 29 products shipped, every one documented.',
+    title: 'AI Consultant · Forward Deployed Engineer — Ships AI to Production | Rohit Raj',
+    description: 'AI consultant working as a forward deployed engineer: embedded with your team, shipping agents, MCP integrations, and LLM features to production. 29 products shipped, every one documented.',
     url: 'https://rohitraj.tech',
     locale: 'en_US',
     personId: 'https://rohitraj.tech/#person',
