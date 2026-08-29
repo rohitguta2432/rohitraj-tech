@@ -46,6 +46,7 @@ export interface CommonDictionary {
         about: string;
         contact: string;
         viewCurrentWork: string;
+        hireMe?: string;
     };
     footer: {
         brand: string;

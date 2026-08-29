@@ -6,7 +6,8 @@
         "notes": "Notes",
         "about": "About",
         "contact": "Contact",
-        "viewCurrentWork": "View Current Work"
+        "viewCurrentWork": "View Current Work",
+        "hireMe": "Work With Me"
     },
     "footer": {
         "brand": "Rohit Raj — Backend & AI Systems"

@@ -6,7 +6,8 @@
         "notes": "Notizen",
         "about": "Über mich",
         "contact": "Kontakt",
-        "viewCurrentWork": "Aktuelle Arbeit"
+        "viewCurrentWork": "Aktuelle Arbeit",
+        "hireMe": "Mit mir arbeiten"
     },
     "footer": {
         "brand": "Rohit Raj — Backend & KI-Systeme Ingenieur"

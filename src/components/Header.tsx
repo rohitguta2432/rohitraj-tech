@@ -52,11 +52,11 @@ export default function Header({ locale, dict }: HeaderProps) {
                         </Link>
                     ))}
                     <Link
-                        href={`/${locale}/projects`}
+                        href={`/${locale}/hire`}
                         className="btn btn-primary btn-sm"
                         onClick={() => setMobileMenuOpen(false)}
                     >
-                        {dict.nav.viewCurrentWork}
+                        {dict.nav.hireMe ?? "Work With Me"}
                     </Link>
                     <LanguageSwitcher currentLocale={locale} />
                 </nav>
