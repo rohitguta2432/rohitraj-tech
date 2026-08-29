@@ -2846,6 +2846,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "aws-bedrock-vs-openai",
     "title": "AWS Bedrock vs OpenAI — Which One to Pick for Your Startup (With Real Costs)",
     "date": "2026-04-02",
+    "updated": "2026-08-29",
     "excerpt": "I built a financial advisor AI with AWS Bedrock (Nova Lite) after starting with OpenAI. Here's a real cost and latency comparison from production, not a marketing page.",
     "readingTime": "9 min read",
     "keywords": [
