@@ -1,6 +1,6 @@
 {
     "hero": {
-        "subtitle": "Un founding engineer indien qui livre de bout en bout sur n'importe quelle stack — IA, backend, mobile, blockchain, iOS, web3 — sans le coût d'une équipe.",
+        "subtitle": "Consultant IA · forward deployed engineer — intégré à votre équipe, il livre agents, intégrations MCP et fonctionnalités LLM en production.",
         "titleLine1": "Un ingénieur.",
         "titleLine2": "Tout le produit.",
         "bookCallCta": "Réserver un appel gratuit de 30 min",
@@ -31,7 +31,7 @@
                 }
             }
         },
-        "deck": "Backend, frontend, infrastructure et couche IA — construits par la personne à qui vous parlez. En production en six semaines, et chaque dépôt ci-dessous est ouvert avant même de m’écrire."
+        "deck": "Agents, intégrations MCP et fonctionnalités LLM — construits au sein de votre équipe et livrés en production, avec des évaluations qui le prouvent."
     },
     "aiProjects": {
         "sectionTitle": "Projets IA",

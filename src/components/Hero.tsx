@@ -38,7 +38,7 @@ export default function Hero({ dict, locale }: HeroProps) {
             <div className="container poster-inner">
                 <div className="poster-eyebrow">
                     <span>Rohit Raj</span>
-                    <span>Founding engineer · India</span>
+                    <span>AI Consultant · Forward Deployed Engineer</span>
                 </div>
 
                 <div className="poster-body">

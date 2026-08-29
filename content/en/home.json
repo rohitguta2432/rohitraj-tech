@@ -12,7 +12,7 @@
         "cta": "Book a free 30-min scoping call"
     },
     "hero": {
-        "subtitle": "Founding engineer for hire in India — ships end-to-end on any stack (AI, backend, mobile, blockchain, iOS, web3) without the cost of a team.",
+        "subtitle": "AI consultant · forward deployed engineer — embeds with your team and ships agents, MCP integrations, and LLM features to production, on any stack.",
         "titleLine1": "One engineer.",
         "titleLine2": "Whole product.",
         "bookCallCta": "Book free 30-min call",
@@ -43,7 +43,7 @@
                 }
             }
         },
-        "deck": "Backend, frontend, infrastructure and the AI layer — built by the person you actually talk to. Live in six weeks, and every repo below is open to read before you email me."
+        "deck": "Agents, MCP integrations, and LLM features — built inside your team by the person you actually talk to, and shipped to production with evals proving they work. Every repo below is open to read before you email me."
     },
     "aiProjects": {
         "sectionTitle": "AI Projects",

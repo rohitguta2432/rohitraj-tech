@@ -1,6 +1,6 @@
 {
     "hero": {
-        "subtitle": "Ein Founding Engineer aus Indien, der End-to-End auf jedem Stack liefert — KI, Backend, Mobile, Blockchain, iOS, Web3 — ohne die Kosten eines Teams.",
+        "subtitle": "KI-Berater · Forward Deployed Engineer — arbeitet eingebettet in Ihrem Team und liefert Agenten, MCP-Integrationen und LLM-Features bis in die Produktion.",
         "titleLine1": "Ein Entwickler.",
         "titleLine2": "Das ganze Produkt.",
         "bookCallCta": "Kostenloses 30-Min-Gespräch buchen",
@@ -31,7 +31,7 @@
                 }
             }
         },
-        "deck": "Backend, Frontend, Infrastruktur und die KI-Schicht — gebaut von der Person, mit der Sie sprechen. In sechs Wochen live, und jedes Repository unten können Sie vorher lesen."
+        "deck": "Agenten, MCP-Integrationen und LLM-Features — in Ihrem Team gebaut und mit Evals bewiesen in Produktion gebracht. Jedes Repo unten ist offen lesbar."
     },
     "aiProjects": {
         "sectionTitle": "KI Projekte",
