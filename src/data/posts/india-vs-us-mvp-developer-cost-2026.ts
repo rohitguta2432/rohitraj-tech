@@ -223,7 +223,7 @@ Yes, and in 2026 it is actively cheaper and faster than hiring locally for the p
 
 **Q: Why are Indian developer costs so much lower than US developers?**
 
-The cost gap in 2026 comes primarily from labor-market arbitrage on living costs (60% of the difference), employer-side payroll tax and benefits (15%), recruiting and retention overhead in the US (10%), US compliance and legal infrastructure (10%), and only 5% from actual technical skill differentials. Cost of living in Bangalore or Pune is roughly 30% of Bay Area cost, meaning a senior engineer living comfortably on $6K/month in India would need $20K/month to live equivalently in SF. AI coding tools have eliminated most of the remaining technical productivity gap on routine work. For founders, this means the cost difference is arbitrage, not quality.
+The cost gap in 2026 comes primarily from labor-market arbitrage on living costs (60% of the difference), employer-side payroll tax and benefits (15%), recruiting and retention overhead in the US (10%), US compliance and legal infrastructure (10%), and only 5% from actual technical skill differentials. Cost of living in Bangalore or Bengaluru is roughly 30% of Bay Area cost, meaning a senior engineer living comfortably on $6K/month in India would need $20K/month to live equivalently in SF. AI coding tools have eliminated most of the remaining technical productivity gap on routine work. For founders, this means the cost difference is arbitrage, not quality.
 
 **Q: Will quality be worse if I hire an Indian developer over a US developer?**
 

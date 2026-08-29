@@ -32,7 +32,7 @@ Skip React Native entirely if your app needs deep Bluetooth, AR, or 120fps anima
       heading: 'Hire React Native Developer India 2026 — The Honest Cost Math Before You Sign Anything',
       content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
-If you are looking to hire a React Native developer in India in 2026, your three real options cost wildly different amounts and produce wildly different things. A founding engineer ships a complete cross-platform MVP — Android, iOS, backend wiring, store submission — in 4 to 8 weeks for a fixed ₹6 to ₹9 lakh. A Bangalore or Pune agency quotes the same scope at ₹22 to ₹35 lakh, takes 14 to 18 weeks, and routes you through a project manager who has never written a line of code. A Toptal or Upwork freelancer charges ₹3,500 to ₹6,000 per hour and needs you to do the architecture yourself.
+If you are looking to hire a React Native developer in India in 2026, your three real options cost wildly different amounts and produce wildly different things. A founding engineer ships a complete cross-platform MVP — Android, iOS, backend wiring, store submission — in 4 to 8 weeks for a fixed ₹6 to ₹9 lakh. A Bangalore or Bengaluru agency quotes the same scope at ₹22 to ₹35 lakh, takes 14 to 18 weeks, and routes you through a project manager who has never written a line of code. A Toptal or Upwork freelancer charges ₹3,500 to ₹6,000 per hour and needs you to do the architecture yourself.
 
 I have shipped React Native and React Native + Expo apps on all three models across the last three years — the [Sanatana app on Play Store](/en/notes/idea-to-play-store-sanatanapp-architecture) (founding engineer, 7 weeks), an [offline-first trip planner with WatermelonDB](/en/notes/build-offline-first-trip-planner-react-native-watermelondb) (founding engineer, 5 weeks), and one project where a client paid a Hyderabad agency ₹28L for 16 weeks of work I later rebuilt in 9 weeks for ₹7L. The agency app still does not have working offline sync. The numbers below are not theoretical.
 
@@ -45,7 +45,7 @@ This post is the cost breakdown I wish every founder had before signing a contra
 | Model | Headline rate | Total cost (12-screen MVP) | Timeline | Who owns architecture |
 |-------|----------------|-----------------------------|----------|------------------------|
 | Founding engineer India | ₹1.5–2L per week fixed | ₹6L–9L | 4–8 weeks | The engineer |
-| Bangalore/Pune agency (mid) | ₹2,200–₹3,500 per dev-hour | ₹22L–35L | 14–18 weeks | A project manager |
+| Bangalore/Bengaluru agency (mid) | ₹2,200–₹3,500 per dev-hour | ₹22L–35L | 14–18 weeks | A project manager |
 | Top-tier India agency (Tata Elxsi tier) | ₹4,000–₹6,500 per dev-hour | ₹45L–70L | 16–24 weeks | A delivery lead |
 | Toptal RN freelancer | ₹4,500–₹6,000 per hour | ₹8L–14L (if scoped tight) | 8–14 weeks + 2–3 week hiring loop | You |
 | Upwork mid-tier RN freelancer | ₹1,200–₹2,500 per hour | ₹4L–7L | 10–16 weeks (high variance) | You, badly |
@@ -103,7 +103,7 @@ The ₹8L founding-engineer column does more on most rows. The ₹28L agency col
     },
     {
       heading: 'When The Agency Actually Wins (The Honest Counter-Case)',
-      content: `I am not anti-agency. There are three concrete situations where a Bangalore or Pune agency is the right call and a founding engineer is the wrong one.
+      content: `I am not anti-agency. There are three concrete situations where a Bangalore or Bengaluru agency is the right call and a founding engineer is the wrong one.
 
 **First, regulated industries with a compliance moat.** If you are building for healthcare with HIPAA + DISHA exposure, regulated fintech with RBI sandbox requirements, or anything that needs ISO 27001 + SOC 2 from day one, hire an agency that already has those certifications. A founding engineer can write secure code; they cannot give you a SOC 2 letter on day one. The cost premium buys the audit trail.
 

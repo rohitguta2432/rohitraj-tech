@@ -75,7 +75,7 @@ Second, Hetzner + Cloudflare wins on warm requests because Cloudflare's bom edge
 
 Third, Railway Singapore is fine for India but not great. 75ms warm is acceptable for a SaaS dashboard but you can feel the lag on every keypress in a typeahead input. For an app where every interaction matters (real-time collab, multi-step forms with autosave), Vercel Pro bom1 still wins. For an internal tool or batch-processing API, Singapore is plenty.
 
-**The honest answer for Indian apps in 2026:** if your users are mostly metro Tier-1 (Bengaluru, Mumbai, Pune, Delhi, Hyderabad, Chennai), Vercel Pro pinned to bom1 is the fastest. If your users include Tier-2/Tier-3 (Kolkata, Indore, Coimbatore, Jaipur, Lucknow) where the last-mile is 4G-throttled anyway, the difference between 38ms and 75ms server-side disappears in the 60-200ms last-mile noise — pick on price.`,
+**The honest answer for Indian apps in 2026:** if your users are mostly metro Tier-1 (Bengaluru, Mumbai, Bengaluru, Delhi, Hyderabad, Chennai), Vercel Pro pinned to bom1 is the fastest. If your users include Tier-2/Tier-3 (Kolkata, Indore, Coimbatore, Jaipur, Lucknow) where the last-mile is 4G-throttled anyway, the difference between 38ms and 75ms server-side disappears in the 60-200ms last-mile noise — pick on price.`,
     },
     {
       heading: 'Lock-in: what migration actually costs you',

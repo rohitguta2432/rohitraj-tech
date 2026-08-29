@@ -81,7 +81,7 @@ const FAQS = [
     {
         question: "Where are you based and who do you work with?",
         answer:
-            "Pune, India — working remote-first with companies worldwide. US and EU clients get real daily timezone overlap plus written async updates. Contracts and IP assignment are structured for international engagements; you own the code and the repo from day one.",
+            "Bengaluru, India — working remote-first with companies worldwide. US and EU clients get real daily timezone overlap plus written async updates. Contracts and IP assignment are structured for international engagements; you own the code and the repo from day one.",
     },
 ];
 

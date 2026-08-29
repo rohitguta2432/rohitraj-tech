@@ -649,7 +649,7 @@ export const services: Service[] = [
  },
  {
  question: "Do you work with companies outside India?",
- answer: "Yes — I'm based in Pune, India and work remote-first with companies worldwide. For US and EU clients that means significant daily timezone overlap plus async written updates. Contracts and IP assignment are structured for international engagements; NDAs signed before any scoping conversation.",
+ answer: "Yes — I'm based in Bengaluru, India and work remote-first with companies worldwide. For US and EU clients that means significant daily timezone overlap plus async written updates. Contracts and IP assignment are structured for international engagements; NDAs signed before any scoping conversation.",
  },
  {
  question: "When should I hire full-time instead of fractional?",

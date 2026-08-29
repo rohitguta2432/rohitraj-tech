@@ -24,7 +24,7 @@ export const hireFlutterDeveloperIndia2026: BlogPost = {
   sections: [
     {
       heading: 'TL;DR',
-      content: `Hire a **founding engineer in India** for a Flutter MVP shipped in 5–8 weeks at ₹6.5–9.5L fixed — one Dart owner from auth to both stores, no PM tax. Hire a **Bangalore or Pune agency** only with ₹25L+ committed and SOC 2 / RBI sandbox needed day one. Use **FlutterFlow + a contract dev** (₹4L) only for a 3-screen prototype you will throw away after fundraising.
+      content: `Hire a **founding engineer in India** for a Flutter MVP shipped in 5–8 weeks at ₹6.5–9.5L fixed — one Dart owner from auth to both stores, no PM tax. Hire a **Bangalore or Bengaluru agency** only with ₹25L+ committed and SOC 2 / RBI sandbox needed day one. Use **FlutterFlow + a contract dev** (₹4L) only for a 3-screen prototype you will throw away after fundraising.
 
 Skip Flutter if your app needs deep CallKit, complex WebRTC, or live AR — React Native still has the better native module ecosystem there.`,
     },
@@ -34,7 +34,7 @@ Skip Flutter if your app needs deep CallKit, complex WebRTC, or live AR — Reac
 
 Flutter has won the cross-platform race in India in 2026. Three of the last five FinTech and consumer apps I scoped for clients picked Flutter over React Native — better UI consistency on low-end Android, faster animation on mid-tier devices, and one widget tree that ships pixel-identical on iOS and Android. If you are now trying to hire a Flutter developer in India, the three live options are structurally different and cost wildly different amounts.
 
-A founding engineer ships a complete Flutter MVP — Dart code, backend wiring, both stores, OTA via Shorebird if you want it — in 5 to 8 weeks for a fixed ₹6.5 to ₹9.5 lakh. A mid-tier Bangalore or Pune agency quotes the same scope at ₹24 to ₹38 lakh, takes 14 to 18 weeks, and runs you through a project manager who has never written a Dart line. FlutterFlow looks like a third option at $30 a month and a contract dev to polish — and it is, until you hit the first feature FlutterFlow does not export cleanly.
+A founding engineer ships a complete Flutter MVP — Dart code, backend wiring, both stores, OTA via Shorebird if you want it — in 5 to 8 weeks for a fixed ₹6.5 to ₹9.5 lakh. A mid-tier Bangalore or Bengaluru agency quotes the same scope at ₹24 to ₹38 lakh, takes 14 to 18 weeks, and runs you through a project manager who has never written a Dart line. FlutterFlow looks like a third option at $30 a month and a contract dev to polish — and it is, until you hit the first feature FlutterFlow does not export cleanly.
 
 I have shipped Flutter code in production on FinTech and consumer apps across the last two years, debugged the [react-native-vs-flutter-2026](/en/notes/react-native-vs-flutter-2026) trade-off in real RFPs, and watched two clients pay ₹26L and ₹31L to agencies for Flutter MVPs I later refactored or rebuilt for under ₹8L. The numbers below are not theoretical. They are the May 2026 rate card.
 
@@ -47,7 +47,7 @@ This post is the breakdown I wish every founder had before signing. Real Dart-sp
 | Model | Headline rate | Total cost (12-screen Flutter MVP) | Timeline | Who owns architecture |
 |-------|----------------|--------------------------------------|----------|------------------------|
 | Founding engineer India | ₹1.5–2L per week fixed | ₹6.5L–9.5L | 5–8 weeks | The engineer |
-| Bangalore/Pune agency (mid) | ₹2,400–₹3,800 per dev-hour | ₹24L–38L | 14–18 weeks | A project manager |
+| Bangalore/Bengaluru agency (mid) | ₹2,400–₹3,800 per dev-hour | ₹24L–38L | 14–18 weeks | A project manager |
 | Top-tier India agency | ₹4,500–₹7,000 per dev-hour | ₹50L–75L | 16–24 weeks | A delivery lead |
 | Toptal Flutter freelancer | ₹4,800–₹6,500 per hour | ₹9L–15L (if scoped tight) | 8–14 weeks + 2–3 week hiring loop | You |
 | Upwork mid-tier Flutter freelancer | ₹1,400–₹2,800 per hour | ₹4.5L–8L | 10–16 weeks (high variance) | You, badly |

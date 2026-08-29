@@ -146,8 +146,8 @@ export const personSchema = {
     description: 'AI consultant working as a forward deployed engineer: embedded with client teams, shipping AI agents, MCP integrations, and LLM features to production — with evaluation suites proving they work. 10+ years shipping production systems.',
     address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Pune',
-        addressRegion: 'Maharashtra',
+        addressLocality: 'Bengaluru',
+        addressRegion: 'Karnataka',
         addressCountry: 'IN',
     },
     nationality: {

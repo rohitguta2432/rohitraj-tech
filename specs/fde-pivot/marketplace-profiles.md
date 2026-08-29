@@ -26,7 +26,7 @@ Recent work: an autonomous daily content pipeline for an India fintech-education
 for field services gated by evals; an autonomous engineering pipeline that takes requirements
 through spec, implementation, review, and tests.
 
-Engagements: fractional (2 days/week retainer) or fixed-scope pilot. Pune, India — remote
+Engagements: fractional (2 days/week retainer) or fixed-scope pilot. Bengaluru, India — remote
 worldwide with US/EU overlap. You own the code and IP from day one.
 
 **Skills tags**: AI Agents, Claude API, MCP (Model Context Protocol), RAG, LLM Evaluation,
@@ -72,7 +72,7 @@ What I ship:
 
 How I work: fixed-scope pilots (one defined production outcome) or ongoing part-week
 retainers. Your repo, your IP, weekly written updates a non-technical founder can read.
-Based in Pune, India; remote worldwide; daily overlap with US/EU hours.
+Based in Bengaluru, India; remote worldwide; daily overlap with US/EU hours.
 
 Portfolio: rohitraj.tech/en/hire
 
