@@ -3,6 +3,26 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "qwen3-8-flash-next-vs-27b-local-memory-2026",
+    "title": "Qwen3.8-Flash-Next vs Qwen3.8-27B: The Local Memory Math Behind the \"12GB VRAM\" Headline (2026)",
+    "date": "2026-08-29",
+    "excerpt": "Qwen3.8-Flash-Next needs only 6B active parameters per token, so the internet decided it runs on 12GB of VRAM. It does — but only if you also have 75GB of total memory and an SSD willing to stream a 51B n-gram table. Here is the real memory table, the benchmark delta against the 27B you can already run on one 24GB card, and the two conflicting offload recipes reconciled.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "qwen3.8 flash next memory requirements",
+      "qwen3.8-flash-next vs qwen3.8-27b",
+      "qwen3.8 flash next vram",
+      "run qwen3.8 flash next locally",
+      "qwen3.8 flash next n-gram ssd offload",
+      "qwen3.8 flash next gguf quant",
+      "local llm memory requirements 2026"
+    ],
+    "coverImage": {
+      "src": "/images/notes/qwen3-8-flash-next-vs-27b-local-memory-2026-cover.jpg",
+      "alt": "Dense glowing core surrounded by a diffuse particle halo illustrating Qwen3.8-Flash-Next local memory requirements"
+    }
+  },
+  {
     "slug": "ai-dev-week-2026-35",
     "title": "This Week in AI Dev: The Price War Reaches Anthropic's Flagship (Week 35 of 2026)",
     "date": "2026-08-25",
