@@ -38,7 +38,7 @@ echo "--- Fetching sitemap ---"
 URLS=()
 while IFS= read -r url; do
   URLS+=("$url")
-done < <(curl -s "${SITEMAP_URL}" | grep -oP '<loc>\K[^<]+')
+done < <(curl -s "${SITEMAP_URL}" | grep -o '<loc>[^<]*' | sed 's/<loc>//')
 echo "    ${#URLS[@]} URL(s) in sitemap"
 
 # ---------- Step 2: Get OAuth token (combined scopes) ----------
