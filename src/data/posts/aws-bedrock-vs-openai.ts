@@ -24,7 +24,7 @@ This trade-off doesn't apply if you need frontier-class reasoning quality on eve
     },
     {
       heading: 'Why I Switched From OpenAI to AWS Bedrock',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 AWS Bedrock is the better choice for startups already running on AWS that need cost-efficient AI inference, data privacy controls, and the flexibility to switch between multiple model providers. OpenAI is the better choice for rapid prototyping, when you need the highest-quality model outputs, and when developer experience matters more than infrastructure control.
 
@@ -231,15 +231,15 @@ With Bedrock, your data stays within your AWS account and is never used for mode
 
 If you want the cost-and-latency math redone for your specific workload — drop a note with expected RPS and prompt size and I will run the numbers against your real prompt before you commit to a vendor.
 
-→ [Hire me to ship your 6-week MVP](/en/services/6-week-mvp) (fixed price, fixed scope, full GitHub from commit one)
-→ [Or have me build the AI chatbot piece directly](/en/services/ai-chatbot-development) (WhatsApp + LLM + Hinglish)
-→ [Or hire me as a founding engineer for the long haul](/en/services/hire-founding-engineer-india) (sprint or retainer, no equity ask)
+→ [Hire me to ship your 6-week MVP](/services/6-week-mvp) (fixed price, fixed scope, full GitHub from commit one)
+→ [Or have me build the AI chatbot piece directly](/services/ai-chatbot-development) (WhatsApp + LLM + Hinglish)
+→ [Or hire me as a founding engineer for the long haul](/services/hire-founding-engineer-india) (sprint or retainer, no equity ask)
 
-Related notes: [OpenAI vs Claude vs Gemini API cost for India MVP 2026](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026) for the direct API comparison, [How to add AI to your existing business app](/en/notes/how-to-integrate-ai-existing-business-app) for retrofit patterns, and [Build an AI chatbot for WhatsApp Business](/en/notes/build-ai-chatbot-whatsapp-business-india) for the production deployment playbook.`,
+Related notes: [OpenAI vs Claude vs Gemini API cost for India MVP 2026](/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026) for the direct API comparison, [How to add AI to your existing business app](/notes/how-to-integrate-ai-existing-business-app) for retrofit patterns, and [Build an AI chatbot for WhatsApp Business](/notes/build-ai-chatbot-whatsapp-business-india) for the production deployment playbook.`,
     }
   ],
   cta: {
     text: 'Ship Your AI MVP in 6 Weeks',
-    href: '/en/services/6-week-mvp'
+    href: '/services/6-week-mvp'
   }
 };

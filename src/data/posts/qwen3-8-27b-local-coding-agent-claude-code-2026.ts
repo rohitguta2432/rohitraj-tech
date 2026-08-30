@@ -29,26 +29,26 @@ export const qwen3827bLocalCodingAgentClaudeCode2026: BlogPost = {
     {
       heading:
         'Qwen3.8-27B as a Local Coding Agent: What Changed on August 14',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 The interesting number on the [Qwen3.8-27B model card](https://huggingface.co/Qwen/Qwen3.8-27B) is not the benchmark headline. It is the intersection of three facts that have never been true of one model at the same time: **61.7 on SWE-bench Pro**, a **17.92GB** 4-bit file, and an **Apache 2.0** license. Agentic-coding scores in that range belonged to cloud models you rent per token; models that fit a single consumer GPU used to top out as autocomplete. Alibaba's Qwen team released the model on **August 14, 2026**, and ten days later it sits at **#1 trending on Hugging Face** with **790 quantized derivatives** already published.
 
 The community reaction tells you where the value is. On r/LocalLLaMA, the top posts of the past days are not demos — they are [quantization comparisons](https://www.reddit.com/r/LocalLLaMA/comments/1vwh3u7/we_quantized_qwen_38_27b_and_compared_the_quants/) and a plain [thank-you thread](https://www.reddit.com/r/LocalLLaMA/comments/1vwowbu/qwen_38_27b_just_wanted_to_say_thanks_to_y/). People are not asking whether to run it. They are asking **which file to download and what to plug it into**.
 
-That second question is the one this post answers end to end. The setup guides published since launch stop at "it runs" — a chat window and a benchmark table. A coding *agent* is a different deployment: it needs an OpenAI-compatible server, a harness that can edit files and run tests, sampling settings tuned for tool calls rather than prose, and enough KV-cache headroom that the session does not fall over at the exact moment the agent finally understands your repo. I have run local models inside agent harnesses since [VibeThinker-3B](/en/notes/vibethinker-3b-tiny-reasoning-model-guide-2026), and the gap between "runs locally" and "works as an agent" is where every local setup actually fails.`,
+That second question is the one this post answers end to end. The setup guides published since launch stop at "it runs" — a chat window and a benchmark table. A coding *agent* is a different deployment: it needs an OpenAI-compatible server, a harness that can edit files and run tests, sampling settings tuned for tool calls rather than prose, and enough KV-cache headroom that the session does not fall over at the exact moment the agent finally understands your repo. I have run local models inside agent harnesses since [VibeThinker-3B](/notes/vibethinker-3b-tiny-reasoning-model-guide-2026), and the gap between "runs locally" and "works as an agent" is where every local setup actually fails.`,
     },
     {
       heading: 'What Qwen3.8-27B Actually Ships',
       content: `The spec sheet, from the [official model card](https://huggingface.co/Qwen/Qwen3.8-27B):
 
-- **Dense 27B** — not a MoE. Every parameter is active on every token, which is why the quality-per-gigabyte is so high after quantization. Compare [DeepSeek V4-Flash's 284B/13B-active MoE](/en/notes/deepseek-v4-flash-vision-exp-api-guide-2026): brilliant per-dollar over an API, hopeless on a consumer card.
+- **Dense 27B** — not a MoE. Every parameter is active on every token, which is why the quality-per-gigabyte is so high after quantization. Compare [DeepSeek V4-Flash's 284B/13B-active MoE](/notes/deepseek-v4-flash-vision-exp-api-guide-2026): brilliant per-dollar over an API, hopeless on a consumer card.
 - **Hybrid attention** — 64 layers arranged as 16 blocks of \`3 × (Gated DeltaNet → FFN) → 1 × (Gated Attention → FFN)\`. Only a quarter of the layers carry full attention, which cuts KV-cache growth to roughly **256KB per token** — the design decision that makes long agent sessions feasible at all.
 - **262,144-token native context**, extensible to 1M with YaRN.
 - **Flexible thinking control** via a \`reasoning_effort\` parameter — you can dial reasoning depth per request, which matters when an agent makes forty tool calls and you do not want a thinking block on each one.
 - **Native vision** with a separate ~0.93GB projector file — optional for a coding agent, useful if you want it reading screenshots of broken UI.
 - **Benchmarks**: 61.7 SWE-bench Pro, 73.0 Terminal-Bench 2.1, 90.3 LiveCodeBench v6, 89.2 GPQA Diamond, 84.3 OSWorld.
 
-Two honest caveats on those numbers. First, they are the Qwen team's own runs at full precision with tuned harnesses — your Q4 quant driving a generic agent will land lower. Second, Terminal-Bench 73.0 is impressive *for the weight class*; frontier cloud models score in the high 80s, as I covered in the [Week 33 roundup](/en/notes/ai-dev-week-2026-33). The claim worth testing is not "frontier at home." It is "good enough that the marginal token is free."`,
+Two honest caveats on those numbers. First, they are the Qwen team's own runs at full precision with tuned harnesses — your Q4 quant driving a generic agent will land lower. Second, Terminal-Bench 73.0 is impressive *for the weight class*; frontier cloud models score in the high 80s, as I covered in the [Week 33 roundup](/notes/ai-dev-week-2026-33). The claim worth testing is not "frontier at home." It is "good enough that the marginal token is free."`,
     },
     {
       heading: 'Which Qwen3.8-27B GGUF Should You Actually Download?',
@@ -83,7 +83,7 @@ One more number before you pick small: the weights are only half the budget. At 
       heading: 'How Do You Wire It Into Qwen Code — and Into Claude Code?',
       content: `The stack is three layers: llama-server exposing an OpenAI-compatible API, a coding harness pointed at it, and sampling settings tuned for tool calls.
 
-**Layer 1 — serve it.** Grab the GGUF from the table above and run [llama.cpp](https://github.com/ggml-org/llama.cpp)'s server (I covered llama.cpp's agent-relevant speedups in the [dspark speculative-decoding post](/en/notes/deepseek-dspark-speculative-decoding-llamacpp-2026)):
+**Layer 1 — serve it.** Grab the GGUF from the table above and run [llama.cpp](https://github.com/ggml-org/llama.cpp)'s server (I covered llama.cpp's agent-relevant speedups in the [dspark speculative-decoding post](/notes/deepseek-dspark-speculative-decoding-llamacpp-2026)):
 
 \`\`\`bash
 llama-server -m Qwen3.8-27B-UD-Q4_K_XL.gguf \\
@@ -159,13 +159,13 @@ Twenty minutes of checking beats a week of "local models are not there yet." The
       heading: 'When to Skip It — or Wait',
       content: `**Skip the local-agent build entirely if** your daily work is architecture-level changes across big codebases: the context ceiling plus the quality gap compounds, and you will spend more time re-prompting than the subscription costs. **Skip it if you don't own 16GB+ of VRAM** — below that you are in the IQ1/IQ2 band where the quant data shows 76.3% top-1 agreement, and an agent that mis-tokenizes one identifier in twenty will quietly corrupt edits. Renting a cloud GPU to run an open model usually costs more per useful token than just paying an API.
 
-**Wait if you are on the fence about hardware.** Launch-week quants are already on their second revision — the [HF discussion](https://huggingface.co/Qwen/Qwen3.8-27B/discussions/65) shows publishers actively re-cutting files — and llama.cpp lands Qwen3.8-specific optimizations weekly. The setup that takes an evening today will take an hour in a month, and speculative decoding for this architecture (the 1.8× pattern I measured with [dspark on DeepSeek](/en/notes/deepseek-dspark-speculative-decoding-llamacpp-2026)) has not shipped yet.
+**Wait if you are on the fence about hardware.** Launch-week quants are already on their second revision — the [HF discussion](https://huggingface.co/Qwen/Qwen3.8-27B/discussions/65) shows publishers actively re-cutting files — and llama.cpp lands Qwen3.8-specific optimizations weekly. The setup that takes an evening today will take an hour in a month, and speculative decoding for this architecture (the 1.8× pattern I measured with [dspark on DeepSeek](/notes/deepseek-dspark-speculative-decoding-llamacpp-2026)) has not shipped yet.
 
 And do not adopt it *because a benchmark table beat a frontier model*. Vendor-run comparisons that show a 27B "beating Opus on 15 of 19 tests" measure tuned harnesses at full precision against black-box APIs. The honest local-vs-cloud gap on real agent work is visible within your first hour of use. Trust that hour.`,
     },
     {
       heading: "How I'd Ship This in Production",
-      content: `Here is the build I would actually run — and partly already do, since the failure modes are the same ones I hit shipping [agent harnesses for client MVPs](/en/services/6-week-mvp).
+      content: `Here is the build I would actually run — and partly already do, since the failure modes are the same ones I hit shipping [agent harnesses for client MVPs](/services/6-week-mvp).
 
 **Route by task, not by loyalty.** llama-server and every cloud provider speak the same OpenAI-compatible dialect, so put a router in front (LiteLLM, or claude-code-router's provider list) with three lanes: local Qwen3.8-27B for bounded repo tasks and anything NDA-bound, a cheap API lane for long-context work, a frontier lane for planning and gnarly debugging. The agent harness does not change; only the base URL does. My rule of thumb after two weeks: ~70% of agent invocations are bounded enough for the local lane.
 
@@ -173,17 +173,17 @@ And do not adopt it *because a benchmark table beat a frontier model*. Vendor-ru
 
 **Treat the KV cache as the capacity plan.** Weights are a one-time cost; context is per-session. Start sessions at 16K, monitor llama-server's slot metrics, and teach the agent to work in file-scoped chunks rather than repo-wide reads. This is the discipline cloud subscriptions let you skip — and the first thing that breaks local setups.
 
-**Keep the failure mode I'd worry about in view:** local models fail *quietly*. A cloud agent that hits a rate limit stops; a Q3 quant that drifts just keeps emitting plausible-looking edits. Wire the same guardrails you would for a junior dev — tests must pass before commit, diffs reviewed, no force pushes. The [security posture I wrote about for agent runtimes](/en/notes/prime-agent-rlm-continual-harness-guide-2026) applies double when the model is also unattended and free.
+**Keep the failure mode I'd worry about in view:** local models fail *quietly*. A cloud agent that hits a rate limit stops; a Q3 quant that drifts just keeps emitting plausible-looking edits. Wire the same guardrails you would for a junior dev — tests must pass before commit, diffs reviewed, no force pushes. The [security posture I wrote about for agent runtimes](/notes/prime-agent-rlm-continual-harness-guide-2026) applies double when the model is also unattended and free.
 
 The one-line verdict: Qwen3.8-27B is the first open-weights model where the local coding agent is a rational default rather than a hobby. The moat cloud agents keep is context length and frontier reasoning — rent those by the task, own the rest.`,
     },
     {
       heading: 'Need This Wired Into a Real Product?',
-      content: `Standing up llama-server is the easy weekend. The hard part is what comes after: routing between local and cloud lanes without doubling latency, sandboxing an agent that edits production code, and the five failure modes the README does not warn about. That is the work I do for a living — AI-integrated MVPs shipped in six weeks, including the agent plumbing, on [a fixed scope and price](/en/services/6-week-mvp). If you want the local-first stack designed into your product from day one rather than bolted on, [hire a founding engineer](/en/services/hire-founding-engineer-india) who has already burned his hands on the sharp edges.`,
+      content: `Standing up llama-server is the easy weekend. The hard part is what comes after: routing between local and cloud lanes without doubling latency, sandboxing an agent that edits production code, and the five failure modes the README does not warn about. That is the work I do for a living — AI-integrated MVPs shipped in six weeks, including the agent plumbing, on [a fixed scope and price](/services/6-week-mvp). If you want the local-first stack designed into your product from day one rather than bolted on, [hire a founding engineer](/services/hire-founding-engineer-india) who has already burned his hands on the sharp edges.`,
     },
   ],
   cta: {
     text: 'Ship your AI MVP in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

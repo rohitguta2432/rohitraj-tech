@@ -28,11 +28,11 @@ export const aiAgentCommandGuardrails2026: BlogPost = {
         },
         {
             heading: 'Stop Your AI Coding Agent Running rm -rf: Command Guardrails Compared (2026)',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 You hand a coding agent a boring chore — "clean up the build artifacts" — walk away to refill your coffee, and come back to a terminal that has helpfully run \`rm -rf\` one directory too high. The agent wasn't hacked. It wasn't tricked. It did exactly what you asked, in the most efficient way it could find, with none of the flinch a human developer has learned from getting burned once. There's a **[documented case of a Claude Code user whose cleanup task executed \`rm -rf ~/\` and wiped their home directory](https://www.reddit.com/r/ClaudeAI/)** — hours of uncommitted work, gone in one confident tool call.
 
-This is a different failure mode from the one everyone talks about. **Prompt injection** — a malicious instruction hidden in a web page or a repo file that hijacks your agent — is the adversarial threat, and I covered [how to defend against it separately](/en/notes/gitlost-ai-agent-prompt-injection-defense-2026). What we're dealing with here is quieter and more common: the agent is *reliable* about doing the wrong thing. No attacker required. It force-pushes over \`main\`, drops the wrong table, or \`git reset --hard\`s away changes you hadn't committed — because completing the task looked more important than preserving your work.
+This is a different failure mode from the one everyone talks about. **Prompt injection** — a malicious instruction hidden in a web page or a repo file that hijacks your agent — is the adversarial threat, and I covered [how to defend against it separately](/notes/gitlost-ai-agent-prompt-injection-defense-2026). What we're dealing with here is quieter and more common: the agent is *reliable* about doing the wrong thing. No attacker required. It force-pushes over \`main\`, drops the wrong table, or \`git reset --hard\`s away changes you hadn't committed — because completing the task looked more important than preserving your work.
 
 2026 produced a whole category of tools to sit between the agent and the shell and **hard-block destructive commands before they run**: [dcg](https://github.com/Dicklesworthstone/destructive_command_guard), [agent-guardrails](https://github.com/roboticforce/agent-guardrails), [Shellfirm](https://github.com/kaplanelad/shellfirm), and commercial options like [SigmaShake](https://sigmashake.com/). Below is the builder's read — why agents do this, how dcg actually works, whether these guards hold up under a real bypass attack, how the four compare, and exactly how I'd wire agent safety into a workflow I'd hand to a client. One theme runs through all of it: **a command guard lowers the odds of a disaster; only a sandbox removes it.**`,
         },
@@ -122,7 +122,7 @@ If you're a solo dev or a small team, install **dcg** and enable the packs match
             content: `Matching the tool to the job means naming when it's the wrong tool:
 
 - **You already run agents in a disposable sandbox.** If your agent lives in a throwaway container with a redirected \`$HOME\`, no prod credentials, and seeded data, the command guard is belt-and-suspenders. Nice to have, but the container is the actual seatbelt — and per GuardFall, the more trustworthy one.
-- **Your threat is adversarial, not accidental.** A command blocklist does nothing about prompt injection, data exfiltration, or an agent that reads a poisoned file and leaks a secret over the network. That's a [different defense entirely](/en/notes/gitlost-ai-agent-prompt-injection-defense-2026) — don't let a green "commands guarded" checkmark convince you you're covered.
+- **Your threat is adversarial, not accidental.** A command blocklist does nothing about prompt injection, data exfiltration, or an agent that reads a poisoned file and leaks a secret over the network. That's a [different defense entirely](/notes/gitlost-ai-agent-prompt-injection-defense-2026) — don't let a green "commands guarded" checkmark convince you you're covered.
 - **You can't tolerate false blocks.** Whitelist-first is conservative by design. A legitimate, unusual command *will* occasionally get stopped, and you'll be managing allowlists. On a fast-moving team that friction is real; budget for the \`dcg allowlist\` and \`allow-once\` workflow.
 - **You'd over-trust it.** This is the failure mode that actually bites. GuardFall's whole point is that these guards *look* airtight and aren't. If installing one leads you to flip the agent to full auto-execute against a real repo, you've made things **worse**, not better — you've added confidence without adding containment.
 
@@ -130,7 +130,7 @@ None of these makes dcg a bad tool. They're reasons a command guard is one contr
         },
         {
             heading: 'How I\'d actually wire agent safety into production',
-            content: `I run Claude Code and Codex daily, and I've watched an agent propose \`git reset --hard\` on a working tree full of uncommitted changes, and chain \`rm -rf\` across directories to "clean up" a failed build. So this isn't hypothetical for me — it's the exact class of mistake I design around when I [ship an MVP in six weeks](/en/services/6-week-mvp) and hand a client a repo I won't be babysitting. Here's the layered setup I'd actually deploy, cheapest and highest-leverage first:
+            content: `I run Claude Code and Codex daily, and I've watched an agent propose \`git reset --hard\` on a working tree full of uncommitted changes, and chain \`rm -rf\` across directories to "clean up" a failed build. So this isn't hypothetical for me — it's the exact class of mistake I design around when I [ship an MVP in six weeks](/services/6-week-mvp) and hand a client a repo I won't be babysitting. Here's the layered setup I'd actually deploy, cheapest and highest-leverage first:
 
 **1. Run the agent in a container with a throwaway \`$HOME\`.** This is the layer GuardFall says you can't skip. A devcontainer with no production credentials mounted, \`$HOME\` redirected to a disposable path, and seeded test data means the worst \`rm -rf\` in the world destroys nothing you can't recreate in thirty seconds. Containment beats detection.
 
@@ -142,7 +142,7 @@ None of these makes dcg a bad tool. They're reasons a command guard is one contr
 
 **5. Keep a human on the irreversible, outward-facing actions.** Force pushes to shared branches, production migrations, anything that sends data outside — those stay behind a human confirm, guard or no guard.
 
-The failure mode I genuinely worry about isn't the agent missing a command category. It's a team installing dcg, seeing it block a test \`rm -rf\`, declaring victory, flipping on full auto-execute against a live repo — and then meeting a GuardFall-class bypass or an un-packed command six weeks later. **A guard reduces the probability of disaster; it does not make disaster impossible.** Treat it that way and it's genuinely valuable. If you want a second set of hands to wire this stack in properly — sandboxing, hooks, credential scoping, and the commit discipline that ties it together — that's the kind of work I do as a [founding engineer for hire](/en/services/hire-founding-engineer-india).`,
+The failure mode I genuinely worry about isn't the agent missing a command category. It's a team installing dcg, seeing it block a test \`rm -rf\`, declaring victory, flipping on full auto-execute against a live repo — and then meeting a GuardFall-class bypass or an un-packed command six weeks later. **A guard reduces the probability of disaster; it does not make disaster impossible.** Treat it that way and it's genuinely valuable. If you want a second set of hands to wire this stack in properly — sandboxing, hooks, credential scoping, and the commit discipline that ties it together — that's the kind of work I do as a [founding engineer for hire](/services/hire-founding-engineer-india).`,
         },
         {
             heading: 'The bottom line',
@@ -150,11 +150,11 @@ The failure mode I genuinely worry about isn't the agent missing a command categ
 
 But internalize the GuardFall lesson, because it's the durable one: on **June 30, 2026, 10 of 11 popular agents' command guards were bypassed**, and the fix was never a better blocklist — it was containing what the agent can touch. **The only guardrail you can fully trust is the one that limits the blast radius, not the one that tries to read the agent's mind.** Guard the commands, sandbox the environment, commit often, and scope the credentials. Do all four and an autonomous agent becomes a tool you can leave running; do only one and you've bought confidence you haven't earned.
 
-If you're putting AI coding agents to work on something real and want the safety wired in from the first sprint instead of after the first \`rm -rf\`, [that's exactly what I help founders do](/en/services/6-week-mvp).`,
+If you're putting AI coding agents to work on something real and want the safety wired in from the first sprint instead of after the first \`rm -rf\`, [that's exactly what I help founders do](/services/6-week-mvp).`,
         },
     ],
     cta: {
         text: 'Wire AI agent safety into your MVP from day one',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

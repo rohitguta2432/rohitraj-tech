@@ -28,7 +28,7 @@ export const safariMcpServerWebDebuggingGuide2026: BlogPost = {
         },
         {
             heading: 'Safari MCP Server: Apple\'s Official Debugger vs the Community Tools (2026 Guide)',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Describing a rendering bug to a coding agent is a lossy process. You type "the button looks off-center in Safari," the agent nods along, and it's still guessing at pixels it has never actually seen. **Apple just closed that gap.** Safari Technology Preview 247, released July 1, 2026, ships an official **Model Context Protocol (MCP) server** built into the browser — so the agent can connect to a running Safari window, take its own screenshot, read the actual DOM, and check the console itself instead of trusting your description.
 
@@ -91,7 +91,7 @@ Both run as local **stdio subprocesses** of your AI client — no hosted endpoin
 
 **2. Accessibility audits during development, not after.** The built-in accessibility-failure-check tool means an agent can flag a missing \`aria-label\` or a contrast failure *while you're still writing the component*, not three weeks later when a Lighthouse CI job fails in a PR nobody wants to touch.
 
-**3. Autonomous fix-and-verify loops.** Change a CSS rule → reload → screenshot → compare → adjust → repeat, without you as the human relay in the middle of every iteration. This is the same pattern behind [WebMCP's in-page tool exposure](/en/notes/webmcp-guide-browser-agent-tools-2026), just applied to the browser chrome itself rather than to a page's own JavaScript.
+**3. Autonomous fix-and-verify loops.** Change a CSS rule → reload → screenshot → compare → adjust → repeat, without you as the human relay in the middle of every iteration. This is the same pattern behind [WebMCP's in-page tool exposure](/notes/webmcp-guide-browser-agent-tools-2026), just applied to the browser chrome itself rather than to a page's own JavaScript.
 
 What it is *not*: a replacement for cross-browser end-to-end testing. It's a debugging copilot for one specific engine, not a CI test runner covering Chrome, Firefox, and Safari in one pass.`,
         },
@@ -120,7 +120,7 @@ The practical takeaway: if you're chasing a Safari-specific bug and don't mind i
 - **16 tools is a real gap versus the community package's 80+.** If your workflow depends on deep automation primitives (multi-tab orchestration, complex form-fill sequences, custom event dispatch), you'll hit the ceiling of Apple's tool set faster than you'd expect from a "day one" release.
 - **It's brand new.** Three days old as of this post, and Technology Preview builds change fast — don't build a CI dependency on tool names or arguments that Apple hasn't committed to stabilizing yet.
 
-If any of those rule you out today, the community \`safari-mcp\` package or [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) cover more ground right now. None of that makes this a bad release — it makes it a *day-one* release, and day-one releases from browser vendors are usually worth adopting for side projects before you bet a client's CI pipeline on them. If you're evaluating whether a fast-moving AI tool is actually production-ready or still finding its feet, that judgment call is exactly the kind of thing I help teams make when I [build an MVP in six weeks](/en/services/6-week-mvp) and have to decide what goes in the stack versus what stays on the watch list.`,
+If any of those rule you out today, the community \`safari-mcp\` package or [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) cover more ground right now. None of that makes this a bad release — it makes it a *day-one* release, and day-one releases from browser vendors are usually worth adopting for side projects before you bet a client's CI pipeline on them. If you're evaluating whether a fast-moving AI tool is actually production-ready or still finding its feet, that judgment call is exactly the kind of thing I help teams make when I [build an MVP in six weeks](/services/6-week-mvp) and have to decide what goes in the stack versus what stays on the watch list.`,
         },
         {
             heading: 'How I\'d Wire This Into My Own Dev Workflow',
@@ -130,17 +130,17 @@ On this site, rohitraj.tech, I've had exactly the kind of Safari-only bug this t
 
 The failure mode I'd actually worry about: treating a Technology Preview screenshot as proof a bug is fixed in the *real* Safari your users run. STP and shipping Safari aren't always pixel-identical, especially for bleeding-edge CSS features. So the rule I'd set for any team adopting this: STP + the MCP server is where you *hunt and fix* WebKit-specific bugs fast, but the final check before merge still happens in the actual Safari version your analytics say your users are on. Skipping that step to save five minutes is how a "fixed in Safari" PR ships a bug that's only fixed in a preview build nobody's users have installed.
 
-That's the same discipline I bring in as a [founding engineer for hire](/en/services/hire-founding-engineer-india) — adopting a fast-moving tool for the productivity win while drawing a hard line around what it's not yet trusted to verify.`,
+That's the same discipline I bring in as a [founding engineer for hire](/services/hire-founding-engineer-india) — adopting a fast-moving tool for the productivity win while drawing a hard line around what it's not yet trusted to verify.`,
         },
         {
             heading: 'The Bottom Line',
             content: `Apple didn't just add a feature — it validated the whole idea that browser vendors should ship first-party MCP servers, three days before this post and with 9+ outlets covering it same-week. That's a signal worth paying attention to even if you never install Safari Technology Preview: expect Firefox and other engines to follow with their own official MCP servers before the year is out.
 
-For today: if you're chasing a WebKit-specific rendering bug and don't mind a second browser install, grab Apple's official server. If you need broader tool coverage against the Safari you already run, the community \`safari-mcp\` package covers more ground right now. Either way, keep a human check against your actual shipping browser before you call a Safari bug fixed. If you want a team that already knows which fast-moving AI tools are safe to build a real product on top of, [that's the conversation I have with founders every week](/en/services/6-week-mvp).`,
+For today: if you're chasing a WebKit-specific rendering bug and don't mind a second browser install, grab Apple's official server. If you need broader tool coverage against the Safari you already run, the community \`safari-mcp\` package covers more ground right now. Either way, keep a human check against your actual shipping browser before you call a Safari bug fixed. If you want a team that already knows which fast-moving AI tools are safe to build a real product on top of, [that's the conversation I have with founders every week](/services/6-week-mvp).`,
         },
     ],
     cta: {
         text: 'Ship your MVP with the right tools, not just the newest ones',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

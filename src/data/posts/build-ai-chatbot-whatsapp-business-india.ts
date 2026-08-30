@@ -19,7 +19,7 @@ export const buildAiChatbotWhatsappBusinessIndia: BlogPost = {
     },
 {
       heading: 'The AI Chatbot Hype vs Reality',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To build an AI chatbot for your business, you need to choose the right intelligence level (rule-based, intent classification, or full LLM), select a messaging platform your customers already use (WhatsApp dominates in India with 500M+ users), and architect a webhook-driven backend with session management and intent routing. Most businesses get the best ROI from a Level 2 intent-classification bot that costs $5,000-$10,000 to build and under $100/month to run.
 
@@ -129,7 +129,7 @@ User (WhatsApp) → Twilio Webhook → Spring Boot API → Intent Classifier →
 - Timeline: varies
 - Cost: $3,000–$15,000
 
-I've built all three types. Check ClinicAI and StellarMIND in my [projects](https://rohitraj.tech/en/projects) for real examples.`
+I've built all three types. Check ClinicAI and StellarMIND in my [projects](https://rohitraj.tech/projects) for real examples.`
     },
     {
       heading: 'WhatsApp Business API Providers Compared',
@@ -439,15 +439,15 @@ Most small and medium businesses do not need a full LLM-powered chatbot. A Level
       heading: 'Ship Your WhatsApp Chatbot in Weeks, Not Months',
       content: `If you are picking between a rule-based bot, an intent-classifier, and a full LLM-powered assistant, the architecture debate is not the bottleneck — picking the right Level for your use case is. I ship WhatsApp Business chatbots end-to-end: WABA approval, intent classification, LLM routing (when needed), CRM integration, Hinglish-tuned prompts, India-billing-friendly deployment.
 
-→ [Build my AI chatbot in 6 weeks](/en/services/ai-chatbot-development) (Levels 1-3, your choice, fixed price)
-→ [Or hire me for a 6-week MVP that includes the chatbot](/en/services/6-week-mvp) (full app + chatbot)
-→ [Or hire me as a founding engineer for the long haul](/en/services/hire-founding-engineer-india) (sprint or retainer, no equity ask)
+→ [Build my AI chatbot in 6 weeks](/services/ai-chatbot-development) (Levels 1-3, your choice, fixed price)
+→ [Or hire me for a 6-week MVP that includes the chatbot](/services/6-week-mvp) (full app + chatbot)
+→ [Or hire me as a founding engineer for the long haul](/services/hire-founding-engineer-india) (sprint or retainer, no equity ask)
 
-Related notes: [WhatsApp Business API integration guide](/en/notes/whatsapp-business-api-integration-guide-india), [OpenAI vs Claude vs Gemini API cost India 2026](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026), and [How to add AI to your existing business app](/en/notes/how-to-integrate-ai-existing-business-app).`,
+Related notes: [WhatsApp Business API integration guide](/notes/whatsapp-business-api-integration-guide-india), [OpenAI vs Claude vs Gemini API cost India 2026](/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026), and [How to add AI to your existing business app](/notes/how-to-integrate-ai-existing-business-app).`,
     }
   ],
   cta: {
     text: 'Build Your AI Chatbot in 6 Weeks',
-    href: '/en/services/ai-chatbot-development'
+    href: '/services/ai-chatbot-development'
   }
 };

@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
 import { logError } from '@/lib/logger';
 
-export default function RootError({
+export default function LocaleError({
   error,
   reset,
 }: {
@@ -11,61 +12,37 @@ export default function RootError({
   reset: () => void;
 }) {
   useEffect(() => {
-    logError(error, { boundary: 'root', digest: error.digest });
+    logError(error, { boundary: 'app', digest: error.digest });
   }, [error]);
 
   return (
-    <html lang="en">
-      <body
-        style={{
-          minHeight: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontFamily: 'system-ui, -apple-system, sans-serif',
-          backgroundColor: '#fafafa',
-          color: '#171717',
-        }}
-      >
-        <div style={{ textAlign: 'center', padding: '2rem', maxWidth: '480px' }}>
-          <h1 style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>
-            Something went wrong
-          </h1>
-          <p style={{ color: '#525252', marginBottom: '1.5rem', lineHeight: 1.6 }}>
-            An unexpected error occurred. Please try again.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-            <button
-              onClick={reset}
-              style={{
-                padding: '0.625rem 1.25rem',
-                backgroundColor: '#3b82f6',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '0.5rem',
-                cursor: 'pointer',
-                fontSize: '0.875rem',
-              }}
-            >
-              Try again
-            </button>
-            <a
-              href="/"
-              style={{
-                padding: '0.625rem 1.25rem',
-                backgroundColor: 'transparent',
-                color: '#3b82f6',
-                border: '1px solid #3b82f6',
-                borderRadius: '0.5rem',
-                textDecoration: 'none',
-                fontSize: '0.875rem',
-              }}
-            >
-              Go back home
-            </a>
-          </div>
-        </div>
-      </body>
-    </html>
+    <main
+      className="flex min-h-[60vh] flex-col items-center justify-center px-6 py-16 text-center"
+      style={{ backgroundColor: 'var(--bg)', color: 'var(--text-primary)' }}
+    >
+      <h1 className="mb-3 text-2xl font-semibold">Something went wrong</h1>
+      <p className="mb-6 max-w-md" style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+        An unexpected error occurred while loading this page. Please try again.
+      </p>
+      <div className="flex gap-4">
+        <button
+          onClick={reset}
+          className="cursor-pointer rounded-lg px-5 py-2.5 text-sm text-white"
+          style={{ backgroundColor: 'var(--accent)', border: 'none' }}
+        >
+          Try again
+        </button>
+        <Link
+          href="/"
+          className="rounded-lg px-5 py-2.5 text-sm no-underline"
+          style={{
+            color: 'var(--accent)',
+            border: '1px solid var(--accent)',
+          }}
+        >
+          Go back home
+        </Link>
+      </div>
+    </main>
   );
 }

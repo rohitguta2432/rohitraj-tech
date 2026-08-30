@@ -19,7 +19,7 @@ export const buildEnterpriseDealMatchingPlatformSpringBootNextjs: BlogPost = {
     },
 {
       heading: 'The Problem: Deal Networks Run on Spreadsheets',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built SynFlow, a full-stack enterprise deal matching platform using Spring Boot 3.4, Next.js 14, and GPT-4o that automatically scores and matches investor profiles to deals using a rule-based algorithm with AI-powered profile extraction from unstructured LinkedIn text — replacing the spreadsheets and manual introductions that dominate private deal networks today.
 
@@ -152,9 +152,9 @@ One command to spin up the entire stack. No external dependencies except an Open
 
 **Why not GraphQL?** REST was chosen over GraphQL for the API layer because the data access patterns are well-defined — profiles, deals, matches, and analytics each have predictable query shapes. GraphQL adds complexity in schema management and N+1 query prevention that isn't justified when the API surface is stable and owned by a single frontend.
 
-The pattern I run for founders in this situation is either a [full-stack development](/en/services/full-stack-development) or a [6-week MVP sprint](/en/services/6-week-mvp) — pick based on whether you need shipped code or shipped *and* maintained code.
+The pattern I run for founders in this situation is either a [full-stack development](/services/full-stack-development) or a [6-week MVP sprint](/services/6-week-mvp) — pick based on whether you need shipped code or shipped *and* maintained code.
 
-Two posts that pick up where this one ends: [Building a Multi-Tenant Retail SaaS with Spring Boot 3.4 + Java 21](/en/notes/build-multi-tenant-saas-spring-boot-java-21) and [How to Build an AI Chatbot for Your Business: Architecture, Cost & What…](/en/notes/build-ai-chatbot-whatsapp-business-india).`
+Two posts that pick up where this one ends: [Building a Multi-Tenant Retail SaaS with Spring Boot 3.4 + Java 21](/notes/build-multi-tenant-saas-spring-boot-java-21) and [How to Build an AI Chatbot for Your Business: Architecture, Cost & What…](/notes/build-ai-chatbot-whatsapp-business-india).`
     },
     {
       heading: 'Frequently Asked Questions',

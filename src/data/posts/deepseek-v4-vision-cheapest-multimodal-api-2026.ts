@@ -28,7 +28,7 @@ export const deepseekV4VisionCheapestMultimodalApi2026: BlogPost = {
         },
         {
             heading: 'DeepSeek V4 Vision: The Cheapest Multimodal API to Ship in Production (2026)',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 When DeepSeek V4 shipped on April 24, 2026, it was a text and coding model — fast, absurdly cheap, and explicitly *not* multimodal. I checked at the time: the [public V4 spec sheets](https://www.morphllm.com/deepseek-v4) listed a 1M-token context window, DeepSeek Sparse Attention, and SWE-bench numbers, with zero vision benchmarks. So the interesting thing about this week is not "a new model dropped." It is that DeepSeek bolted vision onto the V4 family it already serves at commodity prices, and the result is the first genuinely *cheap* production multimodal API.
 
@@ -77,7 +77,7 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 \`\`\`
 
-Two practical notes the docs bury. First, **prefer hosted URLs over base64 when you can** — base64 inflates the request body by ~33% and you pay for the round trip, while a URL lets DeepSeek fetch and tokenize server-side. Second, **ask for structured output explicitly.** Vision models drift into prose; pinning a JSON shape in the prompt (or using the response-format controls) is what turns a demo into a pipeline. If you are migrating an existing multimodal feature, this is genuinely a one-file change — swap \`base_url\` and the model id, keep the rest. That low switching cost is half of why this launch matters: there is almost no integration tax to A/B test it against your current provider. For a deeper provider-cost comparison across text workloads too, I keep a running breakdown in [OpenAI vs Claude vs Gemini API cost for an India MVP](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026).`,
+Two practical notes the docs bury. First, **prefer hosted URLs over base64 when you can** — base64 inflates the request body by ~33% and you pay for the round trip, while a URL lets DeepSeek fetch and tokenize server-side. Second, **ask for structured output explicitly.** Vision models drift into prose; pinning a JSON shape in the prompt (or using the response-format controls) is what turns a demo into a pipeline. If you are migrating an existing multimodal feature, this is genuinely a one-file change — swap \`base_url\` and the model id, keep the rest. That low switching cost is half of why this launch matters: there is almost no integration tax to A/B test it against your current provider. For a deeper provider-cost comparison across text workloads too, I keep a running breakdown in [OpenAI vs Claude vs Gemini API cost for an India MVP](/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026).`,
         },
         {
             heading: 'Where does DeepSeek vision actually shine?',
@@ -89,7 +89,7 @@ Two practical notes the docs bury. First, **prefer hosted URLs over base64 when 
 
 **3. UI screenshot understanding for agents.** Agent frameworks that "look" at a screen burn vision tokens on every step. At ~90 tokens per frame, DeepSeek makes screen-reading loops affordable that would be cost-prohibitive on Claude or Gemini. This is where the cheap-per-image property compounds across a long agent trajectory.
 
-Here is the personal angle. I run [MyFinancial](/en/projects), where users upload bank and brokerage statements and we extract holdings and transactions. On a Claude- or GPT-class vision model, the per-document cost forces you to cache aggressively and rate-limit free users hard. With a model at a fraction of the per-image price, I would re-architect that flow tomorrow: extract eagerly on upload, skip the caching gymnastics, and pass *every* page rather than heuristically picking "the important ones." The cost ceiling that shaped the product design largely disappears. The failure mode I would watch is silent extraction errors on low-quality phone photos — cheap inference tempts you to skip validation, and a wrong number in a finance app is worse than a slow one.`,
+Here is the personal angle. I run [MyFinancial](/projects), where users upload bank and brokerage statements and we extract holdings and transactions. On a Claude- or GPT-class vision model, the per-document cost forces you to cache aggressively and rate-limit free users hard. With a model at a fraction of the per-image price, I would re-architect that flow tomorrow: extract eagerly on upload, skip the caching gymnastics, and pass *every* page rather than heuristically picking "the important ones." The cost ceiling that shaped the product design largely disappears. The failure mode I would watch is silent extraction errors on low-quality phone photos — cheap inference tempts you to skip validation, and a wrong number in a finance app is worse than a slow one.`,
         },
         {
             heading: 'How does DeepSeek V4 Vision compare to GPT, Claude, and Gemini?',
@@ -106,7 +106,7 @@ Here is the personal angle. I run [MyFinancial](/en/projects), where users uploa
 | Confirmed open weights (vision) | not at launch | no | no | no |
 | Data residency outside China | no | yes | yes | yes |
 
-Read it this way: DeepSeek wins decisively on **cost and image-token efficiency** and ties on context window. GPT and Claude win on **top-end visual reasoning** and ecosystem trust. Gemini Flash 3 is the closest on price among the Western trio but still encodes images far more expensively. If your workload is "lots of documents, good-enough accuracy, tight budget," DeepSeek is the obvious pick. If it is "few images, must be exactly right, regulated data," stay on a frontier provider. For the text-side of that same buy decision, my [DeepSeek vs Claude vs GPT cost breakdown for India MVPs](/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026) goes deeper on the trade-offs.`,
+Read it this way: DeepSeek wins decisively on **cost and image-token efficiency** and ties on context window. GPT and Claude win on **top-end visual reasoning** and ecosystem trust. Gemini Flash 3 is the closest on price among the Western trio but still encodes images far more expensively. If your workload is "lots of documents, good-enough accuracy, tight budget," DeepSeek is the obvious pick. If it is "few images, must be exactly right, regulated data," stay on a frontier provider. For the text-side of that same buy decision, my [DeepSeek vs Claude vs GPT cost breakdown for India MVPs](/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026) goes deeper on the trade-offs.`,
         },
         {
             heading: 'When should you skip DeepSeek vision (or keep a fallback)?',
@@ -145,17 +145,17 @@ The wiring details that decide whether this is robust:
 - **Log the model id and token counts per request.** When you A/B DeepSeek against your incumbent, you want the cost and accuracy delta in your own data, not a vendor's blog.
 - **Pin a known-good model id.** "deepseek-v4-flash" today; don't auto-track "latest" in production.
 
-That fallback pattern is the whole game: you capture ~90% of the cost savings on the easy majority of images and pay frontier prices only on the hard minority. This is exactly the kind of provider-abstraction-plus-validation plumbing I build for clients in a [6-week MVP](/en/services/6-week-mvp) — and the kind of "looks simple, has five sharp edges" integration where a [founding engineer](/en/services/hire-founding-engineer-india) earns their keep, because the README shows you the happy path and never the residency, validation, and fallback work that makes it safe to ship.`,
+That fallback pattern is the whole game: you capture ~90% of the cost savings on the easy majority of images and pay frontier prices only on the hard minority. This is exactly the kind of provider-abstraction-plus-validation plumbing I build for clients in a [6-week MVP](/services/6-week-mvp) — and the kind of "looks simple, has five sharp edges" integration where a [founding engineer](/services/hire-founding-engineer-india) earns their keep, because the README shows you the happy path and never the residency, validation, and fallback work that makes it safe to ship.`,
         },
         {
             heading: 'The bottom line',
             content: `DeepSeek V4 Vision does not dethrone GPT or Claude on raw visual intelligence, and it should not change your plans if you process a handful of images where every read must be perfect. What it does is move the price floor for *volume* multimodal work down by roughly an order of magnitude, with a zero-friction OpenAI-compatible API that you can A/B against your current provider in an afternoon. For OCR, document extraction, chart parsing, and agent screen-reading at scale, that is a genuinely new option — the first time "cheap" and "production multimodal" have been true in the same sentence. Adopt it where the workload is high-volume and error-tolerant, gate it behind validation and a frontier fallback, and answer the data-residency question first. Do that, and the savings are real without the risk being.
 
-Building something image-heavy and trying to figure out whether to bet on the cheap model? That provider-abstraction, validation, and fallback layer is the part that is easy to get wrong — and the part I ship for a living. See the [6-week MVP service](/en/services/6-week-mvp) or [hire a founding engineer](/en/services/hire-founding-engineer-india) if you want it built right the first time.`,
+Building something image-heavy and trying to figure out whether to bet on the cheap model? That provider-abstraction, validation, and fallback layer is the part that is easy to get wrong — and the part I ship for a living. See the [6-week MVP service](/services/6-week-mvp) or [hire a founding engineer](/services/hire-founding-engineer-india) if you want it built right the first time.`,
         },
     ],
     cta: {
         text: 'Ship your AI-vision MVP in 6 weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

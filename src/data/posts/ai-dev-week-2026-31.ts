@@ -30,7 +30,7 @@ export const aiDevWeek2026W31: BlogPost = {
     },
     {
       heading: 'Why This Week the Releases and the Research Are One Story',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Two vendors shipped the same idea within 24 hours: you govern an agent by writing a file. GitHub put \`SKILL.md\` on every pull request; Google put an agent config in \`.agents/\`. On July 28, a 65-task benchmark found agents mostly don't obey long written policies, and a researcher published a worm that rides inside Word documents because a model can't separate instructions from content.
 
@@ -102,7 +102,7 @@ Tested against **GPT-5.5 and GPT-5.6**. Coordinated with MSRC from **March 6 to 
     },
     {
       heading: 'What Does It Actually Cost to Run Kimi K3 Locally?',
-      content: `**What:** We covered [the Kimi K3 release in Week 30](/en/notes/ai-dev-week-2026-30); this week the follow-up got answered. Official spec from [Moonshot's card](https://huggingface.co/moonshotai/Kimi-K3): **2.8T total parameters, 104B activated**, 896 experts with 16 per token, **1,048,576-token context**. (Several threads called it "A50B" — the official card says 104B.) The [Unsloth GGUF ladder](https://huggingface.co/unsloth/Kimi-K3-GGUF) runs **594 GB** at UD-IQ1_S up to **1.56 TB** at 8-bit. Home-lab reports landed near **4 tokens/sec**. Separately, llama.cpp merged **MTP speculative decoding for GLM-5.2** ([PR #25980](https://github.com/ggml-org/llama.cpp/pull/25980), **July 29**), alongside a PSA that it now loads MTP tensors by default even when MTP is disabled.
+      content: `**What:** We covered [the Kimi K3 release in Week 30](/notes/ai-dev-week-2026-30); this week the follow-up got answered. Official spec from [Moonshot's card](https://huggingface.co/moonshotai/Kimi-K3): **2.8T total parameters, 104B activated**, 896 experts with 16 per token, **1,048,576-token context**. (Several threads called it "A50B" — the official card says 104B.) The [Unsloth GGUF ladder](https://huggingface.co/unsloth/Kimi-K3-GGUF) runs **594 GB** at UD-IQ1_S up to **1.56 TB** at 8-bit. Home-lab reports landed near **4 tokens/sec**. Separately, llama.cpp merged **MTP speculative decoding for GLM-5.2** ([PR #25980](https://github.com/ggml-org/llama.cpp/pull/25980), **July 29**), alongside a PSA that it now loads MTP tensors by default even when MTP is disabled.
 
 **Why it matters:** "Open weights" and "runnable" are different claims — the floor to touch this model at all is **594 GB**, at 1-bit, at reading speed.
 
@@ -124,7 +124,7 @@ Tested against **GPT-5.5 and GPT-5.6**. Coordinated with MSRC from **March 6 to 
 
 The benchmark gave me a number for one of them. Its second failure mode — agents "losing rule details over time" — is exactly what I call \`CONTEXT_BLOAT\`, now measured at below 25% compliance for most frontier models.
 
-The failure mode I'd worry about: a forensic tool tells you what went wrong *after* it did. The honest lesson of Week 31 is that post-hoc diagnosis isn't the win — Google's \`pre_tool_execution\` hook is, because it stops the call before it happens. So the next thing I'm wiring is the boring half: expressing the top two signatures as hooks that fire *before* a tool call. Detection is the prototype; prevention is the product — the same order of operations I bring to every [6-week MVP build](/en/services/6-week-mvp).`,
+The failure mode I'd worry about: a forensic tool tells you what went wrong *after* it did. The honest lesson of Week 31 is that post-hoc diagnosis isn't the win — Google's \`pre_tool_execution\` hook is, because it stops the call before it happens. So the next thing I'm wiring is the boring half: expressing the top two signatures as hooks that fire *before* a tool call. Detection is the prototype; prevention is the product — the same order of operations I bring to every [6-week MVP build](/services/6-week-mvp).`,
     },
     {
       heading: 'Skip These',
@@ -136,11 +136,11 @@ The failure mode I'd worry about: a forensic tool tells you what went wrong *aft
       heading: 'Building on Any of This and Hitting Walls?',
       content: `Week 31's lesson: the industry shipped markdown-as-policy to millions of developers the same week it published evidence that markdown-as-policy is about a third reliable — and hedged with hooks and read-only scopes rather than better prose. If you're wiring agents into anything touching money, customer data, or production writes, that gap is your integration work.
 
-That's what I do: AI-heavy MVPs shipped in six weeks with evals, permission boundaries, and cost caps built in from day one. Start with the [6-week MVP plan](/en/services/6-week-mvp) or [hire a founding engineer](/en/services/hire-founding-engineer-india) who has debugged these failures on his own infrastructure.`,
+That's what I do: AI-heavy MVPs shipped in six weeks with evals, permission boundaries, and cost caps built in from day one. Start with the [6-week MVP plan](/services/6-week-mvp) or [hire a founding engineer](/services/hire-founding-engineer-india) who has debugged these failures on his own infrastructure.`,
     },
   ],
   cta: {
     text: 'Ship Your AI MVP in 6 Weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

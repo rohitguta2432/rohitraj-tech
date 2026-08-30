@@ -30,7 +30,7 @@ export const aiNewsApril2026WhatFoundersShouldBuild: BlogPost = {
     },
 {
       heading: 'Why Another April 2026 AI Roundup?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Because every other one is a list. Crescendo, devFlokers, HumAI, TechCrunch, BuildEZ, MeanCEO — all good sources, all ordered the same way: date, company, model name, one-line summary. Useful for a morning scroll. Useless if you are deciding what to ship next quarter.
 
@@ -181,9 +181,9 @@ Dying for privacy-sensitive mobile and for batch-processing workloads where late
 
 The Novo Nordisk × OpenAI full-business integration. Pharma was the canary — if the most regulated, slowest-moving vertical just committed to end-to-end AI across discovery, trials, manufacturing, and supply chain, the insurance / logistics / banking dominoes fall next. The founder opportunity is a vertical agent that replaces one 14-step regulated workflow, not another horizontal AI wrapper.
 
-If you want this shipped end-to-end without the team-of-five overhead, the [6-week MVP sprint](/en/services/6-week-mvp) and [startup MVP build](/en/services/startup-mvp-development) options are the routes I take on.
+If you want this shipped end-to-end without the team-of-five overhead, the [6-week MVP sprint](/services/6-week-mvp) and [startup MVP build](/services/startup-mvp-development) options are the routes I take on.
 
-If this thread is useful, [Cloud-First AI Is Dead. I Built a Fully Offline AI App to Prove It.](/en/notes/cloud-first-ai-is-dead-on-device-android-2026) and [The Best Lovable Alternative in 2026 Is Not Another AI Builder](/en/notes/lovable-alternative-developer-when-ai-builder-breaks) are the next two posts to read.`
+If this thread is useful, [Cloud-First AI Is Dead. I Built a Fully Offline AI App to Prove It.](/notes/cloud-first-ai-is-dead-on-device-android-2026) and [The Best Lovable Alternative in 2026 Is Not Another AI Builder](/notes/lovable-alternative-developer-when-ai-builder-breaks) are the next two posts to read.`
     },
     {
       heading: 'The One-Line Takeaway',

@@ -30,7 +30,7 @@ export const cloudflareComputerVsSandboxAgentGuide2026: BlogPost = {
     {
       heading:
         'Cloudflare Shipped Two Agent Runtimes in Four Months. Nobody Told You Which One to Pick',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **August 3, 2026** Cloudflare published a blog post titled *"Your agent needs a computer, not a container"* and open-sourced [\`@cloudflare/computer\`](https://github.com/cloudflare/computer) alongside it. Four days later the repo is at **4,992 stars and 250 forks**, sitting at **#1 on GitHub trending after gaining 2,802 stars in a single day**. Two days after that, Cloudflare launched **[Cloudflare OS](https://blog.cloudflare.com/cloudflare-os/)**, an open-source agent workspace for enterprises, which took the front page of Hacker News at **648 points and 321 comments**.
 
@@ -193,7 +193,7 @@ Two numbers from the Sandboxes GA post put the container path in perspective: cl
     },
     {
       heading: 'How I Would Actually Ship This',
-      content: `I run autonomous agents in the browser on [this site](/en/agents), and the piece that consistently costs the most engineering time is not the model call — it is state. Where does the agent's scratch work live, what survives a restart, and what happens when two sessions touch the same thing. That is exactly the seam Computer is aiming at, which is why I read the whole repo rather than the press release.
+      content: `I run autonomous agents in the browser on [this site](/agents), and the piece that consistently costs the most engineering time is not the model call — it is state. Where does the agent's scratch work live, what survives a restart, and what happens when two sessions touch the same thing. That is exactly the seam Computer is aiming at, which is why I read the whole repo rather than the press release.
 
 Given that, here is the wiring I would insist on before this went anywhere near a client's stack — none of which is in the README.
 
@@ -203,19 +203,19 @@ Given that, here is the wiring I would insist on before this went anywhere near 
 
 **Treat the 10 GB cap as a hard architectural boundary.** Enforce a per-workspace quota in your own adapter well below it, and push anything durable to R2. A workspace that hits the ceiling takes the Durable Object with it.
 
-**And keep the agent loop separate.** Cloudflare split \`@cloudflare/think\` from \`@cloudflare/computer\` for a reason. Whatever you use to drive the model, do not let it fuse to your storage layer — the same discipline I argued for when the [MCP spec went stateless](/en/notes/mcp-stateless-spec-migration-guide-2026), and the same reason [portable agent memory](/en/notes/tencentdb-agent-memory-team-hub-review-2026) beats framework-native memory every time.`,
+**And keep the agent loop separate.** Cloudflare split \`@cloudflare/think\` from \`@cloudflare/computer\` for a reason. Whatever you use to drive the model, do not let it fuse to your storage layer — the same discipline I argued for when the [MCP spec went stateless](/notes/mcp-stateless-spec-migration-guide-2026), and the same reason [portable agent memory](/notes/tencentdb-agent-memory-team-hub-review-2026) beats framework-native memory every time.`,
     },
     {
       heading: 'The Bottom Line',
       content: `**Cloudflare Sandbox** is the answer today: GA since April 13, 2026, thousands of concurrent instances, snapshots, Active CPU pricing. **Cloudflare Computer** is the more interesting long-term bet — an agent filesystem that costs nearly nothing when idle and reaches for Linux only when it has to — and it is a preview with no tagged release and six days of version history. Prototype on Computer this month. Ship on Sandbox this quarter.
 
-If you are wiring agent infrastructure into a product right now and would rather not spend three weeks discovering the FUSE overhead and the backend-drift bug yourself, that is the kind of integration work I do. I build AI-integrated MVPs end to end in six weeks — [see how the 6-week MVP sprint works](/en/services/6-week-mvp) — or embed directly with your team as a [founding engineer](/en/services/hire-founding-engineer-india) to get the agent layer right the first time.
+If you are wiring agent infrastructure into a product right now and would rather not spend three weeks discovering the FUSE overhead and the backend-drift bug yourself, that is the kind of integration work I do. I build AI-integrated MVPs end to end in six weeks — [see how the 6-week MVP sprint works](/services/6-week-mvp) — or embed directly with your team as a [founding engineer](/services/hire-founding-engineer-india) to get the agent layer right the first time.
 
 **Sources:** [Cloudflare blog — "Your agent needs a computer, not a container" (2026-08-03)](https://blog.cloudflare.com/cloudflare-computer/) · [Cloudflare developer changelog (2026-08-03)](https://developers.cloudflare.com/changelog/post/2026-08-03-cloudflare-computer/) · [github.com/cloudflare/computer](https://github.com/cloudflare/computer) · [Sandboxes GA announcement (2026-04-13)](https://blog.cloudflare.com/sandbox-ga/) · [Cloudflare Agents — Sandbox docs](https://developers.cloudflare.com/agents/tools/sandbox/) · [Cloudflare OS launch (2026-08-05)](https://blog.cloudflare.com/cloudflare-os/)`,
     },
   ],
   cta: {
     text: 'Ship your agent stack in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -28,7 +28,7 @@ export const geminiCliToAntigravityMigrationAlternatives2026: BlogPost = {
     },
     {
       heading: 'What Just Changed (and the Exact 24-Day Clock)',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On 2026-05-19 at Google I/O, Google announced that Gemini CLI — the Apache-2.0-licensed terminal coding agent that shipped in mid-2025 and accepted **roughly 6,000 community contributions** ([source](https://www.techtimes.com/articles/317056/20260523/google-accepted-6000-gemini-cli-contributions-then-closed-tool-enterprise-only.htm)) — is being **transitioned into Antigravity CLI**. The HN front-page thread hit [404 points and 210 comments](https://news.ycombinator.com/item?id=48196867) and the reaction across [The Register](https://www.theregister.com/ai-ml/2026/05/20/bye-bye-gemini-cli-google-nudges-devs-toward-antigravity/5243605), TechRadar, and KuCoin has been negative for one specific reason: Antigravity CLI is closed-source.
 
@@ -115,7 +115,7 @@ That is the happy path. About 70% of users land it cleanly. The remaining 30% hi
     },
     {
       heading: 'Why a Lot of Devs Are Not Migrating',
-      content: `Three reasons, in descending order of how often I am hearing them from working engineers in our [/en/services/6-week-mvp](/en/services/6-week-mvp) pipeline:
+      content: `Three reasons, in descending order of how often I am hearing them from working engineers in our [/services/6-week-mvp](/services/6-week-mvp) pipeline:
 
 **1. Closed-source binary** — Gemini CLI shipped under Apache 2.0. You could fork it, audit it, patch it, run it in your CI without telling Google. Antigravity CLI is a closed binary. For a paid client engagement where the deliverable is "you can run this in your own infra forever," that single change is disqualifying. The [HN thread](https://news.ycombinator.com/item?id=48196867) is full of devs saying some version of "Google accepted 6,000 PRs from the community, then took the result behind a license check."
 
@@ -139,7 +139,7 @@ None of these is a deal-breaker if you are a solo dev using the agent for ad-hoc
 | Subagents / hooks | Yes | Yes | Limited | No | Yes (OpenCode) |
 | Sandbox | Built-in (buggy at launch) | Project-scoped | Lightweight | Git-based | Project-scoped |
 | Pricing model | Weekly quota (Google AI Pro/Ultra) | Daily quota (Claude Max) / API key | API key only | API key only | API key only |
-| Best workload | Google-first stacks, multi-agent async | Big multi-file refactors, /en/services/ai-chatbot-development backends | Quick single-file edits, interactive pair coding | Git-disciplined incremental edits | Open-source replacement for Claude Code |
+| Best workload | Google-first stacks, multi-agent async | Big multi-file refactors, /services/ai-chatbot-development backends | Quick single-file edits, interactive pair coding | Git-disciplined incremental edits | Open-source replacement for Claude Code |
 
 **Claude Code** (Anthropic, \`claude\`) — wins on **multi-file refactor + codebase understanding**. The agentic search across a large repo is currently the best of any CLI tool. If your day-to-day is "open this Spring Boot service, find the auth middleware, refactor it across 12 files, run the tests, fix the breakage," Claude Code finishes the loop better than anything else right now. Pricing: $20-100/mo for Claude Max, or API-key with metered cost. The biggest switch from Gemini CLI Ultra users is to Claude Max, per [multiple HN reports](https://news.ycombinator.com/item?id=48196867).
 
@@ -162,13 +162,13 @@ One more option to mention: you can **keep using Gemini CLI itself on a paid Gem
 
 If none of those fit cleanly: default to **Aider** for paid work and **Claude Code** for personal projects. That is what I run on this site's codebase today.
 
-For an India MVP client engagement specifically — the [6-week MVP](/en/services/6-week-mvp) profile where the deliverable is "working code I can hand off and walk away" — the calculus is heavily tilted toward Aider plus a paid LLM API key (DeepSeek V4 Pro at $0.87/M output is the new floor [per yesterday's analysis](/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026)). The combination of git-disciplined commits, BYOM cost control, and "no vendor can revoke this in 24 days" gives the client something they can keep using long after I am off the project.`,
+For an India MVP client engagement specifically — the [6-week MVP](/services/6-week-mvp) profile where the deliverable is "working code I can hand off and walk away" — the calculus is heavily tilted toward Aider plus a paid LLM API key (DeepSeek V4 Pro at $0.87/M output is the new floor [per yesterday's analysis](/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026)). The combination of git-disciplined commits, BYOM cost control, and "no vendor can revoke this in 24 days" gives the client something they can keep using long after I am off the project.`,
     },
     {
       heading: 'How I Would Actually Ship This for a Paid Client',
-      content: `The honest answer for a paid client engagement starting in June 2026 — say a fintech MVP for a [/en/services/fintech-app-development](/en/services/fintech-app-development) client, or an [AI chatbot backend](/en/services/ai-chatbot-development) — looks like this:
+      content: `The honest answer for a paid client engagement starting in June 2026 — say a fintech MVP for a [/services/fintech-app-development](/services/fintech-app-development) client, or an [AI chatbot backend](/services/ai-chatbot-development) — looks like this:
 
-**1. Default toolchain: Aider + DeepSeek V4 Pro via OpenRouter.** Aider's git-disciplined commits are non-negotiable for client work — every change has a clean message, every refactor is reverable, and the cost is "API tokens" not "another monthly subscription the client has to keep paying after I leave." DeepSeek V4 Pro keeps the bill at roughly $45/month for 80M tokens, vs $528 on Claude Sonnet 4.6, per [the math I worked out yesterday](/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026).
+**1. Default toolchain: Aider + DeepSeek V4 Pro via OpenRouter.** Aider's git-disciplined commits are non-negotiable for client work — every change has a clean message, every refactor is reverable, and the cost is "API tokens" not "another monthly subscription the client has to keep paying after I leave." DeepSeek V4 Pro keeps the bill at roughly $45/month for 80M tokens, vs $528 on Claude Sonnet 4.6, per [the math I worked out yesterday](/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026).
 
 **2. Claude Code on my own machine for the hard parts.** When Aider stalls — usually because the task needs deep cross-file reasoning, not incremental edits — I fall back to Claude Code on my own Claude Max subscription. The client never sees this; the output is just a clean PR.
 
@@ -238,11 +238,11 @@ Yes, on a paid Gemini API key. The open-source repo continues to work; only the 
 
 If your stack is more complex — a paid client backend that wraps the agent in a custom orchestrator, an AI chatbot serving real users, a fintech compliance workflow where "the tool can be revoked in 24 days" is a contract violation — that is where the migration gets expensive fast, and where doing it solo while also shipping features is the part that breaks people.
 
-That is the kind of work I do: ship the [6-week MVP](/en/services/6-week-mvp) on a stack you can keep using, with the AI integration ([ai-chatbot-development](/en/services/ai-chatbot-development) profile) wired in so the tooling choice does not lock you in to one vendor's quota policy. If the Gemini CLI deprecation is the second time this year a tool you depend on changed terms on you, that is the signal — talk to me before the next one does.`,
+That is the kind of work I do: ship the [6-week MVP](/services/6-week-mvp) on a stack you can keep using, with the AI integration ([ai-chatbot-development](/services/ai-chatbot-development) profile) wired in so the tooling choice does not lock you in to one vendor's quota policy. If the Gemini CLI deprecation is the second time this year a tool you depend on changed terms on you, that is the signal — talk to me before the next one does.`,
     },
   ],
   cta: {
     text: 'Hire a founding engineer who picks tools your client can keep',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

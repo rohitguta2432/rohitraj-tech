@@ -1,34 +1,10 @@
-export const locales = ['en', 'hi', 'fr', 'de', 'ar'] as const;
+// Site is English-only. The locale routing layer (/en, /hi, …) was removed to
+// consolidate SEO signals on one URL per page; dictionaries remain as the
+// content source so copy stays separated from components.
+export const locales = ['en'] as const;
 export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = 'en';
-
-export const localeNames: Record<Locale, string> = {
-    en: 'English',
-    hi: 'हिंदी',
-    fr: 'Français',
-    de: 'Deutsch',
-    ar: 'العربية',
-};
-
-export const localeFlags: Record<Locale, string> = {
-    en: '🇺🇸',
-    hi: '🇮🇳',
-    fr: '🇫🇷',
-    de: '🇩🇪',
-    ar: '🇸🇦',
-};
-
-// RTL locales
-export const rtlLocales: Locale[] = ['ar'];
-
-export function isRTL(locale: Locale): boolean {
-    return rtlLocales.includes(locale);
-}
-
-export function isValidLocale(locale: string): locale is Locale {
-    return locales.includes(locale as Locale);
-}
 
 export type Dictionary = {
     common: CommonDictionary;
@@ -217,42 +193,18 @@ export interface MetaDictionary {
     };
 }
 
-// Module-level cache: prevents re-importing the same locale dictionary
-const dictionaryCache = new Map<Locale, Dictionary>();
+// Module-level cache: the dictionary is loaded once per server process
+let cachedDictionary: Dictionary | null = null;
 
-async function loadDictionary(locale: Locale): Promise<Dictionary> {
-    try {
-        const [common, home, pages, meta] = await Promise.all([
-            import(`../../content/${locale}/common.json`).then((m) => m.default),
-            import(`../../content/${locale}/home.json`).then((m) => m.default),
-            import(`../../content/${locale}/pages.json`).then((m) => m.default),
-            import(`../../content/${locale}/meta.json`).then((m) => m.default),
-        ]);
-        return { common, home, pages, meta };
-    } catch {
-        // Fallback to English if locale files don't exist
-        if (locale !== 'en') {
-            console.warn(`Dictionary for locale "${locale}" not found, falling back to English`);
-            return loadDictionary('en');
-        }
-        throw new Error('English dictionary not found');
-    }
-}
+export async function getDictionary(): Promise<Dictionary> {
+    if (cachedDictionary) return cachedDictionary;
 
-export async function getDictionary(locale: Locale): Promise<Dictionary> {
-    const cached = dictionaryCache.get(locale);
-    if (cached) return cached;
-
-    const dictionary = await loadDictionary(locale);
-    dictionaryCache.set(locale, dictionary);
-    return dictionary;
-}
-
-// Compiled once at module load — reused across all calls to getLocalizedPath
-const localePathnamePattern = new RegExp(`^/(${locales.join('|')})(/|$)`);
-
-export function getLocalizedPath(pathname: string, locale: Locale): string {
-    // Remove existing locale prefix if present
-    const pathWithoutLocale = pathname.replace(localePathnamePattern, '/');
-    return `/${locale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
+    const [common, home, pages, meta] = await Promise.all([
+        import('../../content/en/common.json').then((m) => m.default),
+        import('../../content/en/home.json').then((m) => m.default),
+        import('../../content/en/pages.json').then((m) => m.default),
+        import('../../content/en/meta.json').then((m) => m.default),
+    ]);
+    cachedDictionary = { common, home, pages, meta };
+    return cachedDictionary;
 }

@@ -9,8 +9,8 @@ export async function GET() {
             (post) => `
     <item>
       <title><![CDATA[${post.title}]]></title>
-      <link>${baseUrl}/en/notes/${post.slug}</link>
-      <guid isPermaLink="true">${baseUrl}/en/notes/${post.slug}</guid>
+      <link>${baseUrl}/notes/${post.slug}</link>
+      <guid isPermaLink="true">${baseUrl}/notes/${post.slug}</guid>
       <description><![CDATA[${post.excerpt}]]></description>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       ${post.keywords.map((kw) => `<category>${kw}</category>`).join("\n      ")}

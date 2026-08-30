@@ -30,13 +30,13 @@ export const deepseekV4FlashVisionExpApiGuide2026: BlogPost = {
     {
       heading:
         'DeepSeek-V4-Flash-Vision-Exp: What the Cheapest Vision API of 2026 Actually Does',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **August 21, 2026**, DeepSeek published a short [release note](https://api-docs.deepseek.com/news/news260821/) and a [vision guide](https://api-docs.deepseek.com/guides/vision/) announcing that image input is live on the API Platform under a new model id, \`deepseek-v4-flash-vision-exp\`. The [Hacker News thread](https://news.ycombinator.com/item?id=49386163) hit **494 points and 153 comments** the same day. That is a lot of attention for what is, on paper, a flag flip: same endpoint, same SDKs, same price, plus an image block in the message.
 
 The reason developers care is the price shape, not the model card. DeepSeek bills an image at **up to 384 tokens**, full stop, at ordinary V4-Flash text rates. There is no separate image price, no per-image fee, no tile multiplier. For anyone running an agent that looks at a lot of screenshots — browser agents, QA bots, document intake, support tools that receive WhatsApp photos — that changes the unit economics enough to redesign the pipeline around it.
 
-I covered the [first V4 vision launch in June](/en/notes/deepseek-v4-vision-cheapest-multimodal-api-2026), when image understanding appeared in chat.deepseek.com and the API in a looser form. This post is about the August release specifically: the named model, the documented limits, what the HN crowd found when they actually tested it, and the one resolution constraint that decides whether it works for your use case.`,
+I covered the [first V4 vision launch in June](/notes/deepseek-v4-vision-cheapest-multimodal-api-2026), when image understanding appeared in chat.deepseek.com and the API in a looser form. This post is about the August release specifically: the named model, the documented limits, what the HN crowd found when they actually tested it, and the one resolution constraint that decides whether it works for your use case.`,
     },
     {
       heading: "What's New in the August 21 Release?",
@@ -50,7 +50,7 @@ I covered the [first V4 vision launch in June](/en/notes/deepseek-v4-vision-chea
 - **Formats:** JPEG, PNG, GIF, WebP, detected from file bytes rather than extension.
 - **Token cost:** images are resized to roughly **800×800** and tokenized at **up to 384 tokens each**; very small images (below about 384×384) are scaled up.
 - **Benchmarks:** DeepSeek's chart shows gains over V4-Flash across MMMU, OCRBench, DocVQA, ChartQA and MathVista, and positions the model "close to Opus 4.8" on multimodal **agent** tasks. The official note does not print the numbers; third-party transcriptions of the launch chart cite **Terminal-Bench 2.1 at 83.9**. Treat those as unofficial until DeepSeek publishes a table.
-- **Harness support:** [DeepSeek Harness](/en/notes/deepseek-harness-vs-claude-code-codex-cli-2026) **0.1.1** shipped the same day with native support, so \`dsh\` can now look at screenshots mid-task.
+- **Harness support:** [DeepSeek Harness](/notes/deepseek-harness-vs-claude-code-codex-cli-2026) **0.1.1** shipped the same day with native support, so \`dsh\` can now look at screenshots mid-task.
 - **Pricing:** identical to V4-Flash after the **August 16, 2026** rate update — **$0.007** cache-hit input, **$0.22** cache-miss input, **$0.66** output per 1M tokens off-peak; **double** (**$0.014 / $0.44 / $1.32**) during peak windows **01:00–04:00 and 06:00–10:00 UTC**.
 
 What is **not** in the release: open weights. DeepSeek has released weights for every major V4 model so far and the HN thread assumes this one follows, but as of August 23 nothing has appeared on Hugging Face. If your architecture depends on self-hosting, that is still a bet.`,
@@ -131,7 +131,7 @@ The raw bytes do not — the **tokenized** image does, at up to 384 tokens. A re
 
 **2. Chart and dashboard reading inside a text agent.** Grafana panels, Metabase charts, Stripe dashboards, a CFO's Excel chart pasted into Slack — these are low-text, high-shape images where the 800×800 downscale loses nothing. ChartQA is one of the benchmarks DeepSeek highlights, and in practice "what is the trend in this chart and which series crossed in Q2" is a task it handles at a fraction of the frontier-model price.
 
-**3. First-pass triage of inbound photos.** This is the one I care about. At [Vaani](/en/agents), the WhatsApp agent I build for Indian SMEs, a large share of inbound messages are photos — a product shelf, a handwritten order, a scanned invoice, a screenshot of a competitor's price list. Today those route to a frontier vision model for everything, which is the single biggest line item. With this model, the first pass — **what kind of image is this, is it legible, does it need the expensive model** — costs effectively nothing, and only the subset that needs dense OCR escalates. That routing alone can cut vision spend by an order of magnitude without touching accuracy on the hard cases.
+**3. First-pass triage of inbound photos.** This is the one I care about. At [Vaani](/agents), the WhatsApp agent I build for Indian SMEs, a large share of inbound messages are photos — a product shelf, a handwritten order, a scanned invoice, a screenshot of a competitor's price list. Today those route to a frontier vision model for everything, which is the single biggest line item. With this model, the first pass — **what kind of image is this, is it legible, does it need the expensive model** — costs effectively nothing, and only the subset that needs dense OCR escalates. That routing alone can cut vision spend by an order of magnitude without touching accuracy on the hard cases.
 
 The common thread: the model is best where you need **many cheap looks**, not **one perfect look**.`,
     },
@@ -154,7 +154,7 @@ The common thread: the model is best where you need **many cheap looks**, not **
 
 Two things the table hides. First, Gemini's image price is a **separate** meter, and its image tokenization is not capped the way DeepSeek's is, so a high-resolution page costs several times more than 384 tokens. Second, Qwen3.8 is the only one of the four where you can take the weights home, which is the right answer if your constraint is data residency rather than cost — the [Qwen3.8-27B dense release](https://blog.roboflow.com/qwen3-8-max/) runs on a single workstation GPU and is currently the strongest open VLM at object detection.
 
-If you want the full price-per-task rather than price-per-token, the [June post](/en/notes/deepseek-v4-vision-cheapest-multimodal-api-2026) has the KV-cache comparison (roughly **90 entries per image for DeepSeek vs ~870 for Claude and ~1,100 for Gemini**); the 384-token cap is the August version of the same idea.`,
+If you want the full price-per-task rather than price-per-token, the [June post](/notes/deepseek-v4-vision-cheapest-multimodal-api-2026) has the KV-cache comparison (roughly **90 entries per image for DeepSeek vs ~870 for Claude and ~1,100 for Gemini**); the 384-token cap is the August version of the same idea.`,
     },
     {
       heading: 'When Should You Skip It? The 800×800 Trap',
@@ -198,14 +198,14 @@ The failure mode I would worry about most is not the model being wrong. It is th
 
 That is the work I do — wiring models like this into products so the cheap model handles 90% of traffic, the expensive one handles the 10% that needs it, and the integration survives the next rename. If you are building something that has to look at images at scale:
 
-- **[6-week MVP](/en/services/6-week-mvp)** — idea to production in six weeks, vision intake and fallback routing included, without the five bugs the README does not warn you about.
-- **[Hire a founding engineer](/en/services/hire-founding-engineer-india)** — for teams that need someone who has already shipped the router, not just read the docs.
+- **[6-week MVP](/services/6-week-mvp)** — idea to production in six weeks, vision intake and fallback routing included, without the five bugs the README does not warn you about.
+- **[Hire a founding engineer](/services/hire-founding-engineer-india)** — for teams that need someone who has already shipped the router, not just read the docs.
 
 Either way: send it a screenshot this week, then send it a full-page scan, and compare. The difference between those two results is the whole story of this model.`,
     },
   ],
   cta: {
     text: 'Ship your vision pipeline in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

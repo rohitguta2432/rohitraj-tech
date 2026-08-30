@@ -29,7 +29,7 @@ export const aiDevWeek2026W28: BlogPost = {
     },
     {
       heading: 'Why This Week Points One Direction: Cheaper Agents',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Most weeks in AI are a pile of unrelated launches. This one had a spine. Read the six drops below back to back and they all answer the same question a working developer actually asks: *how do I get real agent behavior without a frontier-model bill or a data-center GPU?*
 
@@ -108,7 +108,7 @@ Every launch below answers it the same way: do the agent work, skip the frontier
     },
     {
       heading: 'What I\'m Shipping With This Week',
-      content: `Concretely: I'm putting **Ternlight** into the client-side search for [MyFinancial](/en/projects)'s educational content library — the "find the article that explains this term" box that today makes a round trip to a hosted embedding API for a corpus that's a few hundred short docs. Shipping a 7MB model once and running \`similar\` in ~5ms on-device is strictly better here: no API cost per keystroke, no latency, and — the part that matters for a finance site — **no user query leaving the browser**.
+      content: `Concretely: I'm putting **Ternlight** into the client-side search for [MyFinancial](/projects)'s educational content library — the "find the article that explains this term" box that today makes a round trip to a hosted embedding API for a corpus that's a few hundred short docs. Shipping a 7MB model once and running \`similar\` in ~5ms on-device is strictly better here: no API cost per keystroke, no latency, and — the part that matters for a finance site — **no user query leaving the browser**.
 
 The non-obvious part — the failure mode I'd worry about, and it's *not* in the demo: a 7MB WASM model is fixed-vocabulary, so quality depends entirely on whether your corpus matches what it was trained on. Finance jargon ("XIRR", "STCG", "ELSS") is exactly what a tiny general model may embed poorly — two unrelated tax terms can land suspiciously close. So the real work isn't the integration; it's building a small labeled eval set of "query → expected doc" pairs *first* and measuring recall before you rip out the hosted API.
 
@@ -118,19 +118,19 @@ That's the tax on every "runs cheaper" drop in this roundup: the artifact is sma
       heading: 'Skip These',
       content: `**DeepSeek-V4-Pro-DSpark, for now.** Another **DeepSeek-V4** variant trended on Hugging Face (**409 likes**) this week. DeepSeek ships fast and the base lineage is strong, but the Nth same-family "-Pro-DSpark" spin in a month is a "wait for independent benchmarks" situation, not a "swap your stack today" one. Let neutral leaderboards weigh in before you migrate.
 
-**"GLM-5.2 and the coming AI margin collapse" as a buying signal.** The commentary hit **222 points** on Hacker News — a fun macro read, but punditry, not something you ship. The model is worth knowing (I covered it in a [full deep-dive](/en/notes/glm-5-2-vs-claude-opus-coding-agent-2026)); the "margins are dying" take isn't a reason to change your stack this week.`,
+**"GLM-5.2 and the coming AI margin collapse" as a buying signal.** The commentary hit **222 points** on Hacker News — a fun macro read, but punditry, not something you ship. The model is worth knowing (I covered it in a [full deep-dive](/notes/glm-5-2-vs-claude-opus-coding-agent-2026)); the "margins are dying" take isn't a reason to change your stack this week.`,
     },
     {
       heading: 'Need Help Wiring This Week\'s Drops Into Your Product?',
       content: `If this week convinced you to cut agent costs — moving a routine loop to [Claude Sonnet 5](https://www.anthropic.com/news/claude-sonnet-5), fronting your providers with an **OmniRoute**-style gateway, or standing up **Qwen3.6-27B-NVFP4** on your own GPU — the pick is the easy part. The hard part is production wiring: spend caps, deterministic fallback, a real eval set before you trust a smaller model, and the load tests nobody writes.
 
-That's the [6-week MVP](/en/services/6-week-mvp) playbook — pick the right models and hosting, wire them into a shipping product, hand over a tested codebase. For a longer build, [Hire a Founding Engineer (India)](/en/services/hire-founding-engineer-india).
+That's the [6-week MVP](/services/6-week-mvp) playbook — pick the right models and hosting, wire them into a shipping product, hand over a tested codebase. For a longer build, [Hire a Founding Engineer (India)](/services/hire-founding-engineer-india).
 
-Next roundup drops next Tuesday. For the deep-dives behind this week: [GLM-5.2 vs Claude Opus for coding agents](/en/notes/glm-5-2-vs-claude-opus-coding-agent-2026) and [the best open-source deep-research agent to self-host](/en/notes/best-open-source-deep-research-agent-self-host-2026).`,
+Next roundup drops next Tuesday. For the deep-dives behind this week: [GLM-5.2 vs Claude Opus for coding agents](/notes/glm-5-2-vs-claude-opus-coding-agent-2026) and [the best open-source deep-research agent to self-host](/notes/best-open-source-deep-research-agent-self-host-2026).`,
     },
   ],
   cta: {
     text: 'Cut Your Agent Costs — 6-Week MVP Plan',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -18,7 +18,7 @@ export const buildAppLikeUberZomatoArchitectureCost: BlogPost = {
     },
 {
       heading: 'How Much Does It Cost to Build an App Like Uber or Zomato?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Building an on-demand marketplace MVP like Uber or Zomato costs ₹8,50,000-₹14,00,000 ($10,000-$17,000) with a freelance developer in India, taking 10-14 weeks. This includes a customer app, provider app, admin panel, payment integration, and live location tracking. Monthly running costs start at just ₹2,000-₹4,000 ($25-$50) for your first 1,000 users. Agencies quote ₹20-40 lakhs for the same scope because they sell the fantasy of replicating Uber's full platform.
 
@@ -141,7 +141,7 @@ The apps that win aren't the ones with the best technology — they're the ones 
 
 **Lesson from failed on-demand startups:** The graveyard of on-demand apps is full of platforms that launched in 10 cities simultaneously. They burned through cash on marketing and provider acquisition in markets they did not understand. Compare this with successful regional platforms that dominated one city first — learning the supply dynamics, pricing expectations, and customer behavior in a single market before expanding. Your MVP should target one city, one service category, and 100 daily orders. If you cannot achieve that level of product-market fit in a single geography, expanding to more cities will only multiply your losses. Depth beats breadth at the MVP stage.
 
-Related reading: [Building a Family Budget App with 8 Financial Modules](/en/notes/build-family-budget-app-android-offline-kotlin) and [How to Build an AI Chatbot for Your Business: Architecture, Cost & What…](/en/notes/build-ai-chatbot-whatsapp-business-india) cover the adjacent tradeoffs in more depth.`
+Related reading: [Building a Family Budget App with 8 Financial Modules](/notes/build-family-budget-app-android-offline-kotlin) and [How to Build an AI Chatbot for Your Business: Architecture, Cost & What…](/notes/build-ai-chatbot-whatsapp-business-india) cover the adjacent tradeoffs in more depth.`
     },
     {
       heading: 'Frequently Asked Questions',
@@ -168,6 +168,6 @@ Not for your MVP. Simple algorithms work perfectly for early-stage on-demand app
   ],
   cta: {
     text: 'Ship Your On-Demand App MVP in 6 Weeks',
-    href: '/en/services/6-week-mvp'
+    href: '/services/6-week-mvp'
   }
 };

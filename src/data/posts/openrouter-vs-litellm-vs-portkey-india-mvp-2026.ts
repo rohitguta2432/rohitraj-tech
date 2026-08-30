@@ -27,13 +27,13 @@ export const openrouterVsLitellmVsPortkeyIndiaMvp2026: BlogPost = {
     },
     {
       heading: 'OpenRouter vs LiteLLM vs Portkey: Picking the Right LLM Gateway in 2026',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On May 28, 2026, OpenRouter [announced a $113M Series B](https://openrouter.ai/announcements/series-b) led by CapitalG (Alphabet's growth fund), with NVIDIA's NVentures, ServiceNow, MongoDB, Snowflake, and Databricks Ventures joining a16z and Menlo. That is a strange amount of money for what is, on the surface, an API proxy. The raise is really a bet on a category: the **LLM gateway** — the layer that sits between your application and the dozens of model providers you might call.
 
 If you are building an AI product in 2026, you will hit this decision early. The moment you want a fallback when Claude is rate-limited, or you want to A/B GPT against Gemini, or your finance team asks "what are we spending per feature," direct SDK integrations start to crack. The three names that dominate the space each make a fundamentally different bet: **OpenRouter** bets you want zero infrastructure, **LiteLLM** bets you want full control, and **Portkey** bets you need observability and governance more than another proxy.
 
-I wire gateways into AI MVPs for a living, so this is the comparison I actually run before picking one — not a feature-matrix dump, but the cost math, the minimal config, and the decision rule. If you are still choosing *models* rather than the gateway in front of them, read the [OpenAI vs Claude vs Gemini API cost breakdown](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026) first, then come back here for the routing layer.`,
+I wire gateways into AI MVPs for a living, so this is the comparison I actually run before picking one — not a feature-matrix dump, but the cost math, the minimal config, and the decision rule. If you are still choosing *models* rather than the gateway in front of them, read the [OpenAI vs Claude vs Gemini API cost breakdown](/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026) first, then come back here for the routing layer.`,
     },
     {
       heading: 'Do you even need an LLM gateway?',
@@ -66,7 +66,7 @@ For a typical AI MVP, at least two of those are true within the first month — 
 
 **High spend — over ~$10,000/mo.** LiteLLM is the clear cost winner. At $100,000/month, OpenRouter's fee alone is **$5,500/month (≈₹4.6L)** — that pays for a serious chunk of an engineer who can run the proxy and squeeze provider rate cards directly. At this scale you are also likely negotiating committed-use discounts with providers, which a self-hosted proxy lets you pocket entirely.
 
-Portkey sits orthogonal to this axis: its **$49/month** production tier is noise next to your model spend, so you choose it for the observability and governance, not to save on tokens. The honest pattern most teams land on — and the one I default to — is **prototype on OpenRouter, migrate to LiteLLM when spend clears ~$2,000/mo, and add Portkey the moment a customer asks for an audit trail.** The same staged thinking applies to picking the underlying models; I broke that down in the [DeepSeek vs Claude vs GPT cost post](/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026).`,
+Portkey sits orthogonal to this axis: its **$49/month** production tier is noise next to your model spend, so you choose it for the observability and governance, not to save on tokens. The honest pattern most teams land on — and the one I default to — is **prototype on OpenRouter, migrate to LiteLLM when spend clears ~$2,000/mo, and add Portkey the moment a customer asks for an audit trail.** The same staged thinking applies to picking the underlying models; I broke that down in the [DeepSeek vs Claude vs GPT cost post](/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026).`,
     },
     {
       heading: 'OpenRouter vs LiteLLM vs Portkey: the comparison table',
@@ -157,7 +157,7 @@ Notice the shape is identical — declare a primary, declare fallbacks, send Ope
 - **Pre-PMF, prototyping, under ~$1,000/mo spend → OpenRouter.** Zero infra, every model behind one key, fastest path to a working demo. The fee is rounding error at this volume. Ship the product.
 - **Growing, $2,000-10,000/mo, one person owns infra → LiteLLM.** Claim the ~37% saving, keep provider keys in-house, run it on a cheap VPS. Skip this only if nobody on the team wants to own a service.
 - **B2B / regulated / "we need an audit trail" → Portkey.** When a customer's security questionnaire asks about PII handling and request logging, Portkey's built-in guardrails and dashboard answer the question out of the box. At $49/mo it is cheaper than building logging yourself.
-- **Multi-agent system → LiteLLM or Portkey.** Agent loops fan out many calls; you want centralized cost caps and tracing or the bill surprises you. If your agents already use a framework, see the [LangGraph vs CrewAI vs AutoGen comparison](/en/notes/langgraph-vs-crewai-vs-autogen-india-mvp-2026) for how the gateway sits underneath it.
+- **Multi-agent system → LiteLLM or Portkey.** Agent loops fan out many calls; you want centralized cost caps and tracing or the bill surprises you. If your agents already use a framework, see the [LangGraph vs CrewAI vs AutoGen comparison](/notes/langgraph-vs-crewai-vs-autogen-india-mvp-2026) for how the gateway sits underneath it.
 
 The trap I see most often is founders reaching for the enterprise-grade option (self-hosted LiteLLM with a full observability stack) at the prototype stage, then spending two weeks on infra instead of talking to users. The reverse trap — staying on OpenRouter at $40,000/mo spend — quietly donates **$2,200/month (≈₹1.85L)** in fees that could have funded a part-time engineer. Re-evaluate the gateway every time your spend doubles.`,
     },
@@ -169,7 +169,7 @@ The trap I see most often is founders reaching for the enterprise-grade option (
 
 **What every gateway still gets wrong:** the OpenAI-compatible abstraction is leaky. Provider-specific parameters — Anthropic's prompt caching, OpenAI's structured outputs, Gemini's context-caching — are inconsistently supported, so you sometimes pay full price for a feature you thought the gateway preserved. Latency is another tax: a hosted gateway adds a network hop, usually 20-80ms, which matters for streaming UIs. And self-hosting LiteLLM means **you now own an uptime-critical service** — if the proxy goes down, your entire AI surface goes down, so it needs the same monitoring and on-call discipline as your database. None of these is a dealbreaker; all of them are things the glossy comparison posts skip.
 
-If you want the version with code, this is the exact class of "looks simple in the demo, bites you in production" decision I dig into in the [AI-generated code anti-patterns post](/en/notes/ai-generated-code-anti-patterns-fixes-2026) — the gateway you bolt on without reading its failure modes becomes the single point of failure nobody planned for.`,
+If you want the version with code, this is the exact class of "looks simple in the demo, bites you in production" decision I dig into in the [AI-generated code anti-patterns post](/notes/ai-generated-code-anti-patterns-fixes-2026) — the gateway you bolt on without reading its failure modes becomes the single point of failure nobody planned for.`,
     },
     {
       heading: 'How I would wire a gateway into a 6-week MVP',
@@ -181,11 +181,11 @@ If you want the version with code, this is the exact class of "looks simple in t
 
 **When the first B2B customer arrives:** I put Portkey in front (or turn on its self-hosted guardrails) so PII redaction and request audit logs exist *before* the security questionnaire does, not after. Retrofitting governance under deadline pressure is how teams ship leaks.
 
-That staged approach — cheapest-to-start, migrate on a cost or compliance trigger — is the same discipline I bring to the whole stack on builds like [myFinancial](/en/projects), where the AI features have to be cheap to run and auditable at the same time. If you want a gateway (and the rest of an AI MVP) wired correctly the first time, [I run fixed-scope 6-week MVP builds](/en/services/6-week-mvp), or you can [hire a founding engineer in India](/en/services/hire-founding-engineer-india) to own the routing, cost controls, and production hardening end to end.`,
+That staged approach — cheapest-to-start, migrate on a cost or compliance trigger — is the same discipline I bring to the whole stack on builds like [myFinancial](/projects), where the AI features have to be cheap to run and auditable at the same time. If you want a gateway (and the rest of an AI MVP) wired correctly the first time, [I run fixed-scope 6-week MVP builds](/services/6-week-mvp), or you can [hire a founding engineer in India](/services/hire-founding-engineer-india) to own the routing, cost controls, and production hardening end to end.`,
     },
   ],
   cta: {
     text: 'Wire This Into Your MVP — Book a Build',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -30,13 +30,13 @@ Skip React Native entirely if your app needs deep Bluetooth, AR, or 120fps anima
     },
     {
       heading: 'Hire React Native Developer India 2026 — The Honest Cost Math Before You Sign Anything',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you are looking to hire a React Native developer in India in 2026, your three real options cost wildly different amounts and produce wildly different things. A founding engineer ships a complete cross-platform MVP — Android, iOS, backend wiring, store submission — in 4 to 8 weeks for a fixed ₹6 to ₹9 lakh. A Bangalore or Bengaluru agency quotes the same scope at ₹22 to ₹35 lakh, takes 14 to 18 weeks, and routes you through a project manager who has never written a line of code. A Toptal or Upwork freelancer charges ₹3,500 to ₹6,000 per hour and needs you to do the architecture yourself.
 
-I have shipped React Native and React Native + Expo apps on all three models across the last three years — the [Sanatana app on Play Store](/en/notes/idea-to-play-store-sanatanapp-architecture) (founding engineer, 7 weeks), an [offline-first trip planner with WatermelonDB](/en/notes/build-offline-first-trip-planner-react-native-watermelondb) (founding engineer, 5 weeks), and one project where a client paid a Hyderabad agency ₹28L for 16 weeks of work I later rebuilt in 9 weeks for ₹7L. The agency app still does not have working offline sync. The numbers below are not theoretical.
+I have shipped React Native and React Native + Expo apps on all three models across the last three years — the [Sanatana app on Play Store](/notes/idea-to-play-store-sanatanapp-architecture) (founding engineer, 7 weeks), an [offline-first trip planner with WatermelonDB](/notes/build-offline-first-trip-planner-react-native-watermelondb) (founding engineer, 5 weeks), and one project where a client paid a Hyderabad agency ₹28L for 16 weeks of work I later rebuilt in 9 weeks for ₹7L. The agency app still does not have working offline sync. The numbers below are not theoretical.
 
-This post is the cost breakdown I wish every founder had before signing a contract. Real rates from May 2026, real timelines, real failure modes per model. If you would rather skip the hiring loop and just talk to one engineer, a [6-week MVP sprint](/en/services/6-week-mvp) is exactly that — but read the comparison first.`,
+This post is the cost breakdown I wish every founder had before signing a contract. Real rates from May 2026, real timelines, real failure modes per model. If you would rather skip the hiring loop and just talk to one engineer, a [6-week MVP sprint](/services/6-week-mvp) is exactly that — but read the comparison first.`,
     },
     {
       heading: 'The Real Cost Of A React Native MVP In India — 2026 Numbers',
@@ -77,7 +77,7 @@ The mistake I see weekly is hiring a freelancer first because the rate looks che
 
 **Expo vs bare workflow.** Expo SDK 51 covers 90% of MVPs in 2026 with EAS Build, OTA updates, and config plugins. A founding engineer picks Expo by default and only ejects on a hard requirement (CallKit, custom signing, deep BLE). An agency picks bare workflow because their seniors learned RN in the 0.55 era. The bare-workflow tax: ~3 extra weeks of infra work, 2x CI cost, and 100% of the OTA logic you now build yourself.
 
-**Backend integration.** Every quote silently assumes a backend exists. If it does not, the agency adds ₹8–12L for "backend integration support." A founding engineer who can ship a [Spring Boot or Node backend](/en/notes/spring-boot-vs-nodejs-startup-backend-2026) themselves saves the entire tax — why ~60% of my engagements are "RN app + backend + deploy" as one fixed scope.
+**Backend integration.** Every quote silently assumes a backend exists. If it does not, the agency adds ₹8–12L for "backend integration support." A founding engineer who can ship a [Spring Boot or Node backend](/notes/spring-boot-vs-nodejs-startup-backend-2026) themselves saves the entire tax — why ~60% of my engagements are "RN app + backend + deploy" as one fixed scope.
 
 **v1.1 and retainer.** After v1, an agency needs a new SOW. A freelancer is gone. A founding engineer takes a retainer (₹40–80K/month for 1 day a week) — what most MVPs actually need post-launch. Two of my last three clients converted.`,
     },
@@ -111,7 +111,7 @@ The ₹8L founding-engineer column does more on most rows. The ₹28L agency col
 
 **Third, the founder cannot or will not be technical.** A founding engineer requires you to make decisions weekly — feature priority, scope cuts, store submission timing. If your founding team has zero technical reviewer and no time to sit in 2 weekly architecture calls, an agency PM is exactly what you need. The PM costs ₹3L of overhead per quarter, which is a small price for "I do not have to think about this." This is a legitimate trade-off, not a failure mode.
 
-For every other case — pre-PMF, fixed budget, fast launch, India market, founding team that wants to ship — the founding-engineer model is structurally better. Compare this honestly to the [founding engineer vs fractional CTO](/en/notes/founding-engineer-vs-fractional-cto) trade-off if you also need part-time tech leadership without the full engineering build.`,
+For every other case — pre-PMF, fixed budget, fast launch, India market, founding team that wants to ship — the founding-engineer model is structurally better. Compare this honestly to the [founding engineer vs fractional CTO](/notes/founding-engineer-vs-fractional-cto) trade-off if you also need part-time tech leadership without the full engineering build.`,
     },
     {
       heading: 'Decision Tree — Which Hiring Model In 5 Steps',
@@ -133,7 +133,7 @@ The single most predictive question is step 4. If you answered yes, you do not n
       heading: 'Where To Go From Here',
       content: `If you have read this far, you have probably already decided. Three concrete next steps based on the model you picked.
 
-If you picked founding engineer: a [6-week MVP sprint](/en/services/6-week-mvp) is the fixed-scope version — 8–12 screens, Expo or bare, backend wired, both stores in 6 weeks at a fixed price. For ongoing work, [hire a founding engineer in India](/en/services/hire-founding-engineer-india) on retainer.
+If you picked founding engineer: a [6-week MVP sprint](/services/6-week-mvp) is the fixed-scope version — 8–12 screens, Expo or bare, backend wired, both stores in 6 weeks at a fixed price. For ongoing work, [hire a founding engineer in India](/services/hire-founding-engineer-india) on retainer.
 
 If you picked freelancer: shortlist 3 from Toptal or Arc, ask each to write a 1-page architecture doc for your specific app before signing. The doc is worth ₹15K of their time and tells you more than 4 hours of interviews.
 
@@ -144,6 +144,6 @@ Whichever path: never pay more than 30% upfront on fixed-price, never sign a SOW
   ],
   cta: {
     text: 'Get a fixed-price React Native MVP quote in 30 minutes →',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

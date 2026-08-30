@@ -29,7 +29,7 @@ export const aiDevWeek2026W25: BlogPost = {
     },
     {
       heading: "Why This Week's Drops Matter Together",
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For three days in June, the most capable model Anthropic had ever released was live — and then it wasn't. Week 25 is the first time we've watched a government reach into the market and pull a *deployed* frontier model off the shelf. That single event reframes the rest of the week: if the frontier can vanish on 24 hours' notice, a self-hostable fallback stops being a cost argument and becomes a **continuity** argument.
 
@@ -54,7 +54,7 @@ Which is exactly what the rest of the week delivered. Two serious open-weight mo
 
 **Source:** [Anthropic statement](https://www.anthropic.com/news/fable-mythos-access) · [NBC News](https://www.nbcnews.com/tech/tech-news/anthropic-suspends-new-ai-models-fable-mythos-government-directive-rcna349901)
 
-**Quick take:** Don't single-thread on any one model. I covered Fable 5's specs in [the Fable 5 developer guide](/en/notes/claude-fable-5-developer-guide-2026) — the migration lesson outlived the model by 72 hours.`,
+**Quick take:** Don't single-thread on any one model. I covered Fable 5's specs in [the Fable 5 developer guide](/notes/claude-fable-5-developer-guide-2026) — the migration lesson outlived the model by 72 hours.`,
     },
     {
       heading: 'Is Kimi K2.7-Code Actually Better — or Just Cheaper? (June 12)',
@@ -64,7 +64,7 @@ Which is exactly what the rest of the week delivered. Two serious open-weight mo
 
 **Source:** [MarkTechPost](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/)
 
-**Quick take:** Read the benchmark asterisk first — *every* number is Moonshot's own; no independent SWE-bench Verified run had landed by release day. Treat it as promising-until-verified. I put it against the closed frontier in [Kimi K2.7 vs Claude Opus / GPT-5.5](/en/notes/kimi-k2-7-code-vs-claude-opus-gpt-2026).`,
+**Quick take:** Read the benchmark asterisk first — *every* number is Moonshot's own; no independent SWE-bench Verified run had landed by release day. Treat it as promising-until-verified. I put it against the closed frontier in [Kimi K2.7 vs Claude Opus / GPT-5.5](/notes/kimi-k2-7-code-vs-claude-opus-gpt-2026).`,
     },
     {
       heading: 'DiffusionGemma Brings Text Diffusion to Open Weights (June 10)',
@@ -74,7 +74,7 @@ Which is exactly what the rest of the week delivered. Two serious open-weight mo
 
 **Source:** [Google blog](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/) · [SiliconANGLE](https://siliconangle.com/2026/06/10/google-open-sources-speedy-diffusiongemma-text-diffusion-model/)
 
-**Quick take:** Diffusion's parallel decode shines on bounded, structured output (JSON, code, classification), not open-ended prose. I broke down where it wins in [the DiffusionGemma guide](/en/notes/diffusiongemma-text-diffusion-llm-guide-2026) and how to serve it in [run DiffusionGemma locally](/en/notes/run-diffusiongemma-locally-vllm-rtx5090-2026).`,
+**Quick take:** Diffusion's parallel decode shines on bounded, structured output (JSON, code, classification), not open-ended prose. I broke down where it wins in [the DiffusionGemma guide](/notes/diffusiongemma-text-diffusion-llm-guide-2026) and how to serve it in [run DiffusionGemma locally](/notes/run-diffusiongemma-locally-vllm-rtx5090-2026).`,
     },
     {
       heading: 'What Does Metered Agent Billing Mean for Your CI Bots? (June 15)',
@@ -94,7 +94,7 @@ Which is exactly what the rest of the week delivered. Two serious open-weight mo
 
 **Source:** [LogRocket AI dev tool power rankings](https://blog.logrocket.com/ai-dev-tool-power-rankings/)
 
-**Quick take:** "Open-source" isn't automatically "better for you" — the real win is model portability, not feature count. I ran it against the incumbents in [OpenCode vs Claude Code vs Cursor](/en/notes/opencode-vs-claude-code-cursor-2026).`,
+**Quick take:** "Open-source" isn't automatically "better for you" — the real win is model portability, not feature count. I ran it against the incumbents in [OpenCode vs Claude Code vs Cursor](/notes/opencode-vs-claude-code-cursor-2026).`,
     },
     {
       heading: 'Agentic Payments Quietly Became Real: x402 + AP2',
@@ -104,11 +104,11 @@ Which is exactly what the rest of the week delivered. Two serious open-weight mo
 
 **Source:** [Coinbase — x402 + AP2](https://www.coinbase.com/developer-platform/discover/launches/google_x402)
 
-**Quick take:** Don't bolt payments onto an agent until you have hard spend caps and an audit trail — an autonomous spender on a loose loop is a brand-new failure mode. I mapped the protocols in [x402 vs AP2](/en/notes/ai-agent-payments-x402-vs-ap2-2026).`,
+**Quick take:** Don't bolt payments onto an agent until you have hard spend caps and an audit trail — an autonomous spender on a loose loop is a brand-new failure mode. I mapped the protocols in [x402 vs AP2](/notes/ai-agent-payments-x402-vs-ap2-2026).`,
     },
     {
       heading: "What I'm Shipping With This Week",
-      content: `Concretely: I'm standing up a **two-model router** on a [MyFinancial](/en/projects) batch job that classifies and summarizes regulatory filings. After watching Fable 5 vanish for three days, I'm not comfortable single-threading that pipeline on any one frontier endpoint — so the routine 80% (extraction, tagging, short summaries) now routes to a self-hosted open model, and only the genuinely hard reasoning calls hit a closed frontier model with a fallback configured.
+      content: `Concretely: I'm standing up a **two-model router** on a [MyFinancial](/projects) batch job that classifies and summarizes regulatory filings. After watching Fable 5 vanish for three days, I'm not comfortable single-threading that pipeline on any one frontier endpoint — so the routine 80% (extraction, tagging, short summaries) now routes to a self-hosted open model, and only the genuinely hard reasoning calls hit a closed frontier model with a fallback configured.
 
 The non-obvious part the launch posts won't tell you: **the suspension and the June 15 metering change are the same decision.** Both are telling you to move your highest-volume, lowest-stakes work onto weights you control — one for continuity, one for cost. **DiffusionGemma** is my candidate for the classification leg specifically because diffusion's parallel decode is fastest exactly where the output is short and structured. The failure mode I'd worry about: discovering mid-incident that your "fallback" was never actually wired — just written down in a doc.`,
     },
@@ -124,13 +124,13 @@ The non-obvious part the launch posts won't tell you: **the suspension and the J
       heading: "Need Help Wiring This Week's Drops Into Your Product?",
       content: `If this week convinced you to stop single-threading on one frontier model — standing up a router, self-hosting **Kimi K2.7** or **DiffusionGemma** for the routine work, and wiring a real fallback *before* the next suspension — the hard part is never the tutorial. It's the production wiring: fallback routing, spend caps, rate-limit retries, and the integration tests nobody writes.
 
-That's the [6-week MVP](/en/services/6-week-mvp) playbook — pick the right models and host, wire them into a shipping product, hand over a tested codebase. For a longer build, [Hire a Founding Engineer (India)](/en/services/hire-founding-engineer-india).
+That's the [6-week MVP](/services/6-week-mvp) playbook — pick the right models and host, wire them into a shipping product, hand over a tested codebase. For a longer build, [Hire a Founding Engineer (India)](/services/hire-founding-engineer-india).
 
-Next roundup drops next Tuesday. For the deep-dives behind this week: [Claude Fable 5](/en/notes/claude-fable-5-developer-guide-2026), [Kimi K2.7 vs the frontier](/en/notes/kimi-k2-7-code-vs-claude-opus-gpt-2026), and [agent memory vs context window](/en/notes/ai-agent-memory-vs-context-window-2026).`,
+Next roundup drops next Tuesday. For the deep-dives behind this week: [Claude Fable 5](/notes/claude-fable-5-developer-guide-2026), [Kimi K2.7 vs the frontier](/notes/kimi-k2-7-code-vs-claude-opus-gpt-2026), and [agent memory vs context window](/notes/ai-agent-memory-vs-context-window-2026).`,
     },
   ],
   cta: {
     text: "Wire This Week's AI Drops Into Your MVP — 6-Week Plan",
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

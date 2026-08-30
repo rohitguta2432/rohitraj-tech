@@ -29,7 +29,7 @@ export const devinAiVsHireDeveloper2026: BlogPost = {
     },
 {
       heading: 'Devin AI vs Hiring a Developer in 2026: The Honest Answer',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For production MVPs in 2026, **Devin alone will not ship your product**. The math that actually works is to pair Devin Core ($20/month) or Team ($500/month) with a founding engineer (₹2L–3L/month in India, roughly $2,400–$3,600). Devin reliably delivers about 70% of a feature; an experienced engineer closes the remaining 30% — edge cases, integrations, product judgment, customer-feedback rewrites.
 
@@ -68,7 +68,7 @@ A Core subscription buys ~9 ACUs. In a real codebase, here is what 1 ACU actuall
 
 So $20 buys you somewhere between **3 and 9 PRs per month** on a healthy codebase. That is not enough output to replace even a single junior engineer.
 
-Real founders who try Devin as a "developer replacement" follow a predictable path: they dispatch 5 PRs in week one, exhaust ACUs by day 12, refill, watch retries eat the new bucket, and then upgrade to Team at $500/month for 250 ACUs. At Team tier, monthly cost crosses **₹40,000**, which is already 25–30% of a [founding engineer's salary in India](/en/services/hire-founding-engineer-india) — and that engineer also handles architecture, customer demos, hiring, and on-call.
+Real founders who try Devin as a "developer replacement" follow a predictable path: they dispatch 5 PRs in week one, exhaust ACUs by day 12, refill, watch retries eat the new bucket, and then upgrade to Team at $500/month for 250 ACUs. At Team tier, monthly cost crosses **₹40,000**, which is already 25–30% of a [founding engineer's salary in India](/services/hire-founding-engineer-india) — and that engineer also handles architecture, customer demos, hiring, and on-call.
 
 If you are paying $500/month for Devin Team and *still* spending nights cleaning up its PRs, you have not saved money. You have outsourced typing, kept the hard part, and added a new bill.`,
     },
@@ -116,7 +116,7 @@ The pattern: Devin needs an **oracle** to know when it is done. Product taste, a
 
 The honest interpretation: **Devin is a 10x typist on well-defined work; a founding engineer is a 1x partner on undefined work**. MVPs are 80% undefined work. Production scale-ups are the inverse.
 
-For founders sitting at $0 ARR with a [6-week MVP sprint](/en/services/6-week-mvp) ahead, the founding engineer wins on every dimension that matters except cost-per-line. For a Series B company migrating Java 11 to Java 21 across 60 services, Devin is the obvious answer.`,
+For founders sitting at $0 ARR with a [6-week MVP sprint](/services/6-week-mvp) ahead, the founding engineer wins on every dimension that matters except cost-per-line. For a Series B company migrating Java 11 to Java 21 across 60 services, Devin is the obvious answer.`,
     },
     {
       heading: 'When Devin Wins vs When a Developer Wins',
@@ -140,7 +140,7 @@ For founders sitting at $0 ARR with a [6-week MVP sprint](/en/services/6-week-mv
 
 **Pick both when:** you have a working MVP, a senior engineer to gate PRs, and a backlog of well-scoped tickets that are slowing the senior down. Devin clears the toil; the human owns the judgment. This is the configuration that quietly works in 2026.
 
-If you are choosing between Devin and a single freelancer for an MVP, see [Lovable alternative — when AI builders break](/en/notes/lovable-alternative-developer-when-ai-builder-breaks) and [Cursor AI vs hiring a developer](/en/notes/cursor-ai-vs-hire-developer-2026) for the equivalent analyses on adjacent tools.`,
+If you are choosing between Devin and a single freelancer for an MVP, see [Lovable alternative — when AI builders break](/notes/lovable-alternative-developer-when-ai-builder-breaks) and [Cursor AI vs hiring a developer](/notes/cursor-ai-vs-hire-developer-2026) for the equivalent analyses on adjacent tools.`,
     },
     {
       heading: '5-Step Checklist Before You Replace Your Developer with Devin',
@@ -164,18 +164,18 @@ Three or more "yes" answers: Devin is probably worth a one-month trial. Two or f
 
 If you are in the first 12 months of your startup, the right sequence is almost always:
 
-1. **Hire a [founding engineer in India](/en/services/hire-founding-engineer-india)** at ₹2L–3L/month who owns the codebase end-to-end
-2. **Ship the [6-week MVP](/en/services/6-week-mvp)** with proper conventions, tests, and CI
+1. **Hire a [founding engineer in India](/services/hire-founding-engineer-india)** at ₹2L–3L/month who owns the codebase end-to-end
+2. **Ship the [6-week MVP](/services/6-week-mvp)** with proper conventions, tests, and CI
 3. **Layer Devin on top** at month 3–4, once there is a senior reviewer and a test suite
 4. **Measure ACUs against shipped features**, not lines of code
 
 Skipping step 1 to save $2,400/month and going straight to Devin is the path that has already burned multiple founders I have spoken with in 2026. The savings are real for 6 weeks. The cleanup bill arrives in month four.
 
-If you are weighing the Devin-vs-engineer trade-off for your specific MVP, I run [6-week MVP sprints](/en/services/6-week-mvp) and [founding-engineer-as-a-service](/en/services/hire-founding-engineer-india) engagements out of India for global startups. Happy to look at your scope and tell you honestly which side of the line you are on.`,
+If you are weighing the Devin-vs-engineer trade-off for your specific MVP, I run [6-week MVP sprints](/services/6-week-mvp) and [founding-engineer-as-a-service](/services/hire-founding-engineer-india) engagements out of India for global startups. Happy to look at your scope and tell you honestly which side of the line you are on.`,
     },
   ],
   cta: {
     text: 'Hire a founding engineer instead of (or alongside) Devin',
-    href: '/en/services/hire-founding-engineer-india',
+    href: '/services/hire-founding-engineer-india',
   },
 };

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Big_Shoulders, Chivo, JetBrains_Mono, Noto_Sans_Arabic } from "next/font/google";
+import { Big_Shoulders, Chivo, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { defaultMetadata, generateAllSchemas } from "@/lib/seo-config";
 
@@ -24,13 +24,6 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-mono",
-  preload: false,
-});
-
-const notoArabic = Noto_Sans_Arabic({
-  subsets: ["arabic"],
-  display: "swap",
-  variable: "--font-arabic",
   preload: false,
 });
 
@@ -62,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${chivo.variable} ${bigShoulders.variable} ${jetbrainsMono.variable} ${notoArabic.variable}`}>
+    <html lang="en" className={`${chivo.variable} ${bigShoulders.variable} ${jetbrainsMono.variable}`}>
       <head>
         {/* JSON-LD Structured Data for SEO */}
         <JsonLdSchema />
@@ -77,6 +70,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

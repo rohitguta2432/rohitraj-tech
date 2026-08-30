@@ -27,7 +27,7 @@ export const what15kMvpActuallyIncludesVs50kAgencyQuote: BlogPost = {
     },
 {
       heading: 'What a $15K MVP Actually Includes — vs. the $50K Agency Quote You Just Got',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you have just received a $50K-$120K agency quote for an MVP, this post is the line-item breakdown of where that money goes — and how the same scope ships at $15K-$30K with a senior contractor in 6 weeks. The gap is not magic. It is overhead, markup, and project-management theater that does not touch your codebase.
 
@@ -108,7 +108,7 @@ The trade-off: contractors do not scale to 5+ engineers on one project. If your 
 
 For everything else — pre-seed startups, fixed-budget MVPs, founder-led product validation — the agency markup is overhead you do not need.
 
-Two posts that pick up where this one ends: [6-Week MVP Sprint vs 3-Month Agency Build](/en/notes/6-week-mvp-vs-3-month-agency-which-ships-first) and [Drizzle vs Prisma vs TypeORM](/en/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026).`
+Two posts that pick up where this one ends: [6-Week MVP Sprint vs 3-Month Agency Build](/notes/6-week-mvp-vs-3-month-agency-which-ships-first) and [Drizzle vs Prisma vs TypeORM](/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026).`
     },
     {
       heading: 'Negotiating the Agency Quote Down (If You Are Already Committed)',
@@ -122,11 +122,11 @@ Two posts that pick up where this one ends: [6-Week MVP Sprint vs 3-Month Agency
 
 If the agency refuses fixed-price, that is the signal. Walk. The good agencies will fixed-price a clearly-scoped MVP. The ones that insist on hourly are protecting their scope-creep margin.
 
-Or skip the negotiation entirely. [Scope a 6-week MVP sprint](https://rohitraj.tech/en/services/6-week-mvp) with me — fixed price, fixed scope, full GitHub access, 6 weeks to production. Or [hire a founding engineer](https://rohitraj.tech/en/services/hire-founding-engineer-india) for a longer engagement at the same per-week rate.`
+Or skip the negotiation entirely. [Scope a 6-week MVP sprint](https://rohitraj.tech/services/6-week-mvp) with me — fixed price, fixed scope, full GitHub access, 6 weeks to production. Or [hire a founding engineer](https://rohitraj.tech/services/hire-founding-engineer-india) for a longer engagement at the same per-week rate.`
     },
   ],
   cta: {
     text: 'Get a Fixed-Price Quote',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

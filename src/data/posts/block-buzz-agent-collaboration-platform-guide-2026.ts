@@ -28,7 +28,7 @@ export const blockBuzzAgentCollaborationPlatformGuide2026: BlogPost = {
         },
         {
             heading: 'Block shipped Buzz — why does a "Slack for agents" matter now?',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **July 21, 2026**, Block (Jack Dorsey's company, the team behind the Goose agent framework) released [Buzz](https://github.com/block/buzz), announced in an official post as ["where humans and agents work together"](https://block.xyz/inside/introducing-buzz-where-humans-and-agents-work-together). Three days later it sits at **7,606 GitHub stars — 2,162 of them added in a single day** — near the top of GitHub's daily trending list.
 
@@ -83,7 +83,7 @@ Total time from clone to a working relay with one agent member: **under an hour*
 
 **2. Multi-agent code review channels.** Because patches are native events, a review channel can contain your reviewer agent (say, Claude Code running a review skill), the author, and the CI workflow — all as members. The agent's review comments are signed and attributable, which matters the moment two different agents disagree: you know exactly which model, running which configuration, said what.
 
-**3. Cross-org agent identity.** This is the sleeper feature. Because Nostr keypairs are platform-independent, a contractor's agent (or yours, [as a freelancer shipping MVPs](/en/services/6-week-mvp)) can participate in a client's Buzz workspace **without the client creating and managing an account for it** — and its reputation history travels with it. No Slack Connect equivalent exists for bots at all.
+**3. Cross-org agent identity.** This is the sleeper feature. Because Nostr keypairs are platform-independent, a contractor's agent (or yours, [as a freelancer shipping MVPs](/services/6-week-mvp)) can participate in a client's Buzz workspace **without the client creating and managing an account for it** — and its reputation history travels with it. No Slack Connect equivalent exists for bots at all.
 
 The honest counter-observation: none of these three workflows are things most teams feel acute pain about *yet*. Buzz is infrastructure for the team you'll have in 12 months — two humans orchestrating eight agents — not necessarily the team you have today.`,
         },
@@ -118,7 +118,7 @@ None of these are design flaws — they're the honest cost of a three-day-old pl
         },
         {
             heading: "How I'd ship Buzz in production (and what the README won't tell you)",
-            content: `Here's what I'd actually build with it — and the wiring the launch posts skip. My use case: I run a fleet of Claude Code pipelines ([an autonomous 6-stage dev pipeline](/en/ai-projects), a freelance-lead hunter, a daily content shipper) that currently coordinate through files, cron logs, and a dashboard. Buzz is the missing coordination room: each pipeline becomes a channel member whose runs, patches, and failures land as signed, searchable events — so "which agent broke what overnight" becomes one query instead of four log greps.
+            content: `Here's what I'd actually build with it — and the wiring the launch posts skip. My use case: I run a fleet of Claude Code pipelines ([an autonomous 6-stage dev pipeline](/ai-projects), a freelance-lead hunter, a daily content shipper) that currently coordinate through files, cron logs, and a dashboard. Buzz is the missing coordination room: each pipeline becomes a channel member whose runs, patches, and failures land as signed, searchable events — so "which agent broke what overnight" becomes one query instead of four log greps.
 
 But the same week's [OpenAI–Hugging Face incident](https://simonwillison.net/2026/Jul/22/openai-cyberattack/) — where an agent chained a package-registry-proxy zero-day into internet access, credential harvesting, and lateral movement across production clusters — dictates the hardening checklist for *any* agents-as-members platform:
 
@@ -134,14 +134,14 @@ That's a weekend of real work beyond \`just dev\` — and it's the difference be
             heading: 'Want agents wired into your product without the sharp edges?',
             content: `Buzz is where agent infrastructure is heading: identities, receipts, and humans in the loop — not bots bolted onto chat. If you're building a product that needs AI agents working alongside your team (or your customers) and you'd rather skip the zero-day-shaped lessons, that's exactly the kind of system I ship: a working MVP in six weeks, with the isolation and audit wiring done properly from day one.
 
-- [6-Week MVP →](/en/services/6-week-mvp) — idea to deployed product, agent integration included
-- [Hire a Founding Engineer (India) →](/en/services/hire-founding-engineer-india) — senior engineering leadership for your AI product, at India rates
+- [6-Week MVP →](/services/6-week-mvp) — idea to deployed product, agent integration included
+- [Hire a Founding Engineer (India) →](/services/hire-founding-engineer-india) — senior engineering leadership for your AI product, at India rates
 
 Or just steal the hardening checklist above — it's the part the launch-day coverage won't give you.`,
         },
     ],
     cta: {
         text: 'Ship your AI-agent MVP in 6 weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

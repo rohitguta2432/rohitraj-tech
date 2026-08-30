@@ -29,7 +29,7 @@ export const deepseekDsparkSpeculativeDecodingLlamacpp2026: BlogPost = {
     },
     {
       heading: 'llama.cpp Just Got 2x Faster on DeepSeek V4 — and the Docs Have Not Caught Up',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **August 2, 2026**, maintainer \`am17an\` merged [PR #25784, "DeepseekV4 MTP + DSpark"](https://github.com/ggml-org/llama.cpp/pull/25784) into llama.cpp master. It landed exactly two days after DeepSeek released **DeepSeek-V4-Flash-0731** — a 284B-parameter mixture-of-experts model with **13B active parameters per token** and a **1M-token context window**, published under the **MIT license** ([release coverage](https://www.marktechpost.com/2026/07/31/deepseek-upgrades-deepseek-v4-flash-0731-with-major-agentic-and-coding-gains/)).
 
@@ -211,7 +211,7 @@ Three more things I would wire before calling it production:
 
 **2. Health-check the speculation path separately.** \`--fit off\` being required is an undocumented, empirically discovered constraint. A config change six months from now that drops that flag will not crash — it will quietly cost you half your throughput. Assert on the acceptance-rate metric in your smoke test, not just on HTTP 200.
 
-**3. Keep the API as a live fallback, not a disaster-recovery plan.** The pattern I have used on client work is a router that sends bulk and cacheable traffic to the API where the cache-hit price is $0.0028 per million, and sends only the must-stay-local traffic to the local box. That is also how I would approach it on [an MVP build](/en/services/6-week-mvp): local inference is a compliance feature, and treating it as a cost optimization is how projects end up with a $15,000 workstation running at 4% utilization.
+**3. Keep the API as a live fallback, not a disaster-recovery plan.** The pattern I have used on client work is a router that sends bulk and cacheable traffic to the API where the cache-hit price is $0.0028 per million, and sends only the must-stay-local traffic to the local box. That is also how I would approach it on [an MVP build](/services/6-week-mvp): local inference is a compliance feature, and treating it as a cost optimization is how projects end up with a $15,000 workstation running at 4% utilization.
 
 The thing I would genuinely build with this: a **repo-wide refactoring agent** that runs overnight. Terminal Bench 2.1 at 82.7 and DeepSWE at 54.4 mean the model is credible at multi-step tool use, the 1M context means an entire mid-size repo fits in one window, and 384K output tokens at max effort means it can actually write the diffs. At API prices that is a rounding error; the reason to run it locally is that most companies will not send their whole codebase to an inference provider. That is the workload where all three of this model's properties line up at once — and DSpark is what makes an overnight run finish before morning.`,
     },
@@ -219,13 +219,13 @@ The thing I would genuinely build with this: a **repo-wide refactoring agent** t
       heading: 'Get This Wired Into Your Stack Without the Undocumented Flags',
       content: `Speculative decoding is a rare free lunch — same weights, same outputs, roughly half the wall time — but the gap between "merged in master" and "running reliably in your stack" is measured in undocumented flags, pinned commits and metrics nobody told you to collect.
 
-If you are building a product on local or hybrid inference and you would rather not spend two weeks discovering \`--fit off\` yourself, that is the kind of integration work I do. I ship [production MVPs in 6 weeks](/en/services/6-week-mvp), including the AI-integration layer — routing, fallbacks, cost controls and the observability that tells you when your speculation path quietly turned itself off.
+If you are building a product on local or hybrid inference and you would rather not spend two weeks discovering \`--fit off\` yourself, that is the kind of integration work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp), including the AI-integration layer — routing, fallbacks, cost controls and the observability that tells you when your speculation path quietly turned itself off.
 
-For teams that need that capability in-house rather than as a one-off build, I also work as a [founding engineer](/en/services/hire-founding-engineer-india) — same work, embedded in your team, with the runbooks left behind.`,
+For teams that need that capability in-house rather than as a one-off build, I also work as a [founding engineer](/services/hire-founding-engineer-india) — same work, embedded in your team, with the runbooks left behind.`,
     },
   ],
   cta: {
     text: 'Ship your AI integration in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

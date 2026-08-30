@@ -1,198 +1,198 @@
 # Rohit Raj — AI Consultant · Forward Deployed Engineer
 
-> AI consultant working as a forward deployed engineer: embedded with client teams, shipping AI agents, MCP integrations, and LLM features to production — with evaluation suites proving they work. Based in Bengaluru, India; remote worldwide. Hire: https://rohitraj.tech/en/hire
+> AI consultant working as a forward deployed engineer: embedded with client teams, shipping AI agents, MCP integrations, and LLM features to production — with evaluation suites proving they work. Based in Bengaluru, India; remote worldwide. Hire: https://rohitraj.tech/hire
 
 Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-full.txt
 
 ## Key Pages
 
-- [Homepage](https://rohitraj.tech/en): Portfolio overview with AI projects and reliability engineering
-- [About](https://rohitraj.tech/en/about): Background and experience
-- [Projects](https://rohitraj.tech/en/projects): Full project catalog with architecture details
-- [AI Agents](https://rohitraj.tech/en/agents): Live, autonomous AI agents you can try in the browser
-- [Services](https://rohitraj.tech/en/services): Engineering services offered
-- [Engineering Notes](https://rohitraj.tech/en/notes): 83 technical case-study posts
+- [Homepage](https://rohitraj.tech): Portfolio overview with AI projects and reliability engineering
+- [About](https://rohitraj.tech/about): Background and experience
+- [Projects](https://rohitraj.tech/projects): Full project catalog with architecture details
+- [AI Agents](https://rohitraj.tech/agents): Live, autonomous AI agents you can try in the browser
+- [Services](https://rohitraj.tech/services): Engineering services offered
+- [Engineering Notes](https://rohitraj.tech/notes): 83 technical case-study posts
 
 ## Featured Projects
 
-- [Resolvr — Self-Hosted AI Customer Support Agent](https://rohitraj.tech/en/agents/resolvr): Open-source, self-hosted AI customer support agent that runs on local Ollama. Classifies a ticket, retrieves KB articles via RAG, decides resolve-vs-escalate behind a safety gate, and drafts a reply — customer data never leaves your server, zero per-token cost. Stack: FastAPI + React. Code: https://github.com/rohitguta2432/resolvr
-- [MicroItinerary](https://rohitraj.tech/en/projects/microitinerary): AI travel planner with GPT-4 destination recommendations
-- [StellarMIND](https://rohitraj.tech/en/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
-- [MyFinancial](https://rohitraj.tech/en/projects/myfinancial): Privacy-first personal finance advisor PWA
+- [Resolvr — Self-Hosted AI Customer Support Agent](https://rohitraj.tech/agents/resolvr): Open-source, self-hosted AI customer support agent that runs on local Ollama. Classifies a ticket, retrieves KB articles via RAG, decides resolve-vs-escalate behind a safety gate, and drafts a reply — customer data never leaves your server, zero per-token cost. Stack: FastAPI + React. Code: https://github.com/rohitguta2432/resolvr
+- [MicroItinerary](https://rohitraj.tech/projects/microitinerary): AI travel planner with GPT-4 destination recommendations
+- [StellarMIND](https://rohitraj.tech/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
+- [MyFinancial](https://rohitraj.tech/projects/myfinancial): Privacy-first personal finance advisor PWA
 
 ## All Engineering Notes (141 posts)
 
-- [Shieldstral vs Llama Guard vs OpenAI Moderation API: A Self-Hosted Content Moderation Guide (2026)](https://rohitraj.tech/en/notes/shieldstral-vs-llama-guard-openai-moderation-2026)
-- [OpenAI Codex Security vs Snyk vs Semgrep vs CodeQL: What the New Open-Source Scanner Actually Changes (2026)](https://rohitraj.tech/en/notes/codex-security-vs-snyk-semgrep-codeql-2026)
-- [DeepSeek DSpark in llama.cpp: How to Get 2x Local Inference on V4-Flash-0731 (2026)](https://rohitraj.tech/en/notes/deepseek-dspark-speculative-decoding-llamacpp-2026)
-- [Block's Buzz (2026 Guide): Self-Host the Workspace Where AI Agents Are Teammates, Not Bots](https://rohitraj.tech/en/notes/block-buzz-agent-collaboration-platform-guide-2026)
-- [Gemini 3.6 Flash vs 3.5 Flash-Lite: Which One to Ship — and the Price Hike Nobody Leads With (2026)](https://rohitraj.tech/en/notes/gemini-3-6-flash-vs-3-5-flash-lite-guide-2026)
-- [Bonsai 27B: A 27B Model on Your Phone — and the One Benchmark That Collapses (2026)](https://rohitraj.tech/en/notes/bonsai-27b-ternary-quantization-guide-2026)
-- [This Week in AI Dev: The Agent Fleet Grows Up (Week 29 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-29)
-- [DeepSeek V4 API Migration Guide: What Breaks on July 24, 2026 (and the 10-Minute Fix)](https://rohitraj.tech/en/notes/deepseek-v4-api-migration-guide-2026)
-- [Stop Your AI Coding Agent Running rm -rf: Command Guardrails Compared (2026)](https://rohitraj.tech/en/notes/ai-agent-command-guardrails-2026)
-- [GPT-5.6 Sol vs Terra vs Luna: A Developer's Guide to Picking the Right Tier (2026)](https://rohitraj.tech/en/notes/gpt-5-6-sol-terra-luna-api-guide-2026)
-- [GitLost: How a GitHub AI Agent Leaked Private Repos — and How to Defend Your Own Agentic Workflow (2026)](https://rohitraj.tech/en/notes/gitlost-ai-agent-prompt-injection-defense-2026)
-- [I Built a Job-Search Agent on Claude Code: The Runtime Pattern Teardown (2026)](https://rohitraj.tech/en/notes/ai-job-search-agent-claude-code-guide-2026)
-- [OfficeCLI: Give AI Agents Real Control of Word, Excel & PowerPoint (2026 Guide)](https://rohitraj.tech/en/notes/officecli-ai-agents-office-files-guide-2026)
-- [This Week in AI Dev: The Week Agents Got Cheaper to Run (Week 28 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-28)
-- [NVIDIA LocateAnything-3B: The Open Visual Grounding Model That Beats YOLO (2026 Guide)](https://rohitraj.tech/en/notes/nvidia-locateanything-3b-visual-grounding-guide-2026)
-- [Safari MCP Server: Apple's Official Debugger vs the Community Tools (2026 Guide)](https://rohitraj.tech/en/notes/safari-mcp-server-web-debugging-guide-2026)
-- [Strix: The Open-Source AI Pentester That Proves Every Bug (2026 Guide)](https://rohitraj.tech/en/notes/strix-ai-penetration-testing-agent-guide-2026)
-- [Baidu Unlimited-OCR: The Open-Source Model That Reads 40+ Page Documents in One Pass (2026)](https://rohitraj.tech/en/notes/baidu-unlimited-ocr-open-model-guide-2026)
-- [This Week in AI Dev: The Local-Agent Stack Went Production-Real (Week 27 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-27)
+- [Shieldstral vs Llama Guard vs OpenAI Moderation API: A Self-Hosted Content Moderation Guide (2026)](https://rohitraj.tech/notes/shieldstral-vs-llama-guard-openai-moderation-2026)
+- [OpenAI Codex Security vs Snyk vs Semgrep vs CodeQL: What the New Open-Source Scanner Actually Changes (2026)](https://rohitraj.tech/notes/codex-security-vs-snyk-semgrep-codeql-2026)
+- [DeepSeek DSpark in llama.cpp: How to Get 2x Local Inference on V4-Flash-0731 (2026)](https://rohitraj.tech/notes/deepseek-dspark-speculative-decoding-llamacpp-2026)
+- [Block's Buzz (2026 Guide): Self-Host the Workspace Where AI Agents Are Teammates, Not Bots](https://rohitraj.tech/notes/block-buzz-agent-collaboration-platform-guide-2026)
+- [Gemini 3.6 Flash vs 3.5 Flash-Lite: Which One to Ship — and the Price Hike Nobody Leads With (2026)](https://rohitraj.tech/notes/gemini-3-6-flash-vs-3-5-flash-lite-guide-2026)
+- [Bonsai 27B: A 27B Model on Your Phone — and the One Benchmark That Collapses (2026)](https://rohitraj.tech/notes/bonsai-27b-ternary-quantization-guide-2026)
+- [This Week in AI Dev: The Agent Fleet Grows Up (Week 29 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-29)
+- [DeepSeek V4 API Migration Guide: What Breaks on July 24, 2026 (and the 10-Minute Fix)](https://rohitraj.tech/notes/deepseek-v4-api-migration-guide-2026)
+- [Stop Your AI Coding Agent Running rm -rf: Command Guardrails Compared (2026)](https://rohitraj.tech/notes/ai-agent-command-guardrails-2026)
+- [GPT-5.6 Sol vs Terra vs Luna: A Developer's Guide to Picking the Right Tier (2026)](https://rohitraj.tech/notes/gpt-5-6-sol-terra-luna-api-guide-2026)
+- [GitLost: How a GitHub AI Agent Leaked Private Repos — and How to Defend Your Own Agentic Workflow (2026)](https://rohitraj.tech/notes/gitlost-ai-agent-prompt-injection-defense-2026)
+- [I Built a Job-Search Agent on Claude Code: The Runtime Pattern Teardown (2026)](https://rohitraj.tech/notes/ai-job-search-agent-claude-code-guide-2026)
+- [OfficeCLI: Give AI Agents Real Control of Word, Excel & PowerPoint (2026 Guide)](https://rohitraj.tech/notes/officecli-ai-agents-office-files-guide-2026)
+- [This Week in AI Dev: The Week Agents Got Cheaper to Run (Week 28 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-28)
+- [NVIDIA LocateAnything-3B: The Open Visual Grounding Model That Beats YOLO (2026 Guide)](https://rohitraj.tech/notes/nvidia-locateanything-3b-visual-grounding-guide-2026)
+- [Safari MCP Server: Apple's Official Debugger vs the Community Tools (2026 Guide)](https://rohitraj.tech/notes/safari-mcp-server-web-debugging-guide-2026)
+- [Strix: The Open-Source AI Pentester That Proves Every Bug (2026 Guide)](https://rohitraj.tech/notes/strix-ai-penetration-testing-agent-guide-2026)
+- [Baidu Unlimited-OCR: The Open-Source Model That Reads 40+ Page Documents in One Pass (2026)](https://rohitraj.tech/notes/baidu-unlimited-ocr-open-model-guide-2026)
+- [This Week in AI Dev: The Local-Agent Stack Went Production-Real (Week 27 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-27)
 
 ### AI Systems & LLM Integration
 
-- [Ornith-1.0: The Self-Improving Open-Source Coding Model, Tested (2026)](https://rohitraj.tech/en/notes/ornith-1-self-improving-coding-model-guide-2026)
-- [Best Open-Source Deep Research Agent to Self-Host in 2026 (Onyx vs DeerFlow vs Perplexica)](https://rohitraj.tech/en/notes/best-open-source-deep-research-agent-self-host-2026)
-- [Microsoft Agent Framework vs LangGraph vs CrewAI: Which to Use Now That AutoGen Is Dead (2026)](https://rohitraj.tech/en/notes/microsoft-agent-framework-vs-langgraph-crewai-2026)
-- [Gemini Computer Use vs Claude vs OpenAI: Best Browser Agent 2026](https://rohitraj.tech/en/notes/gemini-computer-use-vs-claude-openai-2026)
+- [Ornith-1.0: The Self-Improving Open-Source Coding Model, Tested (2026)](https://rohitraj.tech/notes/ornith-1-self-improving-coding-model-guide-2026)
+- [Best Open-Source Deep Research Agent to Self-Host in 2026 (Onyx vs DeerFlow vs Perplexica)](https://rohitraj.tech/notes/best-open-source-deep-research-agent-self-host-2026)
+- [Microsoft Agent Framework vs LangGraph vs CrewAI: Which to Use Now That AutoGen Is Dead (2026)](https://rohitraj.tech/notes/microsoft-agent-framework-vs-langgraph-crewai-2026)
+- [Gemini Computer Use vs Claude vs OpenAI: Best Browser Agent 2026](https://rohitraj.tech/notes/gemini-computer-use-vs-claude-openai-2026)
 
-- [GLM-5.2 vs Claude Opus 4.8: Should You Switch Your Coding Agent? (2026)](https://rohitraj.tech/en/notes/glm-5-2-vs-claude-opus-coding-agent-2026)
-- [Gemini Interactions API: The Migration Guide from generateContent (2026)](https://rohitraj.tech/en/notes/gemini-interactions-api-migration-guide-2026)
-- [Mistral OCR 4 vs AWS Textract vs Google Document AI: The Cheapest Accurate Document API (2026)](https://rohitraj.tech/en/notes/mistral-ocr-4-vs-textract-google-document-ai-2026)
-- [Sakana Fugu: The Orchestration Model That Commands Other LLMs (2026)](https://rohitraj.tech/en/notes/sakana-fugu-orchestration-model-guide-2026)
-- [This Week in AI Dev: Open Weights Catch the Frontier While the Agent Stack Grows Plumbing (Week 26 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-26)
-- [VibeThinker-3B: A 3B Reasoning Model That Rivals 671B Giants (2026)](https://rohitraj.tech/en/notes/vibethinker-3b-tiny-reasoning-model-guide-2026)
-- [DeepSeek V4 Vision: The Cheapest Multimodal API to Ship in Production (2026)](https://rohitraj.tech/en/notes/deepseek-v4-vision-cheapest-multimodal-api-2026)
-- [MCP Server Authentication in 2026: OAuth 2.1, Zero-Touch Enterprise OAuth, and What to Actually Ship](https://rohitraj.tech/en/notes/mcp-server-authentication-oauth-guide-2026)
-- [WebMCP Guide 2026: Turn Your Website Into Tools for Browser AI Agents](https://rohitraj.tech/en/notes/webmcp-guide-browser-agent-tools-2026)
-- [Best Local LLM for Coding in 2026: When It Actually Replaces Claude and GPT](https://rohitraj.tech/en/notes/best-local-llm-for-coding-replace-cloud-2026)
-- [This Week in AI Dev: A Frontier Model Gets Pulled While Open Weights Keep Shipping (Week 25 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-25)
-- [AI Agent Memory vs Context Window: Why a Bigger Window Isn't Memory (2026)](https://rohitraj.tech/en/notes/ai-agent-memory-vs-context-window-2026)
-- [Kimi K2.7-Code vs Claude Opus 4.8 and GPT-5.5: Is the 1T Open Coding Model Worth It? (2026)](https://rohitraj.tech/en/notes/kimi-k2-7-code-vs-claude-opus-gpt-2026)
-- [AI Agent Payments in 2026: x402 vs AP2 — How to Let Your Agent Actually Pay](https://rohitraj.tech/en/notes/ai-agent-payments-x402-vs-ap2-2026)
-- [OpenCode vs Claude Code vs Cursor: The Best AI Coding Agent in 2026?](https://rohitraj.tech/en/notes/opencode-vs-claude-code-cursor-2026)
-- [DiffusionGemma: Text Diffusion LLMs Explained, and When to Actually Use One (2026)](https://rohitraj.tech/en/notes/diffusiongemma-text-diffusion-llm-guide-2026)
-- [How to Run DiffusionGemma Locally: A vLLM Serving Guide for RTX 5090 and H100 (2026)](https://rohitraj.tech/en/notes/run-diffusiongemma-locally-vllm-rtx5090-2026)
-- [Claude Fable 5: Pricing, the API, and When to Use It vs Opus 4.8 (2026)](https://rohitraj.tech/en/notes/claude-fable-5-developer-guide-2026)
-- [This Week in AI Dev: Codex Builds Apps, the Open-Weight Frontier Explodes, and Anthropic Meters the Agent SDK (Week 24 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-24)
-- [What Is Harness Engineering? OpenAI's Agent-First Codex Playbook (2026)](https://rohitraj.tech/en/notes/what-is-harness-engineering-codex-2026)
-- [NVIDIA RTX Spark + Windows: What Microsoft's Local-AI Superchip Means for Developers (2026)](https://rohitraj.tech/en/notes/nvidia-rtx-spark-windows-ai-agents-2026)
-- [Open Notebook vs Khoj vs SurfSense: Best Self-Hosted NotebookLM Alternative (2026)](https://rohitraj.tech/en/notes/open-notebook-vs-khoj-vs-surfsense-notebooklm-2026)
-- [AI Agent Memory in 2026: Mem0 vs Zep vs Letta vs MemPalace (Open-Source, Benchmarked)](https://rohitraj.tech/en/notes/open-source-ai-agent-memory-mem0-vs-zep-letta-2026)
-- [Claude AI Vulnerability Scanner: Anthropic's Open-Source Code-Security Harness (2026)](https://rohitraj.tech/en/notes/claude-ai-vulnerability-scanner-2026)
+- [GLM-5.2 vs Claude Opus 4.8: Should You Switch Your Coding Agent? (2026)](https://rohitraj.tech/notes/glm-5-2-vs-claude-opus-coding-agent-2026)
+- [Gemini Interactions API: The Migration Guide from generateContent (2026)](https://rohitraj.tech/notes/gemini-interactions-api-migration-guide-2026)
+- [Mistral OCR 4 vs AWS Textract vs Google Document AI: The Cheapest Accurate Document API (2026)](https://rohitraj.tech/notes/mistral-ocr-4-vs-textract-google-document-ai-2026)
+- [Sakana Fugu: The Orchestration Model That Commands Other LLMs (2026)](https://rohitraj.tech/notes/sakana-fugu-orchestration-model-guide-2026)
+- [This Week in AI Dev: Open Weights Catch the Frontier While the Agent Stack Grows Plumbing (Week 26 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-26)
+- [VibeThinker-3B: A 3B Reasoning Model That Rivals 671B Giants (2026)](https://rohitraj.tech/notes/vibethinker-3b-tiny-reasoning-model-guide-2026)
+- [DeepSeek V4 Vision: The Cheapest Multimodal API to Ship in Production (2026)](https://rohitraj.tech/notes/deepseek-v4-vision-cheapest-multimodal-api-2026)
+- [MCP Server Authentication in 2026: OAuth 2.1, Zero-Touch Enterprise OAuth, and What to Actually Ship](https://rohitraj.tech/notes/mcp-server-authentication-oauth-guide-2026)
+- [WebMCP Guide 2026: Turn Your Website Into Tools for Browser AI Agents](https://rohitraj.tech/notes/webmcp-guide-browser-agent-tools-2026)
+- [Best Local LLM for Coding in 2026: When It Actually Replaces Claude and GPT](https://rohitraj.tech/notes/best-local-llm-for-coding-replace-cloud-2026)
+- [This Week in AI Dev: A Frontier Model Gets Pulled While Open Weights Keep Shipping (Week 25 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-25)
+- [AI Agent Memory vs Context Window: Why a Bigger Window Isn't Memory (2026)](https://rohitraj.tech/notes/ai-agent-memory-vs-context-window-2026)
+- [Kimi K2.7-Code vs Claude Opus 4.8 and GPT-5.5: Is the 1T Open Coding Model Worth It? (2026)](https://rohitraj.tech/notes/kimi-k2-7-code-vs-claude-opus-gpt-2026)
+- [AI Agent Payments in 2026: x402 vs AP2 — How to Let Your Agent Actually Pay](https://rohitraj.tech/notes/ai-agent-payments-x402-vs-ap2-2026)
+- [OpenCode vs Claude Code vs Cursor: The Best AI Coding Agent in 2026?](https://rohitraj.tech/notes/opencode-vs-claude-code-cursor-2026)
+- [DiffusionGemma: Text Diffusion LLMs Explained, and When to Actually Use One (2026)](https://rohitraj.tech/notes/diffusiongemma-text-diffusion-llm-guide-2026)
+- [How to Run DiffusionGemma Locally: A vLLM Serving Guide for RTX 5090 and H100 (2026)](https://rohitraj.tech/notes/run-diffusiongemma-locally-vllm-rtx5090-2026)
+- [Claude Fable 5: Pricing, the API, and When to Use It vs Opus 4.8 (2026)](https://rohitraj.tech/notes/claude-fable-5-developer-guide-2026)
+- [This Week in AI Dev: Codex Builds Apps, the Open-Weight Frontier Explodes, and Anthropic Meters the Agent SDK (Week 24 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-24)
+- [What Is Harness Engineering? OpenAI's Agent-First Codex Playbook (2026)](https://rohitraj.tech/notes/what-is-harness-engineering-codex-2026)
+- [NVIDIA RTX Spark + Windows: What Microsoft's Local-AI Superchip Means for Developers (2026)](https://rohitraj.tech/notes/nvidia-rtx-spark-windows-ai-agents-2026)
+- [Open Notebook vs Khoj vs SurfSense: Best Self-Hosted NotebookLM Alternative (2026)](https://rohitraj.tech/notes/open-notebook-vs-khoj-vs-surfsense-notebooklm-2026)
+- [AI Agent Memory in 2026: Mem0 vs Zep vs Letta vs MemPalace (Open-Source, Benchmarked)](https://rohitraj.tech/notes/open-source-ai-agent-memory-mem0-vs-zep-letta-2026)
+- [Claude AI Vulnerability Scanner: Anthropic's Open-Source Code-Security Harness (2026)](https://rohitraj.tech/notes/claude-ai-vulnerability-scanner-2026)
 
-- [Cut LLM Token Costs Up to 90% with Context Compression (2026)](https://rohitraj.tech/en/notes/llm-context-compression-cut-token-costs-2026)
-- [This Week in AI Dev: Claude Opus 4.8, Copilot Goes Token-Metered, MCP's Stateless Next Spec (Week 23 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-23)
-- [Claude Code Dynamic Workflows: A Hands-On Guide for Developers (2026)](https://rohitraj.tech/en/notes/claude-code-dynamic-workflows-guide-2026)
-- [OpenRouter vs LiteLLM vs Portkey: Which LLM Gateway for Your AI MVP? (2026)](https://rohitraj.tech/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026)
-- [AI-Generated Code Anti-Patterns: 9 Production Bugs Hiding in Vibe-Coded Apps (2026)](https://rohitraj.tech/en/notes/ai-generated-code-anti-patterns-fixes-2026)
-- [Claude Opus 4.8 vs 4.7 for Developers: What Changed and Should You Upgrade (2026)](https://rohitraj.tech/en/notes/claude-opus-4-8-vs-4-7-developers-2026)
-- [Build a Secure MCP Server in TypeScript: The Post-Copilot Defense Playbook (2026)](https://rohitraj.tech/en/notes/secure-mcp-server-typescript-2026)
-- [This Week in AI Dev: DeepSeek's Permanent 75% Cut, GitHub Auto-Routing, Gemini Managed Agents (Week 22 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-22)
-- [Gemini CLI Shuts Down June 18, 2026: Antigravity CLI Migration + 4 Alternatives Worth Switching To](https://rohitraj.tech/en/notes/gemini-cli-to-antigravity-migration-alternatives-2026)
-- [DeepSeek V4 Pro vs Claude Sonnet 4.6 vs GPT-5.5: The Real MVP Cost in 2026](https://rohitraj.tech/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026)
-- [Claude Code Plugins in 2026: The Context-Engineering Stack Indie Devs Are Actually Installing](https://rohitraj.tech/en/notes/claude-code-plugins-context-engineering-2026)
-- [AWS Bedrock vs OpenAI — Which One to Pick for Your Startup (With Real Costs)](https://rohitraj.tech/en/notes/aws-bedrock-vs-openai)
-- [How to Build an AI Chatbot for Your Business: Architecture, Cost & What Actually Works (2026)](https://rohitraj.tech/en/notes/build-ai-chatbot-whatsapp-business-india)
-- [How to Add AI to Your Existing Business App — Without Rebuilding Everything](https://rohitraj.tech/en/notes/how-to-integrate-ai-existing-business-app)
-- [Using RAG for SQL Generation — Why Embeddings Beat Prompt Stuffing](https://rohitraj.tech/en/notes/rag-for-sql)
-- [Building an MCP Server with Spring Boot — A Practical Guide](https://rohitraj.tech/en/notes/spring-boot-mcp)
-- [Cloud-First AI Is Dead — I Built a Fully Offline AI App to Prove It](https://rohitraj.tech/en/notes/cloud-first-ai-is-dead-on-device-android-2026)
-- [Building an On-Device AI Scam Detector for Android — Gemma 4 + LiteRT + Regex Fallback](https://rohitraj.tech/en/notes/build-on-device-ai-scam-detector-android-gemma)
-- [₹805 Crore Lost to UPI Fraud This Year — I Built an Offline Scam Detector That Needs Zero Internet](https://rohitraj.tech/en/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector)
-- [Pinecone vs Qdrant vs pgvector — Which Vector DB for India RAG MVP (2026)](https://rohitraj.tech/en/notes/pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026)
-- [OpenAI vs Claude vs Gemini API — Real Cost for India MVP 2026](https://rohitraj.tech/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026)
-- [LangGraph vs CrewAI vs AutoGen — Which Multi-Agent Framework Wins for India MVPs in 2026](https://rohitraj.tech/en/notes/langgraph-vs-crewai-vs-autogen-india-mvp-2026)
+- [Cut LLM Token Costs Up to 90% with Context Compression (2026)](https://rohitraj.tech/notes/llm-context-compression-cut-token-costs-2026)
+- [This Week in AI Dev: Claude Opus 4.8, Copilot Goes Token-Metered, MCP's Stateless Next Spec (Week 23 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-23)
+- [Claude Code Dynamic Workflows: A Hands-On Guide for Developers (2026)](https://rohitraj.tech/notes/claude-code-dynamic-workflows-guide-2026)
+- [OpenRouter vs LiteLLM vs Portkey: Which LLM Gateway for Your AI MVP? (2026)](https://rohitraj.tech/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026)
+- [AI-Generated Code Anti-Patterns: 9 Production Bugs Hiding in Vibe-Coded Apps (2026)](https://rohitraj.tech/notes/ai-generated-code-anti-patterns-fixes-2026)
+- [Claude Opus 4.8 vs 4.7 for Developers: What Changed and Should You Upgrade (2026)](https://rohitraj.tech/notes/claude-opus-4-8-vs-4-7-developers-2026)
+- [Build a Secure MCP Server in TypeScript: The Post-Copilot Defense Playbook (2026)](https://rohitraj.tech/notes/secure-mcp-server-typescript-2026)
+- [This Week in AI Dev: DeepSeek's Permanent 75% Cut, GitHub Auto-Routing, Gemini Managed Agents (Week 22 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-22)
+- [Gemini CLI Shuts Down June 18, 2026: Antigravity CLI Migration + 4 Alternatives Worth Switching To](https://rohitraj.tech/notes/gemini-cli-to-antigravity-migration-alternatives-2026)
+- [DeepSeek V4 Pro vs Claude Sonnet 4.6 vs GPT-5.5: The Real MVP Cost in 2026](https://rohitraj.tech/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026)
+- [Claude Code Plugins in 2026: The Context-Engineering Stack Indie Devs Are Actually Installing](https://rohitraj.tech/notes/claude-code-plugins-context-engineering-2026)
+- [AWS Bedrock vs OpenAI — Which One to Pick for Your Startup (With Real Costs)](https://rohitraj.tech/notes/aws-bedrock-vs-openai)
+- [How to Build an AI Chatbot for Your Business: Architecture, Cost & What Actually Works (2026)](https://rohitraj.tech/notes/build-ai-chatbot-whatsapp-business-india)
+- [How to Add AI to Your Existing Business App — Without Rebuilding Everything](https://rohitraj.tech/notes/how-to-integrate-ai-existing-business-app)
+- [Using RAG for SQL Generation — Why Embeddings Beat Prompt Stuffing](https://rohitraj.tech/notes/rag-for-sql)
+- [Building an MCP Server with Spring Boot — A Practical Guide](https://rohitraj.tech/notes/spring-boot-mcp)
+- [Cloud-First AI Is Dead — I Built a Fully Offline AI App to Prove It](https://rohitraj.tech/notes/cloud-first-ai-is-dead-on-device-android-2026)
+- [Building an On-Device AI Scam Detector for Android — Gemma 4 + LiteRT + Regex Fallback](https://rohitraj.tech/notes/build-on-device-ai-scam-detector-android-gemma)
+- [₹805 Crore Lost to UPI Fraud This Year — I Built an Offline Scam Detector That Needs Zero Internet](https://rohitraj.tech/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector)
+- [Pinecone vs Qdrant vs pgvector — Which Vector DB for India RAG MVP (2026)](https://rohitraj.tech/notes/pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026)
+- [OpenAI vs Claude vs Gemini API — Real Cost for India MVP 2026](https://rohitraj.tech/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026)
+- [LangGraph vs CrewAI vs AutoGen — Which Multi-Agent Framework Wins for India MVPs in 2026](https://rohitraj.tech/notes/langgraph-vs-crewai-vs-autogen-india-mvp-2026)
 
 ### Backend & Architecture
 
-- [Drizzle vs Prisma vs TypeORM — Real ORM Pick for India MVP 2026](https://rohitraj.tech/en/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026)
+- [Drizzle vs Prisma vs TypeORM — Real ORM Pick for India MVP 2026](https://rohitraj.tech/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026)
 
-- [How I Built an Enterprise Deal Matching Platform with Spring Boot + Next.js + GPT-4o](https://rohitraj.tech/en/notes/build-enterprise-deal-matching-platform-spring-boot-nextjs)
-- [Building a Multi-Tenant Retail SaaS with Spring Boot 3.4 + Java 21 — 12-Module Architecture](https://rohitraj.tech/en/notes/build-multi-tenant-saas-spring-boot-java-21)
-- [I Built a 12-Module Multi-Tenant SaaS Platform Alone — Here's What I Learned](https://rohitraj.tech/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot)
-- [Microservices vs Monolith for Startups: Stop Overengineering](https://rohitraj.tech/en/notes/microservices-vs-monolith-startup)
-- [PostgreSQL vs MongoDB: Which Database for Your Startup? (2026)](https://rohitraj.tech/en/notes/postgresql-vs-mongodb-startup-2026)
-- [Spring Boot vs Node.js for Your Startup Backend (2026)](https://rohitraj.tech/en/notes/spring-boot-vs-nodejs-startup-backend-2026)
-- [Vercel vs Railway vs Hetzner — India MVP Hosting Cost & Latency (2026)](https://rohitraj.tech/en/notes/vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026)
-- [Resend vs SendGrid vs AWS SES for India MVPs in 2026 — Real Cost on 10K Transactional Emails](https://rohitraj.tech/en/notes/resend-vs-sendgrid-vs-aws-ses-india-mvp-2026)
-- [Hire iOS Developer India 2026: Founding Engineer vs Agency vs Swift Freelancer (Real Cost)](https://rohitraj.tech/en/notes/hire-ios-developer-india-mvp-2026)
-- [PostHog vs Mixpanel vs Amplitude — Best Product Analytics for India MVP (2026)](https://rohitraj.tech/en/notes/posthog-vs-mixpanel-vs-amplitude-india-mvp-2026)
+- [How I Built an Enterprise Deal Matching Platform with Spring Boot + Next.js + GPT-4o](https://rohitraj.tech/notes/build-enterprise-deal-matching-platform-spring-boot-nextjs)
+- [Building a Multi-Tenant Retail SaaS with Spring Boot 3.4 + Java 21 — 12-Module Architecture](https://rohitraj.tech/notes/build-multi-tenant-saas-spring-boot-java-21)
+- [I Built a 12-Module Multi-Tenant SaaS Platform Alone — Here's What I Learned](https://rohitraj.tech/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot)
+- [Microservices vs Monolith for Startups: Stop Overengineering](https://rohitraj.tech/notes/microservices-vs-monolith-startup)
+- [PostgreSQL vs MongoDB: Which Database for Your Startup? (2026)](https://rohitraj.tech/notes/postgresql-vs-mongodb-startup-2026)
+- [Spring Boot vs Node.js for Your Startup Backend (2026)](https://rohitraj.tech/notes/spring-boot-vs-nodejs-startup-backend-2026)
+- [Vercel vs Railway vs Hetzner — India MVP Hosting Cost & Latency (2026)](https://rohitraj.tech/notes/vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026)
+- [Resend vs SendGrid vs AWS SES for India MVPs in 2026 — Real Cost on 10K Transactional Emails](https://rohitraj.tech/notes/resend-vs-sendgrid-vs-aws-ses-india-mvp-2026)
+- [Hire iOS Developer India 2026: Founding Engineer vs Agency vs Swift Freelancer (Real Cost)](https://rohitraj.tech/notes/hire-ios-developer-india-mvp-2026)
+- [PostHog vs Mixpanel vs Amplitude — Best Product Analytics for India MVP (2026)](https://rohitraj.tech/notes/posthog-vs-mixpanel-vs-amplitude-india-mvp-2026)
 
 ### Mobile & React Native
 
-- [Building an Android Finance Tracker with SMS Auto-Import — Kotlin + Jetpack Compose](https://rohitraj.tech/en/notes/build-android-finance-tracker-kotlin-jetpack-compose)
-- [Building a Family Budget App with 8 Financial Modules — Kotlin + Jetpack Compose, Fully Offline](https://rohitraj.tech/en/notes/build-family-budget-app-android-offline-kotlin)
-- [Building an Offline-First Trip Planner with React Native + WatermelonDB + Offline Maps](https://rohitraj.tech/en/notes/build-offline-first-trip-planner-react-native-watermelondb)
-- [Building a Multi-Language React Native App with Expo SDK 52 — SanatanApp Architecture](https://rohitraj.tech/en/notes/building-multilanguage-react-native-app-expo)
-- [Streaming Audio in React Native: expo-av with Public Domain Sources](https://rohitraj.tech/en/notes/expo-av-audio-streaming-react-native)
-- [From Idea to Play Store: Shipping SanatanApp in 4 Weeks](https://rohitraj.tech/en/notes/idea-to-play-store-sanatanapp-architecture)
-- [React Native vs Flutter in 2026: Which One for Your App?](https://rohitraj.tech/en/notes/react-native-vs-flutter-2026)
-- [Hire React Native Developer India 2026 — Founding Engineer vs Agency vs Freelance (Real Cost)](https://rohitraj.tech/en/notes/hire-react-native-developer-india-2026)
-- [Hire Flutter Developer India 2026 — Founding Engineer vs Agency vs FlutterFlow (Real Cost)](https://rohitraj.tech/en/notes/hire-flutter-developer-india-2026)
+- [Building an Android Finance Tracker with SMS Auto-Import — Kotlin + Jetpack Compose](https://rohitraj.tech/notes/build-android-finance-tracker-kotlin-jetpack-compose)
+- [Building a Family Budget App with 8 Financial Modules — Kotlin + Jetpack Compose, Fully Offline](https://rohitraj.tech/notes/build-family-budget-app-android-offline-kotlin)
+- [Building an Offline-First Trip Planner with React Native + WatermelonDB + Offline Maps](https://rohitraj.tech/notes/build-offline-first-trip-planner-react-native-watermelondb)
+- [Building a Multi-Language React Native App with Expo SDK 52 — SanatanApp Architecture](https://rohitraj.tech/notes/building-multilanguage-react-native-app-expo)
+- [Streaming Audio in React Native: expo-av with Public Domain Sources](https://rohitraj.tech/notes/expo-av-audio-streaming-react-native)
+- [From Idea to Play Store: Shipping SanatanApp in 4 Weeks](https://rohitraj.tech/notes/idea-to-play-store-sanatanapp-architecture)
+- [React Native vs Flutter in 2026: Which One for Your App?](https://rohitraj.tech/notes/react-native-vs-flutter-2026)
+- [Hire React Native Developer India 2026 — Founding Engineer vs Agency vs Freelance (Real Cost)](https://rohitraj.tech/notes/hire-react-native-developer-india-2026)
+- [Hire Flutter Developer India 2026 — Founding Engineer vs Agency vs FlutterFlow (Real Cost)](https://rohitraj.tech/notes/hire-flutter-developer-india-2026)
 
 ### Web & PWA
 
-- [Offline-First PWA Patterns — Service Workers, IndexedDB, and Background Sync](https://rohitraj.tech/en/notes/pwa-offline-sync)
+- [Offline-First PWA Patterns — Service Workers, IndexedDB, and Background Sync](https://rohitraj.tech/notes/pwa-offline-sync)
 
 ### Founder & Business
 
-- [How to Build an App Like Uber or Zomato — Architecture & Real Costs](https://rohitraj.tech/en/notes/build-app-like-uber-zomato-architecture-cost)
-- [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a Developer (2026)](https://rohitraj.tech/en/notes/how-much-does-it-cost-to-build-mobile-app-india-2026)
-- [How to Build a SaaS MVP in 2026 — Complete Tech Stack Guide](https://rohitraj.tech/en/notes/how-to-build-saas-mvp-2026)
-- [Why Your MVP Should Cost Under $10,000 — And How to Make It Happen](https://rohitraj.tech/en/notes/why-your-mvp-should-cost-under-10k)
-- [Freelance Developer vs Agency in India: An Honest Comparison from the Developer Side](https://rohitraj.tech/en/notes/hire-freelance-developer-vs-agency-india)
-- [How to Hire a Software Developer: 10 Questions to Ask Before Signing](https://rohitraj.tech/en/notes/how-to-hire-developer-interview-questions)
-- [WhatsApp Business API Integration Guide for Indian Startups](https://rohitraj.tech/en/notes/whatsapp-business-api-integration-guide-india)
-- [Founding Engineer vs Lovable in 2026 — When $180K Beats $25/mo](https://rohitraj.tech/en/notes/founding-engineer-vs-lovable-when-to-hire-2026)
-- [India vs US MVP Developer Cost in 2026 — $18K or $120K for the Same App?](https://rohitraj.tech/en/notes/india-vs-us-mvp-developer-cost-2026)
-- [Vibe Coding vs Hiring a Developer — When Lovable, Bolt, and Cursor Stop Being Enough](https://rohitraj.tech/en/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks)
-- [Founding Engineer vs Fractional CTO in 2026 — Which One Does Your Startup Actually Need?](https://rohitraj.tech/en/notes/founding-engineer-vs-fractional-cto)
-- [The Best Lovable Alternative in 2026 Is Not Another AI Builder — It Is a Developer Who Can Read the Code](https://rohitraj.tech/en/notes/lovable-alternative-developer-when-ai-builder-breaks)
-- [6-Week MVP Sprint — Week-by-Week Breakdown of What Actually Ships](https://rohitraj.tech/en/notes/6-week-mvp-sprint-week-by-week-breakdown)
-- [6-Week MVP Tech Stack in 2026 — The Boring Choices That Actually Ship](https://rohitraj.tech/en/notes/6-week-mvp-tech-stack-2026)
-- [What a $15K MVP Actually Includes — vs. the $50K Agency Quote You Just Got](https://rohitraj.tech/en/notes/what-15k-mvp-actually-includes-vs-50k-agency-quote)
-- [6-Week MVP Sprint vs 3-Month Agency Build — Which One Actually Ships First in 2026?](https://rohitraj.tech/en/notes/6-week-mvp-vs-3-month-agency-which-ships-first)
-- [Hire a Founding Engineer in India — Direct vs Toptal, Arc, Uplers in 2026](https://rohitraj.tech/en/notes/founding-engineer-india-vs-toptal-arc-uplers-2026)
-- [When Your Lovable App Hits Production — The 5 Bugs That Always Need a Real Engineer in 2026](https://rohitraj.tech/en/notes/lovable-app-production-bugs-need-real-engineer-2026)
-- [Your Supabase RLS Just Leaked Production Data — The 5 Bugs Every Vibe-Coded App Hits in 2026](https://rohitraj.tech/en/notes/supabase-rls-production-bugs-need-real-engineer-2026)
-- [Retool vs Custom Internal Tool in 2026 — When to Buy, When to Build, When to Hire](https://rohitraj.tech/en/notes/retool-vs-custom-build-internal-tool-2026)
-- [How Much Equity Should a Founding Engineer Get in 2026? Real Numbers, Cap-Table Math, and a Cheaper Alternative](https://rohitraj.tech/en/notes/founding-engineer-equity-percentage-2026)
-- [Hire a Technical Co-Founder in India in 2026 — What It Actually Costs, When You Need One, and the Cheaper Alternative](https://rohitraj.tech/en/notes/hire-technical-cofounder-india-2026)
-- [Hire an AI Engineer in India in 2026 — Real Costs, the 2026 Stack, and the Sprint Alternative That Beats Both](https://rohitraj.tech/en/notes/hire-ai-engineer-india-2026)
-- [Bolt.new vs Hiring a Developer in 2026 — When the AI Builder Hits Its Limit and the Token Bill Beats the Salary](https://rohitraj.tech/en/notes/bolt-new-vs-hire-developer-2026)
-- [Cursor AI vs Hiring a Developer in 2026 — When the $200 Ultra Plan Costs More Than a Real Engineer Sprint](https://rohitraj.tech/en/notes/cursor-ai-vs-hire-developer-2026)
-- [Devin AI vs Hiring a Developer in 2026 — $20/Month Agent or Founding Engineer? Real Pricing, SWE-bench, and Failure Modes](https://rohitraj.tech/en/notes/devin-ai-vs-hire-developer-2026)
-- [Replit Agent vs Hiring a Developer in 2026 — Browser IDE Autonomy or Founding Engineer? Effort Pricing, Failure Modes, and the $400 Monthly Trap](https://rohitraj.tech/en/notes/replit-agent-vs-hire-developer-2026)
-- [v0 by Vercel vs Hiring a Developer in 2026 — When Generative UI Hits the Day-30 Wall](https://rohitraj.tech/en/notes/v0-by-vercel-vs-hire-developer-2026)
-- [Claude Code vs Hiring a Developer in 2026: $20 CLI or $80K Engineer?](https://rohitraj.tech/en/notes/claude-code-vs-hire-developer-2026)
-- [Razorpay vs Stripe for Indian MVPs in 2026 — Real Cost on a 100-User Month](https://rohitraj.tech/en/notes/razorpay-vs-stripe-india-mvp-2026)
-- [Self-Host n8n vs Zapier for Indian MVPs in 2026 — Real Cost on 50K Operations/Month](https://rohitraj.tech/en/notes/self-host-n8n-vs-zapier-cost-india-2026)
-- [Supabase vs Firebase for Indian MVPs in 2026 — Real Cost on 10K MAU](https://rohitraj.tech/en/notes/supabase-vs-firebase-india-mvp-2026)
-- [Clerk vs Supabase Auth vs Better-Auth — Which to Pick for India MVP (2026)](https://rohitraj.tech/en/notes/clerk-vs-supabase-auth-vs-better-auth-india-2026)
-- [April 2026 AI News Decoded: 7 Stories That Actually Change What Founders Should Build](https://rohitraj.tech/en/notes/ai-news-april-2026-what-founders-should-build)
-- [Inkling 975B: The Open-Weights Model Almost Nobody Should Self-Host (2026)](https://rohitraj.tech/en/notes/inkling-975b-run-locally-vram-guide-2026)
-- [Apple SpeechAnalyzer vs Whisper: On-Device Speech-to-Text in 2026](https://rohitraj.tech/en/notes/apple-speechanalyzer-vs-whisper-on-device-stt-2026)
-- [The Anti-AI-Slop Design Skill: How Hallmark Fixes Generic AI UI in 2026](https://rohitraj.tech/en/notes/anti-ai-slop-design-skill-hallmark-guide-2026)
-- [MCP Goes Stateless: Migrate Your Server Before the 2026-07-28 Spec](https://rohitraj.tech/en/notes/mcp-stateless-spec-migration-guide-2026)
-- [OmniRoute Review (2026): Is the 20k-Star Free AI Gateway Worth It vs OpenRouter & LiteLLM?](https://rohitraj.tech/en/notes/omniroute-ai-gateway-review-2026)
-- [This Week in AI Dev: Kimi K3 Lands and Cursor Springs a 0-Day (Week 30 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-30)
-- [This Week in AI Dev: Agent Skills Went GA, Then the Benchmark Landed (Week 31 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-31)
-- [This Week in AI Dev: Everything Got Smaller, and Six CVEs Turned Out to Be Fake (Week 32 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-32)
-- [This Week in AI Dev: Models Day, Stolen Reasoning, and a $16,000 GPU (Week 33 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-33)
-- [DeepSeek Harness vs Claude Code vs Codex CLI: The v0.1 Developer Preview, Honestly — 2026](https://rohitraj.tech/en/notes/deepseek-harness-vs-claude-code-codex-cli-2026)
-- [DeepSeek-V4-Flash-Vision-Exp API Guide: Limits, Pricing, and the 800px Trap (2026)](https://rohitraj.tech/en/notes/deepseek-v4-flash-vision-exp-api-guide-2026)
-- [Qwen3.8-Flash-Next vs Qwen3.8-27B: The Local Memory Math Behind the "12GB VRAM" Headline (2026)](https://rohitraj.tech/en/notes/qwen3-8-flash-next-vs-27b-local-memory-2026)
-- [Qwen3.8-27B as Your Local Coding Agent: 24GB Setup, Quant Pick, and Claude Code Wiring (2026)](https://rohitraj.tech/en/notes/qwen3-8-27b-local-coding-agent-claude-code-2026)
-- [This Week in AI Dev: The Price War Reaches Anthropic's Flagship (Week 35 of 2026)](https://rohitraj.tech/en/notes/ai-dev-week-2026-35)
-- [TencentDB Agent Memory v2.0 Review: A Self-Hosted Team Memory Hub for AI Agents (2026)](https://rohitraj.tech/en/notes/tencentdb-agent-memory-team-hub-review-2026)
-- [Cloudflare Computer vs Cloudflare Sandbox: Which Agent Runtime Should You Actually Use? (2026)](https://rohitraj.tech/en/notes/cloudflare-computer-vs-sandbox-agent-guide-2026)
-- [Prime Agent: The RLM + Continual Harness Guide (And When to Skip It) — 2026](https://rohitraj.tech/en/notes/prime-agent-rlm-continual-harness-guide-2026)
+- [How to Build an App Like Uber or Zomato — Architecture & Real Costs](https://rohitraj.tech/notes/build-app-like-uber-zomato-architecture-cost)
+- [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a Developer (2026)](https://rohitraj.tech/notes/how-much-does-it-cost-to-build-mobile-app-india-2026)
+- [How to Build a SaaS MVP in 2026 — Complete Tech Stack Guide](https://rohitraj.tech/notes/how-to-build-saas-mvp-2026)
+- [Why Your MVP Should Cost Under $10,000 — And How to Make It Happen](https://rohitraj.tech/notes/why-your-mvp-should-cost-under-10k)
+- [Freelance Developer vs Agency in India: An Honest Comparison from the Developer Side](https://rohitraj.tech/notes/hire-freelance-developer-vs-agency-india)
+- [How to Hire a Software Developer: 10 Questions to Ask Before Signing](https://rohitraj.tech/notes/how-to-hire-developer-interview-questions)
+- [WhatsApp Business API Integration Guide for Indian Startups](https://rohitraj.tech/notes/whatsapp-business-api-integration-guide-india)
+- [Founding Engineer vs Lovable in 2026 — When $180K Beats $25/mo](https://rohitraj.tech/notes/founding-engineer-vs-lovable-when-to-hire-2026)
+- [India vs US MVP Developer Cost in 2026 — $18K or $120K for the Same App?](https://rohitraj.tech/notes/india-vs-us-mvp-developer-cost-2026)
+- [Vibe Coding vs Hiring a Developer — When Lovable, Bolt, and Cursor Stop Being Enough](https://rohitraj.tech/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks)
+- [Founding Engineer vs Fractional CTO in 2026 — Which One Does Your Startup Actually Need?](https://rohitraj.tech/notes/founding-engineer-vs-fractional-cto)
+- [The Best Lovable Alternative in 2026 Is Not Another AI Builder — It Is a Developer Who Can Read the Code](https://rohitraj.tech/notes/lovable-alternative-developer-when-ai-builder-breaks)
+- [6-Week MVP Sprint — Week-by-Week Breakdown of What Actually Ships](https://rohitraj.tech/notes/6-week-mvp-sprint-week-by-week-breakdown)
+- [6-Week MVP Tech Stack in 2026 — The Boring Choices That Actually Ship](https://rohitraj.tech/notes/6-week-mvp-tech-stack-2026)
+- [What a $15K MVP Actually Includes — vs. the $50K Agency Quote You Just Got](https://rohitraj.tech/notes/what-15k-mvp-actually-includes-vs-50k-agency-quote)
+- [6-Week MVP Sprint vs 3-Month Agency Build — Which One Actually Ships First in 2026?](https://rohitraj.tech/notes/6-week-mvp-vs-3-month-agency-which-ships-first)
+- [Hire a Founding Engineer in India — Direct vs Toptal, Arc, Uplers in 2026](https://rohitraj.tech/notes/founding-engineer-india-vs-toptal-arc-uplers-2026)
+- [When Your Lovable App Hits Production — The 5 Bugs That Always Need a Real Engineer in 2026](https://rohitraj.tech/notes/lovable-app-production-bugs-need-real-engineer-2026)
+- [Your Supabase RLS Just Leaked Production Data — The 5 Bugs Every Vibe-Coded App Hits in 2026](https://rohitraj.tech/notes/supabase-rls-production-bugs-need-real-engineer-2026)
+- [Retool vs Custom Internal Tool in 2026 — When to Buy, When to Build, When to Hire](https://rohitraj.tech/notes/retool-vs-custom-build-internal-tool-2026)
+- [How Much Equity Should a Founding Engineer Get in 2026? Real Numbers, Cap-Table Math, and a Cheaper Alternative](https://rohitraj.tech/notes/founding-engineer-equity-percentage-2026)
+- [Hire a Technical Co-Founder in India in 2026 — What It Actually Costs, When You Need One, and the Cheaper Alternative](https://rohitraj.tech/notes/hire-technical-cofounder-india-2026)
+- [Hire an AI Engineer in India in 2026 — Real Costs, the 2026 Stack, and the Sprint Alternative That Beats Both](https://rohitraj.tech/notes/hire-ai-engineer-india-2026)
+- [Bolt.new vs Hiring a Developer in 2026 — When the AI Builder Hits Its Limit and the Token Bill Beats the Salary](https://rohitraj.tech/notes/bolt-new-vs-hire-developer-2026)
+- [Cursor AI vs Hiring a Developer in 2026 — When the $200 Ultra Plan Costs More Than a Real Engineer Sprint](https://rohitraj.tech/notes/cursor-ai-vs-hire-developer-2026)
+- [Devin AI vs Hiring a Developer in 2026 — $20/Month Agent or Founding Engineer? Real Pricing, SWE-bench, and Failure Modes](https://rohitraj.tech/notes/devin-ai-vs-hire-developer-2026)
+- [Replit Agent vs Hiring a Developer in 2026 — Browser IDE Autonomy or Founding Engineer? Effort Pricing, Failure Modes, and the $400 Monthly Trap](https://rohitraj.tech/notes/replit-agent-vs-hire-developer-2026)
+- [v0 by Vercel vs Hiring a Developer in 2026 — When Generative UI Hits the Day-30 Wall](https://rohitraj.tech/notes/v0-by-vercel-vs-hire-developer-2026)
+- [Claude Code vs Hiring a Developer in 2026: $20 CLI or $80K Engineer?](https://rohitraj.tech/notes/claude-code-vs-hire-developer-2026)
+- [Razorpay vs Stripe for Indian MVPs in 2026 — Real Cost on a 100-User Month](https://rohitraj.tech/notes/razorpay-vs-stripe-india-mvp-2026)
+- [Self-Host n8n vs Zapier for Indian MVPs in 2026 — Real Cost on 50K Operations/Month](https://rohitraj.tech/notes/self-host-n8n-vs-zapier-cost-india-2026)
+- [Supabase vs Firebase for Indian MVPs in 2026 — Real Cost on 10K MAU](https://rohitraj.tech/notes/supabase-vs-firebase-india-mvp-2026)
+- [Clerk vs Supabase Auth vs Better-Auth — Which to Pick for India MVP (2026)](https://rohitraj.tech/notes/clerk-vs-supabase-auth-vs-better-auth-india-2026)
+- [April 2026 AI News Decoded: 7 Stories That Actually Change What Founders Should Build](https://rohitraj.tech/notes/ai-news-april-2026-what-founders-should-build)
+- [Inkling 975B: The Open-Weights Model Almost Nobody Should Self-Host (2026)](https://rohitraj.tech/notes/inkling-975b-run-locally-vram-guide-2026)
+- [Apple SpeechAnalyzer vs Whisper: On-Device Speech-to-Text in 2026](https://rohitraj.tech/notes/apple-speechanalyzer-vs-whisper-on-device-stt-2026)
+- [The Anti-AI-Slop Design Skill: How Hallmark Fixes Generic AI UI in 2026](https://rohitraj.tech/notes/anti-ai-slop-design-skill-hallmark-guide-2026)
+- [MCP Goes Stateless: Migrate Your Server Before the 2026-07-28 Spec](https://rohitraj.tech/notes/mcp-stateless-spec-migration-guide-2026)
+- [OmniRoute Review (2026): Is the 20k-Star Free AI Gateway Worth It vs OpenRouter & LiteLLM?](https://rohitraj.tech/notes/omniroute-ai-gateway-review-2026)
+- [This Week in AI Dev: Kimi K3 Lands and Cursor Springs a 0-Day (Week 30 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-30)
+- [This Week in AI Dev: Agent Skills Went GA, Then the Benchmark Landed (Week 31 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-31)
+- [This Week in AI Dev: Everything Got Smaller, and Six CVEs Turned Out to Be Fake (Week 32 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-32)
+- [This Week in AI Dev: Models Day, Stolen Reasoning, and a $16,000 GPU (Week 33 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-33)
+- [DeepSeek Harness vs Claude Code vs Codex CLI: The v0.1 Developer Preview, Honestly — 2026](https://rohitraj.tech/notes/deepseek-harness-vs-claude-code-codex-cli-2026)
+- [DeepSeek-V4-Flash-Vision-Exp API Guide: Limits, Pricing, and the 800px Trap (2026)](https://rohitraj.tech/notes/deepseek-v4-flash-vision-exp-api-guide-2026)
+- [Qwen3.8-Flash-Next vs Qwen3.8-27B: The Local Memory Math Behind the "12GB VRAM" Headline (2026)](https://rohitraj.tech/notes/qwen3-8-flash-next-vs-27b-local-memory-2026)
+- [Qwen3.8-27B as Your Local Coding Agent: 24GB Setup, Quant Pick, and Claude Code Wiring (2026)](https://rohitraj.tech/notes/qwen3-8-27b-local-coding-agent-claude-code-2026)
+- [This Week in AI Dev: The Price War Reaches Anthropic's Flagship (Week 35 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-35)
+- [TencentDB Agent Memory v2.0 Review: A Self-Hosted Team Memory Hub for AI Agents (2026)](https://rohitraj.tech/notes/tencentdb-agent-memory-team-hub-review-2026)
+- [Cloudflare Computer vs Cloudflare Sandbox: Which Agent Runtime Should You Actually Use? (2026)](https://rohitraj.tech/notes/cloudflare-computer-vs-sandbox-agent-guide-2026)
+- [Prime Agent: The RLM + Continual Harness Guide (And When to Skip It) — 2026](https://rohitraj.tech/notes/prime-agent-rlm-continual-harness-guide-2026)
 
 ## Services
 
-- [6-Week MVP Sprint](https://rohitraj.tech/en/services/6-week-mvp): Fixed-scope, fixed-price MVP sprint for pre-seed founders, $15K-$30K, 6 weeks to production
-- [Hire a Founding Engineer in India](https://rohitraj.tech/en/services/hire-founding-engineer-india): Senior India-based founding engineer for hire — sprint or retainer, no equity, full GitHub
-- [Hire a Fractional CTO in India](https://rohitraj.tech/en/services/hire-fractional-cto-india): Honest scoping for whether you actually need a fractional CTO or a builder
-- [Startup MVP Development](https://rohitraj.tech/en/services/startup-mvp-development): Idea-to-production MVP development for under $10K
-- [Full-Stack Development & AI Integration](https://rohitraj.tech/en/services/full-stack-development): Spring Boot + React/Next.js + AI integration for startups
-- [Mobile App Development](https://rohitraj.tech/en/services/mobile-app-development): React Native + Expo, Play Store + App Store
-- [AI Chatbot Development](https://rohitraj.tech/en/services/ai-chatbot-development): WhatsApp + LLM-powered chatbots for Indian businesses
-- [Fintech App Development](https://rohitraj.tech/en/services/fintech-app-development): Secure financial apps with payments, dashboards, offline support
-- [Healthcare Clinic App](https://rohitraj.tech/en/services/healthcare-clinic-app): WhatsApp booking bots and clinic management
+- [6-Week MVP Sprint](https://rohitraj.tech/services/6-week-mvp): Fixed-scope, fixed-price MVP sprint for pre-seed founders, $15K-$30K, 6 weeks to production
+- [Hire a Founding Engineer in India](https://rohitraj.tech/services/hire-founding-engineer-india): Senior India-based founding engineer for hire — sprint or retainer, no equity, full GitHub
+- [Hire a Fractional CTO in India](https://rohitraj.tech/services/hire-fractional-cto-india): Honest scoping for whether you actually need a fractional CTO or a builder
+- [Startup MVP Development](https://rohitraj.tech/services/startup-mvp-development): Idea-to-production MVP development for under $10K
+- [Full-Stack Development & AI Integration](https://rohitraj.tech/services/full-stack-development): Spring Boot + React/Next.js + AI integration for startups
+- [Mobile App Development](https://rohitraj.tech/services/mobile-app-development): React Native + Expo, Play Store + App Store
+- [AI Chatbot Development](https://rohitraj.tech/services/ai-chatbot-development): WhatsApp + LLM-powered chatbots for Indian businesses
+- [Fintech App Development](https://rohitraj.tech/services/fintech-app-development): Secure financial apps with payments, dashboards, offline support
+- [Healthcare Clinic App](https://rohitraj.tech/services/healthcare-clinic-app): WhatsApp booking bots and clinic management
 
 ## Expertise
 

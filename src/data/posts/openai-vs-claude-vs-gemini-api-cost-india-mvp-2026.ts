@@ -155,7 +155,7 @@ Cost-wise, GPT-5 and Gemini Pro tie. The split happens on quality:
 
 **Latency note from a Mumbai test**: I ran 100 sequential requests at 14:00 IST from a Hetzner Helsinki box and an AWS Mumbai box. Gemini was consistently fastest TTFT, OpenAI second, Anthropic third — but Anthropic's streaming throughput was the highest once tokens started flowing, which evens out for long outputs.
 
-Need this in a comparison frame against the model-host layer (Bedrock, Vertex, OpenRouter)? [I built a financial advisor on AWS Bedrock](/en/notes/aws-bedrock-vs-openai) and wrote up the host-vs-direct API choice separately.`,
+Need this in a comparison frame against the model-host layer (Bedrock, Vertex, OpenRouter)? [I built a financial advisor on AWS Bedrock](/notes/aws-bedrock-vs-openai) and wrote up the host-vs-direct API choice separately.`,
     },
     {
       heading: 'When the alternative wins (honest counter)',
@@ -207,13 +207,13 @@ If steps 1-4 don't yield a clear winner, default to GPT-5-mini. It is the best P
 
 I ship founder MVPs end-to-end in 6 weeks: LLM integration (any provider above), WhatsApp/Web frontend, Postgres + pgvector backend, India-billing-friendly deployment. If you want the math redone for your specific workload — drop me a note with your expected volume and I will run the numbers against your real prompt size before you commit to a vendor.
 
-→ [Hire me to ship your 6-week MVP](/en/services/6-week-mvp)
-→ [Or have me build the AI chatbot piece directly](/en/services/ai-chatbot-development)
-→ [Or hire me as a founding engineer for the long haul](/en/services/hire-founding-engineer-india)`,
+→ [Hire me to ship your 6-week MVP](/services/6-week-mvp)
+→ [Or have me build the AI chatbot piece directly](/services/ai-chatbot-development)
+→ [Or hire me as a founding engineer for the long haul](/services/hire-founding-engineer-india)`,
     },
   ],
   cta: {
     text: 'Ship your AI MVP in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -28,13 +28,13 @@ export const gpt56SolTerraLunaApiGuide2026: BlogPost = {
     },
     {
       heading: 'GPT-5.6 Sol vs Terra vs Luna: What OpenAI Actually Shipped',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 **GPT-5.6** hit general availability on **July 9, 2026** (after a June 26 preview), and the real story is not a benchmark score — it is a **product-shape change**. The single GPT-5.5 model is gone. In its place are three named tiers you have to choose between on every API call: **Sol** (the flagship), **Terra** (the balanced everyday model), and **Luna** (the cheap, low-latency one), plus a high-effort variant called **Sol Ultra** that runs **four agents in parallel by default** and reconciles their answers. The official launch note is at [openai.com](https://openai.com/index/gpt-5-6/); the cleanest third-party teardown is [DigitalApplied's GA write-up](https://www.digitalapplied.com/blog/gpt-5-6-sol-terra-luna-public-ga).
 
 The model IDs matter more than they look, because one of them is a trap. \`gpt-5.6\` is an **alias that resolves to Sol** — so if you copy an old snippet and just bump the version string, you have silently pinned yourself to the most expensive tier. The explicit IDs are \`gpt-5.6-sol\`, \`gpt-5.6-terra\`, and \`gpt-5.6-luna\`. My first rule below is simply: never ship the bare alias.
 
-Why did OpenAI split one model into three? The same reason Anthropic ships Opus/Sonnet/Haiku and the reason I keep writing tier-comparison guides like [Claude Opus 4.8 vs 4.7 for developers](/en/notes/claude-opus-4-8-vs-4-7-developers-2026): a frontier model priced for agentic coding is wildly overpriced for classification, autocomplete, and chat. Naming the tiers just forces the decision you were already supposed to be making. This post is that decision, made explicit.`,
+Why did OpenAI split one model into three? The same reason Anthropic ships Opus/Sonnet/Haiku and the reason I keep writing tier-comparison guides like [Claude Opus 4.8 vs 4.7 for developers](/notes/claude-opus-4-8-vs-4-7-developers-2026): a frontier model priced for agentic coding is wildly overpriced for classification, autocomplete, and chat. Naming the tiers just forces the decision you were already supposed to be making. This post is that decision, made explicit.`,
     },
     {
       heading: 'What Do Sol, Terra, and Luna Cost?',
@@ -48,7 +48,7 @@ Why did OpenAI split one model into three? The same reason Anthropic ships Opus/
 
 The spread is **5x on input and 5x on output** between Sol and Luna. That single fact should reframe how you think about the upgrade: GPT-5.6 is not "GPT-5.5 but better," it is "GPT-5.5 plus two cheaper models you were probably supposed to be using already."
 
-Two pricing mechanics change the math further. **Prompt caching** got more aggressive: cached input reads are **90% off**, cache writes cost **1.25x** the uncached input rate, and the **minimum cache lifetime is 30 minutes**. GPT-5.6 also replaces the old \`prompt_cache_retention\` field with explicit breakpoints — \`prompt_cache_options.mode: "explicit"\` plus a \`ttl\` — so you control exactly what gets cached instead of relying on a heuristic. If your workload has a big shared system prompt (RAG context, tool schemas, a long instruction block), caching can dwarf the tier choice; I go deeper on that in [cutting token costs with context compression](/en/notes/llm-context-compression-cut-token-costs-2026). For a full cross-vendor rate comparison, see [OpenAI vs Claude vs Gemini API cost for an India MVP](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026).`,
+Two pricing mechanics change the math further. **Prompt caching** got more aggressive: cached input reads are **90% off**, cache writes cost **1.25x** the uncached input rate, and the **minimum cache lifetime is 30 minutes**. GPT-5.6 also replaces the old \`prompt_cache_retention\` field with explicit breakpoints — \`prompt_cache_options.mode: "explicit"\` plus a \`ttl\` — so you control exactly what gets cached instead of relying on a heuristic. If your workload has a big shared system prompt (RAG context, tool schemas, a long instruction block), caching can dwarf the tier choice; I go deeper on that in [cutting token costs with context compression](/notes/llm-context-compression-cut-token-costs-2026). For a full cross-vendor rate comparison, see [OpenAI vs Claude vs Gemini API cost for an India MVP](/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026).`,
     },
     {
       heading: 'Is Sol Actually Better? The Benchmarks That Matter',
@@ -63,7 +63,7 @@ Two pricing mechanics change the math further. **Prompt caching** got more aggre
 | GDPval-AA v2 (Elo) | 1747.8 | — | Fable 5 ahead at 1759.6 |
 | ExploitBench (cyber) | 73.5% | 47.9% | +25.6 pts |
 
-Read the table honestly and two things fall out. First, **Sol's gains are concentrated in agentic/computer-use/cyber work** (OSWorld +15, ExploitBench +25.6) — the exact workloads where a wrong step is expensive and correctness beats cost. Second, **on raw coding SWE-Bench Pro, Sol (64.6%) still trails Claude Mythos 5 (80.3%)**, and on the GDPval economic-task Elo it trails Fable 5. If your bottleneck is pure code generation, GPT-5.6 is not automatically the answer — I compared the Claude side in the [Claude Fable 5 developer guide](/en/notes/claude-fable-5-developer-guide-2026), and the broader model-cost trade-off in [DeepSeek vs Claude vs GPT for an India MVP](/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026).
+Read the table honestly and two things fall out. First, **Sol's gains are concentrated in agentic/computer-use/cyber work** (OSWorld +15, ExploitBench +25.6) — the exact workloads where a wrong step is expensive and correctness beats cost. Second, **on raw coding SWE-Bench Pro, Sol (64.6%) still trails Claude Mythos 5 (80.3%)**, and on the GDPval economic-task Elo it trails Fable 5. If your bottleneck is pure code generation, GPT-5.6 is not automatically the answer — I compared the Claude side in the [Claude Fable 5 developer guide](/notes/claude-fable-5-developer-guide-2026), and the broader model-cost trade-off in [DeepSeek vs Claude vs GPT for an India MVP](/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026).
 
 The practical takeaway: Sol earns its 5x-over-Luna price **only** on multi-step agentic tasks. For everything else, the benchmark delta between tiers is far smaller than the price delta — which is what makes the tier decision, not the upgrade decision, the one that saves money.`,
     },
@@ -79,7 +79,7 @@ The practical takeaway: Sol earns its 5x-over-Luna price **only** on multi-step 
 
 The mistake I see most is **defaulting to Sol "to be safe."** Safe is the wrong frame: on a high-volume endpoint, Sol is not safer than Luna, it is **5x more expensive for a quality gain the task cannot even use**. A support-ticket classifier does not get more correct because you spent flagship money on it.
 
-A concrete way to decide: estimate the **cost of one wrong output**. If a bad answer silently ships to a user and costs you a churned customer, buy Sol's correctness. If a bad answer is caught by a downstream check, a human, or a retry — which is true of most classification and extraction — Luna is the rational choice and Terra is the safe middle. When your traffic is genuinely mixed, route per-request across tiers instead of hardcoding one; a gateway like the ones in [OpenRouter vs LiteLLM vs Portkey](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026) makes that a config change, not a rewrite.`,
+A concrete way to decide: estimate the **cost of one wrong output**. If a bad answer silently ships to a user and costs you a churned customer, buy Sol's correctness. If a bad answer is caught by a downstream check, a human, or a retry — which is true of most classification and extraction — Luna is the rational choice and Terra is the safe middle. When your traffic is genuinely mixed, route per-request across tiers instead of hardcoding one; a gateway like the ones in [OpenRouter vs LiteLLM vs Portkey](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026) makes that a config change, not a rewrite.`,
     },
     {
       heading: 'How Do You Migrate to GPT-5.6? (Working Code)',
@@ -126,7 +126,7 @@ For most application developers this is a non-event — Terra and Luna are gener
       heading: 'What I\'d Actually Ship: Default to Terra, Watch the reasoning.context Footgun',
       content: `Here is the opinionated part, from wiring model tiers into real products. **My default for a new MVP backend is Terra, not Sol.** At $2.50 / $15 it lands within striking distance of flagship quality for a fraction of the cost, and the money I save goes toward the parts of the product that actually differentiate it. I reach for Sol only on the specific endpoints that are agentic and correctness-critical — the coding agent, the multi-step automation — and I push everything bounded (classification, routing, first-draft generation) down to Luna. On a typical app that split alone changes the monthly bill by a multiple, not a percentage.
 
-The failure mode I would bet money on seeing across teams this quarter: **pinning \`gpt-5.6\` (or \`gpt-5.6-sol\`) everywhere "to be safe" and 5x-ing the bill** on traffic Luna would have handled identically. The tiers exist precisely so you do not do this. If you only change one thing after reading this, grep your codebase for the bare \`gpt-5.6\` string and make every call site name its tier on purpose. I keep a running cost comparison across providers in [DeepSeek vs Claude vs GPT for an India MVP](/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026) for exactly this budgeting exercise.
+The failure mode I would bet money on seeing across teams this quarter: **pinning \`gpt-5.6\` (or \`gpt-5.6-sol\`) everywhere "to be safe" and 5x-ing the bill** on traffic Luna would have handled identically. The tiers exist precisely so you do not do this. If you only change one thing after reading this, grep your codebase for the bare \`gpt-5.6\` string and make every call site name its tier on purpose. I keep a running cost comparison across providers in [DeepSeek vs Claude vs GPT for an India MVP](/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026) for exactly this budgeting exercise.
 
 And the thing that will not be in the README: **\`reasoning.context\` is a footgun if you reuse it carelessly.** Persisting reasoning across turns is great for a coherent multi-step agent, but if you carry that context into a *different* task — a new user, an unrelated request — you can leak stale reasoning into a fresh problem and get confidently wrong output that is very hard to debug, because the mistake lives in hidden reasoning state, not the visible prompt. Scope persisted reasoning to a single logical task and clear it at task boundaries. Treat it like a session, not a global.`,
     },
@@ -134,13 +134,13 @@ And the thing that will not be in the README: **\`reasoning.context\` is a footg
       heading: 'Picking the Right Model Tier Is Part of the Build',
       content: `The GPT-5.6 launch is a good reminder that "which model" stopped being one decision and became a per-endpoint one. Getting it right is not glamorous work — it is reading your own traffic, estimating the cost of a wrong answer, pinning tiers deliberately, and wiring caching — but it is the difference between an AI feature that has healthy margins and one that quietly eats them.
 
-That wiring is exactly the work I do. If you are building an AI feature and want the model layer set up right from day one — the correct tier per endpoint, caching on the shared prefixes, a gateway so you can shift traffic without a rewrite — that is the [6-week MVP](/en/services/6-week-mvp) engagement: ship the feature *and* the cost discipline, hand over a tested codebase. For a longer build with someone embedded in your team, [hire a founding engineer (India)](/en/services/hire-founding-engineer-india).
+That wiring is exactly the work I do. If you are building an AI feature and want the model layer set up right from day one — the correct tier per endpoint, caching on the shared prefixes, a gateway so you can shift traffic without a rewrite — that is the [6-week MVP](/services/6-week-mvp) engagement: ship the feature *and* the cost discipline, hand over a tested codebase. For a longer build with someone embedded in your team, [hire a founding engineer (India)](/services/hire-founding-engineer-india).
 
-Further reading from my notes: [OpenAI vs Claude vs Gemini API cost](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026), [cutting token costs with context compression](/en/notes/llm-context-compression-cut-token-costs-2026), and [routing across models with OpenRouter vs LiteLLM vs Portkey](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026).`,
+Further reading from my notes: [OpenAI vs Claude vs Gemini API cost](/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026), [cutting token costs with context compression](/notes/llm-context-compression-cut-token-costs-2026), and [routing across models with OpenRouter vs LiteLLM vs Portkey](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026).`,
     },
   ],
   cta: {
     text: 'Ship Your AI Feature on the Right Model Tier — 6-Week MVP',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

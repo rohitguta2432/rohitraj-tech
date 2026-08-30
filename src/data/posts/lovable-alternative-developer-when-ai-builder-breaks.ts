@@ -27,7 +27,7 @@ export const lovableAlternativeDeveloperWhenAiBuilderBreaks: BlogPost = {
     },
 {
       heading: 'Why Every "Lovable Alternative" List Is Wrong for Founders in Trouble',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If your Lovable app is already broken in production, the right alternative is not another AI builder — it is a human developer who can read your exported code in 48 hours and tell you whether to fix it or rebuild. Every "10 best Lovable alternatives" blog post is written for founders shopping *before* they commit. If you are past that point and you have 200 paying users on an app that fell over last Tuesday, switching to Bolt will not save you.
 
@@ -97,9 +97,9 @@ The rescue market is small because most senior devs do not want this work — it
 
 If you want to see what a rescue timeline and deliverable actually looks like, I have one linked at the bottom of this page. It is not a sales page. It is a written scope document, with real cost, real timelines, and a list of the failure modes I fix most often.
 
-The pattern I run for founders in this situation is either a [founding engineer in India](/en/services/hire-founding-engineer-india) or a [6-week MVP sprint](/en/services/6-week-mvp) — pick based on whether you need shipped code or shipped *and* maintained code.
+The pattern I run for founders in this situation is either a [founding engineer in India](/services/hire-founding-engineer-india) or a [6-week MVP sprint](/services/6-week-mvp) — pick based on whether you need shipped code or shipped *and* maintained code.
 
-Adjacent reads: [April 2026 AI News Decoded: 7 Stories That Actually Change What Founders…](/en/notes/ai-news-april-2026-what-founders-should-build) for the stack-level decision, [Cloud-First AI Is Dead. I Built a Fully Offline AI App to Prove It.](/en/notes/cloud-first-ai-is-dead-on-device-android-2026) for the hiring-level one.`
+Adjacent reads: [April 2026 AI News Decoded: 7 Stories That Actually Change What Founders…](/notes/ai-news-april-2026-what-founders-should-build) for the stack-level decision, [Cloud-First AI Is Dead. I Built a Fully Offline AI App to Prove It.](/notes/cloud-first-ai-is-dead-on-device-android-2026) for the hiring-level one.`
     },
     {
       heading: 'When You Should Just Keep Using Lovable',

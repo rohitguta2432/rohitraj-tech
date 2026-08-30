@@ -28,13 +28,13 @@ export const openSourceAiAgentMemoryMem0VsZepLetta2026: BlogPost = {
     },
     {
       heading: 'Why Agent Memory Is the Real 2026 Bottleneck',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 When a *memory library* — not a frontier model — is the week's breakout GitHub repo, the industry has told you where the hard problem moved. [**MemPalace**](https://github.com/MemPalace/mempalace) crossed **~54.1k stars** and cut **v3.4.0 on June 6, 2026**, and it did it on a single, almost rude claim: **96.6% R@5 on the LongMemEval benchmark with zero API calls** — no cloud, no embeddings bill, running on your laptop.
 
 The capability that changed is *where* memory lives. For two years the default answer to "how does my agent remember?" was "ship every turn to a hosted vector service and pay per token." MemPalace's local-first, verbatim-storage design — and its **88.9% R@10 on LoCoMo** — says you can get state-of-the-art recall without leaking your data or your budget. That reframes the whole build-vs-buy decision for anyone shipping an agent.
 
-Here's why this matters *now*: every "best AI agent memory" listicle ranks **Mem0**, **Zep**, and **Letta**, but most were written six to twelve months ago, gloss over which tools are *actually* open-source versus SaaS-in-disguise, and don't include the local-first newcomer. Below is the honest comparison — architecture, real (not self-reported) benchmarks, a code snippet to add memory in minutes, and how I'd wire it into a production agent without the failure modes the READMEs skip. It's the same evergreen-vs-hype tension I hit comparing [vector databases for RAG](/en/notes/pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026) — the memory layer sits right on top of that choice.`,
+Here's why this matters *now*: every "best AI agent memory" listicle ranks **Mem0**, **Zep**, and **Letta**, but most were written six to twelve months ago, gloss over which tools are *actually* open-source versus SaaS-in-disguise, and don't include the local-first newcomer. Below is the honest comparison — architecture, real (not self-reported) benchmarks, a code snippet to add memory in minutes, and how I'd wire it into a production agent without the failure modes the READMEs skip. It's the same evergreen-vs-hype tension I hit comparing [vector databases for RAG](/notes/pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026) — the memory layer sits right on top of that choice.`,
     },
     {
       heading: 'What Actually Shipped — and the Local-First Shift',
@@ -43,12 +43,12 @@ Here's why this matters *now*: every "best AI agent memory" listicle ranks **Mem
 - **Local-first, verbatim storage.** It stores the actual text of a conversation — not an LLM summary — and retrieves with semantic search over a *structured* index (people and projects as "wings," topics as "rooms," content as "drawers"). No summarization means no silent information loss.
 - **Pluggable backends.** ChromaDB by default, plus **SQLite, Qdrant, and pgvector** — so your memory store can be the same Postgres you already run.
 - **A temporal knowledge graph** backed by SQLite, so facts carry a sense of *when* they were true, not just *that* they were said.
-- **29 MCP tools** out of the box, with auto-save hooks for **Claude Code** and **Gemini CLI**, plus local models via **Ollama** and Docker images. It speaks [Model Context Protocol](/en/notes/secure-mcp-server-typescript-2026) natively, which is the integration path that actually matters in 2026.
+- **29 MCP tools** out of the box, with auto-save hooks for **Claude Code** and **Gemini CLI**, plus local models via **Ollama** and Docker images. It speaks [Model Context Protocol](/notes/secure-mcp-server-typescript-2026) natively, which is the integration path that actually matters in 2026.
 - **MIT licensed, Python (94.5%).** You fork it and own it — no per-seat pricing, no graph-memory paywall.
 
 The numbers that make people star a repo: **96.6% R@5 on LongMemEval (raw, no LLM in the loop)**, **98.4% on a tuned hybrid configuration**, **88.9% R@10 on LoCoMo** (1,986 questions), **92.9% average recall on ConvoMem**, and **80.3% R@5 on MemBench** across **8,500 items** — that last one matters because most memory tools degrade hard as the index grows, and a score at 8.5k items is a scale signal, not a toy-dataset score. The "zero API calls" framing is the real story — it puts privacy-preserving, offline agent memory in the same accuracy bracket as the cloud incumbents.
 
-Why verbatim instead of summarization? Because summarized memory is *lossy by design*: the moment an LLM compresses "the user's invoice on March 12 was ₹48,200, disputed on March 14" into "user had a billing issue," you've thrown away the exact facts your agent will later be asked to recall. Verbatim storage keeps the raw text and leans on the structured index for retrieval — slower to write, far safer to recall. That's the local-first shift, and it's the same instinct behind cutting cloud dependency that I wrote about in [LLM context compression](/en/notes/llm-context-compression-cut-token-costs-2026).`,
+Why verbatim instead of summarization? Because summarized memory is *lossy by design*: the moment an LLM compresses "the user's invoice on March 12 was ₹48,200, disputed on March 14" into "user had a billing issue," you've thrown away the exact facts your agent will later be asked to recall. Verbatim storage keeps the raw text and leans on the structured index for retrieval — slower to write, far safer to recall. That's the local-first shift, and it's the same instinct behind cutting cloud dependency that I wrote about in [LLM context compression](/notes/llm-context-compression-cut-token-costs-2026).`,
     },
     {
       heading: 'How Does Each One Actually Remember?',
@@ -60,7 +60,7 @@ Why verbatim instead of summarization? Because summarized memory is *lossy by de
 
 **Letta (formerly MemGPT) — the OS for agent memory.** Letta treats memory like an operating system: the **LLM itself manages tiers** — core context, recall, and archival — deciding what to page in and out. It's the right model for agents that run autonomously for days, and it's **fully open-source and self-hostable**. Independent evals put it around **~83% on LoCoMo**, the highest verified score among the classic open-source tools.
 
-**MemPalace — local-first verbatim.** The newcomer above: no API calls, MIT, **88.9% LoCoMo / 96.6% LongMemEval**, native MCP. The trade is that it's young (v3.4.0) and its "palace" indexing model is opinionated. If you're building an [AI chatbot or assistant](/en/services/ai-chatbot-development) where data can't leave the box, this is the one to test first.`,
+**MemPalace — local-first verbatim.** The newcomer above: no API calls, MIT, **88.9% LoCoMo / 96.6% LongMemEval**, native MCP. The trade is that it's young (v3.4.0) and its "palace" indexing model is opinionated. If you're building an [AI chatbot or assistant](/services/ai-chatbot-development) where data can't leave the box, this is the one to test first.`,
     },
     {
       heading: 'How Do You Actually Add Memory to an Agent?',
@@ -89,7 +89,7 @@ mempalace serve --backend chromadb        # or sqlite / qdrant / pgvector
 # hooks persist each turn verbatim into the "palace" index.
 \`\`\`
 
-The thing the quickstarts won't tell you: **the easy demo and the production system are different animals.** \`m.add()\` and \`m.search()\` look magical until you ask *what* got extracted, *when* it gets evicted, and *how* you debug a wrong recall at 2am. Cloud tools hide that machinery (and bill you for it); local tools expose it (and make you own it). Pick the trade deliberately — the same way I argue for owning your stack in [multi-agent Claude Code workflows](/en/notes/claude-code-dynamic-workflows-guide-2026).`,
+The thing the quickstarts won't tell you: **the easy demo and the production system are different animals.** \`m.add()\` and \`m.search()\` look magical until you ask *what* got extracted, *when* it gets evicted, and *how* you debug a wrong recall at 2am. Cloud tools hide that machinery (and bill you for it); local tools expose it (and make you own it). Pick the trade deliberately — the same way I argue for owning your stack in [multi-agent Claude Code workflows](/notes/claude-code-dynamic-workflows-guide-2026).`,
     },
     {
       heading: 'Benchmarks: LoCoMo and LongMemEval, Honestly',
@@ -129,7 +129,7 @@ The pattern: the two tools with the loudest marketing (**Mem0** and **Zep**) are
 
 **Pick MemPalace** when data can't leave the box, when you want zero ongoing cost, or when verbatim recall matters more than clever summarization — on-device assistants, privacy-first tools, anything offline. **Skip it (for now)** if you need a battle-tested vendor with a support contract; at **v3.4.0** it's new, and new means you'll hit edges.
 
-The honest meta-point: most teams over-engineer this. If your "memory" need is really just retrieval over documents, you may want plain [RAG over your database](/en/notes/rag-for-sql) before any of these. Reach for a dedicated memory layer when the agent needs to remember *interactions*, not just *documents*.`,
+The honest meta-point: most teams over-engineer this. If your "memory" need is really just retrieval over documents, you may want plain [RAG over your database](/notes/rag-for-sql) before any of these. Reach for a dedicated memory layer when the agent needs to remember *interactions*, not just *documents*.`,
     },
     {
       heading: "How I'd Wire Agent Memory Into Production",
@@ -137,19 +137,19 @@ The honest meta-point: most teams over-engineer this. If your "memory" need is r
 
 **Start local, prove value, then decide on cloud.** I'd stand up **MemPalace** or **Letta** self-hosted first — zero cost, full data control — and only move to a managed Mem0/Zep tier if operating it myself becomes the bottleneck. Starting on the meter before you've validated the memory *actually helps* is how you burn budget on a feature users don't notice.
 
-**Make memory observable from day one.** The failure mode that bites everyone: the agent confidently recalls something *wrong*, and you can't see why. I log every \`add\` and every \`search\` with the retrieved IDs and scores, so a bad recall is debuggable instead of mystifying. On a fintech build like [myFinancial](/en/projects), a memory that surfaces a stale account balance isn't a glitch — it's a trust-destroying bug. Verbatim storage (MemPalace) helps here because you can audit exactly what was remembered.
+**Make memory observable from day one.** The failure mode that bites everyone: the agent confidently recalls something *wrong*, and you can't see why. I log every \`add\` and every \`search\` with the retrieved IDs and scores, so a bad recall is debuggable instead of mystifying. On a fintech build like [myFinancial](/projects), a memory that surfaces a stale account balance isn't a glitch — it's a trust-destroying bug. Verbatim storage (MemPalace) helps here because you can audit exactly what was remembered.
 
-**Treat the MCP boundary as a security boundary.** Wiring memory in over [Model Context Protocol](/en/notes/secure-mcp-server-typescript-2026) is clean, but a memory server that an agent can write to is a prompt-injection target — poison the memory, poison every future turn. Scope writes, validate inputs, and never let an untrusted tool silently mutate long-term memory.
+**Treat the MCP boundary as a security boundary.** Wiring memory in over [Model Context Protocol](/notes/secure-mcp-server-typescript-2026) is clean, but a memory server that an agent can write to is a prompt-injection target — poison the memory, poison every future turn. Scope writes, validate inputs, and never let an untrusted tool silently mutate long-term memory.
 
 **Budget for eviction, not just storage.** Every team plans how memory gets *written* and forgets how it gets *forgotten*. Unbounded memory means rising latency and cost and worse recall as the index fills with noise. Decide your eviction or summarization policy before launch.
 
 **Keep your memory layer swappable.** Because the leaderboard numbers don't transfer to your data (see the Mem0 self-report gap above), I wire memory behind a thin interface — \`remember()\` and \`recall()\` — instead of calling a vendor SDK directly throughout the agent. That makes it a one-file change to A/B Mem0 against MemPalace on *your* real conversations, and to bail to a self-hosted option if a SaaS bill or a data-residency rule changes the math. The cost of that abstraction is an afternoon; the cost of hard-coding the wrong memory tool into 40 files is a rewrite.
 
-If you want this kind of memory-and-reliability engineering built into your AI product from day one instead of bolted on after the first bad recall, that's the work I do: I run [fixed-scope 6-week MVP builds](/en/services/6-week-mvp), and you can [hire a founding engineer in India](/en/services/hire-founding-engineer-india) to own the whole agent stack — model, memory, and the production wiring that makes it trustworthy.`,
+If you want this kind of memory-and-reliability engineering built into your AI product from day one instead of bolted on after the first bad recall, that's the work I do: I run [fixed-scope 6-week MVP builds](/services/6-week-mvp), and you can [hire a founding engineer in India](/services/hire-founding-engineer-india) to own the whole agent stack — model, memory, and the production wiring that makes it trustworthy.`,
     },
   ],
   cta: {
     text: 'Build an AI Agent With Memory That Works in Production',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

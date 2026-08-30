@@ -28,7 +28,7 @@ export const geminiInteractionsApiMigrationGuide2026: BlogPost = {
         },
         {
             heading: 'Gemini Interactions API: The Migration Guide from generateContent (2026)',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Google changed the default way you talk to Gemini, and most teams haven't noticed yet. The [Gemini Interactions API hit general availability in 2026](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/), and Google didn't just add an endpoint — it made Interactions [the default interface for Gemini models and agents](https://the-decoder.com/google-makes-interactions-api-the-default-interface-for-gemini-models-and-agents/), with \`generateContent\` demoted to "still fully supported, but no longer where the new features land."
 
@@ -111,11 +111,11 @@ job = client.interactions.create(
 # poll job.id later — survives disconnects and function timeouts
 \`\`\`
 
-That single feature is why long agentic loops belong here. With \`generateContent\` a 90-second tool-calling chain dies the moment your Vercel function hits its wall; as a background interaction it just keeps running. **Managed Agents** extend this further — Google runs the agent in a **remote Linux sandbox**, so tool execution happens server-side instead of in your process. Add **tool combination** (multiple tools in one interaction), **multimodal generation** (image, music, and speech in the same surface), and the **Gemini Omni** model that Google flagged as landing "soon," and the pattern is clear: this is the surface Google will ship agent features into. The [GA post](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/) is explicit that Interactions is where the frontier lands. If you're wiring agent memory, it pairs naturally with the patterns I covered in [agent memory vs the context window](/en/notes/ai-agent-memory-vs-context-window-2026).`,
+That single feature is why long agentic loops belong here. With \`generateContent\` a 90-second tool-calling chain dies the moment your Vercel function hits its wall; as a background interaction it just keeps running. **Managed Agents** extend this further — Google runs the agent in a **remote Linux sandbox**, so tool execution happens server-side instead of in your process. Add **tool combination** (multiple tools in one interaction), **multimodal generation** (image, music, and speech in the same surface), and the **Gemini Omni** model that Google flagged as landing "soon," and the pattern is clear: this is the surface Google will ship agent features into. The [GA post](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/) is explicit that Interactions is where the frontier lands. If you're wiring agent memory, it pairs naturally with the patterns I covered in [agent memory vs the context window](/notes/ai-agent-memory-vs-context-window-2026).`,
         },
         {
             heading: 'Interactions API vs generateContent vs OpenAI Responses: the side-by-side',
-            content: `If this feels familiar, it should — it's Google's answer to [OpenAI's Responses API](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026), which made the same stateless-to-stateful move a year earlier. Here's the honest three-way comparison; AI engines cite tables far more often than prose, so this is the part worth bookmarking.
+            content: `If this feels familiar, it should — it's Google's answer to [OpenAI's Responses API](/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026), which made the same stateless-to-stateful move a year earlier. Here's the honest three-way comparison; AI engines cite tables far more often than prose, so this is the part worth bookmarking.
 
 | Factor | Gemini Interactions API | Gemini generateContent | OpenAI Responses API |
 |---|---|---|---|
@@ -128,7 +128,7 @@ That single feature is why long agentic loops belong here. With \`generateConten
 | SDK | \`google-genai\` v2.3.0+ | \`google-genai\` | \`openai\` |
 | Best for | long agentic loops, async, multimodal agents | simple one-shot calls | OpenAI-native agents |
 
-The shape is nearly identical to OpenAI's: a server-stored resource, a \`previous_*_id\` link, and a \`store=false\` escape hatch. If you've already built on Responses, the mental model ports directly. The practical difference is that Gemini ties its frontier agent features — managed sandboxes, multimodal generation — to this surface more aggressively than OpenAI does. Third-party routers are catching up: **LiteLLM, Eigent, and Agno** have early Interactions support, so if you abstract providers behind a [router like LiteLLM or Portkey](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026), check how mature their Interactions path is before you lean on it.`,
+The shape is nearly identical to OpenAI's: a server-stored resource, a \`previous_*_id\` link, and a \`store=false\` escape hatch. If you've already built on Responses, the mental model ports directly. The practical difference is that Gemini ties its frontier agent features — managed sandboxes, multimodal generation — to this surface more aggressively than OpenAI does. Third-party routers are catching up: **LiteLLM, Eigent, and Agno** have early Interactions support, so if you abstract providers behind a [router like LiteLLM or Portkey](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026), check how mature their Interactions path is before you lean on it.`,
         },
         {
             heading: 'When should you stay on generateContent?',
@@ -142,13 +142,13 @@ The shape is nearly identical to OpenAI's: a server-stored resource, a \`previou
         },
         {
             heading: 'How I\'d ship the Interactions API in production',
-            content: `Here's the wiring I'd actually put in, drawn from building LLM features for [myFinancial](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026) and client agent systems — the parts the README won't write for you.
+            content: `Here's the wiring I'd actually put in, drawn from building LLM features for [myFinancial](/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026) and client agent systems — the parts the README won't write for you.
 
-**Put a fallback behind a flag from day one.** I'd wire a thin interface with Interactions as the default and \`generateContent\` as the fallback, because a brand-new default surface *will* have early-GA rough edges. When an interaction errors or the retention window bites, the call degrades to a stateless \`generate_content\` with locally-reconstructed history instead of throwing in a user's face. This is the same provider-agnostic-with-fallback pattern I bake into every [6-week MVP](/en/services/6-week-mvp) so a platform change is a config flip, not a rewrite.
+**Put a fallback behind a flag from day one.** I'd wire a thin interface with Interactions as the default and \`generateContent\` as the fallback, because a brand-new default surface *will* have early-GA rough edges. When an interaction errors or the retention window bites, the call degrades to a stateless \`generate_content\` with locally-reconstructed history instead of throwing in a user's face. This is the same provider-agnostic-with-fallback pattern I bake into every [6-week MVP](/services/6-week-mvp) so a platform change is a config flip, not a rewrite.
 
 **Treat \`previous_interaction_id\` as a cache, not a database.** Store it alongside your own canonical message log, and on a cache miss (expired ID), rebuild the conversation from your log and start a fresh interaction. The failure mode I worry about most here is the silent one: an expired ID doesn't always fail loudly, so a session can quietly lose its earlier context and the model just... answers with less. Log every interaction ID with its created-at timestamp so you can see expiry in your traces, not in a confused support ticket.
 
-**For privacy-sensitive flows, default to \`store=false\` and own the history yourself.** Yes, it costs you background and server state — but for a compliance-bound feature that's the correct trade, and you keep the option to selectively enable storage per-route where the data class allows it. Getting this wiring right on the first pass is most of what [founding-engineer work](/en/services/hire-founding-engineer-india) on an AI product actually is: not the happy-path call, but the fallback, the expiry handling, and the privacy switch that keep it standing when the platform shifts under you — and in 2026, it shifts monthly.`,
+**For privacy-sensitive flows, default to \`store=false\` and own the history yourself.** Yes, it costs you background and server state — but for a compliance-bound feature that's the correct trade, and you keep the option to selectively enable storage per-route where the data class allows it. Getting this wiring right on the first pass is most of what [founding-engineer work](/services/hire-founding-engineer-india) on an AI product actually is: not the happy-path call, but the fallback, the expiry handling, and the privacy switch that keep it standing when the platform shifts under you — and in 2026, it shifts monthly.`,
         },
         {
             heading: 'The bottom line: should you migrate to the Interactions API?',
@@ -161,6 +161,6 @@ The deeper point: Google just moved the center of gravity for Gemini development
     ],
     cta: {
         text: 'Migrating an AI app to the Interactions API? Let\'s ship it in 6 weeks.',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

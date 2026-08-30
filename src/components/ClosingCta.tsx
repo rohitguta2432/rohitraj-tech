@@ -8,7 +8,7 @@ import Link from "next/link";
  * contact or booking link anywhere in the bottom 60% of the page, so the entire
  * persuasion tail led nowhere. This is the end of the argument.
  */
-export default function ClosingCta({ locale }: { locale: string }) {
+export default function ClosingCta() {
     return (
         <section className="closing" id="start">
             <div className="container closing-inner">
@@ -22,10 +22,10 @@ export default function ClosingCta({ locale }: { locale: string }) {
                 </p>
 
                 <div className="closing-actions">
-                    <Link href={`/${locale}/contact`} className="btn btn-primary">
+                    <Link href={`/contact`} className="btn btn-primary">
                         Book a free 30-min call
                     </Link>
-                    <Link href={`/${locale}/services/6-week-mvp`} className="closing-alt">
+                    <Link href={`/services/6-week-mvp`} className="closing-alt">
                         See how the 6-week sprint runs <span aria-hidden="true">→</span>
                     </Link>
                 </div>

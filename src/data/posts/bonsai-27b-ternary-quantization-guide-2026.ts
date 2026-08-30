@@ -28,7 +28,7 @@ export const bonsai27bTernaryQuantizationGuide2026: BlogPost = {
         },
         {
             heading: 'Bonsai 27B: what a 27B model on a phone actually costs you',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **July 14, 2026**, PrismML published 1-bit and ternary compressions of Qwen3.6-27B and called the result [Bonsai 27B](https://prismml.com/news/bonsai-27b). The headline wrote itself, and Hacker News obliged: *"a 27B-class model that runs on a phone"* hit **498 points and 184 comments** within a day. The ternary build is **5.9 GB**. The 1-bit build is **3.9 GB**. Both are Apache 2.0. Both ship with a 262K-token context.
 
@@ -182,7 +182,7 @@ The pattern: **the more your workload depends on precise discrimination (pick th
             heading: 'When should you skip Bonsai 27B?',
             content: `Skip it — or wait — in these cases. I'd rather say this plainly than pretend a 5.9 GB 27B is free.
 
-**Your agent needs reliable multi-step tool calls.** Even ternary is **74.0** on tool-calling, from a baseline that was itself only 80.0. In an agent loop, per-step accuracy compounds: at a generous 90% per-step success, five steps lands near 59% end-to-end. A frontier API model isn't a luxury here; it's the difference between a demo and a product. Same failure mode I wrote about in [AI agent command guardrails](/en/notes/ai-agent-command-guardrails-2026) — local models don't remove the need for a verification layer, they raise it.
+**Your agent needs reliable multi-step tool calls.** Even ternary is **74.0** on tool-calling, from a baseline that was itself only 80.0. In an agent loop, per-step accuracy compounds: at a generous 90% per-step success, five steps lands near 59% end-to-end. A frontier API model isn't a luxury here; it's the difference between a demo and a product. Same failure mode I wrote about in [AI agent command guardrails](/notes/ai-agent-command-guardrails-2026) — local models don't remove the need for a verification layer, they raise it.
 
 **You expect phone inference to feel interactive.** 11 tok/s on an iPhone 17 Pro is real, and slow. It fits background summarization, not a chat UI someone waits on.
 
@@ -218,11 +218,11 @@ The failure mode I'd worry about most isn't the model being wrong. It's the mode
 
 If you're building an **agent**, take ternary, route tool-calling to an API, validate every call, and spend the 2 GB you didn't save on 8 points of accuracy. The headline number was never the one that mattered.
 
-Wiring that hybrid routing — local model, cloud fallback, schema validation, the observability to know which path ran — is what eats a month if you haven't built it before. That's my work: [6-week MVPs](/en/services/6-week-mvp) that ship with the fallback path already in place, or a [founding engineer](/en/services/hire-founding-engineer-india) embedded with your team. If you're weighing local-vs-API for an AI feature, that's a conversation worth having before you've built on the wrong side of it.`,
+Wiring that hybrid routing — local model, cloud fallback, schema validation, the observability to know which path ran — is what eats a month if you haven't built it before. That's my work: [6-week MVPs](/services/6-week-mvp) that ship with the fallback path already in place, or a [founding engineer](/services/hire-founding-engineer-india) embedded with your team. If you're weighing local-vs-API for an AI feature, that's a conversation worth having before you've built on the wrong side of it.`,
         },
     ],
     cta: {
         text: 'Building a local-first AI feature? Let us wire the fallback path properly.',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

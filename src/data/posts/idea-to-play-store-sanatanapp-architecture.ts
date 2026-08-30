@@ -19,7 +19,7 @@ export const ideaToPlayStoreSanatanappArchitecture: BlogPost = {
     },
 {
       heading: 'Week 1: Problem Discovery & Design',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To ship a React Native app from idea to Google Play Store in 4 weeks, use Expo managed workflow with EAS Build for zero native configuration, bundle text content as JSON files for offline-first delivery, stream audio from public domain sources via expo-av, and store local state in expo-sqlite. This approach produces a production app under 15MB with $0/month running costs and a $25 one-time Play Store developer fee.
 
@@ -127,9 +127,9 @@ The production build took ~8 minutes on EAS servers. Output: a signed AAB file r
 
 The app is live: [SanatanApp on Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app).
 
-For founders reading this and wondering about delivery, the two ways I work are a [mobile app development](/en/services/mobile-app-development) and a [6-week MVP sprint](/en/services/6-week-mvp).
+For founders reading this and wondering about delivery, the two ways I work are a [mobile app development](/services/mobile-app-development) and a [6-week MVP sprint](/services/6-week-mvp).
 
-Two posts that pick up where this one ends: [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot) and [Lovable App Production Bugs](/en/notes/lovable-app-production-bugs-need-real-engineer-2026).`
+Two posts that pick up where this one ends: [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot) and [Lovable App Production Bugs](/notes/lovable-app-production-bugs-need-real-engineer-2026).`
     },
     {
       heading: 'Frequently Asked Questions',

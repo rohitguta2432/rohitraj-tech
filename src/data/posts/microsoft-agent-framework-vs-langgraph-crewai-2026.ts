@@ -29,7 +29,7 @@ export const microsoftAgentFrameworkVsLangGraphCrewai2026: BlogPost = {
         },
         {
             heading: 'Microsoft Agent Framework vs LangGraph vs CrewAI: Which to Use Now That AutoGen Is Dead (2026)',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you bookmarked a "best multi-agent framework" comparison from last year, throw it out. The whole shape of the question changed in 2026 when Microsoft stopped shipping AutoGen and Semantic Kernel as separate products and folded both into one supported SDK: the [Microsoft Agent Framework](https://github.com/microsoft/agent-framework). AutoGen — which was on nearly every "top 3 frameworks" list — is now in maintenance mode. So is Semantic Kernel.
 
@@ -41,7 +41,7 @@ This is the builder's read, not a feature-matrix dump. I'll write the *same* age
             heading: 'What actually changed in 2026: AutoGen is deprecated',
             content: `Here's the concrete shift. Microsoft Agent Framework is a single open-source SDK for building, orchestrating, and deploying agents, with a unified programming model across **Python and .NET**. It is the declared successor to *both* AutoGen and Semantic Kernel. The repo at [github.com/microsoft/agent-framework](https://github.com/microsoft/agent-framework) crossed **~9.4K stars with 125+ contributors**, and the official [Microsoft Learn migration guides](https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/) for both predecessors are now published — a strong signal that the merge is final, not experimental.
 
-Why fold two frameworks into one? AutoGen was the research-y multi-agent conversation framework; Semantic Kernel was the enterprise plugin/orchestration SDK. They overlapped badly and confused every team that asked "which Microsoft thing do I use?" The Agent Framework answer is: one model. AutoGen's \`AssistantAgent\` maps to the new \`ChatAgent\`, and Semantic Kernel's \`Kernel\` + plugin pattern maps to \`Agent\` + \`Tool\` abstractions. You also get first-class **A2A (agent-to-agent) protocol** and **MCP tool** support baked in — the same Model Context Protocol that [I covered for server auth here](/en/notes/mcp-server-authentication-oauth-guide-2026).
+Why fold two frameworks into one? AutoGen was the research-y multi-agent conversation framework; Semantic Kernel was the enterprise plugin/orchestration SDK. They overlapped badly and confused every team that asked "which Microsoft thing do I use?" The Agent Framework answer is: one model. AutoGen's \`AssistantAgent\` maps to the new \`ChatAgent\`, and Semantic Kernel's \`Kernel\` + plugin pattern maps to \`Agent\` + \`Tool\` abstractions. You also get first-class **A2A (agent-to-agent) protocol** and **MCP tool** support baked in — the same Model Context Protocol that [I covered for server auth here](/notes/mcp-server-authentication-oauth-guide-2026).
 
 The honest caveat: "GA" does not mean "battle-tested everywhere." A 1.0 that shipped this year has far fewer production war stories than LangGraph, which teams have been running in anger for two years. So the framework being *official* and being the *safe* choice are not the same thing — which is exactly why this is still a real comparison and not just "Microsoft won."`,
         },
@@ -187,17 +187,17 @@ That last one is the lazy-but-correct move more often than framework comparisons
             heading: 'How I\'d ship this in production',
             content: `Here's the wiring the READMEs leave out. Whichever framework you pick, the framework is maybe 20% of a real agent system — the other 80% is the plumbing around it.
 
-**Pick by constraint, not hype.** Most of my client builds are Python on non-Azure infra shipping in a [6-week MVP window](/en/services/6-week-mvp), so I default to LangGraph for anything stateful and skip frameworks entirely for single-call agents. If a client is an Azure/.NET shop, Agent Framework becomes the obvious pick — the compliance and .NET story outweighs LangGraph's maturity edge for them.
+**Pick by constraint, not hype.** Most of my client builds are Python on non-Azure infra shipping in a [6-week MVP window](/services/6-week-mvp), so I default to LangGraph for anything stateful and skip frameworks entirely for single-call agents. If a client is an Azure/.NET shop, Agent Framework becomes the obvious pick — the compliance and .NET story outweighs LangGraph's maturity edge for them.
 
 **Put the model behind a seam.** Don't hardcode one provider. Wrap the LLM call so you can swap models without touching agent logic — the same discipline that lets you route cheap models for easy steps and expensive ones for hard steps. Agent frameworks make this easy to forget because the client is baked into the agent constructor.
 
 **Budget for the boring 80%:** retries with backoff on tool calls, a hard timeout and step cap so a looping agent can't burn your token budget, structured logging of every step (input, tool, output) because you *will* need to debug a weird run, and a kill switch. None of the three frameworks gives you all of this for free; LangGraph gets closest with durable runs.
 
-**The failure mode I'd worry about** with Agent Framework specifically: betting a long-lived production system on a 1.0 that's still moving. Pin your versions, read the changelog before upgrading, and keep your agent logic thin enough that a breaking API change is a small diff. If you want a second pair of hands wiring a multi-agent system without learning these trade-offs the hard way, [that's the kind of build I do](/en/services/hire-founding-engineer-india).`,
+**The failure mode I'd worry about** with Agent Framework specifically: betting a long-lived production system on a 1.0 that's still moving. Pin your versions, read the changelog before upgrading, and keep your agent logic thin enough that a breaking API change is a small diff. If you want a second pair of hands wiring a multi-agent system without learning these trade-offs the hard way, [that's the kind of build I do](/services/hire-founding-engineer-india).`,
         },
     ],
     cta: {
         text: 'Need a multi-agent system shipped in 6 weeks — without the framework trial-and-error?',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

@@ -29,7 +29,7 @@ export const aiDevWeek2026W24: BlogPost = {
     },
     {
       heading: 'Why This Week Matters Together',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For two years "AI coding tool" meant something that helped you type faster. Week 24 is where that definition broke. OpenAI's Codex stopped being an autocomplete-on-steroids and became a thing that **ships a running app** — Sites hosts it, Annotations edits it in place, and six role plugins point it at non-engineering work. The engine to run that kind of agent cheaply also landed the same 72 hours: **three open-weight models** (MiniMax M3, Gemma 4 12B, NVIDIA Nemotron 3 Ultra) that you can self-host instead of renting.
 
@@ -64,7 +64,7 @@ The other half of the week is the bill, the guardrail, and the deadline arriving
 
 **Source:** [The Decoder — MiniMax M3](https://the-decoder.com/minimax-m3-open-weight-model-with-a-million-token-context-challenges-proprietary-leaders/)
 
-**Quick take:** Don't lift-and-shift everything — put M3 behind a router for the routine 80% and keep a closed model for the calls that earn the premium. That split is exactly what I cover in [OpenRouter vs LiteLLM vs Portkey](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026).`,
+**Quick take:** Don't lift-and-shift everything — put M3 behind a router for the routine 80% and keep a closed model for the calls that earn the premium. That split is exactly what I cover in [OpenRouter vs LiteLLM vs Portkey](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026).`,
     },
     {
       heading: 'Gemma 4 12B Puts a Multimodal Model on Your Laptop (June 3)',
@@ -84,7 +84,7 @@ The other half of the week is the bill, the guardrail, and the deadline arriving
 
 **Source:** [Claude Code — What's new](https://code.claude.com/docs/en/whats-new)
 
-**Quick take:** Audit your headless usage *this week*. This is the same "metered, not flat" shift that hit Copilot in Week 23 — see [Claude Opus 4.8 vs 4.7](/en/notes/claude-opus-4-8-vs-4-7-developers-2026) for where the premium model actually earns its per-token cost.`,
+**Quick take:** Audit your headless usage *this week*. This is the same "metered, not flat" shift that hit Copilot in Week 23 — see [Claude Opus 4.8 vs 4.7](/notes/claude-opus-4-8-vs-4-7-developers-2026) for where the premium model actually earns its per-token cost.`,
     },
     {
       heading: 'Microsoft Build 2026: Secure Agents by Default (June 2)',
@@ -94,7 +94,7 @@ The other half of the week is the bill, the guardrail, and the deadline arriving
 
 **Source:** [Microsoft Security — Build 2026: securing code, agents, and models](https://www.microsoft.com/en-us/security/blog/2026/06/02/microsoft-build-2026-securing-code-agents-and-models-across-the-development-lifecycle/)
 
-**Quick take:** Even if you're not on Azure, steal the defaults: every agent gets its own identity, least-privilege tool scopes, and an audit trail you can replay. The same hygiene shows up in my [secure MCP server in TypeScript](/en/notes/secure-mcp-server-typescript-2026) walkthrough — the protocol changes, the threat model doesn't.`,
+**Quick take:** Even if you're not on Azure, steal the defaults: every agent gets its own identity, least-privilege tool scopes, and an audit trail you can replay. The same hygiene shows up in my [secure MCP server in TypeScript](/notes/secure-mcp-server-typescript-2026) walkthrough — the protocol changes, the threat model doesn't.`,
     },
     {
       heading: 'Last Call: Gemini CLI Consumer Access Ends June 18',
@@ -104,11 +104,11 @@ The other half of the week is the bill, the guardrail, and the deadline arriving
 
 **Source:** [Google Developers Blog — transitioning Gemini CLI to Antigravity](https://developers.googleblog.com/)
 
-**Quick take:** Don't wait for the error. I mapped the migration paths and the open alternatives (Claude Code, Codex CLI, Aider, OpenCode) in [Gemini CLI to Antigravity: migration and alternatives](/en/notes/gemini-cli-to-antigravity-migration-alternatives-2026) — pick a destination before the 18th, not after.`,
+**Quick take:** Don't wait for the error. I mapped the migration paths and the open alternatives (Claude Code, Codex CLI, Aider, OpenCode) in [Gemini CLI to Antigravity: migration and alternatives](/notes/gemini-cli-to-antigravity-migration-alternatives-2026) — pick a destination before the 18th, not after.`,
     },
     {
       heading: "What I'm Shipping With This Week",
-      content: `Concretely: I'm putting **MiniMax M3 behind the router** on a [MyFinancial](/en/projects) workload that summarizes long regulatory PDFs. Those calls used to hit a closed frontier model and the context kept blowing past comfortable limits; M3's **1M-token window** means I can feed a whole filing in one shot, and the **MSA** decode speed makes the cost sane to self-host for a batch job that runs nightly. The routine summaries move to M3; only the calls that need the absolute best reasoning stay on the premium model.
+      content: `Concretely: I'm putting **MiniMax M3 behind the router** on a [MyFinancial](/projects) workload that summarizes long regulatory PDFs. Those calls used to hit a closed frontier model and the context kept blowing past comfortable limits; M3's **1M-token window** means I can feed a whole filing in one shot, and the **MSA** decode speed makes the cost sane to self-host for a batch job that runs nightly. The routine summaries move to M3; only the calls that need the absolute best reasoning stay on the premium model.
 
 The non-obvious part the launch posts won't tell you: **the open-weight win and the Anthropic billing change are the same decision.** The reason to bother self-hosting M3 isn't ideology — it's that on **June 15** my unattended \`claude -p\` jobs start metering at full API rates. So the migration I'd actually prioritize this week is moving the *highest-volume, lowest-stakes* automation off metered API calls and onto a self-hosted open model, and keeping the metered budget for the work that's worth it. The failure mode I'd worry about: discovering on June 16 that a nightly agent quietly burned the month's credit because nobody re-forecast it. Audit the headless jobs first; migrate second.`,
     },
@@ -124,13 +124,13 @@ The non-obvious part the launch posts won't tell you: **the open-weight win and 
       heading: "Need Help Wiring This Week's Drops Into Your Product?",
       content: `If you're standing up an open-weight router to dodge the June 15 metering, self-hosting MiniMax M3 or Gemma 4 for the routine 80%, or migrating off Gemini CLI before the 18th, the hard part is never the tutorial — it's the production wiring: fallback routing, rate-limit retries, agent identity and audit, and the integration tests nobody writes.
 
-That's the [6-week MVP](/en/services/6-week-mvp) playbook — pick the right models and host, wire them into a shipping product, hand over a tested codebase. For a longer run, [Hire a Founding Engineer (India)](/en/services/hire-founding-engineer-india).
+That's the [6-week MVP](/services/6-week-mvp) playbook — pick the right models and host, wire them into a shipping product, hand over a tested codebase. For a longer run, [Hire a Founding Engineer (India)](/services/hire-founding-engineer-india).
 
-Next roundup drops next Tuesday. For the deep-dives: [Claude Opus 4.8 vs 4.7](/en/notes/claude-opus-4-8-vs-4-7-developers-2026) on model choice, [OpenRouter vs LiteLLM vs Portkey](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026) on routing, and [LLM context compression](/en/notes/llm-context-compression-cut-token-costs-2026) on cutting token spend.`,
+Next roundup drops next Tuesday. For the deep-dives: [Claude Opus 4.8 vs 4.7](/notes/claude-opus-4-8-vs-4-7-developers-2026) on model choice, [OpenRouter vs LiteLLM vs Portkey](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026) on routing, and [LLM context compression](/notes/llm-context-compression-cut-token-costs-2026) on cutting token spend.`,
     },
   ],
   cta: {
     text: "Wire This Week's Drops Into Your MVP — 6-Week Plan",
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

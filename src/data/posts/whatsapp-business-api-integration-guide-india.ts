@@ -19,7 +19,7 @@ export const whatsappBusinessApiIntegrationGuideIndia: BlogPost = {
     },
 {
       heading: 'Why WhatsApp API Matters for Indian Businesses',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To integrate the WhatsApp Business API for an Indian startup, choose a Business Solution Provider like Twilio or Gupshup (or connect directly via Meta Cloud API), set up a webhook-based backend to receive and process incoming messages, design pre-approved message templates for outbound communications, and follow Meta's strict 24-hour session window rules to avoid getting your number banned. Monthly costs for a small business start as low as 85 INR for Meta fees alone.
 
@@ -140,9 +140,9 @@ For ClinIQ AI, the WhatsApp integration was one of the highest-ROI features I bu
 
 If you're an Indian startup and you're not on WhatsApp Business API yet, you're leaving money on the table. Start with appointment reminders or order updates — the simplest use case with the highest impact.
 
-If you'd rather hand the build off and review weekly, the [founding engineer in India](/en/services/hire-founding-engineer-india) is the fastest path; for a longer-term engineering relationship, look at [AI chatbot build](/en/services/ai-chatbot-development).
+If you'd rather hand the build off and review weekly, the [founding engineer in India](/services/hire-founding-engineer-india) is the fastest path; for a longer-term engineering relationship, look at [AI chatbot build](/services/ai-chatbot-development).
 
-Two posts that pick up where this one ends: [How to Build an AI Chatbot for Your Business: Architecture, Cost & What…](/en/notes/build-ai-chatbot-whatsapp-business-india) and [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot).`
+Two posts that pick up where this one ends: [How to Build an AI Chatbot for Your Business: Architecture, Cost & What…](/notes/build-ai-chatbot-whatsapp-business-india) and [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot).`
     },
     {
       heading: 'Frequently Asked Questions',

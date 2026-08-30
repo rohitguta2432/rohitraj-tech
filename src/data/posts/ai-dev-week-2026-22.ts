@@ -27,7 +27,7 @@ export const aiDevWeek2026W22: BlogPost = {
     },
     {
       heading: 'Why This Week Matters Together',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 This isn't six unrelated drops — there's a thread. Three of the six this week (DeepSeek's permanent cut, Reasonix's open coding agent, NuExtract3's open VLM) push the **cost-of-AI floor toward zero for routine dev workloads**. The other three (Copilot Auto, Gemini Managed Agents, Cursor 3 parallel) push the **interface up the stack** — you stop picking models and start describing tasks.
 
@@ -43,7 +43,7 @@ If you're shipping AI features into a product right now, the actionable read is:
 
 **Source:** [Bloomberg](https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model) · [the-decoder breakdown](https://the-decoder.com/deepseek-makes-its-75-percent-discount-permanent-pricing-output-tokens-at-least-34x-below-gpt-5-5/)
 
-**Quick take:** Migrate non-critical workloads today. Keep GPT-5.5 / Claude Opus 4.7 for tasks where the model quality earns the premium (creative reasoning, customer-facing copy). I covered the deeper India-MVP cost math in [DeepSeek vs Claude vs GPT for India MVP](/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026).`,
+**Quick take:** Migrate non-critical workloads today. Keep GPT-5.5 / Claude Opus 4.7 for tasks where the model quality earns the premium (creative reasoning, customer-facing copy). I covered the deeper India-MVP cost math in [DeepSeek vs Claude vs GPT for India MVP](/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026).`,
     },
     {
       heading: 'GitHub Copilot Auto Model Selection in VS Code (May 20, 2026)',
@@ -73,7 +73,7 @@ If you're shipping AI features into a product right now, the actionable read is:
 
 **Source:** [r/LocalLLaMA NuExtract3 thread](https://reddit.com/r/LocalLLaMA/comments/1tn8utn/nuextract3_released_openweight_4b_vlm_for/)
 
-**Quick take:** This is the model I'd reach for first if I were rebuilding a healthcare-document pipeline today. Pair it with [pgvector](/en/notes/pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026) for the embedding store and you have a fully self-hosted document RAG stack under $50/month infrastructure.`,
+**Quick take:** This is the model I'd reach for first if I were rebuilding a healthcare-document pipeline today. Pair it with [pgvector](/notes/pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026) for the embedding store and you have a fully self-hosted document RAG stack under $50/month infrastructure.`,
     },
     {
       heading: 'Cursor 3 Ships Parallel AI Agents',
@@ -97,7 +97,7 @@ If you're shipping AI features into a product right now, the actionable read is:
     },
     {
       heading: "What I'm Shipping With This Week",
-      content: `Concretely: I'm wiring DeepSeek V4 Pro behind a fallback router on the next [MyFinancial](/en/projects) feature — a one-screen flow that summarizes a user's last 90 days of transactions into an English newsletter. The previous prototype ran on Claude Sonnet 4.6 and cost about ₹4 per generated newsletter. Same prompt on DeepSeek V4 Pro at the new pricing comes out near ₹0.12. If the quality holds in user testing, that's the difference between "premium-only" and "free-tier scalable."
+      content: `Concretely: I'm wiring DeepSeek V4 Pro behind a fallback router on the next [MyFinancial](/projects) feature — a one-screen flow that summarizes a user's last 90 days of transactions into an English newsletter. The previous prototype ran on Claude Sonnet 4.6 and cost about ₹4 per generated newsletter. Same prompt on DeepSeek V4 Pro at the new pricing comes out near ₹0.12. If the quality holds in user testing, that's the difference between "premium-only" and "free-tier scalable."
 
 The wiring is straightforward — a thin router in front of the OpenAI-compatible SDK that picks DeepSeek for the summary call and falls back to Claude only if the response fails a JSON schema check. Three days of work, including evals. If you've been postponing the same cost-cutover for your own product, this week's pricing news is the nudge.
 
@@ -115,13 +115,13 @@ The one thing I'd worry about that the README won't tell you: DeepSeek's rate li
       heading: "Need Help Wiring This Week's Drops Into Your Product?",
       content: `If you're trying to migrate AI cost down (DeepSeek), stand up a Managed Agent for an internal workflow (Gemini API), or self-host structured extraction for compliance reasons (NuExtract3), the gap is usually not the tutorial — it's the production wiring: auth, rate-limit retries, schema validation, observability, fallback routing, and the integration tests that nobody writes.
 
-That's the [6-week MVP](/en/services/6-week-mvp) playbook — pick the right model + the right host, wire it into a shipping product, and hand over a tested codebase. If you'd rather embed a founding engineer for a longer engagement, [Hire Founding Engineer (India)](/en/services/hire-founding-engineer-india) is the right page.
+That's the [6-week MVP](/services/6-week-mvp) playbook — pick the right model + the right host, wire it into a shipping product, and hand over a tested codebase. If you'd rather embed a founding engineer for a longer engagement, [Hire Founding Engineer (India)](/services/hire-founding-engineer-india) is the right page.
 
-Next week's roundup drops next Tuesday. If you want the per-item deep-dives, the [DeepSeek vs Claude vs GPT MVP cost post](/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026) covers the math, and [Claude Code plugins + context engineering](/en/notes/claude-code-plugins-context-engineering-2026) covers the agent-loop side.`,
+Next week's roundup drops next Tuesday. If you want the per-item deep-dives, the [DeepSeek vs Claude vs GPT MVP cost post](/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026) covers the math, and [Claude Code plugins + context engineering](/notes/claude-code-plugins-context-engineering-2026) covers the agent-loop side.`,
     },
   ],
   cta: {
     text: 'Ship This Week’s Drops Into Your MVP — 6-Week Plan',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

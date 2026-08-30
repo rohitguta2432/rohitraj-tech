@@ -28,7 +28,7 @@ export const inkling975bRunLocallyVramGuide2026: BlogPost = {
         },
         {
             heading: 'Inkling 975B: free weights, $46,206-a-month hardware',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Forty-six thousand dollars a month. That's what the machine costs.
 
@@ -166,7 +166,7 @@ Skip the 1-bit quant entirely if you're building an agent — and this is the pa
 
 Go back to that **74.2% top-1% accuracy retention** at 1-bit. Unsloth's framing is honest: it means the model reaches for its second-choice token about a quarter of the time. For prose, that's invisible — second-choice tokens usually produce a fine sentence. For **tool calls, it is not invisible at all.** A tool call is a rigid structure: exact function name, exact JSON keys, exact types. There is no graceful second-best for \`"user_id"\` — the alternative is a key your schema rejects. Chat degrades smoothly under quantization; structured output degrades off a cliff.
 
-I watched this exact pattern last week. [Bonsai 27B](/en/notes/bonsai-27b-ternary-quantization-guide-2026) published per-category quant results, and where the average said "95% retained," tool-calling had fallen from **80.0 to 66.0** at 1-bit — degrading **4.6x worse than math**. Same mechanism, same trap, different model. Inkling's published quant table reports **only** aggregate top-1% accuracy. There is no per-category breakdown. So the number that would tell you whether 1-bit Inkling can still call tools **has not been published** — and given it's the load-bearing number for the agentic use case Inkling is best at (MCP Atlas 74.1%, its strongest relative row), that omission matters.
+I watched this exact pattern last week. [Bonsai 27B](/notes/bonsai-27b-ternary-quantization-guide-2026) published per-category quant results, and where the average said "95% retained," tool-calling had fallen from **80.0 to 66.0** at 1-bit — degrading **4.6x worse than math**. Same mechanism, same trap, different model. Inkling's published quant table reports **only** aggregate top-1% accuracy. There is no per-category breakdown. So the number that would tell you whether 1-bit Inkling can still call tools **has not been published** — and given it's the load-bearing number for the agentic use case Inkling is best at (MCP Atlas 74.1%, its strongest relative row), that omission matters.
 
 My read: assume 1-bit Inkling is a chat model, not an agent. If you need both the 290 GB footprint *and* tool-calling, benchmark tool-call validity yourself before you design around it. Don't infer it from 74.2%.`,
         },
@@ -184,11 +184,11 @@ Three paths I'd actually take, in order:
 
 Whichever path: **route tool-calling to a full-precision endpoint.** Keep the quantized model for generation and summarization, send structured output to something that hasn't had its distribution flattened, and validate every call against your schema before executing it. The observability to know which path served a request — and to catch tool-call validity drifting — is the piece teams skip and then spend a month retrofitting after a silent failure in production.
 
-That wiring is most of the real work in an LLM feature: the fallback path, the schema validation, the routing, the traces that tell you which model answered. It's what I do — [6-week MVPs](/en/services/6-week-mvp) that ship with that path already built, or a [founding engineer](/en/services/hire-founding-engineer-india) embedded with your team. If you're weighing self-host versus API for an AI feature right now, that's a conversation worth having **before** you've committed to the wrong side of a $46,206/month decision.`,
+That wiring is most of the real work in an LLM feature: the fallback path, the schema validation, the routing, the traces that tell you which model answered. It's what I do — [6-week MVPs](/services/6-week-mvp) that ship with that path already built, or a [founding engineer](/services/hire-founding-engineer-india) embedded with your team. If you're weighing self-host versus API for an AI feature right now, that's a conversation worth having **before** you've committed to the wrong side of a $46,206/month decision.`,
         },
     ],
     cta: {
         text: 'Weighing self-host vs API for an AI feature? Let us run the math before you commit.',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

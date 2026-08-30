@@ -28,7 +28,7 @@ export const appleSpeechAnalyzerVsWhisperOnDeviceStt2026: BlogPost = {
         },
         {
             heading: 'Apple finally has a great speech API — and told you nothing about it',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Apple did a strange thing with SpeechAnalyzer. They replaced the decade-old \`SFSpeechRecognizer\`, shipped a genuinely modern on-device transcription stack in **iOS 26 and macOS 26**, demoed it at [WWDC25](https://developer.apple.com/videos/play/wwdc2025/277/), and then published **not a single word error rate**. The API landed with marketing adjectives — "fast", "on-device", "long-form" — and zero measured accuracy.
 
@@ -93,7 +93,7 @@ try await analyzer.start(inputSequence: stream)
 // input.yield(AnalyzerInput(buffer: pcmBuffer))  // in your tap callback
 \`\`\`
 
-Three things worth noting for production. The **\`.volatileResults\`** option is what gives you the live, updating caption effect — you get provisional text immediately and a corrected \`isFinal\` version a beat later. The **\`AssetInventory\`** download is a one-time per-locale cost you should trigger *before* the user hits record, not during. And because it is **on-device with no server fallback**, you get no Business Associate Agreement headaches for health or legal apps — the audio never leaves the phone. Compare that to [running a large model locally](/en/notes/inkling-975b-run-locally-vram-guide-2026), where "on-device" means a 600 GB machine; here it means an iPhone.`,
+Three things worth noting for production. The **\`.volatileResults\`** option is what gives you the live, updating caption effect — you get provisional text immediately and a corrected \`isFinal\` version a beat later. The **\`AssetInventory\`** download is a one-time per-locale cost you should trigger *before* the user hits record, not during. And because it is **on-device with no server fallback**, you get no Business Associate Agreement headaches for health or legal apps — the audio never leaves the phone. Compare that to [running a large model locally](/notes/inkling-975b-run-locally-vram-guide-2026), where "on-device" means a 600 GB machine; here it means an iPhone.`,
         },
         {
             heading: 'Where does SpeechAnalyzer genuinely win?',
@@ -150,11 +150,11 @@ The uncomfortable truth the single-number headlines miss: **on your users' real 
 
 **Instrument WER on your own audio.** LibriSpeech is not your users. Log a sample of transcripts (with consent), hand-correct a small held-out set, and measure real WER per engine per locale. The [benchmark that made this post](https://get-inscribe.com/blog/apple-speech-api-benchmark.html) exists precisely because vendors don't publish the number that matters — yours; do the same internally.
 
-That fallback routing, the capability gate, the diarization stage, the consent-gated measurement loop — that scaffolding is most of the real work in a voice feature, and it is what teams skip and then retrofit after a bad review. It's what I build: [6-week MVPs](/en/services/6-week-mvp) that ship with the fallback path and the measurement already wired, or a [founding engineer](/en/services/hire-founding-engineer-india) embedded with your team to get the on-device speech stack right the first time. If you're choosing an STT engine for a product right now, that's a conversation worth having before you hard-code one API into every screen.`,
+That fallback routing, the capability gate, the diarization stage, the consent-gated measurement loop — that scaffolding is most of the real work in a voice feature, and it is what teams skip and then retrofit after a bad review. It's what I build: [6-week MVPs](/services/6-week-mvp) that ship with the fallback path and the measurement already wired, or a [founding engineer](/services/hire-founding-engineer-india) embedded with your team to get the on-device speech stack right the first time. If you're choosing an STT engine for a product right now, that's a conversation worth having before you hard-code one API into every screen.`,
         },
     ],
     cta: {
         text: 'Building an on-device voice or transcription feature? Let us wire the engine, fallback, and diarization right the first time.',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

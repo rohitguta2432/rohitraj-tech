@@ -27,7 +27,7 @@ export const sixWeekMvpVs3MonthAgencyWhichShipsFirst: BlogPost = {
     },
 {
       heading: '6-Week MVP Sprint vs 3-Month Agency Build — Which One Actually Ships First in 2026?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 When a founder gets two MVP quotes — a $20K 6-week sprint from a senior contractor and an $80K 3-month build from an agency — the assumption is the agency build is "more serious" and the sprint is "scrappy". The reality from 30+ MVPs I have observed: the 6-week sprint ships in 6 weeks 90% of the time, and the 3-month agency build ships in 18-24 weeks 70% of the time.
 
@@ -87,7 +87,7 @@ This is why 36% of solo-founded startups in 2026 use the sprint model. They do n
 
 For everything else — pre-seed B2B SaaS, consumer products, founder-led validation builds, internal tools — the sprint model wins on time, cost, and learning velocity.
 
-I've written the deeper version of this argument in [What a $15K MVP Actually Includes](/en/notes/what-15k-mvp-actually-includes-vs-50k-agency-quote) and the contrarian counter-take in [Drizzle vs Prisma vs TypeORM](/en/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026).`
+I've written the deeper version of this argument in [What a $15K MVP Actually Includes](/notes/what-15k-mvp-actually-includes-vs-50k-agency-quote) and the contrarian counter-take in [Drizzle vs Prisma vs TypeORM](/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026).`
     },
     {
       heading: 'How to Pick: The 5-Minute Decision Tree',
@@ -101,11 +101,11 @@ I've written the deeper version of this argument in [What a $15K MVP Actually In
 
 If you answered "sprint" to 3+ questions, take the sprint quote. If you answered "agency" to 3+ questions, take the agency quote. If it is mixed, the deciding factor is: do you trust yourself to lock scope on day one. If yes, sprint. If no, agency.
 
-[Scope a 6-week MVP sprint](https://rohitraj.tech/en/services/6-week-mvp) — free 30-min call, fixed quote in 48 hours. Or [hire a founding engineer in India](https://rohitraj.tech/en/services/hire-founding-engineer-india) for engagements longer than 6 weeks.`
+[Scope a 6-week MVP sprint](https://rohitraj.tech/services/6-week-mvp) — free 30-min call, fixed quote in 48 hours. Or [hire a founding engineer in India](https://rohitraj.tech/services/hire-founding-engineer-india) for engagements longer than 6 weeks.`
     },
   ],
   cta: {
     text: 'Compare Your Quotes',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

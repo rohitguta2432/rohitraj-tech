@@ -27,7 +27,7 @@ export const claudeOpus48Vs47Developers2026: BlogPost = {
         },
         {
             heading: 'Claude Opus 4.8 vs 4.7 for Developers — What Changed and Should You Upgrade',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Anthropic dropped [Claude Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8) this morning — May 28, 2026 — and the announcement and the news coverage are both doing the same thing: listing benchmark numbers without telling a working developer whether to actually change anything in their codebase today. I ship client MVPs on Claude Code and the Anthropic Messages API every week, so this is the question I care about: is this a real upgrade, or a leaderboard bump I can ignore until the next sprint?
 
@@ -83,7 +83,7 @@ That last one is small on paper and large in practice: long-horizon agent runs n
             heading: 'Where Opus 4.8 Actually Beats 4.7 (Three Concrete Workflows)',
             content: `Benchmarks are abstractions. Here are the three developer workflows where the 4.8 deltas turn into something you can feel:
 
-**1. Unattended agentic coding.** If you let an agent write code and commit without a human reading every diff, the "~4x less likely to let a flaw pass unremarked" number is the whole ballgame. On a [secure MCP server build](/en/notes/secure-mcp-server-typescript-2026) I shipped last week, the failure mode I worried about most was the model confidently shipping a subtly broken handler. 4.8 directly targets that. It does not eliminate review — it raises the floor.
+**1. Unattended agentic coding.** If you let an agent write code and commit without a human reading every diff, the "~4x less likely to let a flaw pass unremarked" number is the whole ballgame. On a [secure MCP server build](/notes/secure-mcp-server-typescript-2026) I shipped last week, the failure mode I worried about most was the model confidently shipping a subtly broken handler. 4.8 directly targets that. It does not eliminate review — it raises the floor.
 
 **2. Large migrations via dynamic workflows.** Shipping alongside 4.8, [dynamic workflows in Claude Code](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code) (research preview) orchestrate **tens to hundreds of parallel subagents** in one session — Claude plans the task, splits it, and runs subagents that check each other's work before integration. The headline proof point: a port of **Bun from Zig to Rust — 750,000 lines, 99.8% test pass rate, in 11 days**. For a real-world repo-wide migration or dead-code sweep, that is a different category of capability than a single linear agent.
 
@@ -120,11 +120,11 @@ The takeaway the table makes obvious: **the price did not move**, so the only qu
 - **You have eval coverage tuned to 4.7's quirks.** If your test harness encodes workarounds for 4.7 behaviours (e.g. prompts that compensate for skipped tool calls), upgrade in a branch and re-run your evals first. The behavioural changes are improvements, but "different" can still break a brittle prompt.
 - **You are mid-sprint on something unrelated.** The model is not going anywhere. A two-point agentic-coding lift does not justify interrupting a release. It is a one-line swap whenever you are ready.
 
-None of these are reasons the model is bad — they are reasons the *timing* of your upgrade should match your workload. I made the same call on pricing in my [DeepSeek vs Claude vs GPT cost breakdown](/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026): the right model is the one that fits the job, not the one at the top of today's leaderboard.`,
+None of these are reasons the model is bad — they are reasons the *timing* of your upgrade should match your workload. I made the same call on pricing in my [DeepSeek vs Claude vs GPT cost breakdown](/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026): the right model is the one that fits the job, not the one at the top of today's leaderboard.`,
         },
         {
             heading: 'How I Am Wiring Opus 4.8 Into Production This Week',
-            content: `Concrete plan, on the [6-week MVP timeline](/en/services/6-week-mvp) I run client builds on:
+            content: `Concrete plan, on the [6-week MVP timeline](/services/6-week-mvp) I run client builds on:
 
 - **Pin and flip the model ID via env var, not in code.** \`ANTHROPIC_MODEL=claude-opus-4-8\` in the deploy config, one redeploy, instant rollback to 4.7 if a regression shows. Never hardcode a model ID in 2026 — Anthropic ships point releases too fast.
 - **Turn on prompt caching for the system prompt.** My MVPs send a stable 1-2K-token system prompt on every call. Caching that is the **90% savings** lever and it is independent of the model version — do it once and 4.8 gets cheaper than an untuned 4.7.
@@ -153,11 +153,11 @@ The whole migration for a typical app is under an hour of real work. The value i
             heading: 'The Verdict for Developers',
             content: `Claude Opus 4.8 is a focused, agentic-coding-and-tool-use upgrade that costs nothing extra to adopt. If you run agents, long-horizon coding sessions, or multi-tool orchestration, swap the model ID this week — the **~4x reduction in silent code flaws** and the fewer-skipped-tool-calls fix are worth it on their own, and the price is unchanged. If you do single-turn calls, upgrade on your next routine deploy and move on. The cadence story matters more than any single number: Anthropic is now iterating fast enough that "pin your model ID in config and flip it deliberately" is no longer a nice-to-have, it is the baseline discipline.
 
-If you are building an AI feature this quarter and want it wired with the caching, batch, and eval scaffolding that makes model upgrades a one-line change instead of a fire drill, that is exactly the work I do. I ship [6-week MVPs](/en/services/6-week-mvp) and take [founding-engineer engagements](/en/services/hire-founding-engineer-india) for teams building on Claude, and model-upgrade hygiene is table stakes in both.`,
+If you are building an AI feature this quarter and want it wired with the caching, batch, and eval scaffolding that makes model upgrades a one-line change instead of a fire drill, that is exactly the work I do. I ship [6-week MVPs](/services/6-week-mvp) and take [founding-engineer engagements](/services/hire-founding-engineer-india) for teams building on Claude, and model-upgrade hygiene is table stakes in both.`,
         },
     ],
     cta: {
         text: 'Get Your AI MVP Built on Claude in 6 Weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

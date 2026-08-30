@@ -29,7 +29,7 @@ export const shieldstralVsLlamaGuardOpenaiModeration2026: BlogPost = {
     },
     {
       heading: 'Every Chat Feature Ships With a Moderation Problem Nobody Budgeted For',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 You add a chat box, a comment field, or an image upload to an MVP, and two sprints later someone asks "what stops a user from pasting something illegal into this." Most teams bolt on the OpenAI Moderation API because it is four lines of code, ship it, and move on — until a client needs a policy the fixed taxonomy cannot express, like "block phone numbers in the first message" for a marketplace app trying to stop users from taking payment off-platform.
 
@@ -157,14 +157,14 @@ The honest summary: **Shieldstral is a real, well-executed answer to a gap Llama
 
 I build production systems where the safety layer — moderation, guardrails, abuse detection — is designed in from the first sprint, tiered and logged from day one.
 
-- **Shipping something new?** [6-week MVP](/en/services/6-week-mvp) — a working product with the moderation, auth, and abuse-handling layers already wired in, not left for v2.
-- **Need this depth on the team, not on a ticket?** [Hire a founding engineer](/en/services/hire-founding-engineer-india) — architecture and delivery, embedded.
+- **Shipping something new?** [6-week MVP](/services/6-week-mvp) — a working product with the moderation, auth, and abuse-handling layers already wired in, not left for v2.
+- **Need this depth on the team, not on a ticket?** [Hire a founding engineer](/services/hire-founding-engineer-india) — architecture and delivery, embedded.
 
-If you're also thinking about what happens when an AI agent — not just a user — sends something it shouldn't, [command guardrails for coding agents](/en/notes/ai-agent-command-guardrails-2026) is the adjacent problem one layer down.`,
+If you're also thinking about what happens when an AI agent — not just a user — sends something it shouldn't, [command guardrails for coding agents](/notes/ai-agent-command-guardrails-2026) is the adjacent problem one layer down.`,
     },
   ],
   cta: {
     text: 'Get your MVP shipped in 6 weeks — moderation wired in from day one',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -27,7 +27,7 @@ export const foundingEngineerIndiaVsToptalArcUplers2026: BlogPost = {
     },
 {
       heading: 'Hire a Founding Engineer in India — Direct vs Toptal, Arc, Uplers in 2026',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you have searched "hire founding engineer India" recently, the top 5 SERP results are all marketplaces: Toptal, Arc, Uplers, Second Talent, HighCircl. Each promises a vetted senior in 24-72 hours. Each takes a 30-50% markup on top of the engineer's rate. Each adds 2-4 weeks of recruiter screening before you see a candidate. None publishes the engineer's portfolio publicly.
 
@@ -145,7 +145,7 @@ The choice depends on what you optimize for:
 
 For pre-seed founders shipping a 6-week MVP, direct hire wins on every metric except risk reduction. The risk-reduction value comes from your own vetting: read the engineer's blog, browse their GitHub, talk to 2-3 past clients. 90 minutes of due diligence saves you $5K-$10K of marketplace markup.
 
-Related reading: [PostHog vs Mixpanel vs Amplitude](/en/notes/posthog-vs-mixpanel-vs-amplitude-india-mvp-2026) and [Founding Engineer vs Lovable in 2026](/en/notes/founding-engineer-vs-lovable-when-to-hire-2026) cover the adjacent tradeoffs in more depth.`
+Related reading: [PostHog vs Mixpanel vs Amplitude](/notes/posthog-vs-mixpanel-vs-amplitude-india-mvp-2026) and [Founding Engineer vs Lovable in 2026](/notes/founding-engineer-vs-lovable-when-to-hire-2026) cover the adjacent tradeoffs in more depth.`
     },
     {
       heading: 'Three Vetting Steps Before Hiring Direct',
@@ -159,11 +159,11 @@ Related reading: [PostHog vs Mixpanel vs Amplitude](/en/notes/posthog-vs-mixpane
 
 Skip these vetting steps and the marketplace markup actually starts to look reasonable. Do these vetting steps and the direct-hire model is dominant.
 
-[Hire a founding engineer in India directly](https://rohitraj.tech/en/services/hire-founding-engineer-india) — public portfolio (29 shipped products, full GitHub history), fixed-price contracts, no markup, no recruiter, direct Slack with the engineer. Or [scope a 6-week MVP sprint](https://rohitraj.tech/en/services/6-week-mvp) for fixed-price end-to-end delivery.`
+[Hire a founding engineer in India directly](https://rohitraj.tech/services/hire-founding-engineer-india) — public portfolio (29 shipped products, full GitHub history), fixed-price contracts, no markup, no recruiter, direct Slack with the engineer. Or [scope a 6-week MVP sprint](https://rohitraj.tech/services/6-week-mvp) for fixed-price end-to-end delivery.`
     },
   ],
   cta: {
     text: 'Hire a Founding Engineer Directly',
-    href: '/en/services/hire-founding-engineer-india',
+    href: '/services/hire-founding-engineer-india',
   },
 };

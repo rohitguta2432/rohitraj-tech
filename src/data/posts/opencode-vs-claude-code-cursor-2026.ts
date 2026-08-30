@@ -24,11 +24,11 @@ export const opencodeVsClaudeCodeCursor2026: BlogPost = {
   sections: [
     {
       heading: 'TL;DR',
-      content: `**OpenCode** is the open-source AI coding agent that just became the most-starred coding agent on GitHub — **172,198 stars** under MIT, with **v1.17.4 shipping June 12, 2026** ([sst/opencode](https://github.com/sst/opencode)). It is free and model-agnostic: plug in GPT-5.5, Claude Opus 4.8, or a local model across **75+ providers** and pay only for tokens — or **$0** with a local Ollama model. [Claude Code](/en/notes/claude-code-dynamic-workflows-guide-2026) is the polished managed alternative at ~$20/mo with exclusive agentic features; Cursor is a full VS Code-fork IDE at $20–$200/mo. Skip OpenCode if you want zero-config defaults or Claude Code's managed bug-hunting and routines — reach for it if you want an open, swappable, cost-controlled harness.`,
+      content: `**OpenCode** is the open-source AI coding agent that just became the most-starred coding agent on GitHub — **172,198 stars** under MIT, with **v1.17.4 shipping June 12, 2026** ([sst/opencode](https://github.com/sst/opencode)). It is free and model-agnostic: plug in GPT-5.5, Claude Opus 4.8, or a local model across **75+ providers** and pay only for tokens — or **$0** with a local Ollama model. [Claude Code](/notes/claude-code-dynamic-workflows-guide-2026) is the polished managed alternative at ~$20/mo with exclusive agentic features; Cursor is a full VS Code-fork IDE at $20–$200/mo. Skip OpenCode if you want zero-config defaults or Claude Code's managed bug-hunting and routines — reach for it if you want an open, swappable, cost-controlled harness.`,
     },
     {
       heading: 'OpenCode vs Claude Code vs Cursor: The Best AI Coding Agent in 2026?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 As of **June 12, 2026**, the most-starred AI coding agent on GitHub is not Claude Code, not Cursor, and not OpenAI's Codex CLI — it is **OpenCode**, sitting at **172,198 stars** under an MIT license ([Morph LLM's June rankings](https://www.morphllm.com/ai-coding-agent)). It shipped **v1.17.4 today**, and LogRocket's June power rankings called it the first major shake-up in the coding-agent category since Cursor's last rebuild.
 
@@ -75,7 +75,7 @@ The interesting part is per-agent model routing. Because OpenCode is BYOK across
 }
 \`\`\`
 
-That split is the whole point. The agent loop — the prompt scaffolding, tool calls, diff application, LSP feedback — is free and identical no matter which model answers. You decide where to spend. Swapping \`claude-opus-4-8\` for \`openai/gpt-5.5\` or a local model is a one-line change, not a tool migration. If you already think about model spend across providers, this slots straight into the [OpenRouter vs LiteLLM vs Portkey routing setup](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026) I use for the same reason.`,
+That split is the whole point. The agent loop — the prompt scaffolding, tool calls, diff application, LSP feedback — is free and identical no matter which model answers. You decide where to spend. Swapping \`claude-opus-4-8\` for \`openai/gpt-5.5\` or a local model is a one-line change, not a tool migration. If you already think about model spend across providers, this slots straight into the [OpenRouter vs LiteLLM vs Portkey routing setup](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026) I use for the same reason.`,
     },
     {
       heading: 'Where does OpenCode actually shine?',
@@ -85,7 +85,7 @@ That split is the whole point. The agent loop — the prompt scaffolding, tool c
 
 **2. Model-agnostic means you inherit the best benchmark, not a vendor's.** On **Terminal-Bench 2.1**, **Codex CLI + GPT-5.5 leads at 83.4%**, with **Claude Code + Opus 4.8 at 78.9%** ([Morph LLM](https://www.morphllm.com/ai-coding-agent)). OpenCode has no fixed score of its own — and that is the feature, not a gap. Plug GPT-5.5 into OpenCode's build agent and you inherit roughly Codex-tier capability **without** being locked to ChatGPT's $20/mo wrapper; plug Opus 4.8 in and you get Claude Code's brain without the Anthropic-only constraint. You are buying a harness and renting the intelligence separately.
 
-**3. Open source, LSP, and auditability.** OpenCode integrates with the **Language Server Protocol**, feeding real compiler and type diagnostics back to the model so fixes are grounded in what the toolchain actually reports — not the model's guess. Being MIT-licensed and self-hostable also matters for regulated teams: you can read the agent loop, sandbox it, and run it fully offline with a local model. That is the same instinct behind shipping an [AI vulnerability scanner you actually control](/en/notes/claude-ai-vulnerability-scanner-2026) rather than trusting a black box.`,
+**3. Open source, LSP, and auditability.** OpenCode integrates with the **Language Server Protocol**, feeding real compiler and type diagnostics back to the model so fixes are grounded in what the toolchain actually reports — not the model's guess. Being MIT-licensed and self-hostable also matters for regulated teams: you can read the agent loop, sandbox it, and run it fully offline with a local model. That is the same instinct behind shipping an [AI vulnerability scanner you actually control](/notes/claude-ai-vulnerability-scanner-2026) rather than trusting a black box.`,
     },
     {
       heading: 'OpenCode vs Claude Code vs Cursor: the comparison table',
@@ -102,13 +102,13 @@ That split is the whole point. The agent loop — the prompt scaffolding, tool c
 | Price | Free tool; pay tokens (or $0) | ~$17–20/mo; Max from $100/mo | $20 / $60 / $200 per mo |
 | Standout | Open, swappable, free | Managed: Agent View, /ultrareview, Routines, computer use | GUI-first IDE, deep editor integration |
 
-Sources: [Morph LLM benchmark + pricing](https://www.morphllm.com/ai-coding-agent), [AI Builder Club feature comparison](https://www.aibuilderclub.com/blog/opencode-vs-claude-code-2026), [sst/opencode](https://github.com/sst/opencode). If you are weighing model choice rather than tool choice, I broke down [Claude Fable 5 vs Opus 4.8 for developers](/en/notes/claude-fable-5-developer-guide-2026) separately — that decision lives one layer below the harness.`,
+Sources: [Morph LLM benchmark + pricing](https://www.morphllm.com/ai-coding-agent), [AI Builder Club feature comparison](https://www.aibuilderclub.com/blog/opencode-vs-claude-code-2026), [sst/opencode](https://github.com/sst/opencode). If you are weighing model choice rather than tool choice, I broke down [Claude Fable 5 vs Opus 4.8 for developers](/notes/claude-fable-5-developer-guide-2026) separately — that decision lives one layer below the harness.`,
     },
     {
       heading: 'When should you skip OpenCode?',
       content: `The 172K stars hide three honest reasons to stay on Claude Code or Cursor.
 
-**You lose Claude Code's managed agentic layer.** Claude Code ships features OpenCode has no equivalent for: Agent View, \`/goal\` completion conditions, \`/ultrareview\` bug hunting, Ultraplan, Routines, mobile notifications, and computer use, all wired into Anthropic's stack ([AI Builder Club](https://www.aibuilderclub.com/blog/opencode-vs-claude-code-2026)). If your workflow leans on managed background agents or cloud-side features — the kind I lean on for [dynamic multi-agent Claude Code workflows](/en/notes/claude-code-dynamic-workflows-guide-2026) — OpenCode asks you to rebuild that yourself.
+**You lose Claude Code's managed agentic layer.** Claude Code ships features OpenCode has no equivalent for: Agent View, \`/goal\` completion conditions, \`/ultrareview\` bug hunting, Ultraplan, Routines, mobile notifications, and computer use, all wired into Anthropic's stack ([AI Builder Club](https://www.aibuilderclub.com/blog/opencode-vs-claude-code-2026)). If your workflow leans on managed background agents or cloud-side features — the kind I lean on for [dynamic multi-agent Claude Code workflows](/notes/claude-code-dynamic-workflows-guide-2026) — OpenCode asks you to rebuild that yourself.
 
 **BYOK means you own the cost and security surface.** "Free harness, bring your own key" also means there is no vendor putting guardrails between an autonomous agent and your shell, your filesystem, and 75 different API endpoints. A managed tool absorbs some of that risk; OpenCode hands it to you. That is fine — preferable, even — if you sandbox it, but it is not a default-safe experience.
 
@@ -118,13 +118,13 @@ Sources: [Morph LLM benchmark + pricing](https://www.morphllm.com/ai-coding-agen
       heading: 'How I would ship OpenCode in production',
       content: `If a client asked me to put OpenCode in front of a team this week, here is the wiring I would insist on — the parts that are not in the quickstart.
 
-**Route by agent, not by vibe.** Use the per-agent model config to send the read-only **plan** agent to a cheap or local model and reserve a frontier model for the **build** agent. This is the cheapest reliable way to keep an autonomous loop from burning frontier tokens on exploration. It is the same principle as harness-engineering: the [agent-first methodology OpenAI documented for Codex](/en/notes/what-is-harness-engineering-codex-2026) lives or dies on routing and guardrails, not on raw model strength.
+**Route by agent, not by vibe.** Use the per-agent model config to send the read-only **plan** agent to a cheap or local model and reserve a frontier model for the **build** agent. This is the cheapest reliable way to keep an autonomous loop from burning frontier tokens on exploration. It is the same principle as harness-engineering: the [agent-first methodology OpenAI documented for Codex](/notes/what-is-harness-engineering-codex-2026) lives or dies on routing and guardrails, not on raw model strength.
 
 **Sandbox the build agent.** An open agent with shell access and write permissions is a real attack surface, especially once it is pulling context from issues, PRs, or web pages an attacker can influence. I would run the build agent in a container or a disposable worktree, scope its filesystem and network, and never let it touch production credentials. The failure mode the README never warns about is not a bad diff — it is a prompt-injected agent running a command you did not write.
 
-**Cap spend per environment.** BYOK with 75 providers makes it trivially easy to point an overnight agent at a $50/M-output model and wake up to a four-figure bill. Set a hard monthly token ceiling per key and alert on drift, exactly as I argued for routing around the [Claude Fable 5 fallback and retention rules](/en/notes/claude-fable-5-developer-guide-2026).
+**Cap spend per environment.** BYOK with 75 providers makes it trivially easy to point an overnight agent at a $50/M-output model and wake up to a four-figure bill. Set a hard monthly token ceiling per key and alert on drift, exactly as I argued for routing around the [Claude Fable 5 fallback and retention rules](/notes/claude-fable-5-developer-guide-2026).
 
-This is the routing-cost-and-sandbox layer I wire in from commit one when I [build an MVP in 6 weeks](/en/services/6-week-mvp) — agent choice behind a clean interface, cost caps, and a sandbox, so swapping models or locking the agent down is a config change, not a rewrite.`,
+This is the routing-cost-and-sandbox layer I wire in from commit one when I [build an MVP in 6 weeks](/services/6-week-mvp) — agent choice behind a clean interface, cost caps, and a sandbox, so swapping models or locking the agent down is a config change, not a rewrite.`,
     },
     {
       heading: 'OpenCode FAQ',
@@ -146,11 +146,11 @@ This is the routing-cost-and-sandbox layer I wire in from commit one when I [bui
 
 So the honest 2026 answer to "which AI coding agent is best" is a routing decision, not a winner: **OpenCode** if you value openness, cost control, and model choice and will do the sandboxing yourself; **Claude Code** if you want the managed, batteries-included experience; **Cursor** if you want a GUI IDE. Most power users keep more than one installed and switch by task.
 
-If you want an AI coding workflow set up so the agent, the model, and the cost caps are all swappable and sandboxed from the first commit — instead of hard-wiring one tool and discovering the bill and the attack surface in production — that is the work I do. I ship [production MVPs in 6 weeks](/en/services/6-week-mvp) and take [founding-engineer engagements for India-based teams](/en/services/hire-founding-engineer-india) building on the current agent stack.`,
+If you want an AI coding workflow set up so the agent, the model, and the cost caps are all swappable and sandboxed from the first commit — instead of hard-wiring one tool and discovering the bill and the attack surface in production — that is the work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp) and take [founding-engineer engagements for India-based teams](/services/hire-founding-engineer-india) building on the current agent stack.`,
     },
   ],
   cta: {
     text: 'Get Your AI Coding Workflow Shipped Right in 6 Weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -17,16 +17,16 @@ No test runner is configured yet.
 
 This is a Next.js 16 App Router portfolio site for Rohit Raj (rohitraj.tech), using React 19, Tailwind CSS 4, and TypeScript.
 
-### Routing & i18n
+### Routing
 
-All pages live under `src/app/[locale]/`. The middleware (`src/middleware.ts`) redirects bare paths to a locale prefix using priority: cookie > Accept-Language header > default (`en`). Supported locales: `en`, `hi`, `fr`, `de`, `ar` (Arabic is RTL).
+The site is English-only at bare paths — pages live directly under `src/app/` (`/about`, `/notes/[slug]`, …). There is no middleware. The former locale-prefixed URLs (`/en/*`, `/hi/*`, `/fr/*`, `/de/*`, `/ar/*`) are 301-redirected to the bare path via `redirects()` in `next.config.ts` — do not reintroduce a `[locale]` segment or locale detection; it was removed deliberately to consolidate SEO signals on one URL per page.
 
-Translation dictionaries are JSON files in `content/{locale}/` with four namespaces: `common`, `home`, `pages`, `meta`. They're loaded via dynamic `import()` in `src/lib/i18n.ts`. The `getDictionary(locale)` function is called in server components and the resulting dict sections are passed as props to child components.
+Copy still lives in dictionaries: JSON files in `content/en/` with four namespaces (`common`, `home`, `pages`, `meta`), loaded via `getDictionary()` in `src/lib/i18n.ts` and passed as props to components.
 
 ### Layout hierarchy
 
-- `src/app/layout.tsx` — root layout, loads fonts (Inter, JetBrains Mono, Noto Sans Arabic), injects JSON-LD schemas
-- `src/app/[locale]/layout.tsx` — locale layout, sets `lang`/`dir` attributes, generates per-locale metadata with alternates
+- `src/app/layout.tsx` — root layout, loads fonts (Big Shoulders, Chivo, JetBrains Mono), injects JSON-LD schemas, sets metadata defaults
+- `src/app/global-error.tsx` — fatal-error boundary that renders its own `<html>`; `src/app/error.tsx` is the in-layout boundary
 
 ### Data layer
 
@@ -40,7 +40,7 @@ All content data is hardcoded in `src/data/`:
 
 - `src/lib/supabase.ts` — Supabase client for email subscriptions (has hardcoded fallback credentials)
 - `src/lib/seo-config.ts` — centralized SEO metadata, JSON-LD schema generators (Person, Service, BlogPosting, FAQ, Breadcrumb, SoftwareApplication)
-- `src/lib/i18n.ts` — locale definitions, dictionary types, dictionary loader, path helpers
+- `src/lib/i18n.ts` — dictionary types and the `getDictionary()` loader (English-only)
 
 ### Styling
 

@@ -28,7 +28,7 @@ export const kimiK27CodeVsClaudeOpusGpt2026: BlogPost = {
         },
         {
             heading: 'Kimi K2.7-Code vs Claude Opus 4.8 and GPT-5.5: Is the 1T Open Coding Model Worth It?',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **June 12, 2026**, Moonshot AI quietly pushed [**Kimi K2.7-Code** to Hugging Face](https://huggingface.co/moonshotai/Kimi-K2.7-Code) — a coding-specialised, open-weight model with **1 trillion total parameters, 32B activated per token**, and a **256K-token context window**. Within 48 hours it was the second-most-trending model on Hugging Face and on the Hacker News front page, and seven "complete guides" had already shipped. That velocity is the story as much as the model is.
 
@@ -96,9 +96,9 @@ Put it on a realistic agentic task — say **50K input + 10K output tokens** (a 
 - **Claude Opus 4.8:** (50K × $5 + 10K × $25) / 1M ≈ **$0.50**
 - **GPT-5.5:** (50K × $5 + 10K × $30) / 1M ≈ **$0.55**
 
-That's roughly **6x cheaper per task.** Run an agent 1,000 times a day and you're comparing **~$88 to ~$500+**. For a bootstrapped MVP doing batch refactors, test generation, or codebase Q&A at scale, that gap funds entire features — the same arithmetic I walked through for general models in [DeepSeek vs Claude vs GPT for India MVPs](/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026).
+That's roughly **6x cheaper per task.** Run an agent 1,000 times a day and you're comparing **~$88 to ~$500+**. For a bootstrapped MVP doing batch refactors, test generation, or codebase Q&A at scale, that gap funds entire features — the same arithmetic I walked through for general models in [DeepSeek vs Claude vs GPT for India MVPs](/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026).
 
-**The asterisk on the asterisk:** thinking mode is forced on, so K2.7-Code emits a lot of (billed-as-output) reasoning tokens. The ~30% reduction versus K2.6 helps, but a non-thinking model can still emit fewer output tokens on a simple task. The $4 output rate keeps it cheap regardless — just don't assume "fewer thinking tokens" means "few output tokens." Meter it. (If token spend is your real problem, [context compression](/en/notes/llm-context-compression-cut-token-costs-2026) compounds with the cheaper rate.)`,
+**The asterisk on the asterisk:** thinking mode is forced on, so K2.7-Code emits a lot of (billed-as-output) reasoning tokens. The ~30% reduction versus K2.6 helps, but a non-thinking model can still emit fewer output tokens on a simple task. The $4 output rate keeps it cheap regardless — just don't assume "fewer thinking tokens" means "few output tokens." Meter it. (If token spend is your real problem, [context compression](/notes/llm-context-compression-cut-token-costs-2026) compounds with the cheaper rate.)`,
         },
         {
             heading: 'How to run Kimi K2.7-Code (API and local)',
@@ -136,7 +136,7 @@ vllm serve moonshotai/Kimi-K2.7-Code \\
   --quantization int4          # native INT4 supported
 \`\`\`
 
-For a single-workstation experiment, pull a community GGUF (the \`unsloth\` quant family showed up within a day) into **Ollama** or **LM Studio** and accept the quality hit from aggressive quantization. The setup mechanics are the same ones I covered for [running DiffusionGemma locally with vLLM](/en/notes/run-diffusiongemma-locally-vllm-rtx5090-2026) — the bottleneck is always VRAM and context length, not the model code.`,
+For a single-workstation experiment, pull a community GGUF (the \`unsloth\` quant family showed up within a day) into **Ollama** or **LM Studio** and accept the quality hit from aggressive quantization. The setup mechanics are the same ones I covered for [running DiffusionGemma locally with vLLM](/notes/run-diffusiongemma-locally-vllm-rtx5090-2026) — the bottleneck is always VRAM and context length, not the model code.`,
         },
         {
             heading: 'When should you skip it and stay on Claude or GPT?',
@@ -148,7 +148,7 @@ For a single-workstation experiment, pull a community GGUF (the \`unsloth\` quan
 
 **Your bottleneck is single-shot quality, not volume.** Kimi's edge is **cost-per-task at scale.** If you make a few dozen high-stakes calls a day, the 6x savings is rounding error and the reliability gap is what you'll feel. Save Kimi for batch jobs — test generation, bulk refactors, codebase Q&A, CI agents — where volume × price dominates.
 
-**You're choosing a coding *agent*, not a *model*.** If what you actually want is the harness — the editor integration, the tool loop, the diffing — that's a different decision I broke down in [OpenCode vs Claude Code vs Cursor](/en/notes/opencode-vs-claude-code-cursor-2026). Kimi K2.7-Code is a *model* you plug into a harness; many of those harnesses already let you point them at it.`,
+**You're choosing a coding *agent*, not a *model*.** If what you actually want is the harness — the editor integration, the tool loop, the diffing — that's a different decision I broke down in [OpenCode vs Claude Code vs Cursor](/notes/opencode-vs-claude-code-cursor-2026). Kimi K2.7-Code is a *model* you plug into a harness; many of those harnesses already let you point them at it.`,
         },
         {
             heading: 'How I would ship Kimi K2.7-Code in production',
@@ -160,9 +160,9 @@ For a single-workstation experiment, pull a community GGUF (the \`unsloth\` quan
 
 **Treat self-hosted weights as infrastructure, with a real eval gate.** If you run the GGUF/vLLM build, quantization changes behavior — an INT4 local model is not the API model. Pin a **golden eval set** and re-run it on every quantization or version bump, the same way I gate any agent's behavior change. Cheap inference that silently regresses on your codebase costs more than the API ever would.
 
-**Cap and sandbox the agent regardless of model.** A coding agent with shell and file access is the same blast-radius problem whether it's Kimi or Claude behind it — scope its permissions, run it in a sandbox, and never give it unreviewed write access to main. That discipline is the whole point of [building agents securely](/en/notes/secure-mcp-server-typescript-2026), and it doesn't get cheaper just because the tokens did.
+**Cap and sandbox the agent regardless of model.** A coding agent with shell and file access is the same blast-radius problem whether it's Kimi or Claude behind it — scope its permissions, run it in a sandbox, and never give it unreviewed write access to main. That discipline is the whole point of [building agents securely](/notes/secure-mcp-server-typescript-2026), and it doesn't get cheaper just because the tokens did.
 
-This swap-behind-an-interface, two-tier-routing, eval-gated setup is exactly the plumbing I wire in from commit one when I [build an MVP in 6 weeks](/en/services/6-week-mvp) — so adopting a cheaper model (or reverting when the SWE-bench numbers disappoint) is a config change, not a rewrite.`,
+This swap-behind-an-interface, two-tier-routing, eval-gated setup is exactly the plumbing I wire in from commit one when I [build an MVP in 6 weeks](/services/6-week-mvp) — so adopting a cheaper model (or reverting when the SWE-bench numbers disappoint) is a config change, not a rewrite.`,
         },
         {
             heading: 'Kimi K2.7-Code FAQ',
@@ -184,11 +184,11 @@ This swap-behind-an-interface, two-tier-routing, eval-gated setup is exactly the
 
 So the developer takeaway isn't "switch to Kimi." It's **add it as a cheap lane.** Put it behind a provider interface, route bulk and low-stakes coding to it, keep a frontier model on the critical path, and let your own eval set — not Moonshot's charts — decide how far you push it. That's how you capture a 6x cost win without betting reliability on a model the community hasn't pressure-tested.
 
-If you want this wired into a product properly — a model-agnostic gateway, two-tier routing, eval gates, and a sandboxed agent so you can adopt (or drop) a new model as a config change — that's the work I do. I ship [production MVPs in 6 weeks](/en/services/6-week-mvp) and take [founding-engineer engagements for India-based teams](/en/services/hire-founding-engineer-india) building on the current AI stack.`,
+If you want this wired into a product properly — a model-agnostic gateway, two-tier routing, eval gates, and a sandboxed agent so you can adopt (or drop) a new model as a config change — that's the work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp) and take [founding-engineer engagements for India-based teams](/services/hire-founding-engineer-india) building on the current AI stack.`,
         },
     ],
     cta: {
         text: 'Wire a Cost-Optimized AI Coding Stack Into Your MVP in 6 Weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

@@ -28,7 +28,7 @@ export const mistralOcr4VsTextractGoogleDocumentAi2026: BlogPost = {
         },
         {
             heading: 'Mistral OCR 4 vs AWS Textract vs Google Document AI: The Cheapest Accurate Document API (2026)',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Every "best OCR API" comparison currently ranking on Google was written before yesterday. [Mistral shipped OCR 4 on June 23, 2026](https://mistral.ai/news/ocr-4/), and the pages that rank for *document OCR comparison* either benchmark only AWS Textract and Google Document AI ([braincuber's 1,000-doc test](https://www.braincuber.com/blog/aws-textract-vs-google-document-ai-ocr-comparison)) or still cite Mistral **OCR 3** numbers. That gap is the whole reason this post exists: if you are choosing an OCR engine this week, you are choosing with stale data.
 
@@ -75,7 +75,7 @@ for page in resp.pages:
             send_to_human_review(block)   # don't silently index garbage
 \`\`\`
 
-The unlock here is \`block.confidence\`. In OCR 3 (and in Textract's basic path) you got text with no signal about *how sure the model was*, so a smudged scan and a crisp PDF looked identical downstream. With OCR 4 you can route anything under a threshold to human review and only index what cleared it — which is the difference between a RAG system that quietly answers from corrupted text and one that flags its own blind spots. The full request/response shape lives in the [OCR endpoint docs](https://docs.mistral.ai/api/endpoint/ocr) and the [document-processing guide](https://docs.mistral.ai/studio-api/document-processing/basic_ocr). If you'd rather not write code, the same engine is exposed no-code through Document AI in Mistral Studio. For teams already building agent tooling, this slots in cleanly alongside an [MCP server](/en/notes/mcp-server-authentication-oauth-guide-2026) as a document-ingestion tool.`,
+The unlock here is \`block.confidence\`. In OCR 3 (and in Textract's basic path) you got text with no signal about *how sure the model was*, so a smudged scan and a crisp PDF looked identical downstream. With OCR 4 you can route anything under a threshold to human review and only index what cleared it — which is the difference between a RAG system that quietly answers from corrupted text and one that flags its own blind spots. The full request/response shape lives in the [OCR endpoint docs](https://docs.mistral.ai/api/endpoint/ocr) and the [document-processing guide](https://docs.mistral.ai/studio-api/document-processing/basic_ocr). If you'd rather not write code, the same engine is exposed no-code through Document AI in Mistral Studio. For teams already building agent tooling, this slots in cleanly alongside an [MCP server](/notes/mcp-server-authentication-oauth-guide-2026) as a document-ingestion tool.`,
         },
         {
             heading: 'Is Mistral OCR 4 more accurate than Textract and Document AI?',
@@ -91,7 +91,7 @@ Where the picture gets messy is **handwriting and niche document types**. In one
 
 **Mistral OCR 4** is **$4 per 1,000 pages** on the standard API, **$2 per 1,000 in batch** (a 50% discount), and **$5 per 1,000** through the higher-level Document AI mode ([official pricing](https://mistral.ai/news/ocr-4/)). **AWS Textract** is the outlier: **$1.50 per 1,000 pages** for basic \`DetectDocumentText\`, but **$65 per 1,000 pages** the moment you turn on \`AnalyzeDocument\` forms-and-tables — the feature most real document work needs. **Google Document AI** ranges **$1.50 to $30 per 1,000** depending on processor, with form parsers and custom extractors at the top. **Azure Document Intelligence** sits around **$10 per 1,000** for prebuilt models ([AI:PRODUCTIVITY breakdown](https://aiproductivity.ai/blog/document-ai-cost-comparison/)).
 
-Put it in dollars. Processing **50,000 invoices a month** on Textract's forms pricing costs about **$3,250/month** ($65 × 50). The same volume on Mistral OCR 4 batch is **$100/month** ($2 × 50) — a **97% cut**. That single number is why cost-sensitive, high-volume pipelines are the clearest win for Mistral. The same logic drives a lot of my [LLM cost-cutting work](/en/notes/llm-context-compression-cut-token-costs-2026): the model is rarely the expensive part of a document pipeline — the per-page extraction tax, multiplied across millions of pages, is.`,
+Put it in dollars. Processing **50,000 invoices a month** on Textract's forms pricing costs about **$3,250/month** ($65 × 50). The same volume on Mistral OCR 4 batch is **$100/month** ($2 × 50) — a **97% cut**. That single number is why cost-sensitive, high-volume pipelines are the clearest win for Mistral. The same logic drives a lot of my [LLM cost-cutting work](/notes/llm-context-compression-cut-token-costs-2026): the model is rarely the expensive part of a document pipeline — the per-page extraction tax, multiplied across millions of pages, is.`,
         },
         {
             heading: 'Side-by-side: the numbers that matter',
@@ -125,23 +125,23 @@ Read it honestly: Textract's $1.50 basic tier is cheapest *if you only need plai
         },
         {
             heading: 'How would I wire Mistral OCR 4 into a RAG pipeline in production?',
-            content: `Here's the integration the README won't write for you — the wiring I'd actually ship, drawn from building document-heavy features for [myFinancial](/en/notes/razorpay-vs-stripe-india-mvp-2026) and client RAG systems.
+            content: `Here's the integration the README won't write for you — the wiring I'd actually ship, drawn from building document-heavy features for [myFinancial](/notes/razorpay-vs-stripe-india-mvp-2026) and client RAG systems.
 
 **Ingestion path:** documents land in object storage, a queue worker calls \`mistral-ocr-latest\` in **batch mode** (half the price, and ingestion is rarely latency-sensitive), and the returned \`page.markdown\` flows straight into the chunker. Markdown output is the quiet win here — clean headings and tables mean your chunk boundaries respect document structure instead of slicing mid-table. That single property does more for RAG answer quality than swapping embedding models.
 
 **The confidence gate is non-negotiable.** Every block under ~0.70 confidence gets routed to a review queue, never silently indexed. This is the failure mode I worry about most: an OCR error doesn't throw an exception, it produces *plausible wrong text*, and your RAG system will cheerfully cite it. The per-word confidence scores in OCR 4 are the first time you can build that gate without a second model.
 
-**Keep a fallback provider behind a flag.** I'd wire OCR behind a thin interface with Mistral as the default and Document AI as the fallback for documents Mistral flags as low-confidence — Google's edge on degraded scans makes it a good safety net. And for any data-sovereignty client, the **self-hosted single container** is the headline feature: documents never leave their VPC, which is the kind of requirement that kills a Textract deal before it starts. If you're choosing a stack for a brand-new product, the same provider-agnostic-with-fallback pattern is what I bake into every [6-week MVP](/en/services/6-week-mvp) so a vendor price hike or outage is a config change, not a rewrite.`,
+**Keep a fallback provider behind a flag.** I'd wire OCR behind a thin interface with Mistral as the default and Document AI as the fallback for documents Mistral flags as low-confidence — Google's edge on degraded scans makes it a good safety net. And for any data-sovereignty client, the **self-hosted single container** is the headline feature: documents never leave their VPC, which is the kind of requirement that kills a Textract deal before it starts. If you're choosing a stack for a brand-new product, the same provider-agnostic-with-fallback pattern is what I bake into every [6-week MVP](/services/6-week-mvp) so a vendor price hike or outage is a config change, not a rewrite.`,
         },
         {
             heading: 'The bottom line: which OCR API should you pick in 2026?',
             content: `If you're starting fresh, are cost- or volume-sensitive, or process multilingual documents, **Mistral OCR 4 is the new default** — it leads OlmOCRBench (85.20), covers 170 languages, adds confidence scores you can actually gate on, and costs $2–$4 per 1,000 pages against Textract's $65 for the same forms work. If you're already living inside AWS or GCP, the ecosystem glue of Textract or Document AI usually outweighs the per-page savings. And if your documents are handwritten, layout-heavy, or headed for a regulated launch this quarter, benchmark on your own data and lean on the mature incumbents.
 
-The deeper point: OCR is finally cheap enough and accurate enough that it should stop being the thing that caps your document-AI accuracy. The smart move isn't picking one engine forever — it's wiring the OCR layer behind an interface so you can swap providers as prices and benchmarks shift (and in 2026, they shift monthly). If you want a hand building a document-AI or RAG pipeline that won't fall over on the first weird PDF, that's exactly the kind of [founding-engineer work](/en/services/hire-founding-engineer-india) I do — I've shipped the unglamorous extraction layer enough times to know where it breaks.`,
+The deeper point: OCR is finally cheap enough and accurate enough that it should stop being the thing that caps your document-AI accuracy. The smart move isn't picking one engine forever — it's wiring the OCR layer behind an interface so you can swap providers as prices and benchmarks shift (and in 2026, they shift monthly). If you want a hand building a document-AI or RAG pipeline that won't fall over on the first weird PDF, that's exactly the kind of [founding-engineer work](/services/hire-founding-engineer-india) I do — I've shipped the unglamorous extraction layer enough times to know where it breaks.`,
         },
     ],
     cta: {
         text: 'Building a document-AI or RAG pipeline? Let\'s ship it in 6 weeks.',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

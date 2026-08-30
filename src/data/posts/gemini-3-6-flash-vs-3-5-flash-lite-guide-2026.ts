@@ -28,13 +28,13 @@ export const gemini36FlashVs35FlashLiteGuide2026: BlogPost = {
     },
     {
       heading: 'Gemini 3.6 Flash vs 3.5 Flash-Lite: What Google Actually Shipped',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **July 21, 2026**, Google released three models at once: **Gemini 3.6 Flash**, **Gemini 3.5 Flash-Lite**, and **Gemini 3.5 Flash Cyber** ([official announcement](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/)). The Hacker News thread crossed 740 points within a day, and most of the coverage read the headline benchmarks and stopped.
 
 The one capability change worth your attention is not a benchmark — it is **throughput economics**. [Artificial Analysis measured](https://artificialanalysis.ai/articles/gemini-3-6-flash-3-5-flash-lite-halving-time) 3.6 Flash at the **same Intelligence Index (50) as its predecessor**, but completing their benchmark tasks in **1.3 minutes instead of 2.7** — a >50% wall-clock cut — at **$0.50 per task instead of $0.59**. Same brain, half the wait, smaller bill.
 
-Why this matters now: if you run agentic loops or batch pipelines on 3.5 Flash, this is a drop-in upgrade that pays for itself the day you change one model string. But the Flash-Lite side of the release cuts the other way — its per-task cost **more than doubled** ($0.04 → $0.09) — and that gotcha is buried under the launch confetti. This post is the tier decision made explicit, the same way I broke down [GPT-5.6's Sol vs Terra vs Luna split](/en/notes/gpt-5-6-sol-terra-luna-api-guide-2026) two weeks ago.`,
+Why this matters now: if you run agentic loops or batch pipelines on 3.5 Flash, this is a drop-in upgrade that pays for itself the day you change one model string. But the Flash-Lite side of the release cuts the other way — its per-task cost **more than doubled** ($0.04 → $0.09) — and that gotcha is buried under the launch confetti. This post is the tier decision made explicit, the same way I broke down [GPT-5.6's Sol vs Terra vs Luna split](/notes/gpt-5-6-sol-terra-luna-api-guide-2026) two weeks ago.`,
     },
     {
       heading: "What's Actually New in Gemini 3.6 Flash?",
@@ -65,7 +65,7 @@ Google positions 3.6 Flash as the "workhorse" — built from developer feedback 
 
 And Flash-Lite vs its predecessor (3.1 Flash-Lite): **Terminal-Bench 2.1 jumped 31% → 54%**, GDM-MRCR v2 (long-context recall) 60.1% → 72.2%, GDPval-AA v2 641 → 1140, and the Intelligence Index rose **25 → 36** — while holding **350 output tokens/second**, per [Artificial Analysis](https://artificialanalysis.ai/articles/gemini-3-6-flash-3-5-flash-lite-halving-time).
 
-Read the table honestly and the pattern is clear: **the gains cluster in agentic, multi-step work** (DeepSWE +12 pts, MLE Bench +14.2), while the general-intelligence score is flat. That is the opposite of a marketing-driven release — it is an engineering release aimed at the loops developers actually run. For context, Artificial Analysis still places Flash-Lite's Index of 36 **behind DeepSeek V4 Flash (40)** and Nemotron 3 Ultra (38), though ahead of Mistral Medium 3.5 (30) — so if raw smarts-per-dollar in the budget tier is your only axis, the [DeepSeek V4 migration path](/en/notes/deepseek-v4-api-migration-guide-2026) is still worth a look.`,
+Read the table honestly and the pattern is clear: **the gains cluster in agentic, multi-step work** (DeepSWE +12 pts, MLE Bench +14.2), while the general-intelligence score is flat. That is the opposite of a marketing-driven release — it is an engineering release aimed at the loops developers actually run. For context, Artificial Analysis still places Flash-Lite's Index of 36 **behind DeepSeek V4 Flash (40)** and Nemotron 3 Ultra (38), though ahead of Mistral Medium 3.5 (30) — so if raw smarts-per-dollar in the budget tier is your only axis, the [DeepSeek V4 migration path](/notes/deepseek-v4-api-migration-guide-2026) is still worth a look.`,
     },
     {
       heading: 'How Much Do They Really Cost Per Task?',
@@ -83,7 +83,7 @@ Concrete example — a nightly classification job pushing 10M input / 2M output 
 | Output | 2 × $1.50 = $3.00 | 2 × $2.50 = $5.00 |
 | **Total / night** | **$5.50** | **$8.00 (+45%)** |
 
-Is +45% worth an 11-point Intelligence Index jump and a Terminal-Bench score that went from 31% to 54%? For extraction and routing pipelines that were already accurate enough — **no**. For pipelines where you were paying for a retry-and-verify pass to paper over Lite's mistakes, probably yes: killing a 20%-rate retry loop saves more than the hike costs. Run your own numbers before migrating; the [token-cost compression playbook](/en/notes/llm-context-compression-cut-token-costs-2026) stacks on top of either choice.`,
+Is +45% worth an 11-point Intelligence Index jump and a Terminal-Bench score that went from 31% to 54%? For extraction and routing pipelines that were already accurate enough — **no**. For pipelines where you were paying for a retry-and-verify pass to paper over Lite's mistakes, probably yes: killing a 20%-rate retry loop saves more than the hike costs. Run your own numbers before migrating; the [token-cost compression playbook](/notes/llm-context-compression-cut-token-costs-2026) stacks on top of either choice.`,
     },
     {
       heading: 'How Do You Migrate? (Hands-On)',
@@ -142,9 +142,9 @@ Three things to verify in staging before you flip production:
 | **Stay on 3.5 Flash** | It clears your quality bar and you touch the integration rarely | Anything in maintenance mode (but note: same input price, higher output price — staying saves nothing) |
 | **Look outside Gemini** | Budget-tier smarts-per-dollar is the only axis | DeepSeek V4 Flash (AA Index 40) undercuts Flash-Lite's 36 |
 
-The trap mirrors the one in [OpenAI's tier split](/en/notes/gpt-5-6-sol-terra-luna-api-guide-2026): defaulting to the biggest model "to be safe." A support-ticket router does not get more correct because you gave it medium thinking on a workhorse model. But Gemini's version of the trap is inverted too — **defaulting to Flash-Lite "because it's the cheap one" is now also wrong**, because it is 67% less cheap on output than the model it replaced. There is no safe default in this lineup; there is only the per-task math from the previous section.
+The trap mirrors the one in [OpenAI's tier split](/notes/gpt-5-6-sol-terra-luna-api-guide-2026): defaulting to the biggest model "to be safe." A support-ticket router does not get more correct because you gave it medium thinking on a workhorse model. But Gemini's version of the trap is inverted too — **defaulting to Flash-Lite "because it's the cheap one" is now also wrong**, because it is 67% less cheap on output than the model it replaced. There is no safe default in this lineup; there is only the per-task math from the previous section.
 
-Cross-vendor, the calculus from my [OpenAI vs Claude vs Gemini API cost comparison](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026) still holds: Gemini Flash remains the strongest price-per-capability tier for multimodal and long-context work, and 3.6 Flash widens that lead on agentic tasks specifically.`,
+Cross-vendor, the calculus from my [OpenAI vs Claude vs Gemini API cost comparison](/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026) still holds: Gemini Flash remains the strongest price-per-capability tier for multimodal and long-context work, and 3.6 Flash widens that lead on agentic tasks specifically.`,
     },
     {
       heading: 'What About Gemini 3.5 Flash Cyber — and When to Skip All This?',
@@ -160,7 +160,7 @@ Cross-vendor, the calculus from my [OpenAI vs Claude vs Gemini API cost comparis
     },
     {
       heading: "How I'd Ship This in Production",
-      content: `Here is the wiring I'd actually deploy, from running similar model migrations on [MyFinancial](/en/projects/myfinancial)'s content pipelines and freelance client backends:
+      content: `Here is the wiring I'd actually deploy, from running similar model migrations on [MyFinancial](/projects/myfinancial)'s content pipelines and freelance client backends:
 
 **Route by task shape, not by model loyalty.** Two env-var-configured model slots — \`MODEL_AGENTIC=gemini-3.6-flash\`, \`MODEL_BULK=gemini-3.5-flash-lite\` — and every call site declares which lane it is in. When the next Flash drops (Google teased Gemini 4 the same week, per [9to5Google](https://9to5google.com/2026/07/21/gemini-3-6-flash-launch/)), the migration is a config change, not a code hunt.
 
@@ -174,11 +174,11 @@ The pattern behind all three: **treat model choice as a routing problem with a f
       heading: 'Need This Integrated Without the Fine Print Biting You?',
       content: `The README version of this migration is one changed string. The production version is thinking-level tuning per call site, token-usage canaries, a re-priced batch tier, and a validation gate for the day the efficiency tuning gets too confident — the parts that don't show up until week two.
 
-That is the kind of integration work I do for a living: AI-heavy MVPs shipped in six weeks, with the model routing, cost telemetry, and fallback chains wired in from day one — not bolted on after the first surprise invoice. If you're building on Gemini, GPT, or Claude and want it production-grade from the start, see the [6-week MVP sprint](/en/services/6-week-mvp) or bring me in as a [founding engineer](/en/services/hire-founding-engineer-india).`,
+That is the kind of integration work I do for a living: AI-heavy MVPs shipped in six weeks, with the model routing, cost telemetry, and fallback chains wired in from day one — not bolted on after the first surprise invoice. If you're building on Gemini, GPT, or Claude and want it production-grade from the start, see the [6-week MVP sprint](/services/6-week-mvp) or bring me in as a [founding engineer](/services/hire-founding-engineer-india).`,
     },
   ],
   cta: {
     text: 'Ship your AI MVP in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -29,7 +29,7 @@ export const tencentdbAgentMemoryTeamHubReview2026: BlogPost = {
     },
     {
       heading: 'Tencent Just Productized the Memory Stack I Hand-Roll Every Day',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For the past year my daily setup has been a hand-rolled version of exactly this product: a tree-sitter code graph served over MCP for structural code questions, a Karpathy-style LLM wiki for project knowledge, a skills directory for reusable workflows, and per-project memory files for preferences and decisions. It works — and every part of it is duct tape. Nothing syncs across machines, nothing has access control, and when a memory goes stale I find out the hard way, mid-task.
 
@@ -75,7 +75,7 @@ Two hands-on cautions from someone who runs the equivalent stack. First, **memor
 
 **2. Long-horizon client work across sessions.** The PersonaMem number (**48% → 76%**) is about remembering *user-specific* facts across weeks of sessions. In client-project terms: which client prefers Tailwind over CSS modules, which insists on staging deploys before Friday, which decision was reversed in March. My memory files do this today at single-digit scale; they fall over at team scale because there's no conflict resolution — the hub's layered distillation (raw → persona) plus ownership scoping is the structural fix.
 
-**3. Token economics on agent-heavy CI.** If you run agents in automation — nightly triage, scheduled content pipelines, autonomous fix loops — the **−61.38% token reduction** claim is the difference between a viable and a silly cloud bill. Symbolic short-term memory (Mermaid-condensed tool logs) attacks exactly the log-dump bloat that makes long agent runs expensive. My own scheduled pipelines re-derive project state every run; a persistent, queryable memory of "what happened last run" is the obvious upgrade, and it's what I'd [build into any agent-heavy MVP](/en/services/6-week-mvp) from day one now.
+**3. Token economics on agent-heavy CI.** If you run agents in automation — nightly triage, scheduled content pipelines, autonomous fix loops — the **−61.38% token reduction** claim is the difference between a viable and a silly cloud bill. Symbolic short-term memory (Mermaid-condensed tool logs) attacks exactly the log-dump bloat that makes long agent runs expensive. My own scheduled pipelines re-derive project state every run; a persistent, queryable memory of "what happened last run" is the obvious upgrade, and it's what I'd [build into any agent-heavy MVP](/services/6-week-mvp) from day one now.
 
 The pattern across all three: the hub wins where memory needs to **outlive one person, one session, or one framework**. If your memory problem lives inside a single user's chat history, you're holding the wrong tool.`,
     },
@@ -107,7 +107,7 @@ The decision rule I'd give a team evaluating this week: **Mem0** if you're addin
     },
     {
       heading: "How I'd Ship This in Production",
-      content: `The wiring the README doesn't cover — the same checklist I apply to [production agent builds](/en/services/hire-founding-engineer-india):
+      content: `The wiring the README doesn't cover — the same checklist I apply to [production agent builds](/services/hire-founding-engineer-india):
 
 **Gate the promote path, not the capture path.** Let agents capture candidate memories freely (that's cheap and private-by-default), but make private → team-shared a human action in the Hub panel, ideally by a designated curator per asset type. This single rule converts the trust-gap critique from "fatal flaw" into "manageable review queue." Budget ~15 minutes per developer per week; the payoff is that shared memory stays load-bearing.
 
@@ -125,14 +125,14 @@ The failure mode I'd watch hardest: **memory poisoning at team scale**. One conf
       heading: 'Wiring Agent Memory Into a Real Product?',
       content: `A team memory hub is infrastructure — the product is what your agents *do* with the compounding context. If you're building an AI-heavy MVP and want the agent architecture (memory, tooling, governance) done right the first time instead of retrofitted after the third incident, that's exactly what I ship: a working product in six weeks, with the boring-but-critical wiring — secrets hygiene, review gates, restore-tested state — included rather than discovered.
 
-- [6-Week MVP Development](/en/services/6-week-mvp) — scope to shipped product, agent infrastructure included
-- [Hire a Founding Engineer (India)](/en/services/hire-founding-engineer-india) — senior product engineering, 10+ years, AI-native stack
+- [6-Week MVP Development](/services/6-week-mvp) — scope to shipped product, agent infrastructure included
+- [Hire a Founding Engineer (India)](/services/hire-founding-engineer-india) — senior product engineering, 10+ years, AI-native stack
 
 Or start smaller: run \`./start-all.sh\` on a spare box this weekend, import one codebase, and see what your agents stop re-learning.`,
     },
   ],
   cta: {
     text: 'Ship your AI MVP in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -19,7 +19,7 @@ export const buildingMultilanguageReactNativeAppExpo: BlogPost = {
     },
 {
       heading: 'The Problem: 5 Apps Where 1 Should Exist',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Building a multi-language React Native app with Expo SDK 52 requires separating UI i18n (using react-i18next for ~80 string keys) from content i18n (inline translations embedded directly in JSON data files). This approach, combined with bundled JSON for offline text and expo-av for streamed audio, lets you ship a 5-language app under 15MB with zero backend costs and full offline support on day one.
 
@@ -177,9 +177,9 @@ Key trade-offs:
 
 The app is live on [Google Play](https://play.google.com/store/apps/details?id=com.sanatandevotional.app). If you're building a content-heavy React Native app with offline-first requirements, the JSON + streaming architecture works well. The total cost of running SanatanApp is $0/month — no servers, no databases, no CDN bills.
 
-For founders reading this and wondering about delivery, the two ways I work are a [mobile app development](/en/services/mobile-app-development) and a [6-week MVP sprint](/en/services/6-week-mvp).
+For founders reading this and wondering about delivery, the two ways I work are a [mobile app development](/services/mobile-app-development) and a [6-week MVP sprint](/services/6-week-mvp).
 
-I've written the deeper version of this argument in [Streaming Audio in React Native: expo-av with Public Domain Sources](/en/notes/expo-av-audio-streaming-react-native) and the contrarian counter-take in [Building an Offline-First Trip Planner with React Native + WatermelonDB +…](/en/notes/build-offline-first-trip-planner-react-native-watermelondb).`
+I've written the deeper version of this argument in [Streaming Audio in React Native: expo-av with Public Domain Sources](/notes/expo-av-audio-streaming-react-native) and the contrarian counter-take in [Building an Offline-First Trip Planner with React Native + WatermelonDB +…](/notes/build-offline-first-trip-planner-react-native-watermelondb).`
     },
     {
       heading: 'Frequently Asked Questions',

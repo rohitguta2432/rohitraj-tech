@@ -22,7 +22,7 @@ These numbers don't apply if you need a 5+ person team, formal SLAs, or HIPAA/SO
     },
     {
       heading: 'How Much Does It Really Cost to Build a Mobile App in India?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Building a mobile app in India costs between $3,000 and $30,000 when you hire a senior freelance developer directly — far less than the $50,000-$500,000 agencies quote. A simple utility app runs $3,000-$6,000, an MVP with auth and database costs $7,000-$12,000, and a complex app with AI, payments, and real-time features ranges from $12,000-$30,000. The key is cutting out agency overhead.
 
@@ -101,7 +101,7 @@ The difference isn't skill — it's overhead. Agencies pay for offices, sales te
 **Database:** PostgreSQL, Redis, SQLite — from simple CRUD to vector search
 **DevOps:** Docker, AWS, Vercel — CI/CD, deployment, monitoring
 
-Every project in my portfolio at [rohitraj.tech/projects](https://rohitraj.tech/en/projects) is something I built end-to-end — from database schema to Play Store submission.
+Every project in my portfolio at [rohitraj.tech/projects](https://rohitraj.tech/projects) is something I built end-to-end — from database schema to Play Store submission.
 
 If you have an app idea and want honest estimates, reach out. I don't do sales calls — I do architecture discussions.`
     },
@@ -323,9 +323,9 @@ The quote should include:
 
 **Red flag:** If a developer sends you a one-line quote like "₹5,00,000 for the app" with no breakdown — run. You're either going to get a low-quality product or a long list of "extras" that weren't included.
 
-On most of my client engagements this comes up as either a [founding engineer in India](/en/services/hire-founding-engineer-india) or a [mobile app development](/en/services/mobile-app-development) — either path leads to a working production build inside a quarter.
+On most of my client engagements this comes up as either a [founding engineer in India](/services/hire-founding-engineer-india) or a [mobile app development](/services/mobile-app-development) — either path leads to a working production build inside a quarter.
 
-Adjacent reads: [How to Build a SaaS MVP in 2026](/en/notes/how-to-build-saas-mvp-2026) for the stack-level decision, [How to Add AI to Your Existing Business App](/en/notes/how-to-integrate-ai-existing-business-app) for the hiring-level one.`
+Adjacent reads: [How to Build a SaaS MVP in 2026](/notes/how-to-build-saas-mvp-2026) for the stack-level decision, [How to Add AI to Your Existing Business App](/notes/how-to-integrate-ai-existing-business-app) for the hiring-level one.`
     },
     {
       heading: 'Frequently Asked Questions',

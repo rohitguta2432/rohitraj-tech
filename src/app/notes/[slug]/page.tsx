@@ -1,0 +1,563 @@
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import AuthorBio from "@/components/AuthorBio";
+import { blogPosts } from "@/data/blog-posts";
+import { getDictionary } from "@/lib/i18n";
+import { createPageMetadata, generateBlogPostingSchema, generateBreadcrumbSchema, generateFAQSchema, generateTechArticleSchema, extractFAQsFromSections, SITE_CONFIG } from "@/lib/seo-config";
+import type { Metadata } from "next";
+
+const LOCALE_PREFIX_RE = /^\/(en|hi|fr|de|ar)\//;
+const stripLocalePrefix = (path: string) => path.replace(LOCALE_PREFIX_RE, '/');
+
+interface BlogPostPageProps {
+    params: Promise<{ slug: string }>;
+}
+
+// Prerender only the primary locale at build time. Post bodies are English for
+// every locale, so prerendering hi/fr/de/ar multiplied the build output 5x
+// (~320 MB) and blew past AWS Amplify's 220 MB deploy-bundle limit. Other
+// locales still resolve — Next renders them on first request and caches the
+// result (dynamicParams defaults to true).
+export async function generateStaticParams() {
+    return blogPosts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const post = blogPosts.find((p) => p.slug === slug);
+
+    if (!post) {
+        return { title: "Post Not Found | Rohit Raj" };
+    }
+
+    return {
+        ...createPageMetadata(
+            `${post.title} | Rohit Raj`,
+            post.excerpt,
+            `/notes/${slug}`,
+            {
+                // Pass per-post cover image so social cards (Twitter/LinkedIn/FB) render the
+                // post-specific visual instead of the generic site OG image.
+                image: post.coverImage,
+                // The body still shows the full excerpt; meta description is the trimmed
+                // SERP-display version (≤158 chars) so Google doesn't truncate mid-sentence.
+                // createPageMetadata handles the truncation internally.
+                // Post bodies are English in every locale, so non-en URLs canonicalise
+                // to /en and emit no hreflang cluster.
+                translated: false,
+            }
+        ),
+        keywords: post.keywords,
+    };
+}
+
+// Simple Markdown Renderer — handles **bold**, `code`, and [text](url) links
+function renderInline(text: string, keyPrefix: string) {
+    const parts = text.split(/(\*\*.*?\*\*|`.*?`|\[[^\]]+\]\([^)]+\))/g);
+    return parts.map((p, k) => {
+        if (p.startsWith('**') && p.endsWith('**')) {
+            return <strong key={`${keyPrefix}-${k}`} style={{ color: 'var(--text-primary)' }}>{p.slice(2, -2)}</strong>;
+        }
+        if (p.startsWith('`') && p.endsWith('`')) {
+            return <code key={`${keyPrefix}-${k}`} style={{
+                backgroundColor: 'var(--bg-secondary)',
+                padding: '0.1rem 0.3rem',
+                borderRadius: '4px',
+                fontSize: '0.9em',
+                fontFamily: 'var(--font-mono)',
+                color: 'var(--text-primary)'
+            }}>{p.slice(1, -1)}</code>;
+        }
+        const linkMatch = p.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+        if (linkMatch) {
+            const [, label, href] = linkMatch;
+            const isExternal = /^https?:\/\//.test(href);
+            return (
+                <a
+                    key={`${keyPrefix}-${k}`}
+                    href={href}
+                    {...(isExternal ? { target: '_blank', rel: 'noopener nofollow' } : {})}
+                    style={{
+                        color: 'var(--accent)',
+                        textDecoration: 'underline',
+                        textUnderlineOffset: '2px',
+                    }}
+                >
+                    {label}
+                </a>
+            );
+        }
+        return p;
+    });
+}
+
+function renderMarkdown(content: string) {
+    const segments = [];
+    let lastIndex = 0;
+    // Match code blocks: ```lang ... ```
+    const codeRegex = /```(\w+)?\n([\s\S]*?)```/g;
+    let match;
+
+    while ((match = codeRegex.exec(content)) !== null) {
+        // Add text before code
+        if (match.index > lastIndex) {
+            segments.push({ type: 'text', content: content.slice(lastIndex, match.index) });
+        }
+        // Add code block
+        segments.push({
+            type: 'code',
+            lang: match[1] || 'text',
+            content: match[2].trim() // Trim extra newlines
+        });
+        lastIndex = codeRegex.lastIndex;
+    }
+    // Add remaining text
+    if (lastIndex < content.length) {
+        segments.push({ type: 'text', content: content.slice(lastIndex) });
+    }
+
+    return segments.map((segment, i) => {
+        if (segment.type === 'code') {
+            return (
+                <div key={i} style={{
+                    margin: '1.5rem 0',
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    backgroundColor: '#1e1e1e', // Dark theme for code
+                    border: '1px solid #333',
+                }}>
+                    <div style={{
+                        padding: '0.5rem 1rem',
+                        backgroundColor: '#252526',
+                        borderBottom: '1px solid #333',
+                        color: '#9cdcfe',
+                        fontSize: '0.8rem',
+                        fontFamily: 'var(--font-mono)',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center'
+                    }}>
+                        <span>{segment.lang}</span>
+                    </div>
+                    <pre style={{
+                        margin: 0,
+                        padding: '1rem',
+                        overflowX: 'auto',
+                        color: '#d4d4d4',
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.9rem',
+                        lineHeight: 1.5,
+                    }}>
+                        <code>{segment.content}</code>
+                    </pre>
+                </div>
+            );
+        } else {
+            // Process text formatting (bold, paragraphs, lists)
+            const textParts = segment.content.split('\n\n'); // Split paragraphs
+            return (
+                <div key={i}>
+                    {textParts.map((part, j) => {
+                        if (!part.trim()) return null;
+
+                        // Check for tables
+                        if (part.trim().startsWith('|') && part.trim().endsWith('|')) {
+                            const rows = part.trim().split('\n').filter(line => line.trim());
+                            // Filter out separator row (|---|---|)
+                            const dataRows = rows.filter(row => !/^\|?[\s\-:|]+\|?$/.test(row.trim()) || !/[\-:]/.test(row));
+                            if (dataRows.length >= 1) {
+                                const headerCells = dataRows[0].split('|').filter(c => c.trim()).map(c => c.trim());
+                                const bodyRows = dataRows.slice(1);
+                                return (
+                                    <div key={j} style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
+                                        <table style={{
+                                            width: '100%',
+                                            borderCollapse: 'collapse',
+                                            fontSize: '0.95rem',
+                                            lineHeight: 1.6,
+                                        }}>
+                                            <thead>
+                                                <tr>
+                                                    {headerCells.map((cell, ci) => (
+                                                        <th key={ci} style={{
+                                                            textAlign: 'left',
+                                                            padding: '0.75rem 1rem',
+                                                            backgroundColor: 'var(--bg-secondary)',
+                                                            borderBottom: '2px solid var(--border)',
+                                                            color: 'var(--text-primary)',
+                                                            fontWeight: 600,
+                                                            fontSize: '0.8rem',
+                                                            textTransform: 'uppercase',
+                                                            letterSpacing: '0.05em',
+                                                            whiteSpace: 'nowrap',
+                                                        }}>{renderInline(cell, `h-${j}-${ci}`)}</th>
+                                                    ))}
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {bodyRows.map((row, ri) => {
+                                                    const cells = row.split('|').filter(c => c.trim()).map(c => c.trim());
+                                                    return (
+                                                        <tr key={ri} style={{
+                                                            backgroundColor: ri % 2 === 1 ? 'var(--bg-secondary)' : 'transparent',
+                                                        }}>
+                                                            {cells.map((cell, ci) => (
+                                                                <td key={ci} style={{
+                                                                    padding: '0.7rem 1rem',
+                                                                    borderBottom: '1px solid var(--border)',
+                                                                    color: 'var(--text-primary)',
+                                                                    fontSize: '0.95rem',
+                                                                }}>{renderInline(cell, `c-${j}-${ri}-${ci}`)}</td>
+                                                            ))}
+                                                        </tr>
+                                                    );
+                                                })}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                );
+                            }
+                        }
+
+                        // Check for lists
+                        if (part.trim().startsWith('- ') || part.trim().match(/^\d+\. /)) {
+                            const listItems = part.trim().split('\n').filter(line => line.trim());
+                            const isOrdered = listItems[0].match(/^\d+\. /);
+                            const ListTag = isOrdered ? 'ol' : 'ul';
+
+                            return (
+                                <ListTag key={j} style={{
+                                    paddingLeft: '1.5rem',
+                                    marginBottom: '1.5rem',
+                                    color: 'var(--text-secondary)',
+                                    lineHeight: 1.65,
+                                }}>
+                                    {listItems.map((item, k) => {
+                                        const cleanItem = item.replace(/^(\- |\d+\. )/, '');
+                                        return (
+                                            <li key={k} style={{ marginBottom: '0.3rem' }}>
+                                                {renderInline(cleanItem, `li-${j}-${k}`)}
+                                            </li>
+                                        );
+                                    })}
+                                </ListTag>
+                            );
+                        }
+
+                        return (
+                            <p key={j} style={{
+                                marginBottom: '1.5rem',
+                                lineHeight: 1.8,
+                                color: 'var(--text-secondary)',
+                                fontSize: '1.05rem'
+                            }}>
+                                {renderInline(part, `p-${j}`)}
+                            </p>
+                        );
+                    })}
+                </div>
+            );
+        }
+    });
+}
+
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+    const { slug } = await params;
+
+
+    const post = blogPosts.find((p) => p.slug === slug);
+    if (!post) notFound();
+
+    const dict = await getDictionary();
+
+    const otherPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
+
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: `${SITE_CONFIG.url}` },
+        { name: 'Notes', url: `${SITE_CONFIG.url}/notes` },
+        { name: post.title, url: `${SITE_CONFIG.url}/notes/${post.slug}` },
+    ]);
+
+    const faqs = extractFAQsFromSections(post.sections);
+    const faqSchemaJson = faqs.length > 0 ? JSON.stringify(generateFAQSchema(faqs)) : null;
+    const blogPostingJson = JSON.stringify(generateBlogPostingSchema(post));
+    const breadcrumbJson = JSON.stringify(breadcrumbSchema);
+    const techArticleJson = JSON.stringify(generateTechArticleSchema({
+        headline: post.title,
+        description: post.excerpt,
+        path: `/notes/${post.slug}`,
+        datePublished: post.date,
+        dateModified: post.updated,
+        keywords: post.keywords,
+        proficiencyLevel: 'Expert',
+        image: post.coverImage,
+    }));
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: breadcrumbJson }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: blogPostingJson }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: techArticleJson }}
+            />
+            {faqSchemaJson && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: faqSchemaJson }}
+                />
+            )}
+            <Header dict={dict.common} />
+            <main id="main" style={{ maxWidth: '920px', margin: '0 auto', padding: '3rem 1.5rem' }}>
+                {/* Article Header */}
+                <header style={{ marginBottom: '3rem' }}>
+                    <Link
+                        href={`/notes`}
+                        style={{
+                            fontSize: '0.85rem',
+                            color: 'var(--text-muted)',
+                            textDecoration: 'none',
+                            display: 'inline-block',
+                            marginBottom: '1.5rem'
+                        }}
+                    >
+                        ← Back to Notes
+                    </Link>
+                    <h1 style={{
+                        fontSize: '2.25rem',
+                        fontWeight: 700,
+                        lineHeight: 1.25,
+                        marginBottom: '1rem',
+                        color: 'var(--text-primary)'
+                    }}>
+                        {post.title}
+                    </h1>
+                    <div style={{
+                        display: 'flex',
+                        gap: '1rem',
+                        alignItems: 'center',
+                        color: 'var(--text-muted)',
+                        fontSize: '0.9rem',
+                        marginBottom: '0.75rem',
+                        flexWrap: 'wrap',
+                    }}>
+                        <Link href={`/about`} style={{ color: 'var(--text-primary)', fontWeight: 500, textDecoration: 'none' }}>
+                            Rohit Raj
+                        </Link>
+                        <span>·</span>
+                        <time dateTime={post.date}>
+                            {new Date(post.date).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                            })}
+                        </time>
+                        <span>·</span>
+                        <span>{post.readingTime}</span>
+                    </div>
+                    <p style={{
+                        fontSize: '1.15rem',
+                        color: 'var(--text-secondary)',
+                        lineHeight: 1.7,
+                    }}>
+                        {post.excerpt}
+                    </p>
+                    <div style={{
+                        marginTop: '1rem',
+                        display: 'flex',
+                        gap: '0.5rem',
+                        flexWrap: 'wrap'
+                    }}>
+                        {post.keywords.slice(0, 4).map((kw) => (
+                            <span key={kw} style={{
+                                fontSize: '0.75rem',
+                                padding: '0.2rem 0.6rem',
+                                backgroundColor: 'var(--card-bg)',
+                                border: '1px solid var(--border)',
+                                borderRadius: '2px',
+                                color: 'var(--text-muted)',
+                                fontFamily: 'var(--font-mono)'
+                            }}>
+                                {kw}
+                            </span>
+                        ))}
+                    </div>
+                </header>
+
+                {/* Cover Image */}
+                {post.coverImage && (
+                    <div style={{
+                        marginBottom: '2.5rem',
+                        borderRadius: '8px',
+                        overflow: 'hidden',
+                        border: '1px solid var(--border)',
+                    }}>
+                        <Image
+                            src={post.coverImage.src}
+                            alt={post.coverImage.alt}
+                            width={800}
+                            height={450}
+                            style={{ width: '100%', height: 'auto', display: 'block' }}
+                        />
+                    </div>
+                )}
+
+                {/* Article Body */}
+                <article>
+                    {post.sections.map((section, i) => (
+                        <section key={i} style={{ marginBottom: '2.5rem' }}>
+                            <h2 style={{
+                                fontSize: '1.5rem',
+                                fontWeight: 600,
+                                marginBottom: '1rem',
+                                color: 'var(--text-primary)',
+                                paddingTop: '0.5rem'
+                            }}>
+                                {section.heading}
+                            </h2>
+                            <div style={{
+                                color: 'var(--text-secondary)',
+                                lineHeight: 1.8,
+                                fontSize: '1.05rem',
+                            }}>
+                                {renderMarkdown(section.content)}
+                            </div>
+                        </section>
+                    ))}
+                </article>
+
+                <AuthorBio />
+
+                {/* Related Project */}
+                {post.relatedProject && (
+                    <div style={{
+                        marginTop: '2rem',
+                        padding: '1.5rem',
+                        border: '1px solid var(--border)',
+                        backgroundColor: 'var(--card-bg)',
+                    }}>
+                        <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
+                            RELATED PROJECT
+                        </p>
+                        <Link
+                            href={`/projects/${post.relatedProject.toLowerCase()}`}
+                            style={{
+                                color: 'var(--accent)',
+                                fontSize: '1.05rem',
+                                fontWeight: 600,
+                                textDecoration: 'none'
+                            }}
+                        >
+                            View {post.relatedProject.charAt(0).toUpperCase() + post.relatedProject.slice(1)} →
+                        </Link>
+                    </div>
+                )}
+
+                {/* CTA */}
+                {post.cta && (
+                    <div style={{
+                        marginTop: '2rem',
+                        padding: '2rem',
+                        textAlign: 'center',
+                        border: '1px solid var(--accent)',
+                        backgroundColor: 'var(--card-bg)',
+                    }}>
+                        <p style={{
+                            fontSize: '1.2rem',
+                            fontWeight: 600,
+                            color: 'var(--text-primary)',
+                            marginBottom: '1rem'
+                        }}>
+                            {post.cta.text}
+                        </p>
+                        <Link
+                            href={`${stripLocalePrefix(post.cta.href)}`}
+                            style={{
+                                display: 'inline-block',
+                                padding: '0.75rem 2rem',
+                                backgroundColor: 'var(--accent)',
+                                color: 'white',
+                                textDecoration: 'none',
+                                fontSize: '0.95rem',
+                                fontWeight: 500,
+                            }}
+                        >
+                            Let&apos;s Talk →
+                        </Link>
+                    </div>
+                )}
+
+                {/* Read Next */}
+                {otherPosts.length > 0 && (
+                    <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid var(--border)' }}>
+                        <h3 style={{
+                            fontSize: '0.85rem',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.1em',
+                            color: 'var(--text-muted)',
+                            marginBottom: '1.5rem'
+                        }}>
+                            Read Next
+                        </h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                            {otherPosts.map((p) => (
+                                <Link
+                                    key={p.slug}
+                                    href={`/notes/${p.slug}`}
+                                    style={{
+                                        textDecoration: 'none',
+                                        padding: '1rem',
+                                        border: '1px solid var(--border)',
+                                        display: 'block',
+                                    }}
+                                >
+                                    <h4 style={{
+                                        fontSize: '1.05rem',
+                                        fontWeight: 600,
+                                        color: 'var(--text-primary)',
+                                        marginBottom: '0.25rem'
+                                    }}>
+                                        {p.title}
+                                    </h4>
+                                    <p style={{
+                                        fontSize: '0.9rem',
+                                        color: 'var(--text-muted)',
+                                        margin: 0
+                                    }}>
+                                        {p.excerpt.slice(0, 100)}...
+                                    </p>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Navigation */}
+                <nav style={{
+                    marginTop: '3rem',
+                    paddingTop: '2rem',
+                    borderTop: '1px solid var(--border)',
+                    display: 'flex',
+                    justifyContent: 'space-between'
+                }}>
+                    <Link href={`/notes`} style={{ color: 'var(--accent)', fontSize: '0.9rem' }}>
+                        ← All Notes
+                    </Link>
+                    <Link href={`/projects`} style={{ color: 'var(--accent)', fontSize: '0.9rem' }}>
+                        Projects →
+                    </Link>
+                </nav>
+            </main>
+            <Footer dict={dict.common} />
+        </>
+    );
+}

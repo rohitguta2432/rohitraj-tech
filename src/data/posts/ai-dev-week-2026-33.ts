@@ -30,7 +30,7 @@ export const aiDevWeek2026W33: BlogPost = {
     },
     {
       heading: 'Why Three Frontier Models in One Week Is the Smaller Story',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 r/LocalLLaMA titled a thread "Today is Models Day" and it was not an exaggeration — DeepSeek, xAI and Meta all shipped inside 48 hours. The scoreboard reading: an MIT-licensed model you can download now sits within single-digit index points of the paid frontier, at roughly a fifth of the token price.
 
@@ -127,11 +127,11 @@ The failure mode I would worry about: over-strict verification silently blocks t
       heading: 'Building With Any of These?',
       content: `Across all six drops the capability is a download and the integration is the month. Which 10% of calls actually need the frontier model. Which fixtures quietly carry recoverable credentials. Whether your bot gate demotes or blocks. None of that is in a release note.
 
-I build AI-integration MVPs in six weeks and do the unglamorous half — auth, rate limits, error paths, observability. [The 6-week MVP track](/en/services/6-week-mvp) is built for that; [hiring a founding engineer](/en/services/hire-founding-engineer-india) is the version where I stay past launch.`,
+I build AI-integration MVPs in six weeks and do the unglamorous half — auth, rate limits, error paths, observability. [The 6-week MVP track](/services/6-week-mvp) is built for that; [hiring a founding engineer](/services/hire-founding-engineer-india) is the version where I stay past launch.`,
     },
   ],
   cta: {
     text: 'Ship an AI feature in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

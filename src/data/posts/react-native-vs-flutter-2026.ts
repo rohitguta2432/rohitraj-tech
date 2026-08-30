@@ -19,7 +19,7 @@ export const reactNativeVsFlutter2026: BlogPost = {
     },
 {
       heading: 'The State of Cross-Platform in 2026',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 React Native is the better choice for startups that need to ship fast across iOS and Android with a single JavaScript codebase, especially if you already have web developers who know React. Flutter is the better choice for apps that demand pixel-perfect custom UI, complex animations, and consistent rendering across every platform including desktop and embedded devices.
 
@@ -94,9 +94,9 @@ If I were starting SanatanApp over today, I would still choose React Native, but
 
 When I built SanatanApp, the Expo ecosystem saved me weeks — over-the-air updates, easy audio streaming with expo-av, and a ~15MB APK without fighting native build tools. That's the kind of practical advantage that matters when you're shipping on a deadline.
 
-If you want this shipped end-to-end without the team-of-five overhead, the [mobile app development](/en/services/mobile-app-development) and [6-week MVP sprint](/en/services/6-week-mvp) options are the routes I take on.
+If you want this shipped end-to-end without the team-of-five overhead, the [mobile app development](/services/mobile-app-development) and [6-week MVP sprint](/services/6-week-mvp) options are the routes I take on.
 
-Adjacent reads: [Bolt.new vs Hire Developer 2026](/en/notes/bolt-new-vs-hire-developer-2026) for the stack-level decision, [Claude Code vs Hiring a Developer in 2026: $20 CLI or $80K Engineer?](/en/notes/claude-code-vs-hire-developer-2026) for the hiring-level one.`
+Adjacent reads: [Bolt.new vs Hire Developer 2026](/notes/bolt-new-vs-hire-developer-2026) for the stack-level decision, [Claude Code vs Hiring a Developer in 2026: $20 CLI or $80K Engineer?](/notes/claude-code-vs-hire-developer-2026) for the hiring-level one.`
     },
     {
       heading: 'Frequently Asked Questions',

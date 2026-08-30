@@ -23,7 +23,7 @@ This doesn't apply if your AI integration is single-client and unlikely to grow 
     },
     {
       heading: 'What Is MCP and Why Should You Care?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To build an MCP server with Spring Boot, add the spring-ai-mcp-server-spring-boot-starter dependency, annotate your service methods with @Tool, and configure stdio or HTTP/SSE transport in application.yml. Spring AI auto-discovers your tools and exposes them via the Model Context Protocol, letting any compatible AI assistant — Claude, GPT-4, or custom agents — call your backend functions without bespoke integration code.
 
@@ -121,9 +121,9 @@ The stdio transport means Claude spawns your Java process locally. For productio
 4. **Spring AI's @Tool annotation is magical** — it handles JSON schema generation, parameter validation, and MCP compliance automatically.
 5. **MCP is early but growing fast** — building MCP servers now gives you first-mover advantage in the AI tooling ecosystem.
 
-If you'd rather hand the build off and review weekly, the [6-week MVP sprint](/en/services/6-week-mvp) is the fastest path; for a longer-term engineering relationship, look at [founding engineer in India](/en/services/hire-founding-engineer-india).
+If you'd rather hand the build off and review weekly, the [6-week MVP sprint](/services/6-week-mvp) is the fastest path; for a longer-term engineering relationship, look at [founding engineer in India](/services/hire-founding-engineer-india).
 
-Adjacent reads: [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot) for the stack-level decision, [From Idea to Play Store: Shipping SanatanApp in 4 Weeks](/en/notes/idea-to-play-store-sanatanapp-architecture) for the hiring-level one.`
+Adjacent reads: [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot) for the stack-level decision, [From Idea to Play Store: Shipping SanatanApp in 4 Weeks](/notes/idea-to-play-store-sanatanapp-architecture) for the hiring-level one.`
     },
     {
       heading: 'Frequently Asked Questions',

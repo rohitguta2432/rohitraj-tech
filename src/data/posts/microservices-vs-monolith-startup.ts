@@ -19,7 +19,7 @@ export const microservicesVsMonolithStartup: BlogPost = {
     },
 {
       heading: 'The Microservices Trap',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Most startups should start with a monolith. A well-structured monolith deployed as a single application is faster to develop, easier to debug, cheaper to run, and simpler to deploy than microservices. Microservices only make sense when you have twenty or more engineers, need independent scaling for specific components, or require different technology stacks for different parts of your system.
 
@@ -134,9 +134,9 @@ When I started ClinIQ AI, I initially put all database queries directly in the c
 
 The best architecture for your startup is the one that lets you ship features fastest with the team you have today. Right now, that's a monolith. If you're lucky enough to need microservices someday, you'll have the revenue and team to do the migration properly.
 
-On most of my client engagements this comes up as either a [startup MVP build](/en/services/startup-mvp-development) or a [fractional CTO engagement](/en/services/hire-fractional-cto-india) — either path leads to a working production build inside a quarter.
+On most of my client engagements this comes up as either a [startup MVP build](/services/startup-mvp-development) or a [fractional CTO engagement](/services/hire-fractional-cto-india) — either path leads to a working production build inside a quarter.
 
-I've written the deeper version of this argument in [PostgreSQL vs MongoDB: Which Database for Your Startup? (2026)](/en/notes/postgresql-vs-mongodb-startup-2026) and the contrarian counter-take in [Spring Boot vs Node.js for Your Startup Backend (2026)](/en/notes/spring-boot-vs-nodejs-startup-backend-2026).`
+I've written the deeper version of this argument in [PostgreSQL vs MongoDB: Which Database for Your Startup? (2026)](/notes/postgresql-vs-mongodb-startup-2026) and the contrarian counter-take in [Spring Boot vs Node.js for Your Startup Backend (2026)](/notes/spring-boot-vs-nodejs-startup-backend-2026).`
     },
     {
       heading: 'Frequently Asked Questions',

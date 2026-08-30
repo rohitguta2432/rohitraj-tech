@@ -27,7 +27,7 @@ export const aiDevWeek2026W23: BlogPost = {
     },
     {
       heading: 'Why This Week Matters Together',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 There are two forces pulling on the same six drops this week. The first is **capability moving up the stack**: Claude Opus 4.8 lifts the model ceiling, Codex CLI graduated Goal Mode to a default autonomous runtime, and the MCP next-spec RC re-architected the protocol to be **stateless** so agent servers run like normal web services — the agent layer growing up, less glue and more production-shaped infrastructure.
 
@@ -52,7 +52,7 @@ The second force is **the bill getting metered**. GitHub Copilot flipped every p
 
 **Source:** [Anthropic — Introducing Claude Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8)
 
-**Quick take:** Route to it surgically, not by default. I broke down where 4.8 earns its cost over 4.7 in [Claude Opus 4.8 vs 4.7](/en/notes/claude-opus-4-8-vs-4-7-developers-2026) — short version: use it for agentic and hard-reasoning calls, keep a cheaper model for the routine 80%.`,
+**Quick take:** Route to it surgically, not by default. I broke down where 4.8 earns its cost over 4.7 in [Claude Opus 4.8 vs 4.7](/notes/claude-opus-4-8-vs-4-7-developers-2026) — short version: use it for agentic and hard-reasoning calls, keep a cheaper model for the routine 80%.`,
     },
     {
       heading: 'GitHub Copilot Goes Token-Metered on June 1',
@@ -72,7 +72,7 @@ The second force is **the bill getting metered**. GitHub Copilot flipped every p
 
 **Source:** [Model Context Protocol Blog — 2026-07-28 Release Candidate](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/)
 
-**Quick take:** Start the migration now, not in late July — if you built on the experimental Tasks API or assumed sticky sessions, that's the work. My [Spring Boot MCP walkthrough](/en/notes/spring-boot-mcp) and [secure MCP server in TypeScript](/en/notes/secure-mcp-server-typescript-2026) both lean on patterns that get *simpler* under the stateless model.`,
+**Quick take:** Start the migration now, not in late July — if you built on the experimental Tasks API or assumed sticky sessions, that's the work. My [Spring Boot MCP walkthrough](/notes/spring-boot-mcp) and [secure MCP server in TypeScript](/notes/secure-mcp-server-typescript-2026) both lean on patterns that get *simpler* under the stateless model.`,
     },
     {
       heading: 'OpenAI Codex CLI Becomes an Autonomous Goal-Mode Runtime',
@@ -102,11 +102,11 @@ The second force is **the bill getting metered**. GitHub Copilot flipped every p
 
 **Source:** [LiveBench leaderboard](https://livebench.ai/) · [Best open-source LLMs 2026 (Hugging Face)](https://huggingface.co/blog/daya-shankar/open-source-llms)
 
-**Quick take:** Don't migrate everything — migrate the routine calls. Put an open model behind a router for cheap reasoning and keep Opus/GPT-5.5 for the calls that earn the premium. That's the exact split I cover in [OpenRouter vs LiteLLM vs Portkey](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026).`,
+**Quick take:** Don't migrate everything — migrate the routine calls. Put an open model behind a router for cheap reasoning and keep Opus/GPT-5.5 for the calls that earn the premium. That's the exact split I cover in [OpenRouter vs LiteLLM vs Portkey](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026).`,
     },
     {
       heading: "What I'm Shipping With This Week",
-      content: `Concretely: I'm migrating a [MyFinancial](/en/projects) MCP server to the stateless transport the RC just locked. The current server keeps a per-session cache keyed on \`Mcp-Session-Id\`, so it needs sticky routing the moment it sits behind more than one instance. Under the stateless core, that cache moves to an explicit handle passed between tool calls and the server drops behind a plain load balancer with zero session affinity — maybe a day of work, and it deletes a whole class of "works on one node, breaks at scale" bugs.
+      content: `Concretely: I'm migrating a [MyFinancial](/projects) MCP server to the stateless transport the RC just locked. The current server keeps a per-session cache keyed on \`Mcp-Session-Id\`, so it needs sticky routing the moment it sits behind more than one instance. Under the stateless core, that cache moves to an explicit handle passed between tool calls and the server drops behind a plain load balancer with zero session affinity — maybe a day of work, and it deletes a whole class of "works on one node, breaks at scale" bugs.
 
 The non-obvious part the changelogs won't tell you: **Codex's OAuth-for-streamable-HTTP and the MCP RC's auth SEPs have to agree.** Wire a Codex client to your MCP server today on the old session model and you'll redo the auth handshake in July. So I'm building the OAuth + streamable-HTTP path *now* against the RC, not retrofitting it later — the failure mode I'd worry about this quarter is exactly that mismatch across the July 28 cutover.`,
     },
@@ -122,13 +122,13 @@ The non-obvious part the changelogs won't tell you: **Codex's OAuth-for-streamab
       heading: "Need Help Wiring This Week's Drops Into Your Product?",
       content: `If you're re-forecasting Copilot's token billing, migrating an MCP server to the stateless core before July 28, or standing up an open-weight router to cap your AI bill, the hard part is rarely the tutorial — it's the production wiring: OAuth on streamable-HTTP transport, stateless session handling, rate-limit retries, fallback routing, and the integration tests nobody writes.
 
-That's the [6-week MVP](/en/services/6-week-mvp) playbook — pick the right models and host, wire them into a shipping product, hand over a tested codebase. For a longer run, [Hire a Founding Engineer (India)](/en/services/hire-founding-engineer-india).
+That's the [6-week MVP](/services/6-week-mvp) playbook — pick the right models and host, wire them into a shipping product, hand over a tested codebase. For a longer run, [Hire a Founding Engineer (India)](/services/hire-founding-engineer-india).
 
-Next roundup drops next Tuesday. For the deep-dives: [Claude Opus 4.8 vs 4.7](/en/notes/claude-opus-4-8-vs-4-7-developers-2026) on model choice, [DeepSeek vs Claude vs GPT cost](/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026) on routing math.`,
+Next roundup drops next Tuesday. For the deep-dives: [Claude Opus 4.8 vs 4.7](/notes/claude-opus-4-8-vs-4-7-developers-2026) on model choice, [DeepSeek vs Claude vs GPT cost](/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026) on routing math.`,
     },
   ],
   cta: {
     text: 'Wire This Week’s Drops Into Your MVP — 6-Week Plan',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

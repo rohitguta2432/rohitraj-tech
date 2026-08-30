@@ -29,7 +29,7 @@ export const aiDevWeek2026W30: BlogPost = {
     },
     {
       heading: 'Why Week 30 Was Two Stories at Once',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Two currents crossed this week. The first: the biggest open-weights drops of 2026 came from Chinese labs — Moonshot's Kimi K3 and Alibaba's Qwen 3.8 both claim frontier-adjacent scores, and Baidu quietly put an open OCR model at the top of Hugging Face's charts. The models are getting bigger, cheaper to call, and — the part that matters for builders — open enough to run yourself.
 
@@ -70,7 +70,7 @@ The second current is what happens once you point those models at your codebase.
       heading: 'grok-build: Does xAI Have a Coding Agent Worth Switching To?',
       content: `**What:** **xAI** open-sourced [grok-build](https://github.com/xai-org/grok-build), described as a coding-agent **harness and TUI** — "fullscreen, mouse interactive, extensible." It rocketed to **20,982 stars in under two weeks**, the single biggest new repo of the week and a clear demand signal for terminal-native agent tooling.
 
-**Why it matters:** Every frontier lab now ships its own harness — Claude Code, Codex, Gemini CLI, and now grok-build. The harness, not just the model, is where the developer lock-in lives: it owns your tool schemas, your context loading, and your review loop. A mouse-interactive fullscreen TUI is a bet that developers want something richer than a scrolling transcript but lighter than a full IDE — the same gap [orca and herdr chased last week](/en/notes/ai-dev-week-2026-29).
+**Why it matters:** Every frontier lab now ships its own harness — Claude Code, Codex, Gemini CLI, and now grok-build. The harness, not just the model, is where the developer lock-in lives: it owns your tool schemas, your context loading, and your review loop. A mouse-interactive fullscreen TUI is a bet that developers want something richer than a scrolling transcript but lighter than a full IDE — the same gap [orca and herdr chased last week](/notes/ai-dev-week-2026-29).
 
 **Source:** [xai-org/grok-build on GitHub](https://github.com/xai-org/grok-build)
 
@@ -80,7 +80,7 @@ The second current is what happens once you point those models at your codebase.
       heading: 'Cursor 0-day: Why Is Your IDE Running Binaries From a Repo?',
       content: `**What:** Security firm Mindgard [publicly disclosed a Cursor 0-day](https://mindgard.ai/blog/cursor-0day-when-full-disclosure-becomes-the-only-protection-left) on **July 14** after **seven months** of failed coordination. The bug: Cursor searches for Git binaries in several locations *including the workspace*, so a **\`git.exe\` placed in a repo root gets executed automatically** — "no clicks, prompts, approval dialogs, or warnings" — repeatedly during normal IDE use. It has persisted through **197+ versions**, last verified on **Cursor 3.2.16 (Windows)**, and is **still unpatched**.
 
-**Why it matters:** This is the [lethal-trifecta failure mode](/en/notes/gitlost-ai-agent-prompt-injection-defense-2026) without even needing the model: cloning a malicious repo is enough to run code on your machine. AI IDEs have massively expanded what "just opening a folder" can do, and the trust boundary hasn't kept up.
+**Why it matters:** This is the [lethal-trifecta failure mode](/notes/gitlost-ai-agent-prompt-injection-defense-2026) without even needing the model: cloning a malicious repo is enough to run code on your machine. AI IDEs have massively expanded what "just opening a folder" can do, and the trust boundary hasn't kept up.
 
 **Source:** [Mindgard — Cursor 0-day full disclosure](https://mindgard.ai/blog/cursor-0day-when-full-disclosure-becomes-the-only-protection-left)
 
@@ -110,9 +110,9 @@ The second current is what happens once you point those models at your codebase.
       heading: "What I'm Shipping With This Week",
       content: `The quiet drop I'm actually wiring in is **Baidu's [Unlimited-OCR](https://huggingface.co/baidu/Unlimited-OCR)** — an open vision-language OCR model that hit **2,474 likes and 2.12 million downloads** on Hugging Face this week. Open weights, image-to-text, no per-page API bill.
 
-That's a direct fit for [MyFinancial](/en/notes/ai-dev-week-2026-29), my Indian personal-finance project, where users upload bank statements, capital-gains PDFs, and ITR documents that currently go through a paid OCR API. Two wins from swapping to a self-hosted open model: the per-document cost drops to compute, and — the bigger one for financial data — sensitive statements never leave my infrastructure.
+That's a direct fit for [MyFinancial](/notes/ai-dev-week-2026-29), my Indian personal-finance project, where users upload bank statements, capital-gains PDFs, and ITR documents that currently go through a paid OCR API. Two wins from swapping to a self-hosted open model: the per-document cost drops to compute, and — the bigger one for financial data — sensitive statements never leave my infrastructure.
 
-The failure mode I'd worry about before trusting it: Indian bank statements are a torture test — dense tables, the ₹ glyph, mixed Devanagari, and layouts that generic OCR mangles. So the real work isn't the swap; it's building an eval set of *real* statements and measuring extraction accuracy against the paid baseline before anything touches production. That's the same discipline I bring to every [6-week MVP build](/en/services/6-week-mvp) — a shiny open model is a hypothesis, not a dependency, until it's measured on your actual data.`,
+The failure mode I'd worry about before trusting it: Indian bank statements are a torture test — dense tables, the ₹ glyph, mixed Devanagari, and layouts that generic OCR mangles. So the real work isn't the swap; it's building an eval set of *real* statements and measuring extraction accuracy against the paid baseline before anything touches production. That's the same discipline I bring to every [6-week MVP build](/services/6-week-mvp) — a shiny open model is a hypothesis, not a dependency, until it's measured on your actual data.`,
     },
     {
       heading: 'Skip These',
@@ -126,11 +126,11 @@ The failure mode I'd worry about before trusting it: Indian bank statements are 
       heading: 'Building on This Week and Hitting Walls?',
       content: `Open-weights models you can self-host, agent harnesses that own your workflow, security holes in the IDE itself — Week 30 made the tradeoffs real, but wiring any of it into a production system is still where projects stall. That integration work is what I do: AI-heavy MVPs shipped in six weeks, with the cost controls, evals, and guardrails built in from day one — not bolted on after the first runaway bill or leaked repo.
 
-If you're building on any of this and want it production-grade, look at the [6-week MVP plan](/en/services/6-week-mvp) or [hire a founding engineer](/en/services/hire-founding-engineer-india) who has already made these mistakes on his own infrastructure.`,
+If you're building on any of this and want it production-grade, look at the [6-week MVP plan](/services/6-week-mvp) or [hire a founding engineer](/services/hire-founding-engineer-india) who has already made these mistakes on his own infrastructure.`,
     },
   ],
   cta: {
     text: 'Ship Your AI MVP in 6 Weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

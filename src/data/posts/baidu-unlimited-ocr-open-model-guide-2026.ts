@@ -28,7 +28,7 @@ export const baiduUnlimitedOcrOpenModelGuide2026: BlogPost = {
         },
         {
             heading: 'Baidu Unlimited-OCR: The Open-Source Model That Reads 40+ Page Documents in One Pass (2026)',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Every OCR model has the same dirty secret: it slows down the longer the document gets. Feed a vision-language OCR model a 40-page contract and its key-value (KV) cache grows with every token it generates — so memory climbs and throughput sags right when you need it most, on exactly the long documents that are painful to process by hand. That "memory wall" is why most production OCR pipelines quietly chop documents into single pages, run them independently, and then try to stitch the structure back together afterward.
 
@@ -94,9 +94,9 @@ Hardware reality check: at 500M active params in BF16 the model is small — it 
             heading: 'Where Unlimited-OCR actually beats a cloud OCR API',
             content: `Three workflows where this is a genuine upgrade, not a lateral move.
 
-**Long-document RAG ingestion.** If you're chunking 50-to-200-page PDFs — financial filings, legal contracts, technical manuals — into a vector store, page-by-page OCR is where structure goes to die. A table spanning pages 12–14, or a clause numbered across a page break, gets shredded into incoherent chunks. Unlimited-OCR's single-pass decode keeps that structure intact, and because it emits clean markdown, your chunk boundaries can respect real headings instead of slicing mid-table. That does more for answer quality than swapping embedding models — a pattern I lean on constantly in [document-heavy pipelines](/en/notes/mistral-ocr-4-vs-textract-google-document-ai-2026).
+**Long-document RAG ingestion.** If you're chunking 50-to-200-page PDFs — financial filings, legal contracts, technical manuals — into a vector store, page-by-page OCR is where structure goes to die. A table spanning pages 12–14, or a clause numbered across a page break, gets shredded into incoherent chunks. Unlimited-OCR's single-pass decode keeps that structure intact, and because it emits clean markdown, your chunk boundaries can respect real headings instead of slicing mid-table. That does more for answer quality than swapping embedding models — a pattern I lean on constantly in [document-heavy pipelines](/notes/mistral-ocr-4-vs-textract-google-document-ai-2026).
 
-**High-volume, cost-sensitive extraction.** At effectively $0 per page (you own the GPU), it wins any volume comparison against per-page cloud pricing once you clear the break-even. AWS Textract's forms-and-tables path runs [$65 per 1,000 pages](/en/notes/mistral-ocr-4-vs-textract-google-document-ai-2026); at a few hundred thousand pages a month, a single self-hosted GPU pays for itself in weeks, and the flat KV cache keeps throughput predictable instead of degrading on your longest documents.
+**High-volume, cost-sensitive extraction.** At effectively $0 per page (you own the GPU), it wins any volume comparison against per-page cloud pricing once you clear the break-even. AWS Textract's forms-and-tables path runs [$65 per 1,000 pages](/notes/mistral-ocr-4-vs-textract-google-document-ai-2026); at a few hundred thousand pages a month, a single self-hosted GPU pays for itself in weeks, and the flat KV cache keeps throughput predictable instead of degrading on your longest documents.
 
 **Data-sovereignty workloads.** Healthcare records, legal discovery, government documents — anything that legally cannot leave your VPC. A cloud OCR API is a non-starter there. An MIT-licensed model you run on your own hardware is the only option that clears compliance, and Unlimited-OCR is now the most accurate one in that category.`,
         },
@@ -114,7 +114,7 @@ Hardware reality check: at 500M active params in BF16 the model is small — it 
 | Cost shape | **GPU only (~$0/page)** | GPU only | $2–$4 / 1k pages | $1.50 basic / $65 forms | $1.50–$30 |
 | Best for | long-doc self-host | self-host baseline | multilingual API | AWS shops | degraded scans / GCP |
 
-Read it honestly. If you want a managed API and don't want to run a GPU, [Mistral OCR 4](/en/notes/mistral-ocr-4-vs-textract-google-document-ai-2026) is the better *product* — comparable OmniDocBench score (93.07), 170 languages, zero infra. If you're already deep in AWS or GCP, Textract and Document AI usually win on ecosystem glue. But if you want the most accurate *open-weights* OCR, need long-document coherence, or have data that can't leave your walls, Unlimited-OCR is now the pick — and it's the only model in this table you can fork.`,
+Read it honestly. If you want a managed API and don't want to run a GPU, [Mistral OCR 4](/notes/mistral-ocr-4-vs-textract-google-document-ai-2026) is the better *product* — comparable OmniDocBench score (93.07), 170 languages, zero infra. If you're already deep in AWS or GCP, Textract and Document AI usually win on ecosystem glue. But if you want the most accurate *open-weights* OCR, need long-document coherence, or have data that can't leave your walls, Unlimited-OCR is now the pick — and it's the only model in this table you can fork.`,
         },
         {
             heading: 'When should you NOT use Unlimited-OCR?',
@@ -136,19 +136,19 @@ Read it honestly. If you want a managed API and don't want to run a GPU, [Mistra
 
 **Lean into single-pass, but cap it.** Send whole documents in one \`infer_multi\` call up to a page budget that keeps prefill under the 32K ceiling (in practice ~30–40 pages of dense text), then fall back to overlapping chunks for anything larger. The overlap matters — a one-page overlap lets you stitch cross-boundary tables back together without R-SWA having to hold an entire book in prefill.
 
-**Guard the output; OCR fails silently.** This is the failure mode I worry about most: a bad extraction doesn't throw an exception, it produces *plausible wrong text*, and your RAG system will cheerfully cite it. Unlimited-OCR doesn't yet expose per-block confidence the way [Mistral OCR 4 does](/en/notes/mistral-ocr-4-vs-textract-google-document-ai-2026), so build your own signal: re-OCR a random sample against a second engine and alert on divergence, and validate structural invariants (does every table row have the expected column count? do numbered clauses run in sequence?). Cheap checks, and they catch the garbage before it reaches your index.
+**Guard the output; OCR fails silently.** This is the failure mode I worry about most: a bad extraction doesn't throw an exception, it produces *plausible wrong text*, and your RAG system will cheerfully cite it. Unlimited-OCR doesn't yet expose per-block confidence the way [Mistral OCR 4 does](/notes/mistral-ocr-4-vs-textract-google-document-ai-2026), so build your own signal: re-OCR a random sample against a second engine and alert on divergence, and validate structural invariants (does every table row have the expected column count? do numbered clauses run in sequence?). Cheap checks, and they catch the garbage before it reaches your index.
 
-**Batch on the ingestion path, not the query path.** OCR belongs in your offline pipeline — documents land in object storage, a queue worker OCRs them, markdown flows to the chunker. Keep it off the hot path of a user request. The flat KV cache makes batch throughput predictable, which is exactly what you want in a job you run across millions of pages. That provider-agnostic, guard-the-output pattern is what I bake into every [6-week MVP](/en/services/6-week-mvp) that touches documents — so next month's SOTA model is a config change, not a rewrite.`,
+**Batch on the ingestion path, not the query path.** OCR belongs in your offline pipeline — documents land in object storage, a queue worker OCRs them, markdown flows to the chunker. Keep it off the hot path of a user request. The flat KV cache makes batch throughput predictable, which is exactly what you want in a job you run across millions of pages. That provider-agnostic, guard-the-output pattern is what I bake into every [6-week MVP](/services/6-week-mvp) that touches documents — so next month's SOTA model is a config change, not a rewrite.`,
         },
         {
             heading: 'The bottom line: is Unlimited-OCR worth adopting?',
             content: `OCR just got a new open-source leader, and the interesting part isn't the benchmark — it's that Unlimited-OCR makes *long* documents cheap and coherent instead of the thing that breaks your pipeline. If you self-host, process long documents, or hold data that can't leave your VPC, it's the pick this quarter. If you want a managed API or you're low-volume, a cloud engine is still the lazier right answer.
 
-The strategic move, as always, is to wire the OCR layer behind an interface so you can adopt the next leader without a rewrite — because in 2026, there's always a next leader by month's end. If you want a hand building a document-AI or RAG pipeline that won't fall over on the first weird 200-page PDF, that's exactly the kind of [founding-engineer work](/en/services/hire-founding-engineer-india) I do — I've shipped the unglamorous extraction layer enough times to know precisely where it breaks.`,
+The strategic move, as always, is to wire the OCR layer behind an interface so you can adopt the next leader without a rewrite — because in 2026, there's always a next leader by month's end. If you want a hand building a document-AI or RAG pipeline that won't fall over on the first weird 200-page PDF, that's exactly the kind of [founding-engineer work](/services/hire-founding-engineer-india) I do — I've shipped the unglamorous extraction layer enough times to know precisely where it breaks.`,
         },
     ],
     cta: {
         text: 'Building a document-AI or RAG pipeline? Let\'s ship it in 6 weeks.',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

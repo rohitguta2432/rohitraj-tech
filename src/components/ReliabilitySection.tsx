@@ -1,16 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import type { HomeDictionary, Locale } from "@/lib/i18n";
+import type { HomeDictionary } from "@/lib/i18n";
 import { cardConfigs } from '@/data/reliability';
 import type { CardConfig } from '@/types/reliability';
 
 interface ReliabilitySectionProps {
     dictionary: HomeDictionary;
-    locale: Locale;
 }
 
-export default function ReliabilitySection({ dictionary, locale }: ReliabilitySectionProps) {
+export default function ReliabilitySection({ dictionary }: ReliabilitySectionProps) {
     const reliability = dictionary.reliability;
 
     // Early return if reliability section is not available
@@ -56,7 +55,7 @@ export default function ReliabilitySection({ dictionary, locale }: ReliabilitySe
                                 </ul>
 
                                 <Link
-                                    href={`/${locale}${config.route}`}
+                                    href={`${config.route}`}
                                     className="reliability-card-link"
                                 >
                                     {card.linkText}

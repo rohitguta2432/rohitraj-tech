@@ -22,7 +22,7 @@ This doesn't apply if your project genuinely needs five concurrent workstreams o
     },
     {
       heading: 'I\'ve Been on Both Sides',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Hire a freelance developer when your project is well-defined, your budget is under thirty thousand dollars, and you want direct communication with the person writing your code. Hire an agency when you need five or more developers working simultaneously, have compliance requirements like HIPAA or SOC2, or need formal SLA guarantees for uptime and support.
 
@@ -111,7 +111,7 @@ The most expensive mistake is not budgeting for post-launch costs. Your MVP laun
 
 **My approach:** I scope projects in milestones with deliverables. 30% upfront, 30% at midpoint, 40% at delivery. You never pay for work you haven't seen. I use GitHub for code, WhatsApp/Slack for communication, and Loom for async demos.
 
-Check my work at [rohitraj.tech](https://rohitraj.tech/en/projects) — every project there is live, with architecture decisions documented.`
+Check my work at [rohitraj.tech](https://rohitraj.tech/projects) — every project there is live, with architecture decisions documented.`
     },
     {
       heading: 'Real Project Comparison: Same App, Different Hiring Models',
@@ -436,9 +436,9 @@ After 30 days, we can set up a retainer (₹25,000 – ₹50,000/month) for ongo
 
 This is how I've delivered SanatanApp, ClinicAI, StellarMIND, MyFinancial, and every other project in my portfolio. The process works because it removes ambiguity — the #1 killer of freelance projects.
 
-The pattern I run for founders in this situation is either a [founding engineer in India](/en/services/hire-founding-engineer-india) or a [startup MVP build](/en/services/startup-mvp-development) — pick based on whether you need shipped code or shipped *and* maintained code.
+The pattern I run for founders in this situation is either a [founding engineer in India](/services/hire-founding-engineer-india) or a [startup MVP build](/services/startup-mvp-development) — pick based on whether you need shipped code or shipped *and* maintained code.
 
-Related reading: [Hire Flutter Developer India 2026: Founding Engineer vs Agency vs…](/en/notes/hire-flutter-developer-india-2026) and [Hire iOS Developer India 2026: Founding Engineer vs Agency vs Swift…](/en/notes/hire-ios-developer-india-mvp-2026) cover the adjacent tradeoffs in more depth.`
+Related reading: [Hire Flutter Developer India 2026: Founding Engineer vs Agency vs…](/notes/hire-flutter-developer-india-2026) and [Hire iOS Developer India 2026: Founding Engineer vs Agency vs Swift…](/notes/hire-ios-developer-india-mvp-2026) cover the adjacent tradeoffs in more depth.`
     },
     {
       heading: 'Frequently Asked Questions',

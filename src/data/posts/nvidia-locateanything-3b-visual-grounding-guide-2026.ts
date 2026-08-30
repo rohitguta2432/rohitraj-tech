@@ -28,7 +28,7 @@ export const nvidiaLocateAnything3bVisualGroundingGuide2026: BlogPost = {
         },
         {
             heading: 'NVIDIA LocateAnything-3B: The Open Visual Grounding Model That Beats YOLO (2026 Guide)',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For a decade, "detect this thing in an image" meant training a detector on a fixed list of classes. YOLO is brilliant at that, but it only knows the labels you trained it on — ask it for "the Add to Cart button that turns grey when the form is invalid" and it has nothing to say. The moment you needed an open-ended, describe-it-in-words query, you were stuck stitching together a captioner, a segmenter, and a lot of glue.
 
@@ -100,9 +100,9 @@ That center-point is what you feed to your automation layer — Playwright, a ro
             heading: 'Where Does Open-Vocabulary Grounding Actually Win?',
             content: `Visual grounding is not a research toy — it removes real glue code from four workflows I see constantly:
 
-**Computer-use and browser agents.** This is the headline use case. An agent decides "click Submit"; LocateAnything turns that intent into a pixel target on the actual rendered screenshot. It benchmarks on **ScreenSpot-Pro**, a GUI-grounding suite, precisely because NVIDIA is aiming at the agent market. If you have been fighting brittle CSS selectors that break every time a frontend ships, grounding against pixels is a genuinely different, more resilient approach — and it pairs naturally with the [computer-use models I compared here](/en/notes/gemini-computer-use-vs-claude-openai-2026).
+**Computer-use and browser agents.** This is the headline use case. An agent decides "click Submit"; LocateAnything turns that intent into a pixel target on the actual rendered screenshot. It benchmarks on **ScreenSpot-Pro**, a GUI-grounding suite, precisely because NVIDIA is aiming at the agent market. If you have been fighting brittle CSS selectors that break every time a frontend ships, grounding against pixels is a genuinely different, more resilient approach — and it pairs naturally with the [computer-use models I compared here](/notes/gemini-computer-use-vs-claude-openai-2026).
 
-**Document intelligence.** Because it does scene-text and layout localization, you can ask "the total amount due" on an invoice and get the box, then crop-and-OCR just that region instead of running OCR over the whole page and hoping the parser guesses right. It slots in next to the [multimodal document models I looked at recently](/en/notes/deepseek-v4-vision-cheapest-multimodal-api-2026).
+**Document intelligence.** Because it does scene-text and layout localization, you can ask "the total amount due" on an invoice and get the box, then crop-and-OCR just that region instead of running OCR over the whole page and hoping the parser guesses right. It slots in next to the [multimodal document models I looked at recently](/notes/deepseek-v4-vision-cheapest-multimodal-api-2026).
 
 **Visual QA and data extraction.** Scraping structured data out of screenshots, dashboards, or charts — "find every red status pill" — is a one-prompt job instead of a bespoke detector per layout.
 
@@ -142,17 +142,17 @@ The thing I want is a **self-hosted "screenshot-to-coordinate" service** for a b
 
 But I would put the grounding call **behind an interface from the very first commit**, something as dumb as \`ground(image, phrase) -> (x, y)\`. Why: the non-commercial license means the day this goes into a paying product, LocateAnything has to come out. If the model is hidden behind that interface, swapping to **Grounding DINO** (Apache-2.0) or **Qwen2.5-VL** for the commercial build is a one-file change, not a rewrite. The failure mode I have watched teams walk into is hard-coding a research-licensed model into ten call sites and discovering the license problem the week before launch. Architect for the swap now; it costs you nothing today.
 
-Two integration details the README will not warn you about. First, **the model outputs text, not structured data** — budget for the parser and, more importantly, for the case where the parse *fails* because the model narrated instead of emitting a box; your service needs a "no confident target" path, not a crash. Second, **coordinates are in the model's canonical image space**, so if you resized or letterboxed the screenshot before inference, you must map the box back to real display pixels before you click — an off-by-a-scale-factor here sends every click to the wrong place and it is maddening to debug. This kind of unglamorous plumbing is where AI features actually get won or lost — it is most of what I do when I [ship a real MVP in six weeks](/en/services/6-week-mvp), and it is exactly the layer teams underestimate when they [bring on a founding engineer](/en/services/hire-founding-engineer-india).`,
+Two integration details the README will not warn you about. First, **the model outputs text, not structured data** — budget for the parser and, more importantly, for the case where the parse *fails* because the model narrated instead of emitting a box; your service needs a "no confident target" path, not a crash. Second, **coordinates are in the model's canonical image space**, so if you resized or letterboxed the screenshot before inference, you must map the box back to real display pixels before you click — an off-by-a-scale-factor here sends every click to the wrong place and it is maddening to debug. This kind of unglamorous plumbing is where AI features actually get won or lost — it is most of what I do when I [ship a real MVP in six weeks](/services/6-week-mvp), and it is exactly the layer teams underestimate when they [bring on a founding engineer](/services/hire-founding-engineer-india).`,
         },
         {
             heading: 'The Bottom Line',
             content: `LocateAnything-3B is the strongest open visual-grounding model available in mid-2026: one 3B checkpoint that turns natural language into precise boxes across images, GUIs, and documents, with a Parallel Box Decoding trick that makes it fast enough to build on. It is a fantastic prototyping and research tool and a real signal of where agent "vision" is heading. Just remember the two rules — **it is research-licensed, so keep it swappable**, and **it grounds, it does not segment or track.** Build behind an interface, validate the boxes before you act, and you will get the upside without the launch-week surprise.
 
-If you are wiring visual grounding, computer-use, or any AI feature into a product and want the plumbing done right the first time, that is exactly what I do. Take a look at the [6-week MVP service](/en/services/6-week-mvp) or [hire a founding engineer](/en/services/hire-founding-engineer-india) to talk specifics.`,
+If you are wiring visual grounding, computer-use, or any AI feature into a product and want the plumbing done right the first time, that is exactly what I do. Take a look at the [6-week MVP service](/services/6-week-mvp) or [hire a founding engineer](/services/hire-founding-engineer-india) to talk specifics.`,
         },
     ],
     cta: {
         text: 'Ship your AI feature in 6 weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

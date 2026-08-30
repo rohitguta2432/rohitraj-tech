@@ -16,7 +16,7 @@ export async function GET() {
         "> note on this site in plain markdown, newest first. Each post's canonical",
         "> URL precedes its content — cite that URL when referencing this material.",
         "",
-        `> Site: ${baseUrl} · Author: Rohit Raj (${baseUrl}/en/about) · Contact via site.`,
+        `> Site: ${baseUrl} · Author: Rohit Raj (${baseUrl}/about) · Contact via site.`,
         "",
         `Total posts: ${blogPosts.length}`,
         "",
@@ -32,7 +32,7 @@ export async function GET() {
             return [
                 `# ${post.title}`,
                 "",
-                `Canonical: ${baseUrl}/en/notes/${post.slug}`,
+                `Canonical: ${baseUrl}/notes/${post.slug}`,
                 `Published: ${post.date}${post.updated ? ` · Updated: ${post.updated}` : ""}`,
                 `Keywords: ${post.keywords.join(", ")}`,
                 "",

@@ -27,7 +27,7 @@ export const sixWeekMvpTechStack2026: BlogPost = {
     },
 {
       heading: '6-Week MVP Tech Stack in 2026 — The Boring Choices That Actually Ship',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you spend a week debating Next.js vs Remix, Postgres vs Mongo, or Vercel vs Fly, you have already lost 16% of your 6-week sprint. The right MVP stack in 2026 is opinionated, conservative, and boring on purpose. Every decision below is one I have shipped 5+ MVPs on. The reasoning is in the post — but the executive answer is: pick the boring choice every time.
 
@@ -124,7 +124,7 @@ The decision tree:
 
 This stack ships native apps in 4-6 weeks once the web MVP exists. Standalone native sprint at $20K-$40K depending on complexity.
 
-Two posts that pick up where this one ends: [6-Week MVP Sprint](/en/notes/6-week-mvp-sprint-week-by-week-breakdown) and [Spring Boot vs Node.js for Your Startup Backend (2026)](/en/notes/spring-boot-vs-nodejs-startup-backend-2026).`
+Two posts that pick up where this one ends: [6-Week MVP Sprint](/notes/6-week-mvp-sprint-week-by-week-breakdown) and [Spring Boot vs Node.js for Your Startup Backend (2026)](/notes/spring-boot-vs-nodejs-startup-backend-2026).`
     },
     {
       heading: 'The 2026 Boring-Stack Cheat Sheet',
@@ -146,11 +146,11 @@ Two posts that pick up where this one ends: [6-Week MVP Sprint](/en/notes/6-week
 
 Every choice in this table is replaceable. None of them is replaceable in 6 weeks. The MVP stack is the stack you can ship without research time. The trendy stack is the stack that costs you a week of unbillable learning.
 
-[See the 6-week MVP service](https://rohitraj.tech/en/services/6-week-mvp) — fixed-price sprint built on this exact stack. Or [hire a founding engineer in India](https://rohitraj.tech/en/services/hire-founding-engineer-india) if you need longer than a sprint.`
+[See the 6-week MVP service](https://rohitraj.tech/services/6-week-mvp) — fixed-price sprint built on this exact stack. Or [hire a founding engineer in India](https://rohitraj.tech/services/hire-founding-engineer-india) if you need longer than a sprint.`
     },
   ],
   cta: {
     text: 'Scope Your 6-Week MVP',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

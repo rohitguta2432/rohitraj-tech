@@ -29,7 +29,7 @@ export const aiDevWeek2026W29: BlogPost = {
     },
     {
       heading: 'Why Week 29 Was About Running Fleets, Not Building Agents',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Six months ago the hard question was "how do I build one good agent?" This week's launches assume you already have five running at once — and now you need to review their work, cap their token bills, watch them side by side, sandbox their shell access, and read their output as something better than a wall of text.
 
@@ -64,7 +64,7 @@ Look at the list as a stack and it clicks: **codex-plugin-cc** is cross-vendor d
 
 **Source:** [Claude Code vs OpenCode token overhead — systima.ai](https://systima.ai/blog/claude-code-vs-opencode-token-overhead)
 
-**Quick take:** Don't switch harnesses over this — but do audit your own. One transcript dump tells you what your setup actually pays per turn, before any [agent guardrails](/en/notes/ai-agent-command-guardrails-2026) even come into play.`,
+**Quick take:** Don't switch harnesses over this — but do audit your own. One transcript dump tells you what your setup actually pays per turn, before any [agent guardrails](/notes/ai-agent-command-guardrails-2026) even come into play.`,
     },
     {
       heading: 'orca: Do You Need an IDE for a Fleet of Agents?',
@@ -104,13 +104,13 @@ Look at the list as a stack and it clicks: **codex-plugin-cc** is cross-vendor d
 
 **Source:** [TencentCloud/CubeSandbox](https://github.com/TencentCloud/CubeSandbox)
 
-**Quick take:** Wire a sandbox in *before* the fleet, not after the incident. Pair it with command-level [guardrails](/en/notes/ai-agent-command-guardrails-2026) — the sandbox contains what the guardrail misses.`,
+**Quick take:** Wire a sandbox in *before* the fleet, not after the incident. Pair it with command-level [guardrails](/notes/ai-agent-command-guardrails-2026) — the sandbox contains what the guardrail misses.`,
     },
     {
       heading: "What I'm Shipping With This Week",
       content: `The token-overhead teardown hit home. Last month I had to **disable my own daily automation** — three scheduled Claude-based pipelines — because they quietly exhausted their token budget mid-month. I never measured harness overhead; I assumed my prompts were the cost. They weren't — the per-turn bootstrapping was.
 
-So this week's concrete task: run the systima.ai methodology against my own pipelines — dump one full transcript per pipeline, count what rides along before the actual work starts, and cut the tool surface each run loads. If a nightly job only needs four tools, it shouldn't pay for forty schemas per turn. I expect this alone to bring the disabled [automation pipelines](/en/notes/ai-agent-command-guardrails-2026) back under budget. That's the week-29 lesson in one line: **fleet costs are a measurement problem before they're a model problem** — the same discipline I bring to [6-week MVP builds](/en/services/6-week-mvp), where the bill is someone else's money.`,
+So this week's concrete task: run the systima.ai methodology against my own pipelines — dump one full transcript per pipeline, count what rides along before the actual work starts, and cut the tool surface each run loads. If a nightly job only needs four tools, it shouldn't pay for forty schemas per turn. I expect this alone to bring the disabled [automation pipelines](/notes/ai-agent-command-guardrails-2026) back under budget. That's the week-29 lesson in one line: **fleet costs are a measurement problem before they're a model problem** — the same discipline I bring to [6-week MVP builds](/services/6-week-mvp), where the bill is someone else's money.`,
     },
     {
       heading: 'Skip These',
@@ -124,11 +124,11 @@ So this week's concrete task: run the systima.ai methodology against my own pipe
       heading: 'Building an Agent Fleet and Hitting Walls?',
       content: `Cross-vendor review, sandboxing, token audits, fleet dashboards — week 29 made the tooling real, but wiring it into a production system is still where projects stall. That integration work is what I do: AI-heavy MVPs shipped in six weeks, with the cost controls and guardrails baked in from day one — not patched in after the first runaway bill.
 
-If you're building on any of this and want it production-grade, look at the [6-week MVP plan](/en/services/6-week-mvp) or [hire a founding engineer](/en/services/hire-founding-engineer-india) who has already made these mistakes on his own infrastructure.`,
+If you're building on any of this and want it production-grade, look at the [6-week MVP plan](/services/6-week-mvp) or [hire a founding engineer](/services/hire-founding-engineer-india) who has already made these mistakes on his own infrastructure.`,
     },
   ],
   cta: {
     text: 'Ship Your AI MVP in 6 Weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

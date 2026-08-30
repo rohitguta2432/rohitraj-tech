@@ -19,7 +19,7 @@ export const buildFamilyBudgetAppAndroidOfflineKotlin: BlogPost = {
     },
 {
       heading: 'Why Families Need a Different Finance App',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built PaisaGuard, a fully offline Android budget app with 8 financial modules — expense tracking, grocery budget mode, bill calendar, emergency fund tracker, debt snowball, affordability calculator, family expense splitting, and monthly reports — using Kotlin and Jetpack Compose with zero backend, designed specifically for Indian middle-class families who need real-time grocery budget tracking and two-person expense visibility.
 
@@ -161,9 +161,9 @@ When a debt is marked as paid, the app celebrates with a confetti animation and 
 
 **Data integrity across 8 modules:** With all modules sharing a single Room database, data consistency is critical. Room's support for database transactions ensures that cross-module operations — like marking a bill as paid and creating an expense entry simultaneously — are atomic. If either operation fails, both roll back. Kotlin coroutines with Flow provide reactive updates across modules, so the dashboard total updates instantly when a grocery item is added or a debt payment is recorded. This reactive architecture means the user always sees current data without manual refresh.
 
-For founders reading this and wondering about delivery, the two ways I work are a [mobile app development](/en/services/mobile-app-development) and a [fintech app build](/en/services/fintech-app-development).
+For founders reading this and wondering about delivery, the two ways I work are a [mobile app development](/services/mobile-app-development) and a [fintech app build](/services/fintech-app-development).
 
-If this thread is useful, [Building an Android Finance Tracker with SMS Auto-Import](/en/notes/build-android-finance-tracker-kotlin-jetpack-compose) and [How to Build an App Like Uber or Zomato](/en/notes/build-app-like-uber-zomato-architecture-cost) are the next two posts to read.`
+If this thread is useful, [Building an Android Finance Tracker with SMS Auto-Import](/notes/build-android-finance-tracker-kotlin-jetpack-compose) and [How to Build an App Like Uber or Zomato](/notes/build-app-like-uber-zomato-architecture-cost) are the next two posts to read.`
     },
     {
       heading: 'Frequently Asked Questions',

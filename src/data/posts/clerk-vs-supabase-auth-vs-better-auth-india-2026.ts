@@ -65,7 +65,7 @@ The 50K MAU column is where the conversation usually starts hurting. ₹11.64 la
 
 **Better-Auth lock-in is essentially zero.** The schema is yours, the password hashing is configurable (bcrypt or argon2id), and the session table is just rows. You can move to Auth.js, custom JWT, or even back to Clerk by dumping the user table and re-inviting. The cost is the operational burden you took on — you now own keeping the auth code patched against CVEs, monitoring for credential-stuffing attempts, and rotating session secrets.
 
-I built [MyFinancial](/en/projects/myfinancial) on a custom auth layer (pre-Better-Auth, in 2024) for exactly this reason — the app handles linked bank accounts, and I did not want a third party with the keys to the kingdom. The 2026 version of that decision is: use Better-Auth, get the same lock-in profile, and skip writing the boring parts yourself.`,
+I built [MyFinancial](/projects/myfinancial) on a custom auth layer (pre-Better-Auth, in 2024) for exactly this reason — the app handles linked bank accounts, and I did not want a third party with the keys to the kingdom. The 2026 version of that decision is: use Better-Auth, get the same lock-in profile, and skip writing the boring parts yourself.`,
     },
     {
       heading: 'Developer experience — where each one actually wins',
@@ -73,7 +73,7 @@ I built [MyFinancial](/en/projects/myfinancial) on a custom auth layer (pre-Bett
 
 **Clerk's DX is the genuinely best of the three.** The Next.js SDK is two lines (\`<ClerkProvider>\`, \`auth()\`), the dashboard is polished, and pre-built components for sign-up, sign-in, user profile, and organizations work out of the box. For an MVP where the founder has a deadline and the auth UI is throwaway, Clerk shaves ~3-5 days off the build. The cost of that is that you cannot easily diverge from Clerk's opinions — adding a custom signup field that goes into your own table requires their \`unsafeMetadata\` API and a webhook to sync back, which is a recipe for race conditions I have personally hit twice.
 
-**Supabase Auth is "good enough" with one footgun.** The \`@supabase/ssr\` package handles cookies correctly in Next.js App Router as of v0.7 (April 2026 — it was a mess before that). The pre-built UI components in \`@supabase/auth-ui-react\` are functional but ugly; you will rebuild them. The footgun is that RLS policies and Auth are coupled tightly — if you misconfigure a row-level-security policy, queries silently return empty arrays instead of errors. I [wrote about that specific bug class here](/en/notes/supabase-rls-production-bugs-need-real-engineer-2026). Once you have a debugging rhythm, it is fine.
+**Supabase Auth is "good enough" with one footgun.** The \`@supabase/ssr\` package handles cookies correctly in Next.js App Router as of v0.7 (April 2026 — it was a mess before that). The pre-built UI components in \`@supabase/auth-ui-react\` are functional but ugly; you will rebuild them. The footgun is that RLS policies and Auth are coupled tightly — if you misconfigure a row-level-security policy, queries silently return empty arrays instead of errors. I [wrote about that specific bug class here](/notes/supabase-rls-production-bugs-need-real-engineer-2026). Once you have a debugging rhythm, it is fine.
 
 **Better-Auth is the new contender that actually delivers.** The TypeScript-first API, schema-driven plugins (passkeys, 2FA, magic links, OAuth), and the fact that it runs on your existing Postgres makes it the cleanest fit for a Next.js + Postgres MVP. The catch is that it is young (1.x as of April 2026) — the docs are improving but you will hit edge cases the docs do not cover, and the community is ~5% the size of Clerk's. If you Google an obscure error, you might be the first person to hit it. For a senior team this is fine; for a junior team it is a tax.
 
@@ -147,15 +147,15 @@ A few crosscut rules:
 
 I have built MVPs on all three of these stacks in the last 18 months. The pattern that ships fastest and survives 12-18 months without a rewrite is: **Supabase Auth for the first six weeks**, with a written migration plan to Better-Auth at 50K MAU. Clerk only when the B2B Organizations primitive or the SOC 2 timeline actually pays for itself.
 
-If you are starting from scratch and want the auth decision made for you alongside the rest of the stack — Postgres, deployment, payment integration, observability — that is exactly what the [6-Week MVP Sprint](/en/services/6-week-mvp) packages: a senior engineer making these picks once, defensibly, so you do not lose three days to auth-provider research while your runway burns.
+If you are starting from scratch and want the auth decision made for you alongside the rest of the stack — Postgres, deployment, payment integration, observability — that is exactly what the [6-Week MVP Sprint](/services/6-week-mvp) packages: a senior engineer making these picks once, defensibly, so you do not lose three days to auth-provider research while your runway burns.
 
-For founders who want a long-term technical partner to make these calls plus build the product, the [Hire a Founding Engineer in India](/en/services/hire-founding-engineer-india) engagement model covers the same decision-making depth at a monthly retainer instead of project rate.
+For founders who want a long-term technical partner to make these calls plus build the product, the [Hire a Founding Engineer in India](/services/hire-founding-engineer-india) engagement model covers the same decision-making depth at a monthly retainer instead of project rate.
 
 Either way: pick one of the three auth providers above, set the migration trigger, and stop reading auth-comparison blog posts. The product is what wins.`,
     },
   ],
   cta: {
     text: 'Ship your MVP in 6 weeks — with the auth stack picked correctly',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

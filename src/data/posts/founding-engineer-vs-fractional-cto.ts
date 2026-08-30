@@ -27,7 +27,7 @@ export const foundingEngineerVsFractionalCto: BlogPost = {
     },
 {
       heading: 'Founding Engineer or Fractional CTO — What Does Your Startup Actually Need?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Hire a founding engineer if you have an idea and no product. Hire a fractional CTO if you have a product, a team, and a technical decision that will cost you $100K+ to unwind. Most pre-seed founders think they need a fractional CTO because the word "CTO" sounds like the missing piece. They do not. They need someone who writes code.
 
@@ -132,9 +132,9 @@ Questions that separate real CTOs from consultants:
 
 A good fractional CTO is one of the highest-leverage hires a Series A startup can make. A bad one is the most expensive way to burn cash at pre-seed. The difference is visible in 30 minutes if you know what to ask.
 
-For founders reading this and wondering about delivery, the two ways I work are a [founding engineer in India](/en/services/hire-founding-engineer-india) and a [fractional CTO engagement](/en/services/hire-fractional-cto-india).
+For founders reading this and wondering about delivery, the two ways I work are a [founding engineer in India](/services/hire-founding-engineer-india) and a [fractional CTO engagement](/services/hire-fractional-cto-india).
 
-Two posts that pick up where this one ends: [Founding Engineer vs Lovable in 2026](/en/notes/founding-engineer-vs-lovable-when-to-hire-2026) and [Hire a Founding Engineer in India](/en/notes/founding-engineer-india-vs-toptal-arc-uplers-2026).`
+Two posts that pick up where this one ends: [Founding Engineer vs Lovable in 2026](/notes/founding-engineer-vs-lovable-when-to-hire-2026) and [Hire a Founding Engineer in India](/notes/founding-engineer-india-vs-toptal-arc-uplers-2026).`
     },
     {
       heading: 'So Which One Should You Hire in 2026?',

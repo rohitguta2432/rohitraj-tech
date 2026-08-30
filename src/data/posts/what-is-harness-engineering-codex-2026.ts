@@ -29,13 +29,13 @@ export const whatIsHarnessEngineeringCodex2026: BlogPost = {
         },
         {
             heading: 'What Is Harness Engineering? OpenAI’s Agent-First Codex Playbook',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 OpenAI published an essay called [Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/) back in **February 2026**, and this week it climbed back onto the Hacker News front page with **286 points and ~200 comments** — a sign that the idea is finally landing now that the tooling caught up to it. The essay documents a five-month internal experiment: a small team shipped a production beta containing roughly **a million lines of code without writing a single line of it by hand**, driving everything through Codex. [InfoQ’s coverage](https://www.infoq.com/news/2026/02/openai-harness-engineering-codex/) called it a blueprint for large-scale agent-driven development, and it reads like one.
 
 The capability that changed is not "the model got smarter." It is that a coding agent stopped being autocomplete and became something that can **end-to-end drive a pull request** — reproduce a bug, write the fix, open the PR, respond to review, fix the build, and merge. Once an agent can do that loop unattended, the human bottleneck moves. You are no longer writing the code; you are designing the *environment* the agent writes code inside. OpenAI named that environment the **harness**, and the work of building it is harness engineering.
 
-Why it matters in June 2026 specifically: the production tooling finally exists to do this outside OpenAI. [GitHub shipped an Agent tasks REST API on June 4, 2026](https://github.blog/changelog/), Anthropic’s [Claude Opus 4.8 landed May 28](/en/notes/claude-opus-4-8-vs-4-7-developers-2026) with stronger agentic performance, and Claude Code’s [dynamic agent workflows](/en/notes/claude-code-dynamic-workflows-guide-2026) make the same patterns reproducible. Harness engineering is the methodology layer that sits on top of all of them. This is the developer-only read: what a harness actually contains, the architecture that makes it work, where it pays off, when to skip it, and the smaller version I run on real client work today.`,
+Why it matters in June 2026 specifically: the production tooling finally exists to do this outside OpenAI. [GitHub shipped an Agent tasks REST API on June 4, 2026](https://github.blog/changelog/), Anthropic’s [Claude Opus 4.8 landed May 28](/notes/claude-opus-4-8-vs-4-7-developers-2026) with stronger agentic performance, and Claude Code’s [dynamic agent workflows](/notes/claude-code-dynamic-workflows-guide-2026) make the same patterns reproducible. Harness engineering is the methodology layer that sits on top of all of them. This is the developer-only read: what a harness actually contains, the architecture that makes it work, where it pays off, when to skip it, and the smaller version I run on real client work today.`,
         },
         {
             heading: 'The Codex Experiment — the Numbers That Make the Case',
@@ -76,7 +76,7 @@ FAIL  repo/user.ts imports service/email.ts
   → Fix: move the call up to service/, or expose it via a Provider.
 \`\`\`
 
-**3. Golden principles that run as "garbage collection."** Recurring cleanup rules are encoded so entropy gets caught daily instead of compounding. Two of OpenAI’s: *prefer shared utility packages over hand-rolled helpers* (so invariants stay centralized), and *don’t probe data YOLO-style* — validate boundaries or use typed SDKs so an agent never builds on a guessed shape. Background Codex tasks scan for deviations on a cadence and **open refactoring PRs automatically**. Their framing: "technical debt is like a high-interest loan — it is almost always better to pay it down continuously." This is the direct fix for the [AI-generated-code anti-patterns](/en/notes/ai-generated-code-anti-patterns-fixes-2026) that pile up when agents run unsupervised.
+**3. Golden principles that run as "garbage collection."** Recurring cleanup rules are encoded so entropy gets caught daily instead of compounding. Two of OpenAI’s: *prefer shared utility packages over hand-rolled helpers* (so invariants stay centralized), and *don’t probe data YOLO-style* — validate boundaries or use typed SDKs so an agent never builds on a guessed shape. Background Codex tasks scan for deviations on a cadence and **open refactoring PRs automatically**. Their framing: "technical debt is like a high-interest loan — it is almost always better to pay it down continuously." This is the direct fix for the [AI-generated-code anti-patterns](/notes/ai-generated-code-anti-patterns-fixes-2026) that pile up when agents run unsupervised.
 
 **4. Repo-local legibility.** The repo is "optimized first for the agent’s legibility." Anything that lives in Slack, a Google Doc, or someone’s head is, in their words, **not accessible to the system** — so knowledge has to be pushed into the repo over time, treating it as an onboarding document for agents the way you would onboard a new hire.`,
         },
@@ -110,9 +110,9 @@ The pattern: **prompt engineering optimizes one interaction, vibe coding optimiz
 
 **1. Repos that agents touch every day.** The break-even is throughput. If an agent opens one PR a week against your code, a harness is overhead. If it opens five a day — the cadence OpenAI hit — the structural tests and golden principles stop being pedantic and become the only thing keeping the codebase coherent. As OpenAI put it: "in a human-first workflow these rules might feel pedantic; with agents they become multipliers."
 
-**2. Long-lived products with more than one contributor (human or agent).** Invariants encoded in linters travel; invariants in a senior engineer’s head do not. The moment a second agent — or a second developer — joins, the harness is what stops them from re-introducing the bug the first one just fixed. This is the same reason [a secure MCP server needs its containment rules written down](/en/notes/secure-mcp-server-typescript-2026), not assumed.
+**2. Long-lived products with more than one contributor (human or agent).** Invariants encoded in linters travel; invariants in a senior engineer’s head do not. The moment a second agent — or a second developer — joins, the harness is what stops them from re-introducing the bug the first one just fixed. This is the same reason [a secure MCP server needs its containment rules written down](/notes/secure-mcp-server-typescript-2026), not assumed.
 
-**3. Cost-bound, long-context work.** Progressive disclosure (the \`AGENTS.md\`-as-map pattern) is also a token-cost strategy: the agent loads the slice of context it needs instead of the whole manual on every run. That pairs directly with the [context-compression techniques I use to cut LLM token bills](/en/notes/llm-context-compression-cut-token-costs-2026) — a good harness is cheaper to run, not just safer.
+**3. Cost-bound, long-context work.** Progressive disclosure (the \`AGENTS.md\`-as-map pattern) is also a token-cost strategy: the agent loads the slice of context it needs instead of the whole manual on every run. That pairs directly with the [context-compression techniques I use to cut LLM token bills](/notes/llm-context-compression-cut-token-costs-2026) — a good harness is cheaper to run, not just safer.
 
 If your project is a two-file script or a weekend prototype, none of this applies, and building a harness for it is the over-engineering failure mode in the table above. Match the scaffolding to the throughput.`,
         },
@@ -129,14 +129,14 @@ None of this means the idea is wrong. It means the *timing* of adopting it shoul
         },
         {
             heading: 'How I Run a Smaller Harness Today (the Practitioner Version)',
-            content: `I do not have OpenAI’s 1,500-PR throughput, but I run client MVPs with coding agents every week, and the harness pattern is exactly what keeps that from turning into slop. Here is the scaled-down version I actually use — and would set up in a [6-week MVP sprint](/en/services/6-week-mvp) — built from tools that exist right now.
+            content: `I do not have OpenAI’s 1,500-PR throughput, but I run client MVPs with coding agents every week, and the harness pattern is exactly what keeps that from turning into slop. Here is the scaled-down version I actually use — and would set up in a [6-week MVP sprint](/services/6-week-mvp) — built from tools that exist right now.
 
 - **A \`CLAUDE.md\` is my \`AGENTS.md\`.** Every repo gets a lean map at the root: where the architecture rules live, what the layer order is, which commands to run, and the non-negotiables ("prefer the shared util", "validate inputs at the boundary"). It is the single highest-leverage file in the project — the agent reads it first, every run.
 - **Skills and slash commands are encoded golden principles.** Instead of re-explaining a workflow every time, I bake it into a reusable skill the agent invokes. That is the same move as OpenAI’s golden principles: encode the rule once, mechanically, so it is applied identically on every run instead of depending on me remembering to ask.
 - **\`/code-review\` is my agent-to-agent review leg.** I run an adversarial review agent over the diff before I read it myself — it catches the layer violations and guessed-shape bugs that agents love to introduce. It is a tiny version of OpenAI’s "request agent reviews until satisfied," and it is the step that most changes output quality.
 - **A code graph is my legibility layer.** I keep an indexed symbol/edge graph of the repo so the agent can answer "what calls this" and "what breaks if I change it" structurally instead of grepping and guessing. That is the repo-local legibility principle in practice — the knowledge lives where the agent can reach it.
 
-The failure mode I actively watch for is the one the README never warns about: **agents are confidently wrong at the boundaries.** They will invent a field on an API response, build three features on it, and never notice. My single most valuable golden rule is "no guessed shapes — validate at the boundary or use a typed client," which is almost word-for-word OpenAI’s "don’t probe data YOLO-style." That one rule, mechanically enforced, prevents more production incidents than any prompt tweak. If you keep your "local, cloud, or agent-driven" choices behind clean interfaces — the same discipline I use for [LLM routing across providers](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026) — swapping or sandboxing the agent stays a config change, not a rewrite.`,
+The failure mode I actively watch for is the one the README never warns about: **agents are confidently wrong at the boundaries.** They will invent a field on an API response, build three features on it, and never notice. My single most valuable golden rule is "no guessed shapes — validate at the boundary or use a typed client," which is almost word-for-word OpenAI’s "don’t probe data YOLO-style." That one rule, mechanically enforced, prevents more production incidents than any prompt tweak. If you keep your "local, cloud, or agent-driven" choices behind clean interfaces — the same discipline I use for [LLM routing across providers](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026) — swapping or sandboxing the agent stays a config change, not a rewrite.`,
         },
         {
             heading: 'Harness Engineering FAQ',
@@ -158,11 +158,11 @@ The failure mode I actively watch for is the one the README never warns about: *
 
 Do not over-rotate. If you write most of your own code, build a normal pipeline, not a harness. But if agents are opening PRs against your repo every day, the leverage has already moved — and the teams that build the scaffolding now will out-ship the ones still perfecting prompts. As OpenAI put it, the discipline shows up "more in the scaffolding rather than the code."
 
-If you want an AI product built so the agent-first patterns — repo-local legibility, golden-rule enforcement, agent review loops — are wired in from commit one instead of bolted on after the slop piles up, that is the work I do. I ship [production MVPs in 6 weeks](/en/services/6-week-mvp) and take [founding-engineer engagements](/en/services/hire-founding-engineer-india) for teams building on the agent-first stack.`,
+If you want an AI product built so the agent-first patterns — repo-local legibility, golden-rule enforcement, agent review loops — are wired in from commit one instead of bolted on after the slop piles up, that is the work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp) and take [founding-engineer engagements](/services/hire-founding-engineer-india) for teams building on the agent-first stack.`,
         },
     ],
     cta: {
         text: 'Get an Agent-First MVP Built Right in 6 Weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

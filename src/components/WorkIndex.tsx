@@ -66,10 +66,10 @@ const AGENT_ROWS: Row[] = agents.slice(0, 6).map((a) => {
     };
 });
 
-export function IndexRow({ row, n, locale }: { row: Row; n: number; locale: string }) {
+export function IndexRow({ row, n }: { row: Row; n: number }) {
     return (
         <li className="widx-row" style={{ "--row-i": n } as React.CSSProperties}>
-            <Link href={`/${locale}${row.href}`} className="widx-hit">
+            <Link href={`${row.href}`} className="widx-hit">
                 <span className="sr-only">{`Open ${row.name}`}</span>
             </Link>
 
@@ -109,7 +109,7 @@ export function IndexRow({ row, n, locale }: { row: Row; n: number; locale: stri
     );
 }
 
-export default function WorkIndex({ locale }: { locale: string }) {
+export default function WorkIndex() {
     return (
         <section id="work" className="widx">
             <div className="container">
@@ -128,10 +128,10 @@ export default function WorkIndex({ locale }: { locale: string }) {
                     </h3>
                     <ol className="widx-list">
                         {PRODUCT_ROWS.map((row, i) => (
-                            <IndexRow key={row.id} row={row} n={i + 1} locale={locale} />
+                            <IndexRow key={row.id} row={row} n={i + 1} />
                         ))}
                     </ol>
-                    <Link href={`/${locale}/projects`} className="widx-more">
+                    <Link href={`/projects`} className="widx-more">
                         Every project, in full <span aria-hidden="true">→</span>
                     </Link>
                 </div>
@@ -142,10 +142,10 @@ export default function WorkIndex({ locale }: { locale: string }) {
                     </h3>
                     <ol className="widx-list">
                         {AGENT_ROWS.map((row, i) => (
-                            <IndexRow key={row.id} row={row} n={i + 1} locale={locale} />
+                            <IndexRow key={row.id} row={row} n={i + 1} />
                         ))}
                     </ol>
-                    <Link href={`/${locale}/agents`} className="widx-more">
+                    <Link href={`/agents`} className="widx-more">
                         Run one in the browser <span aria-hidden="true">→</span>
                     </Link>
                 </div>

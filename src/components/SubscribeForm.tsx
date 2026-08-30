@@ -6,7 +6,6 @@ import { subscribeEmail } from '@/lib/supabase';
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 interface SubscribeFormProps {
-    locale: string;
     translations: {
         placeholder: string;
         button: string;
@@ -15,7 +14,7 @@ interface SubscribeFormProps {
     };
 }
 
-export default function SubscribeForm({ locale, translations }: SubscribeFormProps) {
+export default function SubscribeForm({ translations }: SubscribeFormProps) {
     const [email, setEmail] = useState('');
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [message, setMessage] = useState('');
@@ -50,7 +49,7 @@ export default function SubscribeForm({ locale, translations }: SubscribeFormPro
 
         setStatus('loading');
 
-        const result = await subscribeEmail(email, locale);
+        const result = await subscribeEmail(email);
 
         let ok = false;
         if (result.success) {

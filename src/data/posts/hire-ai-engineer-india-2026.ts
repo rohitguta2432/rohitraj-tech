@@ -29,7 +29,7 @@ export const hireAiEngineerIndia2026: BlogPost = {
     },
     {
       heading: 'Hire an AI Engineer in India in 2026 — Real Costs, the 2026 Stack, and the Sprint Alternative That Beats Both',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you searched "hire AI engineer India" in May 2026, the top 5 SERP results are all marketplaces — Turing, Toptal, Arc, Uplers, and Talent500 — pitching a vetted senior AI engineer in 72 hours for $80-$160 per hour. None of them tell you the real number: an experienced AI engineer in India costs $45K-$95K per year full-time, $8K-$14K per month on a retainer, or $15K-$25K flat for a 6-week production sprint. Compare that to the US, where the same role pays $180K-$280K base plus equity plus stock refresh — roughly 4x the cash and 10x the equity dilution.
 
@@ -79,9 +79,9 @@ US comparison: a senior AI engineer in San Francisco or NYC commands $200K-$280K
 
 3. **Fallback chains and graceful degradation.** Every production AI feature breaks in three ways: model timeout, rate limit, garbage output. The engineer should describe their default fallback pattern (cached response → rule-based → cheaper model → human handoff) without thinking about it.
 
-4. **MCP and tool calling fluency.** In 2026, the agent ecosystem runs on MCP. If your product has APIs you want Cursor / Claude / GPT clients to call, your engineer needs to ship a Spring Boot or Python MCP server, not a custom JSON-RPC bridge. (My [Spring Boot MCP guide](https://rohitraj.tech/en/notes/spring-boot-mcp) walks through what a production MCP server looks like.)
+4. **MCP and tool calling fluency.** In 2026, the agent ecosystem runs on MCP. If your product has APIs you want Cursor / Claude / GPT clients to call, your engineer needs to ship a Spring Boot or Python MCP server, not a custom JSON-RPC bridge. (My [Spring Boot MCP guide](https://rohitraj.tech/notes/spring-boot-mcp) walks through what a production MCP server looks like.)
 
-5. **On-device tradeoff awareness.** The engineer should know when to push inference to the edge — Gemma 4 + LiteRT for sub-100ms latency, privacy-first use cases, or offline support — and when to stay cloud-side. (See [Cloud-First AI Is Dead](https://rohitraj.tech/en/notes/cloud-first-ai-is-dead-on-device-android-2026) for the case study.)
+5. **On-device tradeoff awareness.** The engineer should know when to push inference to the edge — Gemma 4 + LiteRT for sub-100ms latency, privacy-first use cases, or offline support — and when to stay cloud-side. (See [Cloud-First AI Is Dead](https://rohitraj.tech/notes/cloud-first-ai-is-dead-on-device-android-2026) for the case study.)
 
 What you should NOT hire for: model architecture knowledge, paper-reading speed, or training-from-scratch experience. None of those skills move the needle on a production AI product in 2026. If a candidate's GitHub is full of toy fine-tunes and zero shipped products, pass.`
     },
@@ -108,7 +108,7 @@ For pre-seed founders building their first AI feature, the India direct contract
       heading: 'When You Should NOT Hire an AI Engineer in 2026',
       content: `Honest counter-position. Three scenarios where hiring an AI engineer is the wrong move:
 
-**1. You have not validated the AI feature with a no-code prototype yet.** Before you spend $20K on a senior engineer, build the same workflow in Make.com, n8n, or a Lovable app with a single OpenAI API call. If users do not engage with the prototype, the production version will not save it. AI engineering is execution leverage on a validated thesis, not a product strategy. (Related: [Vibe Coding vs Hiring a Developer](https://rohitraj.tech/en/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks).)
+**1. You have not validated the AI feature with a no-code prototype yet.** Before you spend $20K on a senior engineer, build the same workflow in Make.com, n8n, or a Lovable app with a single OpenAI API call. If users do not engage with the prototype, the production version will not save it. AI engineering is execution leverage on a validated thesis, not a product strategy. (Related: [Vibe Coding vs Hiring a Developer](https://rohitraj.tech/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks).)
 
 **2. Your "AI feature" is a single OpenAI call wrapped in a button.** If the entire feature is "user types question → GPT-4 answers → display response," you do not need an AI engineer. You need a full-stack engineer who can integrate an API. The hourly rate is half. The work ships in two weeks. Hire an AI engineer when the architecture has retrieval, agents, evals, fine-tuning, or on-device components — not for a chat box.
 
@@ -134,15 +134,15 @@ If you answered yes to all five and you are pre-PMF, the right action this week 
     },
     {
       heading: 'Ready to Hire an AI Engineer Without the Markup?',
-      content: `If you have a validated AI feature and want to ship it in 6 weeks, the [6-Week MVP Sprint](/en/services/6-week-mvp) covers RAG, MCP servers, agent orchestration, evals, and production deployment for $15K-$25K flat — fixed scope, fixed price, you own the GitHub from day one.
+      content: `If you have a validated AI feature and want to ship it in 6 weeks, the [6-Week MVP Sprint](/services/6-week-mvp) covers RAG, MCP servers, agent orchestration, evals, and production deployment for $15K-$25K flat — fixed scope, fixed price, you own the GitHub from day one.
 
-If you want a longer-term technical partner who can ship AI features and lead architecture decisions for your existing team, the [Hire a Founding Engineer in India](/en/services/hire-founding-engineer-india) service is the right fit — sprint or retainer, no equity ask, full code ownership.
+If you want a longer-term technical partner who can ship AI features and lead architecture decisions for your existing team, the [Hire a Founding Engineer in India](/services/hire-founding-engineer-india) service is the right fit — sprint or retainer, no equity ask, full code ownership.
 
 Not sure which one applies? Send a message describing the AI feature you want to build, and I will reply within 24 hours with an honest scoping call recommendation — including "you do not need an AI engineer for this" if that turns out to be the answer.`
     },
   ],
   cta: {
     text: 'Scope Your AI Sprint',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -28,13 +28,13 @@ export const v0ByVercelVsHireDeveloper2026: BlogPost = {
     },
 {
       heading: 'v0 by Vercel vs Hiring a Developer in 2026 — The Honest Answer Up Front',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you need a clickable Next.js + shadcn prototype to show three customers tomorrow, v0 at $20 per month is the fastest dollar a non-technical founder can spend in 2026. The crossover happens on roughly day 30, when the prototype gets a paying user — and now you need real auth, row-level security, Stripe webhook idempotency, a database that survives a redeploy, and an environment-variable strategy that does not leak your service-role key into the client bundle. v0 ships none of those by default.
 
-The math nobody runs is this: $20 a month for v0 Premium is $240 a year. The hidden cost is the rebuild — the moment your v0 app crosses 50 paying users, you typically pay an engineer $4,000 to $12,000 to undo the patterns v0 generated for speed (inline state, no migrations, hardcoded UI text, no tests, no error boundaries). A flat-fee [6-week MVP sprint](/en/services/6-week-mvp) at $15K to $30K ships the production app once, with auth, billing, monitoring, and tests, and you keep your weekends.
+The math nobody runs is this: $20 a month for v0 Premium is $240 a year. The hidden cost is the rebuild — the moment your v0 app crosses 50 paying users, you typically pay an engineer $4,000 to $12,000 to undo the patterns v0 generated for speed (inline state, no migrations, hardcoded UI text, no tests, no error boundaries). A flat-fee [6-week MVP sprint](/services/6-week-mvp) at $15K to $30K ships the production app once, with auth, billing, monitoring, and tests, and you keep your weekends.
 
-The real question is not "v0 or developer". It is "v0 *first*, then developer when?" — and that switch point is almost always earlier than founders think. This post answers it with real numbers — what v0 ships well, where it predictably stalls on production work, what a [founding engineer in India](/en/services/hire-founding-engineer-india) costs by comparison, and the four signals that tell you the prototype has outgrown the tool.`,
+The real question is not "v0 or developer". It is "v0 *first*, then developer when?" — and that switch point is almost always earlier than founders think. This post answers it with real numbers — what v0 ships well, where it predictably stalls on production work, what a [founding engineer in India](/services/hire-founding-engineer-india) costs by comparison, and the four signals that tell you the prototype has outgrown the tool.`,
     },
     {
       heading: 'What v0 Actually Ships in 2026 — And What It Quietly Skips',
@@ -57,7 +57,7 @@ What v0 quietly does not do is also impressive in its own way:
 | GDPR / DPDP data deletion endpoints | No | Build delete-cascade + audit log |
 | Real cost estimate before deploy | No | Read Vercel + Postgres pricing yourself |
 
-Translation: v0 ships the *visible* 30% of an MVP brilliantly and skips the invisible 70% that decides whether your app survives launch week. Compare this to a [6-week MVP sprint](/en/services/6-week-mvp) where the deliverable is a working product across all 10 rows above — auth that does not hand attackers your session, RLS that does not leak tenant A's data to tenant B, and a webhook handler that is idempotent the first time Stripe retries.`,
+Translation: v0 ships the *visible* 30% of an MVP brilliantly and skips the invisible 70% that decides whether your app survives launch week. Compare this to a [6-week MVP sprint](/services/6-week-mvp) where the deliverable is a working product across all 10 rows above — auth that does not hand attackers your session, RLS that does not leak tenant A's data to tenant B, and a webhook handler that is idempotent the first time Stripe retries.`,
     },
     {
       heading: 'Where v0 Predictably Stalls on Production Work',
@@ -101,8 +101,8 @@ The cost of a senior engineer is not their hourly rate. It is their hourly rate 
 | v0 Team (2 founders) | $60 | 30 minutes | Risky | No |
 | v0 + senior reviewer (you) | $20 + your weekends | 30 min + N weekends | Maybe — if you can read the code | Partially |
 | Toptal senior (US-billed) | $12K–$22K | 4–6 weeks (onboarding) | Weeks 6–8 | Yes |
-| [Direct founding engineer](/en/services/hire-founding-engineer-india) | $6.4K–$9.6K | 1 week | Weeks 3–4 | Yes |
-| [6-week MVP sprint](/en/services/6-week-mvp) | Flat $15K–$30K | Day 7 demo, week 6 production | Week 4 (auth + Stripe live) | Yes |
+| [Direct founding engineer](/services/hire-founding-engineer-india) | $6.4K–$9.6K | 1 week | Weeks 3–4 | Yes |
+| [6-week MVP sprint](/services/6-week-mvp) | Flat $15K–$30K | Day 7 demo, week 6 production | Week 4 (auth + Stripe live) | Yes |
 
 The hidden cost in rows 1 to 4 is *your* time and *your* incident response at 2 a.m. when a customer's payment double-charges. Every v0 diff requires a human who can spot a missing webhook signature check, an inverted RLS policy, or a hardcoded English string that just shipped to your French market. If that human is you and you cannot read TypeScript well enough to spot those, you are paying $20 to $60 a month to ship bugs that will cost $4K to $40K to clean up later.
 
@@ -114,7 +114,7 @@ The cost of a senior engineer is not $60 an hour. It is $60 an hour minus the bu
 
 **1. Pre-customer prototype for a YC application or pitch deck.** You need 5 screens that look real, route correctly, and demo a happy path on a laptop. Nobody is signing up. Nobody is paying. v0 produces this in an afternoon. A real engineer is overkill — the round has not closed, the idea has not been validated, and the prototype gets thrown away in 6 weeks anyway.
 
-**2. Internal tool with under 10 users (you and your team).** A weekly-review dashboard, a CSV-uploader for your ops team, a status board for your customer success rep. The blast radius if it breaks is one Slack message. You do not need RLS, you do not need a Stripe webhook handler, and you do not need 95th-percentile uptime. v0 is the right tool. (Also see [Retool vs custom build for internal tools in 2026](/en/notes/retool-vs-custom-build-internal-tool-2026) for the related comparison.)
+**2. Internal tool with under 10 users (you and your team).** A weekly-review dashboard, a CSV-uploader for your ops team, a status board for your customer success rep. The blast radius if it breaks is one Slack message. You do not need RLS, you do not need a Stripe webhook handler, and you do not need 95th-percentile uptime. v0 is the right tool. (Also see [Retool vs custom build for internal tools in 2026](/notes/retool-vs-custom-build-internal-tool-2026) for the related comparison.)
 
 **3. Designer or PM exploring a UI without an engineer in the room.** v0 gives non-technical creators a path to a working prototype that an engineer can actually look at and respond to ("the empty state is wrong, the form needs server-side validation, this dropdown should be a combobox"). It is a far better artifact than a Figma file for handoff to engineering, because the engineer can run it locally.
 
@@ -126,13 +126,13 @@ If your project does not match any of those three, the v0-only path is not the r
 
 **Step 1 — Is anyone paying you yet?** If no, and you need to test the idea on real users, start with v0 Premium for $20. Ship a prototype in a week. Show it to 10 customers. If 3 of them ask "where do I pay" — go to Step 2. If 0 of them do, the idea, not the tool, is the problem.
 
-**Step 2 — Are you about to take money from someone?** If yes, you need: real auth (Clerk, Supabase, or NextAuth with email verification), Stripe live mode with webhook signature verification, a refund flow, an email receipt, and a privacy policy that names your real entity. v0 ships none of these. Hire someone to wire them — either a [6-week MVP sprint](/en/services/6-week-mvp) for a flat fee or 20–40 hours of contractor time at $40 to $60 per hour. Total cost $1.5K to $3K for the wiring alone if the v0 baseline is salvageable.
+**Step 2 — Are you about to take money from someone?** If yes, you need: real auth (Clerk, Supabase, or NextAuth with email verification), Stripe live mode with webhook signature verification, a refund flow, an email receipt, and a privacy policy that names your real entity. v0 ships none of these. Hire someone to wire them — either a [6-week MVP sprint](/services/6-week-mvp) for a flat fee or 20–40 hours of contractor time at $40 to $60 per hour. Total cost $1.5K to $3K for the wiring alone if the v0 baseline is salvageable.
 
 **Step 3 — Do you have more than 10 paying users or any customer with B2B contracts?** If yes, you need RLS or equivalent multi-tenant isolation, audit logs, a tested data-deletion path (DPDP / GDPR), and a basic SLO around incident response. None of these are v0-shippable. Bring the engineer onto the codebase as a 2-3 week refactor before adding the next feature, not after a customer reports a data leak.
 
 **Step 4 — Are you about to fundraise?** If yes, the codebase will be reviewed by an engineer the VC trusts during diligence. v0 patterns at scale (no tests, no migrations, leaked secrets, missing RLS) are red flags that can kill the round or knock 20% off valuation. Pay the rescue cost *before* the term sheet, not after.
 
-**Step 5 — Do you want to keep building features for the next 12 months?** If yes, the question is no longer "v0 or engineer". It is "which engineer". A founding engineer at $140K-$220K plus equity is one option; a contracted senior at $15K-$30K per sprint is another. v0 stops being the bottleneck — your hiring strategy is. The post on [hiring a founding engineer in India](/en/services/hire-founding-engineer-india) walks through the cash and equity math for both paths.
+**Step 5 — Do you want to keep building features for the next 12 months?** If yes, the question is no longer "v0 or engineer". It is "which engineer". A founding engineer at $140K-$220K plus equity is one option; a contracted senior at $15K-$30K per sprint is another. v0 stops being the bottleneck — your hiring strategy is. The post on [hiring a founding engineer in India](/services/hire-founding-engineer-india) walks through the cash and equity math for both paths.
 
 The honest summary: v0 is one of the best $20-a-month spends a non-technical founder can make in 2026, *and* it is a tool with a hard ceiling around day 30. Treat it as the prototype tool it is. The moment a paying customer touches it, hire someone. The hidden cost of waiting is always larger than the hidden cost of switching.`,
     },
@@ -140,13 +140,13 @@ The honest summary: v0 is one of the best $20-a-month spends a non-technical fou
       heading: 'What to Do This Week — Two Concrete Next Steps',
       content: `If you are pre-customer: keep your $20 v0 subscription, ship 3 prototypes this month, run them past 30 customers, and email me only after one of them asks "where do I pay". You do not need an engineer yet — you need a validated idea.
 
-If you have a v0 prototype with paying users today: send the GitHub repo and a 2-line description to me at rohitgupta2432 [at] gmail [dot] com. I do free 30-minute scoping calls — we look at the code together, I tell you whether it is a $2K stabilization (typical for sub-50-user apps with no RLS), a $15K [6-week MVP sprint](/en/services/6-week-mvp) rebuild, or a "you are fine, ship more features and call me at 200 users". No NDA needed for the call; NDAs get signed if we engage.
+If you have a v0 prototype with paying users today: send the GitHub repo and a 2-line description to me at rohitgupta2432 [at] gmail [dot] com. I do free 30-minute scoping calls — we look at the code together, I tell you whether it is a $2K stabilization (typical for sub-50-user apps with no RLS), a $15K [6-week MVP sprint](/services/6-week-mvp) rebuild, or a "you are fine, ship more features and call me at 200 users". No NDA needed for the call; NDAs get signed if we engage.
 
 The tools are not the question. The timing is. Build the prototype with v0. Hire when the first dollar lands. The math always wins the same way: a $4K stabilization on day 45 is cheaper than a $25K rebuild on day 120, every single time.`,
     },
   ],
   cta: {
     text: 'Hire a Founding Engineer Instead of Rebuilding Twice',
-    href: '/en/services/hire-founding-engineer-india',
+    href: '/services/hire-founding-engineer-india',
   },
 };

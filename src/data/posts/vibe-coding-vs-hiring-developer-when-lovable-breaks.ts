@@ -30,7 +30,7 @@ This doesn't apply to internal tools, prototypes, or apps that intentionally sta
     },
     {
       heading: 'Should You Keep Vibe Coding or Hire a Developer in 2026?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Keep vibe coding when your app has under 500 active users, no custom auth, standard Stripe payments, and your iteration loop is fast enough to ship daily. Hire a developer — ideally a senior contractor on a fixed sprint — when any two of these are true: Lovable or Bolt breaks the same feature every time you try to extend it, your auth or payments need customization the tool cannot express, you are entering a regulated domain, or your AI coding loop has slowed to less than one working feature per day.
 
@@ -178,9 +178,9 @@ The moment engineering is the bottleneck, you will know. You will wake up frustr
 
 If your vibe-coded MVP is past the diagnostic threshold — 2 or more symptoms from the checklist above — that is exactly the shape of engagement I take on. If you are below the threshold, I will tell you so and point you back to your prompts. Either way, the 30-minute call is free.
 
-For founders reading this and wondering about delivery, the two ways I work are a [founding engineer in India](/en/services/hire-founding-engineer-india) and a [6-week MVP sprint](/en/services/6-week-mvp).
+For founders reading this and wondering about delivery, the two ways I work are a [founding engineer in India](/services/hire-founding-engineer-india) and a [6-week MVP sprint](/services/6-week-mvp).
 
-Two posts that pick up where this one ends: [Founding Engineer vs Lovable in 2026](/en/notes/founding-engineer-vs-lovable-when-to-hire-2026) and [Bolt.new vs Hire Developer 2026](/en/notes/bolt-new-vs-hire-developer-2026).`
+Two posts that pick up where this one ends: [Founding Engineer vs Lovable in 2026](/notes/founding-engineer-vs-lovable-when-to-hire-2026) and [Bolt.new vs Hire Developer 2026](/notes/bolt-new-vs-hire-developer-2026).`
     },
     {
       heading: 'Frequently Asked Questions',

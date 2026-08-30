@@ -27,9 +27,9 @@ export const supabaseRlsProductionBugsNeedRealEngineer2026: BlogPost = {
     },
 {
       heading: 'Your Supabase RLS Just Leaked Production Data — The 5 Bugs Every Vibe-Coded App Hits in 2026',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
-If your Supabase project was scaffolded by [Lovable](/en/notes/lovable-app-production-bugs-need-real-engineer-2026), Bolt, or Cursor, your row-level security is almost certainly broken in at least one of five predictable ways. The fix is not another prompt. The fix is a senior engineer who reads the SQL and tests the policies against a real anon-key client.
+If your Supabase project was scaffolded by [Lovable](/notes/lovable-app-production-bugs-need-real-engineer-2026), Bolt, or Cursor, your row-level security is almost certainly broken in at least one of five predictable ways. The fix is not another prompt. The fix is a senior engineer who reads the SQL and tests the policies against a real anon-key client.
 
 The cost of getting RLS wrong is not theoretical. In January 2025, security researchers found **170+ Lovable-generated apps with fully exposed production databases** — names, emails, phone numbers, payment data — because RLS was either disabled or scoped to a permissive default policy. The apps shipped to real users. The leak was silent. Nobody noticed until the dump appeared in a Telegram channel.
 
@@ -50,7 +50,7 @@ The fix pattern a senior engineer runs:
 3. Enable RLS with \`ALTER TABLE <name> ENABLE ROW LEVEL SECURITY;\` and write at least one policy per CRUD verb you actually use.
 4. Tables that genuinely need to be public (a marketing-side blog index, a public catalog) get an explicit \`policy: USING (true)\` for SELECT only — never for INSERT, UPDATE, or DELETE.
 
-Total work for a 12-table Supabase project: 4-6 hours. Cost in a [rescue engagement](/en/services/hire-founding-engineer-india): $600-$1,200. The discovery query alone is 30 seconds. The hard part is reasoning through what each table should expose.`
+Total work for a 12-table Supabase project: 4-6 hours. Cost in a [rescue engagement](/services/hire-founding-engineer-india): $600-$1,200. The discovery query alone is 30 seconds. The hard part is reasoning through what each table should expose.`
     },
     {
       heading: 'Bug 2: Cross-Tenant Leak Through Joined Tables',
@@ -134,7 +134,7 @@ if (data && data.length > 0) {
 }
 \`\`\`
 
-Run this for every table, for every CRUD verb, for at least two test users. A senior engineer turns it into a test suite that runs in CI and blocks deploys when an RLS regression slips in. The pattern is the same one used to verify [auth edge cases on Lovable rescues](/en/notes/lovable-app-production-bugs-need-real-engineer-2026) — assume the happy path lies, test the negative paths.
+Run this for every table, for every CRUD verb, for at least two test users. A senior engineer turns it into a test suite that runs in CI and blocks deploys when an RLS regression slips in. The pattern is the same one used to verify [auth edge cases on Lovable rescues](/notes/lovable-app-production-bugs-need-real-engineer-2026) — assume the happy path lies, test the negative paths.
 
 Rescue work: 1-2 days to write the suite for a 10-table schema, plus integration into the existing CI. Cost: $1,500-$3,000. The suite catches every RLS regression for the rest of the project's life, which is why this is the highest-leverage line item in the audit.`
     },
@@ -154,7 +154,7 @@ Rescue work: 1-2 days to write the suite for a 10-table schema, plus integration
 
 If you cannot answer "yes, we do the right column" for every row of this table, your Supabase project has at least one of the five bugs in this post live in production right now.
 
-The audit itself takes 2-4 hours for a small project, 1-2 days for a 15-table multi-tenant schema. It is the cheapest line item in the [6-Week MVP Sprint](/en/services/6-week-mvp) and the first thing I run on any [founding-engineer rescue](/en/services/hire-founding-engineer-india) where Supabase is in the stack.`
+The audit itself takes 2-4 hours for a small project, 1-2 days for a 15-table multi-tenant schema. It is the cheapest line item in the [6-Week MVP Sprint](/services/6-week-mvp) and the first thing I run on any [founding-engineer rescue](/services/hire-founding-engineer-india) where Supabase is in the stack.`
     },
     {
       heading: 'When the Lovable Default Is Actually Fine',
@@ -168,7 +168,7 @@ The audit itself takes 2-4 hours for a small project, 1-2 days for a 15-table mu
 
 If you are in case 1 or 3, this post does not apply to you. If you are in case 2, run the audit before your first paying customer. If you are in any other case — multi-tenant SaaS, marketplace, social product, B2B tool — you are in the failure mode this post describes, and the audit pays for itself the first time it catches a real leak.
 
-The pattern is the same one I keep seeing in [vibe-coded MVPs that hit production](/en/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks): the AI builder ships the happy path. The senior engineer ships the threat model.`
+The pattern is the same one I keep seeing in [vibe-coded MVPs that hit production](/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks): the AI builder ships the happy path. The senior engineer ships the threat model.`
     },
     {
       heading: 'The 5-Step Pre-Launch RLS Checklist',
@@ -180,13 +180,13 @@ The pattern is the same one I keep seeing in [vibe-coded MVPs that hit productio
 4. **Run the anon-key test suite.** Sign in as user A, attempt to read / update / delete user B's rows. Every attempt must fail. Wire this into CI.
 5. **Audit service-role usage.** Grep your codebase for \`SUPABASE_SERVICE_ROLE_KEY\`. Every use should be in a server function, never in the React bundle. Each call site should have a comment explaining why service role is required.
 
-If you want a senior engineer to run this audit on your Supabase project — 4-8 hours of work, deliverable a written audit report plus a passing CI suite — that is exactly the scope of a [Founding Engineer rescue engagement](/en/services/hire-founding-engineer-india). If your stack is broader and you need an MVP rebuilt with security baked in from day one, that is the [6-Week MVP Sprint](/en/services/6-week-mvp).
+If you want a senior engineer to run this audit on your Supabase project — 4-8 hours of work, deliverable a written audit report plus a passing CI suite — that is exactly the scope of a [Founding Engineer rescue engagement](/services/hire-founding-engineer-india). If your stack is broader and you need an MVP rebuilt with security baked in from day one, that is the [6-Week MVP Sprint](/services/6-week-mvp).
 
 The five bugs in this post will fire on every vibe-coded Supabase project at some point in its lifecycle. The only question is whether you fix them on a Wednesday afternoon during an audit, or on a Saturday night during an incident.`
     }
   ],
   cta: {
     text: 'Audit my Supabase RLS before launch',
-    href: '/en/services/hire-founding-engineer-india',
+    href: '/services/hire-founding-engineer-india',
   },
 };

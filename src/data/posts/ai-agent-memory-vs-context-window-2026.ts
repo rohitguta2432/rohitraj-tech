@@ -28,7 +28,7 @@ export const aiAgentMemoryVsContextWindow2026: BlogPost = {
         },
         {
             heading: "AI Agent Memory vs Context Window: Why a Bigger Window Isn't Memory",
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For two years the answer to "my agent forgets things" was "buy a bigger context window." That era is over. In mid-2026 the people actually shipping production agents — memory vendors, coding-agent teams, infra builders — have converged on a single, slightly deflating conclusion: **the long-context arms race ended without a winner, and persistent structured memory is the real differentiator** ([Zencoder, May 18 2026](https://zencoder.ai/newsletter/the-context-engine-ai-coding-agents)).
 
@@ -60,7 +60,7 @@ So the honest framing is: **most production agent failures are not model failure
 
 The payoff is not subtle. On **LoCoMo**, the two-layer approach scored **91.6% accuracy at ~6,956 tokens/query** against **72.9% at ~26,000 tokens** for stuffing everything into context — and newer numbers push it to **92.5 on LoCoMo and 94.4 on LongMemEval at ~6,900 tokens** ([mem0](https://mem0.ai/blog/state-of-ai-agent-memory-2026)). A real fintech team that moved a coding agent from a **2M-token window to 64k tokens plus repo-graph retrieval** saw **bug-fix accuracy climb from 71% to 84% while inference cost dropped ~5x** ([Zencoder](https://zencoder.ai/newsletter/the-context-engine-ai-coding-agents)). Smaller window, better results, cheaper. That is the whole argument in one data point.
 
-If you want the deeper "which tool implements this" comparison, I broke down the managed and open options in [open-source AI agent memory: Mem0 vs Zep vs Letta](/en/notes/open-source-ai-agent-memory-mem0-vs-zep-letta-2026) — this post is the architecture; that one is the shopping list.`,
+If you want the deeper "which tool implements this" comparison, I broke down the managed and open options in [open-source AI agent memory: Mem0 vs Zep vs Letta](/notes/open-source-ai-agent-memory-mem0-vs-zep-letta-2026) — this post is the architecture; that one is the shopping list.`,
         },
         {
             heading: 'How do you build an agent memory layer with Postgres and pgvector?',
@@ -94,7 +94,7 @@ facts = recall(user_id, user_message)
 system = "Known facts about this user:\\n- " + "\\n- ".join(facts)
 \`\`\`
 
-Three things make this production-grade rather than a toy. **One: pin hard constraints on every call.** Constraints like "this user is on the EU data plan — never route to US regions" should be retrieved and injected at the top of the system prompt *every* turn, not left to survive the window — recall the 33%-by-turn-16 decay. **Two: extract, do not dump.** \`remember()\` should store a distilled fact ("prefers monthly billing"), not the raw transcript; the extraction step is what keeps retrieval sharp. **Three: meter token spend.** The reason this wins is the ~6,900-vs-26,000 token gap, so log tokens-per-turn and treat a rising number as the regression it is. If raw token cost is your real pain, this composes with the prompt-side tricks in [cut your LLM token costs with context compression](/en/notes/llm-context-compression-cut-token-costs-2026).`,
+Three things make this production-grade rather than a toy. **One: pin hard constraints on every call.** Constraints like "this user is on the EU data plan — never route to US regions" should be retrieved and injected at the top of the system prompt *every* turn, not left to survive the window — recall the 33%-by-turn-16 decay. **Two: extract, do not dump.** \`remember()\` should store a distilled fact ("prefers monthly billing"), not the raw transcript; the extraction step is what keeps retrieval sharp. **Three: meter token spend.** The reason this wins is the ~6,900-vs-26,000 token gap, so log tokens-per-turn and treat a rising number as the regression it is. If raw token cost is your real pain, this composes with the prompt-side tricks in [cut your LLM token costs with context compression](/notes/llm-context-compression-cut-token-costs-2026).`,
         },
         {
             heading: 'Context window vs memory layer: the comparison table',
@@ -136,15 +136,15 @@ The failure mode isn't "using long context." It's *defaulting* to it for statefu
             heading: 'How I would ship agent memory in an MVP without over-engineering it',
             content: `When a client wants a "remembering" assistant in a six-week build, the temptation is to reach for the most sophisticated memory framework on day one. I do the opposite — here is the wiring I actually ship.
 
-**Start with pgvector, not a memory vendor.** Most MVPs already run Postgres. Adding the \`pgvector\` extension and the ~25 lines above gets you a real persistent-memory layer with zero new vendors, zero new failure domains, and full data control. You can always graduate to a dedicated service once retrieval quality or scale demands it — but you rarely need to, and starting there is premature. For a finance product like [MyFinancial](/en/notes/open-source-ai-agent-memory-mem0-vs-zep-letta-2026), keeping user facts in our own Postgres is also the cleaner data-residency story.
+**Start with pgvector, not a memory vendor.** Most MVPs already run Postgres. Adding the \`pgvector\` extension and the ~25 lines above gets you a real persistent-memory layer with zero new vendors, zero new failure domains, and full data control. You can always graduate to a dedicated service once retrieval quality or scale demands it — but you rarely need to, and starting there is premature. For a finance product like [MyFinancial](/notes/open-source-ai-agent-memory-mem0-vs-zep-letta-2026), keeping user facts in our own Postgres is also the cleaner data-residency story.
 
 **Extract on session close, retrieve on session open — and pin constraints always.** The two cron-simple operations (\`remember\` at the end, \`recall\` at the start) cover 80% of the value. The one thing I never leave to the window is a hard constraint — those get pinned into the system prompt on every single turn, because the compliance data says anything else silently rots.
 
 **Put a token meter on it from day one.** The entire economic case for memory is the ~6,900-vs-26,000 token gap. If you don't measure tokens-per-turn, you can't tell whether your memory layer is actually saving money or your "summaries" have quietly grown back into the full transcript. I log it next to latency and treat a creeping number as a bug.
 
-**Treat retrieval quality as the real project.** A memory layer's failure mode isn't crashing — it's confidently retrieving a stale or irrelevant fact. Pin a small golden set of "given this query, these facts should surface" cases and re-run it on every change to the extraction or embedding step. This is the same eval-gate discipline I apply to any agent behavior change, the kind I wired into [building a secure MCP server](/en/notes/secure-mcp-server-typescript-2026).
+**Treat retrieval quality as the real project.** A memory layer's failure mode isn't crashing — it's confidently retrieving a stale or irrelevant fact. Pin a small golden set of "given this query, these facts should surface" cases and re-run it on every change to the extraction or embedding step. This is the same eval-gate discipline I apply to any agent behavior change, the kind I wired into [building a secure MCP server](/notes/secure-mcp-server-typescript-2026).
 
-This pgvector-first, pin-constraints, meter-tokens, gate-retrieval setup is exactly the plumbing I put in from commit one when I [build an MVP in 6 weeks](/en/services/6-week-mvp) — so "give the assistant memory" stays a two-function change instead of a re-architecture.`,
+This pgvector-first, pin-constraints, meter-tokens, gate-retrieval setup is exactly the plumbing I put in from commit one when I [build an MVP in 6 weeks](/services/6-week-mvp) — so "give the assistant memory" stays a two-function change instead of a re-architecture.`,
         },
         {
             heading: 'AI agent memory vs context window: FAQ',
@@ -166,11 +166,11 @@ This pgvector-first, pin-constraints, meter-tokens, gate-retrieval setup is exac
 
 So the move isn't "wait for a bigger window." It's: put the current task in working memory, put everything that should outlive the session in a persistent layer, pin hard constraints on every call, and route between them with the 30-day rule. Start with pgvector and ~25 lines, meter your tokens, and gate retrieval quality with a golden set. The honest exception — one-shot tasks that fit in a single window — is real, but it's the exception, not the default.
 
-If you want this built into a product properly — a pgvector memory layer, pinned constraints, token metering, and an eval-gated retrieval step so "give the assistant memory" is a clean two-function change — that's the work I do. I ship [production MVPs in 6 weeks](/en/services/6-week-mvp) and take [founding-engineer engagements for India-based teams](/en/services/hire-founding-engineer-india) building on the current AI stack.`,
+If you want this built into a product properly — a pgvector memory layer, pinned constraints, token metering, and an eval-gated retrieval step so "give the assistant memory" is a clean two-function change — that's the work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp) and take [founding-engineer engagements for India-based teams](/services/hire-founding-engineer-india) building on the current AI stack.`,
         },
     ],
     cta: {
         text: 'Wire a Real Agent Memory Layer Into Your MVP in 6 Weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

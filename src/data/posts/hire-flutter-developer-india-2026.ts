@@ -30,15 +30,15 @@ Skip Flutter if your app needs deep CallKit, complex WebRTC, or live AR — Reac
     },
     {
       heading: 'Hire Flutter Developer India 2026 — The Cost Math Before You Sign A Contract',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Flutter has won the cross-platform race in India in 2026. Three of the last five FinTech and consumer apps I scoped for clients picked Flutter over React Native — better UI consistency on low-end Android, faster animation on mid-tier devices, and one widget tree that ships pixel-identical on iOS and Android. If you are now trying to hire a Flutter developer in India, the three live options are structurally different and cost wildly different amounts.
 
 A founding engineer ships a complete Flutter MVP — Dart code, backend wiring, both stores, OTA via Shorebird if you want it — in 5 to 8 weeks for a fixed ₹6.5 to ₹9.5 lakh. A mid-tier Bangalore or Bengaluru agency quotes the same scope at ₹24 to ₹38 lakh, takes 14 to 18 weeks, and runs you through a project manager who has never written a Dart line. FlutterFlow looks like a third option at $30 a month and a contract dev to polish — and it is, until you hit the first feature FlutterFlow does not export cleanly.
 
-I have shipped Flutter code in production on FinTech and consumer apps across the last two years, debugged the [react-native-vs-flutter-2026](/en/notes/react-native-vs-flutter-2026) trade-off in real RFPs, and watched two clients pay ₹26L and ₹31L to agencies for Flutter MVPs I later refactored or rebuilt for under ₹8L. The numbers below are not theoretical. They are the May 2026 rate card.
+I have shipped Flutter code in production on FinTech and consumer apps across the last two years, debugged the [react-native-vs-flutter-2026](/notes/react-native-vs-flutter-2026) trade-off in real RFPs, and watched two clients pay ₹26L and ₹31L to agencies for Flutter MVPs I later refactored or rebuilt for under ₹8L. The numbers below are not theoretical. They are the May 2026 rate card.
 
-This post is the breakdown I wish every founder had before signing. Real Dart-specific failure modes per model, real packages that survive production, and the decision tree if you would rather skip the agency loop and just talk to one engineer. A [6-week MVP sprint](/en/services/6-week-mvp) is exactly that — but read the comparison first.`,
+This post is the breakdown I wish every founder had before signing. Real Dart-specific failure modes per model, real packages that survive production, and the decision tree if you would rather skip the agency loop and just talk to one engineer. A [6-week MVP sprint](/services/6-week-mvp) is exactly that — but read the comparison first.`,
     },
     {
       heading: 'The Real Cost Of A Flutter MVP In India — May 2026 Numbers',
@@ -82,7 +82,7 @@ The most common 2026 failure I see: FlutterFlow + cheap freelancer combo ships a
 
 **Riverpod vs Bloc vs Provider tax.** The agency picks Bloc by default because their seniors learned Flutter in 2020 when Bloc was the only mature option. Bloc is verbose — every feature is roughly 4 files. For a 12-screen MVP this means ~50–60 extra files of boilerplate vs Riverpod 2.x. The boilerplate tax is real: ~2 extra weeks of code, slower onboarding for the next dev, and a codebase that feels heavy. A founding engineer picks Riverpod by default in 2026 for any MVP under 25 screens and only reaches for Bloc on a hard requirement (existing Bloc team, very complex event sourcing). The tax inverts above 25 screens — but most MVPs never get there.
 
-**Backend integration.** Every quote silently assumes a backend exists. If it does not, the agency adds ₹9–13L for "backend integration support." A founding engineer who can ship a [Spring Boot or Node backend](/en/notes/spring-boot-vs-nodejs-startup-backend-2026) themselves saves the entire tax — which is why ~55% of my Flutter engagements are "Flutter app + backend + deploy" as one fixed scope.
+**Backend integration.** Every quote silently assumes a backend exists. If it does not, the agency adds ₹9–13L for "backend integration support." A founding engineer who can ship a [Spring Boot or Node backend](/notes/spring-boot-vs-nodejs-startup-backend-2026) themselves saves the entire tax — which is why ~55% of my Flutter engagements are "Flutter app + backend + deploy" as one fixed scope.
 
 **OTA updates.** Shorebird (the Flutter equivalent of CodePush) is mature in 2026 but agencies almost never configure it on first ship — they want you to come back for a v1.1 contract. A founding engineer wires Shorebird on week 5 so you can ship Dart-only fixes without an app-store cycle. The cost: ~6 hours. The savings on each store-cycle skip: 3–10 days.
 
@@ -119,7 +119,7 @@ The ₹8L founding-engineer column does more on most rows. The ₹28L agency col
 
 **Use Toptal/Arc when:** you already have a CTO or founding engineer making architectural calls and need to ship one specific feature — one screen, one integration, one bug. Toptal Flutter freelancers are excellent multipliers for an existing team. They are dangerous as a first technical hire because you do not yet know what to scope.
 
-**For every other case** — pre-PMF, fixed budget, fast launch, India market, founding team that wants to ship clean Dart — the founding-engineer model is structurally better. Compare this honestly to the [founding engineer vs fractional CTO](/en/notes/founding-engineer-vs-fractional-cto) trade-off if you also need part-time tech leadership without a full engineering build.`,
+**For every other case** — pre-PMF, fixed budget, fast launch, India market, founding team that wants to ship clean Dart — the founding-engineer model is structurally better. Compare this honestly to the [founding engineer vs fractional CTO](/notes/founding-engineer-vs-fractional-cto) trade-off if you also need part-time tech leadership without a full engineering build.`,
     },
     {
       heading: 'Decision Tree — Which Flutter Hiring Model In 6 Steps',
@@ -143,7 +143,7 @@ The single most predictive question is step 5. If you answered yes, stop reading
       heading: 'Where To Go From Here',
       content: `If you have read this far, you have probably already decided. Concrete next steps based on the model you picked.
 
-If you picked founding engineer: a [6-week MVP sprint](/en/services/6-week-mvp) is the fixed-scope version — 8–12 Flutter screens, Riverpod, Drift offline, backend wired, both stores in 6 weeks at a fixed price. For ongoing work, [hire a founding engineer in India](/en/services/hire-founding-engineer-india) on retainer.
+If you picked founding engineer: a [6-week MVP sprint](/services/6-week-mvp) is the fixed-scope version — 8–12 Flutter screens, Riverpod, Drift offline, backend wired, both stores in 6 weeks at a fixed price. For ongoing work, [hire a founding engineer in India](/services/hire-founding-engineer-india) on retainer.
 
 If you picked agency: ask for Dart code samples from 3 past Flutter projects, not slide-deck case studies. Read commits, not screenshots. Look for consistent state management across screens — Bloc-on-some-screens-Provider-on-others is a tell no one architected the app. Require the lead Flutter engineer on the kickoff call. The biggest agency-failure pattern is bait-and-switch — sold by the senior, built by a 2-year junior who learned Flutter from YouTube last quarter.
 
@@ -156,6 +156,6 @@ Whichever path: never pay more than 30% upfront on fixed-price, never sign a SOW
   ],
   cta: {
     text: 'Get a fixed-price Flutter MVP quote in 30 minutes →',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

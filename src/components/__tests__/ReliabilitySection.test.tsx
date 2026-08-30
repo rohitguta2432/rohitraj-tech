@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import ReliabilitySection from '../ReliabilitySection';
-import type { HomeDictionary, Locale } from '@/lib/i18n';
+import type { HomeDictionary } from '@/lib/i18n';
 
 jest.mock('next/link', () => {
   return ({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
@@ -45,7 +45,7 @@ const mockDictionary: HomeDictionary = {
 
 describe('ReliabilitySection', () => {
   it('renders without crashing', () => {
-    render(<ReliabilitySection dictionary={mockDictionary} locale={'en' as Locale} />);
+    render(<ReliabilitySection dictionary={mockDictionary} />);
     expect(screen.getByText('Reliability & Production Readiness')).toBeInTheDocument();
   });
 });

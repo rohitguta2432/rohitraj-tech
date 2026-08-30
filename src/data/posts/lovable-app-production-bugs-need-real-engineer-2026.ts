@@ -28,7 +28,7 @@ export const lovableAppProductionBugsNeedRealEngineer2026: BlogPost = {
     },
     {
       heading: 'When Your Lovable App Hits Production — The 5 Bugs That Always Need a Real Engineer in 2026',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Vibe-coding platforms (Lovable, Bolt, v0, Cursor + Claude, Replit Agent) ship 70% of a working MVP in a weekend. The first 100 users do not surface the bugs. By user 500, the same five categories of bugs always appear — auth edge cases, row-level security holes, payment webhooks, performance regressions, schema migration disasters. None of these can be fixed with another vibe-coding prompt. Each one requires a senior engineer who can read the generated code, find the gap, and write the fix.
 
@@ -108,7 +108,7 @@ The fix pattern: senior engineer establishes a migration framework (Supabase mig
 
 The structural fix is that schema changes should never be vibe-coded after the app has real users. Once you have data you do not want to lose, every schema change goes through a senior engineer.
 
-Adjacent reads: [Your Supabase RLS Just Leaked Production Data](/en/notes/supabase-rls-production-bugs-need-real-engineer-2026) for the stack-level decision, [Founding Engineer vs Lovable in 2026](/en/notes/founding-engineer-vs-lovable-when-to-hire-2026) for the hiring-level one.`
+Adjacent reads: [Your Supabase RLS Just Leaked Production Data](/notes/supabase-rls-production-bugs-need-real-engineer-2026) for the stack-level decision, [Founding Engineer vs Lovable in 2026](/notes/founding-engineer-vs-lovable-when-to-hire-2026) for the hiring-level one.`
     },
     {
       heading: 'The Real Cost of Vibe-Coding to Production',
@@ -124,11 +124,11 @@ The vibe-coding model wins on cost if (1) you accept the rescue is coming, and (
 
 For founders running a Lovable app today: schedule the rescue work proactively. Do not wait for the bugs to fire. A planned rescue is $9-17K over 3 weeks. An emergency rescue at 2am after a customer data leak is $25K+ and a reputation hit.
 
-[Book a Lovable / Bolt rescue audit](https://rohitraj.tech/en/services/6-week-mvp) — free 30-min call where I run through your app, identify the top 5 bugs across these categories, and quote a fixed-price rescue. Or [hire a founding engineer in India](https://rohitraj.tech/en/services/hire-founding-engineer-india) for ongoing post-rescue maintenance.`
+[Book a Lovable / Bolt rescue audit](https://rohitraj.tech/services/6-week-mvp) — free 30-min call where I run through your app, identify the top 5 bugs across these categories, and quote a fixed-price rescue. Or [hire a founding engineer in India](https://rohitraj.tech/services/hire-founding-engineer-india) for ongoing post-rescue maintenance.`
     },
   ],
   cta: {
     text: 'Book a Lovable Rescue Audit',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
         short_name: 'Rohit Raj',
         description:
             'Founding Engineer building production AI systems. View projects, case studies, and reliability engineering.',
-        start_url: '/en',
+        start_url: '/',
         display: 'standalone',
         background_color: '#0a0a0a',
         theme_color: '#3b82f6',

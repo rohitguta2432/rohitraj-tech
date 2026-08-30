@@ -1,9 +1,8 @@
 import Link from "next/link";
-import type { HomeDictionary, Locale } from "@/lib/i18n";
+import type { HomeDictionary } from "@/lib/i18n";
 
 interface HireBlockProps {
     dict: HomeDictionary;
-    locale: Locale;
 }
 
 const FALLBACK: NonNullable<HomeDictionary["hire"]> = {
@@ -20,7 +19,7 @@ const FALLBACK: NonNullable<HomeDictionary["hire"]> = {
     cta: "Book a free 30-min scoping call",
 };
 
-export default function HireBlock({ dict, locale }: HireBlockProps) {
+export default function HireBlock({ dict }: HireBlockProps) {
     const hire = dict.hire ?? FALLBACK;
 
     return (
@@ -59,7 +58,7 @@ export default function HireBlock({ dict, locale }: HireBlockProps) {
                         ))}
                     </ul>
                     <div>
-                        <Link href={`/${locale}/hire`} className="btn btn-primary">
+                        <Link href={`/hire`} className="btn btn-primary">
                             {hire.cta}
                         </Link>
                     </div>

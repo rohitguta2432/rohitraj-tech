@@ -30,7 +30,7 @@ This doesn't apply if you need US time-zone overlap with enterprise customers, o
     },
     {
       heading: 'India vs US MVP Cost — What Does the Same App Actually Cost in 2026?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Building the same MVP costs $15,000–$30,000 with an India-based team and $60,000–$150,000 with a US-based team in 2026 — a 3–5× difference for comparable feature scope. The gap has compressed from 6–8× in 2020 because AI coding tools like Cursor and Claude have made individual senior engineers in both regions roughly equally productive on routine code. Where the real cost-to-value trade-off now lives is in agency overhead, communication tax, and continuity of ownership, not the hourly rate itself.
 
@@ -211,9 +211,9 @@ This is why the "India agency vs US agency" framing in most MVP-cost articles is
 
 The shape of the engagement is deliberately boring. No agency overhead, no PM layer, no billing surprises. Just one senior engineer, six weeks, a clean production codebase you own outright.
 
-On most of my client engagements this comes up as either a [founding engineer in India](/en/services/hire-founding-engineer-india) or a [6-week MVP sprint](/en/services/6-week-mvp) — either path leads to a working production build inside a quarter.
+On most of my client engagements this comes up as either a [founding engineer in India](/services/hire-founding-engineer-india) or a [6-week MVP sprint](/services/6-week-mvp) — either path leads to a working production build inside a quarter.
 
-Adjacent reads: [OpenAI vs Claude vs Gemini API](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026) for the stack-level decision, [Drizzle vs Prisma vs TypeORM](/en/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026) for the hiring-level one.`
+Adjacent reads: [OpenAI vs Claude vs Gemini API](/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026) for the stack-level decision, [Drizzle vs Prisma vs TypeORM](/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026) for the hiring-level one.`
     },
     {
       heading: 'Frequently Asked Questions',

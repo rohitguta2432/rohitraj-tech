@@ -28,13 +28,13 @@ export const antiAiSlopDesignSkillHallmarkGuide2026: BlogPost = {
         },
         {
             heading: 'Every AI-built site looks the same — and now there is a skill for that',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 You have seen it, and you can spot it in about two seconds. An AI coding agent ships you a landing page: **Inter** for every word, a **purple-to-cyan gradient** somewhere near the top, a row of **six identical rounded cards**, a subtle **bounce on every hover**, and a hero that says "Build faster with AI." Different prompt, different product, same page. This look now has a name — *AI slop* — and this week it got a dedicated antidote.
 
 [Hallmark](https://github.com/Nutlope/hallmark) is a **design skill** — a package of rules an AI coding assistant loads before it writes UI — that crossed **12,404 GitHub stars** and rode the Hacker News and dev.to front pages on the strength of one promise: generate website UI while *actively resisting* the aesthetic patterns AI is trained to reach for. It is MIT-licensed, made by [Nutlope](https://github.com/Nutlope) at Together AI, and works across **Claude Code, Cursor, and Codex**.
 
-The one mechanism that makes it more than a style guide: Hallmark runs **57 "slop-test gates"** — validation checkpoints that reject the statistically-safe defaults — plus a self-critique pass *before* it emits code. This post is the hands-on version the trend pieces skipped: what AI slop actually is under the hood, exactly how Hallmark's gates and four verbs work, how it compares to [Anthropic's frontend-design plugin](/en/notes/ai-job-search-agent-claude-code-guide-2026) and the other anti-slop skills, and the honest cases where a skill still will not rescue a design.`,
+The one mechanism that makes it more than a style guide: Hallmark runs **57 "slop-test gates"** — validation checkpoints that reject the statistically-safe defaults — plus a self-critique pass *before* it emits code. This post is the hands-on version the trend pieces skipped: what AI slop actually is under the hood, exactly how Hallmark's gates and four verbs work, how it compares to [Anthropic's frontend-design plugin](/notes/ai-job-search-agent-claude-code-guide-2026) and the other anti-slop skills, and the honest cases where a skill still will not rescue a design.`,
         },
         {
             heading: 'Why does AI-generated UI all look identical?',
@@ -140,7 +140,7 @@ The honest framing: Hallmark raises the *floor* — it makes it hard to ship som
         },
         {
             heading: 'How I would ship anti-slop design in a real product',
-            content: `I care about this one more than most, because the whole point of the [interactive things I ship](/en/about) — a particle-flow art system with hand-gesture tracking, a 3D live-events globe in a single HTML file, a browser-based generative design studio — is that they are supposed to look *made*, not *defaulted*. A tool that fights slop is a tool I actually want. Here is how I would wire it into real delivery, not just a demo.
+            content: `I care about this one more than most, because the whole point of the [interactive things I ship](/about) — a particle-flow art system with hand-gesture tracking, a 3D live-events globe in a single HTML file, a browser-based generative design studio — is that they are supposed to look *made*, not *defaulted*. A tool that fights slop is a tool I actually want. Here is how I would wire it into real delivery, not just a demo.
 
 **Start with \`study\`, not generate.** Before writing a line, I would point \`study\` at two or three references whose *structure* I admire (not to copy, to extract DNA — type scale, spacing rhythm, how they use negative space). That gives the agent a committed direction, which is the single thing that kills slop at the source. Generating from a brief beats generating from a vibe.
 
@@ -150,11 +150,11 @@ The honest framing: Hallmark raises the *floor* — it makes it hard to ship som
 
 **Audit before every ship.** \`hallmark audit\` on the final page, same as a linter, catches the gradient that crept back in during a rushed edit. Cheap insurance.
 
-That workflow — reference-driven DNA, a locked token system, gate-based refusal, and a deliberate human pass — is exactly the discipline I bake into a [6-week MVP](/en/services/6-week-mvp) so the product does not ship looking like every other AI-built app, or embed with your team as a [founding engineer](/en/services/hire-founding-engineer-india) to set the design system up so the *next* hundred screens inherit it for free. If your AI-built UI looks like everyone else's, that is a fixable problem — and it is worth fixing before it is the first thing a user sees.`,
+That workflow — reference-driven DNA, a locked token system, gate-based refusal, and a deliberate human pass — is exactly the discipline I bake into a [6-week MVP](/services/6-week-mvp) so the product does not ship looking like every other AI-built app, or embed with your team as a [founding engineer](/services/hire-founding-engineer-india) to set the design system up so the *next* hundred screens inherit it for free. If your AI-built UI looks like everyone else's, that is a fixable problem — and it is worth fixing before it is the first thing a user sees.`,
         },
     ],
     cta: {
         text: 'Shipping a product that looks like every other AI-built app? Let us wire the design system and anti-slop workflow so it does not.',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

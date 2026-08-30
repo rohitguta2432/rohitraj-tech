@@ -19,7 +19,7 @@ export const howToIntegrateAiExistingBusinessApp: BlogPost = {
     },
 {
       heading: 'Can You Add AI to an Existing App Without Rebuilding It?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Yes — integrating AI into your existing business application does not require a rewrite. The most practical approach is to add AI as a new layer alongside your current system. Start with semantic search or automated reports (1-3 weeks, under $2,000), then graduate to chat interfaces if needed. Your existing database, API, and frontend all stay intact while AI reads from and enhances what you already have.
 
@@ -110,7 +110,7 @@ Start with Level 1 (semantic search) or Level 2 (automated summaries). Get real 
 
 **How to measure AI ROI:** Before integrating any AI feature, define one measurable metric that should improve. For semantic search, track search-to-action conversion rate. For automated summaries, measure time saved per manager per week. For chat interfaces, track the percentage of questions answered without human intervention. Run the feature for 30 days and compare against your baseline. If the metric has not improved meaningfully, either adjust the implementation or reconsider whether AI is the right solution for that particular problem. Not every feature needs AI — sometimes a better-designed dashboard solves the same problem at lower cost and complexity.
 
-Adjacent reads: [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a…](/en/notes/how-much-does-it-cost-to-build-mobile-app-india-2026) for the stack-level decision, [How to Build a SaaS MVP in 2026](/en/notes/how-to-build-saas-mvp-2026) for the hiring-level one.`
+Adjacent reads: [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a…](/notes/how-much-does-it-cost-to-build-mobile-app-india-2026) for the stack-level decision, [How to Build a SaaS MVP in 2026](/notes/how-to-build-saas-mvp-2026) for the hiring-level one.`
     },
     {
       heading: 'Frequently Asked Questions',
@@ -137,6 +137,6 @@ Most businesses see measurable improvement within 30-60 days of deploying AI fea
   ],
   cta: {
     text: 'Add AI to Your Existing App — 6-Week Sprint',
-    href: '/en/services/ai-chatbot-development'
+    href: '/services/ai-chatbot-development'
   }
 };

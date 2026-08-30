@@ -51,7 +51,7 @@ For a typical India MVP at 100K monthly requests, **Hetzner + Cloudflare wins on
 
 The 1M req column is where founders usually start asking uncomfortable questions in their Vercel dashboard. ₹1.14 lakh/year for a stack that fits inside a Hetzner box your dad runs his email server on is hard to justify when the same money buys an extra month of runway.
 
-**The Vercel egress line is the killer for content-heavy Indian apps.** Vercel includes 1TB egress on Pro, then charges $0.40/GB. A photo-listing app like the one I helped a real-estate client build (think [PropCheck](/en/projects/propcheck)-style listing pages) blew through 1TB in 11 days because Next.js Image optimization caches the rendered variants per device width — 18 variants × 8,000 listings × ~80KB average = 11.5GB per crawl, and we had Googlebot + Bingbot + Yandex hitting them every 6 hours. The bill went from $25 to $312 in a month before we put Cloudflare in front and dropped Vercel Image entirely.
+**The Vercel egress line is the killer for content-heavy Indian apps.** Vercel includes 1TB egress on Pro, then charges $0.40/GB. A photo-listing app like the one I helped a real-estate client build (think [PropCheck](/projects/propcheck)-style listing pages) blew through 1TB in 11 days because Next.js Image optimization caches the rendered variants per device width — 18 variants × 8,000 listings × ~80KB average = 11.5GB per crawl, and we had Googlebot + Bingbot + Yandex hitting them every 6 hours. The bill went from $25 to $312 in a month before we put Cloudflare in front and dropped Vercel Image entirely.
 
 **The Railway column assumes you let it auto-sleep dev environments.** Default Railway projects run 24/7, which is fine for prod but expensive for staging. Set \`PORT_TIMEOUT=300\` on non-prod services and you cut that bill roughly in half. The math above assumes prod-only.
 
@@ -69,7 +69,7 @@ The 1M req column is where founders usually start asking uncomfortable questions
 | Hetzner CX22 (Hillsboro) + Cloudflare in front | 290ms | 28ms | Cloudflare bom edge cached; origin hit goes to PDX |
 | Hetzner CX22 (Helsinki) + Cloudflare in front | 310ms | 29ms | Cloudflare bom edge cached; origin hit goes to HEL |
 
-**Three things jumped out:** First, Vercel Pro's bom1 region is genuinely the fastest cold start because it terminates the function in Mumbai instead of round-tripping to Singapore. If your app is heavy on first-request rendering (signup flows, OG image generation, dashboard initial load), this is real money you save in conversion. I measured this on the [MyFinancial PWA](/en/projects/myfinancial) when I moved it from default Vercel region to bom1 in 2024 — first-paint dropped from ~1.4s to ~620ms on a Jio 4G simulation.
+**Three things jumped out:** First, Vercel Pro's bom1 region is genuinely the fastest cold start because it terminates the function in Mumbai instead of round-tripping to Singapore. If your app is heavy on first-request rendering (signup flows, OG image generation, dashboard initial load), this is real money you save in conversion. I measured this on the [MyFinancial PWA](/projects/myfinancial) when I moved it from default Vercel region to bom1 in 2024 — first-paint dropped from ~1.4s to ~620ms on a Jio 4G simulation.
 
 Second, Hetzner + Cloudflare wins on warm requests because Cloudflare's bom edge caches everything cacheable and only the origin-miss requests pay the trans-Pacific cost. For a content-heavy site (blog, listing pages, marketing pages), this is the cheapest fast option that exists. The catch is that dynamic API responses cannot be edge-cached by default — they hit your Hillsboro origin at 230ms+ no matter what.
 
@@ -87,7 +87,7 @@ Third, Railway Singapore is fine for India but not great. 75ms warm is acceptabl
 
 **Hetzner lock-in is essentially zero** because there is nothing to lock into — it is a VPS. Your \`docker-compose.yml\`, \`Caddyfile\`, and \`systemd\` units move byte-for-byte to any other VPS provider (DigitalOcean, Vultr, Linode, AWS Lightsail). The trade-off is that you took on the operational burden to escape vendor lock-in. You now own SSH key rotation, OS patching, log rotation, and backup verification.
 
-I built [MicroItinerary](/en/projects/microitinerary) on Vercel because the AI-heavy itinerary generation flow needed serverless burst capacity and Edge Functions for the OG image previews shared on WhatsApp. The lock-in was worth it for that app — moving it would cost more than 18 months of Vercel bills at current scale. But [MyFinancial](/en/projects/myfinancial) sits on a Hetzner CX22 specifically because privacy-first finance data should not transit through any platform's Edge Function logging by default. The lock-in posture matches the trust requirement of each app.`,
+I built [MicroItinerary](/projects/microitinerary) on Vercel because the AI-heavy itinerary generation flow needed serverless burst capacity and Edge Functions for the OG image previews shared on WhatsApp. The lock-in was worth it for that app — moving it would cost more than 18 months of Vercel bills at current scale. But [MyFinancial](/projects/myfinancial) sits on a Hetzner CX22 specifically because privacy-first finance data should not transit through any platform's Edge Function logging by default. The lock-in posture matches the trust requirement of each app.`,
     },
     {
       heading: 'Side-by-side comparison — what each platform actually does well',
@@ -115,7 +115,7 @@ I built [MicroItinerary](/en/projects/microitinerary) on Vercel because the AI-h
 
 **Hetzner wins when your workload is "long-running" or "scheduled."** If your app runs nightly scrapers, video transcoding, large CSV imports, or any kind of cron-style batch work over 60 seconds, Vercel will either time out the function or charge you for the entire duration. Railway handles it but bills RAM-hours aggressively. Hetzner runs a 4-hour scraper at the same flat ₹420/month as a 10-second one. I moved a real-estate listings ingestion pipeline (the kind of nightly scraper PropCheck-like apps need) from Vercel cron to a Hetzner CX22 + systemd timer last quarter; bill went from $87/month to $4.50/month with identical output.
 
-**Railway wins when your team is mixed-stack and you do not want to learn Vercel-specific patterns.** If your backend is Python FastAPI, your worker is Go, and your frontend is plain React (not Next.js), Vercel is the wrong tool — you will spend more time fighting the Next.js opinions than you will save. Railway speaks Docker natively; deploy whatever you want. I shipped [SanatanApp](/en/projects/sanatanapp)'s backend services on Railway specifically because the Sanskrit text-processing service is Python and the API gateway is Go — Vercel would have been four awkward serverless functions instead of one container.
+**Railway wins when your team is mixed-stack and you do not want to learn Vercel-specific patterns.** If your backend is Python FastAPI, your worker is Go, and your frontend is plain React (not Next.js), Vercel is the wrong tool — you will spend more time fighting the Next.js opinions than you will save. Railway speaks Docker natively; deploy whatever you want. I shipped [SanatanApp](/projects/sanatanapp)'s backend services on Railway specifically because the Sanskrit text-processing service is Python and the API gateway is Go — Vercel would have been four awkward serverless functions instead of one container.
 
 **Vercel wins when you are pre-PMF and every conversion percentage point matters.** Founder-led growth at 0→100 customers is bottlenecked by every friction point — signup completion rates, mobile checkout abandonment, OG previews that look broken on WhatsApp. Vercel's Mumbai edge + Image Optimization + automatic OG image generation + preview deployments for every PR is a real moat for non-technical co-founders who need to ship marketing experiments without engineering bottleneck. I would not pick Hetzner for the first 90 days of a B2C MVP even though it is cheaper.
 
@@ -141,17 +141,17 @@ The honest position is: **price-optimize too early and you ship slower; speed-op
 
 Total migration time for a Next.js app under 50 routes: half a day to one full day. If it takes longer, you have more Vercel-specific code than you realized — pause the migration, audit, and decide if the rewrite cost is still worth the monthly savings.
 
-I've written the deeper version of this argument in [Drizzle vs Prisma vs TypeORM](/en/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026) and the contrarian counter-take in [India vs US MVP Developer Cost in 2026](/en/notes/india-vs-us-mvp-developer-cost-2026).`,
+I've written the deeper version of this argument in [Drizzle vs Prisma vs TypeORM](/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026) and the contrarian counter-take in [India vs US MVP Developer Cost in 2026](/notes/india-vs-us-mvp-developer-cost-2026).`,
     },
     {
       heading: 'Where this fits in the 6-week MVP playbook',
-      content: `Hosting is a Week 1 decision in my [6-Week MVP service](/en/services/6-week-mvp), and we revisit it at Week 5 right before launch. The default I ship on for new clients is Vercel Pro pinned to bom1, with the DB on Supabase (which gives us Postgres + Auth + Storage in one ₹2,100/month bill). That stack gets you from \`git init\` to a publicly-shippable MVP at India-acceptable latency for under ₹4,500/month all-in.
+      content: `Hosting is a Week 1 decision in my [6-Week MVP service](/services/6-week-mvp), and we revisit it at Week 5 right before launch. The default I ship on for new clients is Vercel Pro pinned to bom1, with the DB on Supabase (which gives us Postgres + Auth + Storage in one ₹2,100/month bill). That stack gets you from \`git init\` to a publicly-shippable MVP at India-acceptable latency for under ₹4,500/month all-in.
 
-If you are pre-MVP and shopping hosting decisions in isolation, you are probably optimizing the wrong thing — the difference between Vercel and Hetzner is roughly ₹2,500/month for the first 6 months of an MVP's life. That is genuinely smaller than one missed marketing experiment caused by an infra slowdown. **Pick the platform that minimizes your founding team's distraction, not the one that minimizes the bill.** Re-evaluate every 6 months — and if you want a working migration plan from one to another without losing a week to it, [I run that engagement as a focused 2-week sprint](/en/services/hire-founding-engineer-india) for founders who have outgrown their starter stack.`,
+If you are pre-MVP and shopping hosting decisions in isolation, you are probably optimizing the wrong thing — the difference between Vercel and Hetzner is roughly ₹2,500/month for the first 6 months of an MVP's life. That is genuinely smaller than one missed marketing experiment caused by an infra slowdown. **Pick the platform that minimizes your founding team's distraction, not the one that minimizes the bill.** Re-evaluate every 6 months — and if you want a working migration plan from one to another without losing a week to it, [I run that engagement as a focused 2-week sprint](/services/hire-founding-engineer-india) for founders who have outgrown their starter stack.`,
     },
   ],
   cta: {
     text: 'Plan your MVP hosting stack',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

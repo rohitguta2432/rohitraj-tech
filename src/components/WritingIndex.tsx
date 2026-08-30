@@ -72,7 +72,7 @@ const POST_ROWS: Row[] = FEATURED_SLUGS.map((slug) => {
     };
 }).filter((r): r is Row => r !== null);
 
-export default function WritingIndex({ locale }: { locale: string }) {
+export default function WritingIndex() {
     return (
         <section id="writing" className="widx">
             <div className="container">
@@ -91,10 +91,10 @@ export default function WritingIndex({ locale }: { locale: string }) {
                     </h3>
                     <ol className="widx-list">
                         {POST_ROWS.map((row, i) => (
-                            <IndexRow key={row.id} row={row} n={i + 1} locale={locale} />
+                            <IndexRow key={row.id} row={row} n={i + 1} />
                         ))}
                     </ol>
-                    <Link href={`/${locale}/notes`} className="widx-more">
+                    <Link href={`/notes`} className="widx-more">
                         Every note, in full <span aria-hidden="true">→</span>
                     </Link>
                 </div>

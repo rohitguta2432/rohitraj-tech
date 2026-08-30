@@ -30,7 +30,7 @@ export const aiDevWeek2026W32: BlogPost = {
     },
     {
       heading: 'Why the Frontier Got Bigger and Everything Else Got Smaller',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Four of this week's seven drops are the same engineering move in different clothing: take a model nobody can afford to serve, and make it fit. MiniMax pruned 40% of its parameters into a lookup table. Cloudflare halved a KV cache and quartered a weight file. AirLLM refuses to load more than one layer at a time. Only Qwen went the other way.
 
@@ -76,7 +76,7 @@ The second thread is connected and uglier. As machines generate more of what dev
 
 **Why it matters:** The technique is almost rude in its simplicity — keep exactly **one layer** on the GPU at a time and stream the rest, and for sparse MoE stream individual experts rather than whole layers.
 
-**The caveat the README states plainly:** the bottleneck moves to **disk loading**, not compute. Compression buys about **3×**, and no absolute throughput figure is published — for a reason. This is a "can I inspect this model at all" tool, not a serving path, the same distinction that made [running Inkling 975B locally](/en/notes/inkling-975b-run-locally-vram-guide-2026) cost $46,206/month on rented hardware.
+**The caveat the README states plainly:** the bottleneck moves to **disk loading**, not compute. Compression buys about **3×**, and no absolute throughput figure is published — for a reason. This is a "can I inspect this model at all" tool, not a serving path, the same distinction that made [running Inkling 975B locally](/notes/inkling-975b-run-locally-vram-guide-2026) cost $46,206/month on rented hardware.
 
 **Source:** [github.com/lyogavin/airllm](https://github.com/lyogavin/airllm)
 
@@ -100,7 +100,7 @@ That is a specific shape: strong at driving a terminal and reproducing a describ
 
 **Why it matters:** The failure mode is worse than the fakes. Cited functions **did not exist** in the affected versions or were added years later. The proof-of-concept payloads **did not reproduce**. None appeared on SQLite's own advisory page. Claimed CVSS ran **7.5 to 9.8**; Red Hat initially gave **CVE-2026-51302 a 10.0**, then downgraded it to **7.6** — a Critical score attached before a human read the code. And it was not six: JFrog found the same defects in **54 of 55 CVEs published by the same GitHub repository in 4 days**.
 
-If your pipeline auto-opens a ticket on Critical severity, you have already spent hours this month on vulnerabilities that do not exist. Same verification gap I hit comparing [Codex-Security against Snyk and Semgrep](/en/notes/codex-security-vs-snyk-semgrep-codeql-2026): machine-generated findings need a reproduction gate, not a severity gate.
+If your pipeline auto-opens a ticket on Critical severity, you have already spent hours this month on vulnerabilities that do not exist. Same verification gap I hit comparing [Codex-Security against Snyk and Semgrep](/notes/codex-security-vs-snyk-semgrep-codeql-2026): machine-generated findings need a reproduction gate, not a severity gate.
 
 **Source:** [JFrog Security Research, Jul 30, 2026](https://research.jfrog.com/post/sqlite-critical-cves-or-llm-slops/)
 
@@ -144,11 +144,11 @@ The failure mode I would worry about, and why I am not automating further: that 
       heading: 'Building With Any of These?',
       content: `Every item above has the same shape: the capability is free, and the integration is where the four days go. The VRAM tier that actually renders 2K, the model string that dies on September 1, the CVE gate that has to demote without dismissing — none of that is in a README.
 
-I build AI-integration MVPs in six weeks and do the unglamorous half: auth, rate limits, error paths, observability. [The 6-week MVP track](/en/services/6-week-mvp) is built for that; [hiring a founding engineer](/en/services/hire-founding-engineer-india) is the version where I stay past launch.`,
+I build AI-integration MVPs in six weeks and do the unglamorous half: auth, rate limits, error paths, observability. [The 6-week MVP track](/services/6-week-mvp) is built for that; [hiring a founding engineer](/services/hire-founding-engineer-india) is the version where I stay past launch.`,
     },
   ],
   cta: {
     text: 'Ship an AI feature in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

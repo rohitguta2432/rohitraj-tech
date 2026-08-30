@@ -30,13 +30,13 @@ Skip all three and use Postmark if your only use case is OTP and inbox-placement
     },
     {
       heading: 'Resend vs SendGrid vs AWS SES — The Honest Answer Before You Sign the Annual Contract',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
-If you are picking a transactional email provider for an India MVP in 2026, the honest answer is Resend up to 50K emails/month, AWS SES above that if you have AWS muscle, and SendGrid only when you genuinely need the support contract. I have shipped email for four India-stack projects in the last 18 months — the [myFinancial](/en) personal-finance app (OTP + statement delivery), an enterprise deal-matching engine running on Spring Boot, a Sanskrit-to-SQL research assistant ([rag-for-sql](/en/projects)), and a healthcare clinic-booking flow on the [WhatsApp Business API](/en/notes/whatsapp-business-api-integration-guide-india). Same provider choice came up every single time, and the answer was different in three of the four projects.
+If you are picking a transactional email provider for an India MVP in 2026, the honest answer is Resend up to 50K emails/month, AWS SES above that if you have AWS muscle, and SendGrid only when you genuinely need the support contract. I have shipped email for four India-stack projects in the last 18 months — the [myFinancial](/en) personal-finance app (OTP + statement delivery), an enterprise deal-matching engine running on Spring Boot, a Sanskrit-to-SQL research assistant ([rag-for-sql](/projects)), and a healthcare clinic-booking flow on the [WhatsApp Business API](/notes/whatsapp-business-api-integration-guide-india). Same provider choice came up every single time, and the answer was different in three of the four projects.
 
 The cost math nobody runs before signup is this: at 10,000 emails/month, Resend's free tier covers you (₹0), SendGrid's Essentials plan is ₹1,580/mo (\$19), and AWS SES is roughly ₹85/mo at \$0.10 per 1,000 emails plus EC2/SNS overhead. At 100,000 emails/month, Resend jumps to ₹1,660/mo (\$20 Pro plan), SendGrid Pro is ₹7,470/mo (\$89.95), and SES is ₹830/mo (\$10 raw outbound + bandwidth). The price gap looks decisive — until you factor that the SES "₹830" hides 4–6 hours of bounce-handling code, an SNS topic, an SQS queue, and one engineer who can debug a DKIM record at 11 PM.
 
-This post is the comparison I wish I had read before I burned half a Saturday switching myFinancial off SendGrid for cost reasons, switching back two weeks later when 9.2% of our OTPs started landing in Indian Gmail's Promotions tab, and finally settling on the right answer. Real numbers, real failure modes, and a 5-step decision tree at the end. If you would rather skip the provider lottery, every [6-week MVP sprint](/en/services/6-week-mvp) I ship now starts with Resend by default and migrates only when traffic justifies it — but read on if you want to make the call yourself.`,
+This post is the comparison I wish I had read before I burned half a Saturday switching myFinancial off SendGrid for cost reasons, switching back two weeks later when 9.2% of our OTPs started landing in Indian Gmail's Promotions tab, and finally settling on the right answer. Real numbers, real failure modes, and a 5-step decision tree at the end. If you would rather skip the provider lottery, every [6-week MVP sprint](/services/6-week-mvp) I ship now starts with Resend by default and migrates only when traffic justifies it — but read on if you want to make the call yourself.`,
     },
     {
       heading: 'What Each Provider Actually Is in 2026',
@@ -147,15 +147,15 @@ The whole tree resolves in 10 minutes if you are honest about volume, stack, and
     },
     {
       heading: 'If You Want to Skip the Provider Lottery Entirely',
-      content: `Every [6-week MVP sprint](/en/services/6-week-mvp) I ship now starts with Resend by default, wires bounce-handling into the user table from day one, and includes a 30-line abstraction so swapping to SES later is a one-day migration, not a one-week one. That abstraction is the difference between picking right at launch and being stuck with a wrong choice 18 months in.
+      content: `Every [6-week MVP sprint](/services/6-week-mvp) I ship now starts with Resend by default, wires bounce-handling into the user table from day one, and includes a 30-line abstraction so swapping to SES later is a one-day migration, not a one-week one. That abstraction is the difference between picking right at launch and being stuck with a wrong choice 18 months in.
 
-If you would rather have someone who has shipped this four times wire the transactional email layer, the [hire a founding engineer](/en/services/hire-founding-engineer-india) path is the fastest way to get the full stack right — email, OTP, [WhatsApp Business API](/en/notes/whatsapp-business-api-integration-guide-india), [auth](/en/notes/clerk-vs-supabase-auth-vs-better-auth-india-2026), [payments](/en/notes/razorpay-vs-stripe-india-mvp-2026), and [hosting](/en/notes/vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026) — without the founder having to make six provider decisions before week three. The decisions in this post are the easy ones; the decisions you have not surfaced yet are the ones that matter.
+If you would rather have someone who has shipped this four times wire the transactional email layer, the [hire a founding engineer](/services/hire-founding-engineer-india) path is the fastest way to get the full stack right — email, OTP, [WhatsApp Business API](/notes/whatsapp-business-api-integration-guide-india), [auth](/notes/clerk-vs-supabase-auth-vs-better-auth-india-2026), [payments](/notes/razorpay-vs-stripe-india-mvp-2026), and [hosting](/notes/vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026) — without the founder having to make six provider decisions before week three. The decisions in this post are the easy ones; the decisions you have not surfaced yet are the ones that matter.
 
-If your MVP is already live on the wrong provider and you are reading this because something is broken at 2 AM — Resend's status page, SendGrid's bounced-email log, SES's CloudWatch metrics, in that order — the diagnostic playbook is in the [Lovable production-bugs](/en/notes/lovable-app-production-bugs-need-real-engineer-2026) post. Same root-cause patterns repeat across email, auth, and payments. Fix the bounce-rate, then come back to the provider question.`,
+If your MVP is already live on the wrong provider and you are reading this because something is broken at 2 AM — Resend's status page, SendGrid's bounced-email log, SES's CloudWatch metrics, in that order — the diagnostic playbook is in the [Lovable production-bugs](/notes/lovable-app-production-bugs-need-real-engineer-2026) post. Same root-cause patterns repeat across email, auth, and payments. Fix the bounce-rate, then come back to the provider question.`,
     },
   ],
   cta: {
     text: 'Ship Your MVP in 6 Weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -30,13 +30,13 @@ Skip multi-agent entirely if a single GPT-4o call with three tool definitions do
     },
     {
       heading: 'LangGraph vs CrewAI vs AutoGen — The Honest Answer Before You Pip Install',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
-If you are picking a multi-agent framework for an India MVP in 2026, the honest answer is LangGraph for anything that will see real users, CrewAI for a 30-day prototype, and AutoGen almost never. I have shipped agent systems on all three across four client projects in the last 18 months — a Sanskrit-to-SQL RAG pipeline ([rag-for-sql](/en/projects)), an enterprise deal-matching engine on Spring Boot, an on-device scam detector, and a finance research assistant inside [myFinancial](/en). The frameworks are not equivalent; they fail in very different ways at very different price points.
+If you are picking a multi-agent framework for an India MVP in 2026, the honest answer is LangGraph for anything that will see real users, CrewAI for a 30-day prototype, and AutoGen almost never. I have shipped agent systems on all three across four client projects in the last 18 months — a Sanskrit-to-SQL RAG pipeline ([rag-for-sql](/projects)), an enterprise deal-matching engine on Spring Boot, an on-device scam detector, and a finance research assistant inside [myFinancial](/en). The frameworks are not equivalent; they fail in very different ways at very different price points.
 
 The cost math nobody runs before they start is this: a two-agent CrewAI loop on GPT-4o that retries 3 times on a malformed JSON output burns roughly 18,000 tokens per user request. At ₹0.85 per 1K input tokens, that is ₹15.30 per request. A LangGraph state machine doing the same work with a structured-output node and one retry burns 4,500 tokens — about ₹3.80. At 200 requests per day, that is the difference between ₹2,280 per month and ₹9,180 per month in pure inference cost, before infra. India MVPs die on this kind of math.
 
-This post is the comparison I wish I had read before I burned ₹40,000 of OpenAI credits debugging an AutoGen two-agent chat that would not stop talking to itself. Real cost numbers, real failure modes, and a 5-step decision tree at the end. If you would rather skip the framework lottery, a [6-week MVP sprint](/en/services/6-week-mvp) starts at LangGraph by default — but read on if you want to make the call yourself.`,
+This post is the comparison I wish I had read before I burned ₹40,000 of OpenAI credits debugging an AutoGen two-agent chat that would not stop talking to itself. Real cost numbers, real failure modes, and a 5-step decision tree at the end. If you would rather skip the framework lottery, a [6-week MVP sprint](/services/6-week-mvp) starts at LangGraph by default — but read on if you want to make the call yourself.`,
     },
     {
       heading: 'What Each Framework Actually Does in 2026',
@@ -69,7 +69,7 @@ The frameworks are not competing on the same axis. LangGraph competes with Tempo
 
 LangGraph wins on tokens for one structural reason — it does not need a manager agent. The graph itself is the manager. CrewAI hierarchical and AutoGen both spend a meaningful fraction of every run on an LLM call that exists only to decide which other LLM call to make next. That manager call alone can be 2K–4K tokens per run, and it scales linearly with task complexity.
 
-For an India MVP where 200 daily active users is a real milestone, the difference between ₹2,280 and ₹9,330 per month is not academic. It is two months of your VPS bill on [Hetzner](/en/notes/vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026). I have watched two founders kill perfectly good products by picking the wrong agent framework and running out of runway 3 months ahead of plan.
+For an India MVP where 200 daily active users is a real milestone, the difference between ₹2,280 and ₹9,330 per month is not academic. It is two months of your VPS bill on [Hetzner](/notes/vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026). I have watched two founders kill perfectly good products by picking the wrong agent framework and running out of runway 3 months ahead of plan.
 
 One caveat: this benchmark assumes the task fits cleanly in a graph. If your problem genuinely requires open-ended conversation between agents — like negotiation, debate, or iterative critique — AutoGen's two-agent loop is the right primitive and the token cost is the price of the work. The mistake is using AutoGen for tasks that have a known structure.`,
     },
@@ -119,7 +119,7 @@ If your problem can be expressed as "one LLM call with 3–5 tool definitions an
 
 The Lovable and Bolt.new generation of founders has been trained to think "agentic" means "production-grade". It does not. Most agent apps in 2026 that survive past the seed round are 80% prompt engineering, 15% retrieval, and 5% orchestration. The 5% is where the framework choice matters, and even there the wrong pick costs you token budget rather than the product. Get the 80% and 15% right first.
 
-If you cannot tell which side of this you are on, that is exactly the conversation a [founding engineer](/en/services/hire-founding-engineer-india) is for. Most agent architecture decisions take 90 minutes of whiteboarding to settle — far cheaper than learning by burning credits.`,
+If you cannot tell which side of this you are on, that is exactly the conversation a [founding engineer](/services/hire-founding-engineer-india) is for. Most agent architecture decisions take 90 minutes of whiteboarding to settle — far cheaper than learning by burning credits.`,
     },
     {
       heading: '5-Step Decision Tree for Your Next Agent Project',
@@ -139,14 +139,14 @@ A sixth implicit step: if you are not sure, default to LangGraph. The worst case
 
 If you would rather not learn this by burning ₹40K of OpenAI credits, two ways to skip the lottery:
 
-- **[6-Week MVP Sprint](/en/services/6-week-mvp)** — fixed scope, fixed price, LangGraph + Postgres + structured-output stack by default, ships a production agent app in 6 weeks.
-- **[Hire a Founding Engineer in India](/en/services/hire-founding-engineer-india)** — month-to-month senior engineer who has shipped agent systems on all three frameworks and will tell you which one is wrong for your problem before you write a line of code.
+- **[6-Week MVP Sprint](/services/6-week-mvp)** — fixed scope, fixed price, LangGraph + Postgres + structured-output stack by default, ships a production agent app in 6 weeks.
+- **[Hire a Founding Engineer in India](/services/hire-founding-engineer-india)** — month-to-month senior engineer who has shipped agent systems on all three frameworks and will tell you which one is wrong for your problem before you write a line of code.
 
 Either way, the rule is the same: pick LangGraph for production, CrewAI for prototypes, AutoGen almost never. Save the ₹40K of credits for something that matters — like more users.`,
     },
   ],
   cta: {
     text: 'Ship Your Agent MVP in 6 Weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

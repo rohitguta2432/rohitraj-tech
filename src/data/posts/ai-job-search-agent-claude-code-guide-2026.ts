@@ -28,7 +28,7 @@ export const aiJobSearchAgentClaudeCodeGuide2026: BlogPost = {
     },
     {
       heading: 'ai-job-search: The Viral Claude Code Job Agent, Explained',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On July 8, 2026, a repository called [ai-job-search](https://github.com/MadsLorentzen/ai-job-search) by Mads Lorentzen picked up **more than 5,000 GitHub stars in twenty-four hours** — the single biggest one-day gain on GitHub's trending page that day — pushing it past **15,700 stars and 4,100 forks** in total. The pitch is disarmingly simple: fork it, fill in your profile, and let Claude "evaluate jobs, tailor CVs, write cover letters, and prepare you for interviews."
 
@@ -63,7 +63,7 @@ claude
 > /apply https://jobindex.dk/job/1234567
 \`\`\`
 
-The clever bit is inside \`/apply\`. It does not one-shot the letter. It runs a **drafter-reviewer separation**: one Claude agent drafts the CV and cover letter from your profile and the posting, then a **second agent with fresh context** researches the company, critiques the draft for missed keywords and generic phrasing, and hands back notes. The drafter revises. Two agents, two roles, one output — a pattern anyone building on Claude Code should steal, because a critic with a clean context window catches what the author is blind to. (For more on multi-agent orchestration trade-offs, see my note on [Microsoft Agent Framework vs LangGraph vs CrewAI](/en/notes/microsoft-agent-framework-vs-langgraph-crewai-2026).)
+The clever bit is inside \`/apply\`. It does not one-shot the letter. It runs a **drafter-reviewer separation**: one Claude agent drafts the CV and cover letter from your profile and the posting, then a **second agent with fresh context** researches the company, critiques the draft for missed keywords and generic phrasing, and hands back notes. The drafter revises. Two agents, two roles, one output — a pattern anyone building on Claude Code should steal, because a critic with a clean context window catches what the author is blind to. (For more on multi-agent orchestration trade-offs, see my note on [Microsoft Agent Framework vs LangGraph vs CrewAI](/notes/microsoft-agent-framework-vs-langgraph-crewai-2026).)
 
 There is a small piece of real engineering worth calling out: when a tailored CV overflows the **2-page limit**, the agent does not just truncate. It **scores every line on three signals** — relevance to the target posting, uniqueness within the document, and whether the cover letter depends on it — then cuts the lowest-scoring line first. So an older-role bullet that hits the posting's keywords survives ahead of a recent-role bullet that does not. That is a genuine ranking heuristic, not a prompt hoping for the best.`,
     },
@@ -122,13 +122,13 @@ That is the tax on every "let the agent do it" tool: the artifact is easy, the g
       heading: 'Want an Agent Like This Wired Into Your Own Product?',
       content: `If ai-job-search convinced you that Claude Code is a viable agent runtime — and it should — the leap from "cool fork" to "reliable internal tool" is exactly the work I do. The pattern here (slash-command workflow, repo-as-state, skills-as-tools, a reviewer subagent, and honest guardrails) drops cleanly onto legal intake, support triage, sales outreach, or any repetitive knowledge task your team runs by hand.
 
-The hard part is never the demo; it is the spend caps, the eval set that proves the scorer works, the outcome logging, and the human-approval gate that keeps it trustworthy. That is the [6-week MVP](/en/services/6-week-mvp) playbook — pick the right runtime, wire it into a shipping product, hand over a tested codebase. For a longer build with someone embedded in your team, [hire a founding engineer (India)](/en/services/hire-founding-engineer-india).
+The hard part is never the demo; it is the spend caps, the eval set that proves the scorer works, the outcome logging, and the human-approval gate that keeps it trustworthy. That is the [6-week MVP](/services/6-week-mvp) playbook — pick the right runtime, wire it into a shipping product, hand over a tested codebase. For a longer build with someone embedded in your team, [hire a founding engineer (India)](/services/hire-founding-engineer-india).
 
-Further reading from my notes: [Microsoft Agent Framework vs LangGraph vs CrewAI](/en/notes/microsoft-agent-framework-vs-langgraph-crewai-2026) for choosing an orchestration layer, and [the best open-source deep-research agent to self-host](/en/notes/best-open-source-deep-research-agent-self-host-2026) for another repo-as-agent teardown.`,
+Further reading from my notes: [Microsoft Agent Framework vs LangGraph vs CrewAI](/notes/microsoft-agent-framework-vs-langgraph-crewai-2026) for choosing an orchestration layer, and [the best open-source deep-research agent to self-host](/notes/best-open-source-deep-research-agent-self-host-2026) for another repo-as-agent teardown.`,
     },
   ],
   cta: {
     text: 'Turn an Agent Prototype Into a Product — 6-Week MVP',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -19,7 +19,7 @@ export const buildMultiTenantSaasSpringBootJava21: BlogPost = {
     },
 {
       heading: 'India\'s Retail Problem: 90% Unorganized',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built RetailOS, a multi-tenant retail SaaS platform using Spring Boot 3.4 and Java 21 with 12 Maven modules covering billing, inventory, GST-compliant invoicing, khata credit ledger, and offline sync with conflict resolution — designed specifically for India's unorganized retail sector where 90% of shops still run on paper registers and enterprise POS systems cost more than small shop owners can afford.
 
@@ -155,9 +155,9 @@ services:
 
 **Scaling path from monorepo to microservices:** The 12-module Maven structure is designed for eventual extraction. Each module communicates through service interfaces defined in retailos-common, not through direct database queries across module boundaries. When the billing module needs independent scaling — handling 10x the traffic of analytics — extraction means pulling the module into its own Spring Boot application, replacing in-process calls with REST or gRPC, and deploying independently. The module boundaries are already clean; extraction is a deployment change, not an architecture change.
 
-If you want this shipped end-to-end without the team-of-five overhead, the [fractional CTO engagement](/en/services/hire-fractional-cto-india) and [founding engineer in India](/en/services/hire-founding-engineer-india) options are the routes I take on.
+If you want this shipped end-to-end without the team-of-five overhead, the [fractional CTO engagement](/services/hire-fractional-cto-india) and [founding engineer in India](/services/hire-founding-engineer-india) options are the routes I take on.
 
-Two posts that pick up where this one ends: [How I Built an Enterprise Deal Matching Platform with Spring Boot +…](/en/notes/build-enterprise-deal-matching-platform-spring-boot-nextjs) and [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot).`
+Two posts that pick up where this one ends: [How I Built an Enterprise Deal Matching Platform with Spring Boot +…](/notes/build-enterprise-deal-matching-platform-spring-boot-nextjs) and [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot).`
     },
     {
       heading: 'Frequently Asked Questions',

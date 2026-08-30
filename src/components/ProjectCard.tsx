@@ -1,14 +1,12 @@
 import Link from "next/link";
 import StatusBadge from "./StatusBadge";
 import type { Project } from "@/data/projects";
-import type { Locale } from "@/lib/i18n";
 
 interface ProjectCardProps {
     project: Project;
-    locale?: Locale;
 }
 
-export default function ProjectCard({ project, locale = "en" }: ProjectCardProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
     return (
         <article className="project-card">
             <div className="project-card-header">
@@ -24,7 +22,7 @@ export default function ProjectCard({ project, locale = "en" }: ProjectCardProps
                 ))}
             </div>
             <div className="project-links">
-                <Link href={`/${locale}/projects/${project.slug}`} className="project-link">
+                <Link href={`/projects/${project.slug}`} className="project-link">
                     Details →
                 </Link>
                 {project.liveUrl && (

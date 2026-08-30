@@ -19,7 +19,7 @@ export const expoAvAudioStreamingReactNative: BlogPost = {
     },
 {
       heading: 'Why expo-av Over react-native-track-player',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To stream audio in React Native with Expo, use expo-av with a global AudioContext provider, enable background playback via \`staysActiveInBackground: true\`, persist playback progress to SQLite, and source audio from public domain URLs like Archive.org for zero hosting costs. This approach keeps you in the Expo managed workflow without ejecting, while delivering a Spotify-like persistent MiniPlayer experience across all screens.
 
@@ -171,9 +171,9 @@ The total infrastructure cost for SanatanApp is **$0/month**. No servers. No dat
 
 **A note on reliability:** Archive.org has occasional downtime and slower response times compared to commercial CDNs like CloudFront or Cloudflare R2. For a devotional app with patient users, this is acceptable. For a commercial music streaming app, you would want to host audio on a proper CDN with edge caching. The trade-off is cost: even a modest S3 + CloudFront setup for audio streaming would add $20-$100/month depending on volume, which eliminates the zero-cost advantage of this architecture.
 
-The pattern I run for founders in this situation is either a [mobile app development](/en/services/mobile-app-development) or a [6-week MVP sprint](/en/services/6-week-mvp) — pick based on whether you need shipped code or shipped *and* maintained code.
+The pattern I run for founders in this situation is either a [mobile app development](/services/mobile-app-development) or a [6-week MVP sprint](/services/6-week-mvp) — pick based on whether you need shipped code or shipped *and* maintained code.
 
-Two posts that pick up where this one ends: [Building a Multi-Language React Native App with Expo SDK 52](/en/notes/building-multilanguage-react-native-app-expo) and [Building an Offline-First Trip Planner with React Native + WatermelonDB +…](/en/notes/build-offline-first-trip-planner-react-native-watermelondb).`
+Two posts that pick up where this one ends: [Building a Multi-Language React Native App with Expo SDK 52](/notes/building-multilanguage-react-native-app-expo) and [Building an Offline-First Trip Planner with React Native + WatermelonDB +…](/notes/build-offline-first-trip-planner-react-native-watermelondb).`
     },
     {
       heading: 'Frequently Asked Questions',

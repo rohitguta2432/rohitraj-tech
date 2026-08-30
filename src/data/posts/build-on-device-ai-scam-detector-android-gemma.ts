@@ -19,7 +19,7 @@ export const buildOnDeviceAiScamDetectorAndroidGemma: BlogPost = {
     },
 {
       heading: 'India\'s ₹1,750 Crore Scam Problem',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built ScamRakshak, an on-device AI scam detector for Android using a 3-tier inference engine — Gemma 4 LLM via ML Kit GenAI for contextual analysis, LiteRT binary classifier for broad device support, and a regex fallback engine for universal coverage — with zero network permissions, Hindi-first bilingual output, and four input modes (text, screenshot OCR, URL analysis, UPI ID verification) to protect India's 500 million Hindi-speaking smartphone users from digital fraud.
 
@@ -163,9 +163,9 @@ The app requests exactly one permission: CAMERA (for screenshot capture). No int
 
 **Testing the 3-tier fallback chain:** Each tier is tested independently with a curated dataset of known scam messages and legitimate messages. The fallback logic is tested by mocking AICore availability — when AICore returns unavailable, the app must seamlessly fall to Tier 2 without any user-visible delay. Integration tests verify that the same message produces consistent risk scores across tiers (within a 15-point tolerance), ensuring that a scam message flagged by Tier 1 is also caught by Tier 2 and Tier 3.
 
-The pattern I run for founders in this situation is either a [mobile app development](/en/services/mobile-app-development) or a [fractional CTO engagement](/en/services/hire-fractional-cto-india) — pick based on whether you need shipped code or shipped *and* maintained code.
+The pattern I run for founders in this situation is either a [mobile app development](/services/mobile-app-development) or a [fractional CTO engagement](/services/hire-fractional-cto-india) — pick based on whether you need shipped code or shipped *and* maintained code.
 
-Two posts that pick up where this one ends: [How to Build an AI Chatbot for Your Business: Architecture, Cost & What…](/en/notes/build-ai-chatbot-whatsapp-business-india) and [Building an Android Finance Tracker with SMS Auto-Import](/en/notes/build-android-finance-tracker-kotlin-jetpack-compose).`
+Two posts that pick up where this one ends: [How to Build an AI Chatbot for Your Business: Architecture, Cost & What…](/notes/build-ai-chatbot-whatsapp-business-india) and [Building an Android Finance Tracker with SMS Auto-Import](/notes/build-android-finance-tracker-kotlin-jetpack-compose).`
     },
     {
       heading: 'Frequently Asked Questions',

@@ -147,7 +147,7 @@ volumes:
 
 **4. Your integration count exceeds n8n's coverage.** If you genuinely need FreshBooks Classic + Manychat legacy + an obscure Indian CRM with no public API, Zapier may be the only platform that has all three pre-built. Audit the connectors honestly before committing.
 
-Two posts that pick up where this one ends: [India vs US MVP Developer Cost in 2026](/en/notes/india-vs-us-mvp-developer-cost-2026) and [OpenAI vs Claude vs Gemini API](/en/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026).`,
+Two posts that pick up where this one ends: [India vs US MVP Developer Cost in 2026](/notes/india-vs-us-mvp-developer-cost-2026) and [OpenAI vs Claude vs Gemini API](/notes/openai-vs-claude-vs-gemini-api-cost-india-mvp-2026).`,
     },
     {
       heading: 'The 5-step decision tree',
@@ -165,11 +165,11 @@ Two posts that pick up where this one ends: [India vs US MVP Developer Cost in 2
 
 If you cleared all five, set up n8n today. The whole migration from Zapier to n8n for a 10-Zap account took me 4 hours over a weekend. Export workflows as JSON from Zapier, recreate in n8n, point webhooks at the new endpoint, retire the Zapier Zaps in batches over 7 days.
 
-For Indian MVPs specifically, if you are still on the [6-week MVP path](/en/services/6-week-mvp), build the automation layer on n8n from day one. The ₹65K/year savings will fund your first marketing test. And if you need help wiring this into your stack — [the founding engineer route](/en/services/hire-founding-engineer-india) handles automation, AI agents, and the Docker box together so you don't end up with three tools to maintain.`,
+For Indian MVPs specifically, if you are still on the [6-week MVP path](/services/6-week-mvp), build the automation layer on n8n from day one. The ₹65K/year savings will fund your first marketing test. And if you need help wiring this into your stack — [the founding engineer route](/services/hire-founding-engineer-india) handles automation, AI agents, and the Docker box together so you don't end up with three tools to maintain.`,
     },
   ],
   cta: {
     text: 'Ship Your MVP with Built-In Automation',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -28,7 +28,7 @@ export const vibethinker3bTinyReasoningModelGuide2026: BlogPost = {
         },
         {
             heading: 'VibeThinker-3B: A 3B Reasoning Model That Rivals 671B Giants (2026)',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 The headline writing itself this week is "a 3B model matches a 671B model." That is technically true on one benchmark and quietly misleading on the rest, and the gap between those two readings is the whole reason [VentureBeat ran a piece](https://venturebeat.com/technology/why-weibos-tiny-vibethinker-3b-has-the-ai-world-arguing-over-benchmarks-again) titled "Why Weibo's tiny VibeThinker-3B has the AI world arguing over benchmarks again." So this is not a launch recap. It is a builder's read on what is actually real here, what is benchmark theater, and whether a 3B reasoning model earns a slot in anything you ship.
 
@@ -42,7 +42,7 @@ Below: exactly what the model is and the number behind the hype, the benchmark f
 
 The size story is real and worth sitting with. The BF16 safetensors are roughly **6 GB**, small enough to load on a single consumer GPU or an Apple-Silicon laptop, and there are already **GGUF quantizations** ([KakTakOne/VibeThinker-3B-GGUF](https://huggingface.co/KakTakOne/VibeThinker-3B-GGUF) lists dozens) that shrink a Q4 build to about 2 GB. Compare that to the models it is benchmarked against: DeepSeek V3.2 is **671B** total parameters and Kimi K2.5 is about **1T**. On a pure parameters-per-point basis, VibeThinker is two-and-a-half orders of magnitude more efficient on the benchmark where it ties.
 
-The hype number is **AIME 2026: 94.3** (rising to **97.1** with test-time scaling, which the team calls CLR). For one math-olympiad-style benchmark, a 3B model is statistically tied with a 671B one. That is a legitimately surprising result. The question every builder should ask next — and the one the next section answers — is whether that holds up across *other* hard benchmarks, because "tied on AIME" and "as smart as a 671B model" are very different claims. The team itself is careful here: the paper frames the result as frontier performance on **verifiable reasoning**, not general capability. The internet's summary of it has been less careful. For the broader "do you even need a big cloud model" question, I went deep on the practical side in [the best local LLM for coding in 2026](/en/notes/best-local-llm-for-coding-replace-cloud-2026).`,
+The hype number is **AIME 2026: 94.3** (rising to **97.1** with test-time scaling, which the team calls CLR). For one math-olympiad-style benchmark, a 3B model is statistically tied with a 671B one. That is a legitimately surprising result. The question every builder should ask next — and the one the next section answers — is whether that holds up across *other* hard benchmarks, because "tied on AIME" and "as smart as a 671B model" are very different claims. The team itself is careful here: the paper frames the result as frontier performance on **verifiable reasoning**, not general capability. The internet's summary of it has been less careful. For the broader "do you even need a big cloud model" question, I went deep on the practical side in [the best local LLM for coding in 2026](/notes/best-local-llm-for-coding-replace-cloud-2026).`,
         },
         {
             heading: 'The benchmark fight: where it matches, and where it actually trails',
@@ -67,7 +67,7 @@ That nuance is the entire benchmark controversy. AIME has been heavily targeted 
 
 Mechanically it is a four-stage pipeline ([MarkTechPost](https://www.marktechpost.com/2026/06/19/vibethinker-3b-a-3b-dense-reasoning-model-built-on-qwen2-5-coder-3b-with-the-spectrum-to-signal-post-training-pipeline/)): curriculum-based two-stage SFT, multi-domain Reasoning RL, offline self-distillation, and a final instruct-RL pass. The thesis the paper is really defending is that **diversity-driven optimization** — not scale — is what was leaving small-model reasoning on the table. If that holds up to replication, it is more important than the model itself, because it is a recipe other 3B-7B models can adopt.
 
-Why a builder should care about training internals: it tells you the *shape* of the capability you are buying. A model tuned to keep many reasoning paths alive and then verify them is exactly the model you want when you can check the final answer and re-sample on failure — and exactly the wrong one when you need a single confident response with no oracle to grade it. The architecture is honest about what it is good for. If you are thinking about reasoning loops and how models actually use their thinking budget, this pairs well with my note on [agent memory vs the context window](/en/notes/ai-agent-memory-vs-context-window-2026).`,
+Why a builder should care about training internals: it tells you the *shape* of the capability you are buying. A model tuned to keep many reasoning paths alive and then verify them is exactly the model you want when you can check the final answer and re-sample on failure — and exactly the wrong one when you need a single confident response with no oracle to grade it. The architecture is honest about what it is good for. If you are thinking about reasoning loops and how models actually use their thinking budget, this pairs well with my note on [agent memory vs the context window](/notes/ai-agent-memory-vs-context-window-2026).`,
         },
         {
             heading: 'How do you run VibeThinker-3B locally?',
@@ -119,7 +119,7 @@ That \`max_tokens\` is not padding. Reasoning models think out loud, and VibeThi
 
 **3. Cheap, high-volume grading and synthetic-data checks.** If you generate training data or auto-grade student/candidate solutions to quantitative problems, running a frontier model across thousands of items is expensive. A local model that is *good enough on verifiable tasks* and free per call changes the unit economics.
 
-Here is the personal angle. On [MyFinancial](/en/projects), a chunk of the work is quantitative: computing returns, validating that a user's stated numbers reconcile, sanity-checking a calculation before it is shown. Today a frontier model does that, and the per-call cost makes you batch and cache. A model like VibeThinker, run locally as a *verifier* — recompute the answer, compare to the LLM's claim, flag mismatches — is a pattern I would prototype this week, precisely because the task is verifiable and the marginal cost is zero. The thing I would *not* do is let it write user-facing copy or make judgment calls; that is not what it is for.`,
+Here is the personal angle. On [MyFinancial](/projects), a chunk of the work is quantitative: computing returns, validating that a user's stated numbers reconcile, sanity-checking a calculation before it is shown. Today a frontier model does that, and the per-call cost makes you batch and cache. A model like VibeThinker, run locally as a *verifier* — recompute the answer, compare to the LLM's claim, flag mismatches — is a pattern I would prototype this week, precisely because the task is verifiable and the marginal cost is zero. The thing I would *not* do is let it write user-facing copy or make judgment calls; that is not what it is for.`,
         },
         {
             heading: 'When should you skip VibeThinker-3B?',
@@ -160,17 +160,17 @@ The details that decide whether this is robust, not a demo:
 - **Quantize for the target.** BF16 on the GPU server, Q4/Q5 GGUF on the edge. Test the quantized build's accuracy — quantization hits reasoning models harder than chat models.
 - **Keep it on its lane.** Gate it to math/code/quantitative sub-problems with a classifier or explicit routing. The moment it handles general queries, your quality drops and you will blame the model instead of the routing.
 
-That router-plus-verifier-plus-fallback plumbing is exactly the "looks simple, has five sharp edges" integration work I build for clients in a [6-week MVP](/en/services/6-week-mvp) — and the kind of thing a [founding engineer](/en/services/hire-founding-engineer-india) earns their keep on, because the model card shows you the happy path and never the sampling gotcha, the trace-budget tax, or the verification layer that makes a tiny specialist safe to ship.`,
+That router-plus-verifier-plus-fallback plumbing is exactly the "looks simple, has five sharp edges" integration work I build for clients in a [6-week MVP](/services/6-week-mvp) — and the kind of thing a [founding engineer](/services/hire-founding-engineer-india) earns their keep on, because the model card shows you the happy path and never the sampling gotcha, the trace-budget tax, or the verification layer that makes a tiny specialist safe to ship.`,
         },
         {
             heading: 'The bottom line',
             content: `VibeThinker-3B is the most interesting *small*-model result of the month, and the most over-claimed. The honest version: a 3B, MIT-licensed model genuinely ties a 671B model on AIME 2026 (94.3 vs 94.2) and runs from a 6 GB file on your laptop — but it trails those same giants as the benchmarks get harder, and it is a verifiable-reasoning specialist, not a general assistant. Both halves of that sentence matter. The model is a gift for one job: a cheap, local, checkable reasoning step you can wire into an agent and verify. It is a mistake for anything open-ended. Set the temperature to 1.0, budget for long traces, verify every answer, keep a frontier fallback, and it earns its slot. Reach for it as a general model and you will write the disappointed blog post.
 
-Trying to figure out whether a small local model belongs in your stack — or how to route between a cheap specialist and a frontier model without it turning into a reliability mess? That routing, verification, and fallback layer is the part that is easy to get wrong and the part I ship for a living. See the [6-week MVP service](/en/services/6-week-mvp) or [hire a founding engineer](/en/services/hire-founding-engineer-india) if you want it built right the first time.`,
+Trying to figure out whether a small local model belongs in your stack — or how to route between a cheap specialist and a frontier model without it turning into a reliability mess? That routing, verification, and fallback layer is the part that is easy to get wrong and the part I ship for a living. See the [6-week MVP service](/services/6-week-mvp) or [hire a founding engineer](/services/hire-founding-engineer-india) if you want it built right the first time.`,
         },
     ],
     cta: {
         text: 'Ship your local-AI MVP in 6 weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

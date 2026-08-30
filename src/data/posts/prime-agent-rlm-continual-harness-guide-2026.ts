@@ -30,7 +30,7 @@ export const primeAgentRlmContinualHarnessGuide2026: BlogPost = {
     {
       heading:
         'Prime Intellect Shipped a Coding Agent That Rewrites Its Own Scaffolding. Here Is What That Actually Means',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **August 5, 2026**, Prime Intellect published [*"Prime Agent: A self-improving RLM agent"*](https://www.primeintellect.ai/blog/prime-agent) and open-sourced the harness under **MIT**. Four days later the repo sits at **9.4k stars** and took **#1 on GitHub trending after gaining 2,483 stars in a single day** — the largest daily gain in the agent-tooling category this week.
 
@@ -199,7 +199,7 @@ prime-agent --autonomous \\
 
 **Cap the budget below your pain threshold, not at it.** Turn, token, and time budgets exist — set them to a number you would shrug at if the run produced nothing, because sometimes it will.
 
-**Treat the JSONL history as an artifact.** Append-only session history with branching is genuinely good observability, and it is sitting on disk. Ship it to your log store. When I was hardening the agent flows in [MyFinancial](/en/services/fintech-app-development), the recurring lesson was that agent incidents are unreconstructable a week later unless the trajectory was persisted at the time — and the trigger/outcome records from \`/refine\` are the highest-signal lines in that file.
+**Treat the JSONL history as an artifact.** Append-only session history with branching is genuinely good observability, and it is sitting on disk. Ship it to your log store. When I was hardening the agent flows in [MyFinancial](/services/fintech-app-development), the recurring lesson was that agent incidents are unreconstructable a week later unless the trajectory was persisted at the time — and the trigger/outcome records from \`/refine\` are the highest-signal lines in that file.
 
 **Scope harness state per-repo.** Refinements are session-local by default. Keep it that way. A memory learned on a client's repo should never surface in another client's session, and that is a contractual problem, not just a hygiene one.
 
@@ -225,15 +225,15 @@ prime-agent --autonomous \\
       heading: 'Want This Wired Into Your Product Without the Six-Week Detour?',
       content: `Agent harnesses are moving faster than any team's ability to evaluate them. Prime Agent is four days old, has no sandbox, and posts a benchmark number above the human expert baseline — all three of those are true at once, and picking correctly is now an architecture decision, not a tooling preference.
 
-If you are building an AI product and want the integration done properly — isolation, budget caps, trajectory logging, and an honest read on which harness fits your risk profile — that is the work I do. I ship production AI features in **[6-week MVP sprints](/en/services/6-week-mvp)**, and for teams that need someone owning the whole stack rather than a one-off integration, I work as a **[founding engineer](/en/services/hire-founding-engineer-india)**.
+If you are building an AI product and want the integration done properly — isolation, budget caps, trajectory logging, and an honest read on which harness fits your risk profile — that is the work I do. I ship production AI features in **[6-week MVP sprints](/services/6-week-mvp)**, and for teams that need someone owning the whole stack rather than a one-off integration, I work as a **[founding engineer](/services/hire-founding-engineer-india)**.
 
-Related reading: [Cloudflare Computer vs Cloudflare Sandbox](/en/notes/cloudflare-computer-vs-sandbox-agent-guide-2026) for the runtime-isolation side of this problem, and [the TencentDB agent memory review](/en/notes/tencentdb-agent-memory-team-hub-review-2026) for how durable agent memory is being solved elsewhere.
+Related reading: [Cloudflare Computer vs Cloudflare Sandbox](/notes/cloudflare-computer-vs-sandbox-agent-guide-2026) for the runtime-isolation side of this problem, and [the TencentDB agent memory review](/notes/tencentdb-agent-memory-team-hub-review-2026) for how durable agent memory is being solved elsewhere.
 
 **Sources:** [Prime Intellect launch post](https://www.primeintellect.ai/blog/prime-agent) · [GitHub repo](https://github.com/PrimeIntellect-ai/prime-agent) · [README](https://github.com/PrimeIntellect-ai/prime-agent/blob/main/README.md) · [MarkTechPost coverage](https://www.marktechpost.com/2026/08/06/prime-intellect-releases-prime-agent/) · [Kingy hands-on review](https://kingy.ai/blog/prime-agent-review-self-improving-rlm-harness/)`,
     },
   ],
   cta: {
     text: 'Ship your AI feature in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

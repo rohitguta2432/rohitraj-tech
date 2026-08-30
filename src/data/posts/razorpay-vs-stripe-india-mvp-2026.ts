@@ -31,7 +31,7 @@ Stripe wins only when ≥60% of revenue is foreign cards or your stack already u
     },
     {
       heading: 'Razorpay vs Stripe for Indian MVPs in 2026',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 **The short answer:** if your customers pay in INR, Razorpay wins on cost by a factor of 4-5x. Stripe wins only when foreign cards dominate.
 
@@ -129,7 +129,7 @@ If you score 1-2 above, pick **Razorpay** and move on. If 3-5, pick **Stripe**. 
 
 This decision shows up on the cost line every month. On a ₹50,000 GMV month with 50/50 UPI/card split, the difference is ₹2,035 saved per month with Razorpay. Over 12 months, that's almost a month of a freelance developer's contracted time. Pick the gateway, not the pricing page.
 
-Adjacent reads: [Drizzle vs Prisma vs TypeORM](/en/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026) for the stack-level decision, [India vs US MVP Developer Cost in 2026](/en/notes/india-vs-us-mvp-developer-cost-2026) for the hiring-level one.`,
+Adjacent reads: [Drizzle vs Prisma vs TypeORM](/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026) for the stack-level decision, [India vs US MVP Developer Cost in 2026](/notes/india-vs-us-mvp-developer-cost-2026) for the hiring-level one.`,
     },
     {
       heading: 'Ship payments correctly the first time',
@@ -139,14 +139,14 @@ I've shipped Razorpay integration on 9 paid client projects since 2024 (PropChec
 
 **Two CTAs that make sense here:**
 
-- If you want a working MVP with Razorpay integration ready to ship in 6 weeks, see my [6-week MVP sprint](https://rohitraj.tech/en/services/6-week-mvp). Payment gateway integration is included by default in every sprint, with the gateway choice driven by the answers above.
-- If you're past idea stage and need a senior engineer who's done this before to own the entire stack, see [Hire a Founding Engineer in India](https://rohitraj.tech/en/services/hire-founding-engineer-india). Payments are one of 12 areas where shipping a known-correct pattern beats reinventing.
+- If you want a working MVP with Razorpay integration ready to ship in 6 weeks, see my [6-week MVP sprint](https://rohitraj.tech/services/6-week-mvp). Payment gateway integration is included by default in every sprint, with the gateway choice driven by the answers above.
+- If you're past idea stage and need a senior engineer who's done this before to own the entire stack, see [Hire a Founding Engineer in India](https://rohitraj.tech/services/hire-founding-engineer-india). Payments are one of 12 areas where shipping a known-correct pattern beats reinventing.
 
 Either way: pick Razorpay if you're Indian-first, pick Stripe if you're global-first, and don't waste the seed-round month comparing. Spend that week on user acquisition instead.`,
     },
   ],
   cta: {
     text: 'Ship your MVP with payments wired right',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

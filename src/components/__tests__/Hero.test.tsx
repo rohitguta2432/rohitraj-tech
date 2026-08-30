@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Hero from '../Hero';
-import type { HomeDictionary, Locale } from '@/lib/i18n';
+import type { HomeDictionary } from '@/lib/i18n';
 
 jest.mock('next/link', () => {
   return ({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
@@ -53,7 +53,7 @@ const mockDict: HomeDictionary = {
 
 describe('Hero', () => {
   it('renders without crashing', () => {
-    render(<Hero dict={mockDict} locale={'en' as Locale} />);
+    render(<Hero dict={mockDict} />);
     // The headline is split across a <br>, so match on the heading's own text.
     const heading = screen.getByRole('heading', { level: 1 });
     expect(heading).toHaveTextContent('One engineer.');

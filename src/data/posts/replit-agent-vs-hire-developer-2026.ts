@@ -29,11 +29,11 @@ export const replitAgentVsHireDeveloper2026: BlogPost = {
     },
 {
       heading: 'Replit Agent vs Hiring a Developer in 2026: The Honest Answer',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For a real production MVP in 2026, **Replit Agent alone will not get you across the finish line**. The combination that actually ships is Replit Agent on the $25/month Core plan for prototyping and one-off scripts, paired with a senior engineer (₹2L–3L/month in India, roughly $2,400–$3,600) for the production rebuild. Replit Agent reliably ships a demo. A senior engineer turns that demo into a product your customers can pay for.
 
-The numbers force this conclusion. Real founders running Replit Agent v3 daily report effective monthly bills of **$200 to $500** once they cross out of the included Core credits. That is no longer a $25/month tool — that is a fractional-developer line item with none of the architectural judgment, no GitHub Issues triage, and no one to call at 11 PM when Stripe webhooks are dropping events. At that price, you are inside [founding engineer territory in India](/en/services/hire-founding-engineer-india) with the wrong shape of leverage.
+The numbers force this conclusion. Real founders running Replit Agent v3 daily report effective monthly bills of **$200 to $500** once they cross out of the included Core credits. That is no longer a $25/month tool — that is a fractional-developer line item with none of the architectural judgment, no GitHub Issues triage, and no one to call at 11 PM when Stripe webhooks are dropping events. At that price, you are inside [founding engineer territory in India](/services/hire-founding-engineer-india) with the wrong shape of leverage.
 
 The structural reason matters more than the bill. Replit Agent is **a browser-native autonomous loop**: it lives inside the Replit IDE, owns the runtime, and deploys to Replit Cloud. That model is genuinely magical for prototypes — you go from prompt to live URL in 8 minutes. It is the *wrong shape* for a production app, where you eventually need your code outside Replit, on your own AWS or Vercel account, in your own GitHub org, with your own observability stack. Replit Agent is a shipping tool optimized for the prototype, not the product.`,
     },
@@ -67,7 +67,7 @@ So the included Core credits cover roughly **20–40 small tasks or 5–10 mediu
 
 The actual founder pattern: the first weekend feels like magic — you spin up auth, a CRUD dashboard, and a Stripe checkout for $4. Week two you start refactoring and the bill is $40. Week four you onboard a beta user, hit edge cases, and the Agent burns through 200 tasks fixing its own scaffolding decisions. By month three the monthly bill is $300–$500 and the codebase still does not have proper migrations, error tracking, or RLS — because nobody told the Agent it needed those.
 
-If you are paying $400/month for Replit Agent and *still* spending nights cleaning up broken auth, [you have not saved money](/en/notes/why-your-mvp-should-cost-under-10k). You have outsourced typing, kept the hard parts, and added a recurring bill that scales the wrong direction.`,
+If you are paying $400/month for Replit Agent and *still* spending nights cleaning up broken auth, [you have not saved money](/notes/why-your-mvp-should-cost-under-10k). You have outsourced typing, kept the hard parts, and added a recurring bill that scales the wrong direction.`,
     },
     {
       heading: 'Where Replit Agent Wins: Three Task Shapes That Pay Back',
@@ -106,7 +106,7 @@ The interpretation: Replit Agent v3 is genuinely faster on the first two rows an
       heading: 'When Replit Agent Wins (Honest Counter-Position)',
       content: `I am not going to pretend hiring a developer is always correct. Three scenarios where Replit Agent is genuinely the better call in 2026:
 
-**You are a non-technical founder pre-validation.** You have an idea. You do not yet know if anyone will pay for it. The cost of finding out should be as close to zero as possible. Spending $15,000 on a senior engineer to build something nobody wants is the worst possible burn. Spend a weekend with Replit Agent, get a clickable demo, put it in front of 20 potential customers, and let the conversation tell you whether the idea has legs. Only after demand is real does it make sense to [scope a 6-week MVP sprint](/en/services/6-week-mvp).
+**You are a non-technical founder pre-validation.** You have an idea. You do not yet know if anyone will pay for it. The cost of finding out should be as close to zero as possible. Spending $15,000 on a senior engineer to build something nobody wants is the worst possible burn. Spend a weekend with Replit Agent, get a clickable demo, put it in front of 20 potential customers, and let the conversation tell you whether the idea has legs. Only after demand is real does it make sense to [scope a 6-week MVP sprint](/services/6-week-mvp).
 
 **You need an internal tool that will live ≤50 users forever.** Sales-ops dashboards, ops-team CSV importers, recruiter pipelines, ticketing widgets. These are not products — they are leverage. They do not need scale, observability, or compliance. They need to exist by Friday. Replit Agent is the correct tool for the job, full stop. A senior engineer is overkill and will quietly resent the work.
 
@@ -128,17 +128,17 @@ If none of these three apply, you are probably in the territory where a real eng
 
 5. **Will a future engineer inherit this codebase?** If yes, every hour Replit Agent spends generating non-portable, non-conventional, undocumented code is an hour your future hire spends rewriting. The clean-rebuild bill at month six is bigger than the difference between Replit Agent and a senior engineer for the original sprint.
 
-The TL;DR: Replit Agent is a remarkable prototyping tool and a bad founding engineer. Use it for what it is. When the work crosses the prototype-to-product line, [hire a senior engineer who has shipped 10 MVPs](/en/services/hire-founding-engineer-india), keep Replit Agent for the side experiments, and let each tool play its real role.`,
+The TL;DR: Replit Agent is a remarkable prototyping tool and a bad founding engineer. Use it for what it is. When the work crosses the prototype-to-product line, [hire a senior engineer who has shipped 10 MVPs](/services/hire-founding-engineer-india), keep Replit Agent for the side experiments, and let each tool play its real role.`,
     },
     {
       heading: 'Ship Your MVP With a Senior Engineer Instead',
       content: `If you read this far you probably already know which side of the line your project sits on. If it is the prototype side, fire up Replit and have a great weekend. If it is the production side, the next move is a fixed-scope sprint.
 
-[Scope a 6-Week MVP Sprint](/en/services/6-week-mvp) — production-ready full-stack app, your code in your GitHub on day one, $15,000–$30,000 fixed price, no equity ask. Or, if you are deciding between hiring a founding engineer in India and contracting one, read [the honest founding-engineer-vs-contractor breakdown](/en/services/hire-founding-engineer-india) first. Either path beats $400/month in Replit overages with no migration plan.`,
+[Scope a 6-Week MVP Sprint](/services/6-week-mvp) — production-ready full-stack app, your code in your GitHub on day one, $15,000–$30,000 fixed price, no equity ask. Or, if you are deciding between hiring a founding engineer in India and contracting one, read [the honest founding-engineer-vs-contractor breakdown](/services/hire-founding-engineer-india) first. Either path beats $400/month in Replit overages with no migration plan.`,
     },
   ],
   cta: {
     text: 'Scope Your 6-Week MVP',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

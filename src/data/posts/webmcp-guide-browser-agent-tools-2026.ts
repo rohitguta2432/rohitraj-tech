@@ -28,7 +28,7 @@ export const webmcpGuideBrowserAgentTools2026: BlogPost = {
         },
         {
             heading: 'WebMCP Guide 2026: Turn Your Website Into Tools for Browser AI Agents',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For two years the agentic-browsing story has been the same sad loop: an AI agent opens your site, takes a screenshot, guesses which pixels are a button, clicks, re-screenshots, guesses again. It is slow, it breaks the moment you ship a redesign, and it has no idea whether "Submit" charged a card or saved a draft. **WebMCP** — short for Web Model Context Protocol — is Google's answer, and as of this month it is no longer a demo: it is in a public [origin trial](https://developer.chrome.com/docs/ai/webmcp) you can run on real users.
 
@@ -112,7 +112,7 @@ The mental model I keep: **WebMCP is for the world the user can see in their tab
         },
         {
             heading: 'WebMCP vs MCP: they are partners, not rivals',
-            content: `The single biggest confusion in the WebMCP discourse is treating it as a competitor to Anthropic's [Model Context Protocol](/en/notes/spring-boot-mcp). It is not. They solve different halves of the same problem, and the official guidance is explicit that you use **both** ([Chrome for Developers](https://developer.chrome.com/blog/webmcp-mcp-usage)).
+            content: `The single biggest confusion in the WebMCP discourse is treating it as a competitor to Anthropic's [Model Context Protocol](/notes/spring-boot-mcp). It is not. They solve different halves of the same problem, and the official guidance is explicit that you use **both** ([Chrome for Developers](https://developer.chrome.com/blog/webmcp-mcp-usage)).
 
 | | **WebMCP** | **MCP** |
 |---|---|---|
@@ -125,7 +125,7 @@ The mental model I keep: **WebMCP is for the world the user can see in their tab
 | Best for | In-tab interaction, UI-state actions | Headless data + actions, multi-platform |
 | Breaks when | The tab closes | (Designed to stay up) |
 
-The clean division of labour: **MCP is the foundation** — your server exposes the durable, platform-agnostic business logic so an agent on desktop, mobile, or cloud can reach it anytime. **WebMCP is the contextual layer** — when a user is actually on your site, it gives the in-tab agent a high-fidelity way to act on what is in front of them. A serious agentic product ships both: an MCP server for "do this anywhere" and WebMCP tools for "do this here, now, in my session." If you have already built an MCP server — I walked through one in [Spring Boot MCP server](/en/notes/spring-boot-mcp) — WebMCP is the front-end companion, not a thing you migrate to.`,
+The clean division of labour: **MCP is the foundation** — your server exposes the durable, platform-agnostic business logic so an agent on desktop, mobile, or cloud can reach it anytime. **WebMCP is the contextual layer** — when a user is actually on your site, it gives the in-tab agent a high-fidelity way to act on what is in front of them. A serious agentic product ships both: an MCP server for "do this anywhere" and WebMCP tools for "do this here, now, in my session." If you have already built an MCP server — I walked through one in [Spring Boot MCP server](/notes/spring-boot-mcp) — WebMCP is the front-end companion, not a thing you migrate to.`,
         },
         {
             heading: 'When to skip WebMCP (for now)',
@@ -141,7 +141,7 @@ So: skip it as a *load-bearing* dependency for a launch this quarter. Do **not**
         },
         {
             heading: 'How I would ship WebMCP in production',
-            content: `I have built [MCP servers](/en/notes/spring-boot-mcp) and shipped AI features that act on real user accounts, so the part that worries me about WebMCP is not the API — it is the blast radius. The API is a weekend; the safety model is the actual work. Here is how I would wire it.
+            content: `I have built [MCP servers](/notes/spring-boot-mcp) and shipped AI features that act on real user accounts, so the part that worries me about WebMCP is not the API — it is the blast radius. The API is a weekend; the safety model is the actual work. Here is how I would wire it.
 
 **Treat every tool as read-only until proven otherwise.** WebMCP gives you an \`annotations\` object with \`readOnlyHint\` and \`untrustedContentHint\` for exactly this reason. Set \`readOnlyHint: true\` on anything that only reads state, and make state-changing tools the deliberate exception. The \`untrustedContentHint\` flag tells the agent that whatever your tool returns should be treated as untrusted input — critical, because a tool that echoes user-generated content (a comment, a product review) is a **prompt-injection vector**: a malicious string on your page could try to hijack the agent. Flag it.
 
@@ -165,7 +165,7 @@ The agent proposes; the human disposes. For any tool touching money or identity,
 
 **Keep the schema tight and the descriptions honest.** The model picks tools off your \`description\` strings and validates arguments against your \`inputSchema\`. A loose schema (\`type: 'string'\` with no constraints) is an injection surface; a vague description gets your tool called in the wrong context. Constrain enums, set \`required\`, and write descriptions that say exactly when *not* to use the tool.
 
-**Layer it, do not bet the farm on it.** Ship WebMCP as progressive enhancement: feature-detect \`document.modelContext\`, register tools when it exists, and make sure your site is fully usable without it. You get the upside for Chrome-agent users today and zero downside for everyone else — the same hedging discipline I bring to any [AI feature build](/en/services/ai-chatbot-development), where the integration that does not fall over matters more than the one that demos well.`,
+**Layer it, do not bet the farm on it.** Ship WebMCP as progressive enhancement: feature-detect \`document.modelContext\`, register tools when it exists, and make sure your site is fully usable without it. You get the upside for Chrome-agent users today and zero downside for everyone else — the same hedging discipline I bring to any [AI feature build](/services/ai-chatbot-development), where the integration that does not fall over matters more than the one that demos well.`,
         },
         {
             heading: 'FAQ: WebMCP',
@@ -181,13 +181,13 @@ The agent proposes; the human disposes. For any tool touching money or identity,
         },
         {
             heading: 'Building an agent-ready product?',
-            content: `WebMCP is the easy 20% — \`registerTool\` is a weekend. The hard 80% is the judgment: which actions are safe to expose, where the confirmation gates go, how WebMCP and an [MCP server](/en/notes/spring-boot-mcp) split the work, and how to ship it as progressive enhancement that does not break for the 95% of users who are not on a browser agent yet.
+            content: `WebMCP is the easy 20% — \`registerTool\` is a weekend. The hard 80% is the judgment: which actions are safe to expose, where the confirmation gates go, how WebMCP and an [MCP server](/notes/spring-boot-mcp) split the work, and how to ship it as progressive enhancement that does not break for the 95% of users who are not on a browser agent yet.
 
-That is the part I do. If you are making a product agent-ready and want the version that is secure by design — not the demo that leaks the user's session — I ship production AI integrations in six weeks: [the 6-week MVP](/en/services/6-week-mvp). If you need someone embedded to own the whole agent stack end to end, that is [hire a founding engineer](/en/services/hire-founding-engineer-india). And if it is a conversational or assistant layer specifically, see [AI chatbot development](/en/services/ai-chatbot-development).`,
+That is the part I do. If you are making a product agent-ready and want the version that is secure by design — not the demo that leaks the user's session — I ship production AI integrations in six weeks: [the 6-week MVP](/services/6-week-mvp). If you need someone embedded to own the whole agent stack end to end, that is [hire a founding engineer](/services/hire-founding-engineer-india). And if it is a conversational or assistant layer specifically, see [AI chatbot development](/services/ai-chatbot-development).`,
         },
     ],
     cta: {
         text: 'Make your product agent-ready in 6 weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

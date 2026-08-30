@@ -28,13 +28,13 @@ export const cursorAiVsHireDeveloper2026: BlogPost = {
     },
 {
       heading: 'Cursor AI vs Hiring a Developer in 2026 — The Honest Answer Up Front',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If your codebase is under 15K lines, has no PCI or HIPAA scope, and a senior engineer is reviewing every Cursor diff before it merges, Cursor Pro at $20 per month is the single best productivity buy a solo founder can make in 2026. The crossover happens the moment Cursor stops being a copilot and starts being the entire engineering team — its Agent mode burns 5 to 10 premium requests per multi-step task, the $20 credit pool depletes by the second week of focused work, and Pro+ at $60 or Ultra at $200 still does not buy you architectural judgment.
 
-The math nobody runs is this: $200/month for Cursor Ultra is $2,400/year. A real engineer on a [6-week MVP sprint](/en/services/6-week-mvp) ships a production-ready app for a flat fee in the same window — and the code does not silently delete your database, hallucinate a Stripe API that does not exist, or commit your .env to GitHub. Cursor reached $2 billion in annualized revenue in February 2026 because it works for senior developers who already know the answer. It fails for founders who do not, because it produces plausible-looking code that no one on the team can debug six weeks later.
+The math nobody runs is this: $200/month for Cursor Ultra is $2,400/year. A real engineer on a [6-week MVP sprint](/services/6-week-mvp) ships a production-ready app for a flat fee in the same window — and the code does not silently delete your database, hallucinate a Stripe API that does not exist, or commit your .env to GitHub. Cursor reached $2 billion in annualized revenue in February 2026 because it works for senior developers who already know the answer. It fails for founders who do not, because it produces plausible-looking code that no one on the team can debug six weeks later.
 
-The real question is not "which is cheaper this month". It is "which has a lower total cost of ownership once you count credit overage bills, hallucinated API debt, and the security incident that comes with shipping AI-generated code without a code reviewer". This post answers that with real numbers — what Cursor does well, where it predictably breaks on production work, what a [founding engineer in India](/en/services/hire-founding-engineer-india) costs by comparison, and how to know which side of the line your project sits on before you ship the bug that wipes your beta users.`,
+The real question is not "which is cheaper this month". It is "which has a lower total cost of ownership once you count credit overage bills, hallucinated API debt, and the security incident that comes with shipping AI-generated code without a code reviewer". This post answers that with real numbers — what Cursor does well, where it predictably breaks on production work, what a [founding engineer in India](/services/hire-founding-engineer-india) costs by comparison, and how to know which side of the line your project sits on before you ship the bug that wipes your beta users.`,
     },
     {
       heading: 'What Cursor Actually Costs Once You Hit a Real Codebase',
@@ -52,7 +52,7 @@ Here is what those credits actually buy in practice, based on what developers pu
 
 Translation: a single bad Agent run can eat your entire monthly Pro pool. Founders are publicly logging $80 to $250 monthly bills on Pro+ and Ultra during heavy sprint weeks, and Cursor's own pricing page lists overage as "API-priced" — which means you are paying Anthropic and OpenAI margin plus Cursor's markup the moment you exceed plan.
 
-Compare this to a [6-week MVP sprint](/en/services/6-week-mvp) at a flat fee. The deliverable is a working product, not a credit pool. There is no "the AI got stuck in a loop and burned $40 in tokens before I noticed" line item. The cost is fixed, the scope is fixed, and the engineer carries the architectural debt — not you.`,
+Compare this to a [6-week MVP sprint](/services/6-week-mvp) at a flat fee. The deliverable is a working product, not a credit pool. There is no "the AI got stuck in a loop and burned $40 in tokens before I noticed" line item. The cost is fixed, the scope is fixed, and the engineer carries the architectural debt — not you.`,
     },
     {
       heading: 'Where Cursor Predictably Breaks on Production Work',
@@ -77,8 +77,8 @@ The pattern across all four is the same: Cursor optimizes for "code that looks r
 | Cursor Pro (solo founder, 4hr/day) | $20–$60/month | Faster typing, no architectural memory, no review |
 | Cursor Ultra + you reviewing | $200/month | Same as above with bigger credit ceiling |
 | Toptal senior (US-billed) | $80–$140/hr | 4–6 week onboarding, agency markup |
-| [Direct founding engineer](/en/services/hire-founding-engineer-india) | $40–$60/hr | Reads your code, writes tests, owns the architecture |
-| [6-week MVP sprint](/en/services/6-week-mvp) | Flat fee | Production app, all 4 failure modes above handled |
+| [Direct founding engineer](/services/hire-founding-engineer-india) | $40–$60/hr | Reads your code, writes tests, owns the architecture |
+| [6-week MVP sprint](/services/6-week-mvp) | Flat fee | Production app, all 4 failure modes above handled |
 
 The hidden cost in row 1 and 2 is your time. Every Cursor diff requires you, the founder, to decide if it is correct. If you cannot read the code well enough to spot a hallucinated API or a missing RLS check, you are paying $20 to $200 monthly to ship bugs you will pay an engineer 3x to fix later. Cursor's own marketing copy says "10x productivity" — the unstated assumption is "10x productivity for someone who already ships production code without it".
 
@@ -100,7 +100,7 @@ The cost of a senior engineer is not $40/hour. It is $40/hour minus the bugs you
 | Total cost over 6 weeks | $30–$300 + your time + bugs | ~$10K–$15K | Flat fee, all-in |
 | Production-ready output | Maybe | Yes | Yes — defined in scope |
 
-The row that decides it for most founders is "your time". A solo founder using Cursor Pro spends 30 to 50% of their week reading and rewriting AI output. A solo founder with a [direct founding engineer](/en/services/hire-founding-engineer-india) spends that same week on customers, fundraising, and the 3 things only the founder can do. The math on opportunity cost crushes the math on monthly subscription.
+The row that decides it for most founders is "your time". A solo founder using Cursor Pro spends 30 to 50% of their week reading and rewriting AI output. A solo founder with a [direct founding engineer](/services/hire-founding-engineer-india) spends that same week on customers, fundraising, and the 3 things only the founder can do. The math on opportunity cost crushes the math on monthly subscription.
 
 The other row that matters is "hallucinated APIs". This single failure mode has cost early-stage startups in 2026 between 2 and 6 weeks of debugging time when a Cursor-generated payment integration silently misbehaved on a Stripe webhook field that the model had invented. Hire an engineer who has integrated Stripe before, or pay your way out of this bug after — there is no third option.`,
     },
@@ -126,15 +126,15 @@ The pattern: Cursor wins when there is already a backstop. The backstop is your 
 
 2. **Will real users (paying or beta) use this app within 3 months?** No → Cursor Pro is fine, the app is throwaway. Yes → keep going.
 
-3. **Does the app touch payments, PII, health data, or auth on any data that matters?** Yes → do not ship without an engineer. Period. Either hire a [direct founding engineer](/en/services/hire-founding-engineer-india) or commission a [6-week MVP sprint](/en/services/6-week-mvp). Cursor + non-technical founder + production auth = an incident waiting to happen.
+3. **Does the app touch payments, PII, health data, or auth on any data that matters?** Yes → do not ship without an engineer. Period. Either hire a [direct founding engineer](/services/hire-founding-engineer-india) or commission a [6-week MVP sprint](/services/6-week-mvp). Cursor + non-technical founder + production auth = an incident waiting to happen.
 
 4. **Is your runway > 12 months and your codebase already > 10K lines?** Yes → fractional or full-time founding engineer at $40–$60/hr. Cursor is their tool, not yours. No → keep going.
 
-5. **Do you need a working MVP in under 8 weeks for a fundraise or a launch?** Yes → flat-fee [6-week MVP sprint](/en/services/6-week-mvp). The fixed scope and fixed deadline are the entire reason this exists. No → fractional founding engineer, scoped to your actual budget.
+5. **Do you need a working MVP in under 8 weeks for a fundraise or a launch?** Yes → flat-fee [6-week MVP sprint](/services/6-week-mvp). The fixed scope and fixed deadline are the entire reason this exists. No → fractional founding engineer, scoped to your actual budget.
 
 The mistake almost every non-technical founder makes is answering "1. yes" because Cursor's UI is friendly. Cursor's UI is not the question. The question is whether you can read the code it produces and recognize when it is wrong. If you cannot, you are not its target customer — you are its debt source.
 
-Related reading: [Devin AI vs Hiring a Developer in 2026: $20/Month Agent or Founding…](/en/notes/devin-ai-vs-hire-developer-2026) and [Bolt.new vs Hire Developer 2026](/en/notes/bolt-new-vs-hire-developer-2026) cover the adjacent tradeoffs in more depth.`,
+Related reading: [Devin AI vs Hiring a Developer in 2026: $20/Month Agent or Founding…](/notes/devin-ai-vs-hire-developer-2026) and [Bolt.new vs Hire Developer 2026](/notes/bolt-new-vs-hire-developer-2026) cover the adjacent tradeoffs in more depth.`,
     },
     {
       heading: 'Ship Real Code in 2026 — Without the Credit Bill or the Hallucinated APIs',
@@ -142,15 +142,15 @@ Related reading: [Devin AI vs Hiring a Developer in 2026: $20/Month Agent or Fou
 
 The cheapest path to a production-grade MVP in 2026 is not Cursor Ultra at $200/month. It is a fixed-scope sprint with an engineer who has already shipped your stack to production, who reads CLAUDE.md once and remembers it, who writes the test before the implementation, and who carries the architectural debt so you can carry the customer conversations.
 
-[Book a 6-Week MVP Sprint](/en/services/6-week-mvp) — flat fee, production-ready app, all 4 failure modes covered.
+[Book a 6-Week MVP Sprint](/services/6-week-mvp) — flat fee, production-ready app, all 4 failure modes covered.
 
-Or [hire a Founding Engineer in India direct](/en/services/hire-founding-engineer-india) — fractional or full-time, $40–$60/hr, no Toptal or Arc markup, owns the architecture from day one.
+Or [hire a Founding Engineer in India direct](/services/hire-founding-engineer-india) — fractional or full-time, $40–$60/hr, no Toptal or Arc markup, owns the architecture from day one.
 
 Use Cursor for what it is genuinely great at: typing faster, learning new code, prototyping throwaway demos. Hire a real engineer for everything that has to survive Monday morning.`,
     },
   ],
   cta: {
     text: 'Ship a real MVP in 6 weeks — no credit caps, no hallucinated APIs',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

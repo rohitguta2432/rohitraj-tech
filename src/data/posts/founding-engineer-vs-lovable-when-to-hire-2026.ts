@@ -26,7 +26,7 @@ export const foundingEngineerVsLovableWhenToHire2026: BlogPost = {
     },
 {
       heading: 'Founding Engineer or Lovable — Which One Should You Pick in 2026?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Pick Lovable (or Bolt, v0, Cursor) if you are a pre-PMF founder who needs to validate a single idea for under $100. Hire a founding engineer if you have product-market fit, raised capital, and need someone on the cap table to build the company with you. If you are in the middle — validated idea, no funding yet, MVP is live but breaking — hire a senior contractor on a 6-week sprint instead.
 
@@ -171,9 +171,9 @@ The honest answer for most founders I talk to in 2026: start with Lovable to val
 
 If that sounds like where your startup is — you have a Lovable MVP that is cracking under usage, or you have validated an idea and want a production-grade first version — that is exactly the shape of work I take on. One founder at a time, 2–3 engagements per quarter.
 
-If you want this shipped end-to-end without the team-of-five overhead, the [founding engineer in India](/en/services/hire-founding-engineer-india) and [startup MVP build](/en/services/startup-mvp-development) options are the routes I take on.
+If you want this shipped end-to-end without the team-of-five overhead, the [founding engineer in India](/services/hire-founding-engineer-india) and [startup MVP build](/services/startup-mvp-development) options are the routes I take on.
 
-If this thread is useful, [Founding Engineer vs Fractional CTO in 2026](/en/notes/founding-engineer-vs-fractional-cto) and [Hire a Founding Engineer in India](/en/notes/founding-engineer-india-vs-toptal-arc-uplers-2026) are the next two posts to read.`
+If this thread is useful, [Founding Engineer vs Fractional CTO in 2026](/notes/founding-engineer-vs-fractional-cto) and [Hire a Founding Engineer in India](/notes/founding-engineer-india-vs-toptal-arc-uplers-2026) are the next two posts to read.`
     },
     {
       heading: 'Frequently Asked Questions',

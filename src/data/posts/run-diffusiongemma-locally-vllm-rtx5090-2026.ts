@@ -24,13 +24,13 @@ export const runDiffusionGemmaLocallyVllm2026: BlogPost = {
     sections: [
         {
             heading: 'TL;DR',
-            content: `Self-hosting **DiffusionGemma** ([Google's open text-diffusion model](https://developers.googleblog.com/diffusiongemma-the-developer-guide/), released **June 10, 2026**, Apache 2.0) takes one command. The fastest production path is **vLLM**, which has **native diffusion serving on day zero**: \`vllm serve google/diffusiongemma-26B-A4B-it\`. Quantized, the **26B-A4B** model fits in **~18GB VRAM**, so a single **RTX 5090** clears **700+ tokens/sec** and an **H100** clears **1000+** ([NVIDIA](https://blogs.nvidia.com/blog/rtx-ai-garage-local-gemma-diffusion/)). The two knobs that matter are \`canvas_length\` and the entropy bound (denoising passes per block) — they trade speed for quality. For *what* it is and *when* to reach for it, read [the explainer](/en/notes/diffusiongemma-text-diffusion-llm-guide-2026) first.`,
+            content: `Self-hosting **DiffusionGemma** ([Google's open text-diffusion model](https://developers.googleblog.com/diffusiongemma-the-developer-guide/), released **June 10, 2026**, Apache 2.0) takes one command. The fastest production path is **vLLM**, which has **native diffusion serving on day zero**: \`vllm serve google/diffusiongemma-26B-A4B-it\`. Quantized, the **26B-A4B** model fits in **~18GB VRAM**, so a single **RTX 5090** clears **700+ tokens/sec** and an **H100** clears **1000+** ([NVIDIA](https://blogs.nvidia.com/blog/rtx-ai-garage-local-gemma-diffusion/)). The two knobs that matter are \`canvas_length\` and the entropy bound (denoising passes per block) — they trade speed for quality. For *what* it is and *when* to reach for it, read [the explainer](/notes/diffusiongemma-text-diffusion-llm-guide-2026) first.`,
         },
         {
             heading: 'Running DiffusionGemma locally: the build half of the story',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
-[My earlier post](/en/notes/diffusiongemma-text-diffusion-llm-guide-2026) covered what DiffusionGemma is — a 26B Mixture-of-Experts that generates a 256-token block in parallel by denoising instead of writing left to right — and when the speed-for-quality trade is worth it. This post is the part a working dev actually needs once they've decided to try it: **how do you stand up a real local endpoint, and what do the diffusion-specific knobs do?**
+[My earlier post](/notes/diffusiongemma-text-diffusion-llm-guide-2026) covered what DiffusionGemma is — a 26B Mixture-of-Experts that generates a 256-token block in parallel by denoising instead of writing left to right — and when the speed-for-quality trade is worth it. This post is the part a working dev actually needs once they've decided to try it: **how do you stand up a real local endpoint, and what do the diffusion-specific knobs do?**
 
 The good news is that because Google shipped [day-zero vLLM and Transformers support](https://developers.googleblog.com/diffusiongemma-the-developer-guide/), getting a token out of this model is not the hard part. The hard part is that a diffusion model has serving parameters no autoregressive model has — a canvas length, a sampler, an entropy bound — and the defaults are tuned for a benchmark, not for your latency budget. Get those wrong and you either leave half the speed on the table or ship noticeably worse output than the model is capable of.
 
@@ -102,7 +102,7 @@ curl http://localhost:8000/v1/chat/completions \\
   -d '{"model":"google/diffusiongemma-26B-A4B-it","messages":[{"role":"user","content":"Say hi in one sentence."}]}'
 \`\`\`
 
-This is the quietly important part for product work: **DiffusionGemma drops into any codebase that already speaks the OpenAI API.** If you've built an [AI feature for an MVP](/en/services/6-week-mvp) against \`chat.completions\`, swapping the \`base_url\` to your vLLM box is a config change, not a rewrite. The one behavioral difference to watch — covered in the production section below — is how streaming feels, because a diffusion model commits a *block* at a time, not a token at a time.`,
+This is the quietly important part for product work: **DiffusionGemma drops into any codebase that already speaks the OpenAI API.** If you've built an [AI feature for an MVP](/services/6-week-mvp) against \`chat.completions\`, swapping the \`base_url\` to your vLLM box is a config change, not a rewrite. The one behavioral difference to watch — covered in the production section below — is how streaming feels, because a diffusion model commits a *block* at a time, not a token at a time.`,
         },
         {
             heading: 'Tuning throughput against quality',
@@ -132,7 +132,7 @@ The decision is simple. **Prototyping or scripting?** Use Transformers — it's 
             heading: 'When should you NOT self-host this?',
             content: `Honesty is the whole point of a build guide, so: there are real cases where standing up your own DiffusionGemma box is the wrong call.
 
-**When you need top-tier quality.** Google is upfront that DiffusionGemma trades accuracy for speed, and the [model card](https://ai.google.dev/gemma/docs/diffusiongemma/model_card) puts numbers on it versus standard Gemma 4 26B-A4B: **MMLU-Pro 77.6% vs 82.6%**, **GPQA Diamond 73.2% vs 82.3%**, **LiveCodeBench v6 69.1% vs 77.1%**, and a steep **AIME 2026 69.1% vs 88.3%**. If your workload is hard reasoning or precise code, an autoregressive model — Gemma 4 itself, or a hosted frontier model — will beat it. The [explainer](/en/notes/diffusiongemma-text-diffusion-llm-guide-2026) walks through that trade in depth.
+**When you need top-tier quality.** Google is upfront that DiffusionGemma trades accuracy for speed, and the [model card](https://ai.google.dev/gemma/docs/diffusiongemma/model_card) puts numbers on it versus standard Gemma 4 26B-A4B: **MMLU-Pro 77.6% vs 82.6%**, **GPQA Diamond 73.2% vs 82.3%**, **LiveCodeBench v6 69.1% vs 77.1%**, and a steep **AIME 2026 69.1% vs 88.3%**. If your workload is hard reasoning or precise code, an autoregressive model — Gemma 4 itself, or a hosted frontier model — will beat it. The [explainer](/notes/diffusiongemma-text-diffusion-llm-guide-2026) walks through that trade in depth.
 
 **When you don't have the GPU.** ~18GB quantized still means an RTX 5090, a 4090-class card, or a high-memory Mac. If you're on a laptop with 8GB, a hosted API is cheaper than buying hardware to chase a latency win you may not need.
 
@@ -154,11 +154,11 @@ That fallback-router-plus-auth-proxy pattern is exactly the kind of plumbing tha
             heading: 'Ship it without the five bugs the quickstart skips',
             content: `DiffusionGemma is the rare open release that is genuinely easy to *start* and genuinely subtle to *run well*: the serve command is one line, but the entropy bound, the NVFP4 footprint, the no-auth server, and the block-streaming behavior are all decisions that don't surface until you're in production.
 
-If you're adding a fast local model to an MVP and want it integrated — auth proxy, quality-fallback router, observability, the lot — without rediscovering each gotcha the hard way, I [ship AI features in 6 weeks](/en/services/6-week-mvp). And if you need someone in the codebase long-term to own the inference stack, you can [hire me as a founding engineer](/en/services/hire-founding-engineer-india).`,
+If you're adding a fast local model to an MVP and want it integrated — auth proxy, quality-fallback router, observability, the lot — without rediscovering each gotcha the hard way, I [ship AI features in 6 weeks](/services/6-week-mvp). And if you need someone in the codebase long-term to own the inference stack, you can [hire me as a founding engineer](/services/hire-founding-engineer-india).`,
         },
     ],
     cta: {
         text: 'Ship Your Local-AI Feature in 6 Weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

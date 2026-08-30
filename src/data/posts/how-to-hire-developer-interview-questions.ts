@@ -18,7 +18,7 @@ export const howToHireDeveloperInterviewQuestions: BlogPost = {
     },
 {
       heading: 'Why Does Hiring a Developer Go Wrong So Often?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To hire a good software developer, ask for live project demos, question their tech stack reasoning, verify their deployment and security approach, and insist on milestone-based payments. The 10 questions below filter out unreliable developers before you sign a contract — whether you are technical or not. Focus on evidence of shipped products, clear communication, and a structured work process.
 
@@ -109,9 +109,9 @@ If someone quotes dramatically below market rate, they're either desperate or ly
 
 The goal isn't to find a perfect developer. It's to find one who communicates clearly, ships working software, and doesn't disappear. These 10 questions will filter out 80% of the bad ones.
 
-If you'd rather hand the build off and review weekly, the [founding engineer in India](/en/services/hire-founding-engineer-india) is the fastest path; for a longer-term engineering relationship, look at [6-week MVP sprint](/en/services/6-week-mvp).
+If you'd rather hand the build off and review weekly, the [founding engineer in India](/services/hire-founding-engineer-india) is the fastest path; for a longer-term engineering relationship, look at [6-week MVP sprint](/services/6-week-mvp).
 
-I've written the deeper version of this argument in [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a…](/en/notes/how-much-does-it-cost-to-build-mobile-app-india-2026) and the contrarian counter-take in [How to Build a SaaS MVP in 2026](/en/notes/how-to-build-saas-mvp-2026).`
+I've written the deeper version of this argument in [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a…](/notes/how-much-does-it-cost-to-build-mobile-app-india-2026) and the contrarian counter-take in [How to Build a SaaS MVP in 2026](/notes/how-to-build-saas-mvp-2026).`
     },
     {
       heading: 'Frequently Asked Questions',

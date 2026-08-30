@@ -29,7 +29,7 @@ export const codexSecurityVsSnykSemgrepCodeql2026: BlogPost = {
     },
     {
       heading: 'OpenAI Just Open-Sourced Its Own Code Scanner — Here Is What Changed',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 OpenAI released [\`openai/codex-security\`](https://github.com/openai/codex-security) as an open-source project under the **Apache-2.0 license** — a CLI and TypeScript SDK for "finding, validating, and fixing security vulnerabilities in your code." The tool had been in research preview since **March 2026**; the open-sourcing is what put it on the [Hacker News front page at 554 points](https://news.ycombinator.com/item?id=49096188) and past **4.1k stars with 111 commits on main**.
 
@@ -120,7 +120,7 @@ That \`close()\` is not decorative — the SDK holds a session, and skipping it 
 
 **1. Auditing a codebase you did not write.** This is the strongest case. Inheriting a repo — an acquisition, a contractor handoff, a legacy service nobody owns — is exactly when you have no idea where the trust boundaries are. Semgrep will give you 300 pattern matches with no sense of which ones are reachable from the internet. A tool that builds an entry-point map first and validates exploitability gives you a triage order on day one instead of week three. If you are taking over an unfamiliar service, this is the scan to run before you touch anything.
 
-**2. Reviewing AI-generated code at volume.** This is the whole reason the category is heating up. AI coding tools generate code at a pace human review does not match, and the failure modes are specific: hardcoded credentials, hallucinated API calls, and auth checks that look right and are not. A pattern matcher catches the hardcoded-secret class fine. It does *not* catch "this endpoint's authorization check passes a variable that is always truthy" — that needs reachability plus an exploitability attempt. I wrote about the adjacent problem of [agents running destructive shell commands](/en/notes/ai-agent-command-guardrails-2026); this is the same trust problem one layer down, in the code the agent writes rather than the commands it runs.
+**2. Reviewing AI-generated code at volume.** This is the whole reason the category is heating up. AI coding tools generate code at a pace human review does not match, and the failure modes are specific: hardcoded credentials, hallucinated API calls, and auth checks that look right and are not. A pattern matcher catches the hardcoded-secret class fine. It does *not* catch "this endpoint's authorization check passes a variable that is always truthy" — that needs reachability plus an exploitability attempt. I wrote about the adjacent problem of [agents running destructive shell commands](/notes/ai-agent-command-guardrails-2026); this is the same trust problem one layer down, in the code the agent writes rather than the commands it runs.
 
 **3. Cutting triage cost on an existing backlog.** If you already run Snyk or CodeQL and have a standing backlog of unresolved findings, the interesting play is not replacing your scanner. It is running Codex over the *backlog* to get exploitability verdicts on findings you have been ignoring for six months. That is a one-off job with a clear payoff and no pipeline change — the cheapest possible way to evaluate whether the validation actually works on your code.
 
@@ -186,14 +186,14 @@ The honest summary: **this is a real advance on a real problem, in a v-early pac
 
 I build production systems where the security layer is wired in from the first sprint rather than bolted on before launch — CI gates, scoped credentials, and findings that land somewhere a human actually reads.
 
-- **Shipping something new?** [6-week MVP](/en/services/6-week-mvp) — a working product with the pipeline, gates, and secrets handling already in place.
-- **Need this depth on the team, not on a ticket?** [Hire a founding engineer](/en/services/hire-founding-engineer-india) — architecture and delivery, embedded.
+- **Shipping something new?** [6-week MVP](/services/6-week-mvp) — a working product with the pipeline, gates, and secrets handling already in place.
+- **Need this depth on the team, not on a ticket?** [Hire a founding engineer](/services/hire-founding-engineer-india) — architecture and delivery, embedded.
 
-If you are also standing up agent infrastructure, the [MCP stateless spec migration](/en/notes/mcp-stateless-spec-migration-guide-2026) is the other thing worth reading this month.`,
+If you are also standing up agent infrastructure, the [MCP stateless spec migration](/notes/mcp-stateless-spec-migration-guide-2026) is the other thing worth reading this month.`,
     },
   ],
   cta: {
     text: 'Get your MVP shipped in 6 weeks — security wired in from day one',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -19,7 +19,7 @@ export const cloudFirstAiIsDeadOnDeviceAndroid2026: BlogPost = {
     },
 {
       heading: 'The Cloud-First Era Is Over',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built ScamRakshak, a fully offline Android scam detection app using a 3-tier AI inference engine — Gemma 4 on-device LLM, LiteRT binary classifier, and regex fallback — with zero network permissions, proving that production-grade AI apps no longer need cloud APIs for natural language processing tasks on mobile devices.
 
@@ -124,9 +124,9 @@ This matters because every competing scam detection tool is English-only. The 50
 
 Building Hindi-first isn't a localization decision. It's a market insight. The largest unserved market for digital safety tools speaks Hindi.
 
-If you'd rather hand the build off and review weekly, the [mobile app development](/en/services/mobile-app-development) is the fastest path; for a longer-term engineering relationship, look at [fractional CTO engagement](/en/services/hire-fractional-cto-india).
+If you'd rather hand the build off and review weekly, the [mobile app development](/services/mobile-app-development) is the fastest path; for a longer-term engineering relationship, look at [fractional CTO engagement](/services/hire-fractional-cto-india).
 
-I've written the deeper version of this argument in [April 2026 AI News Decoded: 7 Stories That Actually Change What Founders…](/en/notes/ai-news-april-2026-what-founders-should-build) and the contrarian counter-take in [Building an On-Device AI Scam Detector for Android](/en/notes/build-on-device-ai-scam-detector-android-gemma).`
+I've written the deeper version of this argument in [April 2026 AI News Decoded: 7 Stories That Actually Change What Founders…](/notes/ai-news-april-2026-what-founders-should-build) and the contrarian counter-take in [Building an On-Device AI Scam Detector for Android](/notes/build-on-device-ai-scam-detector-android-gemma).`
     },
     {
       heading: 'The Builder\'s Playbook for On-Device AI in 2026',

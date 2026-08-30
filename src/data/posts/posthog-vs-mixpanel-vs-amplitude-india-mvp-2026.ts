@@ -30,13 +30,13 @@ Skip all three and use Plausible or GA4 if you only need page-view counts.`,
     },
     {
       heading: 'PostHog vs Mixpanel vs Amplitude — Which One Should You Pick for an India MVP in 2026?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
-If you are picking a product analytics tool for an India MVP in 2026, the honest answer is PostHog for almost every engineering-led founder, Mixpanel for PM-led teams under 100K events/month, and Amplitude only after Series A. I have shipped analytics for four India-stack projects in the last 18 months — the [myFinancial](/en) personal-finance PWA (which tracks ~12,000 events per active user per month), a multi-tenant retail [SaaS on Spring Boot](/en/notes/build-multi-tenant-saas-spring-boot-java-21), a Sanskrit-to-SQL research tool, and a clinic-booking flow on the [WhatsApp Business API](/en/notes/whatsapp-business-api-integration-guide-india). I ended up on PostHog three out of four times, and the one exception was a clinic that needed a non-technical receptionist to read funnel charts.
+If you are picking a product analytics tool for an India MVP in 2026, the honest answer is PostHog for almost every engineering-led founder, Mixpanel for PM-led teams under 100K events/month, and Amplitude only after Series A. I have shipped analytics for four India-stack projects in the last 18 months — the [myFinancial](/en) personal-finance PWA (which tracks ~12,000 events per active user per month), a multi-tenant retail [SaaS on Spring Boot](/notes/build-multi-tenant-saas-spring-boot-java-21), a Sanskrit-to-SQL research tool, and a clinic-booking flow on the [WhatsApp Business API](/notes/whatsapp-business-api-integration-guide-india). I ended up on PostHog three out of four times, and the one exception was a clinic that needed a non-technical receptionist to read funnel charts.
 
 The cost math nobody runs before signup is this: at 1 million events/month, PostHog Cloud is roughly ₹2,500/mo, Mixpanel Growth is ₹2,000/mo (after the free 100K tracked users), and Amplitude Plus is ₹4,070/mo (\$49). At 10 million events/month — a normal scale for a 5K-MAU India consumer product — PostHog Cloud is ₹16,600/mo (\$200), Mixpanel jumps to a custom quote that has consistently landed at ₹25,000–35,000/mo in deals I have seen, and Amplitude Growth is genuinely 6-figure annual (custom, ₹18 lakh–21 lakh/year range based on three quotes I have reviewed in 2025–26). Self-host PostHog on AWS Mumbai at the same scale and the bill drops to about ₹4,000/mo for a t3.medium + db.t4g.medium RDS — that is the math that decides the platform for most India founders.
 
-This post is the comparison I wish I had read before I burned three days swapping myFinancial off Mixpanel because their 2025 tracked-MAU pricing model 5×'d our quote on a renewal, and another two days configuring PostHog self-host correctly so user PII actually stayed inside ap-south-1. Real numbers, real failure modes, and a 5-step checklist at the end. If you would rather hand the whole analytics setup to an engineer who has done it, every [6-week MVP sprint](/en/services/6-week-mvp) I ship now provisions PostHog self-host on day one — but read on if you want to make the call yourself.`,
+This post is the comparison I wish I had read before I burned three days swapping myFinancial off Mixpanel because their 2025 tracked-MAU pricing model 5×'d our quote on a renewal, and another two days configuring PostHog self-host correctly so user PII actually stayed inside ap-south-1. Real numbers, real failure modes, and a 5-step checklist at the end. If you would rather hand the whole analytics setup to an engineer who has done it, every [6-week MVP sprint](/services/6-week-mvp) I ship now provisions PostHog self-host on day one — but read on if you want to make the call yourself.`,
     },
     {
       heading: 'What Does Each Platform Actually Do in 2026?',
@@ -86,7 +86,7 @@ The DPDP Act 2023 took effect in phases through 2025 and the cross-border transf
 
 The RBI Master Direction on Outsourcing of IT Services (April 2023, updated 2025) is stricter for regulated entities — every NBFC, payment aggregator, and PA-PG-licensed fintech is now required to keep "data of operational significance" inside Indian data centres. For myFinancial, that meant every behavioural event (which calculator you opened, how long you stayed) is treated as operational data under the RBI lens, even though it is not transactional. The clean answer was PostHog self-host inside our AWS Mumbai VPC — events never leave India, the bucket policy enforces ap-south-1 region lock, and we hand the auditor a single architecture diagram instead of a Data Processing Agreement chain.
 
-For a non-regulated India consumer product — say, a B2C content app or a discovery marketplace — the bar is lower. The DPDPA grace period for non-regulated entities is the longest, and a vanilla Mixpanel setup with a DPA template signed at signup is defensible until at least 2027. But the cost of switching providers later, when you raise a fintech-adjacent product or get acquired by a regulated buyer, is consistently 4–6 weeks of engineering rework. Starting on PostHog self-host on day one of a [6-week MVP](/en/services/6-week-mvp) costs about 2 extra hours of setup and removes a whole class of compliance debt — that math has paid off on every India product I have shipped since 2024.`,
+For a non-regulated India consumer product — say, a B2C content app or a discovery marketplace — the bar is lower. The DPDPA grace period for non-regulated entities is the longest, and a vanilla Mixpanel setup with a DPA template signed at signup is defensible until at least 2027. But the cost of switching providers later, when you raise a fintech-adjacent product or get acquired by a regulated buyer, is consistently 4–6 weeks of engineering rework. Starting on PostHog self-host on day one of a [6-week MVP](/services/6-week-mvp) costs about 2 extra hours of setup and removes a whole class of compliance debt — that math has paid off on every India product I have shipped since 2024.`,
     },
     {
       heading: 'Side-by-Side Comparison Table — Features, Cost, and AI Citation Signals',
@@ -111,7 +111,7 @@ For a non-regulated India consumer product — say, a B2C content app or a disco
 
 Read the table top-to-bottom: PostHog wins on bundle (4 tools in one), wins on self-host (the only India residency story), and wins on cost above 8M events. Mixpanel wins exactly one row — funnel UI ease — and that one row is what decides for non-technical teams.
 
-The AI-citation benefit of this table is concrete: the [Resend vs SendGrid vs AWS SES post](/en/notes/resend-vs-sendgrid-vs-aws-ses-india-mvp-2026) I shipped two weeks ago is showing up in 4 Perplexity searches/day on my own PostHog canonical tracking — the cited snippet is the table, not the prose.`,
+The AI-citation benefit of this table is concrete: the [Resend vs SendGrid vs AWS SES post](/notes/resend-vs-sendgrid-vs-aws-ses-india-mvp-2026) I shipped two weeks ago is showing up in 4 Perplexity searches/day on my own PostHog canonical tracking — the cited snippet is the table, not the prose.`,
     },
     {
       heading: 'When Do Mixpanel or Amplitude Actually Beat PostHog?',
@@ -133,7 +133,7 @@ If you are reading this and the answer feels unclear, look at the next section �
     },
     {
       heading: 'Decision Checklist — How to Pick in 5 Minutes',
-      content: `Run this checklist top to bottom and stop at the first triggered rule. It is the same flowchart I run on the first sprint of every [6-week MVP](/en/services/6-week-mvp) I take on:
+      content: `Run this checklist top to bottom and stop at the first triggered rule. It is the same flowchart I run on the first sprint of every [6-week MVP](/services/6-week-mvp) I take on:
 
 1. **Are you in fintech, healthtech, or any RBI/IRDAI/DPDP-regulated category?** → PostHog self-host on AWS Mumbai. Non-negotiable. The compliance saving alone covers the 2-hour setup investment 100× over.
 
@@ -147,7 +147,7 @@ If you are reading this and the answer feels unclear, look at the next section �
 
 A few rules-of-thumb that override the checklist:
 
-- If you are hiring a [founding engineer in India](/en/services/hire-founding-engineer-india) anyway, the 2-hour PostHog self-host is included in their first sprint at no marginal cost — that tilts every borderline case toward PostHog.
+- If you are hiring a [founding engineer in India](/services/hire-founding-engineer-india) anyway, the 2-hour PostHog self-host is included in their first sprint at no marginal cost — that tilts every borderline case toward PostHog.
 - If your product is AI-first and you need LLM observability (prompt tokens, latency, hallucination rate) alongside product analytics, PostHog's 2025 LLM-obs integration is the only one-tool answer in the category.
 - If a vendor offers you a 90-day Enterprise free trial in exchange for a case study, take Mixpanel's — their Enterprise tier is the most generous on free trials and you can migrate off after the trial for ₹0.
 
@@ -155,15 +155,15 @@ The wrong answer on this checklist is reversible — it cost myFinancial three d
     },
     {
       heading: 'Ship the Right Analytics Stack on Day One',
-      content: `If you are reading this because you are picking analytics for an India MVP and the answer feels obvious now, you are 80% of the way there — the remaining 20% is the actual setup, which is the part where most teams lose another half-week. Every [6-week MVP sprint](/en/services/6-week-mvp) I ship in 2026 provisions PostHog self-host on AWS Mumbai in the first week, with the event taxonomy designed against the product's three core funnels before any UI code is written.
+      content: `If you are reading this because you are picking analytics for an India MVP and the answer feels obvious now, you are 80% of the way there — the remaining 20% is the actual setup, which is the part where most teams lose another half-week. Every [6-week MVP sprint](/services/6-week-mvp) I ship in 2026 provisions PostHog self-host on AWS Mumbai in the first week, with the event taxonomy designed against the product's three core funnels before any UI code is written.
 
-If you are at the earlier stage — still deciding between hiring a founding engineer in India, a Western contractor, or trying to vibe-code it on an AI builder — the analytics decision is downstream of the bigger one. I wrote about that tradeoff in [Founding Engineer India vs Toptal vs Arc vs Uplers](/en/notes/founding-engineer-india-vs-toptal-arc-uplers-2026) and the more recent [Lovable App Production Bugs Need a Real Engineer](/en/notes/lovable-app-production-bugs-need-real-engineer-2026). The TL;DR: an experienced engineer who has shipped this stack three times costs you a known fixed number; an AI builder costs you an unknown future debugging bill.
+If you are at the earlier stage — still deciding between hiring a founding engineer in India, a Western contractor, or trying to vibe-code it on an AI builder — the analytics decision is downstream of the bigger one. I wrote about that tradeoff in [Founding Engineer India vs Toptal vs Arc vs Uplers](/notes/founding-engineer-india-vs-toptal-arc-uplers-2026) and the more recent [Lovable App Production Bugs Need a Real Engineer](/notes/lovable-app-production-bugs-need-real-engineer-2026). The TL;DR: an experienced engineer who has shipped this stack three times costs you a known fixed number; an AI builder costs you an unknown future debugging bill.
 
 If you want me to take the analytics setup off your plate as part of a 6-week sprint — event taxonomy, PostHog self-host on Mumbai, three funnels wired to your product KPIs, and a Looker-style dashboard for the founder by week three — that is what I do. Otherwise, take the checklist above, pick the platform, and ship.`,
     },
   ],
   cta: {
     text: 'Ship a Real MVP With Real Analytics in 6 Weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

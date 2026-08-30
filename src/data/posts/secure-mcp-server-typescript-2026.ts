@@ -27,9 +27,9 @@ export const secureMcpServerTypescript2026: BlogPost = {
         },
         {
             heading: 'Build a Secure MCP Server in TypeScript — The Post-Copilot Defense Playbook (2026)',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
-I have shipped Spring Boot MCP servers ([here's the Java one](/en/notes/spring-boot-mcp)) into client MVPs for the last six months, and watched the MCP TypeScript ecosystem move faster than any framework I have built on since Next.js 13's app-router rewrite. The Anthropic-published SDK is now at **v1.29.0** as of **March 30, 2026**, with v2 in pre-alpha and v1.x still the explicit prod recommendation per the [official typescript-sdk README](https://github.com/modelcontextprotocol/typescript-sdk).
+I have shipped Spring Boot MCP servers ([here's the Java one](/notes/spring-boot-mcp)) into client MVPs for the last six months, and watched the MCP TypeScript ecosystem move faster than any framework I have built on since Next.js 13's app-router rewrite. The Anthropic-published SDK is now at **v1.29.0** as of **March 30, 2026**, with v2 in pre-alpha and v1.x still the explicit prod recommendation per the [official typescript-sdk README](https://github.com/modelcontextprotocol/typescript-sdk).
 
 What changed last week is the threat model. The [PromptArmor disclosure on May 25](https://www.promptarmor.com/resources/microsoft-copilot-cowork-exfiltrates-files) is not a Microsoft-only bug — it is a class of bug that every MCP server is exposed to the moment a tool output flows back into the model context. The [HN thread](https://news.ycombinator.com/item?id=48272354) hit 259 points in 12 hours because the indie dev crowd realised the same five-line payload would work against MCP servers they had shipped to clients last quarter.
 
@@ -326,7 +326,7 @@ Production checklist (the one I run before going live for a client — none of t
 7. **Rate limit per session** — the SDK does not do this for you. Express middleware or a Redis token bucket, 50-100 req/min per JWT subject is a reasonable starting point.
 8. **Structured audit log** of every tool call: \`{ userId, toolName, argsHash, durationMs, status }\`. Searchable later when something looks off.
 
-This is not paranoid. It is the table-stakes I would expect any senior engineer hiring a [founding engineer for an AI MVP in India](/en/services/hire-founding-engineer-india) to demand of their first MCP server in production.`,
+This is not paranoid. It is the table-stakes I would expect any senior engineer hiring a [founding engineer for an AI MVP in India](/services/hire-founding-engineer-india) to demand of their first MCP server in production.`,
         },
         {
             heading: 'When You Should Skip This and Use Spring Boot or Python Instead',
@@ -336,7 +336,7 @@ This is not paranoid. It is the table-stakes I would expect any senior engineer 
 - You want the lightest possible deploy footprint (10-20 MB container).
 - Your tools are mostly IO-bound HTTP fetches — Node's event loop is the right tool.
 
-Use the [Java/Spring Boot MCP build](/en/notes/spring-boot-mcp) instead if you are sitting on top of an existing Spring service, need Spring Security wired in for free, or your tools are CPU-bound and benefit from JVM warm-up. Use Python's MCP SDK if you are doing heavy ML inference and want HuggingFace, sentence-transformers, or vLLM in the same process — Python's ML ecosystem is a generation ahead of Node's.
+Use the [Java/Spring Boot MCP build](/notes/spring-boot-mcp) instead if you are sitting on top of an existing Spring service, need Spring Security wired in for free, or your tools are CPU-bound and benefit from JVM warm-up. Use Python's MCP SDK if you are doing heavy ML inference and want HuggingFace, sentence-transformers, or vLLM in the same process — Python's ML ecosystem is a generation ahead of Node's.
 
 The defense layers in Step 5 are language-agnostic; the patterns port one-to-one. The transport choice is what changes.
 
@@ -344,7 +344,7 @@ What you should **not** do is reach for one of the closed-source "MCP gateway" S
         },
         {
             heading: 'How I Would Ship This in a 6-Week MVP Today',
-            content: `Concrete plan for a client AI feature that needs an MCP server, on the 6-week timeline I run [these MVP sprints on](/en/services/6-week-mvp):
+            content: `Concrete plan for a client AI feature that needs an MCP server, on the 6-week timeline I run [these MVP sprints on](/services/6-week-mvp):
 
 - **Week 1**: scaffold the streamable-HTTP server from Step 3, deploy a placeholder behind a Cloudflare-fronted Fly app, wire health check + auth. Two tools registered as no-ops returning canned text. Goal: end-to-end from Claude Desktop → my server → my Postgres, before the first feature lands.
 - **Week 2**: implement the read-only tools (search, get-by-id). Sanitise all outputs through \`quarantine()\` from day one. Write integration tests that send an injected payload and assert the model never executes it.
@@ -361,11 +361,11 @@ The 6-week timeline is tight, but the security work is **not** what blows the bu
 
 What is not easy is **shipping a server that will not have its tool outputs weaponised against your users**. That part has not been documented yet — the SDK leaves it to you, and the top tutorials skip it entirely. Fix that on your own server before your client finds the bug for you. The Microsoft Copilot disclosure is the warning you get for free.
 
-If you want a second pair of eyes on an MCP server that is going into production this quarter — or you need someone to do the build the secure way the first time around — I do that. [6-week MVPs](/en/services/6-week-mvp) and [founding-engineer engagements](/en/services/hire-founding-engineer-india) both include the defense-layer checklist above as table stakes.`,
+If you want a second pair of eyes on an MCP server that is going into production this quarter — or you need someone to do the build the secure way the first time around — I do that. [6-week MVPs](/services/6-week-mvp) and [founding-engineer engagements](/services/hire-founding-engineer-india) both include the defense-layer checklist above as table stakes.`,
         },
     ],
     cta: {
         text: 'Get a Secure MCP Server Built in 6 Weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

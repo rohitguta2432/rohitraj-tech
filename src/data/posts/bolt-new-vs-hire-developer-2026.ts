@@ -32,13 +32,13 @@ This crossover doesn't apply if your app stays simple, internal-only, or never s
     },
     {
       heading: 'Bolt.new vs Hiring a Developer in 2026 — The Honest Answer Up Front',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If your project will stay under 10K lines of code, has no payment edge cases, and you are still proving the idea, Bolt.new at $25 per month beats hiring a developer every time. The crossover happens the moment you onboard real users — Bolt's complex-app success rate drops to 31% above a certain complexity threshold, and a single Supabase auth bug routinely burns 5 to 8 million tokens before it is fixed. At that point a senior developer at $40 per hour for two weeks is cheaper than the token refill plus your lost weekend.
 
 The cost math nobody runs is this: Bolt's $25 per month gets you 10 million tokens, which sounds infinite until you watch one stuck bug eat a third of it. Founders on Reddit have publicly logged 8 million tokens burned in three hours fighting one auth bug — that is 80% of a monthly quota gone in an afternoon. A developer who has shipped 20 production apps fixes that same bug in 90 minutes for $60. The price of "AI is cheaper" is paying for failed attempts.
 
-The real question is not "which is cheaper". It is "which has a lower total cost of ownership in 2026 once you count token waste, rebuild risk, and your time". This post answers that with real numbers — what Bolt does well, where it predictably breaks, what a [6-week MVP sprint](/en/services/6-week-mvp) costs by comparison, and how to know which side of the line your project is on before you commit.`,
+The real question is not "which is cheaper". It is "which has a lower total cost of ownership in 2026 once you count token waste, rebuild risk, and your time". This post answers that with real numbers — what Bolt does well, where it predictably breaks, what a [6-week MVP sprint](/services/6-week-mvp) costs by comparison, and how to know which side of the line your project is on before you commit.`,
     },
     {
       heading: 'What Bolt.new Actually Costs Once You Hit Real Users',
@@ -59,7 +59,7 @@ Here is what a Pro plan token budget looks like in practice, based on what found
 
 The $25/month plan covers a clean MVP from scratch with maybe two minor bug fixes. It does not cover one stuck production bug. The $50/month tier doubles the quota; founders who hit real users typically jump to that within 60 days. The $200/month tier is where serious solo builders end up — and at that point you are paying $2,400 per year for a tool that still cannot debug what it built six weeks ago on an older model checkpoint.
 
-By comparison, a senior developer at the [hire-founding-engineer-india](/en/services/hire-founding-engineer-india) rate of around $40 per hour, working 4 hours per week on retainer, costs $640 per month. They debug with full repo context, fix root causes instead of symptoms, and the code stays fixed because a human who understands the system wrote the patch.
+By comparison, a senior developer at the [hire-founding-engineer-india](/services/hire-founding-engineer-india) rate of around $40 per hour, working 4 hours per week on retainer, costs $640 per month. They debug with full repo context, fix root causes instead of symptoms, and the code stays fixed because a human who understands the system wrote the patch.
 
 The honest line: Bolt is cheaper for the first month. By month three on a real product, the token bill plus your time fighting it usually exceeds a part-time developer.`,
     },
@@ -81,7 +81,7 @@ Every one of these requires reading existing code and reasoning about why it bro
 
 The other quiet failure mode: Bolt cannot run on your repo if it grew on Cursor or by hand. Once your code base outgrows the Bolt sandbox, you are in normal-developer territory whether you wanted to be or not. Most founders learn this around month three, after they exported the code to "make a small change locally" and realised they cannot import it back cleanly.
 
-This is not theoretical. I run [Lovable rescue contracts](/en/notes/lovable-alternative-developer-when-ai-builder-breaks) and [Supabase RLS audits](/en/notes/supabase-rls-production-bugs-need-real-engineer-2026) — the exact failure profile shows up identically on Bolt projects. The tool is different. The bugs are the same.`,
+This is not theoretical. I run [Lovable rescue contracts](/notes/lovable-alternative-developer-when-ai-builder-breaks) and [Supabase RLS audits](/notes/supabase-rls-production-bugs-need-real-engineer-2026) — the exact failure profile shows up identically on Bolt projects. The tool is different. The bugs are the same.`,
     },
     {
       heading: 'What a Developer Costs vs Bolt — The Real Crossover',
@@ -106,7 +106,7 @@ The honest crossover threshold:
 
 The trap most founders fall into: they spend $600 on Bolt across 3 months, hit a wall, then spend $20K rebuilding what Bolt produced. The $600 is sunk cost. The honest cost of "Bolt got us started" is usually $20K + 3 months of opportunity cost — not $600.
 
-If your project is anywhere on the right side of the crossover, ship it the [6-week MVP sprint way](/en/services/6-week-mvp) from day one. The first attempt is the cheap one.`,
+If your project is anywhere on the right side of the crossover, ship it the [6-week MVP sprint way](/services/6-week-mvp) from day one. The first attempt is the cheap one.`,
     },
     {
       heading: 'Bolt.new vs Hiring a Developer — Side-by-Side',
@@ -130,7 +130,7 @@ If your project is anywhere on the right side of the crossover, ship it the [6-w
 
 The pattern: Bolt wins month 1, breaks even month 2, loses by month 3 on any project with real users. A developer is more expensive on day 1 and cheaper on day 90.
 
-For founders who want both — speed of Bolt plus quality of a developer — the working pattern is to scaffold the first prototype on Bolt for $25, validate the idea with 20 to 50 users in two weeks, then hand the export to a developer for a [6-week MVP sprint](/en/services/6-week-mvp) that rebuilds it properly. You spend $25 + $20K instead of $200 + $20K and you avoid 3 months of debugging the AI builder's mistakes.`,
+For founders who want both — speed of Bolt plus quality of a developer — the working pattern is to scaffold the first prototype on Bolt for $25, validate the idea with 20 to 50 users in two weeks, then hand the export to a developer for a [6-week MVP sprint](/services/6-week-mvp) that rebuilds it properly. You spend $25 + $20K instead of $200 + $20K and you avoid 3 months of debugging the AI builder's mistakes.`,
     },
     {
       heading: 'When Bolt.new Is Genuinely the Right Choice',
@@ -156,7 +156,7 @@ For founders who want both — speed of Bolt plus quality of a developer — the
 
 The honest pattern: Bolt is best for the first 30 days. After that, the tool's strengths stop compounding and its weaknesses start. A developer is the inverse — slow on day 1, faster every day after as they learn your system. The transition point is typically week 3 to 4 of any project that survives initial validation.
 
-For everything in between, the answer is the [6-week MVP sprint](/en/services/6-week-mvp): one developer, fixed scope, fixed price, production-ready output. Or, if you want continuous capacity instead of a one-shot sprint, [hire a founding engineer in India](/en/services/hire-founding-engineer-india) on retainer at a fraction of US salary cost.`,
+For everything in between, the answer is the [6-week MVP sprint](/services/6-week-mvp): one developer, fixed scope, fixed price, production-ready output. Or, if you want continuous capacity instead of a one-shot sprint, [hire a founding engineer in India](/services/hire-founding-engineer-india) on retainer at a fraction of US salary cost.`,
     },
     {
       heading: 'The 5-Step Decision Tree — Bolt or Developer?',
@@ -186,21 +186,21 @@ For everything in between, the answer is the [6-week MVP sprint](/en/services/6-
 
 Most founders who run this checklist honestly land on "Bolt for week 1 to 4, then hand to a developer". The mistake is staying on Bolt past month 2, when the token bill and the bug-fight time cross over the cost of the developer. The second mistake is hiring a developer before there is anything to harden — you pay for a 6-week sprint to ship an idea that did not need that level of rigor yet.
 
-If you are unsure which side you are on, the [6-Week MVP Sprint](/en/services/6-week-mvp) page has a free 30-minute scoping call. We will tell you to keep using Bolt if that is the right answer. We will tell you to hire someone else if our slot is not the right fit. The wrong answer is to keep paying $200 a month for a tool that is no longer compounding.`,
+If you are unsure which side you are on, the [6-Week MVP Sprint](/services/6-week-mvp) page has a free 30-minute scoping call. We will tell you to keep using Bolt if that is the right answer. We will tell you to hire someone else if our slot is not the right fit. The wrong answer is to keep paying $200 a month for a tool that is no longer compounding.`,
     },
     {
       heading: 'Ship the MVP the Right Way — Bolt to Developer Handoff',
-      content: `If you are reading this and your Bolt app is already breaking, the move is the same as for [Lovable rescue](/en/notes/lovable-alternative-developer-when-ai-builder-breaks): export the code, hire a senior developer for 2 weeks, fix the critical path, decide whether to stabilize or rebuild. The cost is $5K to $8K. The alternative is paying $200 a month forever and watching your conversion rate drop.
+      content: `If you are reading this and your Bolt app is already breaking, the move is the same as for [Lovable rescue](/notes/lovable-alternative-developer-when-ai-builder-breaks): export the code, hire a senior developer for 2 weeks, fix the critical path, decide whether to stabilize or rebuild. The cost is $5K to $8K. The alternative is paying $200 a month forever and watching your conversion rate drop.
 
-If you have not started yet and you know the project is real — paying users, regulated data, complex auth, real revenue — skip Bolt. Start with the [6-Week MVP Sprint](/en/services/6-week-mvp) at $15K to $30K, ship a production-ready Next.js + Postgres app with tests and CI, and you will not need a rescue contract three months from now. The first build done right is cheaper than the second build done after the first one broke.
+If you have not started yet and you know the project is real — paying users, regulated data, complex auth, real revenue — skip Bolt. Start with the [6-Week MVP Sprint](/services/6-week-mvp) at $15K to $30K, ship a production-ready Next.js + Postgres app with tests and CI, and you will not need a rescue contract three months from now. The first build done right is cheaper than the second build done after the first one broke.
 
-If you want a senior India-based developer on retainer instead of a one-shot sprint, the [hire-founding-engineer-india](/en/services/hire-founding-engineer-india) service is a $5K–$10K monthly retainer for 80 to 160 hours. Same person, full system context, no equity dilution, and the cost over a year is less than one US senior developer's quarterly base salary.
+If you want a senior India-based developer on retainer instead of a one-shot sprint, the [hire-founding-engineer-india](/services/hire-founding-engineer-india) service is a $5K–$10K monthly retainer for 80 to 160 hours. Same person, full system context, no equity dilution, and the cost over a year is less than one US senior developer's quarterly base salary.
 
 The honest summary: in 2026, Bolt.new and a developer are not competitors. They are sequential tools for different stages of the same product. Bolt for week 1 to 4 of validation. Developer for everything after. Founders who treat them as either-or pay the cost twice.`,
     },
   ],
   cta: {
     text: 'Ship the Production Build in 6 Weeks →',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

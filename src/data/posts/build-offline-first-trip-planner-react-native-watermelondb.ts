@@ -19,7 +19,7 @@ export const buildOfflineFirstTripPlannerReactNativeWatermelondb: BlogPost = {
     },
 {
       heading: 'Group Trip Planning Is Broken',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built TripHive, an offline-first collaborative trip planner using React Native, WatermelonDB, PowerSync, and MapLibre with downloadable Protomaps tiles that replaces five separate tools — Google Docs for itineraries, Google Maps for navigation, Splitwise for expenses, WhatsApp for polls, and shared sheets for packing lists — with one app that works without internet by default.
 
@@ -154,9 +154,9 @@ TripHive removes every friction point:
 
 **Handling multi-currency expense splitting:** International trips involve expenses in multiple currencies. TripHive stores each expense in its original currency with the conversion rate at time of entry. Settlement calculations convert everything to a single "trip currency" chosen by the group creator. Exchange rates can be manually adjusted if the group disagrees with the automatic rate. This avoids the common problem in Splitwise where currency conversion discrepancies create small persistent imbalances that never resolve.
 
-If you want this shipped end-to-end without the team-of-five overhead, the [mobile app development](/en/services/mobile-app-development) and [6-week MVP sprint](/en/services/6-week-mvp) options are the routes I take on.
+If you want this shipped end-to-end without the team-of-five overhead, the [mobile app development](/services/mobile-app-development) and [6-week MVP sprint](/services/6-week-mvp) options are the routes I take on.
 
-Related reading: [Building a Family Budget App with 8 Financial Modules](/en/notes/build-family-budget-app-android-offline-kotlin) and [Building a Multi-Language React Native App with Expo SDK 52](/en/notes/building-multilanguage-react-native-app-expo) cover the adjacent tradeoffs in more depth.`
+Related reading: [Building a Family Budget App with 8 Financial Modules](/notes/build-family-budget-app-android-offline-kotlin) and [Building a Multi-Language React Native App with Expo SDK 52](/notes/building-multilanguage-react-native-app-expo) cover the adjacent tradeoffs in more depth.`
     },
     {
       heading: 'Frequently Asked Questions',

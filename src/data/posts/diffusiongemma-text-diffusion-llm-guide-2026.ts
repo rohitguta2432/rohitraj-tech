@@ -28,7 +28,7 @@ export const diffusionGemmaTextDiffusionLlmGuide2026: BlogPost = {
     },
     {
       heading: "DiffusionGemma: Google's bet that text doesn't have to be written left to right",
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **June 10, 2026**, Google [open-sourced DiffusionGemma](https://developers.googleblog.com/diffusiongemma-the-developer-guide/) — the first member of the Gemma family that generates text by **diffusion** rather than by the autoregressive, one-token-at-a-time process every mainstream LLM has used since GPT-2. Instead of writing a sentence word by word, DiffusionGemma starts with a 256-token canvas of placeholder tokens and **refines the whole block in parallel** over a handful of denoising passes, the same way an image-diffusion model resolves a picture out of noise.
 
@@ -96,7 +96,7 @@ A few knobs that actually matter in practice:
 - On **RTX hardware**, the **NVFP4 build** (\`nvidia/diffusiongemma-26B-A4B-it-NVFP4\`) is the one to grab — it is the quantization that gets you to the ~18GB footprint and the 700 tok/s figure ([NVIDIA](https://blogs.nvidia.com/blog/rtx-ai-garage-local-gemma-diffusion/)).
 - If you just want to feel the speed before installing anything, NVIDIA hosts it at **build.nvidia.com**, and Google has it in **Cloud Model Garden**.
 
-If 18GB still does not fit your target device, this is the same on-device tradeoff I keep hitting on edge AI work — and it is the reason I weigh local inference economics carefully in posts like [DeepSeek vs Claude vs GPT for India MVP cost](/en/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026).`,
+If 18GB still does not fit your target device, this is the same on-device tradeoff I keep hitting on edge AI work — and it is the reason I weigh local inference economics carefully in posts like [DeepSeek vs Claude vs GPT for India MVP cost](/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026).`,
     },
     {
       heading: 'DiffusionGemma vs Gemma 4 vs autoregressive LLMs',
@@ -137,7 +137,7 @@ The clean mental model: **DiffusionGemma is a latency optimization, not a capabi
       heading: 'How I would ship DiffusionGemma in production',
       content: `If I were wiring this into a real product tomorrow, here is the architecture I would actually build — the part the README and the launch blogs will not hand you.
 
-**Route, do not replace.** I would put DiffusionGemma behind the same gateway as my other models and route to it *per task type*, not globally. Inline edits, autocomplete, structured/constrained generation → DiffusionGemma. Open-ended reasoning, final-answer generation, agent planning → a quality-first autoregressive model. A thin router that keys on task type is 30 lines; a global swap is a regression waiting to happen. This is the same multi-model routing pattern I lay out in [OpenRouter vs LiteLLM vs Portkey for an India MVP](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026).
+**Route, do not replace.** I would put DiffusionGemma behind the same gateway as my other models and route to it *per task type*, not globally. Inline edits, autocomplete, structured/constrained generation → DiffusionGemma. Open-ended reasoning, final-answer generation, agent planning → a quality-first autoregressive model. A thin router that keys on task type is 30 lines; a global swap is a regression waiting to happen. This is the same multi-model routing pattern I lay out in [OpenRouter vs LiteLLM vs Portkey for an India MVP](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026).
 
 **Tune the denoising/concurrency knobs for *your* p95, not the benchmark.** Those 700 tok/s figures are best-case at low concurrency. Under real traffic, throughput and quality both shift with \`--max-num-seqs\` and block size. Load-test with your own prompts and watch p95 latency and VRAM together — the failure mode I would worry about is VRAM thrash under a concurrency spike silently dropping you back below your latency target.
 
@@ -151,14 +151,14 @@ The clean mental model: **DiffusionGemma is a latency optimization, not a capabi
 
 If you are building an AI feature and want it integrated *right* — the model routing, the fallbacks, the latency budget honored — that is exactly the work I do:
 
-- [6-Week MVP Sprint](/en/services/6-week-mvp) — fixed-scope, fixed-price ($15K–$30K) to take your AI feature from idea to deployed, monitored product. You own the GitHub from day one.
-- [Hire a Founding Engineer in India](/en/services/hire-founding-engineer-india) — a senior, India-based engineer on a sprint or retainer for on-device and LLM-integration work, no equity ask.
+- [6-Week MVP Sprint](/services/6-week-mvp) — fixed-scope, fixed-price ($15K–$30K) to take your AI feature from idea to deployed, monitored product. You own the GitHub from day one.
+- [Hire a Founding Engineer in India](/services/hire-founding-engineer-india) — a senior, India-based engineer on a sprint or retainer for on-device and LLM-integration work, no equity ask.
 
 The free 30-minute scoping call covers whether a model like DiffusionGemma even fits your use case, an honest latency-vs-quality read, and a written scope if we move forward. Email rohitgupta2432@gmail.com or book a free scoping call.`,
     },
   ],
   cta: {
     text: 'Ship Your AI Feature in 6 Weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

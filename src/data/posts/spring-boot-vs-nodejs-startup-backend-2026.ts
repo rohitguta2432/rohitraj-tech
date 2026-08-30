@@ -23,7 +23,7 @@ Neither is "better." If your team already ships in one stack, that's the right a
     },
     {
       heading: 'Why This Debate Still Matters',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Spring Boot is better for startups building complex backend systems with heavy business logic, enterprise integrations, or CPU-intensive processing like AI pipelines and analytics. Node.js is better for startups that need to ship a simple API fast, want a single language across frontend and backend, and are building I/O-heavy applications like real-time chat or notification services.
 
@@ -95,9 +95,9 @@ For my personal projects like myFinancial (a finance tracker), I use Next.js wit
 
 If you're a startup founder reading this, stop agonizing over the framework and start building. The best tech stack is the one that ships. If you genuinely can't decide, pick Spring Boot — it scales up better and you won't outgrow it.
 
-On most of my client engagements this comes up as either a [startup MVP build](/en/services/startup-mvp-development) or a [full-stack development](/en/services/full-stack-development) — either path leads to a working production build inside a quarter.
+On most of my client engagements this comes up as either a [startup MVP build](/services/startup-mvp-development) or a [full-stack development](/services/full-stack-development) — either path leads to a working production build inside a quarter.
 
-Two posts that pick up where this one ends: [6-Week MVP Tech Stack in 2026](/en/notes/6-week-mvp-tech-stack-2026) and [PostgreSQL vs MongoDB: Which Database for Your Startup? (2026)](/en/notes/postgresql-vs-mongodb-startup-2026).`
+Two posts that pick up where this one ends: [6-Week MVP Tech Stack in 2026](/notes/6-week-mvp-tech-stack-2026) and [PostgreSQL vs MongoDB: Which Database for Your Startup? (2026)](/notes/postgresql-vs-mongodb-startup-2026).`
     },
     {
       heading: 'Frequently Asked Questions',

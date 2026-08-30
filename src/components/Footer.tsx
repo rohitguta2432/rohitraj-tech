@@ -1,9 +1,8 @@
-import type { CommonDictionary, Locale } from "@/lib/i18n";
+import type { CommonDictionary } from "@/lib/i18n";
 import SubscribeForm from "./SubscribeForm";
 
 interface FooterProps {
     dict: CommonDictionary;
-    locale: Locale;
 }
 
 const iconProps = {
@@ -69,7 +68,7 @@ const socials = [
     },
 ];
 
-export default function Footer({ dict, locale }: FooterProps) {
+export default function Footer({ dict }: FooterProps) {
     return (
         <footer className="footer">
             <div className="container footer-inner">
@@ -96,31 +95,31 @@ export default function Footer({ dict, locale }: FooterProps) {
                     <div className="footer-services mb-6">
                         <p className="text-sm uppercase tracking-widest text-[var(--text-muted)] mb-3">Services</p>
                         <div className="footer-links">
-                            <a href={`/${locale}/hire`} className="footer-link">
+                            <a href={`/hire`} className="footer-link">
                                 Hire Me — AI Consultant · Forward Deployed Engineer
                             </a>
-                            <a href={`/${locale}/services/forward-deployed-engineer`} className="footer-link">
+                            <a href={`/services/forward-deployed-engineer`} className="footer-link">
                                 Forward Deployed Engineer (AI)
                             </a>
-                            <a href={`/${locale}/services/mcp-integration-consultant`} className="footer-link">
+                            <a href={`/services/mcp-integration-consultant`} className="footer-link">
                                 MCP Integration Consultant
                             </a>
-                            <a href={`/${locale}/services/fractional-ai-engineer`} className="footer-link">
+                            <a href={`/services/fractional-ai-engineer`} className="footer-link">
                                 Fractional AI Engineer
                             </a>
-                            <a href={`/${locale}/agents`} className="footer-link">
+                            <a href={`/agents`} className="footer-link">
                                 AI Agent Host
                             </a>
-                            <a href={`/${locale}/services/hire-founding-engineer-india`} className="footer-link">
+                            <a href={`/services/hire-founding-engineer-india`} className="footer-link">
                                 Founding Engineer for Hire in India
                             </a>
-                            <a href={`/${locale}/services/mobile-app-development`} className="footer-link">
+                            <a href={`/services/mobile-app-development`} className="footer-link">
                                 Mobile App Development
                             </a>
-                            <a href={`/${locale}/services/ai-chatbot-development`} className="footer-link">
+                            <a href={`/services/ai-chatbot-development`} className="footer-link">
                                 AI Chatbot Development
                             </a>
-                            <a href={`/${locale}/services/full-stack-development`} className="footer-link">
+                            <a href={`/services/full-stack-development`} className="footer-link">
                                 Full-Stack Development
                             </a>
                         </div>
@@ -129,7 +128,7 @@ export default function Footer({ dict, locale }: FooterProps) {
                     <div className="footer-subscribe">
                         <p className="footer-subscribe-title">{dict.subscribe?.title || 'Get Updates'}</p>
                         <SubscribeForm
-                            locale={locale}
+                           
                             translations={{
                                 placeholder: dict.subscribe?.placeholder || 'Enter your email',
                                 button: dict.subscribe?.button || 'Subscribe',

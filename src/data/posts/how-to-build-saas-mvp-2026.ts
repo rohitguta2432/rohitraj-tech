@@ -18,7 +18,7 @@ export const howToBuildSaasMvp2026: BlogPost = {
     },
 {
       heading: 'What Is a SaaS MVP and How Do You Build One?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To build a SaaS MVP in 2026, focus on 1-3 core features, use a free-tier stack (Next.js, Supabase, Vercel, Stripe), and launch in 6 weeks for $5,000-$8,500. The key approach is ruthless scope discipline — build only what proves people will pay, skip everything else, and iterate based on real user feedback after launch.
 
@@ -117,7 +117,7 @@ I typically build MVPs for $5K-$10K depending on complexity. That includes archi
 
 The goal isn't to build you the perfect product. It's to build you the smallest thing that can start making money, so you can fund the next iteration with revenue instead of savings.
 
-Two posts that pick up where this one ends: [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a…](/en/notes/how-much-does-it-cost-to-build-mobile-app-india-2026) and [How to Hire a Software Developer: 10 Questions to Ask Before Signing](/en/notes/how-to-hire-developer-interview-questions).`
+Two posts that pick up where this one ends: [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a…](/notes/how-much-does-it-cost-to-build-mobile-app-india-2026) and [How to Hire a Software Developer: 10 Questions to Ask Before Signing](/notes/how-to-hire-developer-interview-questions).`
     },
     {
       heading: 'Frequently Asked Questions',
@@ -144,6 +144,6 @@ Payment integration. If your MVP cannot accept money from day one, you are build
   ],
   cta: {
     text: 'Ship Your MVP in 6 Weeks',
-    href: '/en/services/6-week-mvp'
+    href: '/services/6-week-mvp'
   }
 };

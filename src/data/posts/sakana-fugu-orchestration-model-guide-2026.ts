@@ -28,7 +28,7 @@ export const sakanaFuguOrchestrationModelGuide2026: BlogPost = {
         },
         {
             heading: 'Sakana Fugu: The Orchestration Model That Commands Other LLMs (2026)',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For about two years, the standard architecture advice for a serious LLM product has been the same: do not call one model directly — put a router in front of it. Cheap model for the easy turns, a frontier model for the hard ones, a fallback for when a provider returns a 502. I have built that layer by hand for half a dozen clients. On June 22, 2026, [Sakana AI](https://sakana.ai/fugu/) shipped a product that collapses that whole pattern into a single API call: **Sakana Fugu**, an orchestration model that selects, delegates to, and combines other models for you.
 
@@ -48,7 +48,7 @@ Two caveats are baked into the design, and they matter more than the marketing a
         },
         {
             heading: 'How do you call the Sakana Fugu API?',
-            content: `Because Fugu speaks the OpenAI format, there is no new SDK to learn — it is a base-URL-and-key swap, identical in shape to the gateway swaps I broke down in [OpenRouter vs LiteLLM vs Portkey](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026):
+            content: `Because Fugu speaks the OpenAI format, there is no new SDK to learn — it is a base-URL-and-key swap, identical in shape to the gateway swaps I broke down in [OpenRouter vs LiteLLM vs Portkey](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026):
 
 \`\`\`python
 from openai import OpenAI
@@ -83,7 +83,7 @@ Because the wire format is identical, you can A/B Fugu against your current prov
 
 **3. Provider resilience as a hard requirement.** If a single-vendor outage or an export-control change can take your product down, an endpoint that reroutes around it is a business-continuity story you can put in front of a risk-averse buyer — the explicit pitch Sakana makes after the Fable 5 and Mythos restrictions.
 
-Here is the personal angle. I build exactly this layer for clients — a provider abstraction with a cheap-first, frontier-fallback policy and validation in between (I described the full pattern in my [DeepSeek V4 Vision production writeup](/en/notes/deepseek-v4-vision-cheapest-multimodal-api-2026)). Fugu is that layer sold as a product, and for a team without an engineer who *enjoys* this plumbing, that is a genuine shortcut. The failure mode I would worry about is the one Fugu's own design creates: when the router is a black box, you lose the per-call logs that make the hand-built version *debuggable*. For [MyFinancial](/en/projects), where I have to be able to answer "which model produced this number, and why," that opacity is disqualifying — which is the whole tension of the next two sections.`,
+Here is the personal angle. I build exactly this layer for clients — a provider abstraction with a cheap-first, frontier-fallback policy and validation in between (I described the full pattern in my [DeepSeek V4 Vision production writeup](/notes/deepseek-v4-vision-cheapest-multimodal-api-2026)). Fugu is that layer sold as a product, and for a team without an engineer who *enjoys* this plumbing, that is a genuine shortcut. The failure mode I would worry about is the one Fugu's own design creates: when the router is a black box, you lose the per-call logs that make the hand-built version *debuggable*. For [MyFinancial](/projects), where I have to be able to answer "which model produced this number, and why," that opacity is disqualifying — which is the whole tension of the next two sections.`,
         },
         {
             heading: 'Sakana Fugu vs a single frontier model vs your own router',
@@ -111,7 +111,7 @@ Benchmarks are not the buying decision, though. This is:
 | Vendor lock-in | Sakana | the model vendor | yours to control |
 | Data path / residency | through Sakana's pool | direct to vendor | direct to vendor |
 
-Read it this way: Fugu trades **transparency and control** for **zero-effort routing and resilience**. A single frontier model wins when you have already chosen your model and value a direct, auditable path to it. A self-built gateway wins when you need to see and steer every call — the exact trade-off I broke down in [OpenRouter vs LiteLLM vs Portkey](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026). Fugu wins specifically when routing *quality* matters to you more than knowing *how* the routing happened.`,
+Read it this way: Fugu trades **transparency and control** for **zero-effort routing and resilience**. A single frontier model wins when you have already chosen your model and value a direct, auditable path to it. A self-built gateway wins when you need to see and steer every call — the exact trade-off I broke down in [OpenRouter vs LiteLLM vs Portkey](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026). Fugu wins specifically when routing *quality* matters to you more than knowing *how* the routing happened.`,
         },
         {
             heading: 'When should you skip Sakana Fugu (or wait)?',
@@ -149,17 +149,17 @@ The wiring that decides whether this is robust:
 - **Keep a non-Sakana path warm.** The whole pitch is provider resilience — undercut it and you have simply moved your single point of failure from a model vendor to an orchestration vendor.
 - **Answer data residency before wiring anything.** If you cannot send user data into an opaque pool of US model providers, the integration ends here regardless of how good the benchmarks look.
 
-This provider-abstraction-plus-validation plumbing — the part that looks like a two-string swap and quietly has five sharp edges — is exactly what I build into a [6-week MVP](/en/services/6-week-mvp), and the kind of integration where a [founding engineer](/en/services/hire-founding-engineer-india) earns their keep, because the README shows you the happy path and never the residency, observability, and fallback work that makes it safe to ship.`,
+This provider-abstraction-plus-validation plumbing — the part that looks like a two-string swap and quietly has five sharp edges — is exactly what I build into a [6-week MVP](/services/6-week-mvp), and the kind of integration where a [founding engineer](/services/hire-founding-engineer-india) earns their keep, because the README shows you the happy path and never the residency, observability, and fallback work that makes it safe to ship.`,
         },
         {
             heading: 'The bottom line',
-            content: `Sakana Fugu is the most interesting *packaging* idea in AI tooling in months: take the router-plus-fallback pattern every serious LLM team rebuilds, train a model to do the routing, and sell it behind one OpenAI-compatible call — with benchmarks (73.7 SWE-Bench Pro, 95.5 GPQA-D, leading 10 of 11 tests) suggesting the routing is genuinely good. Adopt it when you have heterogeneous traffic, value provider resilience, and do not need to know which model answered. Skip it when you have already chosen a model, need auditable per-call observability, or handle regulated data — its black-box routing is a feature for convenience and a bug for compliance. Either way, wrap it in your own fallback: a resilience product you cannot fall back *from* is not resilient. For the broader picture of what else shipped this week, see my [Week 26 AI dev roundup](/en/notes/ai-dev-week-2026-26).
+            content: `Sakana Fugu is the most interesting *packaging* idea in AI tooling in months: take the router-plus-fallback pattern every serious LLM team rebuilds, train a model to do the routing, and sell it behind one OpenAI-compatible call — with benchmarks (73.7 SWE-Bench Pro, 95.5 GPQA-D, leading 10 of 11 tests) suggesting the routing is genuinely good. Adopt it when you have heterogeneous traffic, value provider resilience, and do not need to know which model answered. Skip it when you have already chosen a model, need auditable per-call observability, or handle regulated data — its black-box routing is a feature for convenience and a bug for compliance. Either way, wrap it in your own fallback: a resilience product you cannot fall back *from* is not resilient. For the broader picture of what else shipped this week, see my [Week 26 AI dev roundup](/notes/ai-dev-week-2026-26).
 
-Trying to decide whether an orchestration layer belongs in your stack — or whether a transparent router serves you better? That provider-architecture call is exactly the kind of decision I help founders get right before it calcifies into the codebase. See the [6-week MVP service](/en/services/6-week-mvp) or [hire a founding engineer](/en/services/hire-founding-engineer-india).`,
+Trying to decide whether an orchestration layer belongs in your stack — or whether a transparent router serves you better? That provider-architecture call is exactly the kind of decision I help founders get right before it calcifies into the codebase. See the [6-week MVP service](/services/6-week-mvp) or [hire a founding engineer](/services/hire-founding-engineer-india).`,
         },
     ],
     cta: {
         text: 'Ship your AI-orchestration MVP in 6 weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

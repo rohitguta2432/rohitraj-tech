@@ -67,7 +67,7 @@ In November 2025 Supabase shipped AWS ap-south-1 (Mumbai) as a primary region. I
 
 The one remaining latency concern is Supabase Realtime — it currently runs out of the project's primary region, so a Mumbai-based project gets Mumbai-based websocket fanout. Firebase Realtime Database runs out of asia-southeast1 (Singapore) for India users until you explicitly request asia-south1 Firestore. If your app does live cursors or chat, the configuration matters. For typical CRUD apps, neither is a bottleneck.
 
-I migrated [StellarMIND's pgvector workload](/en/projects/stellarmind) to Supabase ap-south-1 in December 2025 — embedding similarity searches dropped from 110ms p95 (Singapore) to 34ms p95 (Mumbai). For RAG-heavy Indian MVPs, this latency drop alone justified the migration even before the cost math.`,
+I migrated [StellarMIND's pgvector workload](/projects/stellarmind) to Supabase ap-south-1 in December 2025 — embedding similarity searches dropped from 110ms p95 (Singapore) to 34ms p95 (Mumbai). For RAG-heavy Indian MVPs, this latency drop alone justified the migration even before the cost math.`,
     },
     {
       heading: 'Postgres RLS vs Firestore Security Rules — the security model gap',
@@ -103,7 +103,7 @@ CREATE POLICY "staff read clinic patients"
 
 **The trade-off is verbosity for power.** Firestore Rules are simpler — one file, document-scoped, no joins. Postgres RLS lets you express any predicate SQL can express, including subqueries, joins across tables, aggregate checks, and time-window logic that Firestore Rules cannot match. For complex multi-tenant SaaS like the clinic app, this matters: I had eight Firestore Rules spread across nested documents trying to express "staff at clinic X can see patients of clinic X but only during their shift hours". One Postgres RLS policy with a join handled the same logic cleanly.
 
-**The footgun warning is real.** Supabase RLS is harder to get right initially — every table needs RLS enabled, every operation needs a policy, and missing one means data leaks. I wrote about [the five Supabase RLS bugs every vibe-coded app hits](/en/notes/supabase-rls-production-bugs-need-real-engineer-2026) precisely because the framework gives you SQL power without the SQL-shaped guardrails. Firestore Rules are easier to write but force you into denormalized data layouts that get expensive at scale. Pick your trade.`,
+**The footgun warning is real.** Supabase RLS is harder to get right initially — every table needs RLS enabled, every operation needs a policy, and missing one means data leaks. I wrote about [the five Supabase RLS bugs every vibe-coded app hits](/notes/supabase-rls-production-bugs-need-real-engineer-2026) precisely because the framework gives you SQL power without the SQL-shaped guardrails. Firestore Rules are easier to write but force you into denormalized data layouts that get expensive at scale. Pick your trade.`,
     },
     {
       heading: 'Side-by-side comparison: what you actually get for the money',
@@ -138,7 +138,7 @@ CREATE POLICY "staff read clinic patients"
 
 **Profile 3: Anonymous user heavy product where authentication is a feature, not a requirement.** Firebase Anonymous Auth lets users start using your app instantly with a backend-generated UID, then optionally upgrade to a real account. Supabase supports anonymous sign-in since v2.41 (early 2025) but the migration UX is rougher and the documentation is thinner. For a viral consumer app where most users never sign up, Firebase's flow is more polished.
 
-**The pattern:** Firebase wins on bundled mobile tooling and on managed convenience. Supabase wins on cost, SQL power, and not being locked into Google. If you are building [an Indian SaaS or B2B MVP](/en/services/6-week-mvp), Supabase is almost always right. If you are building a B2C mobile app shipping to Play Store and App Store in the next sprint, Firebase still has the edge.`,
+**The pattern:** Firebase wins on bundled mobile tooling and on managed convenience. Supabase wins on cost, SQL power, and not being locked into Google. If you are building [an Indian SaaS or B2B MVP](/services/6-week-mvp), Supabase is almost always right. If you are building a B2C mobile app shipping to Play Store and App Store in the next sprint, Firebase still has the edge.`,
     },
     {
       heading: 'The 5-step decision tree for your MVP in 2026',
@@ -154,15 +154,15 @@ CREATE POLICY "staff read clinic patients"
     },
     {
       heading: 'Build it right the first time',
-      content: `If you are starting an Indian MVP in 2026 and want the backend stack picked correctly on day one, this is what the [6-Week MVP Sprint](/en/services/6-week-mvp) is built around. Fixed scope, fixed price, Supabase + Next.js + Postgres by default with Firebase reserved for the specific mobile-first profiles above. No vendor lock-in, full GitHub access, deploy-ready by week six.
+      content: `If you are starting an Indian MVP in 2026 and want the backend stack picked correctly on day one, this is what the [6-Week MVP Sprint](/services/6-week-mvp) is built around. Fixed scope, fixed price, Supabase + Next.js + Postgres by default with Firebase reserved for the specific mobile-first profiles above. No vendor lock-in, full GitHub access, deploy-ready by week six.
 
-If you already have a Firebase MVP hitting the cost wall and want it migrated to Supabase without breaking the product, [hire me as a founding engineer](/en/services/hire-founding-engineer-india) on a sprint or retainer. I have done four of these migrations in the last six months — the playbook is dialled, the RLS pitfalls are documented, and the typical timeline is 6-8 weeks for a 25K-MAU app with full schema redesign and OAuth migration.
+If you already have a Firebase MVP hitting the cost wall and want it migrated to Supabase without breaking the product, [hire me as a founding engineer](/services/hire-founding-engineer-india) on a sprint or retainer. I have done four of these migrations in the last six months — the playbook is dialled, the RLS pitfalls are documented, and the typical timeline is 6-8 weeks for a 25K-MAU app with full schema redesign and OAuth migration.
 
-Or read [my comparison of $15K MVPs vs $50K agency quotes](/en/notes/what-15k-mvp-actually-includes-vs-50k-agency-quote) to understand what the sprint actually includes before booking a call.`,
+Or read [my comparison of $15K MVPs vs $50K agency quotes](/notes/what-15k-mvp-actually-includes-vs-50k-agency-quote) to understand what the sprint actually includes before booking a call.`,
     },
   ],
   cta: {
     text: 'Start your 6-Week MVP Sprint',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

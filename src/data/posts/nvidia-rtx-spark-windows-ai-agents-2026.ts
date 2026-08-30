@@ -28,7 +28,7 @@ export const nvidiaRtxSparkWindowsAiAgents2026: BlogPost = {
         },
         {
             heading: 'NVIDIA RTX Spark + Windows — What Microsoft’s Local-AI Superchip Means for Developers',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Two announcements landed inside a week and they are the same story told from two stages. At Computex 2026, NVIDIA and Microsoft [reinvented the Windows PC around a superchip called RTX Spark](https://nvidianews.nvidia.com/news/nvidia-microsoft-windows-pcs-agents-rtx-spark). A few days later in San Francisco, Satya Nadella opened Build 2026 by [declaring a "new paradigm"](https://www.startuphub.ai/ai-news/artificial-intelligence/2026/nadella-on-ai-microsoft-build-2026-ai-insights) — AI that stops answering prompts and starts running the work. RTX Spark is the silicon that makes the second claim more than a slide.
 
@@ -93,7 +93,7 @@ resp = client.chat.completions.create(
 )
 \`\`\`
 
-On the Windows side, Microsoft exposes a consistent local inference surface: **Windows ML lets you call TensorRT natively**, the **Windows Copilot Runtime** gives a shared on-device model layer, and **Microsoft Foundry** connects local prototyping to production deployment so the model you tune on the box ships through the same tooling and identity you already use. Agents run through **NVIDIA OpenShell** with **new OS-enforced Windows security primitives** for identity, containment and policy — which matters, because an autonomous agent with filesystem access is exactly what you want sandboxed by the OS, not by hope. If you have read my note on [building a secure MCP server in TypeScript](/en/notes/secure-mcp-server-typescript-2026), this is the same containment problem, now solved one layer down.`,
+On the Windows side, Microsoft exposes a consistent local inference surface: **Windows ML lets you call TensorRT natively**, the **Windows Copilot Runtime** gives a shared on-device model layer, and **Microsoft Foundry** connects local prototyping to production deployment so the model you tune on the box ships through the same tooling and identity you already use. Agents run through **NVIDIA OpenShell** with **new OS-enforced Windows security primitives** for identity, containment and policy — which matters, because an autonomous agent with filesystem access is exactly what you want sandboxed by the OS, not by hope. If you have read my note on [building a secure MCP server in TypeScript](/notes/secure-mcp-server-typescript-2026), this is the same containment problem, now solved one layer down.`,
         },
         {
             heading: 'Where RTX Spark Actually Beats a Cloud GPU (Three Workflows)',
@@ -101,9 +101,9 @@ On the Windows side, Microsoft exposes a consistent local inference surface: **W
 
 **1. Privacy-bound or air-gapped inference.** Healthcare, fintech, legal — anywhere the data legitimately cannot leave the building. A 120B model with 1M-token context running entirely on-device means you can feed it a full patient history or a 400-page contract without a single byte going to a third-party API. VentureBeat framed the Dev Box bluntly: [run large AI models without cloud costs](https://venturebeat.com/infrastructure/microsoft-debuts-surface-rtx-spark-dev-box-to-run-large-ai-models-without-cloud-costs). For the regulated MVPs I build, that is not a nice-to-have, it is sometimes the only legal architecture.
 
-**2. Hybrid agents that route by complexity.** The most interesting developer feature in the launch is the GitHub Copilot CLI’s new **/fleet** capability: a cloud "primary" agent plans the task and routes subtasks — sending the parts that need frontier capability to the cloud, and the rest to a local model on your hardware. That is the cost-control pattern I keep recommending in [my OpenRouter vs LiteLLM vs Portkey routing breakdown](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026), except now one leg of the route is free because it runs on metal you own.
+**2. Hybrid agents that route by complexity.** The most interesting developer feature in the launch is the GitHub Copilot CLI’s new **/fleet** capability: a cloud "primary" agent plans the task and routes subtasks — sending the parts that need frontier capability to the cloud, and the rest to a local model on your hardware. That is the cost-control pattern I keep recommending in [my OpenRouter vs LiteLLM vs Portkey routing breakdown](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026), except now one leg of the route is free because it runs on metal you own.
 
-**3. Long-context work where token bills explode.** Repo-wide refactors, document-heavy RAG, multi-hour agent sessions — the workloads where cloud token costs compound fastest. Running them locally turns a variable, scary per-token bill into a fixed hardware cost. It pairs naturally with the [context-compression techniques I wrote about for cutting LLM token costs](/en/notes/llm-context-compression-cut-token-costs-2026): compress what you must send to the cloud, run everything else local.
+**3. Long-context work where token bills explode.** Repo-wide refactors, document-heavy RAG, multi-hour agent sessions — the workloads where cloud token costs compound fastest. Running them locally turns a variable, scary per-token bill into a fixed hardware cost. It pairs naturally with the [context-compression techniques I wrote about for cutting LLM token costs](/notes/llm-context-compression-cut-token-costs-2026): compress what you must send to the cloud, run everything else local.
 
 If your workload is one prompt, one short answer, against a hosted API you are happy with — none of these apply, and a $1,799+ machine solves a problem you do not have.`,
         },
@@ -141,9 +141,9 @@ None of these mean the platform is bad. They mean the *timing* of your adoption 
             heading: 'How I’d Ship This Into Production — and the Nadella Through-Line',
             content: `Here is the part the spec sheets miss. RTX Spark is not really a hardware story — it is the physical end of Microsoft’s strategy. At Build 2026, [Satya Nadella’s message was that in 2026 "AI is no longer about responding to a prompt — it is about running the work,"](https://www.startuphub.ai/ai-news/artificial-intelligence/2026/nadella-on-ai-microsoft-build-2026-ai-insights) and his line at the RTX Spark launch was even more pointed: *"Our goal is to deliver unmetered intelligence to every home and every desk with Windows."* "Unmetered" is the tell. The cloud meter is exactly what RTX Spark removes. Pair that with Microsoft shipping its own **Maia 200** accelerator in production and its **Majorana 2** quantum chip, and [Fortune’s read — Microsoft trying to be "AI’s center of gravity" again](https://fortune.com/2026/06/02/microsoft-moves-to-remain-ais-center-of-gravity/) — is the right frame. RTX Spark is the consumer edge of that bet.
 
-So if a client asked me to build on it today, here is the concrete plan — the same one I’d run on a [6-week MVP sprint](/en/services/6-week-mvp):
+So if a client asked me to build on it today, here is the concrete plan — the same one I’d run on a [6-week MVP sprint](/services/6-week-mvp):
 
-- **Design hybrid from day one.** Local model for the steady, privacy-bound, high-volume path; cloud frontier model for the hard 20%. Abstract the model call behind one interface so the routing decision is a config value, not a rewrite — the same discipline as [model-ID pinning I use for Claude upgrades](/en/notes/claude-code-dynamic-workflows-guide-2026).
+- **Design hybrid from day one.** Local model for the steady, privacy-bound, high-volume path; cloud frontier model for the hard 20%. Abstract the model call behind one interface so the routing decision is a config value, not a rewrite — the same discipline as [model-ID pinning I use for Claude upgrades](/notes/claude-code-dynamic-workflows-guide-2026).
 - **Treat the local endpoint as just another base URL.** Serve via vLLM’s OpenAI-compatible endpoint so prod and local share one client. Swapping cloud for local becomes an environment variable.
 - **Lean on OS-enforced agent containment, but verify it.** OpenShell + Windows security primitives are a real improvement over rolling your own sandbox, but I would still write an adversarial test that hands the agent a malicious instruction and asserts the OS blocks the filesystem write. Trust the platform; prove it on your repo.
 - **Budget the failure mode the README won’t mention:** model lifecycle. A box that runs a 120B model also has to *update* that 120B model, on every machine, forever. Cloud APIs hide this; local does not. Plan the update path before you ship, or you will ship a fleet of slowly-staling models.
@@ -170,11 +170,11 @@ That last point is the integration that is not in any launch post — and it is 
 
 The strategic signal is bigger than the chip: paired with Nadella’s "unmetered intelligence" framing, the next generation of AI apps will be expected to run partly on the user’s own silicon. Designing for that now — hybrid routing, local-first privacy, OS-enforced agent containment — is the call worth making before the hardware ships.
 
-If you want an AI product designed so "local, cloud, or hybrid" is a config flag instead of a rewrite, that is exactly the work I do. I ship [production MVPs in 6 weeks](/en/services/6-week-mvp) and take [founding-engineer engagements](/en/services/hire-founding-engineer-india) for teams building on the new local-AI stack.`,
+If you want an AI product designed so "local, cloud, or hybrid" is a config flag instead of a rewrite, that is exactly the work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp) and take [founding-engineer engagements](/services/hire-founding-engineer-india) for teams building on the new local-AI stack.`,
         },
     ],
     cta: {
         text: 'Get Your Local-or-Cloud AI MVP Built in 6 Weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

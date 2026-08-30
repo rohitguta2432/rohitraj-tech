@@ -29,13 +29,13 @@ export const qwen38FlashNextVs27bLocalMemory2026: BlogPost = {
     {
       heading:
         'Qwen3.8-Flash-Next vs Qwen3.8-27B: What Actually Changed on August 26',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Alibaba's Qwen team released [Qwen3.8-Flash-Next](https://github.com/QwenLM/Qwen3.8-Flash-Next) on **August 26, 2026**. Within seventy-two hours it was **#1 trending on Hugging Face** with **4.18k likes** — roughly **2.8× the like count of the next model on the board** — and r/LocalLLaMA had six separate top-of-day threads about it, most of them arguing about memory rather than quality.
 
 The number driving the argument is **6B active parameters per token**. Flash-Next routes each token through **10 routed experts plus 1 shared expert out of 512**, so the compute per token is tiny relative to the **125B** main model. Somewhere between the model card and Reddit, "6B active" became "runs on 12GB of VRAM," and that framing is now the headline on half the coverage. It is technically true and practically useless, because VRAM was never the binding constraint on this architecture.
 
-The constraint is *total* memory, and the reason is a component no previous Qwen model had: a **51B-parameter n-gram embedding table** with **20,000,000 entries**, indexed on bigrams and trigrams at layer 2. It is not a layer you compute — it is a table you look up. That distinction is the entire story of running this model locally, and it is also why the honest comparison is not "Flash-Next vs the cloud" but "Flash-Next vs [Qwen3.8-27B](/en/notes/qwen3-8-27b-local-coding-agent-claude-code-2026), which already fits on one 24GB card."`,
+The constraint is *total* memory, and the reason is a component no previous Qwen model had: a **51B-parameter n-gram embedding table** with **20,000,000 entries**, indexed on bigrams and trigrams at layer 2. It is not a layer you compute — it is a table you look up. That distinction is the entire story of running this model locally, and it is also why the honest comparison is not "Flash-Next vs the cloud" but "Flash-Next vs [Qwen3.8-27B](/notes/qwen3-8-27b-local-coding-agent-claude-code-2026), which already fits on one 24GB card."`,
     },
     {
       heading: 'What is actually new in the architecture?',
@@ -175,17 +175,17 @@ So I would not run Flash-Next as the front door. I would run it as the **deep ti
 
 The pattern I keep coming back to on client work is that local models rarely replace a cloud agent outright — they absorb the **high-volume, low-stakes** portion of the traffic, and the metered API keeps the hard tail. Flash-Next is unusual because it inverts that: it is the expensive-to-host tier that is *better at the hard tail*, and the 27B is the cheap one. If you are already running the 27B and your agent loops are dying at turn 20, Flash-Next is the specific fix. If they are not, the 93GB is a rounding error you will feel every single day for a benchmark delta you will never notice.
 
-That is the same trade I walk clients through when we scope an [AI MVP in 6 weeks](/en/services/6-week-mvp): the model is rarely the bottleneck. The routing, the warm-up, and the memory budget are.`,
+That is the same trade I walk clients through when we scope an [AI MVP in 6 weeks](/services/6-week-mvp): the model is rarely the bottleneck. The routing, the warm-up, and the memory budget are.`,
     },
     {
       heading: 'Building with local models and hitting the memory wall?',
       content: `Getting a local coding agent from "it loads" to "it survives a Tuesday" is mostly plumbing — routing rules, warm-up scheduling, KV budgets, and honest fallbacks to a metered API when the local tier is cold. That is the work I do.
 
-If you are wiring open-weight models into a product and want the integration done without losing three weekends to \`--override-tensor\`, I build [AI MVPs in 6 weeks](/en/services/6-week-mvp) and take on [founding-engineer engagements](/en/services/hire-founding-engineer-india) for teams shipping AI features in production. Related reading: [Qwen3.8-27B as your local coding agent](/en/notes/qwen3-8-27b-local-coding-agent-claude-code-2026) for the 24GB build this post compares against.`,
+If you are wiring open-weight models into a product and want the integration done without losing three weekends to \`--override-tensor\`, I build [AI MVPs in 6 weeks](/services/6-week-mvp) and take on [founding-engineer engagements](/services/hire-founding-engineer-india) for teams shipping AI features in production. Related reading: [Qwen3.8-27B as your local coding agent](/notes/qwen3-8-27b-local-coding-agent-claude-code-2026) for the 24GB build this post compares against.`,
     },
   ],
   cta: {
     text: 'Ship your AI MVP in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

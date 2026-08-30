@@ -24,11 +24,11 @@ export const hireIosDeveloperIndiaMvp2026: BlogPost = {
   sections: [
     {
       heading: 'TL;DR',
-      content: `Hire a **founding engineer in India** for a native iOS MVP shipped in 6–8 weeks at ₹7.5–10.5L fixed — one Swift owner from Xcode project to App Store, App Store Connect set up by week one, TestFlight live by week three. Hire a **Bangalore or Gurgaon agency** only when you have ₹30L+ committed and need HealthKit, MDM, or FIDO-grade biometric flows that demand parallel native iOS + Android teams. **Skip native iOS** if your only reason to ship is "investors said iOS first" — a [React Native](/en/notes/hire-react-native-developer-india-2026) or [Flutter](/en/notes/hire-flutter-developer-india-2026) build covers 85% of pre-PMF iOS needs at 60% the cost.`,
+      content: `Hire a **founding engineer in India** for a native iOS MVP shipped in 6–8 weeks at ₹7.5–10.5L fixed — one Swift owner from Xcode project to App Store, App Store Connect set up by week one, TestFlight live by week three. Hire a **Bangalore or Gurgaon agency** only when you have ₹30L+ committed and need HealthKit, MDM, or FIDO-grade biometric flows that demand parallel native iOS + Android teams. **Skip native iOS** if your only reason to ship is "investors said iOS first" — a [React Native](/notes/hire-react-native-developer-india-2026) or [Flutter](/notes/hire-flutter-developer-india-2026) build covers 85% of pre-PMF iOS needs at 60% the cost.`,
     },
     {
       heading: 'Hire iOS Developer India 2026 — Why The Native Decision Is Harder Than It Looks',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Native iOS in 2026 is a deliberate choice, not a default. React Native 0.78 and Flutter 3.27 on Impeller have closed the visual gap with Swift to the point that, pre-PMF, most founders cannot justify the native cost premium. The teams that still pick native iOS in India this year are doing it for one of three reasons: HealthKit, CallKit, or CarPlay integrations the cross-platform plugins do not handle cleanly; a brand that demands pixel-perfect iOS-native feel on day one; or an Apple Watch / Vision Pro companion shipping alongside iPhone.
 
@@ -76,7 +76,7 @@ The most common 2026 failure I see: cheap Upwork freelancer at ₹2,400/hour shi
 
 **SwiftUI vs UIKit tax.** Agencies still default to UIKit on ~40% of new iOS work in 2026 because their seniors learned iOS pre-2021. UIKit on a 12-screen MVP is a 25–35% time penalty vs SwiftUI for the same shipped screens. My refactor of the ₹34L Gurgaon app converted 6 UIKit screens to SwiftUI and reduced screen-level code by 41% — same UX, almost half the lines.
 
-**Backend integration.** Every quote silently assumes a backend exists. If it does not, the agency adds ₹10–14L for "backend integration support." A founding engineer who can ship the [Spring Boot or Node backend](/en/notes/spring-boot-vs-nodejs-startup-backend-2026) themselves absorbs the tax — which is why ~60% of my native-iOS engagements are quoted as "iOS app + backend + deploy" as one fixed scope.
+**Backend integration.** Every quote silently assumes a backend exists. If it does not, the agency adds ₹10–14L for "backend integration support." A founding engineer who can ship the [Spring Boot or Node backend](/notes/spring-boot-vs-nodejs-startup-backend-2026) themselves absorbs the tax — which is why ~60% of my native-iOS engagements are quoted as "iOS app + backend + deploy" as one fixed scope.
 
 **Privacy manifest + third-party SDK liability.** Since spring 2025, every third-party SDK must declare its data collection in its own PrivacyInfo.xcprivacy file. As of May 2026, ~30% of common Indian SDKs (Razorpay, MSG91, some Firebase modules) still ship outdated manifests. A founding engineer audits this on week 2; an agency discovers it in submission three.
 
@@ -112,17 +112,17 @@ The ₹9L founding-engineer column does more on most rows. The ₹34L agency col
 
 **Hire an agency when:** you are shipping into a regulated industry where the audit trail is the moat — healthcare with HIPAA + DISHA, regulated FinTech with RBI sandbox requirements, or anything that needs SOC 2 + ISO 27001 letters on day one. A founding engineer can write secure Swift; they cannot manufacture a SOC 2 attestation from week one. The other agency-wins case is parallel multi-platform — native iOS + native Android + web admin + marketing site shipping at once. The founding-engineer model becomes the bottleneck by week three on that shape of build.
 
-**Choose React Native or Flutter instead of native iOS when:** your reason to "go native" is a feeling, not a feature. If you cannot name a specific iOS API (HealthKit, CarPlay, CallKit, Apple Watch companion, Vision Pro, deep PassKit integration, a custom Metal renderer) that the cross-platform plugin ecosystem genuinely cannot support, you do not need native iOS. A [React Native](/en/notes/hire-react-native-developer-india-2026) build at ₹6.5L or a [Flutter](/en/notes/hire-flutter-developer-india-2026) build at ₹7L will ship the same features in 60% the time and let you keep parity with Android for free. Pre-PMF, parity matters more than pixel-perfect feel.
+**Choose React Native or Flutter instead of native iOS when:** your reason to "go native" is a feeling, not a feature. If you cannot name a specific iOS API (HealthKit, CarPlay, CallKit, Apple Watch companion, Vision Pro, deep PassKit integration, a custom Metal renderer) that the cross-platform plugin ecosystem genuinely cannot support, you do not need native iOS. A [React Native](/notes/hire-react-native-developer-india-2026) build at ₹6.5L or a [Flutter](/notes/hire-flutter-developer-india-2026) build at ₹7L will ship the same features in 60% the time and let you keep parity with Android for free. Pre-PMF, parity matters more than pixel-perfect feel.
 
 **Use Toptal/Arc when:** you already have a CTO or founding engineer making architectural calls and need to ship one specific Swift feature — one Watch complication, one Sign in with Apple flow, one CallKit integration. Toptal iOS freelancers are excellent multipliers for an existing team and dangerous as a first technical hire because you do not yet know what to scope.
 
-**For every other case** — pre-PMF, fixed budget, fast launch, India market, a founder who can take 2 calls a week, a real native-iOS reason — the founding-engineer model is structurally better. Compare this honestly to the [founding engineer vs fractional CTO](/en/notes/founding-engineer-vs-fractional-cto) trade-off if you also want part-time tech leadership without a full engineering build, and to the [founding engineer vs Lovable](/en/notes/founding-engineer-vs-lovable-when-to-hire-2026) trade-off if your scope is small enough that a low-code path is still worth a look.`,
+**For every other case** — pre-PMF, fixed budget, fast launch, India market, a founder who can take 2 calls a week, a real native-iOS reason — the founding-engineer model is structurally better. Compare this honestly to the [founding engineer vs fractional CTO](/notes/founding-engineer-vs-fractional-cto) trade-off if you also want part-time tech leadership without a full engineering build, and to the [founding engineer vs Lovable](/notes/founding-engineer-vs-lovable-when-to-hire-2026) trade-off if your scope is small enough that a low-code path is still worth a look.`,
     },
     {
       heading: 'Decision Tree — Which iOS Hiring Model In 6 Steps',
       content: `Run this in order. Stop at the first "yes" — that is your answer.
 
-1. **Can you name a specific iOS-only API you must ship — HealthKit, CarPlay, CallKit, Apple Watch, Vision Pro, deep PassKit, custom Metal — that React Native or Flutter cannot reach?** → If no, do not hire a native iOS developer at all. Hire a [React Native or Flutter](/en/services/mobile-app-development) founding engineer; you will ship faster and cheaper with iOS parity built in.
+1. **Can you name a specific iOS-only API you must ship — HealthKit, CarPlay, CallKit, Apple Watch, Vision Pro, deep PassKit, custom Metal — that React Native or Flutter cannot reach?** → If no, do not hire a native iOS developer at all. Hire a [React Native or Flutter](/services/mobile-app-development) founding engineer; you will ship faster and cheaper with iOS parity built in.
 
 2. **Is your scope locked, signed, unlikely to change in 4 months, AND do you have ₹30L+ committed?** → Hire an agency. The cost premium buys team redundancy and you can afford it.
 
@@ -134,13 +134,13 @@ The ₹9L founding-engineer column does more on most rows. The ₹34L agency col
 
 6. **Do you already have a CTO or founding engineer and need one specific iOS feature shipped?** → Hire a Toptal or Arc Swift freelancer at ₹5,800/hr. Do not hire a freelancer as your first iOS hire — you do not yet know what to scope.
 
-The single most predictive question is step 1. About a third of the "I need native iOS" leads I take a call with cannot name the specific API they need — which means they would be better served by a cross-platform [6-week MVP sprint](/en/services/6-week-mvp). The cost of going to an agency anyway is roughly ₹25 lakh per iOS project in 2026.`,
+The single most predictive question is step 1. About a third of the "I need native iOS" leads I take a call with cannot name the specific API they need — which means they would be better served by a cross-platform [6-week MVP sprint](/services/6-week-mvp). The cost of going to an agency anyway is roughly ₹25 lakh per iOS project in 2026.`,
     },
     {
       heading: 'Where To Go From Here',
       content: `If you have read this far, you have probably already decided. Concrete next steps by model.
 
-If you picked founding engineer: a [6-week MVP sprint](/en/services/6-week-mvp) is the fixed-scope version — 8–12 native iOS screens, SwiftUI, SwiftData, backend wired, App Store submission, TestFlight live, fixed price. For ongoing work, [hire a founding engineer in India](/en/services/hire-founding-engineer-india) on retainer.
+If you picked founding engineer: a [6-week MVP sprint](/services/6-week-mvp) is the fixed-scope version — 8–12 native iOS screens, SwiftUI, SwiftData, backend wired, App Store submission, TestFlight live, fixed price. For ongoing work, [hire a founding engineer in India](/services/hire-founding-engineer-india) on retainer.
 
 If you picked agency: ask for Swift code samples from three past native iOS projects, not slide-deck case studies. Read commits, not screenshots. Consistent architecture across screens is the tell — UIKit-on-some, SwiftUI-on-others means nobody architected the app. Require the lead iOS engineer on the kickoff call. The biggest agency-failure pattern is bait-and-switch: sold by the senior, built by a 2-year junior who learned Swift from YouTube last quarter.
 
@@ -148,11 +148,11 @@ If you picked Toptal/Arc freelancer: shortlist three, ask each for a 1-page iOS 
 
 Whichever path: never pay more than 30% upfront on fixed-price, never sign a SOW longer than 8 weeks without milestone gates, and require the contract to specify that Xcode project files, Fastlane lanes, signing certificates, App Store Connect access, and the privacy-manifest plist are yours on day one. Half the iOS rescue projects I see start with "the agency is holding our signing certs."
 
-Still unsure if native iOS is the right call? Read [react-native-vs-flutter-2026](/en/notes/react-native-vs-flutter-2026) first — most founders who think they need native iOS ship faster on RN or Flutter once they see the comparison.`,
+Still unsure if native iOS is the right call? Read [react-native-vs-flutter-2026](/notes/react-native-vs-flutter-2026) first — most founders who think they need native iOS ship faster on RN or Flutter once they see the comparison.`,
     },
   ],
   cta: {
     text: 'Get a fixed-price native iOS MVP quote in 30 minutes →',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

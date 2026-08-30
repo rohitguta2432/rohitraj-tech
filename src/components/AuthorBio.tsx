@@ -1,11 +1,9 @@
 import Link from "next/link";
-import type { Locale } from "@/lib/i18n";
 
 interface AuthorBioProps {
-    locale: Locale;
 }
 
-export default function AuthorBio({ locale }: AuthorBioProps) {
+export default function AuthorBio() {
     return (
         <aside
             aria-label="About the author"
@@ -25,7 +23,7 @@ export default function AuthorBio({ locale }: AuthorBioProps) {
                 features — with evals proving they work. Fractional retainer or fixed-scope pilot.
             </p>
             <Link
-                href={`/${locale}/hire`}
+                href={`/hire`}
                 style={{ color: "var(--accent)", fontWeight: 600, textDecoration: "none" }}
             >
                 Work with me &rarr;

@@ -19,7 +19,7 @@ export const postgresqlVsMongodbStartup2026: BlogPost = {
     },
 {
       heading: 'The Debate That Won\'t Die',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 PostgreSQL is the better database for most startups because it handles relational data, JSON documents, full-text search, and vector embeddings in a single system with full ACID transactions. MongoDB is the better choice when your data is genuinely document-shaped, your schema changes constantly during rapid prototyping, or you need horizontal sharding across regions from day one.
 
@@ -129,9 +129,9 @@ MongoDB Atlas free tier gives you 512MB — just the database. Auth, storage, re
 
 Pick PostgreSQL. Learn SQL. Ship your product. If you genuinely hit a scale problem that needs MongoDB's sharding (you probably won't — Instagram runs on PostgreSQL), migrate then.
 
-The pattern I run for founders in this situation is either a [startup MVP build](/en/services/startup-mvp-development) or a [6-week MVP sprint](/en/services/6-week-mvp) — pick based on whether you need shipped code or shipped *and* maintained code.
+The pattern I run for founders in this situation is either a [startup MVP build](/services/startup-mvp-development) or a [6-week MVP sprint](/services/6-week-mvp) — pick based on whether you need shipped code or shipped *and* maintained code.
 
-If this thread is useful, [Spring Boot vs Node.js for Your Startup Backend (2026)](/en/notes/spring-boot-vs-nodejs-startup-backend-2026) and [Bolt.new vs Hire Developer 2026](/en/notes/bolt-new-vs-hire-developer-2026) are the next two posts to read.`
+If this thread is useful, [Spring Boot vs Node.js for Your Startup Backend (2026)](/notes/spring-boot-vs-nodejs-startup-backend-2026) and [Bolt.new vs Hire Developer 2026](/notes/bolt-new-vs-hire-developer-2026) are the next two posts to read.`
     },
     {
       heading: 'Frequently Asked Questions',

@@ -28,7 +28,7 @@ export const claudeCodeVsHireDeveloper2026: BlogPost = {
     },
 {
       heading: 'Claude Code vs Hiring a Developer in 2026',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 **The short answer:** Claude Code is the most capable agentic coding CLI shipped in 2026. For a solo founder writing prototypes, internal tools, scripts, and exploratory features, $20/month of Claude Code Pro is the best price-to-output ratio that has ever existed for software. For shipping a real product that customers pay for, in production, with users complaining at 2 AM, you still need a human engineer. The CLI is a developer **multiplier**, not a developer **replacement**. The math gets interesting at the intersection of those two truths.
 
@@ -75,7 +75,7 @@ These are not "Claude Code is bad" failures. They are **wrong-tool-for-the-job**
 |---|---|---|---|
 | **Idea validation, no users** | Throwaway prototype, demo for investors | Claude Code Pro | $20 |
 | **Pre-launch, ≤10 friendly testers** | MVP that works on the happy path | Claude Code Max + you reviewing diffs | $100–200 |
-| **Soft launch, 50–500 paying users** | Real production, basic monitoring, no on-call | [Founding engineer (India)](/en/services/hire-founding-engineer-india) part-time + Claude Code | $4,000–$6,000 |
+| **Soft launch, 50–500 paying users** | Real production, basic monitoring, no on-call | [Founding engineer (India)](/services/hire-founding-engineer-india) part-time + Claude Code | $4,000–$6,000 |
 | **Scaling, 1K+ users, revenue at risk** | Production-grade, on-call, security review | Founding engineer full-time + Claude Code | $7,000–$10,000 |
 | **Series A+, complex domain** | Senior engineer + small team | Multiple engineers + Claude Code Team | $25K+ |
 
@@ -124,14 +124,14 @@ If any of those describe your situation, do not hire an engineer in 2026. Spend 
 1. **Is anyone paying you for this yet?** If no → Claude Code Pro. Hire later.
 2. **Will a 2 AM outage cost you more than $500 in churn?** If yes → you need an engineer who can hold a pager. Claude Code cannot.
 3. **Does the product handle money, PII, or auth that matters?** If yes → you need security review. Claude Code does not threat-model. Hire an engineer who has shipped this before.
-4. **Are you technical enough to read every diff and run the tests yourself, every day?** If no → you need a human reviewing the AI's work. That human is a [founding engineer](/en/services/hire-founding-engineer-india), not another CLI.
-5. **Are you trying to ship a real MVP — front-end, back-end, integrations, deploy, monitoring — in under three months?** If yes → [a 6-week MVP sprint](/en/services/6-week-mvp) with a senior engineer who *uses* Claude Code is the highest-leverage option. The engineer + CLI combo ships in 6 weeks what the CLI alone does in 12.
+4. **Are you technical enough to read every diff and run the tests yourself, every day?** If no → you need a human reviewing the AI's work. That human is a [founding engineer](/services/hire-founding-engineer-india), not another CLI.
+5. **Are you trying to ship a real MVP — front-end, back-end, integrations, deploy, monitoring — in under three months?** If yes → [a 6-week MVP sprint](/services/6-week-mvp) with a senior engineer who *uses* Claude Code is the highest-leverage option. The engineer + CLI combo ships in 6 weeks what the CLI alone does in 12.
 
 The mistake is treating this as binary. **It is not "Claude Code OR hire."** It is "Claude Code at every stage, plus the right human at the right stage." Founders who get that combination right ship faster and cheaper than founders on either extreme.
 
 Most engineers worth hiring in 2026 already use Claude Code daily. The question is not whether you use the tool. The question is whether the person reading the diff has shipped to production before. If the answer is no, that is the gap to close. The CLI does not close it.
 
-If this thread is useful, [Bolt.new vs Hire Developer 2026](/en/notes/bolt-new-vs-hire-developer-2026) and [Cursor AI vs Hire Developer 2026](/en/notes/cursor-ai-vs-hire-developer-2026) are the next two posts to read.`,
+If this thread is useful, [Bolt.new vs Hire Developer 2026](/notes/bolt-new-vs-hire-developer-2026) and [Cursor AI vs Hire Developer 2026](/notes/cursor-ai-vs-hire-developer-2026) are the next two posts to read.`,
     },
     {
       heading: 'Bottom line: pair the CLI with the right human',
@@ -141,13 +141,13 @@ If you are a non-technical founder in validation mode, Claude Code is your cofou
 
 If you are a technical founder reviewing every diff, Claude Code is your typing speed multiplier. Pair it with a senior engineer the moment your first paying customer signs up.
 
-If you are past validation and revenue is real, you need a human who owns production. You can hire a [founding engineer in India for $80K–$120K/year](/en/services/hire-founding-engineer-india) who *uses* Claude Code daily. That is the configuration that ships fastest in 2026: senior human + agentic CLI + clear scope. A [6-week MVP sprint](/en/services/6-week-mvp) with that combination outperforms either pure-CLI or pure-human teams by a wide margin.
+If you are past validation and revenue is real, you need a human who owns production. You can hire a [founding engineer in India for $80K–$120K/year](/services/hire-founding-engineer-india) who *uses* Claude Code daily. That is the configuration that ships fastest in 2026: senior human + agentic CLI + clear scope. A [6-week MVP sprint](/services/6-week-mvp) with that combination outperforms either pure-CLI or pure-human teams by a wide margin.
 
 The wrong move in 2026 is paying a $200K US salary for someone who refuses to use Claude Code, **or** running pure-CLI past the point where production can hurt you. Both are expensive. The right move is to know which stage you're in and pick the configuration that matches it.`,
     },
   ],
   cta: {
     text: 'Ship a real MVP in 6 weeks — Claude Code + founding engineer combo',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

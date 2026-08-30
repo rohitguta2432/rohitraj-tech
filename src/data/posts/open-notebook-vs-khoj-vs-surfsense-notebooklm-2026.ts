@@ -30,7 +30,7 @@ export const openNotebookVsKhojVsSurfsenseNotebooklm2026: BlogPost = {
     {
       heading:
         'Self-Hosted NotebookLM Alternatives: Open Notebook vs Khoj vs SurfSense',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **June 7, 2026**, the top repository on GitHub Trending wasn't a new model or an agent framework — it was [Open Notebook](https://github.com/lfnovo/open-notebook), an open-source reimplementation of Google's NotebookLM that gained **+794 stars in a single day** to cross **26,684 total**. NotebookLM's pitch is simple and sticky: drop in your PDFs, papers, and web pages, then chat with them, summarize them, and even generate a podcast from them. The problem is equally simple — it's a Google cloud product, so your confidential documents leave your infrastructure.
 
@@ -64,7 +64,7 @@ docker compose up -d
 
 Before you expose it to anyone, change one line in \`docker-compose.yml\` — the default \`OPEN_NOTEBOOK_ENCRYPTION_KEY=change-me-to-a-secret-string\` encrypts your stored API keys, and shipping the default is the kind of mistake that turns a private notebook into a public one. Then drop your provider keys (OpenAI, Anthropic, Ollama for fully local, etc.) into the settings UI and you're ingesting documents.
 
-The catch worth knowing up front: Open Notebook stores everything in **SurrealDB**, not Postgres. That's fine for a single-tenant private deploy, but it's an operational dependency most teams haven't run before — budget time for backups and upgrades. **SurfSense** and **Khoj** are both Docker-Compose installs too, but they lean on Postgres with a pgvector-style vector column, which is the stack most backend teams already know. If your org standardizes on Postgres, that alone can decide the pick — the same reasoning I walked through in [Pinecone vs Qdrant vs pgvector for a RAG MVP](/en/notes/pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026).`,
+The catch worth knowing up front: Open Notebook stores everything in **SurrealDB**, not Postgres. That's fine for a single-tenant private deploy, but it's an operational dependency most teams haven't run before — budget time for backups and upgrades. **SurfSense** and **Khoj** are both Docker-Compose installs too, but they lean on Postgres with a pgvector-style vector column, which is the stack most backend teams already know. If your org standardizes on Postgres, that alone can decide the pick — the same reasoning I walked through in [Pinecone vs Qdrant vs pgvector for a RAG MVP](/notes/pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026).`,
     },
     {
       heading: 'Where Does Each Tool Actually Shine?',
@@ -72,9 +72,9 @@ The catch worth knowing up front: Open Notebook stores everything in **SurrealDB
 
 **Open Notebook — maximum model flexibility and audio.** If you want to keep sensitive docs on **Ollama** locally but burst to Claude or GPT for hard questions, its 18+ provider matrix and per-task model selection (different models for chat, embeddings, speech-to-text, and text-to-speech) is the most configurable of the three. The **podcast generation** is the genuinely fun differentiator — it turns a folder of research into a multi-speaker audio brief, which NotebookLM popularized and Open Notebook matches without the cloud.
 
-**SurfSense — team knowledge that lives across tools.** Most company knowledge isn't in a folder of PDFs; it's scattered across Slack threads, Jira tickets, and Notion pages. SurfSense's connector list is its moat, and its **two-tier RAG with hybrid search and rerankers** is the most serious retrieval pipeline here — retrieve broadly with semantic + keyword search, then rerank to keep only the best passages. That reranking step is exactly the lever I leaned on to cut token waste in [LLM context compression](/en/notes/llm-context-compression-cut-token-costs-2026): fewer, better chunks beat dumping twenty mediocre ones into the prompt.
+**SurfSense — team knowledge that lives across tools.** Most company knowledge isn't in a folder of PDFs; it's scattered across Slack threads, Jira tickets, and Notion pages. SurfSense's connector list is its moat, and its **two-tier RAG with hybrid search and rerankers** is the most serious retrieval pipeline here — retrieve broadly with semantic + keyword search, then rerank to keep only the best passages. That reranking step is exactly the lever I leaned on to cut token waste in [LLM context compression](/notes/llm-context-compression-cut-token-costs-2026): fewer, better chunks beat dumping twenty mediocre ones into the prompt.
 
-**Khoj — a personal, always-on second brain.** Khoj wins for the individual researcher or developer who lives in Obsidian and wants **scheduled automations** (a daily digest, a recurring web search) rather than an app they open on demand. Its agent and automation layer is more built-out for personal workflows than the other two. If you're storing long-term context across many sessions, the design tradeoffs echo what I covered in [open-source AI agent memory](/en/notes/open-source-ai-agent-memory-mem0-vs-zep-letta-2026).`,
+**Khoj — a personal, always-on second brain.** Khoj wins for the individual researcher or developer who lives in Obsidian and wants **scheduled automations** (a daily digest, a recurring web search) rather than an app they open on demand. Its agent and automation layer is more built-out for personal workflows than the other two. If you're storing long-term context across many sessions, the design tradeoffs echo what I covered in [open-source AI agent memory](/notes/open-source-ai-agent-memory-mem0-vs-zep-letta-2026).`,
     },
     {
       heading: "The License Trap: Is Khoj's AGPL-3.0 a Problem?",
@@ -84,7 +84,7 @@ The catch worth knowing up front: Open Notebook stores everything in **SurrealDB
 - **SurfSense — Apache-2.0.** Also permissive and commercial-safe, with an added explicit **patent grant** that MIT lacks. For most companies, Apache-2.0 is the "boring and safe" choice legal teams approve without a meeting.
 - **Khoj — AGPL-3.0.** This is the trap. AGPL is **strong copyleft with a network clause**: if you modify Khoj and offer it to users **over a network** (i.e. as a hosted SaaS), you can be obligated to release your modified source under AGPL too. For an internal tool behind your VPN, that's usually fine. For a product you sell access to, it's a genuine constraint your legal team needs to sign off on — or you negotiate a commercial license with the Khoj maintainers.
 
-To be clear, AGPL isn't "bad" — it's a deliberate, pro-user license, and Khoj's team chose it on purpose. But "it's open source" is not the same as "I can build a closed SaaS on it," and that conflation is where I've seen teams get surprised six months in. If your endgame is a commercial product, **Open Notebook (MIT) and SurfSense (Apache-2.0) are the low-risk picks**; reach for Khoj when it's internal or personal. This is the same license diligence I apply before adopting any dependency, including the [MCP servers I harden for production](/en/notes/secure-mcp-server-typescript-2026).`,
+To be clear, AGPL isn't "bad" — it's a deliberate, pro-user license, and Khoj's team chose it on purpose. But "it's open source" is not the same as "I can build a closed SaaS on it," and that conflation is where I've seen teams get surprised six months in. If your endgame is a commercial product, **Open Notebook (MIT) and SurfSense (Apache-2.0) are the low-risk picks**; reach for Khoj when it's internal or personal. This is the same license diligence I apply before adopting any dependency, including the [MCP servers I harden for production](/notes/secure-mcp-server-typescript-2026).`,
     },
     {
       heading: 'Open Notebook vs Khoj vs SurfSense: Full Comparison',
@@ -121,19 +121,19 @@ My default recommendation for a **client building a private doc-Q&A product**: s
       heading: 'How I\'d Deploy This for a Client in Production',
       content: `Standing up the Docker container is the easy 10%. Here's the other 90% that decides whether a self-hosted NotebookLM is a real product or a demo that falls over.
 
-**Put auth and a tenant boundary in front on day one.** None of these tools ships with the multi-tenant access control a real product needs. I run them behind a reverse proxy with my own auth layer (OIDC or a session gateway), and I never expose the raw service port — the same posture I argued for when [securing MCP servers](/en/notes/secure-mcp-server-typescript-2026). A "private" tool reachable on \`0.0.0.0:8502\` is not private.
+**Put auth and a tenant boundary in front on day one.** None of these tools ships with the multi-tenant access control a real product needs. I run them behind a reverse proxy with my own auth layer (OIDC or a session gateway), and I never expose the raw service port — the same posture I argued for when [securing MCP servers](/notes/secure-mcp-server-typescript-2026). A "private" tool reachable on \`0.0.0.0:8502\` is not private.
 
-**Treat the vector store as the real operational cost.** Embeddings are cheap per call and expensive at scale. On a fintech build like [myFinancial](/en/projects), the bill that crept up wasn't the LLM — it was re-embedding the entire corpus on every ingest. I batch embeddings, cache aggressively, and pick the storage engine my team can actually operate (Postgres + pgvector over a database we've never run), per [my RAG vector-store comparison](/en/notes/pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026).
+**Treat the vector store as the real operational cost.** Embeddings are cheap per call and expensive at scale. On a fintech build like [myFinancial](/projects), the bill that crept up wasn't the LLM — it was re-embedding the entire corpus on every ingest. I batch embeddings, cache aggressively, and pick the storage engine my team can actually operate (Postgres + pgvector over a database we've never run), per [my RAG vector-store comparison](/notes/pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026).
 
-**Wire an eval gate before you trust retrieval.** Self-hosted RAG quality is *your* problem now, not Google's. I keep a small golden set of question/answer pairs and fail CI if retrieval accuracy drops below a threshold after a config or model change. Without it, a "harmless" embedding-model swap can quietly tank answer quality — exactly the invisible-failure class I flagged in [AI-generated code anti-patterns](/en/notes/ai-generated-code-anti-patterns-fixes-2026).
+**Wire an eval gate before you trust retrieval.** Self-hosted RAG quality is *your* problem now, not Google's. I keep a small golden set of question/answer pairs and fail CI if retrieval accuracy drops below a threshold after a config or model change. Without it, a "harmless" embedding-model swap can quietly tank answer quality — exactly the invisible-failure class I flagged in [AI-generated code anti-patterns](/notes/ai-generated-code-anti-patterns-fixes-2026).
 
 **Pick the license before you write a line.** As covered above, this is a five-minute decision that's nearly free to get right and very expensive to get wrong after launch.
 
-This is the unglamorous integration work that separates a shipped feature from a science project. If you want a private, self-hosted AI document system built and hardened for production — not just \`docker compose up\` — that's the work I do: [fixed-scope 6-week MVP builds](/en/services/6-week-mvp), or [hire a founding engineer in India](/en/services/hire-founding-engineer-india) to own the whole pipeline end to end.`,
+This is the unglamorous integration work that separates a shipped feature from a science project. If you want a private, self-hosted AI document system built and hardened for production — not just \`docker compose up\` — that's the work I do: [fixed-scope 6-week MVP builds](/services/6-week-mvp), or [hire a founding engineer in India](/services/hire-founding-engineer-india) to own the whole pipeline end to end.`,
     },
   ],
   cta: {
     text: 'Ship a Private, Self-Hosted AI Document System in 6 Weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

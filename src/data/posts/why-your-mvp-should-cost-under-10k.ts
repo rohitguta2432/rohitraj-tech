@@ -18,7 +18,7 @@ export const whyYourMvpShouldCostUnder10k: BlogPost = {
     },
 {
       heading: 'Why Should Your MVP Cost Under $10,000?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Your MVP should cost under $10,000 because the entire purpose of an MVP is to test your riskiest business assumption with minimal investment. A realistic budget is $5,000-$8,500 for a 4-6 week build using a free-tier stack (Supabase, Vercel, Stripe). Anything above $10K means you are overbuilding before validation — spending money on features that users may never want. Ship fast, learn, then invest more based on real data.
 
@@ -134,9 +134,9 @@ You never pay for work you haven't seen. If the midpoint demo doesn't meet expec
 
 The founders who succeed aren't the ones with the biggest budgets. They're the ones who ship fast, talk to users, and iterate. A $7K MVP that launches in 5 weeks beats a $50K product that launches in 6 months — every single time.
 
-On most of my client engagements this comes up as either a [6-week MVP sprint](/en/services/6-week-mvp) or a [startup MVP build](/en/services/startup-mvp-development) — either path leads to a working production build inside a quarter.
+On most of my client engagements this comes up as either a [6-week MVP sprint](/services/6-week-mvp) or a [startup MVP build](/services/startup-mvp-development) — either path leads to a working production build inside a quarter.
 
-Two posts that pick up where this one ends: [₹805 Crore Lost to UPI Fraud This Year. I Built an Offline Scam Detector…](/en/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector) and [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot).`
+Two posts that pick up where this one ends: [₹805 Crore Lost to UPI Fraud This Year. I Built an Offline Scam Detector…](/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector) and [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot).`
     },
     {
       heading: 'Frequently Asked Questions',

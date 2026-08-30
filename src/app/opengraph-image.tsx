@@ -1,156 +1,91 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-
-export const alt = 'Rohit Raj - AI Consultant · Forward Deployed Engineer';
-export const size = {
-    width: 1200,
-    height: 630,
-};
+export const alt = 'Rohit Raj — AI Consultant · Forward Deployed Engineer';
+export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default async function Image() {
+export default async function OpengraphImage() {
     return new ImageResponse(
         (
             <div
                 style={{
-                    height: '100%',
                     width: '100%',
+                    height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    backgroundColor: '#0a0a0a',
-                    backgroundImage: 'radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%), radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%)',
+                    justifyContent: 'space-between',
+                    padding: '80px',
+                    background: 'linear-gradient(135deg, #0a0a0a 0%, #111827 60%, #1f2937 100%)',
                     fontFamily: 'system-ui, -apple-system, sans-serif',
-                    padding: '60px',
+                    color: '#fff',
                 }}
             >
-                {/* Top left - Name */}
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: '40px',
-                        left: '60px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '12px',
-                    }}
-                >
+                <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
                     <div
                         style={{
-                            width: '48px',
-                            height: '48px',
-                            borderRadius: '50%',
-                            background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+                            width: 48,
+                            height: 48,
+                            borderRadius: 12,
+                            background: 'linear-gradient(135deg, #10b981, #3b82f6)',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            color: 'white',
-                            fontSize: '24px',
-                            fontWeight: 'bold',
+                            fontSize: 28,
+                            fontWeight: 800,
                         }}
                     >
                         R
                     </div>
-                    <span
-                        style={{
-                            color: '#e5e5e5',
-                            fontSize: '24px',
-                            fontWeight: '600',
-                        }}
-                    >
-                        Rohit Raj
-                    </span>
+                    <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: -0.5 }}>
+                        rohitraj.tech
+                    </div>
                 </div>
 
-                {/* Top right - Website */}
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: '50px',
-                        right: '60px',
-                        color: '#737373',
-                        fontSize: '20px',
-                    }}
-                >
-                    rohitraj.tech
-                </div>
-
-                {/* Center - Main Title */}
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        textAlign: 'center',
-                        gap: '24px',
-                    }}
-                >
-                    <h1
-                        style={{
-                            fontSize: '72px',
-                            fontWeight: 'bold',
-                            margin: 0,
-                            lineHeight: 1.1,
-                            background: 'linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #818cf8 100%)',
-                            backgroundClip: 'text',
-                            color: 'transparent',
-                        }}
-                    >
-                        Backend & AI Systems
-                    </h1>
-                    <p
-                        style={{
-                            fontSize: '28px',
-                            color: '#a3a3a3',
-                            margin: 0,
-                            maxWidth: '800px',
-                        }}
-                    >
-                        Building production-ready AI systems for startups
-                    </p>
-                </div>
-
-                {/* Bottom - Badge */}
-                <div
-                    style={{
-                        position: 'absolute',
-                        bottom: '50px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '16px',
-                    }}
-                >
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                     <div
                         style={{
-                            background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
-                            color: 'white',
-                            padding: '12px 28px',
-                            borderRadius: '100px',
-                            fontSize: '20px',
-                            fontWeight: '600',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            fontSize: 80,
+                            fontWeight: 800,
+                            lineHeight: 1.05,
+                            letterSpacing: -2,
+                            maxWidth: 1000,
                         }}
                     >
-                        Founding Engineer
+                        <div style={{ display: 'flex' }}>Founding Engineer &amp;</div>
+                        <div style={{ display: 'flex' }}>AI Systems Architect</div>
                     </div>
                     <div
                         style={{
-                            border: '2px solid #404040',
-                            color: '#a3a3a3',
-                            padding: '10px 24px',
-                            borderRadius: '100px',
-                            fontSize: '18px',
+                            display: 'flex',
+                            fontSize: 32,
+                            color: '#9ca3af',
+                            maxWidth: 1000,
+                            lineHeight: 1.3,
                         }}
                     >
-                        AI Systems Architect
+                        Building production AI systems, RAG pipelines, and distributed backends for startups.
                     </div>
+                </div>
+
+                <div
+                    style={{
+                        display: 'flex',
+                        gap: 24,
+                        fontSize: 22,
+                        color: '#d1d5db',
+                    }}
+                >
+                    <span>10+ years shipping</span>
+                    <span style={{ color: '#4b5563' }}>·</span>
+                    <span>Java · Next.js · Kafka · GPT-4</span>
+                    <span style={{ color: '#4b5563' }}>·</span>
+                    <span>India · Worldwide</span>
                 </div>
             </div>
         ),
-        {
-            ...size,
-        }
+        { ...size }
     );
 }

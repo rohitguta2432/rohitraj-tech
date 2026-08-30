@@ -27,7 +27,7 @@ export const sixWeekMvpSprintWeekByWeekBreakdown: BlogPost = {
     },
 {
       heading: '6-Week MVP Sprint — Week-by-Week Breakdown of What Actually Ships',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 A 6-week MVP sprint is not a 6-week project with marketing copy on top. It is a fixed-scope, fixed-price contract where the scope doc is locked on day one, the deploy happens on day 42, and the founder gets a production app with auth, billing, and a working core feature set. Every week has a single output. If the output is wrong, we cut scope — never extend the timeline.
 
@@ -129,17 +129,17 @@ Cutting these is not a compromise. It is the discipline that makes the sprint sh
 
 If your idea cannot fit in this scope, you have two options: split it into v1 + v2 sprints (12 weeks total, $30K-$50K), or hire a founding engineer for a 4-month build at $80K-$140K. Both are valid. The 6-week sprint is the right call when you need to validate before you invest.
 
-Adjacent reads: [6-Week MVP Tech Stack in 2026](/en/notes/6-week-mvp-tech-stack-2026) for the stack-level decision, [6-Week MVP Sprint vs 3-Month Agency Build](/en/notes/6-week-mvp-vs-3-month-agency-which-ships-first) for the hiring-level one.`
+Adjacent reads: [6-Week MVP Tech Stack in 2026](/notes/6-week-mvp-tech-stack-2026) for the stack-level decision, [6-Week MVP Sprint vs 3-Month Agency Build](/notes/6-week-mvp-vs-3-month-agency-which-ships-first) for the hiring-level one.`
     },
     {
       heading: 'Ready to Run Your Own 6-Week Sprint?',
       content: `If you have a validated idea, a clear core value prop, and 6 weeks of focused availability to give a founder + engineer collaboration — the sprint is the fastest way from idea to paying customer in 2026.
 
-[Scope your 6-week MVP](https://rohitraj.tech/en/services/6-week-mvp) — free 30-minute call, written scope doc, fixed price quote within 48 hours. NDA signed before the first call. Zero pressure.`
+[Scope your 6-week MVP](https://rohitraj.tech/services/6-week-mvp) — free 30-minute call, written scope doc, fixed price quote within 48 hours. NDA signed before the first call. Zero pressure.`
     },
   ],
   cta: {
     text: 'Scope Your 6-Week MVP',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

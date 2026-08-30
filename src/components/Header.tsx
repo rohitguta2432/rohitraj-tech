@@ -3,32 +3,30 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import LanguageSwitcher from "./LanguageSwitcher";
-import type { Locale, CommonDictionary } from "@/lib/i18n";
+import type { CommonDictionary } from "@/lib/i18n";
 
 interface HeaderProps {
-    locale: Locale;
     dict: CommonDictionary;
 }
 
-export default function Header({ locale, dict }: HeaderProps) {
+export default function Header({ dict }: HeaderProps) {
     const pathname = usePathname();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navLinks = [
-        { href: `/${locale}`, label: dict.nav.home },
-        { href: `/${locale}/agents`, label: 'Agents' },
-        { href: `/${locale}/projects`, label: dict.nav.projects },
-        { href: `/${locale}/services`, label: 'Services' },
-        { href: `/${locale}/repos`, label: dict.nav.repos },
-        { href: `/${locale}/notes`, label: dict.nav.notes },
-        { href: `/${locale}/about`, label: dict.nav.about },
-        { href: `/${locale}/contact`, label: dict.nav.contact },
+        { href: "/", label: dict.nav.home },
+        { href: `/agents`, label: 'Agents' },
+        { href: `/projects`, label: dict.nav.projects },
+        { href: `/services`, label: 'Services' },
+        { href: `/repos`, label: dict.nav.repos },
+        { href: `/notes`, label: dict.nav.notes },
+        { href: `/about`, label: dict.nav.about },
+        { href: `/contact`, label: dict.nav.contact },
     ];
 
     const isActive = (href: string) => {
-        if (href === `/${locale}`) {
-            return pathname === `/${locale}` || pathname === `/${locale}/`;
+        if (href === "/") {
+            return pathname === "/" || pathname === `/`;
         }
         return pathname.startsWith(href);
     };
@@ -36,7 +34,7 @@ export default function Header({ locale, dict }: HeaderProps) {
     return (
         <header className="header">
             <div className="container header-inner">
-                <Link href={`/${locale}`} className="logo">
+                <Link href={"/"} className="logo">
                     Rohit Raj
                 </Link>
 
@@ -52,17 +50,15 @@ export default function Header({ locale, dict }: HeaderProps) {
                         </Link>
                     ))}
                     <Link
-                        href={`/${locale}/hire`}
+                        href={`/hire`}
                         className="btn btn-primary btn-sm"
                         onClick={() => setMobileMenuOpen(false)}
                     >
                         {dict.nav.hireMe ?? "Work With Me"}
                     </Link>
-                    <LanguageSwitcher currentLocale={locale} />
                 </nav>
 
                 <div className="header-actions-mobile">
-                    <LanguageSwitcher currentLocale={locale} />
                     <button
                         className="mobile-menu-btn"
                         aria-label="Menu"

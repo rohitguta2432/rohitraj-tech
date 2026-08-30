@@ -27,7 +27,7 @@ export const claudeCodePluginsContextEngineering2026: BlogPost = {
     },
     {
       heading: 'Why 6 of Today\'s Top 15 GitHub Trends Are Claude Code Plugins',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On 2026-05-23 I opened [github.com/trending](https://github.com/trending?since=daily) and counted. Of the top 15 repositories, six are Claude Code ecosystem tools — knowledge graphs, official plugin directories, skill libraries, and MCP servers wrapping dev tools. Not "AI-adjacent." Specifically Claude Code.
 
@@ -211,7 +211,7 @@ Why are the listicles wrong about this? Because most were written between Feb an
 4. **Cost-aware AI architecture** — knowing when to use Claude Opus vs Haiku vs a local Qwen 3.6 model is a judgement call no plugin makes for you.
 5. **Genuine novelty** — the agent is great at "things many people have built." It struggles at "things almost no one has built." That gap is where senior engineers earn their keep.
 
-If you're hitting any of these and you need someone who's shipped past them on production traffic, I do [6-week MVPs](/en/services/6-week-mvp) and [founding-engineer engagements](/en/services/hire-founding-engineer-india) for that exact gap.`,
+If you're hitting any of these and you need someone who's shipped past them on production traffic, I do [6-week MVPs](/services/6-week-mvp) and [founding-engineer engagements](/services/hire-founding-engineer-india) for that exact gap.`,
     },
     {
       heading: 'What\'s Coming Next: Anthropic Acquired Stainless, Antigravity Launched, Plugins Multiply',
@@ -250,13 +250,13 @@ Start with a single skill (one markdown file in \`.claude/skills/<name>/SKILL.md
       heading: 'Ship Real Software With This Stack',
       content: `If you read this far, the takeaway is: install CodeGraph, install Context7, fork a skill library, ignore the listicles. That gets you ~80% of the realized benefit.
 
-The other 20% is making this stack pay rent on a real product — which means knowing when to trust the agent and when to call in a human. I've shipped 12+ production MVPs in the last 24 months, most of them with some flavor of this stack, and I do [6-week MVP engagements](/en/services/6-week-mvp) for founders who want their first production version built right the first time. If you're hitting the walls in section above — cross-service migrations, multi-tenant RLS, cost-aware AI architecture — that's exactly what [hiring a founding engineer](/en/services/hire-founding-engineer-india) is for.
+The other 20% is making this stack pay rent on a real product — which means knowing when to trust the agent and when to call in a human. I've shipped 12+ production MVPs in the last 24 months, most of them with some flavor of this stack, and I do [6-week MVP engagements](/services/6-week-mvp) for founders who want their first production version built right the first time. If you're hitting the walls in section above — cross-service migrations, multi-tenant RLS, cost-aware AI architecture — that's exactly what [hiring a founding engineer](/services/hire-founding-engineer-india) is for.
 
 DM me on [LinkedIn](https://www.linkedin.com/in/rohitraj2/) with what you're building. The first 20 minutes are free.`,
     },
   ],
   cta: {
     text: 'Hire a founding engineer who already ships with this stack',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -19,7 +19,7 @@ export const pwaOfflineSync: BlogPost = {
     },
 {
       heading: 'Why Offline-First Matters for Travel Apps',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To build an offline-first PWA, you need three layers working together: a service worker with cache-first strategy for static assets and network-first for API data, IndexedDB (via Dexie.js) as the local source of truth for structured data, and the Background Sync API to queue write operations while offline and replay them automatically when connectivity returns. This pattern ensures your app works fully offline without degraded functionality.
 
@@ -135,9 +135,9 @@ The service worker's \`sync\` event fires automatically when connectivity is res
 4. **Use timestamps for conflict resolution** — last-write-wins is simple and usually sufficient
 5. **Test offline regularly** — Chrome DevTools' Network panel has an "Offline" checkbox. Use it.
 
-For founders reading this and wondering about delivery, the two ways I work are a [6-week MVP sprint](/en/services/6-week-mvp) and a [founding engineer in India](/en/services/hire-founding-engineer-india).
+For founders reading this and wondering about delivery, the two ways I work are a [6-week MVP sprint](/services/6-week-mvp) and a [founding engineer in India](/services/hire-founding-engineer-india).
 
-Related reading: [₹805 Crore Lost to UPI Fraud This Year. I Built an Offline Scam Detector…](/en/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector) and [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/en/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot) cover the adjacent tradeoffs in more depth.`
+Related reading: [₹805 Crore Lost to UPI Fraud This Year. I Built an Offline Scam Detector…](/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector) and [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot) cover the adjacent tradeoffs in more depth.`
     },
     {
       heading: 'Frequently Asked Questions',

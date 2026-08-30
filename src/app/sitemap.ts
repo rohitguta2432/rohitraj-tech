@@ -1,4 +1,3 @@
-import { locales } from "@/lib/i18n";
 import { projects } from "@/data/projects";
 import { services } from "@/data/services";
 import { blogPosts } from "@/data/blog-posts";
@@ -26,19 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/reliability/load-testing",
         "/reliability/observability",
     ];
-
-    // Routes whose body copy really is translated by content/<locale>/*.json.
-    // Keep this in sync with the `translated: false` flags on the page components.
-    const TRANSLATED_ROUTES = new Set([
-        "",
-        "/about",
-        "/contact",
-        "/projects",
-        "/repos",
-        "/notes",
-        "/reliability",
-        "/services",
-    ]);
 
     const projectRoutes = projects.map((project) => `/projects/${project.slug}`);
     const serviceRoutes = ["/services", ...services.map((service) => `/services/${service.slug}`)];
@@ -80,8 +66,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const sitemap: MetadataRoute.Sitemap = [];
 
-    // Only include English URLs to maximize crawl budget on a new domain.
-    // Non-English pages were causing "Discovered – currently not indexed" (90 pages).
     for (const route of allRoutes) {
         let lastModified: Date = hubDates[route] ?? staticAnchor;
         if (route.startsWith("/notes/")) {
@@ -94,31 +78,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified = staticAnchor;
         }
 
-        // Only advertise hreflang alternates for routes whose BODY is localised.
-        // Long-form routes (/notes/*, /services/*, /projects/*, /agents/*, /reliability/*)
-        // ship English text in every locale, so listing them here published ~550
-        // near-duplicate URLs. Those pages now canonicalise to /en instead
-        // (see createPageMetadata's `translated` option in src/lib/seo-config.ts).
-        if (TRANSLATED_ROUTES.has(route)) {
-            const languageAlternates: Record<string, string> = Object.fromEntries(
-                locales.map((loc) => [loc, `${baseUrl}/${loc}${route}`])
-            );
-            languageAlternates["x-default"] = `${baseUrl}/en${route}`;
-
-            sitemap.push({
-                url: `${baseUrl}/en${route}`,
-                lastModified,
-                // priority + changeFrequency removed — Google has ignored them since 2023
-                alternates: {
-                    languages: languageAlternates,
-                },
-            });
-        } else {
-            sitemap.push({
-                url: `${baseUrl}/en${route}`,
-                lastModified,
-            });
-        }
+        sitemap.push({
+            url: `${baseUrl}${route}`,
+            lastModified,
+        });
     }
 
     return sitemap;

@@ -1,11 +1,10 @@
 import Link from "next/link";
-import type { HomeDictionary, Locale } from "@/lib/i18n";
+import type { HomeDictionary } from "@/lib/i18n";
 import { projects } from "@/data/projects";
 import { agents } from "@/data/agents";
 
 interface HeroProps {
     dict: HomeDictionary;
-    locale: Locale;
 }
 
 /**
@@ -20,7 +19,7 @@ interface HeroProps {
  * never drift out of agreement with the index below — which is exactly what had
  * happened before (copy claimed 29, data held 26).
  */
-export default function Hero({ dict, locale }: HeroProps) {
+export default function Hero({ dict }: HeroProps) {
     const bookCallCta = dict.hero.bookCallCta ?? "Book a free 30-min call";
     const documented = projects.length + agents.length;
 
@@ -51,10 +50,10 @@ export default function Hero({ dict, locale }: HeroProps) {
                     <p className="poster-deck">{dict.hero.deck ?? dict.hero.subtitle}</p>
 
                     <div className="poster-actions">
-                        <Link href={`/${locale}/contact`} className="poster-cta">
+                        <Link href={`/contact`} className="poster-cta">
                             {bookCallCta}
                         </Link>
-                        <Link href={`/${locale}#work`} className="poster-alt">
+                        <Link href={`#work`} className="poster-alt">
                             or see what shipped <span aria-hidden="true">→</span>
                         </Link>
                     </div>

@@ -29,7 +29,7 @@ export const aiDevWeek2026W26: BlogPost = {
     },
     {
       heading: 'Why This Week\'s Drops Add Up to One Trend',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Last week a government pulled Fable 5 off the shelf and the lesson was continuity. Week 26 is the opposite story: capability arriving, and arriving *cheaply*. For the first time the strongest open-weights coding model on the public leaderboards isn't a generation behind the closed frontier — it's level with it, at a fraction of the per-token price.
 
@@ -54,7 +54,7 @@ But the sharper pattern isn't the models — it's that everything *around* them 
 
 **Source:** [Simon Willison](https://simonwillison.net/2026/jun/17/glm-52/) · [VentureBeat](https://venturebeat.com/technology/z-ais-open-weights-glm-5-2-beats-gpt-5-5-on-long-horizon-coding-benchmarks-for-1-6th-the-cost)
 
-**Quick take:** The benchmark is the easy part — running 744B params is the hard part. Read the [best-local-LLM-for-coding breakdown](/en/notes/best-local-llm-for-coding-replace-cloud-2026) before you assume "open weights" means "free." The MIT weights are self-hostable, but the *hosted* API routes through China — a data-governance call, not a benchmark one.`,
+**Quick take:** The benchmark is the easy part — running 744B params is the hard part. Read the [best-local-LLM-for-coding breakdown](/notes/best-local-llm-for-coding-replace-cloud-2026) before you assume "open weights" means "free." The MIT weights are self-hostable, but the *hosted* API routes through China — a data-governance call, not a benchmark one.`,
     },
     {
       heading: 'MiniMax-M3: The Other Open Frontier Drop, This Time Multimodal',
@@ -74,7 +74,7 @@ But the sharper pattern isn't the models — it's that everything *around* them 
 
 **Source:** [CircleCI changelog](https://circleci.com/changelog/mcp-server-for-circleci-now-available/) · [GitHub repo](https://github.com/CircleCI-Public/mcp-server-circleci)
 
-**Quick take:** The real MCP story of the week — not a flashy model, but the 200th boring, useful connector; the ecosystem wins by accumulation. Scope the token carefully: read access to CI logs can leak secrets into a prompt. I covered the auth model in [MCP server authentication](/en/notes/mcp-server-authentication-oauth-guide-2026).`,
+**Quick take:** The real MCP story of the week — not a flashy model, but the 200th boring, useful connector; the ecosystem wins by accumulation. Scope the token carefully: read access to CI logs can leak secrets into a prompt. I covered the auth model in [MCP server authentication](/notes/mcp-server-authentication-oauth-guide-2026).`,
     },
     {
       heading: 'Oak: Does Git Still Fit When Agents Write the Commits? (Show HN)',
@@ -94,7 +94,7 @@ But the sharper pattern isn't the models — it's that everything *around* them 
 
 **Source:** [Recall on GitHub](https://github.com/raiyanyahya/recall)
 
-**Quick take:** The practical, indie version of a theme I dug into in [agent memory vs context window](/en/notes/ai-agent-memory-vs-context-window-2026) — memory is the layer most teams skip and quietly suffer without. Worth a weekend trial if your Claude Code sessions keep forgetting.`,
+**Quick take:** The practical, indie version of a theme I dug into in [agent memory vs context window](/notes/ai-agent-memory-vs-context-window-2026) — memory is the layer most teams skip and quietly suffer without. Worth a weekend trial if your Claude Code sessions keep forgetting.`,
     },
     {
       heading: 'Can You Really Fine-Tune a 0.6B Model on a Laptop? (This Week)',
@@ -108,7 +108,7 @@ But the sharper pattern isn't the models — it's that everything *around* them 
     },
     {
       heading: 'What I\'m Shipping With This Week',
-      content: `Concretely: I'm swapping the reasoning leg of [Resolvr](/en/projects) — my support-resolution agent that retrieves over a knowledge base — from a metered closed API onto **self-hosted GLM-5.2** for the bulk of tickets, keeping a closed-frontier fallback only for ambiguous escalations. The **0.6B fine-tune** above maps onto Resolvr's front door: ticket *classification* (billing vs bug vs how-to) never needed a frontier model, and a tiny fine-tuned one does it faster and offline.
+      content: `Concretely: I'm swapping the reasoning leg of [Resolvr](/projects) — my support-resolution agent that retrieves over a knowledge base — from a metered closed API onto **self-hosted GLM-5.2** for the bulk of tickets, keeping a closed-frontier fallback only for ambiguous escalations. The **0.6B fine-tune** above maps onto Resolvr's front door: ticket *classification* (billing vs bug vs how-to) never needed a frontier model, and a tiny fine-tuned one does it faster and offline.
 
 The non-obvious part: **open weights move the cost, they don't delete it.** GLM-5.2's bill isn't per-token anymore — it's GPU memory, batching, and the on-call rotation when your inference box falls over at 2am. The failure mode I'd worry about is treating "we self-host now" as done the moment the weights finish downloading, before anyone load-tests it under real concurrency. Budget the ops, not just the download.`,
     },
@@ -122,13 +122,13 @@ The non-obvious part: **open weights move the cost, they don't delete it.** GLM-
       heading: 'Need Help Wiring This Week\'s Drops Into Your Product?',
       content: `If this week convinced you to self-host an open-weights model for the routine work — standing up **GLM-5.2** or **MiniMax-M3**, fine-tuning a tiny model for classification, wiring a real fallback — the tutorial is never the hard part. It's the production wiring: inference hosting, batching, fallback routing, spend caps, and the load tests nobody writes.
 
-That's the [6-week MVP](/en/services/6-week-mvp) playbook — pick the right models and host, wire them into a shipping product, hand over a tested codebase. For a longer build, [Hire a Founding Engineer (India)](/en/services/hire-founding-engineer-india).
+That's the [6-week MVP](/services/6-week-mvp) playbook — pick the right models and host, wire them into a shipping product, hand over a tested codebase. For a longer build, [Hire a Founding Engineer (India)](/services/hire-founding-engineer-india).
 
-Next roundup drops next Tuesday. For the deep-dives behind this week: [best local LLM for coding](/en/notes/best-local-llm-for-coding-replace-cloud-2026), [MCP server authentication](/en/notes/mcp-server-authentication-oauth-guide-2026), and [agent memory vs context window](/en/notes/ai-agent-memory-vs-context-window-2026).`,
+Next roundup drops next Tuesday. For the deep-dives behind this week: [best local LLM for coding](/notes/best-local-llm-for-coding-replace-cloud-2026), [MCP server authentication](/notes/mcp-server-authentication-oauth-guide-2026), and [agent memory vs context window](/notes/ai-agent-memory-vs-context-window-2026).`,
     },
   ],
   cta: {
     text: "Wire This Week's Open-Weights Drops Into Your MVP — 6-Week Plan",
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

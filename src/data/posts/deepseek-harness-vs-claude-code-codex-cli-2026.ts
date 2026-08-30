@@ -30,9 +30,9 @@ export const deepseekHarnessVsClaudeCodeCodexCli2026: BlogPost = {
     {
       heading:
         'DeepSeek Open-Sourced the Harness, Not Just the Weights. That Is the Actual Story',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
-On **August 13, 2026**, DeepSeek published the [DeepSeek Harness developer preview](https://deepseek.com/harness/en/) and put the source on [GitHub under MIT](https://github.com/deepseek-ai/deepseek-harness). Within a day it was at **572 points across 247 comments** on [Hacker News](https://news.ycombinator.com/item?id=49285244) and sitting top-of-day on r/LocalLLaMA. This landed the same week as V4-Pro — which I covered in [this week's roundup](/en/notes/ai-dev-week-2026-33) — but the harness is the more interesting half of the drop.
+On **August 13, 2026**, DeepSeek published the [DeepSeek Harness developer preview](https://deepseek.com/harness/en/) and put the source on [GitHub under MIT](https://github.com/deepseek-ai/deepseek-harness). Within a day it was at **572 points across 247 comments** on [Hacker News](https://news.ycombinator.com/item?id=49285244) and sitting top-of-day on r/LocalLLaMA. This landed the same week as V4-Pro — which I covered in [this week's roundup](/notes/ai-dev-week-2026-33) — but the harness is the more interesting half of the drop.
 
 Here is why. Every serious lab now ships a coding agent, and every one of them is a closed vertical: Claude Code is Anthropic's loop around Anthropic's models, Codex CLI is OpenAI's loop around OpenAI's. DeepSeek open-sourced **the loop itself**. The tagline is "Everything is a Plugin," and unusually for a tagline, it survives contact with the source: the architecture docs state there is no privileged core, and extensions mount as sibling plugins whose effects unwind on unload.
 
@@ -121,11 +121,11 @@ The part nobody has written about yet is the \`cordis_*\` tool family. The agent
       heading: 'Where Does DeepSeek Harness Beat Claude Code and Codex CLI?',
       content: `Three places, and they are narrower than the launch-day enthusiasm suggests.
 
-**1. Auditability, as an architectural property rather than a feature.** The single most-praised thing in the HN thread was the append-only log. Because "model-visible means logged" is a design invariant — new model-visible inputs require new session-event entries — you can reconstruct exactly what the model saw on any turn, then fork, resume, search or replay from the same stream. Compare that to the direction the rest of the industry moved this year: encrypted reasoning traces. I wrote up [the trace-stealing paper in this week's roundup](/en/notes/ai-dev-week-2026-33), where researchers recovered **367 PII items and 182 credentials** from 315,320 encrypted reasoning blocks. A harness whose log is plaintext-by-design and yours-by-default is a genuinely different posture, and if you work anywhere with an audit function, it is the strongest argument in this whole release.
+**1. Auditability, as an architectural property rather than a feature.** The single most-praised thing in the HN thread was the append-only log. Because "model-visible means logged" is a design invariant — new model-visible inputs require new session-event entries — you can reconstruct exactly what the model saw on any turn, then fork, resume, search or replay from the same stream. Compare that to the direction the rest of the industry moved this year: encrypted reasoning traces. I wrote up [the trace-stealing paper in this week's roundup](/notes/ai-dev-week-2026-33), where researchers recovered **367 PII items and 182 credentials** from 315,320 encrypted reasoning blocks. A harness whose log is plaintext-by-design and yours-by-default is a genuinely different posture, and if you work anywhere with an audit function, it is the strongest argument in this whole release.
 
 **2. Swapping a capability without forking.** If you have ever needed Claude Code or Codex CLI to run its subprocesses somewhere other than the local machine, you know the options are a wrapper or a fork. The seam model here is the actual alternative: implement the service provider, list it in \`cordis.yml\`, leave the harness untouched. Whether it holds up under real load at v0.1 is unproven — but it is the correct shape.
 
-**3. Cost per long run.** DeepSeek's V4 models are post-trained on this harness specifically and priced far below the US frontier tier — see the V4-Pro figures in [the week-33 roundup](/en/notes/ai-dev-week-2026-33). For a multi-hour refactor where you are burning tokens on repository traversal rather than on hard reasoning, that gap compounds.
+**3. Cost per long run.** DeepSeek's V4 models are post-trained on this harness specifically and priced far below the US frontier tier — see the V4-Pro figures in [the week-33 roundup](/notes/ai-dev-week-2026-33). For a multi-hour refactor where you are burning tokens on repository traversal rather than on hard reasoning, that gap compounds.
 
 The counter-signal is worth stating in the same breath: on absolute output quality, the comparisons circulating this week still put Claude Code ahead, and the HN consensus is that DeepSeek's edge is **speed-per-dollar**, not ceiling.`,
     },
@@ -175,7 +175,7 @@ Where it *is* a good use of a Friday: evaluating harness architecture, prototypi
 
 **Treat \`.sessions/\` as regulated data.** With \`session-persistence-jsonl\` writing zstd-compressed JSONL to \`./.sessions\` by default, and "model-visible means logged" as an invariant, that directory contains every file the agent read. The property that makes the audit story good makes the directory sensitive. Add it to \`.gitignore\` before the first run, not after, and decide its retention like you would decide log retention.
 
-**Here is the failure mode I would actually worry about**, and it is not any of the above. It is \`cordis_define\` plus a long \`/autonomous\`-style run. An agent that can author and hot-load plugins into its own runtime has a mutation surface that your review process has never seen: the thing you audited at turn 10 is not necessarily the thing running at turn 400. The approval gate helps only while a human is watching it. On the [MyFinancial](/en/services/fintech-app-development) side of my work, an agent that can silently redefine its own tool surface mid-run is not something I would sign off on, however good the log is — because the log tells you what happened, and by then it has happened. Keep dynamic Cordis off for unattended runs. Turn it on when you are sitting in front of it, which is also when it is genuinely fun.
+**Here is the failure mode I would actually worry about**, and it is not any of the above. It is \`cordis_define\` plus a long \`/autonomous\`-style run. An agent that can author and hot-load plugins into its own runtime has a mutation surface that your review process has never seen: the thing you audited at turn 10 is not necessarily the thing running at turn 400. The approval gate helps only while a human is watching it. On the [MyFinancial](/services/fintech-app-development) side of my work, an agent that can silently redefine its own tool surface mid-run is not something I would sign off on, however good the log is — because the log tells you what happened, and by then it has happened. Keep dynamic Cordis off for unattended runs. Turn it on when you are sitting in front of it, which is also when it is genuinely fun.
 
 **What I would build with it:** a repo-audit agent that runs read-only, never gets \`workspace-write\` at all, and exports its session log as the deliverable. Most audit tooling gives you conclusions you have to trust. This one hands over the full reasoning trace as a replayable artifact — that is a product, and the harness gives it to you nearly for free.`,
     },
@@ -205,14 +205,14 @@ Different category. Cursor is an IDE with a model behind it; \`dsh\` is a headle
 
 That is most of what I do — wiring AI capability into products so that the model, the harness and the provider are all replaceable, and so the integration survives the next fortnight's launch. If you are shipping something in that space:
 
-- **[6-week MVP](/en/services/6-week-mvp)** — idea to production in six weeks, agent integration included, without the five bugs the README does not warn you about.
-- **[Hire a founding engineer](/en/services/hire-founding-engineer-india)** — for teams that need someone who has already made these calls on real repos.
+- **[6-week MVP](/services/6-week-mvp)** — idea to production in six weeks, agent integration included, without the five bugs the README does not warn you about.
+- **[Hire a founding engineer](/services/hire-founding-engineer-india)** — for teams that need someone who has already made these calls on real repos.
 
 Either way: install \`dsh\` this weekend, keep it read-only, and read the session log. That is where the actual product is.`,
     },
   ],
   cta: {
     text: 'Ship your AI integration in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -28,7 +28,7 @@ export const strixAiPenetrationTestingAgentGuide2026: BlogPost = {
         },
         {
             heading: 'Strix: The Open-Source AI Pentester That Proves Every Bug (2026 Guide)',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Most security tools tell you what *might* be wrong. A static scanner flags a line, hands you a CVSS score, and leaves you to figure out whether it's real. Half the time it isn't — and your team learns to ignore the dashboard. That "alert fatigue" is the actual security problem at most startups: not a lack of findings, but a flood of findings nobody trusts enough to fix.
 
@@ -124,13 +124,13 @@ If you ship code and want the scanner living *inside your pipeline and your infr
 - **Unpredictable spend is a dealbreaker.** A deep scan runs **$10–20 in API tokens; a quick scan $3–5** — but an agent that wanders down a rabbit hole can burn more before it finishes. If your finance team needs a fixed number, the \`--max-budget-usd\` cap is the only thing standing between you and a surprise invoice. Set it every run.
 - **You can't give it a safe target.** This tool *actively exploits* what you point it at. Running it against production risks real damage — an agent that confirms a SQL injection may have just written to your live database to prove it. You need an isolated staging environment with disposable data, and you need written authorization for anything you don't own.
 - **You need compliance-grade, human-signed reports today.** The open-source CLI is built for developers, not auditors. Formal pentest reports, SSO, and compliance artifacts live in the paid enterprise tier at strix.ai — the free tool gives you findings and PoCs, not a SOC 2 evidence package.
-- **Your app is trivially small.** For a static marketing site or a five-endpoint CRUD app, a good SAST scanner plus [proper Supabase row-level-security review](/en/notes/supabase-rls-production-bugs-need-real-engineer-2026) catches most of what matters at a fraction of the cost and complexity.
+- **Your app is trivially small.** For a static marketing site or a five-endpoint CRUD app, a good SAST scanner plus [proper Supabase row-level-security review](/notes/supabase-rls-production-bugs-need-real-engineer-2026) catches most of what matters at a fraction of the cost and complexity.
 
 None of these are reasons the tool is bad — they're reasons to match it to the job. Strix is a scalpel for application-layer security, not a Swiss Army knife for your whole stack.`,
         },
         {
             heading: 'How I\'d wire Strix into a real MVP\'s CI pipeline',
-            content: `Here's the part the other write-ups skip: running Strix once from your laptop is a demo. The value is continuous, and getting there without lighting money on fire takes some wiring. This is how I'd ship it for a client MVP — the same discipline I apply when I [build an MVP in six weeks](/en/services/6-week-mvp) and have to hand it over without security debt baked in.
+            content: `Here's the part the other write-ups skip: running Strix once from your laptop is a demo. The value is continuous, and getting there without lighting money on fire takes some wiring. This is how I'd ship it for a client MVP — the same discipline I apply when I [build an MVP in six weeks](/services/6-week-mvp) and have to hand it over without security debt baked in.
 
 **1. Gate pull requests on the diff, not the whole app.** A full deep scan on every PR is slow and expensive. Use diff-scoped mode so the agent only tests what changed:
 
@@ -151,17 +151,17 @@ This is the whole trick to affordability. The developer who introduced the bug i
 
 **5. Budget the aggregate, not just the run.** A per-run cap protects one PR; you also want a monthly ceiling. On a busy repo, dozens of PRs a day at $4 each adds up. Track it, and drop non-\`main\` branches to \`quick\` scans while reserving \`deep\` for nightly runs against the full staging environment.
 
-The failure mode I'd actually worry about isn't the tool missing a bug — it's a team wiring it in, watching it produce a confident PoC on a staging-only quirk, and quietly disabling it a month later. Security tooling dies from lost trust, not from lost coverage. If you want a second set of hands to wire this in properly — CI gating, budget caps, staging isolation, and the human triage layer that keeps it trusted — that's exactly the kind of work I do as a [founding engineer for hire](/en/services/hire-founding-engineer-india).`,
+The failure mode I'd actually worry about isn't the tool missing a bug — it's a team wiring it in, watching it produce a confident PoC on a staging-only quirk, and quietly disabling it a month later. Security tooling dies from lost trust, not from lost coverage. If you want a second set of hands to wire this in properly — CI gating, budget caps, staging isolation, and the human triage layer that keeps it trusted — that's exactly the kind of work I do as a [founding engineer for hire](/services/hire-founding-engineer-india).`,
         },
         {
             heading: 'The bottom line',
             content: `Strix earned its #1 trending spot because it fixes the thing developers actually hate about security tools: findings you can't trust. By refusing to report a bug it hasn't exploited, it turns a noisy dashboard into a short list of confirmed, reproducible problems — and its **96% XBEN score** says the approach holds up under measurement. It won't test your network, it'll spend your API budget if you let it, and it needs a safe target and a human reviewer to be safe and useful. But for putting real, application-layer security testing *inside* a fast-moving MVP pipeline, it's the most practical open-source option shipping today.
 
-Start small: install it, run a quick scan against a staging copy of one service, read the PoCs it produces, and decide for yourself whether the findings are real. They usually are — that's the point. If you're building something and want security wired in from the first sprint instead of bolted on after a breach, [that's what I help founders do](/en/services/6-week-mvp).`,
+Start small: install it, run a quick scan against a staging copy of one service, read the PoCs it produces, and decide for yourself whether the findings are real. They usually are — that's the point. If you're building something and want security wired in from the first sprint instead of bolted on after a breach, [that's what I help founders do](/services/6-week-mvp).`,
         },
     ],
     cta: {
         text: 'Ship your MVP with security wired in from day one',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

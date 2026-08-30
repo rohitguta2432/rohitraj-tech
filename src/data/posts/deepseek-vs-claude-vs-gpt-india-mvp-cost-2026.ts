@@ -28,7 +28,7 @@ export const deepseekVsClaudeVsGptIndiaMvpCost2026: BlogPost = {
     },
     {
       heading: 'What Just Changed on 2026-05-22',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 DeepSeek had been running a 75% off promotion on V4 Pro since the model launched. The promo was scheduled to expire on 2026-05-31 15:59 UTC. Two days ago, the official [API docs page](https://api-docs.deepseek.com/quick_start/pricing) was quietly updated — the expiration was removed and the discount converted to standard pricing. [Engadget](https://www.engadget.com/2180062/deepseek-permanently-reduces-the-price-of-its-flagship-v4-model-by-75-percent/), [The Tech Portal](https://thetechportal.com/2026/05/23/chinas-deepseek-permanently-cuts-prices-of-flagship-v4-pro-ai-model-by-75/), and [TheNextWeb](https://thenextweb.com/news/deepseek-v4-pro-price-cut-75-percent) all confirmed within 24 hours. The HN front-page thread hit 437 points and 250 comments.
 
@@ -56,14 +56,14 @@ The eye-popping number is **output cost**. DeepSeek V4 Pro's $0.87/M output is:
 - **11× cheaper than Gemini 2.5 Pro** ($10 → $0.87)
 - **7× cheaper than Mistral Large 2** ($6 → $0.87)
 
-For a concrete India MVP scenario — assume the [MyFinancial](https://rohitraj.tech/en/projects/myfinancial) chatbot pattern: ~80M tokens/month split roughly 70% input / 30% output (most LLM apps tilt input-heavy because of system prompts and RAG context):
+For a concrete India MVP scenario — assume the [MyFinancial](https://rohitraj.tech/projects/myfinancial) chatbot pattern: ~80M tokens/month split roughly 70% input / 30% output (most LLM apps tilt input-heavy because of system prompts and RAG context):
 
 - **DeepSeek V4 Pro**: 56M × $0.435 + 24M × $0.87 = $24.36 + $20.88 = **$45.24/month**
 - **Claude Sonnet 4.6**: 56M × $3 + 24M × $15 = $168 + $360 = **$528/month**
 - **GPT-5.5**: 56M × $5 + 24M × $30 = $280 + $720 = **$1,000/month**
 - **Gemini 2.5 Pro**: 56M × $1.25 + 24M × $10 = $70 + $240 = **$310/month**
 
-That's the difference between "the bot pays for itself at 4 paying users" (DeepSeek) and "I need 30 paying users before this is cash-flow positive" (GPT-5.5). For a pre-revenue MVP — exactly the [6-week MVP](/en/services/6-week-mvp) profile we ship with most weeks — this changes which models are viable at all.
+That's the difference between "the bot pays for itself at 4 paying users" (DeepSeek) and "I need 30 paying users before this is cash-flow positive" (GPT-5.5). For a pre-revenue MVP — exactly the [6-week MVP](/services/6-week-mvp) profile we ship with most weeks — this changes which models are viable at all.
 
 One asterisk worth pinning: **the cache hit rate matters more than the cache hit price**. DeepSeek caches aggressively (anything seen in the last hour with the same prefix), so for chatbots with stable system prompts the effective input cost trends toward $0.003625/M — call it free. Claude and GPT cache too, but with shorter TTLs and stricter prefix matching. Real-world cache hit rate on production RAG: DeepSeek ~70-80%, Claude ~40-55%, GPT ~30-45%. That widens DeepSeek's lead further.`,
     },
@@ -87,7 +87,7 @@ Two patterns to notice:
 
 **Pattern 2: Agentic + multi-file work shows the real gap.** Terminal-Bench (the model running tools in a loop) and SWE-bench Pro (editing across files in a real repo) are where Claude Opus and GPT-5.5 still earn their premium. The gap is ~15 percentage points on Terminal-Bench — meaning if you're building a coding agent that goes off and writes 10 files, Claude or GPT will succeed roughly 5-7 more times out of 10 attempts. At MVP volumes, that's the difference between "demo works" and "demo blows up on stage."
 
-For the chatbot / RAG / summarization workloads that make up 80% of the India MVPs I see ([fintech](/en/services/fintech-app-development), [healthtech](/en/services/healthcare-clinic-app), customer support, content generation), DeepSeek V4 Pro is in striking distance of Claude Sonnet 4.6 — within 3-5 points on every benchmark that matters for those workloads.`,
+For the chatbot / RAG / summarization workloads that make up 80% of the India MVPs I see ([fintech](/services/fintech-app-development), [healthtech](/services/healthcare-clinic-app), customer support, content generation), DeepSeek V4 Pro is in striking distance of Claude Sonnet 4.6 — within 3-5 points on every benchmark that matters for those workloads.`,
     },
     {
       heading: 'Quickest Possible DeepSeek V4 Pro Call (the OpenAI-compatible API)',
@@ -124,7 +124,7 @@ Three details to pin before shipping production:
       heading: 'When DeepSeek V4 Pro Wins the India MVP Decision',
       content: `Pick DeepSeek V4 Pro as your default LLM if any of these apply:
 
-**1. Pre-revenue MVP burning <$5K/month total.** The API bill compounds. Saving 80-95% of LLM cost frees up budget for [Vercel](/en/notes/vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026), Postgres, Resend, and a part-time SRE. For most clients we onboard via [the 6-week MVP track](/en/services/6-week-mvp), this is a budget-or-die decision.
+**1. Pre-revenue MVP burning <$5K/month total.** The API bill compounds. Saving 80-95% of LLM cost frees up budget for [Vercel](/notes/vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026), Postgres, Resend, and a part-time SRE. For most clients we onboard via [the 6-week MVP track](/services/6-week-mvp), this is a budget-or-die decision.
 
 **2. RAG-heavy chatbot / docs search / customer support.** The workload is input-heavy (long retrieved context) and output-light (short answers). DeepSeek's $0.003625/M cache-hit price means the system prompt + retrieved chunks are essentially free on the 2nd+ query. Compounded over 50K queries/month, this kills Claude's input cost.
 
@@ -134,19 +134,19 @@ Three details to pin before shipping production:
 
 **5. The price-discount window for testing.** Even if you eventually move to Claude/GPT for production, **prototype on DeepSeek**. Throw 50M tokens at it during the 6-week MVP build to validate the use case before committing budget. The opportunity cost of a $50 DeepSeek bill vs a $700 Claude bill during exploration is exactly zero downside.
 
-Most of the clients I work with through the [hire-founding-engineer-india](/en/services/hire-founding-engineer-india) track end up in a hybrid setup: DeepSeek as the default model, Claude Sonnet 4.6 as the "escalation" route for the 5-10% of queries that fail validation. The router itself is a 50-line function. Total cost: ~$80-120/month for what would have been $600-1000/month on Claude-only.`,
+Most of the clients I work with through the [hire-founding-engineer-india](/services/hire-founding-engineer-india) track end up in a hybrid setup: DeepSeek as the default model, Claude Sonnet 4.6 as the "escalation" route for the 5-10% of queries that fail validation. The router itself is a 50-line function. Total cost: ~$80-120/month for what would have been $600-1000/month on Claude-only.`,
     },
     {
       heading: 'When You Still Pay Claude or GPT (Honest Edge Cases)',
       content: `DeepSeek isn't the right call for every workload. Here is when the price-per-token math actually loses:
 
-**Agentic coding assistants.** If you're building Cursor / Lovable / Bolt / v0 — a tool where the LLM writes code across files in a loop — Claude Opus 4.7 or GPT-5.5 wins. The 15-point Terminal-Bench gap is the difference between "users finish a session" and "users rage-quit." We compare this tradeoff for indie devs in [V0 by Vercel vs Hire Developer 2026](/en/notes/v0-by-vercel-vs-hire-developer-2026).
+**Agentic coding assistants.** If you're building Cursor / Lovable / Bolt / v0 — a tool where the LLM writes code across files in a loop — Claude Opus 4.7 or GPT-5.5 wins. The 15-point Terminal-Bench gap is the difference between "users finish a session" and "users rage-quit." We compare this tradeoff for indie devs in [V0 by Vercel vs Hire Developer 2026](/notes/v0-by-vercel-vs-hire-developer-2026).
 
 **Compliance-sensitive Western customers.** DeepSeek is China-hosted by default. EU/US enterprise buyers will refuse on data-residency grounds. The OpenRouter / Fireworks / Together proxies solve this for some companies, but add 30-40% margin back on top — which often closes the cost gap with Claude.
 
 **Voice / real-time latency-critical UX.** DeepSeek API latency from Indian users averages 800-1200ms first-token (China routing). Claude (US/EU regions) lands at 400-600ms. GPT-5.5 at ~300ms. For a voice agent or live coding assistant, the latency gap eats UX before the cost savings matter.
 
-**Strict structured output / strict JSON.** Claude's tool-use mode and GPT's JSON-mode hit ~97-99% schema adherence. DeepSeek lands at 85-90%. For workflows that must parse perfectly — invoice extraction, form filling, contract clauses — the 10% retry rate kills the cost advantage. (See the [Supabase RLS post](/en/notes/supabase-rls-production-bugs-need-real-engineer-2026) for what production "10% silent failure" looks like in practice.)
+**Strict structured output / strict JSON.** Claude's tool-use mode and GPT's JSON-mode hit ~97-99% schema adherence. DeepSeek lands at 85-90%. For workflows that must parse perfectly — invoice extraction, form filling, contract clauses — the 10% retry rate kills the cost advantage. (See the [Supabase RLS post](/notes/supabase-rls-production-bugs-need-real-engineer-2026) for what production "10% silent failure" looks like in practice.)
 
 **Long-tail languages / niche knowledge.** DeepSeek's training set tilts Mandarin + English. For Indic-language tasks (Hindi, Telugu, Tamil, Bengali summarization), Gemini 2.5 Pro and Claude Sonnet 4.6 still outperform on nuance and idiom. If your MVP is Indic-language-first, run a 100-sample blind eval before committing.
 
@@ -179,7 +179,7 @@ async function routeLLM({ user, task, prompt }) {
 
 **2. Cache-warming on system prompts.** DeepSeek's cache is prefix-based. Stuff your system prompt, RAG retrievals, and few-shot examples in a stable order at the top of every message. The first request is $0.435/M; everything for the next ~1 hour is $0.003625/M. Sloppy prompt construction costs you 100× on input.
 
-**3. Rate-limit budget with circuit breaker.** DeepSeek's published rate limits are tighter than Claude's during peak China hours (8-11pm IST = 11pm-2am China). Set a per-user concurrency cap of 3 and a circuit breaker that auto-routes to Claude after 5 consecutive 429s. We learned this the hard way during a [demo for a UPI fraud detection client](/en/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector).
+**3. Rate-limit budget with circuit breaker.** DeepSeek's published rate limits are tighter than Claude's during peak China hours (8-11pm IST = 11pm-2am China). Set a per-user concurrency cap of 3 and a circuit breaker that auto-routes to Claude after 5 consecutive 429s. We learned this the hard way during a [demo for a UPI fraud detection client](/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector).
 
 **4. Observability you actually need.** Track three numbers per request:
 - \`prompt_cache_hit_ratio\` — should trend toward 0.7+ within the first day of production. If it stays at 0.2, your prompt construction is broken.
@@ -198,7 +198,7 @@ That's the production wiring. Total integration time on the last MVP we shipped:
 
 **Long-running agentic loops with >20 tool calls.** The accumulated JSON-mode degradation across 20+ calls compounds. By call 12-15 you start seeing schema misses, which the loop interprets as task failures and retries — driving cost up 3-4× from the predicted budget. Claude Opus 4.7 or GPT-5.5 stays robust here.
 
-**Anything with PII flowing to China.** Even with a US-region proxy, the policy story for enterprise buyers gets harder. Sales cycles on India PSUs are easier; sales cycles on European enterprise are 4× longer. If your sales pipeline tilts EU, build on Claude or [Mistral Large 2](/en/notes/v0-by-vercel-vs-hire-developer-2026) from day one.
+**Anything with PII flowing to China.** Even with a US-region proxy, the policy story for enterprise buyers gets harder. Sales cycles on India PSUs are easier; sales cycles on European enterprise are 4× longer. If your sales pipeline tilts EU, build on Claude or [Mistral Large 2](/notes/v0-by-vercel-vs-hire-developer-2026) from day one.
 
 Wait on these decisions if you're in this position. Re-evaluate in 60 days — DeepSeek has signaled US-region inference is on the 2026 roadmap, and the JSON-mode improvements coming in V4-Pro-1.5 (rumored Q3 2026 per HN comment chain) close the structured-output gap further.`,
     },
@@ -223,11 +223,11 @@ OpenRouter adds ~5% margin. Fireworks adds ~15-25%. Even at Fireworks pricing, D
 Sarvam AI uses DeepSeek for several Indic-language pipelines; Krutrim has integrated it as a fallback model. On the indie side, multiple founders on Indian Indie Hackers and HasGeek have posted cost-reduction case studies in the last 30 days.
 
 **How do I migrate from Claude or GPT to DeepSeek without breaking my current users?**
-Run dual-call mode for a week — every request hits both models, you compare outputs on a 100-prompt blind eval. Pick the threshold where DeepSeek matches Claude on your specific workload. Then route by tier. The [6-week MVP](/en/services/6-week-mvp) build includes exactly this evaluation harness as standard.`,
+Run dual-call mode for a week — every request hits both models, you compare outputs on a 100-prompt blind eval. Pick the threshold where DeepSeek matches Claude on your specific workload. Then route by tier. The [6-week MVP](/services/6-week-mvp) build includes exactly this evaluation harness as standard.`,
     },
   ],
   cta: {
     text: 'Ship your DeepSeek-routed MVP in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

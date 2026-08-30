@@ -27,13 +27,13 @@ export const aiGeneratedCodeAntiPatternsFixes2026: BlogPost = {
     },
     {
       heading: 'AI-Generated Code Anti-Patterns: The 9 Bugs Hiding in Vibe-Coded Apps',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 AI coding agents have changed what one founder can ship in a weekend. Cursor + Claude, Lovable, Bolt, v0, Replit Agent, GitHub Copilot — all of them now generate 70% of a working MVP from a prompt. That part is genuinely extraordinary, and this post is not "AI builders are bad." They are not.
 
 The point is narrower and more useful: AI-generated code fails in *predictable* ways. The generation models are trained on public code that is heavy on tutorials, demos, and happy-path snippets, and light on the boring production scaffolding — input validation, authorization checks, idempotency, connection lifecycle, migrations. So the model reproduces that distribution. It writes the part that demos well and silently omits the part that survives 500 users.
 
-I review and rescue vibe-coded MVPs as part of my work, and after enough of them you stop seeing unique bugs and start seeing the same nine shapes over and over. This post names all nine, shows the before/after fix for the worst of them, gives you a comparison of how to actually catch them, and ends with the exact checklist I run on a fresh AI-generated codebase. Read the [Lovable production-bugs playbook](/en/notes/lovable-app-production-bugs-need-real-engineer-2026) next if you want the rescue-cost breakdown.`,
+I review and rescue vibe-coded MVPs as part of my work, and after enough of them you stop seeing unique bugs and start seeing the same nine shapes over and over. This post names all nine, shows the before/after fix for the worst of them, gives you a comparison of how to actually catch them, and ends with the exact checklist I run on a fresh AI-generated codebase. Read the [Lovable production-bugs playbook](/notes/lovable-app-production-bugs-need-real-engineer-2026) next if you want the rescue-cost breakdown.`,
     },
     {
       heading: 'Why does AI-generated code have more bugs than human-written code?',
@@ -70,7 +70,7 @@ app.post('/users', (req, res) => {
 });
 \`\`\`
 
-This is the exact pattern I enforce on [myFinancial](/en/projects) — every API boundary parses with Zod before anything touches the database. Catching one bad-input bug pays for the whole habit.
+This is the exact pattern I enforce on [myFinancial](/projects) — every API boundary parses with Zod before anything touches the database. Catching one bad-input bug pays for the whole habit.
 
 **2. Optimistic Auth.** The agent adds an auth middleware to the routes that existed when you wrote the prompt — then every *new* route you ask it to add later quietly ships without the guard. The login page is protected; the \`/admin/export\` endpoint you added three prompts later is wide open. Fix: default-deny at the router level, then explicitly allow public routes, so a forgotten guard fails closed instead of open.
 
@@ -89,7 +89,7 @@ app.get('/invoices/:id', requireLogin, (req, res) => {
 });
 \`\`\`
 
-This is the same class of hole that shows up as RLS misconfiguration on Supabase stacks — see [the Supabase RLS leak post](/en/notes/supabase-rls-production-bugs-need-real-engineer-2026) for the Postgres-policy version of the exact same bug.`,
+This is the same class of hole that shows up as RLS misconfiguration on Supabase stacks — see [the Supabase RLS leak post](/notes/supabase-rls-production-bugs-need-real-engineer-2026) for the Postgres-policy version of the exact same bug.`,
     },
     {
       heading: 'Anti-patterns 4-6: The reliability time bombs that crash you at scale',
@@ -149,7 +149,7 @@ The "accept-without-read" pattern — engineer requests a fix, agent produces a 
 8. **Migrations** — confirm every schema change has a non-destructive, tested, reversible migration file.
 9. **Observability** — structured logs with request IDs, error tracking wired up, and at least one *meaningful* assertion per test.
 
-If you are running a vibe-coded app in production and have not done this pass, points 1, 2, 3, and 8 are the highest priority — they are the ones that leak data or lose it. The rest cost you velocity; those four cost you customers. The [vibe-coding-vs-hiring decision post](/en/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks) covers when this review work is worth doing in-house versus contracting out.`,
+If you are running a vibe-coded app in production and have not done this pass, points 1, 2, 3, and 8 are the highest priority — they are the ones that leak data or lose it. The rest cost you velocity; those four cost you customers. The [vibe-coding-vs-hiring decision post](/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks) covers when this review work is worth doing in-house versus contracting out.`,
     },
     {
       heading: 'When is vibe-coded code actually safe to ship?',
@@ -157,15 +157,15 @@ If you are running a vibe-coded app in production and have not done this pass, p
 
 **Ship it without the full review when:** it is a throwaway prototype or demo; an internal tool used by people you trust; a landing page or marketing site with no auth and no user data; or an early product with under ~100 users where you can tolerate a bug and a quick fix. In these cases the speed of AI generation is pure upside, and a full security review is over-engineering. Use the free table-stakes layer (ESLint + types + Zod at boundaries) and move on.
 
-**Do the full review — or hire someone who can — when:** real user data is involved (PII, anything regulated); money moves through the app (payments, payouts, credits); you have B2B customers with security questionnaires; or a data leak would end the company. The math is simple: a planned half-day review is cheap insurance; an emergency rescue after a Saturday-night IDOR leak runs $9-17K and a reputation hit, as I broke down in the [Lovable rescue-cost post](/en/notes/lovable-app-production-bugs-need-real-engineer-2026).
+**Do the full review — or hire someone who can — when:** real user data is involved (PII, anything regulated); money moves through the app (payments, payouts, credits); you have B2B customers with security questionnaires; or a data leak would end the company. The math is simple: a planned half-day review is cheap insurance; an emergency rescue after a Saturday-night IDOR leak runs $9-17K and a reputation hit, as I broke down in the [Lovable rescue-cost post](/notes/lovable-app-production-bugs-need-real-engineer-2026).
 
 AI coding agents are the best leverage a solo founder has ever had. Treat their output the way you would treat a fast, brilliant, slightly careless junior engineer: ship the low-stakes work freely, and read every line that touches auth, money, or data.
 
-Need a second set of eyes on an AI-generated codebase before it hits real users? [I run fixed-scope MVP builds and rescue audits in 6 weeks](/en/services/6-week-mvp), or you can [hire a founding engineer in India](/en/services/hire-founding-engineer-india) to own the review pass and the production hardening ongoing.`,
+Need a second set of eyes on an AI-generated codebase before it hits real users? [I run fixed-scope MVP builds and rescue audits in 6 weeks](/services/6-week-mvp), or you can [hire a founding engineer in India](/services/hire-founding-engineer-india) to own the review pass and the production hardening ongoing.`,
     },
   ],
   cta: {
     text: 'Book an AI-Code Review Audit',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

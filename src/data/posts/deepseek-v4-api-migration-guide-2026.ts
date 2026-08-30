@@ -27,13 +27,13 @@ export const deepseekV4ApiMigrationGuide2026: BlogPost = {
         },
         {
             heading: 'DeepSeek V4 API Migration: What Breaks on July 24, 2026',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 There's a special category of API change that doesn't trend on Hacker News but quietly breaks thousands of production systems on a scheduled date. DeepSeek's model-name retirement is the next one on the calendar: on **July 24, 2026 at 15:59 UTC**, the \`deepseek-chat\` and \`deepseek-reasoner\` identifiers stop resolving. Not "deprecated with a warning header." Not "redirected to the nearest equivalent." [DeepSeek's own words](https://api-docs.deepseek.com/news/news260424/): *"fully retired and inaccessible."*
 
 The reason this one deserves your attention now rather than on July 25 is that the migration looks trivial — change two strings — but ships with behavioral changes that string-swapping doesn't surface. DeepSeek V4 launched as a preview on **April 24, 2026**, and since then the legacy names have silently routed to \`deepseek-v4-flash\`: your app has already been running on V4 for weeks whether you noticed or not. What changes on July 24 is that the aliases disappear, and with them the last excuse to avoid understanding what V4 actually did to thinking mode, token budgets, and pricing.
 
-This guide is the working developer's version: the exact mapping, the before/after code, the cost gotcha that turns a cheap endpoint into an expensive one, the Flash-vs-Pro decision, and how I'd stage this cutover on a production system rather than YOLO-ing it the night before. If you also call OpenAI's stack, the same tier-selection thinking applies there — I wrote up [the GPT-5.6 Sol/Terra/Luna split](/en/notes/gpt-5-6-sol-terra-luna-api-guide-2026) last week, and the parallels are striking: every frontier lab is collapsing model zoos into fewer names with per-request behavior switches.`,
+This guide is the working developer's version: the exact mapping, the before/after code, the cost gotcha that turns a cheap endpoint into an expensive one, the Flash-vs-Pro decision, and how I'd stage this cutover on a production system rather than YOLO-ing it the night before. If you also call OpenAI's stack, the same tier-selection thinking applies there — I wrote up [the GPT-5.6 Sol/Terra/Luna split](/notes/gpt-5-6-sol-terra-luna-api-guide-2026) last week, and the parallels are striking: every frontier lab is collapsing model zoos into fewer names with per-request behavior switches.`,
         },
         {
             heading: 'Will my API calls break on July 24?',
@@ -112,7 +112,7 @@ The math makes it concrete. [Official V4 pricing](https://api-docs.deepseek.com/
 
 The defense is one line: **make thinking explicit on every call**, never default. \`{"thinking": {"type": "disabled"}}\` on cheap paths, \`enabled\` where you actually want reasoning. Then verify with usage data, not vibes — DeepSeek's response objects report token usage, and a one-day before/after comparison on your busiest route will catch a silent thinking flip immediately.
 
-The flip side is real, though: that same parameter is a gift for cost tuning. Workloads that used to need two model integrations (chat for cheap, reasoner for smart) now need one integration with a per-request switch. In [Resolvr](https://rohitraj.tech/en/projects), my support-resolution agent, the RAG answer path runs cheap non-thinking calls for ticket triage but flips thinking on for the small fraction of tickets that fail a confidence check — one client, one model name, two cost profiles. That pattern was clumsy across two model names; as a boolean it's trivial.`,
+The flip side is real, though: that same parameter is a gift for cost tuning. Workloads that used to need two model integrations (chat for cheap, reasoner for smart) now need one integration with a per-request switch. In [Resolvr](https://rohitraj.tech/projects), my support-resolution agent, the RAG answer path runs cheap non-thinking calls for ticket triage but flips thinking on for the small fraction of tickets that fail a confidence check — one client, one model name, two cost profiles. That pattern was clumsy across two model names; as a boolean it's trivial.`,
         },
         {
             heading: 'DeepSeek V4-Flash vs V4-Pro: which should you migrate to?',
@@ -135,7 +135,7 @@ Three takeaways from that table:
 
 **Both models use DeepSeek Sparse Attention (DSA) plus token-wise compression** to make the 1M context economically viable — this is why a 1M-window model can price input at $0.14/M when competitors charge 5-10x that for smaller windows. DeepSeek claims reasoning on Flash "closely approaches" Pro; benchmark-chasing aside, the practical question is whether your specific failure cases (long-horizon agent runs, gnarly refactors) actually improve on Pro enough to justify 3.1x the output price. Run your own evals on 50 real tasks; don't buy the flagship on reflex.
 
-**Against Western frontier pricing, V4-Flash is an order of magnitude cheaper on output.** How much does DeepSeek V4 cost compared to other frontier APIs? Flash's $0.28/M output is roughly **35x cheaper** than GPT-5.6 Terra-class output pricing, and Pro at $0.87/M still undercuts everything in the Western frontier tier. I covered the cheapest-multimodal angle in [my DeepSeek V4 Vision writeup](/en/notes/deepseek-v4-vision-cheapest-multimodal-api-2026) — the economics story hasn't changed, it's just now mandatory to engage with it.`,
+**Against Western frontier pricing, V4-Flash is an order of magnitude cheaper on output.** How much does DeepSeek V4 cost compared to other frontier APIs? Flash's $0.28/M output is roughly **35x cheaper** than GPT-5.6 Terra-class output pricing, and Pro at $0.87/M still undercuts everything in the Western frontier tier. I covered the cheapest-multimodal angle in [my DeepSeek V4 Vision writeup](/notes/deepseek-v4-vision-cheapest-multimodal-api-2026) — the economics story hasn't changed, it's just now mandatory to engage with it.`,
         },
         {
             heading: 'Can I use DeepSeek V4 with the Anthropic SDK and Claude Code?',
@@ -173,7 +173,7 @@ If you want the local-weights escape hatch instead: quantized **[DeepSeek-V4-Fla
         },
         {
             heading: 'How I would ship this migration in production',
-            content: `Here's the rollout I'd run for a client system doing meaningful DeepSeek volume — the same staged pattern I use for any [6-week MVP](/en/services/6-week-mvp) that touches a third-party model API:
+            content: `Here's the rollout I'd run for a client system doing meaningful DeepSeek volume — the same staged pattern I use for any [6-week MVP](/services/6-week-mvp) that touches a third-party model API:
 
 **Day 1 — inventory and pin.** \`rg "deepseek-(chat|reasoner)"\` across code, configs, CI, and dashboards. Every hit gets a ticket. Then pin a **regression suite**: capture 100 real request/response pairs from production traffic on the legacy names (they're already V4-Flash under the hood, so these captures *are* your target behavior). This is your ground truth.
 
@@ -183,17 +183,17 @@ If you want the local-weights escape hatch instead: quantized **[DeepSeek-V4-Fla
 
 **Day 5 — delete the old names from your codebase entirely.** Not "leave them as fallback." Fallback-to-a-dead-name is a latent outage scheduled for July 24 at 15:59 UTC.
 
-The meta-lesson I'd flag for anyone building agentic products: **model names are now infrastructure**, and vendors are consolidating them fast — DeepSeek collapsed two names into one with a parameter, [OpenAI split GPT-5.6 into three tiers](/en/notes/gpt-5-6-sol-terra-luna-api-guide-2026), and every gateway in between is absorbing the churn. Hardcoding a model string in 14 places was always sloppy; in 2026 it's a recurring production incident. Put the model ID and thinking config in one config object, injected everywhere, versioned in git. Ten minutes of plumbing, and the next deprecation — there will be a next one — is a one-line PR.`,
+The meta-lesson I'd flag for anyone building agentic products: **model names are now infrastructure**, and vendors are consolidating them fast — DeepSeek collapsed two names into one with a parameter, [OpenAI split GPT-5.6 into three tiers](/notes/gpt-5-6-sol-terra-luna-api-guide-2026), and every gateway in between is absorbing the churn. Hardcoding a model string in 14 places was always sloppy; in 2026 it's a recurring production incident. Put the model ID and thinking config in one config object, injected everywhere, versioned in git. Ten minutes of plumbing, and the next deprecation — there will be a next one — is a one-line PR.`,
         },
         {
             heading: 'Migrating an AI product under a deadline? That is literally my job',
             content: `If your product is sitting on \`deepseek-chat\` with 11 days on the clock — or you're mid-build and the model-provider churn keeps eating sprint time — this is the kind of work I ship for clients: API migrations with pinned regression suites, cost-tuned model routing, and agent stacks that don't fall over when a vendor renames things.
 
-I build production AI products in [6-week MVP sprints](/en/services/6-week-mvp) — scoped, fixed-price, shipped live — and for teams that need ongoing ownership of an AI stack, I work as a [founding engineer](/en/services/hire-founding-engineer-india) handling exactly this class of infrastructure decision. If July 24 is making you nervous, the fix is a config object and a canary, not a rewrite — [get in touch](/en/contact) and we'll stage it properly.`,
+I build production AI products in [6-week MVP sprints](/services/6-week-mvp) — scoped, fixed-price, shipped live — and for teams that need ongoing ownership of an AI stack, I work as a [founding engineer](/services/hire-founding-engineer-india) handling exactly this class of infrastructure decision. If July 24 is making you nervous, the fix is a config object and a canary, not a rewrite — [get in touch](/contact) and we'll stage it properly.`,
         },
     ],
     cta: {
         text: 'Ship your AI product in 6 weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

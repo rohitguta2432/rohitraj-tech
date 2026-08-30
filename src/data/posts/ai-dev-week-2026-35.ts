@@ -30,7 +30,7 @@ export const aiDevWeek2026W35: BlogPost = {
     },
     {
       heading: 'Why Every Drop This Week Points the Same Direction',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Six unrelated things happened this week — a spend dataset, a pricing-page footnote, a withheld weights release, a community quant, a leaderboard position, and a chip announcement. They are the same story told six times.
 
@@ -91,7 +91,7 @@ For two years the default assumption was that the most capable model wins the bu
       heading: 'Qwen3.8-27B Lands 9th on Code Arena — Gemma 4 31B Is 80th',
       content: `**What:** An r/LocalLLaMA thread today put **Qwen3.8-27B** in **9th** position on code arena, with **Gemma 4 31B** — a **larger** model — sitting at **80th**. Qwen3.8-27B is also the **#1 trending model on Hugging Face** right now with **12,547 likes**, and the trending page is currently five separate Qwen3.8-27B repackagings deep.
 
-**Why it matters:** A dense **27B** under **Apache 2.0** placing top-10 against paid frontier entries is the clearest data point yet that the capability gap closed at the small end. I walked the full 24 GB build — quant selection, \`llama-server\` flags, router wiring — in [yesterday's deep-dive on running Qwen3.8-27B as a local coding agent](/en/notes/qwen3-8-27b-local-coding-agent-claude-code-2026). Parameter-count-equals-quality is done: Gemma 4 31B is 15% **larger** and 71 places worse.
+**Why it matters:** A dense **27B** under **Apache 2.0** placing top-10 against paid frontier entries is the clearest data point yet that the capability gap closed at the small end. I walked the full 24 GB build — quant selection, \`llama-server\` flags, router wiring — in [yesterday's deep-dive on running Qwen3.8-27B as a local coding agent](/notes/qwen3-8-27b-local-coding-agent-claude-code-2026). Parameter-count-equals-quality is done: Gemma 4 31B is 15% **larger** and 71 places worse.
 
 **Source:** [Qwen/Qwen3.8-27B on Hugging Face](https://huggingface.co/Qwen/Qwen3.8-27B)
 
@@ -113,7 +113,7 @@ For two years the default assumption was that the most capable model wins the bu
 
 The test I care about is not a benchmark: does the 35B-A3B answer **fast enough** that I stop context-switching while it works? Qwen3.8-27B is more accurate and slow enough that I tab away, which costs more than the accuracy gains. Roughly 3B active params should invert that.
 
-The failure mode I expect, and the one no model card will tell you: MoE models under aggressive quantization degrade unevenly. A 22.4 GB Q4 that holds up on Python refactors can fall apart on a language thinly represented in the imatrix calibration set. So the plan is a small fixed suite of my own past commits, re-run against both models, before either goes near client work. That suite — not a leaderboard screenshot — is what justifies a routing table on a client [MVP build](/en/services/6-week-mvp).`,
+The failure mode I expect, and the one no model card will tell you: MoE models under aggressive quantization degrade unevenly. A 22.4 GB Q4 that holds up on Python refactors can fall apart on a language thinly represented in the imatrix calibration set. So the plan is a small fixed suite of my own past commits, re-run against both models, before either goes near client work. That suite — not a leaderboard screenshot — is what justifies a routing table on a client [MVP build](/services/6-week-mvp).`,
     },
     {
       heading: 'Skip These',
@@ -127,13 +127,13 @@ The failure mode I expect, and the one no model card will tell you: MoE models u
 
 Most teams I talk to still route everything to one expensive endpoint because that was correct in 2024 and nobody re-measured. Usually a two-day fix against a large recurring line item.
 
-If you are building with any of this and hitting the wall between "the benchmark looked fine" and "it fails on our data," that gap is most of what I do — [see how the 6-week MVP works](/en/services/6-week-mvp), or [hire a founding engineer](/en/services/hire-founding-engineer-india) if you need someone inside the team.
+If you are building with any of this and hitting the wall between "the benchmark looked fine" and "it fails on our data," that gap is most of what I do — [see how the 6-week MVP works](/services/6-week-mvp), or [hire a founding engineer](/services/hire-founding-engineer-india) if you need someone inside the team.
 
-Previously: [Models Day, stolen reasoning, and a $16,000 GPU](/en/notes/ai-dev-week-2026-33).`,
+Previously: [Models Day, stolen reasoning, and a $16,000 GPU](/notes/ai-dev-week-2026-33).`,
     },
   ],
   cta: {
     text: 'Ship an AI-integration MVP in 6 weeks',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

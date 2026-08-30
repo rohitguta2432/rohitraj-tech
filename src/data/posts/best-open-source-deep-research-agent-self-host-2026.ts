@@ -29,7 +29,7 @@ export const bestOpenSourceDeepResearchAgentSelfHost2026: BlogPost = {
         },
         {
             heading: 'Best Open-Source Deep Research Agent to Self-Host in 2026 (Onyx vs DeerFlow vs Perplexica)',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For most of 2024 and 2025, "deep research" meant renting it. You paid OpenAI, Gemini, or Perplexity, sent them your query, and got back a cited report — along with whatever they logged about what you were researching. Self-hosting an equivalent meant accepting a big quality gap.
 
@@ -43,7 +43,7 @@ So the real question stopped being "is open-source good enough?" and became "whi
 
 Around that headline, the whole category levelled up. ByteDance's [DeerFlow](https://github.com/bytedance/deer-flow) crossed **75,000 GitHub stars** after its 2.0 ground-up rewrite (it shares no code with v1). Perplexica — the self-hosted Perplexity clone — passed **33K stars** and rebranded to **Vane**, per the [OSSAlt self-host guide](https://ossalt.com/guides/self-host-perplexica-open-source-perplexity-2026). [Khoj](https://github.com/khoj-ai/khoj), the self-hostable "AI second brain," sits at **35K stars**. These are not weekend toys; they are projects with real contributor bases and Docker images that work.
 
-There's a standards tailwind too. All four plug into tools and data through **MCP**, the protocol [Anthropic donated to the Linux Foundation's new Agentic AI Foundation in June 2026](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation). A vendor-neutral tool protocol is exactly what makes a self-hosted agent portable — you wire a connector once and it works regardless of which model you point at it. If you've followed my [MCP server auth deep-dive](/en/notes/mcp-server-authentication-oauth-guide-2026), this is the same plumbing, one layer up.`,
+There's a standards tailwind too. All four plug into tools and data through **MCP**, the protocol [Anthropic donated to the Linux Foundation's new Agentic AI Foundation in June 2026](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation). A vendor-neutral tool protocol is exactly what makes a self-hosted agent portable — you wire a connector once and it works regardless of which model you point at it. If you've followed my [MCP server auth deep-dive](/notes/mcp-server-authentication-oauth-guide-2026), this is the same plumbing, one layer up.`,
         },
         {
             heading: 'Is there an open-source alternative to Perplexity?',
@@ -51,7 +51,7 @@ There's a standards tailwind too. All four plug into tools and data through **MC
 
 - **[Onyx](https://github.com/onyx-dot-app/onyx) — 30.6K stars.** An open-source AI platform: chat over *any* LLM with RAG, web search, code execution, custom agents, and deep research built in. Its edge is **connectors** — it pre-indexes 40+ sources (Slack, Confluence, Jira, GitHub, Salesforce, Google Drive, Notion) on your own infra, permissions included. This is the one that won DeepResearch Bench. Deploy via Docker, Kubernetes, or Terraform.
 - **[DeerFlow 2.0](https://github.com/bytedance/deer-flow) — 75.3K stars (MIT).** Not a research tool anymore — a **long-horizon SuperAgent harness**. It ships a filesystem, memory, skills, sandbox-aware code execution, and the ability to plan and spawn sub-agents for tasks that run minutes to hours. Built on LangGraph and LangChain. People use it for research, but also data pipelines, slide decks, and dashboards.
-- **Perplexica / Vane — ~33K stars (MIT).** The **lightweight self-hosted Perplexity**. A single Docker image bundles the frontend, API, and a private [SearxNG](https://ossalt.com/guides/self-host-perplexica-open-source-perplexity-2026) metasearch engine, so your searches never touch a third party. Runs 100% local with [Ollama](/en/notes/best-local-llm-for-coding-replace-cloud-2026), or against OpenAI/Anthropic/Groq for speed.
+- **Perplexica / Vane — ~33K stars (MIT).** The **lightweight self-hosted Perplexity**. A single Docker image bundles the frontend, API, and a private [SearxNG](https://ossalt.com/guides/self-host-perplexica-open-source-perplexity-2026) metasearch engine, so your searches never touch a third party. Runs 100% local with [Ollama](/notes/best-local-llm-for-coding-replace-cloud-2026), or against OpenAI/Anthropic/Groq for speed.
 - **[Khoj](https://github.com/khoj-ai/khoj) — 35.4K stars (AGPL-3.0).** A self-hostable **second brain**: it connects to your documents and the web, builds agents, schedules automations, and returns research with **verifiable citations**. Best when the corpus you care about is *your own notes and files*, not the open web.
 
 The dividing line: Onyx and DeerFlow are platforms you build *on*; Perplexica/Vane and Khoj are products you mostly use *as-is*.`,
@@ -115,17 +115,17 @@ The pattern I keep seeing: teams self-host for a *real* reason (sensitive data, 
             heading: 'How I\'d ship a deep-research agent in production',
             content: `Here's the wiring the READMEs leave out. A self-hosted research agent that works in a demo and one that survives production are different systems.
 
-**Route models by step, don't pick one.** A deep-research run is many LLM calls: query planning, sub-question generation, per-source summarizing, and a final synthesis. The first three are cheap, high-volume, and fine on a [local 7–13B model](/en/notes/best-local-llm-for-coding-replace-cloud-2026); only the synthesis needs a frontier model. Wire the agent so the model is a swappable seam per step — most cost overruns I see come from sending every trivial summarize call to an expensive API.
+**Route models by step, don't pick one.** A deep-research run is many LLM calls: query planning, sub-question generation, per-source summarizing, and a final synthesis. The first three are cheap, high-volume, and fine on a [local 7–13B model](/notes/best-local-llm-for-coding-replace-cloud-2026); only the synthesis needs a frontier model. Wire the agent so the model is a swappable seam per step — most cost overruns I see come from sending every trivial summarize call to an expensive API.
 
 **Cap the loop, hard.** An autonomous agent that can spawn sub-agents (DeerFlow) or chase web links (any of them) can also burn your whole token budget on one runaway query. Put a hard step cap, a wall-clock timeout, and a per-query token ceiling on it. None of these tools ships aggressive-enough defaults; treat the limits as something you set, not inherit.
 
 **The integration that won't be in the README:** the web-search tool is your rate-limit and cost liability, not the LLM. A research agent fans out to many searches per query; without a cache and a per-tool rate limit you'll either get throttled by your search provider or run up a surprising bill. Cache aggressively, and for connector-based tools like Onyx's, **honor source permissions on the way out** — it's easy to index a private Slack and then let the agent cite it to someone who shouldn't see it.
 
-**The failure mode I'd worry about** is silent staleness: a self-hosted agent answers confidently from an index that stopped syncing three weeks ago. Monitor index freshness and surface "last synced" in the UI. Most of my client builds ship this kind of AI feature inside a [6-week MVP window](/en/services/6-week-mvp), and the freshness check is always in scope — a research tool that's quietly out of date is worse than none. If you want a second pair of hands wiring a self-hosted research stack into a product without learning these the hard way, [that's the kind of build I do](/en/services/hire-founding-engineer-india).`,
+**The failure mode I'd worry about** is silent staleness: a self-hosted agent answers confidently from an index that stopped syncing three weeks ago. Monitor index freshness and surface "last synced" in the UI. Most of my client builds ship this kind of AI feature inside a [6-week MVP window](/services/6-week-mvp), and the freshness check is always in scope — a research tool that's quietly out of date is worse than none. If you want a second pair of hands wiring a self-hosted research stack into a product without learning these the hard way, [that's the kind of build I do](/services/hire-founding-engineer-india).`,
         },
     ],
     cta: {
         text: 'Want a self-hosted AI research stack wired into your product in 6 weeks?',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

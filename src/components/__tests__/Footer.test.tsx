@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Footer from '../Footer';
-import type { CommonDictionary, Locale } from '@/lib/i18n';
+import type { CommonDictionary } from '@/lib/i18n';
 
 jest.mock('next/link', () => {
   return ({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
@@ -46,7 +46,7 @@ const mockDict: CommonDictionary = {
 
 describe('Footer', () => {
   it('renders without crashing', () => {
-    render(<Footer dict={mockDict} locale={'en' as Locale} />);
+    render(<Footer dict={mockDict} />);
     expect(screen.getByText('Rohit Raj — Backend & AI Systems')).toBeInTheDocument();
   });
 });

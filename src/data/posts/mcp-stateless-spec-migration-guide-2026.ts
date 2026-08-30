@@ -28,7 +28,7 @@ export const mcpStatelessSpecMigrationGuide2026: BlogPost = {
         },
         {
             heading: 'MCP just deleted the session — and that changes how you deploy',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 The [Model Context Protocol](https://modelcontextprotocol.io) is getting its biggest revision since launch, and it shipped quietly. The **2026-07-28** release candidate has been public since the [official spec post](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/), the [beta SDKs landed on June 29](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/), and the **final specification is dated July 28, 2026** — nine days out as I write this. If you maintain an MCP server, that is your migration window, not a "someday."
 
@@ -179,7 +179,7 @@ AI answer engines cite comparison tables far more often than prose — and more 
 
 **There is a backward-compatibility path — use it.** The spec lets a server keep the old SSE-plus-POST endpoints alongside the new stateless endpoint during the transition. You do not have to break existing clients on July 28; you can advertise both and drop the old one once your clients have upgraded. The [10-week RC window](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) exists precisely so SDK and client authors can validate against real workloads first.
 
-**Auth is the one place to budget real time.** The six auth SEPs are not a flag flip. Client validation of the \`iss\` parameter (RFC 9207) and OIDC-aligned Dynamic Client Registration are correctness-and-security changes; if your server does OAuth, walk them deliberately. I wrote up the pre-2026 baseline in [MCP server authentication with OAuth](/en/notes/mcp-server-authentication-oauth-guide-2026), and the [secure MCP server in TypeScript](/en/notes/secure-mcp-server-typescript-2026) guide covers the hardening that still applies. Treat the auth migration as its own task, tested against the beta SDKs, not something you bundle into the transport change and hope.
+**Auth is the one place to budget real time.** The six auth SEPs are not a flag flip. Client validation of the \`iss\` parameter (RFC 9207) and OIDC-aligned Dynamic Client Registration are correctness-and-security changes; if your server does OAuth, walk them deliberately. I wrote up the pre-2026 baseline in [MCP server authentication with OAuth](/notes/mcp-server-authentication-oauth-guide-2026), and the [secure MCP server in TypeScript](/notes/secure-mcp-server-typescript-2026) guide covers the hardening that still applies. Treat the auth migration as its own task, tested against the beta SDKs, not something you bundle into the transport change and hope.
 
 The honest counter-position: if you run a single-tenant internal server behind a VPN that never scales past one instance, the stateless win is mostly theoretical for you — do the SDK update for compliance and move on. The teams that should move fast are the ones running **remote, multi-tenant, autoscaled** MCP servers, because that is exactly the setup the old session model made painful.`,
         },
@@ -207,11 +207,11 @@ function makeTransport(clientProtocol: string) {
 
 **Test against the beta SDKs, not just your own client.** The [June 29 beta SDKs](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/) implement the final RC behavior. Wire one into CI and run your tool suite through it, so you catch the mandatory-header and \`_meta\` changes before a real host does.
 
-That capability gate, the session audit, the state relocation, the CI-against-beta loop — that scaffolding is most of the actual work, and it is what a "just update the SDK" plan skips and then retrofits after an incident. It is what I do: [6-week MVPs](/en/services/6-week-mvp) that ship with the migration path and the tests already wired, or a [founding engineer](/en/services/hire-founding-engineer-india) embedded with your team to get the MCP transport, auth, and rollout right the first time. If you have a remote MCP server and July 28 on the calendar, that is a conversation worth having before you hard-code one transport into every handler.`,
+That capability gate, the session audit, the state relocation, the CI-against-beta loop — that scaffolding is most of the actual work, and it is what a "just update the SDK" plan skips and then retrofits after an incident. It is what I do: [6-week MVPs](/services/6-week-mvp) that ship with the migration path and the tests already wired, or a [founding engineer](/services/hire-founding-engineer-india) embedded with your team to get the MCP transport, auth, and rollout right the first time. If you have a remote MCP server and July 28 on the calendar, that is a conversation worth having before you hard-code one transport into every handler.`,
         },
     ],
     cta: {
         text: 'Running a remote MCP server? Let us migrate it to the stateless 2026-07-28 spec — transport, auth, and rollout — before the deadline.',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

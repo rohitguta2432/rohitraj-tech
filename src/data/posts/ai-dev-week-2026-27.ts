@@ -29,7 +29,7 @@ export const aiDevWeek2026W27: BlogPost = {
     },
     {
       heading: 'Why This Week Is the Local-Agent Stack Growing Up',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 There's a layer of every AI-news cycle the headlines skip — not the models, but the unglamorous plumbing that turns a downloaded checkpoint into something that actually does work. This was the seven days that plumbing finally caught up with the models it has to wrap.
 
@@ -75,7 +75,7 @@ Look at what shipped together. Three open models you run yourself — Ornith-1.0
 
 **Source:** [HF: zai-org/GLM-5.2](https://huggingface.co/zai-org/GLM-5.2)
 
-**Quick take:** I already wrote the full breakdown — [GLM-5.2 vs Claude Opus for coding agents](/en/notes/glm-5-2-vs-claude-opus-coding-agent-2026). Read that before you assume "tops the leaderboard" means "right for your stack." Running 744B params is the part the benchmark doesn't price.`,
+**Quick take:** I already wrote the full breakdown — [GLM-5.2 vs Claude Opus for coding agents](/notes/glm-5-2-vs-claude-opus-coding-agent-2026). Read that before you assume "tops the leaderboard" means "right for your stack." Running 744B params is the part the benchmark doesn't price.`,
     },
     {
       heading: 'Herdr: Should You Run Your Agent Fleet in One Terminal? (Show HN)',
@@ -119,7 +119,7 @@ Look at what shipped together. Three open models you run yourself — Ornith-1.0
     },
     {
       heading: 'What I\'m Shipping With This Week',
-      content: `Concretely: I pulled **Ornith-1.0-9B** down and stood it up as a local Ollama model (\`ornith:9b\`) to be the cheap reasoning tier for [Resolvr](/en/projects), my support-resolution agent — the routine "which knowledge-base doc answers this ticket" work that never needed a frontier API.
+      content: `Concretely: I pulled **Ornith-1.0-9B** down and stood it up as a local Ollama model (\`ornith:9b\`) to be the cheap reasoning tier for [Resolvr](/projects), my support-resolution agent — the routine "which knowledge-base doc answers this ticket" work that never needed a frontier API.
 
 The non-obvious part — the integration that is *not* in the README: the upstream GGUF ships with a **passthrough chat template** (\`{{ .Prompt }}\`) and no stop tokens. Load it as-is and the model never knows when to stop talking — you get a runaway generation loop on the very first turn. The fix is to override the Modelfile with the proper **Qwen3 chat template plus explicit stop tokens** before it's usable at all. Nobody tells you this; you discover it when your first prompt spins for 90 seconds and fills the terminal.
 
@@ -135,13 +135,13 @@ That's the recurring tax on every "just run it locally" drop in this roundup: th
       heading: 'Need Help Wiring This Week\'s Drops Into Your Product?',
       content: `If this week convinced you to run an open model locally for the routine work — standing up **Ornith-1.0-9B** or **Qwen 3.6 27B**, putting a **Wayfinder**-style router in front of a hosted fallback, or letting the serving layer do the orchestration — the download is the easy part. The hard part is the production wiring: templates and stop tokens, quantization and VRAM, deterministic routing, spend caps, and the load tests nobody writes.
 
-That's the [6-week MVP](/en/services/6-week-mvp) playbook — pick the right models and host, wire them into a shipping product, hand over a tested codebase. For a longer build, [Hire a Founding Engineer (India)](/en/services/hire-founding-engineer-india).
+That's the [6-week MVP](/services/6-week-mvp) playbook — pick the right models and host, wire them into a shipping product, hand over a tested codebase. For a longer build, [Hire a Founding Engineer (India)](/services/hire-founding-engineer-india).
 
-Next roundup drops next Tuesday. For the deep-dives behind this week: [GLM-5.2 vs Claude Opus for coding](/en/notes/glm-5-2-vs-claude-opus-coding-agent-2026) and [the best open-source deep-research agent to self-host](/en/notes/best-open-source-deep-research-agent-self-host-2026).`,
+Next roundup drops next Tuesday. For the deep-dives behind this week: [GLM-5.2 vs Claude Opus for coding](/notes/glm-5-2-vs-claude-opus-coding-agent-2026) and [the best open-source deep-research agent to self-host](/notes/best-open-source-deep-research-agent-self-host-2026).`,
     },
   ],
   cta: {
     text: 'Run This Week\'s Open Models in Production — 6-Week MVP Plan',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

@@ -33,7 +33,7 @@ export const drizzleVsPrismaVsTypeormIndiaMvp2026: BlogPost = {
 
 Every "which TypeScript ORM" comparison on the SERP today is either a generic stack-trendiness post from a Western publication or a Drizzle marketing piece that quietly ignores Prisma's introspection wins. Indian founders pay the actual price for picking wrong — Vercel function cold starts get worse from Mumbai because the function is served from Singapore or Frankfurt, every extra MB of bundle adds latency on India's flaky last-mile, and a slow migration story burns a sprint when you need to ship.
 
-This post benchmarks all three on a real MVP shape — Next.js 15 + Postgres on Supabase, deployed to Vercel with the Mumbai region preference, talking to a database in Singapore (the closest Supabase region to India for now). Numbers come from a [MyFinancial](/en/projects/myfinancial) branch I rebuilt three times — once on Prisma, once on Drizzle, once on TypeORM — to compare side by side.
+This post benchmarks all three on a real MVP shape — Next.js 15 + Postgres on Supabase, deployed to Vercel with the Mumbai region preference, talking to a database in Singapore (the closest Supabase region to India for now). Numbers come from a [MyFinancial](/projects/myfinancial) branch I rebuilt three times — once on Prisma, once on Drizzle, once on TypeORM — to compare side by side.
 
 If you only read one rule: **pick Drizzle for new builds, leave Prisma where it already works, and avoid TypeORM unless you are maintaining a 2019 codebase.** The rest of this post is the math.`,
     },
@@ -104,7 +104,7 @@ One more thing — Drizzle's migration files are pure SQL, which means **you can
 
 If you are deploying an India MVP that needs latency below 200ms for users on flaky 4G — think a delivery-app tracker, a live-quote financial dashboard, a WhatsApp-webhook handler — edge runtime is the only Vercel option that fits. That cuts your ORM choice to Drizzle (cleanest) or Prisma-with-adapter (workable). TypeORM is out.
 
-For [MyFinancial](/en/projects/myfinancial)'s public homepage and dashboard fetches I run on edge with Drizzle + Neon — first-byte latency from a Bangalore phone is 90-130ms, compared to 380-520ms on the Prisma+Node version I tested earlier. That is the difference between a snappy app and a "is it broken?" user complaint.`,
+For [MyFinancial](/projects/myfinancial)'s public homepage and dashboard fetches I run on edge with Drizzle + Neon — first-byte latency from a Bangalore phone is 90-130ms, compared to 380-520ms on the Prisma+Node version I tested earlier. That is the difference between a snappy app and a "is it broken?" user complaint.`,
     },
     {
       heading: 'Honest counter-position — when Prisma still wins',
@@ -129,22 +129,22 @@ I do not think Prisma is wrong. I think it is no longer the **default** for new 
 
 There is no rule that ends in "pick TypeORM" for a new 2026 build. If you find yourself there, ask why — usually it is because a Stack Overflow answer from 2021 is still the top result for "best Node ORM."
 
-Two posts that pick up where this one ends: [India vs US MVP Developer Cost in 2026](/en/notes/india-vs-us-mvp-developer-cost-2026) and [LangGraph vs CrewAI vs AutoGen: Which Multi-Agent Framework Wins for India…](/en/notes/langgraph-vs-crewai-vs-autogen-india-mvp-2026).`,
+Two posts that pick up where this one ends: [India vs US MVP Developer Cost in 2026](/notes/india-vs-us-mvp-developer-cost-2026) and [LangGraph vs CrewAI vs AutoGen: Which Multi-Agent Framework Wins for India…](/notes/langgraph-vs-crewai-vs-autogen-india-mvp-2026).`,
     },
     {
       heading: 'CTA — ship with the right ORM the first time',
       content: `If you are picking an ORM for your India MVP in 2026, the cost of picking wrong is a week of refactor three sprints in. That is a week of runway you cannot afford pre-PMF.
 
-I have shipped 11 Postgres-backed MVPs in the last 18 months, three on Prisma, six on Drizzle, two on TypeORM (both regrets). The 6-week MVP sprint I run for Indian founders defaults to Drizzle + Supabase + Next.js on Vercel — same stack I run [MyFinancial](/en/projects/myfinancial) on, same stack I would pick if I started today.
+I have shipped 11 Postgres-backed MVPs in the last 18 months, three on Prisma, six on Drizzle, two on TypeORM (both regrets). The 6-week MVP sprint I run for Indian founders defaults to Drizzle + Supabase + Next.js on Vercel — same stack I run [MyFinancial](/projects/myfinancial) on, same stack I would pick if I started today.
 
-- **[Scope a 6-week MVP](/en/services/6-week-mvp)** — I write the schema, the migrations, and the typed query layer in the first week so you spend weeks 2-6 on features, not plumbing.
-- **[Hire me as your founding engineer](/en/services/hire-founding-engineer-india)** — same engineer from day one to deploy, no agency markup, full GitHub from commit one, zero equity ask.
+- **[Scope a 6-week MVP](/services/6-week-mvp)** — I write the schema, the migrations, and the typed query layer in the first week so you spend weeks 2-6 on features, not plumbing.
+- **[Hire me as your founding engineer](/services/hire-founding-engineer-india)** — same engineer from day one to deploy, no agency markup, full GitHub from commit one, zero equity ask.
 
 Send a message with your MVP idea + which ORM you were leaning towards and I will reply within 24 hours with a written take on whether it fits your stack.`,
     },
   ],
   cta: {
     text: 'Scope Your 6-Week MVP',
-    href: '/en/services/6-week-mvp',
+    href: '/services/6-week-mvp',
   },
 };

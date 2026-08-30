@@ -19,7 +19,7 @@ export const buildAndroidFinanceTrackerKotlinJetpackCompose: BlogPost = {
     },
 {
       heading: 'Why Another Finance App?',
-      content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built FinBaby, an offline-first Android finance tracker using Kotlin and Jetpack Compose that automatically imports bank SMS messages from 50+ Indian banks, parses transaction amounts and merchants using regex, auto-categorizes spending, and provides 50/30/20 budgeting with smart saving tips — all without a backend server, cloud account, or bank API linking.
 
@@ -149,9 +149,9 @@ All charts are Jetpack Compose-native. No WebView, no JavaScript bridge. They an
 
 **Why rule-based tips over AI-generated financial advice:** The Smart Tips engine uses deterministic calculations — percentage changes month-over-month, subscription counts, emergency fund gaps. These are more trustworthy than LLM-generated financial advice because the calculations are verifiable. When the app says "you spent 40% more on food this month," that number is exact. Users making real financial decisions need precision, not probabilistic suggestions.
 
-The pattern I run for founders in this situation is either a [mobile app development](/en/services/mobile-app-development) or a [founding engineer in India](/en/services/hire-founding-engineer-india) — pick based on whether you need shipped code or shipped *and* maintained code.
+The pattern I run for founders in this situation is either a [mobile app development](/services/mobile-app-development) or a [founding engineer in India](/services/hire-founding-engineer-india) — pick based on whether you need shipped code or shipped *and* maintained code.
 
-Adjacent reads: [Building a Family Budget App with 8 Financial Modules](/en/notes/build-family-budget-app-android-offline-kotlin) for the stack-level decision, [Building an On-Device AI Scam Detector for Android](/en/notes/build-on-device-ai-scam-detector-android-gemma) for the hiring-level one.`
+Adjacent reads: [Building a Family Budget App with 8 Financial Modules](/notes/build-family-budget-app-android-offline-kotlin) for the stack-level decision, [Building an On-Device AI Scam Detector for Android](/notes/build-on-device-ai-scam-detector-android-gemma) for the hiring-level one.`
     },
     {
       heading: 'Frequently Asked Questions',

@@ -28,7 +28,7 @@ export const aiAgentPaymentsX402VsAp22026: BlogPost = {
         },
         {
             heading: 'AI Agent Payments in 2026: x402 vs AP2 — How to Let Your Agent Actually Pay',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 The thing that broke in 2026 is the assumption baked into every payment system since the web began: that a **human clicks "buy."** Autonomous agents do not click. They send HTTP requests, and the moment one of them needs to pay for an API call, a GPU-minute, or another agent's output, the entire card-and-checkout stack falls over. The fix that actually shipped is **x402**, a payment protocol built directly on the long-dormant HTTP 402 status code, and by **May 2026 it had settled roughly $43.5M across 161M+ transactions** ([AgentLux's May 2026 tally](https://agentlux.ai/blog/the-agent-payments-showdown-x402-vs-ap2-vs-mpp-vs-acp-in-2026)).
 
@@ -138,7 +138,7 @@ Note the \`max_payment\` ceiling — that single field is your first line of def
 
 **3. Long-tail, sub-cent metering.** Traditional payment rails choke below ~$0.50 because card fees eat the transaction. x402's stablecoin settlement makes **fractions of a cent** viable — the use case card networks were never built for. Put numbers on it: a Stripe card charge costs roughly **₹3 + 2–3%**, so a ₹0.50 micro-call is impossible to bill profitably. At **$0.003/request** over x402, an agent can buy **300+ calls for under a dollar** and you net almost all of it. That asymmetry is the whole reason agent-native APIs are pricing per-call instead of per-seat.
 
-Where it does **not** fit: a human checking out a ₹999 subscription. That is still a [Razorpay or Stripe job](/en/services/fintech-app-development), and pretending otherwise is how teams ship crypto UX nobody asked for. x402 is a *machine-to-machine* rail. Keep the human flows on the rails humans already trust.`,
+Where it does **not** fit: a human checking out a ₹999 subscription. That is still a [Razorpay or Stripe job](/services/fintech-app-development), and pretending otherwise is how teams ship crypto UX nobody asked for. x402 is a *machine-to-machine* rail. Keep the human flows on the rails humans already trust.`,
         },
         {
             heading: 'x402 vs AP2 vs MPP vs ACP: the comparison table',
@@ -159,7 +159,7 @@ Where it does **not** fit: a human checking out a ₹999 subscription. That is s
             heading: 'When should you skip crypto payment rails?',
             content: `Here is the honest counter-position the protocol blogs skip, because they are selling the protocol.
 
-**Your buyers are humans, in India, on UPI.** If you are building consumer fintech — the kind of [tax and portfolio app I work on](/en/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector) — your users pay with UPI and cards, not a funded USDC wallet on Base. Forcing stablecoin rails onto a human checkout adds friction, KYC ambiguity, and Indian regulatory questions around crypto that you do **not** want in your MVP. For human-facing payments in 2026, Razorpay and Stripe still win on trust, settlement, and compliance. x402 solves an agent problem, not a checkout problem.
+**Your buyers are humans, in India, on UPI.** If you are building consumer fintech — the kind of [tax and portfolio app I work on](/notes/upi-fraud-805-crore-why-i-built-offline-scam-detector) — your users pay with UPI and cards, not a funded USDC wallet on Base. Forcing stablecoin rails onto a human checkout adds friction, KYC ambiguity, and Indian regulatory questions around crypto that you do **not** want in your MVP. For human-facing payments in 2026, Razorpay and Stripe still win on trust, settlement, and compliance. x402 solves an agent problem, not a checkout problem.
 
 **Your agent volume is sub-scale.** x402's whole economic edge is sub-cent payments — but **on-chain settlement has its own floor**. Reported transaction fees of **~$0.001 can exceed the cost of a $0.0005 micro-service** ([AgentLux](https://agentlux.ai/blog/the-agent-payments-showdown-x402-vs-ap2-vs-mpp-vs-acp-in-2026)). If you are doing dozens of payments a day, the wallet-funding and ops overhead is not worth it versus just issuing an API key.
 
@@ -173,11 +173,11 @@ In short: adopt x402 when the payer is a machine and the amount is tiny and freq
 
 **Do not settle every request on-chain — deposit and meter off-chain.** This is the single most important production lesson and the real substance behind the "x402 v2" migration chatter. Naive per-request settlement means a blockchain write per API call, and at scale **the gas can cost more than the service** ([AgentLux](https://agentlux.ai/blog/the-agent-payments-showdown-x402-vs-ap2-vs-mpp-vs-acp-in-2026)). The pattern that works: the agent makes **one on-chain deposit**, you **meter usage off-chain** against that balance with signed usage receipts, and **settle periodically** (hourly, or on threshold). You keep x402's UX and drop 99% of the settlement cost.
 
-**Put AP2 mandates above x402 for anything with a human behind it.** A bare x402 wallet can spend until it is empty. If a person is ultimately on the hook for the spend, wrap it in an **AP2 Intent Mandate** — a signed, scoped authorization ("max $50/day, only these vendors") — so an injected or runaway agent cannot drain the wallet. This is the same principle as scoping any autonomous agent's blast radius, which I argued for in [building a secure MCP server](/en/notes/secure-mcp-server-typescript-2026).
+**Put AP2 mandates above x402 for anything with a human behind it.** A bare x402 wallet can spend until it is empty. If a person is ultimately on the hook for the spend, wrap it in an **AP2 Intent Mandate** — a signed, scoped authorization ("max $50/day, only these vendors") — so an injected or runaway agent cannot drain the wallet. This is the same principle as scoping any autonomous agent's blast radius, which I argued for in [building a secure MCP server](/notes/secure-mcp-server-typescript-2026).
 
-**Treat the agent's wallet key like a production credential, capped.** A private key with spending power, sitting in an env var an autonomous loop can reach, is an attack surface. Use a **dedicated low-balance hot wallet** per agent, fund it just-in-time, set a hard per-day ceiling, and alert on drift — never point an agent at your treasury. The failure mode is not a bad payment; it is a [prompt-injected agent](/en/notes/ai-generated-code-anti-patterns-fixes-2026) draining a funded wallet because the README never told you to cap it.
+**Treat the agent's wallet key like a production credential, capped.** A private key with spending power, sitting in an env var an autonomous loop can reach, is an attack surface. Use a **dedicated low-balance hot wallet** per agent, fund it just-in-time, set a hard per-day ceiling, and alert on drift — never point an agent at your treasury. The failure mode is not a bad payment; it is a [prompt-injected agent](/notes/ai-generated-code-anti-patterns-fixes-2026) draining a funded wallet because the README never told you to cap it.
 
-This deposit-meter-and-cap layer is exactly the kind of plumbing I wire in from commit one when I [build an MVP in 6 weeks](/en/services/6-week-mvp) — the payment rail behind a clean interface, spend caps, and a sandboxed key, so swapping x402 for a card processor (or running both) is a config change, not a rewrite.`,
+This deposit-meter-and-cap layer is exactly the kind of plumbing I wire in from commit one when I [build an MVP in 6 weeks](/services/6-week-mvp) — the payment rail behind a clean interface, spend caps, and a sandboxed key, so swapping x402 for a card processor (or running both) is a config change, not a rewrite.`,
         },
         {
             heading: 'x402 and AP2 FAQ',
@@ -199,11 +199,11 @@ This deposit-meter-and-cap layer is exactly the kind of plumbing I wire in from 
 
 So the developer takeaway is not "x402 vs AP2" — it is a **layering decision**. Use **x402** as the settlement rail for machine-to-machine, sub-cent, high-frequency payments; layer **AP2 mandates** on top whenever a human is accountable for the spend; and keep **human checkout on UPI/cards** where it belongs. The trap to avoid is settling every request on-chain — deposit once, meter off-chain, settle periodically, and cap the wallet.
 
-If you want agent-native payments wired into a product so the rail, the spend caps, and the authorization are all swappable and sandboxed from the first commit — instead of discovering the gas bill and the drained-wallet attack surface in production — that is the work I do. I ship [production MVPs in 6 weeks](/en/services/6-week-mvp) and take [founding-engineer engagements for India-based teams](/en/services/hire-founding-engineer-india) building on the current agent stack.`,
+If you want agent-native payments wired into a product so the rail, the spend caps, and the authorization are all swappable and sandboxed from the first commit — instead of discovering the gas bill and the drained-wallet attack surface in production — that is the work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp) and take [founding-engineer engagements for India-based teams](/services/hire-founding-engineer-india) building on the current agent stack.`,
         },
     ],
     cta: {
         text: 'Wire Agent-Native Payments Into Your MVP in 6 Weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

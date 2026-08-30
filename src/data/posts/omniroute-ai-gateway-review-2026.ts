@@ -28,7 +28,7 @@ export const omnirouteAiGatewayReview2026: BlogPost = {
         },
         {
             heading: 'A 20k-star AI gateway appeared overnight — is it real?',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Every few weeks a repository detonates on GitHub Trending, and the honest question for a working developer is never "how many stars?" — it is "does this survive contact with my actual workflow?" [OmniRoute](https://github.com/diegosouzapw/OmniRoute) is this week's detonation: it went from roughly 1,300 stars in a single day to **north of 20,000** as I write this, sitting at the top of the daily trending list. The pitch is seductive — "one endpoint, 268+ providers, 500+ models, free."
 
@@ -77,7 +77,7 @@ The reason this feels good in practice is that there is **nothing to rewrite**. 
 
 **Unifying a messy local toolbox.** If you bounce between Claude Code, Cursor, Codex, and Aider during a day, each has its own key, its own provider config, and its own way of running out of quota at the worst moment. Collapsing all 26 of them behind one local endpoint with shared keys and shared fallback is a legitimate quality-of-life win. You configure providers once; every tool inherits it.
 
-**Resilience via real fallback.** The 18-strategy engine is not decoration. A \`priority\` chain that fails over from your paid subscription to a cheaper provider to a free tier — scored live on health and latency — means a single provider outage does not stop your work. This is the same resilience pattern I have wired by hand into production [MVP builds](/en/services/6-week-mvp); having it as a config knob is convenient for local development.
+**Resilience via real fallback.** The 18-strategy engine is not decoration. A \`priority\` chain that fails over from your paid subscription to a cheaper provider to a free tier — scored live on health and latency — means a single provider outage does not stop your work. This is the same resilience pattern I have wired by hand into production [MVP builds](/services/6-week-mvp); having it as a config knob is convenient for local development.
 
 **Agent-native control through MCP.** Because OmniRoute exposes routing as [MCP](https://modelcontextprotocol.io) tools, an agent can inspect quota, switch strategies, or flip compression mid-task. For anyone building agentic systems, a gateway your agent can reason about — rather than a static config file — is a genuinely forward-looking design. It is the one feature here I would actively want to experiment with.
 
@@ -97,7 +97,7 @@ The honest through-line: for **local, single-developer, experimentation** use, O
 | Best for | Local dev-tool unification | Instant multi-model, no ops | Python teams self-hosting | Production safety + compliance |
 | Production-ready today | Days old — unproven | Yes | Yes, widely deployed | Yes, enterprise |
 
-The pattern is clear. **OpenRouter** wins on zero-ops simplicity — one key, no infrastructure. **LiteLLM** is the self-hosted workhorse for Python-first teams that want budgets and virtual keys. **Portkey** is the adult in the room for production: guardrails, PII redaction, and audit trails, now Apache-2.0 so you can self-host the core. I compared those three in depth for real MVP stacks in [OpenRouter vs LiteLLM vs Portkey](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026). **OmniRoute** out-features all of them on paper — but paper features and a battle-tested production gateway are different things, which is the next section.`,
+The pattern is clear. **OpenRouter** wins on zero-ops simplicity — one key, no infrastructure. **LiteLLM** is the self-hosted workhorse for Python-first teams that want budgets and virtual keys. **Portkey** is the adult in the room for production: guardrails, PII redaction, and audit trails, now Apache-2.0 so you can self-host the core. I compared those three in depth for real MVP stacks in [OpenRouter vs LiteLLM vs Portkey](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026). **OmniRoute** out-features all of them on paper — but paper features and a battle-tested production gateway are different things, which is the next section.`,
         },
         {
             heading: 'When should you skip OmniRoute? The failure modes promo posts ignore',
@@ -117,13 +117,13 @@ The pattern is clear. **OpenRouter** wins on zero-ops simplicity — one key, no
 
 **I would use OmniRoute locally, today.** On my own machine, as a unified endpoint for the six coding tools I switch between, with a \`priority\` fallback so a single provider hiccup does not interrupt a session — that is a clean win, and the local-first, zero-telemetry design means I am not shipping my prompts to a third party to get it. The MCP integration is the piece I would genuinely tinker with, because an agent that can re-route itself is a pattern worth learning before it becomes standard.
 
-**I would not put it in production, and here is the failure mode I actually worry about.** The dangerous version of this tool is not the one that breaks loudly — it is the one where \`cost-optimized\` routing quietly sends a customer's request to a free-tier provider whose terms forbid commercial use, or where 89% compression silently trims the context that made an answer correct, and you only discover it three weeks later in a bug report you cannot reproduce. Those are the bugs that survive the demo and die in production. For anything customer-facing I want the boring, audited path: OpenRouter for zero-ops, LiteLLM for self-hosted control, or Portkey for guardrails and PII redaction — the exact trade-offs I walked through in my [gateway comparison](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026).
+**I would not put it in production, and here is the failure mode I actually worry about.** The dangerous version of this tool is not the one that breaks loudly — it is the one where \`cost-optimized\` routing quietly sends a customer's request to a free-tier provider whose terms forbid commercial use, or where 89% compression silently trims the context that made an answer correct, and you only discover it three weeks later in a bug report you cannot reproduce. Those are the bugs that survive the demo and die in production. For anything customer-facing I want the boring, audited path: OpenRouter for zero-ops, LiteLLM for self-hosted control, or Portkey for guardrails and PII redaction — the exact trade-offs I walked through in my [gateway comparison](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026).
 
-That line — between "delightful local tool" and "load-bearing production dependency" — is the entire review. OmniRoute is emphatically the first and, for now, emphatically not the second. If you are wiring an AI gateway into a product and want the routing, fallback, and compliance decisions made by someone who has debugged them in production rather than by a viral README, that is the work I do: [6-week MVPs](/en/services/6-week-mvp) that ship with the resilient provider layer already right, or a [founding engineer](/en/services/hire-founding-engineer-india) embedded to get your model infrastructure sound the first time. A gateway is a great place to move fast; it is a terrible place to find out later you moved carelessly.`,
+That line — between "delightful local tool" and "load-bearing production dependency" — is the entire review. OmniRoute is emphatically the first and, for now, emphatically not the second. If you are wiring an AI gateway into a product and want the routing, fallback, and compliance decisions made by someone who has debugged them in production rather than by a viral README, that is the work I do: [6-week MVPs](/services/6-week-mvp) that ship with the resilient provider layer already right, or a [founding engineer](/services/hire-founding-engineer-india) embedded to get your model infrastructure sound the first time. A gateway is a great place to move fast; it is a terrible place to find out later you moved carelessly.`,
         },
     ],
     cta: {
         text: 'Wiring an AI gateway into a real product? Let us get the routing, fallback, and provider-compliance right the first time — in weeks, not incidents.',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

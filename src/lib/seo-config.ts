@@ -119,13 +119,6 @@ export const defaultMetadata: Metadata = {
     },
     alternates: {
         canonical: SITE_CONFIG.url,
-        languages: {
-            'en': `${SITE_CONFIG.url}/en`,
-            'hi': `${SITE_CONFIG.url}/hi`,
-            'fr': `${SITE_CONFIG.url}/fr`,
-            'de': `${SITE_CONFIG.url}/de`,
-            'ar': `${SITE_CONFIG.url}/ar`,
-        },
     },
     verification: {
         google: 'google46f0e975ac6f7a81',
@@ -337,7 +330,7 @@ export const webSiteSchema = {
         '@type': 'SearchAction',
         target: {
             '@type': 'EntryPoint',
-            urlTemplate: `${SITE_CONFIG.url}/en/notes?q={search_term_string}`,
+            urlTemplate: `${SITE_CONFIG.url}/notes?q={search_term_string}`,
         },
         'query-input': 'required name=search_term_string',
     },
@@ -390,7 +383,7 @@ export function generateSoftwareApplicationSchema(project: {
     repoUrl?: string;
     status: string;
     image?: string;
-}, locale: string = 'en') {
+}) {
     return {
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
@@ -399,7 +392,7 @@ export function generateSoftwareApplicationSchema(project: {
         ...(project.image && { image: `${SITE_CONFIG.url}${project.image}` }),
         applicationCategory: 'WebApplication',
         operatingSystem: 'Web',
-        url: `${SITE_CONFIG.url}/${locale}/projects/${project.slug}`,
+        url: `${SITE_CONFIG.url}/projects/${project.slug}`,
         ...(project.repoUrl && {
             codeRepository: project.repoUrl,
             isAccessibleForFree: true,
@@ -434,9 +427,6 @@ export function generateFAQSchema(faqs: { question: string; answer: string }[]) 
     };
 }
 
-// Supported locales for alternates generation
-export const SUPPORTED_LOCALES = ['en', 'hi', 'fr', 'de', 'ar'] as const;
-
 // Helper to create page-specific metadata with canonical URLs and locale alternates
 /**
  * Truncate a description to Google's SERP-display limit while preserving sentence boundaries.
@@ -467,41 +457,17 @@ export function createPageMetadata(
     title: string,
     description: string,
     path: string = '',
-    locale: string = 'en',
     options: {
         /** Page-specific image (e.g. blog cover). Falls back to site default. */
         image?: { src: string; alt: string };
         /** Override the meta description (e.g. trimmed-to-160 version of post excerpt). */
         metaDescription?: string;
-        /**
-         * Whether this route's BODY content is actually localised.
-         *
-         * Only the site chrome is translated via `content/<locale>/*.json`; long-form
-         * content (blog posts, service pages, project case studies) ships English in
-         * every locale. Advertising those as hreflang alternates published ~550
-         * near-duplicate URLs, which is what stalled indexation (Google last fetched
-         * the sitemap 2026-06-28 and reported "URL is unknown" for most posts).
-         *
-         * When false, non-English variants canonicalise to the `/en` URL and emit no
-         * hreflang cluster, so signals consolidate on one indexable page per route.
-         * Flip back to true for a route once its body is genuinely translated.
-         */
+        /** Kept for call-site compatibility; the site is English-only at bare paths now. */
         translated?: boolean;
     } = {}
 ): Metadata {
-    // path should be the route without locale prefix, e.g. '/about' or '/projects'
-    const isTranslated = options.translated !== false;
-    const canonical = isTranslated
-        ? `${SITE_CONFIG.url}/${locale}${path}`
-        : `${SITE_CONFIG.url}/en${path}`;
-    let languages: Record<string, string> | undefined;
-    if (isTranslated) {
-        languages = {};
-        for (const loc of SUPPORTED_LOCALES) {
-            languages[loc] = `${SITE_CONFIG.url}/${loc}${path}`;
-        }
-        languages['x-default'] = `${SITE_CONFIG.url}/en${path}`;
-    }
+    // path is the route, e.g. '/about' or '/projects'
+    const canonical = `${SITE_CONFIG.url}${path}`;
 
     // Truncate description for meta tags (Google SERP truncates at ~158 chars).
     // The full description still ships in body text; only the head meta is shortened.
@@ -511,19 +477,9 @@ export function createPageMetadata(
     const ogImageUrl = resolveImageUrl(options.image?.src);
     const ogImageAlt = options.image?.alt ?? 'Rohit Raj — AI Consultant · Forward Deployed Engineer';
 
-    // A non-English URL for a route whose body is English is a duplicate of the
-    // /en page, and canonical alone has not been enough: GSC shows
-    // /ar/notes/expo-av-... outranking its own /en original for the same query,
-    // and /de/ + /ar/ both competing on "how to run diffusiongemma locally".
-    // Three URLs split the signals for one piece of content. noindex removes the
-    // duplicates from the index outright; follow keeps their internal links
-    // flowing so the /en original still inherits the equity.
-    const isEnglishBodyDuplicate = !isTranslated && locale !== 'en';
-
     return {
         title,
         description: metaDesc,
-        ...(isEnglishBodyDuplicate ? { robots: { index: false, follow: true } } : {}),
         openGraph: {
             title,
             description: metaDesc,
@@ -549,7 +505,6 @@ export function createPageMetadata(
         },
         alternates: {
             canonical,
-            languages,
         },
     };
 }
@@ -566,7 +521,7 @@ export function generateBlogPostingSchema(post: {
     wordCount?: number;
     articleSection?: string;
     sections?: { heading: string; content: string }[];
-}, locale: string = 'en') {
+}) {
     // Auto-derive wordCount from sections if not passed
     const computedWordCount = post.wordCount ?? (post.sections
         ? post.sections.reduce((sum, s) => sum + s.content.split(/\s+/).filter(Boolean).length, 0)
@@ -596,11 +551,11 @@ export function generateBlogPostingSchema(post: {
         },
         datePublished: post.date,
         dateModified: post.updated ?? post.date,
-        mainEntityOfPage: `${SITE_CONFIG.url}/${locale}/notes/${post.slug}`,
+        mainEntityOfPage: `${SITE_CONFIG.url}/notes/${post.slug}`,
         keywords: post.keywords.join(', '),
         ...(computedWordCount && { wordCount: computedWordCount }),
         ...(computedSection && { articleSection: computedSection }),
-        inLanguage: locale,
+        inLanguage: 'en',
     };
 }
 
@@ -616,7 +571,7 @@ export function generateTechArticleSchema(article: {
     keywords: string[];
     proficiencyLevel?: 'Beginner' | 'Intermediate' | 'Expert';
     image?: { src: string; alt: string };
-}, locale: string = 'en') {
+}) {
     return {
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
@@ -638,10 +593,10 @@ export function generateTechArticleSchema(article: {
         },
         datePublished: article.datePublished,
         dateModified: article.dateModified ?? article.datePublished,
-        mainEntityOfPage: `${SITE_CONFIG.url}/${locale}${article.path}`,
+        mainEntityOfPage: `${SITE_CONFIG.url}${article.path}`,
         keywords: article.keywords.join(', '),
         proficiencyLevel: article.proficiencyLevel ?? 'Expert',
-        inLanguage: locale,
+        inLanguage: 'en',
     };
 }
 

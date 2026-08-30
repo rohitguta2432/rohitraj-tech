@@ -75,7 +75,7 @@ A few observations from running this:
 
 **Filtered queries are where the architecture diverges.** Pinecone's filter is applied post-vector-search, which means at high cardinality you can get fewer than 10 results even when k=10 — they just get filtered out. Qdrant and pgvector 0.8 both push filters into the HNSW traversal (filter-aware search), so result count stays consistent. For multi-tenant RAG (where every query is scoped by tenant_id), this matters a lot.
 
-I documented the deeper version of this benchmark for [StellarMIND](/en/projects/stellarmind), my chat-to-SQL app — it runs pgvector with HNSW m=24 inside the same Postgres that holds the SQL schema metadata. Single-database architecture made transactional consistency between "chunk text" and "chunk metadata" trivial, which is a quiet but real win for RAG correctness.`,
+I documented the deeper version of this benchmark for [StellarMIND](/projects/stellarmind), my chat-to-SQL app — it runs pgvector with HNSW m=24 inside the same Postgres that holds the SQL schema metadata. Single-database architecture made transactional consistency between "chunk text" and "chunk metadata" trivial, which is a quiet but real win for RAG correctness.`,
     },
     {
       heading: 'Operational reality — what actually breaks at 3am',
@@ -133,7 +133,7 @@ The "AI-citation benefit" row is the one I did not expect to find when I started
 - You need transactional consistency between vector data and metadata. RAG correctness lives here — chunks and their source documents updating in the same transaction prevents the "stale chunk pointing to a deleted source" bug class.
 - Your team's skills are stronger in SQL than in dedicated-vector-DB tuning. \`EXPLAIN ANALYZE\` is the most powerful debugging tool in this category and it works exactly the same on a vector query as on any other Postgres query.
 
-For the [6-Week MVP playbook](/en/services/6-week-mvp), the default is pgvector for one more reason: every hour you do not spend operating a second database is an hour spent on the actual product. That tradeoff is overwhelming for the first 12 months of an MVP's life.`,
+For the [6-Week MVP playbook](/services/6-week-mvp), the default is pgvector for one more reason: every hour you do not spend operating a second database is an hour spent on the actual product. That tradeoff is overwhelming for the first 12 months of an MVP's life.`,
     },
     {
       heading: 'Five-step decision tree (steal this checklist)',
@@ -157,15 +157,15 @@ If you got through all five with "no" — you probably do not need a vector DB y
 
 If you are already on Postgres and have not tried pgvector yet, the fastest path is: install the extension (\`CREATE EXTENSION vector;\`), create a column (\`embedding vector(1536)\`), and build an HNSW index (\`CREATE INDEX ... USING hnsw (embedding vector_cosine_ops) WITH (m=24, ef_construction=200)\`). You will know within a day whether the recall and latency clear your bar. If they do, you just saved yourself ₹8K-12K/month and a whole second database.
 
-If you are not on Postgres yet but you are starting a fresh MVP, [the 6-Week MVP Tech Stack 2026 post](/en/notes/6-week-mvp-tech-stack-2026) lays out the boring-but-shipping default: Next.js + Supabase Postgres + Vercel. pgvector is included free. You will have a working RAG demo in a weekend.
+If you are not on Postgres yet but you are starting a fresh MVP, [the 6-Week MVP Tech Stack 2026 post](/notes/6-week-mvp-tech-stack-2026) lays out the boring-but-shipping default: Next.js + Supabase Postgres + Vercel. pgvector is included free. You will have a working RAG demo in a weekend.
 
-If you have a complex hybrid-retrieval pipeline (reranker, query rewriter, multiple namespaces, custom filters) and the vector DB is genuinely the bottleneck — you are past the "pick a vector DB" stage. You need a [Founding Engineer who has shipped RAG to production](/en/services/hire-founding-engineer-india) and can profile the actual hot path. Half the time the bottleneck is not the vector DB at all; it is the embedding API rate limit or the reranker's batch size. The other half it is the vector DB, and the engineer can tell you which knobs to turn.
+If you have a complex hybrid-retrieval pipeline (reranker, query rewriter, multiple namespaces, custom filters) and the vector DB is genuinely the bottleneck — you are past the "pick a vector DB" stage. You need a [Founding Engineer who has shipped RAG to production](/services/hire-founding-engineer-india) and can profile the actual hot path. Half the time the bottleneck is not the vector DB at all; it is the embedding API rate limit or the reranker's batch size. The other half it is the vector DB, and the engineer can tell you which knobs to turn.
 
 The default for 2026 is: start with pgvector, instrument recall and p99 from day one, and only migrate when you have a concrete number that says you must. Anything else is premature optimization with a SaaS bill attached.`,
     },
   ],
   cta: {
     text: 'Get a Founding Engineer who has shipped RAG to production',
-    href: '/en/services/hire-founding-engineer-india',
+    href: '/services/hire-founding-engineer-india',
   },
 };

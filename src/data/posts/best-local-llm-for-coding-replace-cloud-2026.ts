@@ -28,7 +28,7 @@ export const bestLocalLlmForCodingReplaceCloud2026: BlogPost = {
         },
         {
             heading: "Best Local LLM for Coding in 2026: When It Actually Replaces Claude and GPT",
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 This week two threads hit the Hacker News front page within a day of each other and asked the same question from opposite directions. One — "[Has anyone replaced Claude/GPT with a local model for daily coding?](https://news.ycombinator.com/item?id=48542100)" — pulled **1,245 points and 534 comments**. The other, "[Running local models is good now](https://vickiboykis.com/2026/06/15/running-local-models-is-good-now/)", pulled **1,135 points**. When a topic owns two front-page slots in 48 hours, the underlying capability has shifted, not just the discourse.
 
@@ -46,7 +46,7 @@ One honest caveat the leaderboards bury: **self-reported SWE-bench scores swing 
 
 And it is not one lucky model carrying the category. The 2026 self-hosted roundups now list a deep bench — **Kimi K2.6 Thinking, GLM-5.1, DeepSeek V3.2 and V4-Pro, MiniMax M2.5, Qwen 3.6 27B, Devstral 2** — all open-weight and all runnable on a single workstation ([pinggy.io](https://pinggy.io/blog/best_open_source_self_hosted_llms_for_coding/)). When seven or eight independent labs all clear the same bar in a six-month window, the capability is real, not a one-model fluke — and that breadth is exactly what makes "cancel the subscription" a question worth asking out loud.
 
-The structural reason this happened: **a 256K-context, 24 GB-runnable model is a fundamentally different product than a 7B autocomplete model from 2024.** It can hold a real module in context, reason across files, and follow a multi-step instruction. That is the capability that makes the "replace my subscription" question reasonable to ask at all. If you want the model-vs-model detail on the open coding frontier, I went deep on one of them in [Kimi K2.7 Code vs Claude Opus and GPT](/en/notes/kimi-k2-7-code-vs-claude-opus-gpt-2026).`,
+The structural reason this happened: **a 256K-context, 24 GB-runnable model is a fundamentally different product than a 7B autocomplete model from 2024.** It can hold a real module in context, reason across files, and follow a multi-step instruction. That is the capability that makes the "replace my subscription" question reasonable to ask at all. If you want the model-vs-model detail on the open coding frontier, I went deep on one of them in [Kimi K2.7 Code vs Claude Opus and GPT](/notes/kimi-k2-7-code-vs-claude-opus-gpt-2026).`,
         },
         {
             heading: 'The best local LLMs for coding in 2026, by use case',
@@ -103,7 +103,7 @@ To wire it into your editor, install the **Continue** extension in VS Code or Je
 }
 \`\`\`
 
-That's it — inline completion, chat, and edit-in-place now run on your machine with zero per-token cost. The harness you wrap around the model matters as much as the model itself; I compared the open coding agents in [OpenCode vs Claude Code vs Cursor](/en/notes/opencode-vs-claude-code-cursor-2026) if you want to pick the wrapper before the weights.`,
+That's it — inline completion, chat, and edit-in-place now run on your machine with zero per-token cost. The harness you wrap around the model matters as much as the model itself; I compared the open coding agents in [OpenCode vs Claude Code vs Cursor](/notes/opencode-vs-claude-code-cursor-2026) if you want to pick the wrapper before the weights.`,
         },
         {
             heading: 'The hardware reality: how much VRAM you actually need',
@@ -116,7 +116,7 @@ The tiers, honestly:
 - **24 GB VRAM** — the line where local stops being a compromise. Qwen3-Coder-Next, Devstral 2, DeepSeek V3.2 all fit.
 - **Apple Silicon (M-series, 32–128 GB unified)** — the dark horse. A Mac Studio (**~$4,000–5,000**, per the [dev.to cost breakdown](https://dev.to/kunal_d6a8fea2309e1571ee7/local-llm-vs-claude-for-daily-coding-real-data-2026-1nke)) runs large models off unified memory; throughput is lower than a 5090 but the memory ceiling is far higher.
 
-The math that makes people pull the trigger: a heavy Claude/Cursor habit runs **$100–200/month**. A 24 GB GPU pays for itself against that in well under a year and then keeps producing at marginal-cost-zero. If you're sizing a dedicated local-AI box, I went through the desktop-superchip options in [NVIDIA RTX Spark and Windows local-AI](/en/notes/nvidia-rtx-spark-windows-ai-agents-2026).`,
+The math that makes people pull the trigger: a heavy Claude/Cursor habit runs **$100–200/month**. A 24 GB GPU pays for itself against that in well under a year and then keeps producing at marginal-cost-zero. If you're sizing a dedicated local-AI box, I went through the desktop-superchip options in [NVIDIA RTX Spark and Windows local-AI](/notes/nvidia-rtx-spark-windows-ai-agents-2026).`,
         },
         {
             heading: "When a local model replaces cloud — and when it doesn't",
@@ -146,7 +146,7 @@ def route(task: str, files_touched: int) -> str:
     return CLOUD if hard else LOCAL
 \`\`\`
 
-Wrap that in a gateway (LiteLLM, OpenRouter, or Portkey) and you get one endpoint, automatic fallback, and a single place to log cost — I compared those gateways in [OpenRouter vs LiteLLM vs Portkey](/en/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026). The integration that won't be in any README: **make local the default and cloud the fallback, not the reverse.** Most "hybrid" setups quietly route everything to cloud and call the local model a backup — which means you're still paying full freight and still down when the provider is.
+Wrap that in a gateway (LiteLLM, OpenRouter, or Portkey) and you get one endpoint, automatic fallback, and a single place to log cost — I compared those gateways in [OpenRouter vs LiteLLM vs Portkey](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026). The integration that won't be in any README: **make local the default and cloud the fallback, not the reverse.** Most "hybrid" setups quietly route everything to cloud and call the local model a backup — which means you're still paying full freight and still down when the provider is.
 
 And that last point is the freshest reason to do this. Earlier today Anthropic posted "[elevated errors across many models](https://status.claude.com/incidents/xmhsglsz3h3w)." For teams whose entire workflow is one cloud API key, that's a blocked afternoon — the failure mode dev.to flagged this week as "[your AI provider is a single point of failure](https://dev.to/)." For anyone running local-as-default with cloud-as-escalation, the same outage is a shrug: the 80% kept working on localhost. Resilience, not just cost, is the real case for going local-first in 2026.`,
         },
@@ -166,11 +166,11 @@ And that last point is the freshest reason to do this. Earlier today Anthropic p
             heading: 'Building this into a real product?',
             content: `Picking a model is the easy 20%. The hard 80% is the wiring: the routing layer, the fallback logic, the observability, and the "make local the default without breaking the hard cases" judgment that doesn't fit in a benchmark table.
 
-That's the part I do. If you're building an AI feature and want a local-first, cost-controlled setup that doesn't fall over when a cloud provider has a bad afternoon — without the five integration bugs the READMEs don't warn you about — I ship production AI integrations in six weeks: [the 6-week MVP](/en/services/6-week-mvp). If you need someone embedded longer to own the whole AI stack, that's [hire a founding engineer](/en/services/hire-founding-engineer-india). And if it's a chat or assistant layer specifically, see [AI chatbot development](/en/services/ai-chatbot-development).`,
+That's the part I do. If you're building an AI feature and want a local-first, cost-controlled setup that doesn't fall over when a cloud provider has a bad afternoon — without the five integration bugs the READMEs don't warn you about — I ship production AI integrations in six weeks: [the 6-week MVP](/services/6-week-mvp). If you need someone embedded longer to own the whole AI stack, that's [hire a founding engineer](/services/hire-founding-engineer-india). And if it's a chat or assistant layer specifically, see [AI chatbot development](/services/ai-chatbot-development).`,
         },
     ],
     cta: {
         text: 'Ship your local-first AI feature in 6 weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

@@ -1,0 +1,118 @@
+import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { services } from "@/data/services";
+import { getDictionary } from "@/lib/i18n";
+import { createPageMetadata, generateBreadcrumbSchema, SITE_CONFIG } from "@/lib/seo-config";
+import type { Metadata } from "next";
+
+
+export async function generateMetadata(): Promise<Metadata> {
+    return createPageMetadata(
+        "Services | Rohit Raj",
+        "Mobile app development, AI chatbot development, and full-stack engineering services. From MVP to production — hire an experienced developer in India.",
+        "/services"
+            );
+}
+
+export default async function ServicesPage() {
+    const dict = await getDictionary();
+
+    const servicesListSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'Engineering Services by Rohit Raj',
+        url: `${SITE_CONFIG.url}/services`,
+        itemListElement: services.map((service, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            item: {
+                '@type': 'Service',
+                name: service.title,
+                description: service.subheadline,
+                url: `${SITE_CONFIG.url}/services/${service.slug}`,
+            },
+        })),
+    };
+
+    const breadcrumb = generateBreadcrumbSchema([
+        { name: 'Home', url: `${SITE_CONFIG.url}` },
+        { name: 'Services', url: `${SITE_CONFIG.url}/services` },
+    ]);
+
+    return (
+        <>
+            <script type="application/ld+json">{JSON.stringify(servicesListSchema)}</script>
+            <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+            <Header dict={dict.common} />
+            <main id="main">
+                <div className="page-header">
+                    <div className="container">
+                        <h1 className="page-title">Services</h1>
+                        <p className="page-description">
+                            End-to-end engineering services for startups and businesses. Pick what you need, or let&apos;s scope something custom.
+                        </p>
+                    </div>
+                </div>
+
+                <section>
+                    <div className="container">
+                        <div
+                            style={{
+                                display: "grid",
+                                gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+                                gap: "1.5rem",
+                            }}
+                        >
+                            {services.map((service) => (
+                                <Link
+                                    key={service.slug}
+                                    href={`/services/${service.slug}`}
+                                    style={{
+                                        background: "var(--card-bg)",
+                                        border: "1px solid var(--border)",
+                                        borderRadius: "12px",
+                                        padding: "1.75rem",
+                                        textDecoration: "none",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        gap: "1rem",
+                                        transition: "border-color 0.2s, transform 0.2s",
+                                    }}
+                                >
+                                    <h2 style={{ color: "var(--text-primary)", fontSize: "1.25rem", fontWeight: 600, margin: 0 }}>
+                                        {service.title}
+                                    </h2>
+                                    <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", lineHeight: 1.6, margin: 0, flex: 1 }}>
+                                        {service.subheadline}
+                                    </p>
+                                    <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+                                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                            <span style={{ color: "var(--text-secondary)", fontSize: "0.85rem" }}>
+                                                {service.timeline}
+                                            </span>
+                                            <span style={{ color: "var(--accent)", fontSize: "0.9rem", fontWeight: 500 }}>
+                                                Learn more &rarr;
+                                            </span>
+                                        </div>
+                                        <span
+                                            style={{
+                                                color: "var(--text-tertiary, var(--text-secondary))",
+                                                fontSize: "0.72rem",
+                                                opacity: 0.75,
+                                                letterSpacing: "0.02em",
+                                            }}
+                                        >
+                                            Senior engineer &middot; Fast launch &middot; Full GitHub
+                                        </span>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <Footer dict={dict.common} />
+        </>
+    );
+}

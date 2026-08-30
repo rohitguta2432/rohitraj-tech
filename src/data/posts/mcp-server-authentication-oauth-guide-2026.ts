@@ -28,7 +28,7 @@ export const mcpServerAuthenticationOauthGuide2026: BlogPost = {
         },
         {
             heading: 'MCP Server Authentication in 2026: OAuth 2.1, Zero-Touch Enterprise OAuth, and What to Actually Ship',
-            content: `By [Rohit Raj](/en/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For most of the last two years, "auth on an MCP server" meant one of two things: nothing at all, or a hardcoded API key in a header. That was fine when every MCP server ran locally over STDIO and the only client was your own desktop. It stopped being fine the moment MCP servers went remote and multi-tenant — the moment a server at \`https://mcp.yourcompany.com\` started accepting connections from clients you do not control, acting on data you are legally responsible for.
 
@@ -141,11 +141,11 @@ Skip OAuth and use environment credentials when your server is **STDIO-only** �
 
 Skip it for **internal service-to-service** servers where the client is another one of your own backends. A pre-shared bearer token, rotated and stored in a secrets manager, is simpler than standing up authorization-server discovery and equally secure when the key is managed properly. OAuth's value is delegated, user-mediated access to a server reached by clients you do not control — if that is not your situation, you are paying complexity for a guarantee you do not need.
 
-And be cautious about adopting **Enterprise-Managed Authorization before you have an enterprise to manage.** ID-JAG is genuinely useful, but it presumes a corporate IdP, defined access groups, and admins who will configure policy. For a solo or early-stage server, that machinery is overhead with no payoff yet — ship per-user OAuth 2.1 and graduate to EMA when a customer's security team asks for it. The discipline is the same one I bring to any [AI integration build](/en/services/ai-chatbot-development): match the auth to the actual blast radius, not to the most impressive diagram.`,
+And be cautious about adopting **Enterprise-Managed Authorization before you have an enterprise to manage.** ID-JAG is genuinely useful, but it presumes a corporate IdP, defined access groups, and admins who will configure policy. For a solo or early-stage server, that machinery is overhead with no payoff yet — ship per-user OAuth 2.1 and graduate to EMA when a customer's security team asks for it. The discipline is the same one I bring to any [AI integration build](/services/ai-chatbot-development): match the auth to the actual blast radius, not to the most impressive diagram.`,
         },
         {
             heading: 'How I would ship MCP auth in production',
-            content: `I have built [MCP servers from scratch](/en/notes/spring-boot-mcp) and shipped AI features that act on real user accounts, and the part that keeps me up is never the happy-path flow — it is the failure modes the README skips. Here is how I would actually wire production MCP auth.
+            content: `I have built [MCP servers from scratch](/notes/spring-boot-mcp) and shipped AI features that act on real user accounts, and the part that keeps me up is never the happy-path flow — it is the failure modes the README skips. Here is how I would actually wire production MCP auth.
 
 **Bind every token to your server, and prove it on every call.** The single most important line of code is the audience check. RFC 8707's \`resource\` parameter and the spec's "MUST validate the token was issued for them" rule exist because of the **confused-deputy attack**: a token your server accepts but that was minted for a *different* resource lets an attacker borrow your server's privileges. Validate \`aud\`, validate \`iss\`, and **never** forward a received token to a downstream API — that token-passthrough anti-pattern is how one compromised server becomes a pivot point. If your server needs to call something else, it gets its own token for that resource.
 
@@ -171,11 +171,11 @@ And be cautious about adopting **Enterprise-Managed Authorization before you hav
             heading: 'Shipping a production MCP server?',
             content: `The OAuth flow is the easy 20% — serving Protected Resource Metadata and validating a JWT is an afternoon. The hard 80% is the judgment: which auth rung your server actually needs, designing scopes for least privilege, closing the confused-deputy and token-passthrough holes, and deciding when Enterprise-Managed Auth is worth the IdP wiring versus when a bearer token is the honest answer.
 
-That is the work I do. If you are building an MCP server or an agent product and want the version that is secure by design — not the demo that leaks a token — I ship production AI integrations in six weeks: [the 6-week MVP](/en/services/6-week-mvp). If you need someone embedded to own the whole agent and auth stack end to end, that is [hire a founding engineer](/en/services/hire-founding-engineer-india). And if you are still mapping how MCP, [WebMCP](/en/notes/webmcp-guide-browser-agent-tools-2026), and your backend fit together, that architecture call is exactly where I start.`,
+That is the work I do. If you are building an MCP server or an agent product and want the version that is secure by design — not the demo that leaks a token — I ship production AI integrations in six weeks: [the 6-week MVP](/services/6-week-mvp). If you need someone embedded to own the whole agent and auth stack end to end, that is [hire a founding engineer](/services/hire-founding-engineer-india). And if you are still mapping how MCP, [WebMCP](/notes/webmcp-guide-browser-agent-tools-2026), and your backend fit together, that architecture call is exactly where I start.`,
         },
     ],
     cta: {
         text: 'Ship a secure MCP server in 6 weeks',
-        href: '/en/services/6-week-mvp',
+        href: '/services/6-week-mvp',
     },
 };

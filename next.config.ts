@@ -32,8 +32,11 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  // i18n is handled via [locale] dynamic routing in App Router
-  // No specific i18n config needed here
+  // Pin the workspace root so builds inside git worktrees don't resolve
+  // files from the main checkout (multiple lockfiles confuse the inference).
+  turbopack: {
+    root: new URL('.', import.meta.url).pathname,
+  },
   async headers() {
     return [
       {
@@ -44,24 +47,32 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Site is English-only at bare paths now. Locale-prefixed URLs
+      // (/en/*, /hi/*, …) are the previously indexed URLs — 301 them to the
+      // bare path so link equity consolidates on one URL per page.
       {
-        source: '/:locale(en|hi|fr|de|ar)/blog',
-        destination: '/:locale/notes',
+        source: '/:locale(en|hi|fr|de|ar)',
+        destination: '/',
         permanent: true,
       },
       {
         source: '/:locale(en|hi|fr|de|ar)/blog/:slug*',
-        destination: '/:locale/notes/:slug*',
+        destination: '/notes/:slug*',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|hi|fr|de|ar)/:path*',
+        destination: '/:path*',
         permanent: true,
       },
       {
         source: '/blog',
-        destination: '/en/notes',
+        destination: '/notes',
         permanent: true,
       },
       {
         source: '/blog/:slug*',
-        destination: '/en/notes/:slug*',
+        destination: '/notes/:slug*',
         permanent: true,
       },
     ];
