@@ -1190,6 +1190,49 @@ export const projects: Project[] = [
             ]
         }
     },
+    {
+        slug: "tabletalk",
+        name: "TableTalk — Scan, Order, Eat: QR Ordering for Dine-In",
+        problem: "Dine-in ordering still means flagging a waiter, squinting at a laminated menu with no photos, and repeating your order across the noise. The QR menus most restaurants adopted are static PDFs — no search, no cart, no way to actually order from them.",
+        solves: "Scan the QR pasted on your table and the restaurant's live menu opens on your phone — every dish with a photo, price, and description. Search it by typing or speaking, add dishes in one tap, adjust quantities, and place the order right from the table, tagged with your table number. No app install, no login, no payment wall — you ask for the bill through the app when you're done.",
+        techStack: ["Next.js", "React", "Tailwind CSS", "Web Speech API"],
+        status: "active",
+        liveUrl: "https://mytabletalk.in/",
+        aiApproach: "Voice search runs keyless in the browser — tap the mic in the search bar, say the dish, and on-device speech recognition (Web Speech API) turns it into a live menu filter. No speech service account, no audio leaves the phone.",
+        image: "/images/projects/tabletalk-poster.jpg",
+        videoUrl: "/videos/tabletalk.mp4",
+        updated: "2026-08-30",
+        details: {
+            businessImpact: "Small cafes can't staff enough waiters at peak, and the static QR-PDF menus they settled for kill upsell — no photos, no bestsellers, no \"complete your meal with\" moment. TableTalk is built multi-tenant (every guest page is \"Powered by tabletalk\"), so one deployment serves many restaurants, each with its own menu and per-table QR codes.",
+            approach: [
+                "Per-table QR encodes the table number; the session carries it from the greeting badge through checkout so the kitchen knows where the order goes",
+                "Live menu with categories, photos, prices, serving sizes, and a bestsellers rail — running with a real South Indian cafe menu (10 categories, 70+ dishes) as the demo tenant",
+                "Instant search with typed input or one-tap voice input via browser speech recognition",
+                "One-tap add with inline quantity steppers; a sticky cart bar keeps item count and total visible while browsing",
+                "Floating Menu button opens a category jump-sheet with per-category item counts — no endless scrolling",
+                "Checkout with a \"Complete your meal with\" upsell rail, bill summary, and ordering without payment — the bill is requested through the app after the meal",
+                "Mobile-first Next.js + Tailwind UI tuned for the phone that just scanned the QR"
+            ],
+            decisions: [
+                "Order first, pay later — matching how dine-in actually works in India instead of forcing prepayment like delivery apps",
+                "No app install and no login — the QR is the whole onboarding; any friction and the table goes back to waving at a waiter",
+                "Voice search over voice ordering — a constrained speech-to-filter task is reliable today; free-form voice ordering is not",
+                "Multi-tenant from day one rather than a single restaurant's site — the platform is the product",
+                "Photos on every dish — menus sell with pictures, and static QR PDFs throw that away"
+            ],
+            currentStatus: "Live at https://mytabletalk.in/ with the full guest flow — menu, search, voice search, cart, category jump-sheet, and checkout — running on the Kaaram Cafe demo menu. Kitchen-side order intake is the piece being wired up next.",
+            roadmap: [
+                "Kitchen/counter view of incoming orders by table",
+                "Bill request and UPI payment from the table",
+                "Restaurant onboarding flow — menu upload and per-table QR generation",
+                "Order status back to the guest (received, preparing, on the way)"
+            ],
+            improvements: [
+                "Offline-tolerant cart so a flaky cafe connection doesn't drop items",
+                "Regional-language menu and voice search for non-English diners"
+            ]
+        }
+    },
 ];
 
 export const repos = [
