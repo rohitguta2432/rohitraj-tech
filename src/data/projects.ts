@@ -740,14 +740,14 @@ export const projects: Project[] = [
         slug: "kisansathi",
         name: "KisanSathi — Six AI Farm Experts, Keyless and Local",
         problem: "Farmer-facing AI tools die at the API-key step, answer in English, and hand back generic advice with no live numbers behind it. A smallholder asking when to sell or how to treat yellowing wheat leaves gets a paragraph, not a decision.",
-        solves: "Ask one question in Hindi, Hinglish, English, or a regional language. A router agent picks the right specialist from six, pulls live data its domain needs — real 7-day weather, real mandi prices — and streams back a short, practical answer in the farmer's own language. Runs with zero API keys on a local model.",
-        techStack: ["FastAPI", "Python 3.11", "Pydantic 2", "httpx", "Next.js 16", "React 19", "Tailwind CSS 4", "Ollama (qwen3:14b)", "Open-Meteo", "Agmarknet via data.gov.in", "pytest"],
+        solves: "Ask one question in Hindi, Hinglish, English, or a regional language — typed or spoken. A router agent picks the right specialist from six, pulls live data its domain needs — real 7-day weather, real mandi prices — and streams back a short, practical answer in the farmer's own language, with a सुनें button that reads it aloud. Runs with zero API keys on a local model.",
+        techStack: ["FastAPI", "Python 3.11", "Pydantic 2", "httpx", "Next.js 16", "React 19", "Tailwind CSS 4", "Ollama (qwen3:14b)", "Web Speech API", "Open-Meteo", "Agmarknet via data.gov.in", "pytest"],
         status: "active",
         repoUrl: "https://github.com/rohitguta2432/kisansathi",
-        aiApproach: "One fast router LLM call classifies the question into agent, language, place, and commodity. The chosen specialist — crop advisor, pest and disease, weather and irrigation, mandi price analyst, govt schemes, or soil health — fetches the live data its domain needs and streams a grounded answer token by token. Keyless by default: Ollama locally so nothing leaves the machine, Open-Meteo for forecasts, and the data.gov.in public sample key for daily mandi prices, with an optional Anthropic provider for a hosted model. Mandi lookups degrade gracefully from state plus commodity, to commodity, to latest records. Implements the AgroAskAI multi-agent framework as working open source.",
+        aiApproach: "One fast router LLM call classifies the question into agent, language, place, and commodity. The chosen specialist — crop advisor, pest and disease, weather and irrigation, mandi price analyst, govt schemes, or soil health — fetches the live data its domain needs and streams a grounded answer token by token. Keyless by default: Ollama locally so nothing leaves the machine, Open-Meteo for forecasts, and the data.gov.in public sample key for daily mandi prices, with an optional Anthropic provider for a hosted model. Mandi lookups degrade gracefully from state plus commodity, to commodity, to latest records. Implements the AgroAskAI multi-agent framework as working open source. Voice runs the same keyless way: browser SpeechRecognition (hi-IN) turns speech into the question, and speechSynthesis reads the answer back, picking a Hindi voice for Devanagari answers — no speech API account, no audio pipeline to host.",
         image: "/images/projects/kisansathi-poster.jpg",
         videoUrl: "/videos/kisansathi.mp4",
-        updated: "2026-08-26",
+        updated: "2026-08-30",
         details: {
             businessImpact: "India has more smallholder farmers than any advisory service can staff, and the ones who need advice most are furthest from a key, a card, or reliable bandwidth. A keyless multi-agent assistant that answers in Hindi with today's mandi price is deployable on a village kiosk, not just a demo laptop.",
             approach: [
@@ -756,6 +756,7 @@ export const projects: Project[] = [
                 "Live tools per domain: Open-Meteo 7-day forecast, Agmarknet daily prices via data.gov.in",
                 "FastAPI backend streams answers; Next.js 16 UI shows the pipeline live — expert picked, language detected, tokens arriving",
                 "Adding an agent is one registry entry; router, API, and UI pick it up automatically",
+                "Voice in, voice out: mic button transcribes hi-IN speech and auto-submits; every answer gets a read-aloud button, chunked by sentence so long answers don't cut off",
                 "pytest with async mode for the router and tool layer"
             ],
             decisions: [
@@ -765,10 +766,9 @@ export const projects: Project[] = [
                 "Answer in the language asked, not English with a translation toggle",
                 "State honest limits in the UI: LLM advice can be wrong, and pesticide doses or big selling calls should be confirmed at the local Krishi Vigyan Kendra"
             ],
-            currentStatus: "Public and open source (MIT) at github.com/rohitguta2432/kisansathi. All six agents live with the router, streaming UI, and both live data tools working keyless; pytest suite green. Built to be forked — translate it, add crops, add agents, put it on a village kiosk.",
+            currentStatus: "Public and open source (MIT) at github.com/rohitguta2432/kisansathi. All six agents live with the router, streaming UI, voice input and read-aloud answers, and both live data tools working keyless; pytest suite green. Built to be forked — translate it, add crops, add agents, put it on a village kiosk.",
             roadmap: [
-                "Voice input and spoken answers for low-literacy users",
-                "More crops and region-specific pest libraries",
+                                "More crops and region-specific pest libraries",
                 "Offline mandi price cache for intermittent connectivity"
             ],
             improvements: [
