@@ -65,8 +65,8 @@ export const SITE_CONFIG = {
         linkedin: 'rohitraj2',
     },
     images: {
-        og: '/og-image.png',
-        twitter: '/twitter-image.png',
+        og: '/opengraph-image',
+        twitter: '/twitter-image',
         logo: '/icon.png',
     },
 } as const;
@@ -134,7 +134,7 @@ export const personSchema = {
     name: 'Rohit Raj',
     url: SITE_CONFIG.url,
     email: SITE_CONFIG.author.email,
-    image: `${SITE_CONFIG.url}/og-image.png`,
+    image: `${SITE_CONFIG.url}/opengraph-image`,
     jobTitle: 'AI Consultant · Forward Deployed Engineer',
     description: 'AI consultant working as a forward deployed engineer: embedded with client teams, shipping AI agents, MCP integrations, and LLM features to production — with evaluation suites proving they work. 10+ years shipping production systems.',
     address: {
@@ -535,7 +535,7 @@ export function generateBlogPostingSchema(post: {
         description: post.excerpt,
         image: post.coverImage
             ? `${SITE_CONFIG.url}${post.coverImage.src}`
-            : `${SITE_CONFIG.url}/og-image.png`,
+            : `${SITE_CONFIG.url}/opengraph-image`,
         author: {
             '@id': SITE_CONFIG.personId,
         },
@@ -579,7 +579,7 @@ export function generateTechArticleSchema(article: {
         description: article.description,
         image: article.image
             ? `${SITE_CONFIG.url}${article.image.src}`
-            : `${SITE_CONFIG.url}/og-image.png`,
+            : `${SITE_CONFIG.url}/opengraph-image`,
         author: { '@id': SITE_CONFIG.personId },
         publisher: {
             '@type': 'Organization',
