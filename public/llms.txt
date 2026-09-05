@@ -11,6 +11,7 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 - [Projects](https://rohitraj.tech/projects): Full project catalog with architecture details
 - [AI Agents](https://rohitraj.tech/agents): Live, autonomous AI agents you can try in the browser
 - [Services](https://rohitraj.tech/services): Engineering services offered
+- [Hire — AI Consultant · Forward Deployed Engineer](https://rohitraj.tech/hire): Engagement models, case studies, FAQ
 - [Engineering Notes](https://rohitraj.tech/notes): 83 technical case-study posts
 
 ## Featured Projects
@@ -20,7 +21,7 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 - [StellarMIND](https://rohitraj.tech/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (141 posts)
+## All Engineering Notes (142 posts)
 
 - [Shieldstral vs Llama Guard vs OpenAI Moderation API: A Self-Hosted Content Moderation Guide (2026)](https://rohitraj.tech/notes/shieldstral-vs-llama-guard-openai-moderation-2026)
 - [OpenAI Codex Security vs Snyk vs Semgrep vs CodeQL: What the New Open-Source Scanner Actually Changes (2026)](https://rohitraj.tech/notes/codex-security-vs-snyk-semgrep-codeql-2026)
@@ -130,6 +131,7 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 
 ### Founder & Business
 
+- [What Does a Forward Deployed Engineer Actually Do? (2026 Guide)](https://rohitraj.tech/notes/what-does-a-forward-deployed-engineer-do-2026)
 - [How to Build an App Like Uber or Zomato — Architecture & Real Costs](https://rohitraj.tech/notes/build-app-like-uber-zomato-architecture-cost)
 - [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a Developer (2026)](https://rohitraj.tech/notes/how-much-does-it-cost-to-build-mobile-app-india-2026)
 - [How to Build a SaaS MVP in 2026 — Complete Tech Stack Guide](https://rohitraj.tech/notes/how-to-build-saas-mvp-2026)
@@ -184,6 +186,11 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 
 ## Services
 
+- [Hire a Forward Deployed Engineer (AI)](https://rohitraj.tech/services/forward-deployed-engineer): Embedded senior engineer shipping agents, MCP integrations, and LLM features to production — fixed-scope pilot or fractional
+- [Fractional Forward Deployed Engineer](https://rohitraj.tech/services/fractional-forward-deployed-engineer): The FDE model on a fixed-days-per-week retainer
+- [MCP Integration Consultant](https://rohitraj.tech/services/mcp-integration-consultant): Production MCP servers connecting AI agents to internal systems, with security boundaries and evals
+- [Claude Code Consultant](https://rohitraj.tech/services/claude-code-consultant): Team rollout of Claude Code — CLAUDE.md, skills, hooks, MCP servers, subagents, CI runs, guardrails
+- [Fractional AI Engineer](https://rohitraj.tech/services/fractional-ai-engineer): Senior AI delivery a few days a week without the full-time hire
 - [6-Week MVP Sprint](https://rohitraj.tech/services/6-week-mvp): Fixed-scope, fixed-price MVP sprint for pre-seed founders, $15K-$30K, 6 weeks to production
 - [Hire a Founding Engineer in India](https://rohitraj.tech/services/hire-founding-engineer-india): Senior India-based founding engineer for hire — sprint or retainer, no equity, full GitHub
 - [Hire a Fractional CTO in India](https://rohitraj.tech/services/hire-fractional-cto-india): Honest scoping for whether you actually need a fractional CTO or a builder

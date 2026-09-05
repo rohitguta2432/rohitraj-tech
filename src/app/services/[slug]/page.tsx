@@ -6,7 +6,7 @@ import Testimonials from "@/components/Testimonials";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { getDictionary } from "@/lib/i18n";
-import { createPageMetadata, SITE_CONFIG } from "@/lib/seo-config";
+import { createPageMetadata, generateBreadcrumbSchema, SITE_CONFIG } from "@/lib/seo-config";
 
 interface ServicePageProps {
     params: Promise<{ slug: string }>;
@@ -63,7 +63,7 @@ function generateServiceSchema(service: (typeof services)[0]) {
             "@type": "Place",
             name: "Worldwide",
         },
-        url: `${SITE_CONFIG.url}/en/services/${service.slug}`,
+        url: `${SITE_CONFIG.url}/services/${service.slug}`,
     };
 }
 
@@ -80,6 +80,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
         service.portfolioSlugs.includes(p.slug)
     );
 
+    const breadcrumb = generateBreadcrumbSchema([
+        { name: "Home", url: SITE_CONFIG.url },
+        { name: "Services", url: `${SITE_CONFIG.url}/services` },
+        { name: service.title, url: `${SITE_CONFIG.url}/services/${service.slug}` },
+    ]);
+
     return (
         <>
             <script
@@ -93,6 +99,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify(generateServiceSchema(service)),
                 }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
             />
             <Header dict={dict.common} />
             <main id="main">
@@ -248,6 +258,41 @@ export default async function ServicePage({ params }: ServicePageProps) {
                                 ))}
                             </div>
                         </div>
+
+                        {/* Related engagements & reading */}
+                        {service.related && service.related.length > 0 && (
+                            <div style={{ marginTop: "3rem" }}>
+                                <h2 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
+                                    Related Engagements &amp; Reading
+                                </h2>
+                                <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                                    {service.related.map((item) => (
+                                        <Link
+                                            key={item.href}
+                                            href={item.href}
+                                            style={{
+                                                background: "var(--card-bg)",
+                                                border: "1px solid var(--border)",
+                                                borderRadius: "12px",
+                                                padding: "1.25rem",
+                                                textDecoration: "none",
+                                                display: "block",
+                                                transition: "border-color 0.2s",
+                                            }}
+                                        >
+                                            <div style={{ color: "var(--text-primary)", fontWeight: 600, marginBottom: "0.25rem" }}>
+                                                {item.label} &rarr;
+                                            </div>
+                                            {item.description && (
+                                                <div style={{ color: "var(--text-secondary)", fontSize: "0.9rem" }}>
+                                                    {item.description}
+                                                </div>
+                                            )}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
 
                         {/* Testimonials */}
                         <div style={{ marginTop: "3rem" }}>

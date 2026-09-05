@@ -282,8 +282,10 @@ export default async function HirePage() {
                             <h2 style={sectionHeading}>Specialised engagements</h2>
                             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                                 {[
-                                    { slug: "forward-deployed-engineer", label: "Forward Deployed Engineer (AI)" },
+                                    { slug: "forward-deployed-engineer", label: "Hire a Forward Deployed Engineer (AI)" },
+                                    { slug: "fractional-forward-deployed-engineer", label: "Fractional Forward Deployed Engineer" },
                                     { slug: "mcp-integration-consultant", label: "MCP Integration Consultant" },
+                                    { slug: "claude-code-consultant", label: "Claude Code Consultant" },
                                     { slug: "fractional-ai-engineer", label: "Fractional AI Engineer" },
                                 ].map((s) => (
                                     <Link

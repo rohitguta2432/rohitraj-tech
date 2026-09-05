@@ -53,6 +53,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
     const blogRoutes = blogPosts.map((post) => `/notes/${post.slug}`);
 
+    // Services carry an optional `updated` date so a new or rewritten money page
+    // advertises a real lastmod instead of the static anchor.
+    const serviceDateBySlug = new Map<string, Date>();
+    for (const service of services) {
+        if (service.updated) serviceDateBySlug.set(service.slug, new Date(service.updated));
+    }
+    const latestServiceDate = maxDate([...serviceDateBySlug.values()], staticAnchor);
+
     const latestProjectDate = maxDate([...projectDateBySlug.values()], staticAnchor);
     const latestPostDate = maxDate([...postDateBySlug.values()], staticAnchor);
     const hubDates: Record<string, Date> = {
@@ -60,6 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/projects": latestProjectDate,
         "/repos": latestProjectDate,
         "/notes": latestPostDate,
+        "/services": latestServiceDate,
     };
 
     const allRoutes = [...staticRoutes, ...projectRoutes, ...serviceRoutes, ...blogRoutes];
@@ -75,7 +84,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
             const slug = route.replace("/projects/", "");
             lastModified = projectDateBySlug.get(slug) ?? staticAnchor;
         } else if (route.startsWith("/services/")) {
-            lastModified = staticAnchor;
+            const slug = route.replace("/services/", "");
+            lastModified = serviceDateBySlug.get(slug) ?? staticAnchor;
         }
 
         sitemap.push({

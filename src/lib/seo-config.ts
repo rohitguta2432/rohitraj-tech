@@ -469,6 +469,12 @@ export function createPageMetadata(
     // path is the route, e.g. '/about' or '/projects'
     const canonical = `${SITE_CONFIG.url}${path}`;
 
+    // The root layout applies the `%s | Rohit Raj` template to every page title, and most
+    // callers already pass a title ending in "| Rohit Raj" — which rendered the brand twice
+    // ("… | Rohit Raj | Rohit Raj"). Strip a trailing brand here and let the template add it once.
+    const baseTitle = title.replace(/\s*\|\s*Rohit Raj\s*$/i, '').trim();
+    const brandedTitle = `${baseTitle} | ${SITE_CONFIG.name}`;
+
     // Truncate description for meta tags (Google SERP truncates at ~158 chars).
     // The full description still ships in body text; only the head meta is shortened.
     const metaDesc = truncateDescription(options.metaDescription ?? description);
@@ -478,10 +484,10 @@ export function createPageMetadata(
     const ogImageAlt = options.image?.alt ?? 'Rohit Raj — AI Consultant · Forward Deployed Engineer';
 
     return {
-        title,
+        title: baseTitle,
         description: metaDesc,
         openGraph: {
-            title,
+            title: brandedTitle,
             description: metaDesc,
             url: canonical,
             type: path.startsWith('/notes/') ? 'article' : 'website',
@@ -498,7 +504,7 @@ export function createPageMetadata(
         },
         twitter: {
             card: 'summary_large_image',
-            title,
+            title: brandedTitle,
             description: metaDesc,
             images: [ogImageUrl],
             creator: SITE_CONFIG.author.twitter,

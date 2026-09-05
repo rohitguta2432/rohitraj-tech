@@ -370,10 +370,10 @@ export const services: Service[] = [
  {
  slug: "hire-founding-engineer-india",
  title: "Hire a Founding Engineer in India (2026)",
- metaTitle: "Hire Founding Engineer India 2026 | Pre-Seed MVP Builder | Rohit Raj",
+ metaTitle: "Founding Engineer for Hire in India (2026) | MVP Builder | Rohit Raj",
  metaDescription:
  "Hire a senior founding engineer in India without a long recruiting cycle or agency overhead. Production MVP in 6 weeks, full GitHub access, clean handoff.",
- headline: "Hire a Founding Engineer in India — Without the 12-Month Lock-In",
+ headline: "Founding Engineer for Hire in India — Without the 12-Month Lock-In",
  subheadline:
  "Pre-seed founders can skip the slow recruiting cycle and ship with a senior builder instead. Same code quality. 6 weeks to production. You own the GitHub from day one.",
  problem:
@@ -434,6 +434,24 @@ export const services: Service[] = [
  },
  ],
  cta: "Hire a Founding Engineer",
+ updated: "2026-09-05",
+ related: [
+ {
+ href: "/services/6-week-mvp",
+ label: "6-Week MVP Sprint",
+ description: "The fixed-scope engagement most pre-seed founders end up choosing.",
+ },
+ {
+ href: "/services/hire-fractional-cto-india",
+ label: "Hire a Fractional CTO in India",
+ description: "Honest scoping for whether you need advice or a builder.",
+ },
+ {
+ href: "/services/forward-deployed-engineer",
+ label: "Hire a Forward Deployed Engineer",
+ description: "If the product is AI-first, this is the engagement that ships agents and LLM features to production.",
+ },
+ ],
  },
  {
  slug: "hire-fractional-cto-india",
@@ -494,11 +512,11 @@ export const services: Service[] = [
  },
  {
  slug: "forward-deployed-engineer",
- title: "Forward Deployed Engineer (AI)",
- metaTitle: "Hire a Forward Deployed Engineer | Fractional & Contract AI FDE | Rohit Raj",
+ title: "Hire a Forward Deployed Engineer (AI)",
+ metaTitle: "Hire a Forward Deployed Engineer (AI FDE) | Rohit Raj",
  metaDescription:
- "Hire a forward deployed engineer who embeds with your team and ships AI to production — agents, MCP integrations, LLM features. Fractional (2 days/week) or fixed-scope pilot. India-based, worldwide remote.",
- headline: "AI That Actually Reaches Production — Not Another Stalled Pilot",
+ "Hire a forward deployed engineer who embeds with your team and ships AI to production — agents, MCP integrations, LLM features. Fixed-scope pilot or fractional.",
+ headline: "Hire a Forward Deployed Engineer Who Gets AI to Production — Not Another Stalled Pilot",
  subheadline:
  "A forward deployed engineer embeds inside your company, learns your workflows, and builds AI systems through to production. Not advice from the sidelines — working software in your repo.",
  problem:
@@ -548,14 +566,37 @@ export const services: Service[] = [
  },
  ],
  cta: "Book a Scoping Call",
+ updated: "2026-09-05",
+ related: [
+ {
+ href: "/services/fractional-forward-deployed-engineer",
+ label: "Fractional Forward Deployed Engineer",
+ description: "The same embedded model on a fixed-days-per-week retainer — how it works and when it beats a full-time hire.",
+ },
+ {
+ href: "/notes/what-does-a-forward-deployed-engineer-do-2026",
+ label: "What does a forward deployed engineer actually do?",
+ description: "The role explained: origins at Palantir, why AI companies now hire for it, and the week-by-week reality.",
+ },
+ {
+ href: "/services/mcp-integration-consultant",
+ label: "MCP Integration Consultant",
+ description: "Connecting agents to your internal systems is usually the first thing an FDE builds.",
+ },
+ {
+ href: "/services/claude-code-consultant",
+ label: "Claude Code Consultant",
+ description: "Roll out agentic coding across your own engineering team while the AI system ships.",
+ },
+ ],
  },
  {
  slug: "mcp-integration-consultant",
  title: "MCP Integration Consultant",
- metaTitle: "MCP Integration Consultant | Hire an MCP Expert | Custom MCP Servers | Rohit Raj",
+ metaTitle: "MCP Integration Consultant | Custom MCP Servers | Rohit Raj",
  metaDescription:
- "Hire an MCP integration consultant to connect AI agents to your APIs, data, and internal tools. Custom Model Context Protocol servers designed, built, and deployed to production — with security and evals.",
- headline: "Connect Your AI Agents to the Systems That Run Your Business",
+ "Hire an MCP integration consultant to connect AI agents to your APIs, data, and internal tools. Production MCP servers with security boundaries and evals.",
+ headline: "MCP Integration Consultant — Connect Your AI Agents to the Systems That Run Your Business",
  subheadline:
  "Model Context Protocol (MCP) is how AI agents reach your APIs, databases, and internal tools. I design, build, and deploy production MCP servers — securely, with evals, inside your stack.",
  problem:
@@ -600,13 +641,36 @@ export const services: Service[] = [
  },
  ],
  cta: "Discuss Your Integration",
+ updated: "2026-09-05",
+ related: [
+ {
+ href: "/services/forward-deployed-engineer",
+ label: "Hire a Forward Deployed Engineer",
+ description: "MCP servers are one half of the job — the agent that uses them is the other. Both shipped by one embedded engineer.",
+ },
+ {
+ href: "/services/claude-code-consultant",
+ label: "Claude Code Consultant",
+ description: "MCP servers for your engineering team's own tooling: Claude Code wired to your internal systems.",
+ },
+ {
+ href: "/notes/secure-mcp-server-typescript-2026",
+ label: "How to build a secure MCP server in TypeScript",
+ description: "The permission model, input validation, and audit logging every production MCP server needs.",
+ },
+ {
+ href: "/notes/mcp-server-authentication-oauth-guide-2026",
+ label: "MCP server authentication with OAuth",
+ description: "Scoped credentials and token handling for agents that touch real systems.",
+ },
+ ],
  },
  {
  slug: "fractional-ai-engineer",
  title: "Fractional AI Engineer",
- metaTitle: "Fractional AI Engineer | India · Remote Worldwide | Hire Part-Time AI Talent | Rohit Raj",
+ metaTitle: "Fractional AI Engineer | Remote Worldwide | Rohit Raj",
  metaDescription:
- "Hire a fractional AI engineer — senior AI delivery a few days a week without a full-time salary. Agents, LLM features, RAG, Claude Code workflows, shipped to production. India-based, remote worldwide.",
+ "Hire a fractional AI engineer: senior AI delivery a few days a week without a full-time salary. Agents, LLM features, RAG, Claude Code — shipped to production.",
  headline: "Senior AI Engineering, a Few Days a Week — Without the Full-Time Hire",
  subheadline:
  "You have real AI work to ship, but not enough to justify a permanent senior salary. A fractional AI engineer gives you consistent, senior-level delivery on a part-week retainer.",
@@ -657,5 +721,201 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
+ updated: "2026-09-05",
+ related: [
+ {
+ href: "/services/fractional-forward-deployed-engineer",
+ label: "Fractional Forward Deployed Engineer",
+ description: "When the work lives inside your operations and systems rather than your product backlog.",
+ },
+ {
+ href: "/services/claude-code-consultant",
+ label: "Claude Code Consultant",
+ description: "The team-enablement half of this engagement as a standalone rollout.",
+ },
+ {
+ href: "/services/forward-deployed-engineer",
+ label: "Hire a Forward Deployed Engineer",
+ description: "Fixed-scope pilot with a defined production outcome, if you want proof before a retainer.",
+ },
+ ],
+ },
+ {
+ slug: "claude-code-consultant",
+ title: "Claude Code Consultant",
+ metaTitle: "Claude Code Consultant | Team Rollout & Guardrails | Rohit Raj",
+ metaDescription:
+ "Hire a Claude Code consultant to roll out agentic coding across your engineering team: CLAUDE.md, custom skills, hooks, MCP servers, CI runs, and review guardrails.",
+ headline: "Claude Code Consultant — Roll Out Agentic Coding Across Your Team Without Lowering the Bar",
+ subheadline:
+ "Claude Code is the strongest agentic coding tool shipping today, and most teams use about a tenth of it. I set it up the way I run it myself — skills, hooks, MCP servers, subagents, CI pipelines, guardrails — so your engineers ship faster and your review bar stays where it is.",
+ problem:
+ "Your engineers already have Claude Code. What they do not have is a shared setup: no CLAUDE.md that encodes how your codebase actually works, no custom skills for the tasks you repeat every week, no hooks stopping the agent from touching things it should not, no MCP servers connecting it to your internal tools, and no answer to the question a CTO eventually asks — is AI-written code lowering our quality bar? Individual developers get individual results. The teams pulling ahead in 2026 treat Claude Code as infrastructure: configured, governed, measured, and taught. That takes someone who has run it at scale, not a lunch-and-learn.",
+ whatYouGet: [
+ "Team-wide Claude Code baseline: CLAUDE.md conventions, permissions model, and settings that encode how your codebase really works",
+ "Custom skills and slash commands for your recurring engineering work — migrations, release notes, test scaffolding, incident triage",
+ "Hooks and guardrails: blocked destructive commands, enforced lint and typecheck on every edit, review gates before anything merges",
+ "MCP servers connecting Claude Code to your internal systems — issue tracker, databases, observability, internal APIs — with scoped permissions",
+ "Subagent and workflow design for multi-step tasks, including unattended headless runs in CI where they are actually safe",
+ "Cost and usage governance: which models for which tasks, context budgeting, and reporting so spend stays predictable",
+ "Hands-on working sessions with your engineers — they leave running the setup, not watching me run it",
+ "Written playbook your team owns, plus a 30-day follow-up review of what stuck and what did not",
+ ],
+ techStack: [
+ "Claude Code",
+ "Claude API",
+ "Claude Agent SDK",
+ "MCP",
+ "GitHub Actions",
+ "TypeScript",
+ "Python",
+ ],
+ timeline: "Team rollout: 2-6 weeks. Advisory: a single working session.",
+ costRange: "Scoped per engagement",
+ portfolioSlugs: ["claude-autodev", "agentic-os"],
+ faqs: [
+ {
+ question: "What does a Claude Code consultant actually do?",
+ answer: "Turns Claude Code from a tool individual developers poke at into infrastructure the whole team runs on. Concretely: I audit how your engineers use it today, write the CLAUDE.md and permission model that encode your codebase's real conventions, build custom skills for the tasks you repeat, add hooks that block the failure modes you care about, wire MCP servers to your internal tools, design subagent workflows for multi-step work, set up cost governance, and run working sessions so the setup survives after I leave. The output is a configured, documented environment plus engineers who know why it is configured that way.",
+ },
+ {
+ question: "Can't my team just read the docs and set this up themselves?",
+ answer: "They can, and the docs are good. What the docs do not tell you is which of the hundreds of possible skills, hooks, and MCP servers matter for your codebase, what breaks at team scale, and where the agent quietly makes your code worse. I run one of the largest personal Claude Code setups I know of — 387 skills across 34 clusters, mapped publicly in Agentic OS — and an eight-stage autonomous pipeline, claude-autodev, that takes requirements to reviewed, tested branches. That is the accumulated judgement you are buying: skip the six months of trial and error and start from a setup that already works.",
+ },
+ {
+ question: "How do you stop AI-written code from lowering our review bar?",
+ answer: "Guardrails at three layers. Before the agent edits: CLAUDE.md conventions and a permission model that keeps it away from things it should not touch. During: hooks that run lint, typecheck, and tests on every change, and block destructive git or shell commands outright. After: a review workflow where AI-written changes carry the same evidence a human PR would — a spec, a diff explanation, passing tests — and a separate reviewer pass that has not seen the plan. Your review bar does not move. What moves is how much of the work reaches that bar without a human typing it.",
+ },
+ {
+ question: "Can Claude Code run unattended in CI, and is that safe?",
+ answer: "Yes, for bounded tasks with hard gates. Headless runs work well for things like dependency bumps with test verification, generated release notes, issue triage, and spec-driven implementation in an isolated worktree that ends in a PR — never a direct push. The safety comes from the gates, not the model: every stage must produce a real artifact (passing tests, an approved review file, a non-empty spec) before the next runs, and a failed run parks with a written diagnosis instead of a confident-looking green. I run this pattern in production for a client's daily content pipeline, and open-sourced the engineering pipeline version as claude-autodev.",
+ },
+ {
+ question: "Where does our source code and data go?",
+ answer: "Wherever your Claude plan sends it, and nowhere else. I configure Claude Code inside your accounts — Team or Enterprise plan, or your own API keys via Bedrock or Vertex if that is your compliance posture — with permissions scoped to what each workflow needs. MCP servers I build run in your infrastructure with your credentials. I sign an NDA before the first call and I never need standing access to your repos after the engagement ends.",
+ },
+ {
+ question: "We also use Cursor, Codex CLI, or Copilot — does this still apply?",
+ answer: "Mostly, yes. The durable parts — codebase conventions, MCP servers, review guardrails, task decomposition, eval discipline — transfer across agentic tools, and several of them read the same MCP servers and similar instruction files. I standardise on Claude Code because it is the deepest tool for team-level configuration today, but the playbook is written so your team is not locked to it.",
+ },
+ {
+ question: "How is this different from your fractional AI engineer engagement?",
+ answer: "This engagement is about your engineers shipping faster with AI. The fractional engagement is about me shipping AI systems — agents, LLM features, integrations — inside your product. They combine well: many clients start with a Claude Code rollout and keep a fractional retainer for the AI backlog. If you are not sure which you need, the scoping call sorts it out in thirty minutes.",
+ },
+ ],
+ cta: "Book a Claude Code Working Session",
+ updated: "2026-09-05",
+ related: [
+ {
+ href: "/services/fractional-ai-engineer",
+ label: "Fractional AI Engineer",
+ description: "Senior AI delivery on a part-week retainer — the engagement most Claude Code rollouts grow into.",
+ },
+ {
+ href: "/services/mcp-integration-consultant",
+ label: "MCP Integration Consultant",
+ description: "Production MCP servers connecting Claude Code and your agents to internal systems.",
+ },
+ {
+ href: "/notes/claude-code-plugins-context-engineering-2026",
+ label: "Claude Code plugins and context engineering",
+ description: "How skills, plugins, and context budgets fit together in a real setup.",
+ },
+ {
+ href: "/notes/claude-code-dynamic-workflows-guide-2026",
+ label: "Claude Code dynamic workflows guide",
+ description: "Multi-agent workflows: when to fan out, when to pipeline, when not to bother.",
+ },
+ {
+ href: "/notes/claude-code-vs-hire-developer-2026",
+ label: "Claude Code vs hiring a developer",
+ description: "The honest line between a developer multiplier and a developer replacement.",
+ },
+ ],
+ },
+ {
+ slug: "fractional-forward-deployed-engineer",
+ title: "Fractional Forward Deployed Engineer",
+ metaTitle: "Fractional Forward Deployed Engineer | AI FDE Retainer | Rohit Raj",
+ metaDescription:
+ "Hire a fractional forward deployed engineer: a senior AI engineer embedded in your team on fixed days per week, owning agents and MCP integrations to production.",
+ headline: "Fractional Forward Deployed Engineer — Senior AI Delivery on a Two-Day-a-Week Retainer",
+ subheadline:
+ "The forward deployed engineer model — embedded in your environment, accountable for production — without the full-time salary or the six-month search. Fixed days each week, your repo, your Slack, your outcomes.",
+ problem:
+ "Forward deployed engineer became the fastest-growing title in tech because companies learned the hard way that AI value lives in the last mile: integration, data, permissions, evals, and someone who owns the system after launch. But hiring an FDE full-time means competing with model vendors for a scarce profile, waiting months, and paying for five days a week when most companies' AI workload fills two. Agencies rent you a rotating team that never learns your context. A fractional forward deployed engineer is the middle path: one senior engineer, fixed days, inside your operations, until the workload justifies a permanent hire — and then a clean handoff.",
+ whatYouGet: [
+ "A senior forward deployed engineer on fixed days each week — typically two — on a monthly retainer, not ad-hoc hours",
+ "Embedded ways of working: your Slack, your standups, your repo, your compliance rules, your data",
+ "Production ownership of what ships — agents, MCP integrations, RAG pipelines, LLM features — including the tuning after real users arrive",
+ "Evaluation harnesses on every system, so a non-technical stakeholder can see it working before launch",
+ "A prioritised AI backlog ordered by return, revisited monthly with your leadership",
+ "Written weekly progress notes readable by a founder, a CFO, or a board",
+ "No lock-in: documented handoff whenever you hire full-time, plus help writing the spec and interviewing",
+ "Option to start with a fixed-scope pilot and convert to the retainer once value is proven",
+ ],
+ techStack: [
+ "Claude API",
+ "MCP",
+ "AI Agents",
+ "RAG",
+ "Evals",
+ "TypeScript",
+ "Python",
+ "AWS",
+ ],
+ timeline: "Ongoing retainer, 2 fixed days/week. Minimum 3 months.",
+ costRange: "Scoped per engagement",
+ portfolioSlugs: ["agent-autopsy", "claude-autodev"],
+ faqs: [
+ {
+ question: "What is a fractional forward deployed engineer?",
+ answer: "A forward deployed engineer is a senior engineer placed inside a customer's environment to build, deploy, and own a system through to production — the model Palantir made famous and AI companies now hire for aggressively. Fractional means you get that engineer for a fixed fraction of the week, typically two days, on an ongoing retainer instead of a full-time salary. The embedded, accountable part of the FDE model stays intact. What changes is the commitment: you buy consistent senior days rather than a headcount.",
+ },
+ {
+ question: "Fractional FDE vs fractional AI engineer — what's the difference?",
+ answer: "Honestly, they overlap, and I offer both. The difference is where the work lives. A fractional AI engineer builds AI features into your product from a backlog — features, models, pipelines. A fractional forward deployed engineer works inside your operations: connecting agents to the systems your business already runs on, navigating your data and permission boundaries, sitting with the people whose workflow is changing, and owning the deployment. If the hard part is integration and adoption inside your environment, you want the FDE framing. If the hard part is shipping product features, you want the AI engineer framing.",
+ },
+ {
+ question: "Fractional vs freelance forward deployed engineer — which does my company need?",
+ answer: "A freelance FDE engagement is task-shaped: a defined integration, a proof-of-concept, a deadline, then done. Fractional is outcome-shaped and continuous: the same engineer stays, the system gets tuned after contact with real users, and the backlog keeps moving. AI systems are rarely finished at launch — evaluation scores drift, edge cases appear, the business changes — so continuity is usually worth more than a one-off. If you genuinely have a single bounded task, I structure that as a fixed-scope pilot instead of pretending it is a retainer.",
+ },
+ {
+ question: "Fractional FDE vs hiring one in-house — the build-or-rent question?",
+ answer: "Hire in-house when the AI workload reliably fills a full week, shapes your core roadmap, and you can win a scarce profile against the model vendors hiring for the same role. Go fractional when you need senior delivery now, the workload is two or three days a week, or you want to prove the model before committing headcount. Most companies I work with start fractional, see real systems ship within the first month, and either stay fractional or hire full-time onto a working codebase — which is a much easier hire than starting cold. I help with that hire when the time comes.",
+ },
+ {
+ question: "How do you avoid context switching across clients?",
+ answer: "By keeping the client count small and the days fixed. I take a limited number of fractional engagements at once, each with named days, so you get whole focused days rather than sliced hours. Between days I stay reachable in your Slack for questions that unblock your team; deep work happens on your days. Weekly written notes mean nobody has to reconstruct where things stand.",
+ },
+ {
+ question: "What does the first month look like?",
+ answer: "Week one I am in your repo, your Slack, and your standups, mapping where AI actually creates value against what your systems will allow. By week two something real is running in staging against your data — not a slide. Weeks three and four harden that first slice: evals, permissions, monitoring, a runbook. From then on the cadence is steady: ship, measure, tune, next item on the backlog.",
+ },
+ ],
+ cta: "Book a Scoping Call",
+ updated: "2026-09-05",
+ related: [
+ {
+ href: "/services/forward-deployed-engineer",
+ label: "Hire a Forward Deployed Engineer",
+ description: "The fixed-scope pilot version: one defined production outcome, proof before a retainer.",
+ },
+ {
+ href: "/notes/what-does-a-forward-deployed-engineer-do-2026",
+ label: "What does a forward deployed engineer actually do?",
+ description: "The role explained for hiring managers: origins, responsibilities, and why it exploded in 2026.",
+ },
+ {
+ href: "/services/fractional-ai-engineer",
+ label: "Fractional AI Engineer",
+ description: "The product-backlog version of a part-week AI retainer.",
+ },
+ {
+ href: "/services/hire-fractional-cto-india",
+ label: "Hire a Fractional CTO in India",
+ description: "If what you need is leadership over an existing team rather than an engineer who ships.",
+ },
+ ],
  },
 ];

@@ -10,7 +10,7 @@ import type { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
     return createPageMetadata(
         "Services | Rohit Raj",
-        "Mobile app development, AI chatbot development, and full-stack engineering services. From MVP to production — hire an experienced developer in India.",
+        "AI consulting delivered as a forward deployed engineer — fractional FDE retainers, MCP integration, Claude Code rollouts — plus founding-engineer MVP sprints. Hire a senior engineer who ships to production.",
         "/services"
             );
 }
@@ -50,7 +50,7 @@ export default async function ServicesPage() {
                     <div className="container">
                         <h1 className="page-title">Services</h1>
                         <p className="page-description">
-                            End-to-end engineering services for startups and businesses. Pick what you need, or let&apos;s scope something custom.
+                            AI shipped to production by an embedded forward deployed engineer, plus founding-engineer sprints for pre-seed startups. Pick what you need, or let&apos;s scope something custom.
                         </p>
                     </div>
                 </div>

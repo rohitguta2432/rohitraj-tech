@@ -142,6 +142,7 @@ import { deepseekV4FlashVisionExpApiGuide2026 } from './deepseek-v4-flash-vision
 import { qwen3827bLocalCodingAgentClaudeCode2026 } from './qwen3-8-27b-local-coding-agent-claude-code-2026';
 import { qwen38FlashNextVs27bLocalMemory2026 } from './qwen3-8-flash-next-vs-27b-local-memory-2026';
 import { aiDevWeek2026W35 } from './ai-dev-week-2026-35';
+import { whatDoesAForwardDeployedEngineerDo2026 } from './what-does-a-forward-deployed-engineer-do-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -285,6 +286,7 @@ const allPosts: BlogPost[] = [
   qwen3827bLocalCodingAgentClaudeCode2026,
   qwen38FlashNextVs27bLocalMemory2026,
   aiDevWeek2026W35,
+  whatDoesAForwardDeployedEngineerDo2026,
 ];
 
 // Validate all posts at module load time

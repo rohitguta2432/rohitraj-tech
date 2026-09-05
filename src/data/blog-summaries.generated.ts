@@ -3,6 +3,28 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "what-does-a-forward-deployed-engineer-do-2026",
+    "title": "What Does a Forward Deployed Engineer Actually Do? (2026 Guide)",
+    "date": "2026-09-05",
+    "excerpt": "Forward deployed engineer went from a Palantir job title to the fastest-growing role in tech. Here is what an FDE actually does week to week, how the role differs from a software engineer, solutions engineer, or consultant, why AI companies hire for it so aggressively, and the three ways a company can get FDE capacity without a six-month search.",
+    "readingTime": "10 min read",
+    "keywords": [
+      "forward deployed engineer",
+      "what does a forward deployed engineer do",
+      "forward deployed engineer meaning",
+      "forward deployed engineer role",
+      "forward deployed engineer vs software engineer",
+      "forward deployed engineer vs solutions engineer",
+      "forward deployed engineer skills",
+      "hire forward deployed engineer",
+      "fractional forward deployed engineer"
+    ],
+    "coverImage": {
+      "src": "/images/notes/what-does-a-forward-deployed-engineer-do-2026-cover.jpg",
+      "alt": "Isometric render of an engineer workstation wired directly into a client control room, illustrating what a forward deployed engineer does"
+    }
+  },
+  {
     "slug": "qwen3-8-flash-next-vs-27b-local-memory-2026",
     "title": "Qwen3.8-Flash-Next vs Qwen3.8-27B: The Local Memory Math Behind the \"12GB VRAM\" Headline (2026)",
     "date": "2026-08-29",
