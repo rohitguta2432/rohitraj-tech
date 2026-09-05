@@ -26,7 +26,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 POSTS_DIR = REPO / "src" / "data" / "posts"
-BASE_URL = "https://rohitraj.tech/en/notes"
+BASE_URL = "https://rohitraj.tech/notes"
 COVER_BASE = "https://rohitraj.tech/images/notes"
 API = "https://gql.hashnode.com/"
 
@@ -83,7 +83,7 @@ def build_payload(slug: str, meta: dict, tags: list, publication_id: str) -> dic
         f"---\n"
         f"**Read the full version with code samples and architecture details:** "
         f"[{meta['title']}]({canonical})\n\n"
-        f"More engineering notes: [rohitraj.tech/en/notes](https://rohitraj.tech/en/notes)\n"
+        f"More engineering notes: [rohitraj.tech/notes](https://rohitraj.tech/notes)\n"
     )
     mutation = """
     mutation PublishPost($input: PublishPostInput!) {
@@ -169,7 +169,7 @@ def main():
     ok, body = publish(payload, api_key)
     if ok:
         print(f"  ✓ {body.get('url', '(no url)')}")
-        print(f"  ✓ Canonical → https://rohitraj.tech/en/notes/{args.slug}")
+        print(f"  ✓ Canonical → https://rohitraj.tech/notes/{args.slug}")
     else:
         print(f"  ✗ {body}")
         sys.exit(2)

@@ -4,7 +4,7 @@
 #
 # Usage:
 #   python3 scripts/wayback-save.py --slug spring-boot-mcp
-#   python3 scripts/wayback-save.py --url https://rohitraj.tech/en/notes/foo
+#   python3 scripts/wayback-save.py --url https://rohitraj.tech/notes/foo
 #
 # Endpoint: https://web.archive.org/save/<url>
 # Rate limit: ~15 saves/min unsigned. Optional S3 keys for higher rate.
@@ -15,7 +15,7 @@ import argparse
 import urllib.request
 import urllib.error
 
-BASE_URL = "https://rohitraj.tech/en/notes"
+BASE_URL = "https://rohitraj.tech/notes"
 SAVE_URL = "https://web.archive.org/save"
 
 

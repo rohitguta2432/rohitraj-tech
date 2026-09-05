@@ -23,7 +23,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 POSTS_DIR = REPO / "src" / "data" / "posts"
-BASE_URL = "https://rohitraj.tech/en/notes"
+BASE_URL = "https://rohitraj.tech/notes"
 PDS = "https://bsky.social"
 MAX_CHARS = 300
 

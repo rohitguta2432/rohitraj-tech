@@ -26,7 +26,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 POSTS_DIR = REPO / "src" / "data" / "posts"
-BASE_URL = "https://rohitraj.tech/en/notes"
+BASE_URL = "https://rohitraj.tech/notes"
 API = "https://dev.to/api/articles"
 COVER_BASE = "https://rohitraj.tech/images/notes"
 
@@ -92,7 +92,7 @@ def build_payload(slug: str, meta: dict, tags: list) -> dict:
         f"---\n"
         f"**Read the full version with code samples, diagrams, and architecture details:** "
         f"[{meta['title']}]({canonical})\n\n"
-        f"More engineering notes: [rohitraj.tech/en/notes](https://rohitraj.tech/en/notes)\n"
+        f"More engineering notes: [rohitraj.tech/notes](https://rohitraj.tech/notes)\n"
     )
     article = {
         "title": meta["title"],
@@ -174,7 +174,7 @@ def main():
     if ok:
         url = body.get("url", "(no url returned)")
         print(f"  ✓ {url}")
-        print(f"  ✓ Backlink attribution: canonical_url → https://rohitraj.tech/en/notes/{args.slug}")
+        print(f"  ✓ Backlink attribution: canonical_url → https://rohitraj.tech/notes/{args.slug}")
     else:
         print(f"  ✗ {body}")
         sys.exit(2)
