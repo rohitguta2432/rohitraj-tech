@@ -221,7 +221,7 @@ The thing I would genuinely build with this: a **repo-wide refactoring agent** t
 
 If you are building a product on local or hybrid inference and you would rather not spend two weeks discovering \`--fit off\` yourself, that is the kind of integration work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp), including the AI-integration layer — routing, fallbacks, cost controls and the observability that tells you when your speculation path quietly turned itself off.
 
-For teams that need that capability in-house rather than as a one-off build, I also work as a [founding engineer](/services/hire-founding-engineer-india) — same work, embedded in your team, with the runbooks left behind.`,
+For teams that need that capability in-house rather than as a one-off build, I also work as a [founding engineer](/services/hire-founding-engineer-india) — same work, embedded in your team, with the runbooks left behind. I break down why on-device AI is eating cloud-first inference in [this note](/notes/cloud-first-ai-is-dead-on-device-android-2026).`,
     },
   ],
   cta: {

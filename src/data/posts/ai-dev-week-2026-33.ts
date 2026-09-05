@@ -127,7 +127,7 @@ The failure mode I would worry about: over-strict verification silently blocks t
       heading: 'Building With Any of These?',
       content: `Across all six drops the capability is a download and the integration is the month. Which 10% of calls actually need the frontier model. Which fixtures quietly carry recoverable credentials. Whether your bot gate demotes or blocks. None of that is in a release note.
 
-I build AI-integration MVPs in six weeks and do the unglamorous half — auth, rate limits, error paths, observability. [The 6-week MVP track](/services/6-week-mvp) is built for that; [hiring a founding engineer](/services/hire-founding-engineer-india) is the version where I stay past launch.`,
+I build AI-integration MVPs in six weeks and do the unglamorous half — auth, rate limits, error paths, observability. [The 6-week MVP track](/services/6-week-mvp) is built for that; [hiring a founding engineer](/services/hire-founding-engineer-india) is the version where I stay past launch. I break down how agent memory actually differs from context windows in [this note](/notes/ai-agent-memory-vs-context-window-2026).`,
     },
   ],
   cta: {

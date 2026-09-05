@@ -137,7 +137,7 @@ That's a weekend of real work beyond \`just dev\` — and it's the difference be
 - [6-Week MVP →](/services/6-week-mvp) — idea to deployed product, agent integration included
 - [Hire a Founding Engineer (India) →](/services/hire-founding-engineer-india) — senior engineering leadership for your AI product, at India rates
 
-Or just steal the hardening checklist above — it's the part the launch-day coverage won't give you.`,
+Or just steal the hardening checklist above — it's the part the launch-day coverage won't give you. I break down putting command guardrails on AI agents in [this note](/notes/ai-agent-command-guardrails-2026).`,
         },
     ],
     cta: {

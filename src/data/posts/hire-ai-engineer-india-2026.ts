@@ -138,7 +138,7 @@ If you answered yes to all five and you are pre-PMF, the right action this week 
 
 If you want a longer-term technical partner who can ship AI features and lead architecture decisions for your existing team, the [Hire a Founding Engineer in India](/services/hire-founding-engineer-india) service is the right fit — sprint or retainer, no equity ask, full code ownership.
 
-Not sure which one applies? Send a message describing the AI feature you want to build, and I will reply within 24 hours with an honest scoping call recommendation — including "you do not need an AI engineer for this" if that turns out to be the answer.`
+Not sure which one applies? Send a message describing the AI feature you want to build, and I will reply within 24 hours with an honest scoping call recommendation — including "you do not need an AI engineer for this" if that turns out to be the answer. I break down what a $15K MVP actually includes vs a $50K agency quote in [this note](/notes/what-15k-mvp-actually-includes-vs-50k-agency-quote).`
     },
   ],
   cta: {

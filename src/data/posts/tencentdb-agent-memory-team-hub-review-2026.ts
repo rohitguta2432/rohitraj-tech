@@ -128,7 +128,7 @@ The failure mode I'd watch hardest: **memory poisoning at team scale**. One conf
 - [6-Week MVP Development](/services/6-week-mvp) — scope to shipped product, agent infrastructure included
 - [Hire a Founding Engineer (India)](/services/hire-founding-engineer-india) — senior product engineering, 10+ years, AI-native stack
 
-Or start smaller: run \`./start-all.sh\` on a spare box this weekend, import one codebase, and see what your agents stop re-learning.`,
+Or start smaller: run \`./start-all.sh\` on a spare box this weekend, import one codebase, and see what your agents stop re-learning. I break down agent memory vs context windows in [this note](/notes/ai-agent-memory-vs-context-window-2026).`,
     },
   ],
   cta: {

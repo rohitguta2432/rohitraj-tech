@@ -252,7 +252,7 @@ Start with a single skill (one markdown file in \`.claude/skills/<name>/SKILL.md
 
 The other 20% is making this stack pay rent on a real product — which means knowing when to trust the agent and when to call in a human. I've shipped 12+ production MVPs in the last 24 months, most of them with some flavor of this stack, and I do [6-week MVP engagements](/services/6-week-mvp) for founders who want their first production version built right the first time. If you're hitting the walls in section above — cross-service migrations, multi-tenant RLS, cost-aware AI architecture — that's exactly what [hiring a founding engineer](/services/hire-founding-engineer-india) is for.
 
-DM me on [LinkedIn](https://www.linkedin.com/in/rohitraj2/) with what you're building. The first 20 minutes are free.`,
+DM me on [LinkedIn](https://www.linkedin.com/in/rohitraj2/) with what you're building. The first 20 minutes are free. I break down agent memory vs context windows in [this note](/notes/ai-agent-memory-vs-context-window-2026).`,
     },
   ],
   cta: {
