@@ -3,6 +3,26 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "rtx-pro-5500-blackwell-84gb-local-llm-2026",
+    "title": "NVIDIA RTX PRO 5500 Blackwell: What Actually Fits in 84GB for Local LLMs (2026)",
+    "date": "2026-09-15",
+    "excerpt": "NVIDIA quietly listed the RTX PRO 5500 Blackwell: 21,760 CUDA cores, 84GB of ECC GDDR7, 600W, no price yet. The news sites stopped at the spec sheet. Here is the question that matters if you run models locally: what actually fits in 84GB, what still does not, and when a used A100 or the API is the smarter buy.",
+    "readingTime": "11 min read",
+    "keywords": [
+      "rtx pro 5500 blackwell",
+      "rtx pro 5500 84gb",
+      "rtx pro 5500 local llm",
+      "rtx pro 5500 vs rtx 5090",
+      "84gb gpu llm inference",
+      "rtx pro 5500 specs",
+      "nvidia rtx pro 5500 vram"
+    ],
+    "coverImage": {
+      "src": "/images/notes/rtx-pro-5500-blackwell-84gb-local-llm-2026-cover.jpg",
+      "alt": "Massive glowing GPU die radiating memory lanes illustrating RTX PRO 5500 Blackwell 84GB local LLM capacity"
+    }
+  },
+  {
     "slug": "deepseek-v4-1-flash-hardware-requirements-2026",
     "title": "DeepSeek V4.1 Flash Hardware Requirements: The 510GB Model Everyone Is Calling 8B (2026)",
     "date": "2026-09-14",
