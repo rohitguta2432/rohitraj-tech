@@ -3,6 +3,26 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "deepseek-v4-1-flash-hardware-requirements-2026",
+    "title": "DeepSeek V4.1 Flash Hardware Requirements: The 510GB Model Everyone Is Calling 8B (2026)",
+    "date": "2026-09-14",
+    "excerpt": "DeepSeek V4.1 Flash activates 8B parameters per prefill token, so the internet decided it is a small model. The checkpoint is 510.30GB across 48 files and the self-hosting floor is an 8-GPU node. Here is the real memory table, why the KV cache collapsed to 890 bytes per token, and the cache-hit pricing that makes the local question mostly moot.",
+    "readingTime": "14 min read",
+    "keywords": [
+      "deepseek v4.1 flash hardware requirements",
+      "deepseek v4.1 flash vram",
+      "run deepseek v4.1 flash locally",
+      "deepseek v4.1 flash kv cache",
+      "deepseek flash api pricing",
+      "deepseek v4.1 flash vs v4 flash",
+      "deepseek v4.1 flash engram parameters"
+    ],
+    "coverImage": {
+      "src": "/images/notes/deepseek-v4-1-flash-hardware-requirements-2026-cover.jpg",
+      "alt": "Immense glowing sphere collapsing into a dense core illustrating DeepSeek V4.1 Flash hardware requirements"
+    }
+  },
+  {
     "slug": "what-does-a-forward-deployed-engineer-do-2026",
     "title": "What Does a Forward Deployed Engineer Actually Do? (2026 Guide)",
     "date": "2026-09-05",

@@ -21,8 +21,9 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 - [StellarMIND](https://rohitraj.tech/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (142 posts)
+## All Engineering Notes (143 posts)
 
+- [DeepSeek V4.1 Flash Hardware Requirements: The 510GB Model Everyone Is Calling 8B (2026)](https://rohitraj.tech/notes/deepseek-v4-1-flash-hardware-requirements-2026)
 - [Shieldstral vs Llama Guard vs OpenAI Moderation API: A Self-Hosted Content Moderation Guide (2026)](https://rohitraj.tech/notes/shieldstral-vs-llama-guard-openai-moderation-2026)
 - [OpenAI Codex Security vs Snyk vs Semgrep vs CodeQL: What the New Open-Source Scanner Actually Changes (2026)](https://rohitraj.tech/notes/codex-security-vs-snyk-semgrep-codeql-2026)
 - [DeepSeek DSpark in llama.cpp: How to Get 2x Local Inference on V4-Flash-0731 (2026)](https://rohitraj.tech/notes/deepseek-dspark-speculative-decoding-llamacpp-2026)
