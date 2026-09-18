@@ -143,6 +143,7 @@ import { qwen3827bLocalCodingAgentClaudeCode2026 } from './qwen3-8-27b-local-cod
 import { qwen38FlashNextVs27bLocalMemory2026 } from './qwen3-8-flash-next-vs-27b-local-memory-2026';
 import { deepseekV41FlashHardwareRequirements2026 } from './deepseek-v4-1-flash-hardware-requirements-2026';
 import { rtxPro5500Blackwell84gbLocalLlm2026 } from './rtx-pro-5500-blackwell-84gb-local-llm-2026';
+import { auditAgentSkillsSecurityClaudeCode2026 } from './audit-agent-skills-security-claude-code-2026';
 import { aiDevWeek2026W35 } from './ai-dev-week-2026-35';
 import { whatDoesAForwardDeployedEngineerDo2026 } from './what-does-a-forward-deployed-engineer-do-2026';
 
@@ -289,6 +290,7 @@ const allPosts: BlogPost[] = [
   qwen38FlashNextVs27bLocalMemory2026,
   deepseekV41FlashHardwareRequirements2026,
   rtxPro5500Blackwell84gbLocalLlm2026,
+  auditAgentSkillsSecurityClaudeCode2026,
   aiDevWeek2026W35,
   whatDoesAForwardDeployedEngineerDo2026,
 ];
