@@ -134,6 +134,7 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 
 ### Founder & Business
 
+- [How to Hire a Forward Deployed Engineer (Without the Full-Time Search)](https://rohitraj.tech/notes/forward-deployed-engineer-hiring-process-2026)
 - [What Does a Forward Deployed Engineer Actually Do? (2026 Guide)](https://rohitraj.tech/notes/what-does-a-forward-deployed-engineer-do-2026)
 - [How to Build an App Like Uber or Zomato — Architecture & Real Costs](https://rohitraj.tech/notes/build-app-like-uber-zomato-architecture-cost)
 - [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a Developer (2026)](https://rohitraj.tech/notes/how-much-does-it-cost-to-build-mobile-app-india-2026)

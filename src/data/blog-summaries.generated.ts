@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "forward-deployed-engineer-hiring-process-2026",
+    "title": "How to Hire a Forward Deployed Engineer (Without the Full-Time Search)",
+    "date": "2026-09-19",
+    "excerpt": "Every guide on how to hire a forward deployed engineer is written by someone selling you the placement. This one is written by the person who does the work — the scoping decision that comes before the hire, a paid trial project you can actually run, and the four ways the engagement dies in week three.",
+    "readingTime": "14 min read",
+    "keywords": [
+      "how to hire a forward deployed engineer",
+      "hire a forward deployed engineer",
+      "forward deployed engineer hiring process",
+      "fde interview loop",
+      "fractional forward deployed engineer",
+      "forward deployed engineer trial project",
+      "ai consultant vs full time hire"
+    ],
+    "coverImage": {
+      "src": "/images/notes/forward-deployed-engineer-hiring-process-2026-cover.jpg",
+      "alt": "Abstract converging pathways on a dark grid illustrating the forward deployed engineer hiring process"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "audit-agent-skills-security-claude-code-2026",
     "title": "How to Audit an Agent Skill Before You Install It (2026 Playbook)",
     "date": "2026-09-18",

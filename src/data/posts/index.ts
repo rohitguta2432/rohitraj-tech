@@ -146,6 +146,7 @@ import { rtxPro5500Blackwell84gbLocalLlm2026 } from './rtx-pro-5500-blackwell-84
 import { auditAgentSkillsSecurityClaudeCode2026 } from './audit-agent-skills-security-claude-code-2026';
 import { aiDevWeek2026W35 } from './ai-dev-week-2026-35';
 import { whatDoesAForwardDeployedEngineerDo2026 } from './what-does-a-forward-deployed-engineer-do-2026';
+import { forwardDeployedEngineerHiringProcess2026 } from './forward-deployed-engineer-hiring-process-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -293,6 +294,7 @@ const allPosts: BlogPost[] = [
   auditAgentSkillsSecurityClaudeCode2026,
   aiDevWeek2026W35,
   whatDoesAForwardDeployedEngineerDo2026,
+  forwardDeployedEngineerHiringProcess2026,
 ];
 
 // Validate all posts at module load time
