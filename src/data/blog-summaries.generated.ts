@@ -3,6 +3,26 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "audit-agent-skills-security-claude-code-2026",
+    "title": "How to Audit an Agent Skill Before You Install It (2026 Playbook)",
+    "date": "2026-09-18",
+    "excerpt": "Cloudflare, Alibaba and Tencent all shipped official Agent Skills this week, and `npx skills add` now installs to 78 different agents. Snyk scanned 3,984 skills and found security issues in 36.82% of them. Here is the review gate I run before any skill touches a client repo — what to read, what to diff, what to sandbox, and what to never auto-install.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "agent skills security",
+      "how to audit agent skills",
+      "skill.md prompt injection",
+      "agent skills supply chain",
+      "claude code skills security",
+      "npx skills add safe",
+      "agent skills vs mcp security"
+    ],
+    "coverImage": {
+      "src": "/images/notes/audit-agent-skills-security-claude-code-2026-cover.jpg",
+      "alt": "Low-poly hourglass with glowing amber sand illustrating agent skills security audit before install"
+    }
+  },
+  {
     "slug": "rtx-pro-5500-blackwell-84gb-local-llm-2026",
     "title": "NVIDIA RTX PRO 5500 Blackwell: What Actually Fits in 84GB for Local LLMs (2026)",
     "date": "2026-09-15",

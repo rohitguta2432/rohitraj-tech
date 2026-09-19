@@ -47,3 +47,7 @@ graphify-out/
 
 # Design-direction canvas working files (seeded artifact, not part of the build)
 .design-directions/
+
+# python bytecode
+__pycache__/
+*.pyc
