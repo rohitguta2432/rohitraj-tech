@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "fractional-ai-engineer-vs-hiring-2026",
+    "title": "Fractional AI Engineer vs Full-Time Hire: How to Decide (2026)",
+    "date": "2026-09-20",
+    "excerpt": "Every comparison of a fractional AI engineer against a full-time hire is published by someone selling one side of it. This one is written from the delivery side — the five conditions that make fractional the right call, the four where it is the wrong one, the week-to-week cadence that actually works, and what has to be true on your side before any of it does.",
+    "readingTime": "15 min read",
+    "keywords": [
+      "fractional ai engineer vs full-time hire",
+      "fractional ai engineer",
+      "when to hire a fractional ai engineer",
+      "fractional ai engineer vs fractional cto",
+      "fractional forward deployed engineer",
+      "hire ai engineer without full-time search",
+      "ai consultant vs full time hire"
+    ],
+    "coverImage": {
+      "src": "/images/notes/fractional-ai-engineer-vs-hiring-2026-cover.jpg",
+      "alt": "Abstract cracked monolith with glowing fissures illustrating fractional AI engineer vs full-time hire"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "forward-deployed-engineer-hiring-process-2026",
     "title": "How to Hire a Forward Deployed Engineer (Without the Full-Time Search)",
     "date": "2026-09-19",
