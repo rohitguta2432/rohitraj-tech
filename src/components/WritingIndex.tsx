@@ -24,6 +24,10 @@ import { IndexRow, type Row } from "@/components/WorkIndex";
  * to a few pages, and that dilutes as the list grows.
  */
 const FEATURED_SLUGS = [
+    // Informational head term for the FDE consulting cluster. Sat behind
+    // `/notes` (itself "Discovered - currently not indexed") with no homepage
+    // anchor, so Googlebot had no one-hop path to it at all.
+    "what-does-a-forward-deployed-engineer-do-2026",
     "founding-engineer-equity-percentage-2026",
     "bolt-new-vs-hire-developer-2026",
     "cursor-ai-vs-hire-developer-2026",
