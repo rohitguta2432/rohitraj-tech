@@ -3,6 +3,26 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "qwen-image-2-1-commercial-license-alternatives-2026",
+    "title": "Qwen-Image-2.1 Commercial Use: The License Problem and What to Ship Instead (2026)",
+    "date": "2026-09-21",
+    "excerpt": "Qwen-Image-2.1 shipped on 20 September 2026 with 7B parameters, native 2K output and a real alpha channel — under a research-only license that forbids commercial use. Here is exactly what the license prohibits, which open image models you can actually ship, and how to catch a license downgrade in CI before it reaches production.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "qwen image 2.1 commercial use",
+      "qwen image 2.1 license",
+      "qwen research license agreement",
+      "open source image model commercial license 2026",
+      "flux 2 klein apache license",
+      "z-image turbo commercial use",
+      "commercially usable open weights image model"
+    ],
+    "coverImage": {
+      "src": "/images/notes/qwen-image-2-1-commercial-license-alternatives-2026-cover.jpg",
+      "alt": "Crystalline prism sealed in a containment sphere illustrating Qwen-Image-2.1 commercial use license limits"
+    }
+  },
+  {
     "slug": "fractional-ai-engineer-vs-hiring-2026",
     "title": "Fractional AI Engineer vs Full-Time Hire: How to Decide (2026)",
     "date": "2026-09-20",

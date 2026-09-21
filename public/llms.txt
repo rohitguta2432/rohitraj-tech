@@ -21,8 +21,9 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 - [StellarMIND](https://rohitraj.tech/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (145 posts)
+## All Engineering Notes (146 posts)
 
+- [Qwen-Image-2.1 Commercial Use: The License Problem and What to Ship Instead (2026)](https://rohitraj.tech/notes/qwen-image-2-1-commercial-license-alternatives-2026)
 - [Fractional AI Engineer vs Full-Time Hire: How to Decide (2026)](https://rohitraj.tech/notes/fractional-ai-engineer-vs-hiring-2026)
 - [DeepSeek V4.1 Flash Hardware Requirements: The 510GB Model Everyone Is Calling 8B (2026)](https://rohitraj.tech/notes/deepseek-v4-1-flash-hardware-requirements-2026)
 - [How to Audit an Agent Skill Before You Install It (2026 Playbook)](https://rohitraj.tech/notes/audit-agent-skills-security-claude-code-2026)
