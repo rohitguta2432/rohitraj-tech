@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "fde-vs-solutions-engineer-vs-consultant-2026",
+    "title": "Forward Deployed Engineer vs Solutions Engineer vs Consultant: Who Do You Actually Need in 2026?",
+    "date": "2026-09-22",
+    "excerpt": "Every guide comparing a forward deployed engineer to a solutions engineer is published by someone who gets paid when you post a job. So all of them stop at the same place: which title to write. This one covers the fourth option they leave out, what six weeks of an actual deployment looks like, and a scorecard you can run before you commit headcount.",
+    "readingTime": "15 min read",
+    "keywords": [
+      "forward deployed engineer vs solutions engineer",
+      "forward deployed engineer vs solutions architect",
+      "what is a forward deployed engineer",
+      "solutions engineer vs consultant",
+      "hire a forward deployed engineer",
+      "forward deployed engineer role",
+      "which engineering role to hire"
+    ],
+    "coverImage": {
+      "src": "/images/notes/fde-vs-solutions-engineer-vs-consultant-2026-cover.jpg",
+      "alt": "Ribbons of cyan light folding through dark space illustrating forward deployed engineer vs solutions engineer"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "qwen-image-2-1-commercial-license-alternatives-2026",
     "title": "Qwen-Image-2.1 Commercial Use: The License Problem and What to Ship Instead (2026)",
     "date": "2026-09-21",

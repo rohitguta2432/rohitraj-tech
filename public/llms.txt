@@ -21,7 +21,7 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 - [StellarMIND](https://rohitraj.tech/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (146 posts)
+## All Engineering Notes (147 posts)
 
 - [Qwen-Image-2.1 Commercial Use: The License Problem and What to Ship Instead (2026)](https://rohitraj.tech/notes/qwen-image-2-1-commercial-license-alternatives-2026)
 - [Fractional AI Engineer vs Full-Time Hire: How to Decide (2026)](https://rohitraj.tech/notes/fractional-ai-engineer-vs-hiring-2026)
@@ -189,6 +189,7 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 - [TencentDB Agent Memory v2.0 Review: A Self-Hosted Team Memory Hub for AI Agents (2026)](https://rohitraj.tech/notes/tencentdb-agent-memory-team-hub-review-2026)
 - [Cloudflare Computer vs Cloudflare Sandbox: Which Agent Runtime Should You Actually Use? (2026)](https://rohitraj.tech/notes/cloudflare-computer-vs-sandbox-agent-guide-2026)
 - [Prime Agent: The RLM + Continual Harness Guide (And When to Skip It) — 2026](https://rohitraj.tech/notes/prime-agent-rlm-continual-harness-guide-2026)
+- [Forward Deployed Engineer vs Solutions Engineer vs Consultant: Who Do You Actually Need in 2026?](https://rohitraj.tech/notes/fde-vs-solutions-engineer-vs-consultant-2026)
 
 ## Services
 

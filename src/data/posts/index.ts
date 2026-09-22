@@ -149,6 +149,7 @@ import { whatDoesAForwardDeployedEngineerDo2026 } from './what-does-a-forward-de
 import { forwardDeployedEngineerHiringProcess2026 } from './forward-deployed-engineer-hiring-process-2026';
 import { fractionalAiEngineerVsHiring2026 } from './fractional-ai-engineer-vs-hiring-2026';
 import { qwenImage21CommercialLicenseAlternatives2026 } from './qwen-image-2-1-commercial-license-alternatives-2026';
+import { fdeVsSolutionsEngineerVsConsultant2026 } from './fde-vs-solutions-engineer-vs-consultant-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -299,6 +300,7 @@ const allPosts: BlogPost[] = [
   forwardDeployedEngineerHiringProcess2026,
   fractionalAiEngineerVsHiring2026,
   qwenImage21CommercialLicenseAlternatives2026,
+  fdeVsSolutionsEngineerVsConsultant2026,
 ];
 
 // Validate all posts at module load time
