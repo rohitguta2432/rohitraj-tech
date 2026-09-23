@@ -150,6 +150,7 @@ import { forwardDeployedEngineerHiringProcess2026 } from './forward-deployed-eng
 import { fractionalAiEngineerVsHiring2026 } from './fractional-ai-engineer-vs-hiring-2026';
 import { qwenImage21CommercialLicenseAlternatives2026 } from './qwen-image-2-1-commercial-license-alternatives-2026';
 import { fdeVsSolutionsEngineerVsConsultant2026 } from './fde-vs-solutions-engineer-vs-consultant-2026';
+import { jevAlternativesOpenWeightsDecisionModels2026 } from './jev-alternatives-open-weights-decision-models-2026';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -301,6 +302,7 @@ const allPosts: BlogPost[] = [
   fractionalAiEngineerVsHiring2026,
   qwenImage21CommercialLicenseAlternatives2026,
   fdeVsSolutionsEngineerVsConsultant2026,
+  jevAlternativesOpenWeightsDecisionModels2026,
 ];
 
 // Validate all posts at module load time

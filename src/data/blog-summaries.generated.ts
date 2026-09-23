@@ -3,6 +3,26 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "jev-alternatives-open-weights-decision-models-2026",
+    "title": "Open-Weights Jev Alternatives (2026): Which Decision Model To Actually Ship",
+    "date": "2026-09-23",
+    "excerpt": "TypeSafe shipped Jev on 15 September 2026 and the open-weights clones landed inside a week. Here is the current field benchmarked on the number that actually decides the buy — calibration, not accuracy — plus a runnable ECE harness and the cost math.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "jev alternatives",
+      "open source decision model",
+      "open weights jev",
+      "system one models",
+      "laya decision model",
+      "kev qwen decision model",
+      "calibrated classification model"
+    ],
+    "coverImage": {
+      "src": "/images/notes/jev-alternatives-open-weights-decision-models-2026-cover.jpg",
+      "alt": "Dark canyon of server racks lit in teal illustrating open-weights Jev alternatives and decision models"
+    }
+  },
+  {
     "slug": "fde-vs-solutions-engineer-vs-consultant-2026",
     "title": "Forward Deployed Engineer vs Solutions Engineer vs Consultant: Who Do You Actually Need in 2026?",
     "date": "2026-09-22",
