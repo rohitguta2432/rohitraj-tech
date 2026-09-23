@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Audit all sitemap URLs for index status via GSC URL Inspection API,
-# then submit non-indexed ones via Google Indexing API + IndexNow.
+# then submit non-indexed ones to IndexNow (Bing/Yandex). The Google Indexing
+# API is deliberately not used: Google only honours it for JobPosting /
+# BroadcastEvent pages, so its 200 OK for blog posts means nothing.
 #
 # Usage:
 #   ./scripts/reindex-missing.sh              # full audit + submit
@@ -15,8 +17,8 @@ HOST="rohitraj.tech"
 SITE_URL="sc-domain:${HOST}"
 SA_KEY="${GOOGLE_INDEXING_KEY_FILE:-$HOME/.config/gsc/indexing-sa.json}"
 SITEMAP_URL="https://${HOST}/sitemap.xml"
+INDEXNOW_KEY="fa4a18743acca1eb87d790a528b762fb"
 DRY_RUN=0
-QUOTA_LIMIT=180  # Stay under 200/day cap, leave headroom for daily-seo-content
 
 if [[ "${1:-}" =~ ^(--dry-run|--inspect-only)$ ]]; then
   DRY_RUN=1
@@ -54,7 +56,7 @@ now = int(time.time())
 header = base64.urlsafe_b64encode(json.dumps({"alg":"RS256","typ":"JWT"}).encode()).rstrip(b"=")
 claim = base64.urlsafe_b64encode(json.dumps({
     "iss": sa["client_email"],
-    "scope": "https://www.googleapis.com/auth/indexing https://www.googleapis.com/auth/webmasters.readonly",
+    "scope": "https://www.googleapis.com/auth/webmasters.readonly",
     "aud": "https://oauth2.googleapis.com/token",
     "exp": now+3600, "iat": now,
 }).encode()).rstrip(b"=")
@@ -122,7 +124,7 @@ if [ "${#NOT_INDEXED[@]}" -eq 0 ]; then
   exit 0
 fi
 
-# ---------- Step 5: Submit non-indexed via Indexing API + IndexNow ----------
+# ---------- Step 5: Submit non-indexed via IndexNow ----------
 echo
 echo "==> Non-indexed URLs:"
 TO_SUBMIT=()
@@ -133,29 +135,20 @@ for entry in "${NOT_INDEXED[@]}"; do
   TO_SUBMIT+=("${u}")
 done
 
-# Cap to quota headroom
-if [ "${#TO_SUBMIT[@]}" -gt "${QUOTA_LIMIT}" ]; then
-  echo
-  echo "    Capping submission at ${QUOTA_LIMIT} URLs (Indexing API daily quota = 200)"
-  TO_SUBMIT=("${TO_SUBMIT[@]:0:${QUOTA_LIMIT}}")
-fi
-
 if [ "${DRY_RUN}" -eq 1 ]; then
   echo
   echo "==> Dry-run: skipping submission. ${#TO_SUBMIT[@]} URLs would have been submitted."
   exit 0
 fi
 
-# Hand off to submit-seo.sh which already handles IndexNow + Google Indexing API.
-# DO NOT pipe through head — SIGPIPE will truncate submission mid-loop.
 echo
-echo "==> Submitting ${#TO_SUBMIT[@]} non-indexed URLs..."
-"$(dirname "$0")/submit-seo.sh" "${TO_SUBMIT[@]}" 2>&1 | tee /tmp/reindex-submit.log | grep -E "HTTP|→ https|error|ok|WINNER" || true
-echo
-SUBMITTED_COUNT=$(grep -c "^    → https" /tmp/reindex-submit.log 2>/dev/null || echo 0)
-echo "    Total URLs submitted to Google Indexing API: ${SUBMITTED_COUNT}"
+echo "==> Submitting ${#TO_SUBMIT[@]} non-indexed URLs to IndexNow..."
+URL_JSON=$(printf '"%s",' "${TO_SUBMIT[@]}" | sed 's/,$//')
+PAYLOAD="{\"host\":\"${HOST}\",\"key\":\"${INDEXNOW_KEY}\",\"keyLocation\":\"https://${HOST}/${INDEXNOW_KEY}.txt\",\"urlList\":[${URL_JSON}]}"
+curl -s -o /dev/null -w "    IndexNow HTTP %{http_code}\n" \
+  -X POST "https://api.indexnow.org/indexnow" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  --data "${PAYLOAD}" || echo "    IndexNow request failed"
 
 echo
 echo "==> Done."
-echo "    Recheck index status in 24-72h via:"
-echo "    ./scripts/reindex-missing.sh --dry-run"
