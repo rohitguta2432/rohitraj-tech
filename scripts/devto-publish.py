@@ -29,6 +29,8 @@ POSTS_DIR = REPO / "src" / "data" / "posts"
 BASE_URL = "https://rohitraj.tech/notes"
 API = "https://dev.to/api/articles"
 COVER_BASE = "https://rohitraj.tech/images/notes"
+SERVICES_FILE = REPO / "src" / "data" / "services.ts"
+MAX_SERVICE_LINKS = 3
 
 
 def read_post_meta(slug: str) -> dict:
@@ -82,6 +84,23 @@ def sanitize_tags(keywords: list, max_tags: int = 4) -> list:
     return tags or ["webdev"]
 
 
+def service_links(slug: str) -> list:
+    """(title, url) for each /services/* page the post links to, in order, max 3.
+
+    The teaser alone sends no external links to the service pages; reusing the
+    ones the post already chose keeps them topical instead of a fixed block.
+    """
+    post = (POSTS_DIR / f"{slug}.ts").read_text(encoding="utf-8")
+    titles = dict(
+        re.findall(r'slug:\s*"([^"]+)",\s*title:\s*"([^"]+)"', SERVICES_FILE.read_text(encoding="utf-8"))
+    )
+    links = []
+    for s in re.findall(r"/services/([a-z0-9-]+)", post):
+        if s in titles and s not in [l[0] for l in links]:
+            links.append((s, titles[s]))
+    return [(t, f"https://rohitraj.tech/services/{s}") for s, t in links[:MAX_SERVICE_LINKS]]
+
+
 def build_payload(slug: str, meta: dict, tags: list) -> dict:
     canonical = f"{BASE_URL}/{slug}"
     cover_file = REPO / "public" / "images" / "notes" / f"{slug}-cover.jpg"
@@ -92,6 +111,11 @@ def build_payload(slug: str, meta: dict, tags: list) -> dict:
         f"---\n"
         f"**Read the full version with code samples, diagrams, and architecture details:** "
         f"[{meta['title']}]({canonical})\n\n"
+    )
+    services = service_links(slug)
+    if services:
+        body += "**Work with me:** " + " · ".join(f"[{t}]({u})" for t, u in services) + "\n\n"
+    body += (
         f"More engineering notes: [rohitraj.tech/notes](https://rohitraj.tech/notes)\n"
     )
     article = {
