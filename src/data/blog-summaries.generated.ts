@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-dev-week-2026-39",
+    "title": "This Week in AI Dev: Frontier Prices Halved and a 27B Model Fit in 6GB (Week 39 of 2026)",
+    "date": "2026-09-24",
+    "excerpt": "Anthropic shipped Claude Opus 5.5 and OpenAI shipped GPT-6 Sol ninety minutes later, both at roughly half the old price. The same 48 hours also put a 27B multimodal model into 5.95GB and taught transformers to run llama.cpp's Metal kernels in-process. The cost floor moved at both ends of the stack at once — here is what actually changed and what to do about it.",
+    "readingTime": "7 min read",
+    "keywords": [
+      "ai dev news week 39 2026",
+      "claude opus 5.5 pricing",
+      "gpt-6 sol luna pricing",
+      "ai model price cuts september 2026",
+      "local llm memory requirements 2026",
+      "transformers gguf metal kernels",
+      "ternary quantization llm"
+    ],
+    "coverImage": {
+      "src": "/images/notes/ai-dev-week-2026-39-cover.jpg",
+      "alt": "descending constellation of luminous nodes in dark space illustrating falling AI model costs in week 39 of 2026"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "jev-alternatives-open-weights-decision-models-2026",
     "title": "Open-Weights Jev Alternatives (2026): Which Decision Model To Actually Ship",
     "date": "2026-09-23",

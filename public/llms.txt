@@ -21,8 +21,9 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 - [StellarMIND](https://rohitraj.tech/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (148 posts)
+## All Engineering Notes (149 posts)
 
+- [This Week in AI Dev: Frontier Prices Halved and a 27B Model Fit in 6GB (Week 39 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-39)
 - [Open-Weights Jev Alternatives (2026): Which Decision Model To Actually Ship](https://rohitraj.tech/notes/jev-alternatives-open-weights-decision-models-2026)
 - [Qwen-Image-2.1 Commercial Use: The License Problem and What to Ship Instead (2026)](https://rohitraj.tech/notes/qwen-image-2-1-commercial-license-alternatives-2026)
 - [Fractional AI Engineer vs Full-Time Hire: How to Decide (2026)](https://rohitraj.tech/notes/fractional-ai-engineer-vs-hiring-2026)

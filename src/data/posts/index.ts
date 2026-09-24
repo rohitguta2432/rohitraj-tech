@@ -151,6 +151,7 @@ import { fractionalAiEngineerVsHiring2026 } from './fractional-ai-engineer-vs-hi
 import { qwenImage21CommercialLicenseAlternatives2026 } from './qwen-image-2-1-commercial-license-alternatives-2026';
 import { fdeVsSolutionsEngineerVsConsultant2026 } from './fde-vs-solutions-engineer-vs-consultant-2026';
 import { jevAlternativesOpenWeightsDecisionModels2026 } from './jev-alternatives-open-weights-decision-models-2026';
+import { aiDevWeek202639 } from './ai-dev-week-2026-39';
 
 const allPosts: BlogPost[] = [
   ragForSql,
@@ -303,6 +304,7 @@ const allPosts: BlogPost[] = [
   qwenImage21CommercialLicenseAlternatives2026,
   fdeVsSolutionsEngineerVsConsultant2026,
   jevAlternativesOpenWeightsDecisionModels2026,
+  aiDevWeek202639,
 ];
 
 // Validate all posts at module load time
