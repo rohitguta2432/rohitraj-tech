@@ -361,7 +361,7 @@ The 6-week timeline is tight, but the security work is **not** what blows the bu
 
 What is not easy is **shipping a server that will not have its tool outputs weaponised against your users**. That part has not been documented yet — the SDK leaves it to you, and the top tutorials skip it entirely. Fix that on your own server before your client finds the bug for you. The Microsoft Copilot disclosure is the warning you get for free.
 
-If you want a second pair of eyes on an MCP server that is going into production this quarter — or you need someone to do the build the secure way the first time around — I do that. [6-week MVPs](/services/6-week-mvp) and [founding-engineer engagements](/services/hire-founding-engineer-india) both include the defense-layer checklist above as table stakes.`,
+If you want a second pair of eyes on an MCP server that is going into production this quarter — or you need someone to do the build the secure way the first time around — I do that. [6-week MVPs](/services/6-week-mvp) and [founding-engineer engagements](/services/hire-founding-engineer-india) both include the defense-layer checklist above as table stakes. For MCP work on its own — connecting an existing product or internal systems to Claude and other agents — see [MCP integration consulting](/services/mcp-integration-consultant).`,
         },
     ],
     cta: {

@@ -159,6 +159,7 @@ I build production systems where the safety layer — moderation, guardrails, ab
 
 - **Shipping something new?** [6-week MVP](/services/6-week-mvp) — a working product with the moderation, auth, and abuse-handling layers already wired in, not left for v2.
 - **Need this depth on the team, not on a ticket?** [Hire a founding engineer](/services/hire-founding-engineer-india) — architecture and delivery, embedded.
+- **Deploying AI into a customer's environment?** [Hire a forward deployed engineer](/services/forward-deployed-engineer) — embedded with your team or theirs until the integration is live in production.
 
 If you're also thinking about what happens when an AI agent — not just a user — sends something it shouldn't, [command guardrails for coding agents](/notes/ai-agent-command-guardrails-2026) is the adjacent problem one layer down.`,
     },

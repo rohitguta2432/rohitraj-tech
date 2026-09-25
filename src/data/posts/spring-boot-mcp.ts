@@ -121,7 +121,7 @@ The stdio transport means Claude spawns your Java process locally. For productio
 4. **Spring AI's @Tool annotation is magical** — it handles JSON schema generation, parameter validation, and MCP compliance automatically.
 5. **MCP is early but growing fast** — building MCP servers now gives you first-mover advantage in the AI tooling ecosystem.
 
-If you'd rather hand the build off and review weekly, the [6-week MVP sprint](/services/6-week-mvp) is the fastest path; for a longer-term engineering relationship, look at [founding engineer in India](/services/hire-founding-engineer-india).
+If you'd rather hand the build off and review weekly, the [6-week MVP sprint](/services/6-week-mvp) is the fastest path; for a longer-term engineering relationship, look at [founding engineer in India](/services/hire-founding-engineer-india). If you only need the MCP layer built against your existing Java services, that is an [MCP integration consultant](/services/mcp-integration-consultant) engagement.
 
 Adjacent reads: [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot) for the stack-level decision, [From Idea to Play Store: Shipping SanatanApp in 4 Weeks](/notes/idea-to-play-store-sanatanapp-architecture) for the hiring-level one.`
     },

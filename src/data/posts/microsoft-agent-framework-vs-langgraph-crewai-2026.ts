@@ -193,7 +193,7 @@ That last one is the lazy-but-correct move more often than framework comparisons
 
 **Budget for the boring 80%:** retries with backoff on tool calls, a hard timeout and step cap so a looping agent can't burn your token budget, structured logging of every step (input, tool, output) because you *will* need to debug a weird run, and a kill switch. None of the three frameworks gives you all of this for free; LangGraph gets closest with durable runs.
 
-**The failure mode I'd worry about** with Agent Framework specifically: betting a long-lived production system on a 1.0 that's still moving. Pin your versions, read the changelog before upgrading, and keep your agent logic thin enough that a breaking API change is a small diff. If you want a second pair of hands wiring a multi-agent system without learning these trade-offs the hard way, [that's the kind of build I do](/services/hire-founding-engineer-india).`,
+**The failure mode I'd worry about** with Agent Framework specifically: betting a long-lived production system on a 1.0 that's still moving. Pin your versions, read the changelog before upgrading, and keep your agent logic thin enough that a breaking API change is a small diff. If you want a second pair of hands wiring a multi-agent system without learning these trade-offs the hard way, [that's the kind of build I do](/services/hire-founding-engineer-india). When the agents need to reach your internal tools and data, I build that layer as an [MCP integration engagement](/services/mcp-integration-consultant).`,
         },
     ],
     cta: {

@@ -90,7 +90,7 @@ India founding-engineer offers in 2026 cluster at 0.2–1% equity plus ₹40–9
 Usually no. If you are pre-PMF, under 12 months of runway, and not in an AI-frontier or compliance-heavy stack, a senior contractor on a 6-week sprint ($15K–$30K, zero equity) ships faster and keeps your cap table clean. Make the founding-engineer hire post-PMF onto a real codebase instead.
 
 **Q: Founding engineer equity vs salary — what is the trade-off?**
-A US founding engineer costs $210K–$350K all-in in year one (cash plus 1% dilution); an India senior contractor sprint is $15K–$30K with zero equity and no 4-year lock-in. The equity route only wins after you have validated PMF and genuinely need a 4-year architect rather than a 6-week builder.`,
+A US founding engineer costs $210K–$350K all-in in year one (cash plus 1% dilution); an India senior contractor sprint is $15K–$30K with zero equity and no 4-year lock-in. The equity route only wins after you have validated PMF and genuinely need a 4-year architect rather than a 6-week builder. The middle option is a [fractional forward deployed engineer](/services/fractional-forward-deployed-engineer) on a monthly retainer: senior help embedded in your codebase part-time, zero equity, convertible to a founding hire once PMF is real.`,
     },
   ],
   cta: {

@@ -146,7 +146,7 @@ This is the routing-cost-and-sandbox layer I wire in from commit one when I [bui
 
 So the honest 2026 answer to "which AI coding agent is best" is a routing decision, not a winner: **OpenCode** if you value openness, cost control, and model choice and will do the sandboxing yourself; **Claude Code** if you want the managed, batteries-included experience; **Cursor** if you want a GUI IDE. Most power users keep more than one installed and switch by task.
 
-If you want an AI coding workflow set up so the agent, the model, and the cost caps are all swappable and sandboxed from the first commit — instead of hard-wiring one tool and discovering the bill and the attack surface in production — that is the work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp) and take [founding-engineer engagements for India-based teams](/services/hire-founding-engineer-india) building on the current agent stack.`,
+If you want an AI coding workflow set up so the agent, the model, and the cost caps are all swappable and sandboxed from the first commit — instead of hard-wiring one tool and discovering the bill and the attack surface in production — that is the work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp) and take [founding-engineer engagements for India-based teams](/services/hire-founding-engineer-india) building on the current agent stack. For teams standardising on Claude Code specifically, I run [Claude Code team rollouts](/services/claude-code-consultant) — shared CLAUDE.md, skills, hooks, MCP servers, and CI guardrails set up once for everyone.`,
     },
   ],
   cta: {

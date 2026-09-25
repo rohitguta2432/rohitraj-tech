@@ -141,7 +141,7 @@ If you are a non-technical founder in validation mode, Claude Code is your cofou
 
 If you are a technical founder reviewing every diff, Claude Code is your typing speed multiplier. Pair it with a senior engineer the moment your first paying customer signs up.
 
-If you are past validation and revenue is real, you need a human who owns production. You can hire a [founding engineer in India for $80K–$120K/year](/services/hire-founding-engineer-india) who *uses* Claude Code daily. That is the configuration that ships fastest in 2026: senior human + agentic CLI + clear scope. A [6-week MVP sprint](/services/6-week-mvp) with that combination outperforms either pure-CLI or pure-human teams by a wide margin.
+If you are past validation and revenue is real, you need a human who owns production. You can hire a [founding engineer in India for $80K–$120K/year](/services/hire-founding-engineer-india) who *uses* Claude Code daily. That is the configuration that ships fastest in 2026: senior human + agentic CLI + clear scope. A [6-week MVP sprint](/services/6-week-mvp) with that combination outperforms either pure-CLI or pure-human teams by a wide margin. If you already have engineers and want Claude Code rolled out across the team properly — CLAUDE.md, skills, hooks, MCP servers, CI guardrails — that is a [Claude Code consulting engagement](/services/claude-code-consultant).
 
 The wrong move in 2026 is paying a $200K US salary for someone who refuses to use Claude Code, **or** running pure-CLI past the point where production can hurt you. Both are expensive. The right move is to know which stage you're in and pick the configuration that matches it.`,
     },

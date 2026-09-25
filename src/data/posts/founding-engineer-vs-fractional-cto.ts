@@ -142,7 +142,7 @@ Two posts that pick up where this one ends: [Founding Engineer vs Lovable in 202
 
 The thing I want you to take away from this post is that founder-market-fit applies to hiring, not just products. The fractional CTO role is real, valuable, and worth every dollar — for the right stage. Most founders who ask about it are not in that stage. They are pre-product and they need someone who will open a terminal, not a Google Doc.
 
-If you are in the "pre-product, need to ship" camp and want to see how a 6-week contractor sprint actually works — scope doc, fixed price, code you own on day one — reach out. I ship MVPs in this window for founders on four continents, and the output is the same code I would write as your founding engineer, minus the equity and the 18-month commitment.
+If you are in the "pre-product, need to ship" camp and want to see how a 6-week contractor sprint actually works — scope doc, fixed price, code you own on day one — reach out. I ship MVPs in this window for founders on four continents, and the output is the same code I would write as your founding engineer, minus the equity and the 18-month commitment. If you need senior engineering after the sprint but not a full-time hire yet, a [fractional forward deployed engineer](/services/fractional-forward-deployed-engineer) retainer sits between the two: hands on keyboard, embedded with your team, no equity.
 
 You can always hire a fractional CTO later. You cannot un-burn six months validating the wrong idea.`
     },

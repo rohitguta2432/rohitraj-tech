@@ -195,7 +195,7 @@ The break-even is not a dollar amount — it is a complexity threshold. Lovable 
 
 **Q: Should I hire a full-time engineer or a contractor for my first production build?**
 
-For 80% of pre-Series-A founders, a contractor is the right call for your first production build. Full-time engineers cost $180K–$280K fully loaded in year one, require 3–6 months to hire, take 4–8 weeks to onboard, and expect a 12-month commitment. A senior contractor on a 6–8 week sprint costs $8K–$20K, starts next week, and delivers a codebase you own outright. Convert the contractor to a full-time hire after seed funding if the fit is right — many of the best founding engineer hires start as contractors who prove themselves on a fixed sprint before signing a 4-year vest. This is the lowest-risk path for both sides.`
+For 80% of pre-Series-A founders, a contractor is the right call for your first production build. Full-time engineers cost $180K–$280K fully loaded in year one, require 3–6 months to hire, take 4–8 weeks to onboard, and expect a 12-month commitment. A senior contractor on a 6–8 week sprint costs $8K–$20K, starts next week, and delivers a codebase you own outright. Convert the contractor to a full-time hire after seed funding if the fit is right — many of the best founding engineer hires start as contractors who prove themselves on a fixed sprint before signing a 4-year vest. This is the lowest-risk path for both sides. If you want that senior help ongoing rather than for a single sprint, a [fractional forward deployed engineer](/services/fractional-forward-deployed-engineer) retainer keeps the same engineer on your codebase part-time.`
     },
   ],
   cta: {
