@@ -436,7 +436,7 @@ After 30 days, we can set up a retainer (₹25,000 – ₹50,000/month) for ongo
 
 This is how I've delivered SanatanApp, ClinicAI, StellarMIND, MyFinancial, and every other project in my portfolio. The process works because it removes ambiguity — the #1 killer of freelance projects.
 
-The pattern I run for founders in this situation is either a [founding engineer in India](/services/hire-founding-engineer-india) or a [startup MVP build](/services/startup-mvp-development) — pick based on whether you need shipped code or shipped *and* maintained code.
+The pattern I run for founders in this situation is either a [founding engineer in India](/services/hire-founding-engineer-india) or a [startup MVP build](/services/startup-mvp-development) — pick based on whether you need shipped code or shipped *and* maintained code. If the project is mostly AI work — agents, RAG, LLM features — the [freelance AI engineer](/services/fractional-ai-engineer) retainer is the closer fit.
 
 Related reading: [Hire Flutter Developer India 2026: Founding Engineer vs Agency vs…](/notes/hire-flutter-developer-india-2026) and [Hire iOS Developer India 2026: Founding Engineer vs Agency vs Swift…](/notes/hire-ios-developer-india-mvp-2026) cover the adjacent tradeoffs in more depth.`
     },
