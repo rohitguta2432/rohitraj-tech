@@ -70,7 +70,6 @@ import { posthogVsMixpanelVsAmplitudeIndiaMvp2026 } from './posthog-vs-mixpanel-
 import { claudeCodePluginsContextEngineering2026 } from './claude-code-plugins-context-engineering-2026';
 import { deepseekVsClaudeVsGptIndiaMvpCost2026 } from './deepseek-vs-claude-vs-gpt-india-mvp-cost-2026';
 import { geminiCliToAntigravityMigrationAlternatives2026 } from './gemini-cli-to-antigravity-migration-alternatives-2026';
-import { aiDevWeek2026W22 } from './ai-dev-week-2026-22';
 import { aiDevWeek2026W23 } from './ai-dev-week-2026-23';
 import { secureMcpServerTypescript2026 } from './secure-mcp-server-typescript-2026';
 import { claudeOpus48Vs47Developers2026 } from './claude-opus-4-8-vs-4-7-developers-2026';
@@ -91,7 +90,6 @@ import { opencodeVsClaudeCodeCursor2026 } from './opencode-vs-claude-code-cursor
 import { aiAgentPaymentsX402VsAp22026 } from './ai-agent-payments-x402-vs-ap2-2026';
 import { kimiK27CodeVsClaudeOpusGpt2026 } from './kimi-k2-7-code-vs-claude-opus-gpt-2026';
 import { aiAgentMemoryVsContextWindow2026 } from './ai-agent-memory-vs-context-window-2026';
-import { aiDevWeek2026W25 } from './ai-dev-week-2026-25';
 import { bestLocalLlmForCodingReplaceCloud2026 } from './best-local-llm-for-coding-replace-cloud-2026';
 import { webmcpGuideBrowserAgentTools2026 } from './webmcp-guide-browser-agent-tools-2026';
 import { mcpServerAuthenticationOauthGuide2026 } from './mcp-server-authentication-oauth-guide-2026';
@@ -105,27 +103,23 @@ import { glm52VsClaudeOpusCodingAgent2026 } from './glm-5-2-vs-claude-opus-codin
 import { geminiComputerUseVsClaudeOpenai2026 } from './gemini-computer-use-vs-claude-openai-2026';
 import { microsoftAgentFrameworkVsLangGraphCrewai2026 } from './microsoft-agent-framework-vs-langgraph-crewai-2026';
 import { bestOpenSourceDeepResearchAgentSelfHost2026 } from './best-open-source-deep-research-agent-self-host-2026';
-import { aiDevWeek2026W27 } from './ai-dev-week-2026-27';
 import { ornith1SelfImprovingCodingModelGuide2026 } from './ornith-1-self-improving-coding-model-guide-2026';
 import { baiduUnlimitedOcrOpenModelGuide2026 } from './baidu-unlimited-ocr-open-model-guide-2026';
 import { strixAiPenetrationTestingAgentGuide2026 } from './strix-ai-penetration-testing-agent-guide-2026';
 import { safariMcpServerWebDebuggingGuide2026 } from './safari-mcp-server-web-debugging-guide-2026';
 import { nvidiaLocateAnything3bVisualGroundingGuide2026 } from './nvidia-locateanything-3b-visual-grounding-guide-2026';
-import { aiDevWeek2026W28 } from './ai-dev-week-2026-28';
 import { officecliAiAgentsOfficeFilesGuide2026 } from './officecli-ai-agents-office-files-guide-2026';
 import { aiJobSearchAgentClaudeCodeGuide2026 } from './ai-job-search-agent-claude-code-guide-2026';
 import { gitlostAiAgentPromptInjectionDefense2026 } from './gitlost-ai-agent-prompt-injection-defense-2026';
 import { gpt56SolTerraLunaApiGuide2026 } from './gpt-5-6-sol-terra-luna-api-guide-2026';
 import { aiAgentCommandGuardrails2026 } from './ai-agent-command-guardrails-2026';
 import { deepseekV4ApiMigrationGuide2026 } from './deepseek-v4-api-migration-guide-2026';
-import { aiDevWeek2026W29 } from './ai-dev-week-2026-29';
 import { bonsai27bTernaryQuantizationGuide2026 } from './bonsai-27b-ternary-quantization-guide-2026';
 import { inkling975bRunLocallyVramGuide2026 } from './inkling-975b-run-locally-vram-guide-2026';
 import { appleSpeechAnalyzerVsWhisperOnDeviceStt2026 } from './apple-speechanalyzer-vs-whisper-on-device-stt-2026';
 import { antiAiSlopDesignSkillHallmarkGuide2026 } from './anti-ai-slop-design-skill-hallmark-guide-2026';
 import { mcpStatelessSpecMigrationGuide2026 } from './mcp-stateless-spec-migration-guide-2026';
 import { omnirouteAiGatewayReview2026 } from './omniroute-ai-gateway-review-2026';
-import { aiDevWeek2026W30 } from './ai-dev-week-2026-30';
 import { gemini36FlashVs35FlashLiteGuide2026 } from './gemini-3-6-flash-vs-3-5-flash-lite-guide-2026';
 import { blockBuzzAgentCollaborationPlatformGuide2026 } from './block-buzz-agent-collaboration-platform-guide-2026';
 import { codexSecurityVsSnykSemgrepCodeql2026 } from './codex-security-vs-snyk-semgrep-codeql-2026';
@@ -225,7 +219,6 @@ const allPosts: BlogPost[] = [
   claudeCodePluginsContextEngineering2026,
   deepseekVsClaudeVsGptIndiaMvpCost2026,
   geminiCliToAntigravityMigrationAlternatives2026,
-  aiDevWeek2026W22,
   secureMcpServerTypescript2026,
   claudeOpus48Vs47Developers2026,
   aiGeneratedCodeAntiPatternsFixes2026,
@@ -246,7 +239,6 @@ const allPosts: BlogPost[] = [
   aiAgentPaymentsX402VsAp22026,
   kimiK27CodeVsClaudeOpusGpt2026,
   aiAgentMemoryVsContextWindow2026,
-  aiDevWeek2026W25,
   bestLocalLlmForCodingReplaceCloud2026,
   webmcpGuideBrowserAgentTools2026,
   mcpServerAuthenticationOauthGuide2026,
@@ -260,27 +252,23 @@ const allPosts: BlogPost[] = [
   geminiComputerUseVsClaudeOpenai2026,
   microsoftAgentFrameworkVsLangGraphCrewai2026,
   bestOpenSourceDeepResearchAgentSelfHost2026,
-  aiDevWeek2026W27,
   ornith1SelfImprovingCodingModelGuide2026,
   baiduUnlimitedOcrOpenModelGuide2026,
   strixAiPenetrationTestingAgentGuide2026,
   safariMcpServerWebDebuggingGuide2026,
   nvidiaLocateAnything3bVisualGroundingGuide2026,
-  aiDevWeek2026W28,
   officecliAiAgentsOfficeFilesGuide2026,
   aiJobSearchAgentClaudeCodeGuide2026,
   gitlostAiAgentPromptInjectionDefense2026,
   gpt56SolTerraLunaApiGuide2026,
   aiAgentCommandGuardrails2026,
   deepseekV4ApiMigrationGuide2026,
-  aiDevWeek2026W29,
   bonsai27bTernaryQuantizationGuide2026,
   inkling975bRunLocallyVramGuide2026,
   appleSpeechAnalyzerVsWhisperOnDeviceStt2026,
   antiAiSlopDesignSkillHallmarkGuide2026,
   mcpStatelessSpecMigrationGuide2026,
   omnirouteAiGatewayReview2026,
-  aiDevWeek2026W30,
   gemini36FlashVs35FlashLiteGuide2026,
   blockBuzzAgentCollaborationPlatformGuide2026,
   codexSecurityVsSnykSemgrepCodeql2026,

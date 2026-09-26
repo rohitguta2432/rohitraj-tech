@@ -588,27 +588,6 @@ export const blogSummaries: BlogPostSummary[] = [
     }
   },
   {
-    "slug": "ai-dev-week-2026-30",
-    "title": "This Week in AI Dev: Kimi K3 Lands and Cursor Springs a 0-Day (Week 30 of 2026)",
-    "date": "2026-07-21",
-    "excerpt": "Week 30 of 2026 split in two: China's labs shipped trillion-parameter frontier models while the tools that run agents got a hard security look. Moonshot's Kimi K3 (2.8T params, open weights by July 27) landed at #2 behind Claude Fable 5, Alibaba previewed a 2.4T Qwen 3.8, and xAI's grok-build hit 20,982 stars in under two weeks. Meanwhile an unpatched Cursor 0-day went public after seven months, Codex started encrypting sub-agent prompts, and Claude Code quietly moved to Bun-in-Rust.",
-    "readingTime": "7 min read",
-    "keywords": [
-      "ai dev tools this week",
-      "kimi k3 open weights",
-      "qwen 3.8 alibaba",
-      "grok-build xai coding agent",
-      "cursor 0day vulnerability",
-      "claude code bun rust",
-      "ai dev week 30 2026"
-    ],
-    "coverImage": {
-      "src": "/images/notes/ai-dev-week-2026-30-cover.jpg",
-      "alt": "Two glowing currents crossing over a dark grid illustrating AI dev tools weekly roundup week 30 of 2026"
-    },
-    "relatedProject": "myFinancial"
-  },
-  {
     "slug": "omniroute-ai-gateway-review-2026",
     "title": "OmniRoute Review (2026): Is the 20k-Star Free AI Gateway Worth It vs OpenRouter & LiteLLM?",
     "date": "2026-07-20",
@@ -735,27 +714,6 @@ export const blogSummaries: BlogPostSummary[] = [
     }
   },
   {
-    "slug": "ai-dev-week-2026-29",
-    "title": "This Week in AI Dev: The Agent Fleet Grows Up (Week 29 of 2026)",
-    "date": "2026-07-14",
-    "excerpt": "Week 29 of 2026 in AI dev tools: OpenAI ships an official plugin that runs Codex from inside Claude Code, a viral teardown shows Claude Code burning 33k tokens before it reads your prompt, Stably's orca gives you a control room for a fleet of parallel agents, Microsoft's Flint lets agents draw charts instead of dumping tables, Z.ai's GLM-5.2 tops Hugging Face trending, and Tencent open-sources CubeSandbox so your agents stop running rm -rf on the host.",
-    "readingTime": "7 min read",
-    "keywords": [
-      "ai dev tools this week",
-      "codex plugin claude code",
-      "claude code token overhead",
-      "glm-5.2 open weights",
-      "orca parallel agent fleet",
-      "cubesandbox ai agent sandbox",
-      "ai dev week 29 2026"
-    ],
-    "coverImage": {
-      "src": "/images/notes/ai-dev-week-2026-29-cover.jpg",
-      "alt": "A luminous swarm of coordinated particles converging illustrating AI dev tools weekly roundup week 29 of 2026"
-    },
-    "relatedProject": "myFinancial"
-  },
-  {
     "slug": "deepseek-v4-api-migration-guide-2026",
     "title": "DeepSeek V4 API Migration Guide: What Breaks on July 24, 2026 (and the 10-Minute Fix)",
     "date": "2026-07-13",
@@ -879,27 +837,6 @@ export const blogSummaries: BlogPostSummary[] = [
     "relatedProject": "myFinancial"
   },
   {
-    "slug": "ai-dev-week-2026-28",
-    "title": "This Week in AI Dev: The Week Agents Got Cheaper to Run (Week 28 of 2026)",
-    "date": "2026-07-07",
-    "excerpt": "Week 28 of 2026 in AI dev tools: Claude Sonnet 5 does Opus-tier agentic work at $2/M input, Alibaba's page-agent controls any web app from one line of JavaScript, OmniRoute routes 231+ providers and cuts 15-95% of tokens, Ternlight ships a 7MB semantic-search model that runs in the browser, Google's TabFM predicts tabular data zero-shot, and Nvidia squeezes Qwen3.6-27B onto a single consumer GPU with NVFP4.",
-    "readingTime": "7 min read",
-    "keywords": [
-      "ai dev tools this week",
-      "claude sonnet 5 pricing",
-      "alibaba page-agent",
-      "omniroute ai gateway",
-      "ternlight browser embeddings",
-      "qwen3.6 nvfp4 quantization",
-      "ai dev week 28 2026"
-    ],
-    "coverImage": {
-      "src": "/images/notes/ai-dev-week-2026-28-cover.jpg",
-      "alt": "A large glowing form condensing into a compact chip illustrating AI dev tools weekly roundup week 28 of 2026"
-    },
-    "relatedProject": "myFinancial"
-  },
-  {
     "slug": "nvidia-locateanything-3b-visual-grounding-guide-2026",
     "title": "NVIDIA LocateAnything-3B: The Open Visual Grounding Model That Beats YOLO (2026 Guide)",
     "date": "2026-07-06",
@@ -1004,27 +941,6 @@ export const blogSummaries: BlogPostSummary[] = [
       "alt": "Luminous 3D lattice scaffold assembling itself from glowing particles illustrating the Ornith-1.0 self-improving open-source coding model in 2026"
     },
     "relatedProject": "myFinancial"
-  },
-  {
-    "slug": "ai-dev-week-2026-27",
-    "title": "This Week in AI Dev: The Local-Agent Stack Went Production-Real (Week 27 of 2026)",
-    "date": "2026-06-30",
-    "excerpt": "Week 27 of 2026 in AI dev tools: DeepReinforce's Ornith-1.0 ships MIT-licensed self-scaffolding coding models from 9B to 397B, Qwen 3.6 27B becomes the local-dev sweet spot at 28GB, vLLM turns one API call into a bounded multi-model collaboration, Herdr multiplexes 15+ coding agents in your terminal, Wayfinder routes deterministically between local and hosted LLMs, and Anthropic ships Claude Tag for async Slack delegation.",
-    "readingTime": "7 min read",
-    "keywords": [
-      "ai dev tools this week",
-      "ornith-1.0 open weights",
-      "qwen 3.6 27b local",
-      "vllm micro-agent",
-      "ai dev week 27 2026",
-      "local llm agent stack june 2026",
-      "llm routing local hosted"
-    ],
-    "coverImage": {
-      "src": "/images/notes/ai-dev-week-2026-27-cover.jpg",
-      "alt": "Glowing particle swarm converging into a bright core illustrating AI dev tools weekly roundup week 27 of 2026"
-    },
-    "relatedProject": "resolvr"
   },
   {
     "slug": "best-open-source-deep-research-agent-self-host-2026",
@@ -1299,27 +1215,6 @@ export const blogSummaries: BlogPostSummary[] = [
     "coverImage": {
       "src": "/images/notes/best-local-llm-for-coding-replace-cloud-2026-cover.jpg",
       "alt": "A luminous silicon processor radiating neural filaments illustrating the best local LLM for coding in 2026"
-    },
-    "relatedProject": "myFinancial"
-  },
-  {
-    "slug": "ai-dev-week-2026-25",
-    "title": "This Week in AI Dev: A Frontier Model Gets Pulled While Open Weights Keep Shipping (Week 25 of 2026)",
-    "date": "2026-06-16",
-    "excerpt": "Week 25 of 2026 in AI dev tools: the US government forces Anthropic to suspend Claude Fable 5 and Mythos 5 three days after launch, Moonshot ships Kimi K2.7-Code open weights, Google open-sources the text-diffusion model DiffusionGemma, the Claude Agent SDK flips to metered billing on June 15, OpenCode crosses 160K GitHub stars, and agentic payments via x402 + AP2 quietly become real.",
-    "readingTime": "7 min read",
-    "keywords": [
-      "ai dev tools this week",
-      "claude fable 5 suspended",
-      "kimi k2.7 code",
-      "diffusiongemma",
-      "anthropic agent sdk billing",
-      "ai dev week 25 2026",
-      "open weight models june 2026"
-    ],
-    "coverImage": {
-      "src": "/images/notes/ai-dev-week-2026-25-cover.jpg",
-      "alt": "Glowing orange and indigo particle ring illustrating AI dev tools weekly roundup week 25 of 2026"
     },
     "relatedProject": "myFinancial"
   },
@@ -1744,27 +1639,6 @@ export const blogSummaries: BlogPostSummary[] = [
       "alt": "Editorial dark cover illustrating a secure MCP server build in TypeScript with prompt-injection defense layer"
     },
     "relatedProject": "rohitrajTech"
-  },
-  {
-    "slug": "ai-dev-week-2026-22",
-    "title": "This Week in AI Dev: DeepSeek's Permanent 75% Cut, GitHub Auto-Routing, Gemini Managed Agents (Week 22 of 2026)",
-    "date": "2026-05-26",
-    "excerpt": "Six ships from Week 22 of 2026 that change how you build with AI: DeepSeek V4 Pro locks in a 75% price cut, Copilot auto-routes models, Google ships Managed Agents, NuExtract3 opens up structured extraction, Cursor 3 goes multi-agent, and DeepSeek Reasonix lands as an open coding agent.",
-    "readingTime": "6 min read",
-    "keywords": [
-      "ai dev tools this week",
-      "deepseek v4 pro price cut",
-      "github copilot auto model selection",
-      "gemini managed agents",
-      "cursor 3 parallel agents",
-      "nuextract3",
-      "ai coding agents 2026"
-    ],
-    "coverImage": {
-      "src": "/images/notes/ai-dev-week-2026-22-cover.jpg",
-      "alt": "Abstract editorial cover illustrating AI dev tools weekly roundup week 22 of 2026"
-    },
-    "relatedProject": "clinicai"
   },
   {
     "slug": "gemini-cli-to-antigravity-migration-alternatives-2026",

@@ -75,6 +75,13 @@ const nextConfig: NextConfig = {
         destination: '/notes/:slug*',
         permanent: true,
       },
+      // Weekly roundups pruned 2026-09-26 (stale news, zero impressions, never
+      // crawled). Old crosspost links land on the notes hub instead of a 404.
+      {
+        source: '/notes/:slug(ai-dev-week-2026-22|ai-dev-week-2026-25|ai-dev-week-2026-27|ai-dev-week-2026-28|ai-dev-week-2026-29|ai-dev-week-2026-30)',
+        destination: '/notes',
+        permanent: true,
+      },
     ];
   },
 };
