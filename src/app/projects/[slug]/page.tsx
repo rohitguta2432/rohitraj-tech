@@ -67,7 +67,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                             description: project.solves,
                             thumbnailUrl: project.image ? `${SITE_CONFIG.url}${project.image}` : undefined,
                             contentUrl: `${SITE_CONFIG.url}${project.videoUrl}`,
-                            uploadDate: "2026-07-14",
+                            uploadDate: project.updated ?? "2026-07-14",
                         }),
                     }}
                 />

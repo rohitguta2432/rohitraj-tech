@@ -260,4 +260,20 @@ export const aiProjectSummaries: AIProjectSummary[] = [
             { label: "Runs keyless", value: "rules fallback" },
         ],
     },
+    {
+        title: "Shoebox — Bill Photo to GST Ledger, Offline",
+        slug: "shoebox",
+        problem: "Shops keep supplier bills in a pile until the accountant asks, and the bills carry mistakes nobody checks: a misread GSTIN, CGST that doesn't match SGST, a handwritten total with two digits swapped. Each one can cost input tax credit.",
+        solution: "Drop a phone photo and a local vision model fills in every field as it reads. Plain code checks the GSTIN checksum, line math, tax, totals and tax type, points at the exact wrong field, and exports a purchase register CSV for your CA. Nothing leaves the laptop.",
+        techStack: ["Next.js 16", "TypeScript", "Ollama (qwen3.5:9b)", "Vitest"],
+        aiApproach: "The model reads; the code decides. The vision model copies the bill into a fixed schema and is told never to correct a number. Every verdict comes from deterministic checks, including a Luhn mod-36 GSTIN checksum with one-tap look-alike fixes.",
+        repoUrl: "https://github.com/rohitguta2432/shoebox",
+        status: "active",
+        image: "/images/projects/shoebox-poster.jpg",
+        metrics: [
+            { label: "Fields read exactly", value: "188 / 192" },
+            { label: "Verdicts right", value: "4 / 4" },
+            { label: "Runs", value: "offline, no key" },
+        ],
+    },
 ];

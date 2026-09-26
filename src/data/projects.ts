@@ -1233,6 +1233,47 @@ export const projects: Project[] = [
             ]
         }
     },
+    {
+        slug: "shoebox",
+        name: "Shoebox — Bill Photo to GST Ledger, Offline",
+        problem: "Small shops in India keep supplier bills in a pile until the accountant asks. Typing them in is slow, and the bills carry mistakes nobody checks: a GSTIN copied wrong, CGST that doesn't match SGST, a handwritten total with two digits swapped, IGST charged on a same-state purchase. Each one can cost input tax credit.",
+        solves: "Drop a phone photo of a bill and a local vision model fills in every field as it reads. Plain code then checks all of it — GSTIN checksum, line math, tax against the printed rates, CGST equals SGST, the right tax type for the states involved, the grand total, dates and duplicates — and points at the exact field that is wrong. Fix it, add it to the ledger, and download a purchase register CSV for your CA. Nothing leaves the laptop.",
+        techStack: ["Next.js 16", "TypeScript", "Ollama (qwen3.5:9b vision)", "Vitest", "MIT"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/shoebox",
+        aiApproach: "The model reads; the code decides. A 9B vision model copies the bill into a JSON schema under constrained decoding and is told never to calculate or correct, so a bill whose own math is wrong gets copied wrong and caught. Every verdict comes from deterministic checks — including a Luhn mod-36 GSTIN checksum that catches any single misread character and offers the one-tap look-alike fix (0/O, 1/I, 8/B) when exactly one swap makes it valid. On four sample bills it read 188 of 192 fields exactly and got all four verdicts right, at about 17 seconds a bill on a laptop.",
+        image: "/images/projects/shoebox-poster.jpg",
+        videoUrl: "/videos/shoebox.mp4",
+        updated: "2026-09-26",
+        details: {
+            businessImpact: "Input tax credit is real money for a trading shop, and it is lost to boring errors: a misread GSTIN, a wrongly charged tax type, a bill entered twice. Shoebox catches those before the accountant sees the register, runs on the shop's own laptop with no subscription, and keeps every bill photo on that machine.",
+            approach: [
+                "Local vision model (qwen3.5:9b via Ollama) reads the photo into a fixed JSON schema; fields stream into the UI as it writes",
+                "Plain TypeScript checks: GSTIN pattern, state code and Luhn mod-36 checksum; quantity × rate − discount = amount; tax against the printed rates; CGST = SGST; tax type by supplier state vs place of supply; grand total; date, 16-character invoice number, GST rates, HSN length",
+                "Duplicate guard against the ledger: same supplier GSTIN and invoice number can't be claimed twice",
+                "Review sheet in a modern bahi-khata style: red-pencil underline on the exact wrong field, stamped verdicts (Checked / Look again / Not ready), one-tap GSTIN fixes",
+                "Ledger with input-tax-credit ready to claim vs on hold, and a purchase-register CSV with one row per GST rate",
+                "Eval script scores the model against generated sample bills with known truth, including a handwritten bill book"
+            ],
+            decisions: [
+                "The model never judges a bill — only arithmetic and published GST rules produce verdicts, so the same bill always gets the same answer",
+                "Copy, don't correct — the prompt forbids fixing numbers, so the checks see the bill as printed",
+                "Offline by default — a shop's purchase data stays on its own laptop; no API key, no account",
+                "One-tap fixes only when exactly one look-alike swap makes a GSTIN valid; ambiguous cases list every candidate instead of guessing",
+                "Framework-free check library with 35 unit tests, so the rules are testable without a model"
+            ],
+            currentStatus: "Public and open source (MIT) at github.com/rohitguta2432/shoebox. Reads, checks, fixes, saves and exports end to end on a laptop; eval on four sample bills: 188/192 fields exact, 4/4 verdicts right, ~17 s per bill on an M5 Pro.",
+            roadmap: [
+                "Tally XML voucher export alongside the CSV",
+                "Photo-from-phone on the same Wi-Fi, straight into the pile",
+                "A WhatsApp intake so a supplier bill photo becomes a ledger entry"
+            ],
+            improvements: [
+                "Per-HSN rate hints so an item billed at the wrong slab gets flagged",
+                "Tax-inclusive retail receipts handled as their own bill type"
+            ]
+        }
+    },
 ];
 
 export const repos = [
@@ -1367,6 +1408,12 @@ export const repos = [
         description: "VoxelForge — voxel sandbox engine in TypeScript + Three.js. Chunked infinite terrain, biomes, caves, ores, culled-face meshing, procedural atlas, day-night cycle",
         modules: ["src/world", "src/player", "demo"],
         url: "https://github.com/rohitguta2432/voxelforge"
+    },
+    {
+        name: "shoebox",
+        description: "Shoebox — phone photo of a GST bill to a checked ledger entry, offline. Local vision model reads, plain code checks GSTIN checksum, line math, tax and totals; purchase register CSV",
+        modules: ["lib", "app", "components", "scripts"],
+        url: "https://github.com/rohitguta2432/shoebox"
     },
     {
         name: "casita",
