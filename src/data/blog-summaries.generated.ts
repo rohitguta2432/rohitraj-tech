@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "fractional-forward-deployed-engineer-engagement-model-2026",
+    "title": "The Fractional Forward Deployed Engineer Engagement Model: How It Actually Runs (2026)",
+    "date": "2026-09-26",
+    "excerpt": "Every page ranking for fractional forward deployed engineer helps you decide whether to rent one. None of them tells you how the engagement actually operates once you do. Here is the week-by-week shape, the artifacts that have to exist at exit, and the failure mode that turns a fractional retainer into an understaffed full-time role nobody budgeted for.",
+    "readingTime": "14 min read",
+    "keywords": [
+      "fractional forward deployed engineer",
+      "fractional forward deployed engineer engagement model",
+      "fractional fde retainer",
+      "part-time forward deployed engineer",
+      "fractional ai engineer engagement",
+      "fde engagement model",
+      "hire fractional fde"
+    ],
+    "coverImage": {
+      "src": "/images/notes/fractional-forward-deployed-engineer-engagement-model-2026-cover.jpg",
+      "alt": "Forest green and gold forms rising in sequence on near-black illustrating fractional forward deployed engineer engagement model"
+    },
+    "relatedProject": "myFinancial"
+  },
+  {
     "slug": "claude-code-agents-md-vs-claude-md-precedence-2026",
     "title": "Claude Code and AGENTS.md in 2026: Which Instruction File Actually Loads",
     "date": "2026-09-25",
