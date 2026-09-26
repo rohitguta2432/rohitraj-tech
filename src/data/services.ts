@@ -667,16 +667,17 @@ export const services: Service[] = [
  },
  {
  slug: "fractional-ai-engineer",
- title: "Fractional AI Engineer",
- metaTitle: "Fractional AI Engineer | Remote Worldwide | Rohit Raj",
+ title: "Freelance AI Engineer & AI Architect",
+ metaTitle: "Freelance AI Engineer & AI Architect for Hire | Rohit Raj",
  metaDescription:
- "Hire a fractional AI engineer: senior AI delivery a few days a week without a full-time salary. Agents, LLM features, RAG, Claude Code — shipped to production.",
- headline: "Senior AI Engineering, a Few Days a Week — Without the Full-Time Hire",
+ "Hire a freelance AI engineer and AI architect who designs the system and ships it: agents, RAG, LLM features, Claude Code. Fractional, remote worldwide.",
+ headline: "Freelance AI Engineer & AI Architect — Senior AI Delivery, a Few Days a Week",
  subheadline:
- "You have real AI work to ship, but not enough to justify a permanent senior salary. A fractional AI engineer gives you consistent, senior-level delivery on a part-week retainer.",
+ "You have real AI work to ship, but not enough to justify a permanent senior salary. I work as an independent AI engineer and architect on a fractional retainer: I design the system, build it, and keep it working in production.",
  problem:
- "Somewhere between 'we should use AI' and 'we have a full AI team' is where most companies actually live: a backlog of LLM features, an agent idea that would save real money, a RAG search that half-works. A full-time senior AI engineer is a large salary plus months of hiring. Interns and generalist freelancers produce demos that collapse under real users. The fractional model fixes the mismatch — you buy two or three days a week of someone who has shipped production AI, and the backlog actually moves.",
+ "Somewhere between 'we should use AI' and 'we have a full AI team' is where most companies actually live: a backlog of LLM features, an agent idea that would save real money, a RAG search that half-works. A full-time senior AI engineer is a large salary plus months of hiring. Interns and task-by-task freelancing produce demos that collapse under real users, usually because nobody owned the architecture — which model, what the agent may touch, how retrieval gets evaluated, what it costs at scale. The fractional model fixes the mismatch: you get two or three days a week of someone who makes those architecture calls and has shipped production AI, and the backlog actually moves.",
  whatYouGet: [
+ "AI architecture before code: model and provider choice, retrieval and agent design, permission boundaries, eval plan, and cost envelope — written down and agreed",
  "A senior AI engineer on retainer — consistent days each week, not ad-hoc task work",
  "Production delivery: AI agents, LLM features, RAG pipelines, workflow automation",
  "Claude Code consulting: agentic development workflows, custom skills, MCP tooling for your engineering team",
@@ -704,8 +705,12 @@ export const services: Service[] = [
  answer: "You hire a fraction of my week — typically two or three fixed days — on a monthly retainer. Those days are yours: same standups, same repo, same accountability as an employee, without the full-time salary, equity, or hiring pipeline. I work with a small number of clients at once so each gets real, focused days rather than context-switched hours.",
  },
  {
- question: "How is a fractional AI engineer different from a freelancer?",
- answer: "A freelancer completes tasks you define. A fractional engineer takes ownership of outcomes: I help decide what to build, build it, measure it in production, and iterate. The engagement is continuous rather than gig-shaped, which matters for AI systems — they need tuning after contact with real users, and a task-based freelancer is gone by then.",
+ question: "Are you a freelance AI engineer or a fractional one?",
+ answer: "Both, in the sense that matters to you. I'm an independent freelance AI engineer, not an agency — you work with me directly. But I don't sell gig-shaped tasks: the engagement is a fractional retainer where I own outcomes — deciding what to build, building it, measuring it in production, and iterating. That matters for AI systems, which need tuning after contact with real users; a task-based freelancer is gone by then.",
+ },
+ {
+ question: "What does an AI architect do before any code is written?",
+ answer: "Makes the decisions that are expensive to reverse: whether the problem needs RAG, an agent, fine-tuning or plain code; which models and providers fit your latency, cost and data-residency limits; what an agent is allowed to read and change, enforced through scoped tools and MCP permissions; and how quality will be measured with evals before launch. You get that as a short written design you can challenge — then I build it, so the architecture never turns into slideware.",
  },
  {
  question: "Can you train my existing team on Claude Code and AI-assisted development?",
@@ -721,7 +726,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-09-05",
+ updated: "2026-09-26",
  related: [
  {
  href: "/services/fractional-forward-deployed-engineer",

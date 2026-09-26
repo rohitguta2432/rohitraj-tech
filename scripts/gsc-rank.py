@@ -47,13 +47,17 @@ HEAD_TERMS = [
     "claude code consultant",
     "founding engineer for hire in india",
     "forward deployed engineer",
+    # Secondary, report-only (added 2026-09-26) → /services/fractional-ai-engineer
+    "freelance ai engineer",
+    "hire ai engineer",
+    "freelance ai architect",
 ]
 # Substrings for the target and adjacent query families.
 FAMILIES = [
     "ai consultant", "forward deployed", "fractional forward", "mcp integration",
     "claude code consultant", "founding engineer", "fractional cto",
     "part-time cto", "part time cto", "mcp server", "mcp consultant",
-    "engineer india", "fde ",
+    "engineer india", "fde ", "freelance", "ai engineer", "ai architect",
 ]
 OWNING_NOTE = "/notes/what-does-a-forward-deployed-engineer-do-2026"
 

@@ -111,7 +111,7 @@ export default function Footer({ dict }: FooterProps) {
                                 Claude Code Consultant
                             </a>
                             <a href={`/services/fractional-ai-engineer`} className="footer-link">
-                                Fractional AI Engineer
+                                Freelance AI Engineer
                             </a>
                             <a href={`/agents`} className="footer-link">
                                 AI Agent Host

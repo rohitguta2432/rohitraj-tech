@@ -286,7 +286,7 @@ export default async function HirePage() {
                                     { slug: "fractional-forward-deployed-engineer", label: "Fractional Forward Deployed Engineer" },
                                     { slug: "mcp-integration-consultant", label: "MCP Integration Consultant" },
                                     { slug: "claude-code-consultant", label: "Claude Code Consultant" },
-                                    { slug: "fractional-ai-engineer", label: "Fractional AI Engineer" },
+                                    { slug: "fractional-ai-engineer", label: "Freelance AI Engineer & AI Architect" },
                                 ].map((s) => (
                                     <Link
                                         key={s.slug}
