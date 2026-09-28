@@ -135,7 +135,7 @@ Start with **prompt caching** if your cost is dominated by a long, *unchanging* 
 
 **Make caching and compression cooperate.** As noted above, I keep the cached prefix byte-stable and only compress the dynamic tail — so I bank the provider cache discount *and* the compression discount instead of trading one for the other.
 
-This is the unglamorous infrastructure work that decides whether an AI feature is profitable or a money pit — the same reason I harden [MCP servers for production](/notes/secure-mcp-server-typescript-2026) rather than ship the quickstart. If you want this kind of cost-and-reliability engineering built into your product from day one, that is the work I do: I run [fixed-scope 6-week MVP builds](/services/6-week-mvp), or you can [hire a founding engineer in India](/services/hire-founding-engineer-india) to own the whole pipeline.`,
+This is the unglamorous infrastructure work that decides whether an AI feature is profitable or a money pit — the same reason I harden [MCP servers for production](/notes/secure-mcp-server-typescript-2026) rather than ship the quickstart. If you want this kind of cost-and-reliability engineering built into your product from day one, that is the work I do: I run [fixed-scope 6-week MVP builds](/services/6-week-mvp), or you can [hire a founding engineer in India](/services/hire-founding-engineer-india) to own the whole pipeline. If the product already exists and what you need is someone on the token bill and the eval gates a couple of days a week, that is the [freelance AI engineer](/services/fractional-ai-engineer) retainer.`,
     },
   ],
   cta: {

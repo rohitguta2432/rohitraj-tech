@@ -139,6 +139,7 @@ I have shipped 11 Postgres-backed MVPs in the last 18 months, three on Prisma, s
 
 - **[Scope a 6-week MVP](/services/6-week-mvp)** — I write the schema, the migrations, and the typed query layer in the first week so you spend weeks 2-6 on features, not plumbing.
 - **[Hire me as your founding engineer](/services/hire-founding-engineer-india)** — same engineer from day one to deploy, no agency markup, full GitHub from commit one, zero equity ask.
+- **[Full-stack development](/services/full-stack-development)** — for a product past the MVP: schema changes, API, front end and AI features handled by one engineer across the whole stack.
 
 Send a message with your MVP idea + which ORM you were leaning towards and I will reply within 24 hours with a written take on whether it fits your stack.`,
     },

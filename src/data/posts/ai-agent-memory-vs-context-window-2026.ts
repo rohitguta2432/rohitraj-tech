@@ -166,7 +166,7 @@ This pgvector-first, pin-constraints, meter-tokens, gate-retrieval setup is exac
 
 So the move isn't "wait for a bigger window." It's: put the current task in working memory, put everything that should outlive the session in a persistent layer, pin hard constraints on every call, and route between them with the 30-day rule. Start with pgvector and ~25 lines, meter your tokens, and gate retrieval quality with a golden set. The honest exception — one-shot tasks that fit in a single window — is real, but it's the exception, not the default.
 
-If you want this built into a product properly — a pgvector memory layer, pinned constraints, token metering, and an eval-gated retrieval step so "give the assistant memory" is a clean two-function change — that's the work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp) and take [founding-engineer engagements for India-based teams](/services/hire-founding-engineer-india) building on the current AI stack.`,
+If you want this built into a product properly — a pgvector memory layer, pinned constraints, token metering, and an eval-gated retrieval step so "give the assistant memory" is a clean two-function change — that's the work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp) and take [founding-engineer engagements for India-based teams](/services/hire-founding-engineer-india) building on the current AI stack. If you already have the product and need the memory layer built inside your codebase alongside your team, that is a [forward deployed engineer](/services/forward-deployed-engineer) engagement.`,
         },
     ],
     cta: {

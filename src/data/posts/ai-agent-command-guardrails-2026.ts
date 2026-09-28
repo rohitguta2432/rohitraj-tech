@@ -150,7 +150,7 @@ The failure mode I genuinely worry about isn't the agent missing a command categ
 
 But internalize the GuardFall lesson, because it's the durable one: on **June 30, 2026, 10 of 11 popular agents' command guards were bypassed**, and the fix was never a better blocklist — it was containing what the agent can touch. **The only guardrail you can fully trust is the one that limits the blast radius, not the one that tries to read the agent's mind.** Guard the commands, sandbox the environment, commit often, and scope the credentials. Do all four and an autonomous agent becomes a tool you can leave running; do only one and you've bought confidence you haven't earned.
 
-If you're putting AI coding agents to work on something real and want the safety wired in from the first sprint instead of after the first \`rm -rf\`, [that's exactly what I help founders do](/services/6-week-mvp).`,
+If you're putting AI coding agents to work on something real and want the safety wired in from the first sprint instead of after the first \`rm -rf\`, [that's exactly what I help founders do](/services/6-week-mvp). For teams already running Claude Code, I set up the hooks, permission rules and review guardrails as part of a [Claude Code team rollout](/services/claude-code-consultant).`,
         },
     ],
     cta: {

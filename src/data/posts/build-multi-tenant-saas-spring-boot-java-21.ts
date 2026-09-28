@@ -155,7 +155,7 @@ services:
 
 **Scaling path from monorepo to microservices:** The 12-module Maven structure is designed for eventual extraction. Each module communicates through service interfaces defined in retailos-common, not through direct database queries across module boundaries. When the billing module needs independent scaling — handling 10x the traffic of analytics — extraction means pulling the module into its own Spring Boot application, replacing in-process calls with REST or gRPC, and deploying independently. The module boundaries are already clean; extraction is a deployment change, not an architecture change.
 
-If you want this shipped end-to-end without the team-of-five overhead, the [fractional CTO engagement](/services/hire-fractional-cto-india) and [founding engineer in India](/services/hire-founding-engineer-india) options are the routes I take on.
+If you want this shipped end-to-end without the team-of-five overhead, the [fractional CTO engagement](/services/hire-fractional-cto-india) and [founding engineer in India](/services/hire-founding-engineer-india) options are the routes I take on. If you already have a technical lead and need the product built — Spring Boot API, React or Next.js front end, AI features wired in — that is the [full-stack development](/services/full-stack-development) engagement.
 
 Two posts that pick up where this one ends: [How I Built an Enterprise Deal Matching Platform with Spring Boot +…](/notes/build-enterprise-deal-matching-platform-spring-boot-nextjs) and [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot).`
     },

@@ -142,7 +142,9 @@ If you would rather not learn this by burning ₹40K of OpenAI credits, two ways
 - **[6-Week MVP Sprint](/services/6-week-mvp)** — fixed scope, fixed price, LangGraph + Postgres + structured-output stack by default, ships a production agent app in 6 weeks.
 - **[Hire a Founding Engineer in India](/services/hire-founding-engineer-india)** — month-to-month senior engineer who has shipped agent systems on all three frameworks and will tell you which one is wrong for your problem before you write a line of code.
 
-Either way, the rule is the same: pick LangGraph for production, CrewAI for prototypes, AutoGen almost never. Save the ₹40K of credits for something that matters — like more users.`,
+Either way, the rule is the same: pick LangGraph for production, CrewAI for prototypes, AutoGen almost never. Save the ₹40K of credits for something that matters — like more users.
+
+Already past the MVP, with an agent in production and a backlog of evals, fallback chains and cost guardrails? That is ongoing work rather than a build — the [freelance AI engineer](/services/fractional-ai-engineer) retainer covers it a few days a week.`,
     },
   ],
   cta: {

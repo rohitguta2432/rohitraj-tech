@@ -109,7 +109,7 @@ If someone quotes dramatically below market rate, they're either desperate or ly
 
 The goal isn't to find a perfect developer. It's to find one who communicates clearly, ships working software, and doesn't disappear. These 10 questions will filter out 80% of the bad ones.
 
-If you'd rather hand the build off and review weekly, the [founding engineer in India](/services/hire-founding-engineer-india) is the fastest path; for a longer-term engineering relationship, look at [6-week MVP sprint](/services/6-week-mvp).
+If you'd rather hand the build off and review weekly, the [founding engineer in India](/services/hire-founding-engineer-india) is the fastest path; for a longer-term engineering relationship, look at [6-week MVP sprint](/services/6-week-mvp). If neither fits, the [full list of ways I work with founders](/services) is on one page.
 
 I've written the deeper version of this argument in [How Much Does It Cost to Build a Mobile App in India? Real Numbers from a…](/notes/how-much-does-it-cost-to-build-mobile-app-india-2026) and the contrarian counter-take in [How to Build a SaaS MVP in 2026](/notes/how-to-build-saas-mvp-2026).`
     },

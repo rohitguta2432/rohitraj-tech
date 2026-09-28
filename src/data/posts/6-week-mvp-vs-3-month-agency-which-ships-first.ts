@@ -101,7 +101,7 @@ I've written the deeper version of this argument in [What a $15K MVP Actually In
 
 If you answered "sprint" to 3+ questions, take the sprint quote. If you answered "agency" to 3+ questions, take the agency quote. If it is mixed, the deciding factor is: do you trust yourself to lock scope on day one. If yes, sprint. If no, agency.
 
-[Scope a 6-week MVP sprint](https://rohitraj.tech/services/6-week-mvp) — free 30-min call, fixed quote in 48 hours. Or [hire a founding engineer in India](https://rohitraj.tech/services/hire-founding-engineer-india) for engagements longer than 6 weeks.`
+[Scope a 6-week MVP sprint](https://rohitraj.tech/services/6-week-mvp) — free 30-min call, fixed quote in 48 hours. Or [hire a founding engineer in India](https://rohitraj.tech/services/hire-founding-engineer-india) for engagements longer than 6 weeks. If your scope lands between the two — too big for a fixed 6-week box, too small to need an agency — [startup MVP development](/services/startup-mvp-development) runs 4–8 weeks with one senior developer.`
     },
   ],
   cta: {
