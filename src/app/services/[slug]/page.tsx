@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
+import AiEngineeringFoundations, { AiEngineeringFoundationsSchema } from "@/components/services/AiEngineeringFoundations";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { getDictionary } from "@/lib/i18n";
@@ -104,6 +105,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
             />
+            {slug === "ai-engineering-foundations" && <AiEngineeringFoundationsSchema />}
             <Header dict={dict.common} />
             <main id="main">
                 <section>
@@ -162,6 +164,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
                                 ))}
                             </ul>
                         </div>
+
+                        {slug === "ai-engineering-foundations" && <AiEngineeringFoundations />}
 
                         {/* Tech Stack */}
                         <div style={{ marginTop: "3rem" }}>

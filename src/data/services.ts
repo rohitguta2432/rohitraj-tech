@@ -746,6 +746,93 @@ export const services: Service[] = [
  ],
  },
  {
+ slug: "ai-engineering-foundations",
+ title: "AI Engineering Foundations",
+ metaTitle: "AI Engineering Foundations | Spec Kit, Model & Effort Training for Teams | Rohit Raj",
+ metaDescription:
+ "Team training in AI-assisted engineering: spec-driven development with Spec Kit and Kiro, which Claude or Copilot model and effort level to use for each task, repo context files, and token cost basics.",
+ headline: "AI Engineering Foundations — Teach Your Team to Actually Use the AI Tools You Already Pay For",
+ subheadline:
+ "A two-week, hands-on programme on your own codebase: spec-driven development from zero, which model and effort level for which task in Claude Code and GitHub Copilot, the folder structure that gives every tool project context, and the token maths behind the bill.",
+ problem:
+ "Your engineers have Copilot, Claude, Kiro, maybe OpenAI too. Leadership has seen a dozen proofs of concept. Yet nobody can say how much faster the team actually ships, because day-to-day usage is shallow: prompts typed straight into chat with no spec, the most expensive model on every task or the cheapest one on the hard ones, effort left on the default, no repository instructions, so every tool guesses at your conventions. Measuring productivity at this stage only measures the gap in basics. Close the fundamentals first — specs, model and effort choice, context files, review habits — and the gains become real enough to measure.",
+ whatYouGet: [
+ "Spec-driven development from zero: why specs beat ad-hoc prompting, and the full Spec Kit flow — constitution, specify, clarify, plan, checklist, tasks, analyze, implement, converge — run on a real feature from your backlog",
+ "Kiro specs side by side with Spec Kit: requirements in EARS notation, design, tasks, and steering files — so teams on either tool follow one process",
+ "Model and effort playbook for Claude Code and GitHub Copilot: which model and which effort level for spec writing, planning, implementation, debugging, review and support work",
+ "Repository context set up for your main repos: CLAUDE.md, AGENTS.md, .github/copilot-instructions.md, path-specific instructions and Kiro steering — the single biggest lever on output quality",
+ "Token and cost basics: context windows, input vs output vs thinking tokens, prompt caching, and a cost model per feature so spend is predictable",
+ "Separate tracks for Development (C++ and Node/React), QA (specs to test cases) and Support (docs and ticket retrieval)",
+ "Recorded demo, spec templates and a written playbook your team owns",
+ "Before-and-after skills check, plus named internal champions who carry the practice after the programme ends",
+ ],
+ techStack: [
+ "Spec Kit",
+ "Kiro",
+ "Claude Code",
+ "GitHub Copilot",
+ "Claude Opus 5.5",
+ "Claude Sonnet 5.5",
+ "Claude Fable 5.1",
+ "Claude Haiku 4.5",
+ "AGENTS.md",
+ "MCP",
+ ],
+ timeline: "Half-day demo, or a 2-week team programme",
+ costRange: "Scoped per team size",
+ portfolioSlugs: ["claude-autodev", "agentic-os"],
+ faqs: [
+ {
+ question: "What is spec-driven development, in one paragraph?",
+ answer: "You write down what you are building and why before any code is generated: a spec with user stories and acceptance criteria, then a technical plan, then a dependency-ordered task list. The AI implements against those files instead of against a one-line chat prompt, and a final check compares the code back to the spec. The result is work that is reviewable, repeatable across engineers, and much less likely to drift. GitHub's open-source Spec Kit and Kiro's built-in specs are the two most common ways teams do it today.",
+ },
+ {
+ question: "Which tools does the programme cover?",
+ answer: "Claude Code and GitHub Copilot in depth, Kiro for teams that use its spec workflow, and Spec Kit on top of any of them. The principles — specs, context files, model and effort choice, review discipline — carry across tools, so a team using a mix of assistants ends up with one shared way of working rather than one per tool.",
+ },
+ {
+ question: "How do you decide which model and effort level to use?",
+ answer: "By task, not by habit. The biggest model at high effort earns its cost on specs, architecture and hard debugging, where a wrong direction wastes days. Well-specified implementation runs well on a mid-tier model at medium effort. Summaries, small edits and ticket triage belong on the fastest model. The page above has the full table for Claude Code and Copilot; in the programme we tune it on your own tasks.",
+ },
+ {
+ question: "How is this different from vendor training?",
+ answer: "Vendor training shows what one tool can do on a demo app. This programme runs on your codebase and your backlog, compares tools honestly, and covers the parts vendors skip: when not to use AI, how to review AI-written code, what it costs per feature, and how to keep engineering IP and customer data out of places it should not go.",
+ },
+ {
+ question: "How do we know the training worked?",
+ answer: "A short skills check before and after, adoption signals from the tools' own admin data, and — for teams that continue into a measurement engagement — workflow metrics such as PR cycle time and test-authoring time against a baseline. The foundations programme is deliberately the step before measurement: it makes sure what you measure afterwards reflects the tools, not a lack of basics.",
+ },
+ {
+ question: "Can it run remotely, and for how many people?",
+ answer: "Yes. It is remote-first with optional on-site days, and it is designed for teams of roughly 10 to 100 engineers, QA and support staff, split into function-specific tracks.",
+ },
+ ],
+ cta: "Book a Free Half-Day Demo",
+ updated: "2026-09-29",
+ related: [
+ {
+ href: "/services/claude-code-consultant",
+ label: "Claude Code Consultant",
+ description: "The next step after foundations: team-wide Claude Code setup, guardrails and measurement.",
+ },
+ {
+ href: "/services/fractional-ai-engineer",
+ label: "Fractional AI Engineer",
+ description: "When you want AI systems built inside your product, not just a faster team.",
+ },
+ {
+ href: "/notes/claude-code-plugins-context-engineering-2026",
+ label: "Claude Code plugins and context engineering",
+ description: "How skills, plugins and context budgets fit together in a real setup.",
+ },
+ {
+ href: "/notes/llm-context-compression-cut-token-costs-2026",
+ label: "Cutting LLM token costs",
+ description: "Context compression techniques that lower the bill without lowering quality.",
+ },
+ ],
+ },
+ {
  slug: "claude-code-consultant",
  title: "Claude Code Consultant",
  metaTitle: "Claude Code Consultant | Team Rollout & Guardrails | Rohit Raj",

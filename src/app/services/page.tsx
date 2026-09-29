@@ -57,6 +57,48 @@ export default async function ServicesPage() {
 
                 <section>
                     <div className="container">
+                        {/* How AI engagements chain together */}
+                        <ol
+                            aria-label="How I work with engineering teams"
+                            style={{
+                                listStyle: "none",
+                                padding: 0,
+                                margin: "0 0 2rem",
+                                display: "grid",
+                                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+                                gap: "0.75rem",
+                            }}
+                        >
+                            {[
+                                { step: "1", title: "Foundations", text: "Train the team: specs, models, effort, context files.", href: "/services/ai-engineering-foundations" },
+                                { step: "2", title: "Measure & roll out", text: "Tool setup, guardrails and a productivity baseline.", href: "/services/claude-code-consultant" },
+                                { step: "3", title: "Build", text: "AI systems shipped inside your product.", href: "/services/fractional-ai-engineer" },
+                            ].map((s) => (
+                                <li key={s.step}>
+                                    <Link
+                                        href={s.href}
+                                        style={{
+                                            display: "flex",
+                                            gap: "0.75rem",
+                                            alignItems: "flex-start",
+                                            height: "100%",
+                                            background: "var(--card-bg)",
+                                            border: "1px solid var(--border)",
+                                            borderRadius: "12px",
+                                            padding: "1rem 1.25rem",
+                                            textDecoration: "none",
+                                        }}
+                                    >
+                                        <span style={{ color: "var(--accent)", fontWeight: 700, fontSize: "1.25rem", lineHeight: 1.2 }}>{s.step}</span>
+                                        <span>
+                                            <span style={{ display: "block", color: "var(--text-primary)", fontWeight: 600 }}>{s.title} &rarr;</span>
+                                            <span style={{ display: "block", color: "var(--text-secondary)", fontSize: "0.85rem", lineHeight: 1.5 }}>{s.text}</span>
+                                        </span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ol>
+
                         <div
                             style={{
                                 display: "grid",

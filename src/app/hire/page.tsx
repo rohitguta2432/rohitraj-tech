@@ -285,6 +285,7 @@ export default async function HirePage() {
                                     { slug: "forward-deployed-engineer", label: "Hire a Forward Deployed Engineer (AI)" },
                                     { slug: "fractional-forward-deployed-engineer", label: "Fractional Forward Deployed Engineer" },
                                     { slug: "mcp-integration-consultant", label: "MCP Integration Consultant" },
+                                    { slug: "ai-engineering-foundations", label: "AI Engineering Foundations (Team Training)" },
                                     { slug: "claude-code-consultant", label: "Claude Code Consultant" },
                                     { slug: "fractional-ai-engineer", label: "Freelance AI Engineer & AI Architect" },
                                 ].map((s) => (

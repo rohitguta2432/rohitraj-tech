@@ -107,6 +107,9 @@ export default function Footer({ dict }: FooterProps) {
                             <a href={`/services/fractional-forward-deployed-engineer`} className="footer-link">
                                 Fractional Forward Deployed Engineer
                             </a>
+                            <a href={`/services/ai-engineering-foundations`} className="footer-link">
+                                AI Engineering Foundations
+                            </a>
                             <a href={`/services/claude-code-consultant`} className="footer-link">
                                 Claude Code Consultant
                             </a>
