@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const jevAlternativesOpenWeightsDecisionModels2026: BlogPost = {
   slug: 'jev-alternatives-open-weights-decision-models-2026',
+  updated: "2026-09-29",
+  seoTitle: "Open-Weights Jev Alternatives: A 2026 Guide",
+  seoDescription: "Compare open-weights alternatives to Jev for decision workflows. Review deployment tradeoffs and choose a model that fits your application.",
   title: 'Open-Weights Jev Alternatives (2026): Which Decision Model To Actually Ship',
   date: '2026-09-23',
   excerpt:

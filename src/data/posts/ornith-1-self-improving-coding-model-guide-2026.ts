@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const ornith1SelfImprovingCodingModelGuide2026: BlogPost = {
     slug: 'ornith-1-self-improving-coding-model-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "Ornith-1.0: Open Coding Model Guide (2026)",
+    seoDescription: "Explore Ornith-1.0 and its self-improving coding model approach. Review the model's workflow and practical considerations for developers.",
     title: 'Ornith-1.0: The Self-Improving Open-Source Coding Model, Tested (2026)',
     date: '2026-07-01',
     excerpt:
@@ -17,7 +20,7 @@ export const ornith1SelfImprovingCodingModelGuide2026: BlogPost = {
         'ornith vs claude opus',
         'open source coding model 2026',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/ornith-1-self-improving-coding-model-guide-2026-cover.jpg',
         alt: 'Luminous 3D lattice scaffold assembling itself from glowing particles illustrating the Ornith-1.0 self-improving open-source coding model in 2026',

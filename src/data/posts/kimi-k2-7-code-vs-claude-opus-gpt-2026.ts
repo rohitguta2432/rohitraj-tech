@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const kimiK27CodeVsClaudeOpusGpt2026: BlogPost = {
     slug: 'kimi-k2-7-code-vs-claude-opus-gpt-2026',
+  updated: "2026-09-29",
+    seoTitle: "Kimi K2.7-Code vs Claude Opus vs GPT (2026)",
+    seoDescription: "Compare Kimi K2.7-Code, Claude Opus and GPT for coding workflows. Review open model deployment tradeoffs before changing your agent stack.",
     title: 'Kimi K2.7-Code vs Claude Opus 4.8 and GPT-5.5: Is the 1T Open Coding Model Worth It? (2026)',
     date: '2026-06-14',
     excerpt:
@@ -16,7 +19,7 @@ export const kimiK27CodeVsClaudeOpusGpt2026: BlogPost = {
         'open source coding model 2026',
         'kimi k2.7 code vs gpt 5.5',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/kimi-k2-7-code-vs-claude-opus-gpt-2026-cover.jpg',
         alt: 'Glowing faceted core radiating energy filaments illustrating Kimi K2.7-Code vs Claude and GPT coding models',

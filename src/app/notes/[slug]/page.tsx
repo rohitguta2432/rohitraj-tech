@@ -8,6 +8,7 @@ import { blogPosts } from "@/data/blog-posts";
 import { getDictionary } from "@/lib/i18n";
 import { createPageMetadata, generateBlogPostingSchema, generateBreadcrumbSchema, generateFAQSchema, generateTechArticleSchema, extractFAQsFromSections, SITE_CONFIG } from "@/lib/seo-config";
 import type { Metadata } from "next";
+import { getRelatedWork } from "@/lib/related-work";
 
 const LOCALE_PREFIX_RE = /^\/(en|hi|fr|de|ar)\//;
 const stripLocalePrefix = (path: string) => path.replace(LOCALE_PREFIX_RE, '/');
@@ -16,11 +17,7 @@ interface BlogPostPageProps {
     params: Promise<{ slug: string }>;
 }
 
-// Prerender only the primary locale at build time. Post bodies are English for
-// every locale, so prerendering hi/fr/de/ar multiplied the build output 5x
-// (~320 MB) and blew past AWS Amplify's 220 MB deploy-bundle limit. Other
-// locales still resolve — Next renders them on first request and caches the
-// result (dynamicParams defaults to true).
+// English articles use one canonical bare path. Historical locale URLs redirect.
 export async function generateStaticParams() {
     return blogPosts.map((post) => ({ slug: post.slug }));
 }
@@ -35,18 +32,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
     return {
         ...createPageMetadata(
-            `${post.title} | Rohit Raj`,
-            post.excerpt,
+            post.seoTitle ?? post.title,
+            post.seoDescription ?? post.excerpt,
             `/notes/${slug}`,
             {
                 // Pass per-post cover image so social cards (Twitter/LinkedIn/FB) render the
                 // post-specific visual instead of the generic site OG image.
                 image: post.coverImage,
-                // The body still shows the full excerpt; meta description is the trimmed
-                // SERP-display version (≤158 chars) so Google doesn't truncate mid-sentence.
-                // createPageMetadata handles the truncation internally.
-                // Post bodies are English in every locale, so non-en URLs canonicalise
-                // to /en and emit no hreflang cluster.
                 translated: false,
             }
         ),
@@ -272,6 +264,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     if (!post) notFound();
 
     const dict = await getDictionary();
+    const relatedWork = getRelatedWork(post);
 
     const otherPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
@@ -438,7 +431,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <AuthorBio />
 
                 {/* Related Project */}
-                {post.relatedProject && (
+                {relatedWork && (
                     <div style={{
                         marginTop: '2rem',
                         padding: '1.5rem',
@@ -446,10 +439,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         backgroundColor: 'var(--card-bg)',
                     }}>
                         <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
-                            RELATED PROJECT
+                            RELATED WORK
                         </p>
                         <Link
-                            href={`/projects/${post.relatedProject.toLowerCase()}`}
+                            href={relatedWork.href}
                             style={{
                                 color: 'var(--accent)',
                                 fontSize: '1.05rem',
@@ -457,7 +450,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                                 textDecoration: 'none'
                             }}
                         >
-                            View {post.relatedProject.charAt(0).toUpperCase() + post.relatedProject.slice(1)} →
+                            View {relatedWork.name} →
                         </Link>
                     </div>
                 )}

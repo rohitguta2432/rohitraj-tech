@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const openNotebookVsKhojVsSurfsenseNotebooklm2026: BlogPost = {
   slug: 'open-notebook-vs-khoj-vs-surfsense-notebooklm-2026',
+  updated: "2026-09-29",
+  seoTitle: "Open Notebook vs Khoj vs SurfSense (2026)",
+  seoDescription: "Compare Open Notebook, Khoj and SurfSense as self-hosted NotebookLM alternatives. Review retrieval, knowledge workflows and deployment tradeoffs.",
   title:
     'Open Notebook vs Khoj vs SurfSense: Best Self-Hosted NotebookLM Alternative (2026)',
   date: '2026-06-07',
@@ -21,7 +24,7 @@ export const openNotebookVsKhojVsSurfsenseNotebooklm2026: BlogPost = {
     src: '/images/notes/open-notebook-vs-khoj-vs-surfsense-notebooklm-2026-cover.jpg',
     alt: 'Dark editorial cover illustrating self-hosted open-source NotebookLM alternatives Open Notebook, Khoj and SurfSense in 2026',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
     {
       heading: 'TL;DR',

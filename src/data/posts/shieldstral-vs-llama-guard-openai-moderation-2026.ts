@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const shieldstralVsLlamaGuardOpenaiModeration2026: BlogPost = {
   slug: 'shieldstral-vs-llama-guard-openai-moderation-2026',
+  updated: "2026-09-29",
+  seoTitle: "Shieldstral vs Llama Guard vs OpenAI Moderation",
+  seoDescription: "Compare Shieldstral, Llama Guard and OpenAI's moderation API. Review self-hosting, integration and content moderation tradeoffs for your app.",
   title:
     'Shieldstral vs Llama Guard vs OpenAI Moderation API: A Self-Hosted Content Moderation Guide (2026)',
   date: '2026-08-05',

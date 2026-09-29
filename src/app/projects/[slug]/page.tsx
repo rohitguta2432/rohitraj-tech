@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: ProjectPageProps) {
     }
 
     return createPageMetadata(
-        `${project.name} | Rohit Raj`,
-        project.problem,
+        project.seoTitle ?? project.name,
+        project.seoDescription ?? project.problem,
         `/projects/${slug}`,
         // English-only body in every locale — see createPageMetadata({ translated })
         { translated: false }

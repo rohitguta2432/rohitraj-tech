@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const aiDevWeek2026W32: BlogPost = {
   slug: 'ai-dev-week-2026-32',
+  updated: "2026-09-29",
+  seoTitle: "AI Dev Week 32, 2026: Small Models and Security",
+  seoDescription: "A developer recap of AI week 32 in 2026, covering smaller models and disputed vulnerability reports, with lessons for evaluating agent claims.",
   title:
     'This Week in AI Dev: Everything Got Smaller, and Six CVEs Turned Out to Be Fake (Week 32 of 2026)',
   date: '2026-08-04',
@@ -18,7 +21,7 @@ export const aiDevWeek2026W32: BlogPost = {
     'github copilot model deprecations september 2026',
     'ai dev week 32 2026',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/ai-dev-week-2026-32-cover.jpg',
     alt: 'Swarm of luminous particles collapsing into one dense core illustrating AI model compression in week 32 of 2026',

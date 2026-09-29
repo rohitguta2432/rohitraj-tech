@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const deepseekVsClaudeVsGptIndiaMvpCost2026: BlogPost = {
   slug: 'deepseek-vs-claude-vs-gpt-india-mvp-cost-2026',
+  updated: "2026-09-29",
+  seoTitle: "DeepSeek vs Claude vs GPT: MVP API Cost",
+  seoDescription: "Compare DeepSeek, Claude and GPT API costs for an MVP. Review workload assumptions and model tradeoffs when budgeting production inference.",
   title: 'DeepSeek V4 Pro vs Claude Sonnet 4.6 vs GPT-5.5: The Real MVP Cost in 2026',
   date: '2026-05-24',
   excerpt: 'DeepSeek made its 75% V4 Pro discount permanent on 2026-05-22 — output tokens now sit at $0.87/M, roughly 34× below GPT-5.5 and 28× below Claude Sonnet 4.6. Here is the line-item math for a real India MVP, the benchmarks the pricing page hides, and the four production failure modes that decide whether the cheaper model actually saves you anything.',
@@ -20,7 +23,7 @@ export const deepseekVsClaudeVsGptIndiaMvpCost2026: BlogPost = {
     src: '/images/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026-cover.jpg',
     alt: 'Dark editorial cover illustrating DeepSeek V4 Pro vs Claude Sonnet vs GPT-5.5 MVP API cost comparison 2026',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
     {
       heading: 'TL;DR',

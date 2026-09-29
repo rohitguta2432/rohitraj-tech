@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const geminiComputerUseVsClaudeOpenai2026: BlogPost = {
     slug: 'gemini-computer-use-vs-claude-openai-2026',
+  updated: "2026-09-29",
+    seoTitle: "Gemini vs Claude vs OpenAI Computer Use",
+    seoDescription: "Compare Gemini, Claude and OpenAI for browser agents. Review computer-use capabilities and the tradeoffs of automating interactive workflows.",
     title: 'Gemini Computer Use vs Claude vs OpenAI: Best Browser Agent 2026',
     date: '2026-06-27',
     excerpt:
@@ -16,7 +19,7 @@ export const geminiComputerUseVsClaudeOpenai2026: BlogPost = {
         'gemini computer use api',
         'claude computer use vs gemini vs openai',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/gemini-computer-use-vs-claude-openai-2026-cover.jpg',
         alt: 'A liquid-metal robotic hand reaching toward glowing orbital nodes illustrating Gemini computer use controlling a browser',

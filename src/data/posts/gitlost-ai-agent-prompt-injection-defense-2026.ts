@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const gitlostAiAgentPromptInjectionDefense2026: BlogPost = {
   slug: 'gitlost-ai-agent-prompt-injection-defense-2026',
+  updated: "2026-09-29",
+  seoTitle: "GitLost: AI Agent Prompt-Injection Defenses",
+  seoDescription: "Understand the GitLost prompt-injection threat to coding agents. Review trust boundaries and defenses for agents working with repository content.",
   title:
     'GitLost: The Prompt-Injection Class Every AI Coding Agent Inherits — and How to Defend Yours (2026)',
   date: '2026-07-10',

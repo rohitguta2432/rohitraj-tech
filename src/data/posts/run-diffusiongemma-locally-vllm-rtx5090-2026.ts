@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const runDiffusionGemmaLocallyVllm2026: BlogPost = {
     slug: 'run-diffusiongemma-locally-vllm-rtx5090-2026',
+  updated: "2026-09-29",
+    seoTitle: "Run DiffusionGemma Locally with vLLM",
+    seoDescription: "Set up DiffusionGemma locally with vLLM. Review GPU requirements and serving considerations for RTX 5090 and H100 deployments.",
     title: 'How to Run DiffusionGemma Locally: A vLLM Serving Guide for RTX 5090 and H100 (2026)',
     date: '2026-06-11',
     excerpt:
@@ -16,7 +19,7 @@ export const runDiffusionGemmaLocallyVllm2026: BlogPost = {
         'self-host text diffusion llm',
         'diffusiongemma h100 throughput',
     ],
-    relatedProject: 'rohitrajTech',
+    relatedProject: "rohitraj-site",
     coverImage: {
         src: '/images/notes/run-diffusiongemma-locally-vllm-rtx5090-2026-cover.jpg',
         alt: 'Glowing GPU emitting parallel streams of light into an ordered grid illustrating running DiffusionGemma locally on RTX 5090',

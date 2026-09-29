@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const resendVsSendgridVsAwsSesIndiaMvp2026: BlogPost = {
   slug: 'resend-vs-sendgrid-vs-aws-ses-india-mvp-2026',
+  updated: "2026-09-29",
+  seoTitle: "Resend vs SendGrid vs AWS SES: Cost Guide",
+  seoDescription: "Compare Resend, SendGrid and AWS SES for transactional email. Review costs, operations and integration effort for an India MVP.",
   title: 'Resend vs SendGrid vs AWS SES for India MVPs in 2026 — Real Cost on 10K Transactional Emails',
   date: '2026-05-21',
   excerpt: 'Resend looks the friendliest, SendGrid looks the safest, and AWS SES looks the cheapest. Run a real 10K-email/month India MVP through each and the math, the deliverability to Indian Gmail inboxes, and the DLT-style compliance burden separate them by an order of magnitude. Here is which one survives a 50-user-to-5K-user growth curve, which one bankrupts you at scale, and the exact ₹ numbers I have logged across four client launches.',
@@ -16,7 +19,7 @@ export const resendVsSendgridVsAwsSesIndiaMvp2026: BlogPost = {
     'email deliverability india gmail',
     'hire backend developer india mvp',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/resend-vs-sendgrid-vs-aws-ses-india-mvp-2026-cover.jpg',
     alt: 'Single neon cyan spline arcing through dark space illustrating Resend vs SendGrid vs AWS SES transactional email comparison',
@@ -32,7 +35,7 @@ Skip all three and use Postmark if your only use case is OTP and inbox-placement
       heading: 'Resend vs SendGrid vs AWS SES — The Honest Answer Before You Sign the Annual Contract',
       content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
-If you are picking a transactional email provider for an India MVP in 2026, the honest answer is Resend up to 50K emails/month, AWS SES above that if you have AWS muscle, and SendGrid only when you genuinely need the support contract. I have shipped email for four India-stack projects in the last 18 months — the [myFinancial](/en) personal-finance app (OTP + statement delivery), an enterprise deal-matching engine running on Spring Boot, a Sanskrit-to-SQL research assistant ([rag-for-sql](/projects)), and a healthcare clinic-booking flow on the [WhatsApp Business API](/notes/whatsapp-business-api-integration-guide-india). Same provider choice came up every single time, and the answer was different in three of the four projects.
+If you are picking a transactional email provider for an India MVP in 2026, the honest answer is Resend up to 50K emails/month, AWS SES above that if you have AWS muscle, and SendGrid only when you genuinely need the support contract. I have shipped email for four India-stack projects in the last 18 months — the [MyFinancial](/projects/myfinancial) personal-finance app (OTP + statement delivery), an enterprise deal-matching engine running on Spring Boot, a Sanskrit-to-SQL research assistant ([StellarMIND](/projects/stellarmind)), and a healthcare clinic-booking flow on the [WhatsApp Business API](/notes/whatsapp-business-api-integration-guide-india). Same provider choice came up every single time, and the answer was different in three of the four projects.
 
 The cost math nobody runs before signup is this: at 10,000 emails/month, Resend's free tier covers you (₹0), SendGrid's Essentials plan is ₹1,580/mo (\$19), and AWS SES is roughly ₹85/mo at \$0.10 per 1,000 emails plus EC2/SNS overhead. At 100,000 emails/month, Resend jumps to ₹1,660/mo (\$20 Pro plan), SendGrid Pro is ₹7,470/mo (\$89.95), and SES is ₹830/mo (\$10 raw outbound + bandwidth). The price gap looks decisive — until you factor that the SES "₹830" hides 4–6 hours of bounce-handling code, an SNS topic, an SQS queue, and one engineer who can debug a DKIM record at 11 PM.
 

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const buildFamilyBudgetAppAndroidOfflineKotlin: BlogPost = {
   slug: 'build-family-budget-app-android-offline-kotlin',
+  updated: "2026-09-29",
+  seoTitle: "Offline Family Budget App: Kotlin Architecture",
+  seoDescription: "Explore an offline family budgeting app built with Kotlin and Jetpack Compose. Review its financial modules, local storage and architecture.",
   title: 'Building a Family Budget App with 8 Financial Modules — Kotlin + Jetpack Compose, Fully Offline',
   date: '2026-04-11',
   excerpt: 'Architecture deep-dive into PaisaGuard — a privacy-first Android app for middle-class families with expense tracking, grocery budget mode, bill calendar, debt snowball, and 4 more modules. Zero backend.',

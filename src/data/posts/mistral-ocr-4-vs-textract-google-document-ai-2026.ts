@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const mistralOcr4VsTextractGoogleDocumentAi2026: BlogPost = {
     slug: 'mistral-ocr-4-vs-textract-google-document-ai-2026',
+  updated: "2026-09-29",
+    seoTitle: "Mistral OCR 4 vs Textract vs Google Document AI",
+    seoDescription: "Compare Mistral OCR 4, AWS Textract and Google Document AI. Review document extraction, pricing and integration choices for production use.",
     title: 'Mistral OCR 4 vs AWS Textract vs Google Document AI: The Cheapest Accurate Document API (2026)',
     date: '2026-06-24',
     excerpt:
@@ -16,7 +19,7 @@ export const mistralOcr4VsTextractGoogleDocumentAi2026: BlogPost = {
         'document ocr api for rag',
         'mistral-ocr-latest',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/mistral-ocr-4-vs-textract-google-document-ai-2026-cover.jpg',
         alt: 'A radiant prism refracting a particle swarm into ordered streams illustrating Mistral OCR 4 document extraction vs Textract',

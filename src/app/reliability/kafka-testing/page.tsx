@@ -16,8 +16,8 @@ import type { Metadata } from "next";
 const PAGE_PATH = '/reliability/kafka-testing';
 const DATE_PUBLISHED = '2026-01-31';
 const DATE_MODIFIED = '2026-04-24';
-const SEO_TITLE = 'Embedded Kafka Consumer Testing in Spring Boot (2026 Guide) | Rohit Raj';
-const SEO_DESCRIPTION = 'Deterministic testing for Kafka consumers with embedded kafka, partition ordering guarantees, and failure injection in Spring Boot — the exact pattern I ship to production in 2026.';
+const SEO_TITLE = "Kafka Consumer Testing with Spring Boot";
+const SEO_DESCRIPTION = "Test Kafka consumers in Spring Boot with embedded Kafka, partition ordering checks and failure injection for reliable event processing.";
 const SEO_KEYWORDS = [
     'embedded kafka testing spring boot',
     'kafka consumer integration test 2026',

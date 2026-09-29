@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const what15kMvpActuallyIncludesVs50kAgencyQuote: BlogPost = {
   slug: 'what-15k-mvp-actually-includes-vs-50k-agency-quote',
+  updated: "2026-09-29",
+  seoTitle: "What a $15K MVP Includes vs a $50K Agency Build",
+  seoDescription: "Compare the scope of a $15K MVP with a $50K agency quote. Understand which deliverables, tradeoffs and ownership terms matter before you commit.",
   title: 'What a $15K MVP Actually Includes — vs. the $50K Agency Quote You Just Got',
   date: '2026-04-25',
   excerpt: 'A $15K-$30K fixed-price MVP and a $50K-$100K agency quote ship the same thing 80% of the time. The difference is who absorbs the markup. Here is the line-item breakdown — what is in scope, what is overhead, and where the agency margin actually comes from.',
@@ -19,7 +22,7 @@ export const what15kMvpActuallyIncludesVs50kAgencyQuote: BlogPost = {
     src: '/images/notes/what-15k-mvp-actually-includes-vs-50k-agency-quote-cover.jpg',
     alt: 'Abstract editorial cover illustrating What a $15K MVP Actually Includes',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
         {
       heading: 'TL;DR',

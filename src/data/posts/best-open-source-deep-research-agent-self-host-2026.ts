@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const bestOpenSourceDeepResearchAgentSelfHost2026: BlogPost = {
     slug: 'best-open-source-deep-research-agent-self-host-2026',
+  updated: "2026-09-29",
+    seoTitle: "Self-Hosted Deep Research Agents Compared",
+    seoDescription: "Compare Onyx, DeerFlow and Perplexica for self-hosted deep research. Choose an agent by retrieval needs, deployment effort and workflow fit.",
     title: 'Best Open-Source Deep Research Agent to Self-Host in 2026 (Onyx vs DeerFlow vs Perplexica)',
     date: '2026-06-29',
     excerpt:
@@ -17,7 +20,7 @@ export const bestOpenSourceDeepResearchAgentSelfHost2026: BlogPost = {
         'open source deep research tool',
         'self-hosted ai research assistant',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/best-open-source-deep-research-agent-self-host-2026-cover.jpg',
         alt: 'Glowing pink particle swarm converging into a luminous core illustrating self-hosted open-source deep research agents in 2026',

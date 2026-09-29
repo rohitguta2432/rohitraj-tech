@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const retoolVsCustomBuildInternalTool2026: BlogPost = {
   slug: 'retool-vs-custom-build-internal-tool-2026',
+  updated: "2026-09-29",
+  seoTitle: "Retool vs Custom Internal Tools (2026)",
+  seoDescription: "Compare Retool with a custom internal tool. Decide when to buy, build or hire based on workflow complexity, integrations and ongoing ownership.",
   title: 'Retool vs Custom Internal Tool in 2026 — When to Buy, When to Build, When to Hire',
   date: '2026-04-27',
   excerpt:

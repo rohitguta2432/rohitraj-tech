@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const pwaOfflineSync: BlogPost = {
   slug: 'pwa-offline-sync',
+  updated: "2026-09-29",
+  seoTitle: "Offline-First PWA: Storage and Sync Patterns",
+  seoDescription: "Build an offline-first PWA with service workers, IndexedDB and background sync. Review storage and synchronization patterns for reliable offline use.",
   title: 'Offline-First PWA Patterns — Service Workers, IndexedDB, and Background Sync',
   date: '2026-01-15',
   excerpt: 'Service workers, IndexedDB, and background sync patterns used in MicroItinerary for reliable offline-first travel planning.',

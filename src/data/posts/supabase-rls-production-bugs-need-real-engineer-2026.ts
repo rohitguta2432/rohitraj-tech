@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const supabaseRlsProductionBugsNeedRealEngineer2026: BlogPost = {
   slug: 'supabase-rls-production-bugs-need-real-engineer-2026',
+  updated: "2026-09-29",
+  seoTitle: "Supabase RLS: Five Production Bugs to Fix",
+  seoDescription: "Review five Supabase row-level security pitfalls in AI-built apps. Learn what to check before trusting production access controls with user data.",
   title: 'Your Supabase RLS Just Leaked Production Data — The 5 Bugs Every Vibe-Coded App Hits in 2026',
   date: '2026-04-26',
   excerpt: 'Supabase row-level security is opt-in, silent when wrong, and tested with a superuser token that bypasses everything. In January 2025, 170+ Lovable apps leaked their production databases because nobody enabled RLS. Here are the 5 RLS bugs every vibe-coded app ships, and the audit pattern a senior engineer runs to catch them before user 500.',
@@ -19,7 +22,7 @@ export const supabaseRlsProductionBugsNeedRealEngineer2026: BlogPost = {
     src: '/images/notes/supabase-rls-production-bugs-need-real-engineer-2026-cover.jpg',
     alt: 'Abstract editorial cover illustrating Your Supabase RLS Just Leaked Production Data',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
         {
       heading: 'TL;DR',

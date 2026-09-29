@@ -12,12 +12,15 @@ const blogSectionSchema = z.object({
 export const blogPostSchema = z.object({
   slug: z.string().min(1),
   title: z.string().min(1),
+  seoTitle: z.string().min(1).optional(),
+  seoDescription: z.string().min(1).optional(),
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   updated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   excerpt: z.string().min(1),
   readingTime: z.string(),
   keywords: z.array(z.string()),
   relatedProject: z.string().optional(),
+  relatedAgent: z.string().optional(),
   coverImage: z.object({
     src: z.string(),
     alt: z.string(),

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const codexSecurityVsSnykSemgrepCodeql2026: BlogPost = {
   slug: 'codex-security-vs-snyk-semgrep-codeql-2026',
+  updated: "2026-09-29",
+  seoTitle: "Codex Security vs Snyk, Semgrep and CodeQL",
+  seoDescription: "Compare Codex Security with Snyk, Semgrep and CodeQL. Understand how AI-assisted code security fits alongside established scanning tools.",
   title:
     'OpenAI Codex Security vs Snyk vs Semgrep vs CodeQL: What the New Open-Source Scanner Actually Changes (2026)',
   date: '2026-07-29',
@@ -17,7 +20,7 @@ export const codexSecurityVsSnykSemgrepCodeql2026: BlogPost = {
     'codex security github actions',
     'semgrep vs codeql vs snyk',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/codex-security-vs-snyk-semgrep-codeql-2026-cover.jpg',
     alt: 'Constellation of glowing nodes with one fractured red node illustrating AI code security vulnerability scanning',

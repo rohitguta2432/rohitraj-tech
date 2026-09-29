@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const foundingEngineerIndiaVsToptalArcUplers2026: BlogPost = {
   slug: 'founding-engineer-india-vs-toptal-arc-uplers-2026',
+  updated: "2026-09-29",
+  seoTitle: "Founding Engineer in India vs Toptal, Arc, Uplers",
+  seoDescription: "Compare hiring a founding engineer directly in India with Toptal, Arc and Uplers. Review cost, accountability and how each engagement works.",
   title: 'Hire a Founding Engineer in India — Direct vs Toptal, Arc, Uplers in 2026',
   date: '2026-04-25',
   excerpt: 'Marketplaces like Toptal, Arc, and Uplers add 30-50% markup, 2-4 weeks of recruiter delay, and zero portfolio transparency. Here is how going direct compares — pricing, speed, quality, and what each model actually optimizes for.',
@@ -19,7 +22,7 @@ export const foundingEngineerIndiaVsToptalArcUplers2026: BlogPost = {
     src: '/images/notes/founding-engineer-india-vs-toptal-arc-uplers-2026-cover.jpg',
     alt: 'Abstract editorial cover illustrating Hire a Founding Engineer in India',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
         {
       heading: 'TL;DR',

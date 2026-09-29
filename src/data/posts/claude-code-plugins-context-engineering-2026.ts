@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const claudeCodePluginsContextEngineering2026: BlogPost = {
   slug: 'claude-code-plugins-context-engineering-2026',
+  updated: "2026-09-29",
+  seoTitle: "Claude Code Plugins and Context Engineering",
+  seoDescription: "Explore Claude Code plugins for context engineering. Review how instructions, tools and reusable workflows fit into a maintainable agent setup.",
   title: 'Claude Code Plugins in 2026: The Context-Engineering Stack Indie Devs Are Actually Installing',
   date: '2026-05-23',
   excerpt: 'Four of today\'s top 15 trending GitHub repos are Claude Code plugins. CodeGraph hit 2,434 stars in 24 hours. Karpathy\'s skills file: 3,372. This isn\'t noise — it\'s the moment context engineering became the differentiator. Here\'s what to install, what to skip, and why every listicle you\'ve read this month is already wrong.',

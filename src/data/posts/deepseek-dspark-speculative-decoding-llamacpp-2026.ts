@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const deepseekDsparkSpeculativeDecodingLlamacpp2026: BlogPost = {
   slug: 'deepseek-dspark-speculative-decoding-llamacpp-2026',
+  updated: "2026-09-29",
+  seoTitle: "DeepSeek DSpark: Speculative Decoding Guide",
+  seoDescription: "Learn how DeepSeek DSpark works with llama.cpp. Review speculative decoding, setup requirements and local inference performance tradeoffs.",
   title:
     'DeepSeek DSpark in llama.cpp: How to Get 2x Local Inference on V4-Flash-0731 (2026)',
   date: '2026-08-03',
@@ -17,7 +20,7 @@ export const deepseekDsparkSpeculativeDecodingLlamacpp2026: BlogPost = {
     'deepseek v4 flash vram requirements',
     'local llm speculative decoding 2026',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/deepseek-dspark-speculative-decoding-llamacpp-2026-cover.jpg',
     alt: 'Swarm of luminous particles surging ahead of a dense glowing core illustrating DSpark speculative decoding for local LLM inference',

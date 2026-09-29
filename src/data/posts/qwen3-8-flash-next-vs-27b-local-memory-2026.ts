@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const qwen38FlashNextVs27bLocalMemory2026: BlogPost = {
   slug: 'qwen3-8-flash-next-vs-27b-local-memory-2026',
+  updated: "2026-09-29",
+  seoTitle: "Qwen3.8-Flash-Next vs 27B: Local Memory Guide",
+  seoDescription: "Compare Qwen3.8-Flash-Next and Qwen3.8-27B for local inference. Work through model memory and quantization instead of relying on VRAM headlines.",
   title:
     'Qwen3.8-Flash-Next vs Qwen3.8-27B: The Local Memory Math Behind the "12GB VRAM" Headline (2026)',
   date: '2026-08-29',

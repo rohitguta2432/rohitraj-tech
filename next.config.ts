@@ -57,6 +57,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Historical article references now resolve to their catalog destinations.
+      { source: '/projects/rohitrajtech', destination: '/projects/rohitraj-site', permanent: true },
+      { source: '/projects/rag-for-sql', destination: '/projects/stellarmind', permanent: true },
+      { source: '/projects/resolvr', destination: '/agents/resolvr', permanent: true },
+      { source: '/ai-projects', destination: '/projects', permanent: true },
       // Site is English-only at bare paths now. Locale-prefixed URLs
       // (/en/*, /hi/*, …) are the previously indexed URLs — 301 them to the
       // bare path so link equity consolidates on one URL per page.

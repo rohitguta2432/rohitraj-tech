@@ -20,9 +20,8 @@ const DATE_MODIFIED = "2026-06-14";
 const REPO_URL = "https://github.com/rohitguta2432/resolvr";
 const SCREENSHOT = "/agents/resolvr.png";
 
-const SEO_TITLE = "Self-Hosted AI Customer Support Agent (Ollama) | Resolvr";
-const SEO_DESCRIPTION =
-    "Resolvr is an open-source, self-hosted AI customer support agent on local Ollama. It classifies tickets, RAG-answers from your KB, and escalates behind a safety gate — zero per-token cost.";
+const SEO_TITLE = "Resolvr: Self-Hosted AI Support Agent with Ollama";
+const SEO_DESCRIPTION = "Explore Resolvr, an open-source support agent on local Ollama. It classifies tickets, retrieves answers from your knowledge base and gates escalations.";
 const SEO_KEYWORDS = [
     "self-hosted AI customer support agent",
     "open source AI customer support agent",

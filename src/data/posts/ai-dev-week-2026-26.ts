@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const aiDevWeek2026W26: BlogPost = {
   slug: 'ai-dev-week-2026-26',
+  updated: "2026-09-29",
+  seoTitle: "AI Dev Week 26, 2026: Models and Agent Tools",
+  seoDescription: "A developer recap of AI week 26 in 2026, covering open model progress and the tools needed to turn agent experiments into working systems.",
   title:
     'This Week in AI Dev: Open Weights Catch the Frontier While the Agent Stack Grows Plumbing (Week 26 of 2026)',
   date: '2026-06-23',
@@ -17,7 +20,7 @@ export const aiDevWeek2026W26: BlogPost = {
     'open weight models june 2026',
     'fine-tune local llm',
   ],
-  relatedProject: 'resolvr',
+  relatedAgent: "resolvr",
   coverImage: {
     src: '/images/notes/ai-dev-week-2026-26-cover.jpg',
     alt: 'Glowing amber and crimson constellation of connected nodes illustrating AI dev tools weekly roundup week 26 of 2026',

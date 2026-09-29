@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const buildOfflineFirstTripPlannerReactNativeWatermelondb: BlogPost = {
   slug: 'build-offline-first-trip-planner-react-native-watermelondb',
+  updated: "2026-09-29",
+  seoTitle: "Offline Trip Planner: React Native Architecture",
+  seoDescription: "Explore an offline-first trip planner with React Native, WatermelonDB and offline maps. Review local storage and synchronization tradeoffs.",
   title: 'Building an Offline-First Trip Planner with React Native + WatermelonDB + Offline Maps',
   date: '2026-04-13',
   excerpt: 'Architecture decisions behind TripHive — a collaborative trip planner that works without internet using WatermelonDB, PowerSync, and MapLibre with downloadable offline tiles.',

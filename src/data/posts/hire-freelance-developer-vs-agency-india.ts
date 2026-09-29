@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const hireFreelanceDeveloperVsAgencyIndia: BlogPost = {
   slug: 'hire-freelance-developer-vs-agency-india',
+  updated: "2026-09-29",
+  seoTitle: "Freelance Developer vs Agency in India",
+  seoDescription: "Compare a freelance developer with an agency in India. Review communication, cost, delivery responsibility and ownership before choosing a partner.",
   title: 'Freelance Developer vs Agency in India: An Honest Comparison from the Developer Side',
   date: '2026-04-05',
   excerpt: 'When should you hire a freelancer? When does an agency make sense? A working developer breaks down the real trade-offs — cost, quality, communication, and delivery.',

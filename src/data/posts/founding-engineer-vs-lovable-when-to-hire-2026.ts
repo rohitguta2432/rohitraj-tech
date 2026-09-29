@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const foundingEngineerVsLovableWhenToHire2026: BlogPost = {
   slug: 'founding-engineer-vs-lovable-when-to-hire-2026',
+  updated: "2026-09-29",
+  seoTitle: "Founding Engineer vs Lovable: When to Hire",
+  seoDescription: "Compare a founding engineer with Lovable for an early-stage product. Review cost, ownership and the work needed beyond the first prototype.",
   title: 'Founding Engineer vs Lovable in 2026 — When $180K Beats $25/mo',
   date: '2026-04-22',
   excerpt: 'Lovable ships your first prototype in a weekend. A founding engineer costs $180K + equity. Here is the honest trade-off, where Lovable breaks, and the in-between option nobody talks about.',
@@ -18,7 +21,7 @@ export const foundingEngineerVsLovableWhenToHire2026: BlogPost = {
     src: '/images/notes/founding-engineer-vs-lovable-when-to-hire-2026-cover.jpg',
     alt: 'Abstract editorial cover illustrating Founding Engineer vs Lovable in 2026',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
         {
       heading: 'TL;DR',

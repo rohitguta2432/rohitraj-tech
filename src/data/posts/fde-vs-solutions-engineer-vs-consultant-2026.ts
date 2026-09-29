@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const fdeVsSolutionsEngineerVsConsultant2026: BlogPost = {
   slug: "fde-vs-solutions-engineer-vs-consultant-2026",
+  updated: "2026-09-29",
+  seoTitle: "FDE vs Solutions Engineer vs Consultant (2026)",
+  seoDescription: "Compare forward deployed engineers, solutions engineers and consultants by responsibilities, deliverables and the work your team needs done.",
   title: "Forward Deployed Engineer vs Solutions Engineer vs Consultant: Who Do You Actually Need in 2026?",
   date: "2026-09-22",
   excerpt: "Every guide comparing a forward deployed engineer to a solutions engineer is published by someone who gets paid when you post a job. So all of them stop at the same place: which title to write. This one covers the fourth option they leave out, what six weeks of an actual deployment looks like, and a scorecard you can run before you commit headcount.",
@@ -15,7 +18,7 @@ export const fdeVsSolutionsEngineerVsConsultant2026: BlogPost = {
     "forward deployed engineer role",
     "which engineering role to hire",
   ],
-  relatedProject: "myFinancial",
+  relatedProject: "myfinancial",
   coverImage: {
     src: "/images/notes/fde-vs-solutions-engineer-vs-consultant-2026-cover.jpg",
     alt: "Ribbons of cyan light folding through dark space illustrating forward deployed engineer vs solutions engineer",

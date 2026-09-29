@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const howMuchDoesItCostToBuildMobileAppIndia2026: BlogPost = {
   slug: 'how-much-does-it-cost-to-build-mobile-app-india-2026',
+  updated: "2026-09-29",
+  seoTitle: "Mobile App Development Cost in India (2026)",
+  seoDescription: "Understand mobile app development costs in India. Review scope, platform choices and the delivery assumptions behind common project estimates.",
   title: 'How Much Does It Cost to Build a Mobile App in India? Real Numbers from a Developer (2026)',
   date: '2026-04-05',
   excerpt: 'Honest cost breakdown for building Android and iOS apps in India — from a freelance developer who has shipped apps to Play Store. No agency markup, no inflated estimates.',

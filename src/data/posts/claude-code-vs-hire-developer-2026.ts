@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const claudeCodeVsHireDeveloper2026: BlogPost = {
   slug: 'claude-code-vs-hire-developer-2026',
+  updated: "2026-09-29",
+  seoTitle: "Claude Code vs Hiring a Developer (2026)",
+  seoDescription: "Compare Claude Code with hiring a developer. Understand which tasks a coding agent handles and where a production app still needs an engineer.",
   title: 'Claude Code vs Hiring a Developer in 2026: $20 CLI or $80K Engineer?',
   date: '2026-05-09',
   excerpt:
@@ -16,7 +19,7 @@ export const claudeCodeVsHireDeveloper2026: BlogPost = {
     'claude code production limits',
     'when ai cli breaks production',
   ],
-  relatedProject: 'rohitrajTech',
+  relatedProject: "rohitraj-site",
   coverImage: {
     src: '/images/notes/claude-code-vs-hire-developer-2026-cover.jpg',
     alt: 'Glitched terminal stream in teal and violet illustrating Claude Code CLI vs hiring a developer in 2026',

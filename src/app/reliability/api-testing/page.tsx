@@ -16,8 +16,8 @@ import type { Metadata } from "next";
 const PAGE_PATH = '/reliability/api-testing';
 const DATE_PUBLISHED = '2026-01-31';
 const DATE_MODIFIED = '2026-04-24';
-const SEO_TITLE = 'API Contract Testing with Postman + Newman in CI/CD (2026) | Rohit Raj';
-const SEO_DESCRIPTION = 'Repeatable regression and contract testing for REST APIs with Postman collections and Newman CLI. Catch breaking changes before they reach production — the CI/CD pattern I ship in 2026.';
+const SEO_TITLE = "API Contract Testing with Postman and Newman";
+const SEO_DESCRIPTION = "Test REST API contracts with Postman and Newman in CI. Catch regressions and breaking changes before they reach production.";
 const SEO_KEYWORDS = [
     'postman newman ci cd',
     'api contract testing 2026',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const supabaseVsFirebaseIndiaMvp2026: BlogPost = {
   slug: 'supabase-vs-firebase-india-mvp-2026',
+  updated: "2026-09-29",
+  seoTitle: "Supabase vs Firebase: India MVP Costs (2026)",
+  seoDescription: "Compare Supabase and Firebase for an India MVP. Work through costs at 10,000 monthly active users and review database and platform tradeoffs.",
   title: 'Supabase vs Firebase for Indian MVPs in 2026 — Real Cost on 10K MAU',
   date: '2026-05-12',
   excerpt: 'Firebase tightened Spark-tier limits in Q1 2026 and Supabase opened the Mumbai ap-south-1 region in late 2025. At 10K MAU for an Indian MVP, Supabase Pro at $25/month now beats Firebase Blaze by 2-4x — here is the real cost math, RLS migration story, and when Firebase still wins.',
@@ -16,7 +19,7 @@ export const supabaseVsFirebaseIndiaMvp2026: BlogPost = {
     'supabase pgvector india',
     'postgres rls vs firestore rules',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/supabase-vs-firebase-india-mvp-2026-cover.jpg',
     alt: 'Dark editorial render illustrating Supabase versus Firebase backend cost comparison for Indian MVP 2026',

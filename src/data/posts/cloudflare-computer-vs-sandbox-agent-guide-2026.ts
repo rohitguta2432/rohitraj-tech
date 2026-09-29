@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const cloudflareComputerVsSandboxAgentGuide2026: BlogPost = {
   slug: 'cloudflare-computer-vs-sandbox-agent-guide-2026',
+  updated: "2026-09-29",
+  seoTitle: "Cloudflare Computer vs Sandbox for AI Agents",
+  seoDescription: "Compare Cloudflare Computer and Sandbox for AI agent execution. Choose a runtime based on isolation, tooling and the tasks your agent performs.",
   title:
     'Cloudflare Computer vs Cloudflare Sandbox: Which Agent Runtime Should You Actually Use? (2026)',
   date: '2026-08-07',
@@ -17,7 +20,7 @@ export const cloudflareComputerVsSandboxAgentGuide2026: BlogPost = {
     'e2b alternative 2026',
     'ai agent code execution',
   ],
-  relatedProject: 'rohitrajTech',
+  relatedProject: "rohitraj-site",
   coverImage: {
     src: '/images/notes/cloudflare-computer-vs-sandbox-agent-guide-2026-cover.jpg',
     alt: 'Glowing crystalline chip with branching filaments illustrating Cloudflare Computer agent runtime vs Sandbox',

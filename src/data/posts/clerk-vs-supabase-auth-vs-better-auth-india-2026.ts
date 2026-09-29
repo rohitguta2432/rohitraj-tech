@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const clerkVsSupabaseAuthVsBetterAuthIndia2026: BlogPost = {
   slug: 'clerk-vs-supabase-auth-vs-better-auth-india-2026',
+  updated: "2026-09-29",
+  seoTitle: "Clerk vs Supabase Auth vs Better Auth (2026)",
+  seoDescription: "Compare Clerk, Supabase Auth and Better Auth for an India MVP. Review pricing, integration and the tradeoffs of managed versus self-hosted auth.",
   title: 'Clerk vs Supabase Auth vs Better-Auth — Which to Pick for India MVP (2026)',
   date: '2026-05-13',
   excerpt: 'At 10K monthly active users for an Indian MVP, Clerk Pro lands around ₹17,000/month, Supabase Auth is included in the same ₹2,100 Pro plan, and Better-Auth on your own Postgres costs ₹0 plus a weekend of engineering. Here is the real cost math, lock-in tradeoff, and the migration story when you outgrow the hosted option.',
@@ -16,7 +19,7 @@ export const clerkVsSupabaseAuthVsBetterAuthIndia2026: BlogPost = {
     'better-auth vs clerk',
     'open source auth nextjs',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/clerk-vs-supabase-auth-vs-better-auth-india-2026-cover.jpg',
     alt: 'Three abstract auth stack pillars on dark backdrop illustrating Clerk vs Supabase Auth vs Better-Auth comparison for India MVP 2026',

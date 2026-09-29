@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const sixWeekMvpVs3MonthAgencyWhichShipsFirst: BlogPost = {
   slug: '6-week-mvp-vs-3-month-agency-which-ships-first',
+  updated: "2026-09-29",
+  seoTitle: "6-Week MVP Sprint vs 3-Month Agency Build",
+  seoDescription: "Compare a six-week MVP sprint with a three-month agency build. Review scope, accountability and delivery tradeoffs for an early-stage startup.",
   title: '6-Week MVP Sprint vs 3-Month Agency Build — Which One Actually Ships First in 2026?',
   date: '2026-04-25',
   excerpt: 'Most "3-month MVP" agency builds take 5-6 months. Most "6-week sprints" take 6 weeks. The difference is not engineer talent — it is the contract structure and the scope discipline. Honest comparison from someone who has seen both fail and succeed.',
@@ -19,7 +22,7 @@ export const sixWeekMvpVs3MonthAgencyWhichShipsFirst: BlogPost = {
     src: '/images/notes/6-week-mvp-vs-3-month-agency-which-ships-first-cover.jpg',
     alt: 'Abstract editorial cover illustrating 6-Week MVP Sprint vs 3-Month Agency Build',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
         {
       heading: 'TL;DR',

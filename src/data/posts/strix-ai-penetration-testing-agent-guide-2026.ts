@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const strixAiPenetrationTestingAgentGuide2026: BlogPost = {
     slug: 'strix-ai-penetration-testing-agent-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "Strix: Open-Source AI Pentesting Agent Guide",
+    seoDescription: "Review Strix as an AI penetration-testing agent for authorized environments. Explore its workflow, evidence gathering and validation approach.",
     title: 'Strix: The Open-Source AI Pentester That Proves Every Bug (2026 Guide)',
     date: '2026-07-03',
     excerpt:
@@ -16,7 +19,7 @@ export const strixAiPenetrationTestingAgentGuide2026: BlogPost = {
         'ai security testing ci cd',
         'best ai pentesting tool 2026',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/strix-ai-penetration-testing-agent-guide-2026-cover.jpg',
         alt: 'Glowing owl-form constellation of nodes probing a dark fractured monolith illustrating Strix AI penetration testing',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const fractionalAiEngineerVsHiring2026: BlogPost = {
   slug: "fractional-ai-engineer-vs-hiring-2026",
+  updated: "2026-09-29",
+  seoTitle: "Fractional AI Engineer vs Full-Time Hire (2026)",
+  seoDescription: "Compare a fractional AI engineer with a full-time hire. Evaluate scope, budget, continuity and ownership for your team's AI backlog.",
   title: "Fractional AI Engineer vs Full-Time Hire: How to Decide (2026)",
   date: "2026-09-20",
   excerpt: "Every comparison of a fractional AI engineer against a full-time hire is published by someone selling one side of it. This one is written from the delivery side \u2014 the five conditions that make fractional the right call, the four where it is the wrong one, the week-to-week cadence that actually works, and what has to be true on your side before any of it does.",
@@ -15,7 +18,7 @@ export const fractionalAiEngineerVsHiring2026: BlogPost = {
     "hire ai engineer without full-time search",
     "ai consultant vs full time hire",
   ],
-  relatedProject: "myFinancial",
+  relatedProject: "myfinancial",
   coverImage: {
     src: "/images/notes/fractional-ai-engineer-vs-hiring-2026-cover.jpg",
     alt: "Abstract cracked monolith with glowing fissures illustrating fractional AI engineer vs full-time hire",

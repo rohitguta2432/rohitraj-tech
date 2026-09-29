@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const nvidiaLocateAnything3bVisualGroundingGuide2026: BlogPost = {
     slug: 'nvidia-locateanything-3b-visual-grounding-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "NVIDIA LocateAnything-3B: Grounding Guide",
+    seoDescription: "Explore NVIDIA LocateAnything-3B for visual grounding. Review its approach, benchmark claims and fit for screenshot and image-based agent tasks.",
     title: 'NVIDIA LocateAnything-3B: The Open Visual Grounding Model That Beats YOLO (2026 Guide)',
     date: '2026-07-06',
     excerpt:
@@ -16,7 +19,7 @@ export const nvidiaLocateAnything3bVisualGroundingGuide2026: BlogPost = {
         'parallel box decoding',
         'self host visual grounding model',
     ],
-    relatedProject: 'rohitrajTech',
+    relatedProject: "rohitraj-site",
     coverImage: {
         src: '/images/notes/nvidia-locateanything-3b-visual-grounding-guide-2026-cover.jpg',
         alt: 'Luminous particles converging to a focal point illustrating NVIDIA LocateAnything-3B visual grounding',

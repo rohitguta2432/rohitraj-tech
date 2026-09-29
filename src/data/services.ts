@@ -4,10 +4,11 @@ export type { Service } from '@/types/service';
 export const services: Service[] = [
  {
  slug: "mobile-app-development",
+ updated: "2026-09-29",
  title: "Mobile App Development",
- metaTitle: "Mobile App Development | Hire React Native Developer India | Rohit Raj",
+ metaTitle: "React Native Mobile App Developer in India",
  metaDescription:
- "Hire an experienced mobile app developer in India. React Native + Expo apps with Play Store deployment, offline-first architecture, and ~15MB bundle size.",
+ "Hire a React Native and Expo developer in India. Build mobile apps with offline support, production architecture and Play Store deployment.",
  headline: "Ship Your Mobile App to the Play Store — Fast",
  subheadline:
  "React Native + Expo apps that run on Android and iOS from a single codebase. Offline-first, lightweight (~15MB), and production-ready.",
@@ -52,10 +53,11 @@ export const services: Service[] = [
  },
  {
  slug: "ai-chatbot-development",
+ updated: "2026-09-29",
  title: "AI Chatbot & WhatsApp Bot Development",
- metaTitle: "AI Chatbot & WhatsApp Bot Developer India | Rohit Raj",
+ metaTitle: "AI Chatbot and WhatsApp Bot Developer in India",
  metaDescription:
- "Build AI chatbots and WhatsApp bots for your business. From rule-based flows to full LLM-powered assistants with Hinglish support.",
+ "Build AI chatbots and WhatsApp bots for your business, from rule-based flows to LLM-powered assistants with Hinglish support.",
  headline: "AI Chatbots That Actually Work for Indian Businesses",
  subheadline:
  "WhatsApp bots, customer support agents, and LLM-powered assistants — built to handle Hinglish, scale to thousands, and integrate with your existing systems.",
@@ -92,10 +94,11 @@ export const services: Service[] = [
  },
  {
  slug: "full-stack-development",
+ updated: "2026-09-29",
  title: "Full-Stack Development & AI Integration",
- metaTitle: "Hire Full Stack Developer India | Spring Boot + React | Rohit Raj",
+ metaTitle: "Full Stack Developer: Spring Boot and React",
  metaDescription:
- "Full-stack development with Spring Boot, React, and Next.js. AI integration, MVP to production, startup CTO-level guidance.",
+ "Hire a full-stack developer for Spring Boot, React and Next.js. Build an MVP, integrate AI and take your startup's application to production.",
  headline: "From MVP to Production — Full-Stack Engineering for Startups",
  subheadline:
  "Spring Boot + React/Next.js applications with AI integration baked in. Think of it as hiring a CTO who also writes the code.",
@@ -149,10 +152,11 @@ export const services: Service[] = [
  },
  {
  slug: "fintech-app-development",
+ updated: "2026-09-29",
  title: "Fintech & Financial App Development",
- metaTitle: "Fintech App Developer India | Financial Software Development",
+ metaTitle: "Fintech App Developer in India",
  metaDescription:
- "Build secure fintech apps — payment integrations, tax calculators, investment dashboards, banking apps. Freelance developer based in India with live fintech projects.",
+ "Build fintech apps with payment integrations, tax calculators and investment dashboards. Work directly with an engineer with live fintech projects.",
  headline: "Fintech Apps That Handle Real Money",
  subheadline:
  "Secure, accurate, and compliant financial software — from tax calculators to investment dashboards. Built by a developer with live fintech projects in production.",
@@ -197,10 +201,11 @@ export const services: Service[] = [
  },
  {
  slug: "healthcare-clinic-app",
+ updated: "2026-09-29",
  title: "Healthcare & Clinic App Development",
- metaTitle: "Healthcare App Developer India | Clinic Management Software",
+ metaTitle: "Healthcare and Clinic App Developer in India",
  metaDescription:
- "Build clinic management systems, patient booking bots, and healthcare apps. WhatsApp-first solutions for Indian clinics. HIPAA-aware development.",
+ "Build clinic management software, patient booking bots and WhatsApp workflows for Indian healthcare teams, with clear data and access boundaries.",
  headline: "Digital Solutions for Clinics & Healthcare",
  subheadline:
  "WhatsApp booking bots, patient management systems, and clinic dashboards — built for how Indian healthcare actually works.",
@@ -249,10 +254,11 @@ export const services: Service[] = [
  },
  {
  slug: "startup-mvp-development",
+ updated: "2026-09-29",
  title: "Startup MVP Development",
- metaTitle: "MVP Developer India | Build Your Startup MVP Fast",
+ metaTitle: "Startup MVP Developer in India",
  metaDescription:
- "Ship your startup MVP in 4-8 weeks. Full-stack development with AI integration. From idea to production — one developer, no overhead.",
+ "Ship a startup MVP in four to eight weeks. Full-stack development and AI integration, with one engineer responsible from idea to production.",
  headline: "Ship Your MVP. Validate Your Idea. Move Fast.",
  subheadline:
  "From idea to production in 4-8 weeks. One senior developer, no agency overhead, no inflated quotes. Just a working product your users can try.",
@@ -302,10 +308,11 @@ export const services: Service[] = [
  },
  {
  slug: "6-week-mvp",
+ updated: "2026-09-29",
  title: "6-Week MVP Sprint",
- metaTitle: "6-Week MVP Sprint | Founding Engineer for Hire | Rohit Raj",
+ metaTitle: "6-Week MVP Sprint: Founding Engineer for Hire",
  metaDescription:
- "Ship a production-ready MVP in 6 weeks — fixed scope, clean handoff, and senior engineering from day one.",
+ "Ship a production-ready MVP in six weeks with fixed scope, senior engineering, regular demos and a clean code handoff to your team.",
  headline: "Ship a Production MVP in 6 Weeks — Not 6 Months",
  subheadline:
  "Fixed-scope MVP sprint for founders who need to validate an idea fast. You own the code from day one, with clean handoff and room to keep collaborating after launch.",
@@ -370,9 +377,9 @@ export const services: Service[] = [
  {
  slug: "hire-founding-engineer-india",
  title: "Hire a Founding Engineer in India (2026)",
- metaTitle: "Founding Engineer for Hire in India (2026) | MVP Builder | Rohit Raj",
+ metaTitle: "Founding Engineer for Hire in India",
  metaDescription:
- "Hire a senior founding engineer in India without a long recruiting cycle or agency overhead. Production MVP in 6 weeks, full GitHub access, clean handoff.",
+ "Hire a founding engineer in India for a production MVP in six weeks. Get direct GitHub access, senior engineering and a clean handoff.",
  headline: "Founding Engineer for Hire in India — Without the 12-Month Lock-In",
  subheadline:
  "Pre-seed founders can skip the slow recruiting cycle and ship with a senior builder instead. Same code quality. 6 weeks to production. You own the GitHub from day one.",
@@ -434,7 +441,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Hire a Founding Engineer",
- updated: "2026-09-05",
+ updated: "2026-09-29",
  related: [
  {
  href: "/services/6-week-mvp",
@@ -455,10 +462,11 @@ export const services: Service[] = [
  },
  {
  slug: "hire-fractional-cto-india",
+ updated: "2026-09-29",
  title: "Hire a Fractional CTO in India — Or Skip Straight to a Builder",
- metaTitle: "Hire Fractional CTO India 2026 | When You Actually Need One | Rohit Raj",
+ metaTitle: "Fractional CTO in India: When to Hire One",
  metaDescription:
- "Most founders Googling 'hire fractional CTO India' do not need one. They need a senior engineer who ships code. Honest take + cheaper alternative for pre-seed startups.",
+ "Decide whether your startup needs a fractional CTO or a hands-on founding engineer. Compare technical leadership with direct product delivery.",
  headline: "Hire a Fractional CTO in India — Only If You Already Have a Team to Lead",
  subheadline:
  "Fractional CTOs charge senior-executive retainers for advice. Pre-PMF, you do not need advice — you need shipped code. Here is when a fractional CTO is the right call, and when a senior contractor wins.",
@@ -513,9 +521,9 @@ export const services: Service[] = [
  {
  slug: "forward-deployed-engineer",
  title: "Hire a Forward Deployed Engineer (AI)",
- metaTitle: "Hire a Forward Deployed Engineer (AI FDE) | Rohit Raj",
+ metaTitle: "Hire a Forward Deployed Engineer (AI FDE)",
  metaDescription:
- "Hire a forward deployed engineer who embeds with your team and ships AI to production — agents, MCP integrations, LLM features. Fixed-scope pilot or fractional.",
+ "Hire Rohit Raj as your forward deployed AI engineer. Production agents, MCP integrations and LLM features, with evals and full code ownership.",
  headline: "Hire a Forward Deployed Engineer Who Gets AI to Production — Not Another Stalled Pilot",
  subheadline:
  "A forward deployed engineer embeds inside your company, learns your workflows, and builds AI systems through to production. Not advice from the sidelines — working software in your repo.",
@@ -566,7 +574,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Book a Scoping Call",
- updated: "2026-09-05",
+ updated: "2026-09-29",
  related: [
  {
  href: "/services/fractional-forward-deployed-engineer",
@@ -593,9 +601,9 @@ export const services: Service[] = [
  {
  slug: "mcp-integration-consultant",
  title: "MCP Integration Consultant",
- metaTitle: "MCP Integration Consultant | Custom MCP Servers | Rohit Raj",
+ metaTitle: "MCP Integration Consultant: Custom Servers",
  metaDescription:
- "Hire an MCP integration consultant to connect AI agents to your APIs, data, and internal tools. Production MCP servers with security boundaries and evals.",
+ "Connect AI agents to your APIs, data and internal tools. Hire an MCP consultant for production servers with security boundaries and evals.",
  headline: "MCP Integration Consultant — Connect Your AI Agents to the Systems That Run Your Business",
  subheadline:
  "Model Context Protocol (MCP) is how AI agents reach your APIs, databases, and internal tools. I design, build, and deploy production MCP servers — securely, with evals, inside your stack.",
@@ -641,7 +649,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Discuss Your Integration",
- updated: "2026-09-05",
+ updated: "2026-09-29",
  related: [
  {
  href: "/services/forward-deployed-engineer",
@@ -668,9 +676,9 @@ export const services: Service[] = [
  {
  slug: "fractional-ai-engineer",
  title: "Freelance AI Engineer & AI Architect",
- metaTitle: "Freelance AI Engineer & AI Architect for Hire | Rohit Raj",
+ metaTitle: "Freelance AI Engineer and AI Architect for Hire",
  metaDescription:
- "Hire a freelance AI engineer and AI architect who designs the system and ships it: agents, RAG, LLM features, Claude Code. Fractional, remote worldwide.",
+ "Hire a freelance AI engineer to design and ship agents, RAG and LLM features. Fractional availability, hands-on delivery and remote work worldwide.",
  headline: "Freelance AI Engineer & AI Architect — Senior AI Delivery, a Few Days a Week",
  subheadline:
  "You have real AI work to ship, but not enough to justify a permanent senior salary. I work as an independent AI engineer and architect on a fractional retainer: I design the system, build it, and keep it working in production.",
@@ -726,7 +734,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-09-26",
+ updated: "2026-09-29",
  related: [
  {
  href: "/services/fractional-forward-deployed-engineer",
@@ -748,9 +756,9 @@ export const services: Service[] = [
  {
  slug: "ai-engineering-foundations",
  title: "AI Engineering Foundations",
- metaTitle: "AI Engineering Foundations | Spec Kit, Model & Effort Training for Teams | Rohit Raj",
+ metaTitle: "AI Engineering Foundations: Team Training",
  metaDescription:
- "Team training in AI-assisted engineering: spec-driven development with Spec Kit and Kiro, which Claude or Copilot model and effort level to use for each task, repo context files, and token cost basics.",
+ "Train your team in AI engineering: Spec Kit, Kiro, model selection, effort levels, repository instructions and token costs, using your own codebase.",
  headline: "AI Engineering Foundations — Teach Your Team to Actually Use the AI Tools You Already Pay For",
  subheadline:
  "A two-week, hands-on programme on your own codebase: spec-driven development from zero, which model and effort level for which task in Claude Code and GitHub Copilot, the folder structure that gives every tool project context, and the token maths behind the bill.",
@@ -835,9 +843,9 @@ export const services: Service[] = [
  {
  slug: "claude-code-consultant",
  title: "Claude Code Consultant",
- metaTitle: "Claude Code Consultant | Team Rollout & Guardrails | Rohit Raj",
+ metaTitle: "Claude Code Consultant: Team Rollout and Guardrails",
  metaDescription:
- "Hire a Claude Code consultant to roll out agentic coding across your engineering team: CLAUDE.md, custom skills, hooks, MCP servers, CI runs, and review guardrails.",
+ "Roll out Claude Code across your team with repository instructions, skills, hooks, MCP servers, CI workflows and practical review guardrails.",
  headline: "Claude Code Consultant — Roll Out Agentic Coding Across Your Team Without Lowering the Bar",
  subheadline:
  "Claude Code is the strongest agentic coding tool shipping today, and most teams use about a tenth of it. I set it up the way I run it myself — skills, hooks, MCP servers, subagents, CI pipelines, guardrails — so your engineers ship faster and your review bar stays where it is.",
@@ -896,7 +904,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Book a Claude Code Working Session",
- updated: "2026-09-05",
+ updated: "2026-09-29",
  related: [
  {
  href: "/services/fractional-ai-engineer",
@@ -928,9 +936,9 @@ export const services: Service[] = [
  {
  slug: "fractional-forward-deployed-engineer",
  title: "Fractional Forward Deployed Engineer",
- metaTitle: "Fractional Forward Deployed Engineer | AI FDE Retainer | Rohit Raj",
+ metaTitle: "Fractional Forward Deployed Engineer: AI Retainer",
  metaDescription:
- "Hire a fractional forward deployed engineer: a senior AI engineer embedded in your team on fixed days per week, owning agents and MCP integrations to production.",
+ "Hire a fractional forward deployed engineer on fixed days each week. Ship AI agents and MCP integrations with senior ownership and production evals.",
  headline: "Fractional Forward Deployed Engineer — Senior AI Delivery on a Two-Day-a-Week Retainer",
  subheadline:
  "The forward deployed engineer model — embedded in your environment, accountable for production — without the full-time salary or the six-month search. Fixed days each week, your repo, your Slack, your outcomes.",
@@ -986,7 +994,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Book a Scoping Call",
- updated: "2026-09-05",
+ updated: "2026-09-29",
  related: [
  {
  href: "/services/forward-deployed-engineer",

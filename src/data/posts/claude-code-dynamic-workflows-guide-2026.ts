@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const claudeCodeDynamicWorkflowsGuide2026: BlogPost = {
   slug: 'claude-code-dynamic-workflows-guide-2026',
+  updated: "2026-09-29",
+  seoTitle: "Claude Code Dynamic Workflows Guide",
+  seoDescription: "Learn how to build dynamic workflows with Claude Code. Explore patterns for connecting agent instructions, tools and repeatable development tasks.",
   title: 'Claude Code Dynamic Workflows: A Hands-On Guide for Developers (2026)',
   date: '2026-06-01',
   excerpt:
@@ -20,7 +23,7 @@ export const claudeCodeDynamicWorkflowsGuide2026: BlogPost = {
     src: '/images/notes/claude-code-dynamic-workflows-guide-2026-cover.jpg',
     alt: 'Constellation of glowing cyan nodes illustrating Claude Code dynamic workflows orchestrating parallel AI subagents',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
     {
       heading: 'TL;DR',

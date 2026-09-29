@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const inkling975bRunLocallyVramGuide2026: BlogPost = {
     slug: 'inkling-975b-run-locally-vram-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "Inkling 975B: Local Hosting and VRAM Guide",
+    seoDescription: "Review Inkling 975B hardware and deployment requirements. Work through memory constraints and whether self-hosting makes sense for your team.",
     title: 'Inkling 975B: The Open-Weights Model Almost Nobody Should Self-Host (2026)',
     date: '2026-07-16',
     excerpt:

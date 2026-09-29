@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const springBootVsNodejsStartupBackend2026: BlogPost = {
   slug: 'spring-boot-vs-nodejs-startup-backend-2026',
+  updated: "2026-09-29",
+  seoTitle: "Spring Boot vs Node.js for Startups (2026)",
+  seoDescription: "Compare Spring Boot and Node.js for a startup backend. Review developer experience, operations and the tradeoffs that matter for an MVP.",
   title: 'Spring Boot vs Node.js for Your Startup Backend (2026)',
   date: '2026-04-05',
   excerpt: 'An honest comparison of Spring Boot and Node.js for startup backends — performance, hiring, ecosystem, and when each one actually makes sense.',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const baiduUnlimitedOcrOpenModelGuide2026: BlogPost = {
     slug: 'baidu-unlimited-ocr-open-model-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "Baidu Unlimited-OCR: Long Document Guide",
+    seoDescription: "Explore Baidu Unlimited-OCR for long documents. Review its approach to multi-page extraction and the tradeoffs of running an open OCR model.",
     title: 'Baidu Unlimited-OCR: The Open-Source Model That Reads 40+ Page Documents in One Pass (2026)',
     date: '2026-07-02',
     excerpt:
@@ -16,7 +19,7 @@ export const baiduUnlimitedOcrOpenModelGuide2026: BlogPost = {
         'r-swa attention',
         'best open source ocr 2026',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/baidu-unlimited-ocr-open-model-guide-2026-cover.jpg',
         alt: 'A luminous ribbon threading a stack of translucent glass sheets illustrating Baidu Unlimited-OCR long-document parsing',

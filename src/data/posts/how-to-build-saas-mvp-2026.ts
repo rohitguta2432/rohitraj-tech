@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const howToBuildSaasMvp2026: BlogPost = {
   slug: 'how-to-build-saas-mvp-2026',
+  updated: "2026-09-29",
+  seoTitle: "How to Build a SaaS MVP: Tech Stack Guide",
+  seoDescription: "Plan a SaaS MVP with a practical technology stack. Review frontend, backend and infrastructure choices that support a focused first release.",
   title: 'How to Build a SaaS MVP in 2026 — Complete Tech Stack Guide',
   date: '2026-04-05',
   excerpt: 'A practical guide to building your SaaS MVP — tech stack choices, cost breakdown, timeline, and the mistakes that kill most first-time founders.',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const ragForSql: BlogPost = {
   slug: 'rag-for-sql',
+  updated: "2026-09-29",
+  seoTitle: "RAG for SQL Generation: A Practical Guide",
+  seoDescription: "Use retrieval-augmented generation for SQL queries. Learn how schema embeddings give an LLM useful database context beyond a large prompt.",
   title: 'Using RAG for SQL Generation — Why Embeddings Beat Prompt Stuffing',
   date: '2026-01-28',
   excerpt: 'How pgvector embeddings improve LLM-to-SQL accuracy by providing schema context instead of dumping entire schemas into prompts.',

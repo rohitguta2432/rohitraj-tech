@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const aiNewsApril2026WhatFoundersShouldBuild: BlogPost = {
   slug: 'ai-news-april-2026-what-founders-should-build',
+  updated: "2026-09-29",
+  seoTitle: "April 2026 AI News: What Founders Can Build",
+  seoDescription: "Review seven AI developments from April 2026 through a founder's lens. Explore which changes create useful opportunities for products and MVPs.",
   title: 'April 2026 AI News Decoded: 7 Stories That Actually Change What Founders Should Build',
   date: '2026-04-24',
   excerpt: 'Claude Mythos 5, GPT-5.4 Thinking, Gemini 3.1 Ultra, DeepSeek V4, Snap cutting 16% headcount — April 2026 reshaped the frontier. Most roundups list the news. This post tells founders, freelance devs, and founding engineers what to actually build, drop, or route next.',
@@ -96,7 +99,7 @@ The post-April-2026 architecture is: a thin routing layer that dispatches each r
 
 Google's Gemma 4 31B ranks #3 on Arena and runs on a single GPU. Android 16's on-device notification summaries and Apple Intelligence make on-device the expected experience for anything touching personal data. If your app processes financial messages, medical records, or biometric input, cloud inference is now a liability.
 
-I shipped [ScamRakshak](/projects/scamrakshak) with zero network permissions for exactly this reason. Read the [cloud-first AI is dead post](/blog/cloud-first-ai-is-dead-on-device-android-2026) if you want the full architecture breakdown.
+I shipped [ScamRakshak](/projects/scamrakshak) with zero network permissions for exactly this reason. Read the [cloud-first AI is dead post](/notes/cloud-first-ai-is-dead-on-device-android-2026) if you want the full architecture breakdown.
 
 **3. Rewrite your "AI strategy" deck in the language of agents, not features.**
 

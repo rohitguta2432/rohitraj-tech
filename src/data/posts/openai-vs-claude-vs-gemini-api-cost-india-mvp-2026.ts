@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const openaiVsClaudeVsGeminiApiCostIndiaMvp2026: BlogPost = {
   slug: 'openai-vs-claude-vs-gemini-api-cost-india-mvp-2026',
+  updated: "2026-09-29",
+  seoTitle: "OpenAI vs Claude vs Gemini: API Cost Guide",
+  seoDescription: "Compare OpenAI, Claude and Gemini API costs for an India MVP. Work through usage assumptions and choose a model that fits your product budget.",
   title: 'OpenAI vs Claude vs Gemini API — Real Cost for India MVP 2026',
   date: '2026-05-16',
   excerpt:

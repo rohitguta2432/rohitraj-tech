@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const reactNativeVsFlutter2026: BlogPost = {
   slug: 'react-native-vs-flutter-2026',
+  updated: "2026-09-29",
+  seoTitle: "React Native vs Flutter: App Framework Guide",
+  seoDescription: "Compare React Native and Flutter for a mobile app. Review team skills, ecosystem and platform tradeoffs before selecting a framework.",
   title: 'React Native vs Flutter in 2026: Which One for Your App?',
   date: '2026-04-05',
   excerpt: 'A practical comparison of React Native and Flutter in 2026 — performance, ecosystem, hiring, and which one I recommend based on your specific situation.',

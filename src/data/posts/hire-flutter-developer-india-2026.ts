@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const hireFlutterDeveloperIndia2026: BlogPost = {
   slug: 'hire-flutter-developer-india-2026',
+  updated: "2026-09-29",
+  seoTitle: "Hire a Flutter Developer in India: Cost Guide",
+  seoDescription: "Compare Flutter developers, agencies and FlutterFlow for an India MVP. Review costs and delivery tradeoffs before committing to a build.",
   title: 'Hire Flutter Developer India 2026: Founding Engineer vs Agency vs FlutterFlow (Real Cost)',
   date: '2026-05-20',
   excerpt: 'A founding engineer in India ships a Flutter MVP in 5–8 weeks for ₹6.5–9.5L fixed. A Bangalore agency quotes ₹24–38L for the same scope and lands in 16. FlutterFlow saves 3 weeks of UI work and then traps you in a no-code stack you cannot extend. Here is the real cost math for May 2026, which Flutter packages survive production, and the decision tree I wish my last two FinTech clients had read.',

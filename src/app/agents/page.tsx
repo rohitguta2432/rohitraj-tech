@@ -7,9 +7,8 @@ import { createPageMetadata } from "@/lib/seo-config";
 import type { Metadata } from "next";
 
 
-const TITLE = "AI Agent Host — Autonomous Agents for Billion-Dollar Markets";
-const DESCRIPTION =
-    "Live, autonomous AI agents built by Rohit Raj — try them in your browser. An AI home-services dispatcher that quotes and books, a contract risk reviewer, an educational portfolio X-ray, and an MCP manifest security scanner. Each runs deterministically with no API key.";
+const TITLE = "AI Agents: Live Demos and Open-Source Projects";
+const DESCRIPTION = "Try AI agents built by Rohit Raj for support, dispatch, contract review and security checks. Explore their workflows and open-source implementations.";
 
 export async function generateMetadata(): Promise<Metadata> {
     return createPageMetadata(TITLE, DESCRIPTION, "/agents", { translated: false });

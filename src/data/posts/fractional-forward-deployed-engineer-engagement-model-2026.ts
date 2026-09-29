@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const fractionalForwardDeployedEngineerEngagementModel2026: BlogPost = {
   slug: "fractional-forward-deployed-engineer-engagement-model-2026",
+  updated: "2026-09-29",
+  seoTitle: "Fractional FDE Engagement Model: How It Works",
+  seoDescription: "See how a fractional forward deployed engineer engagement runs: weekly cadence, responsibilities, scope and the path from pilot to production.",
   title: "The Fractional Forward Deployed Engineer Engagement Model: How It Actually Runs (2026)",
   date: "2026-09-26",
   excerpt: "Every page ranking for fractional forward deployed engineer helps you decide whether to rent one. None of them tells you how the engagement actually operates once you do. Here is the week-by-week shape, the artifacts that have to exist at exit, and the failure mode that turns a fractional retainer into an understaffed full-time role nobody budgeted for.",
@@ -15,7 +18,7 @@ export const fractionalForwardDeployedEngineerEngagementModel2026: BlogPost = {
     "fde engagement model",
     "hire fractional fde",
   ],
-  relatedProject: "myFinancial",
+  relatedProject: "myfinancial",
   coverImage: {
     src: "/images/notes/fractional-forward-deployed-engineer-engagement-model-2026-cover.jpg",
     alt: "Forest green and gold forms rising in sequence on near-black illustrating fractional forward deployed engineer engagement model",

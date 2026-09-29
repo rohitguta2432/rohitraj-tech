@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const devinAiVsHireDeveloper2026: BlogPost = {
   slug: 'devin-ai-vs-hire-developer-2026',
+  updated: "2026-09-29",
+  seoTitle: "Devin AI vs Hiring a Developer (2026)",
+  seoDescription: "Compare Devin AI with hiring a developer. Evaluate agent autonomy, delivery responsibility and the engineering work your product actually needs.",
   title: 'Devin AI vs Hiring a Developer in 2026: $20/Month Agent or Founding Engineer?',
   date: '2026-05-05',
   excerpt:
@@ -17,7 +20,7 @@ export const devinAiVsHireDeveloper2026: BlogPost = {
     'mvp development 2026',
     'devin ai cost india',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/devin-ai-vs-hire-developer-2026-cover.jpg',
     alt: 'Cracked monolith with glowing teal fissures illustrating Devin AI vs hire developer 2026 comparison',

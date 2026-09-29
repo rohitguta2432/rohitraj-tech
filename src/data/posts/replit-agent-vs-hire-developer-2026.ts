@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const replitAgentVsHireDeveloper2026: BlogPost = {
   slug: 'replit-agent-vs-hire-developer-2026',
+  updated: "2026-09-29",
+  seoTitle: "Replit Agent vs Hiring a Developer (2026)",
+  seoDescription: "Compare Replit Agent with hiring a developer for an MVP. Review browser-based development, autonomy and the work required to ship reliably.",
   title: 'Replit Agent vs Hiring a Developer in 2026: Browser IDE Autonomy or Founding Engineer?',
   date: '2026-05-06',
   excerpt:
@@ -17,7 +20,7 @@ export const replitAgentVsHireDeveloper2026: BlogPost = {
     'browser ide ai coding',
     'replit agent cost india',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/replit-agent-vs-hire-developer-2026-cover.jpg',
     alt: 'Liquid metal mercury surface with amber ripples illustrating Replit Agent vs hire developer 2026 comparison',

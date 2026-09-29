@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const primeAgentRlmContinualHarnessGuide2026: BlogPost = {
   slug: 'prime-agent-rlm-continual-harness-guide-2026',
+  updated: "2026-09-29",
+  seoTitle: "Prime Agent: RLM and Continual Harness Guide",
+  seoDescription: "Explore Prime Agent's RLM and continual harness approach. Learn where it fits, what it adds and when a simpler agent workflow is enough.",
   title:
     'Prime Agent: The RLM + Continual Harness Guide (And When to Skip It) — 2026',
   date: '2026-08-09',
@@ -17,7 +20,7 @@ export const primeAgentRlmContinualHarnessGuide2026: BlogPost = {
     'programmatic tool calling agent',
     'open source ai coding agent 2026',
   ],
-  relatedProject: 'rohitrajTech',
+  relatedProject: "rohitraj-site",
   coverImage: {
     src: '/images/notes/prime-agent-rlm-continual-harness-guide-2026-cover.jpg',
     alt: 'Low-poly constellation of glowing cyan nodes illustrating Prime Agent RLM recursive coding agent harness',

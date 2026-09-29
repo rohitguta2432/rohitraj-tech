@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const v0ByVercelVsHireDeveloper2026: BlogPost = {
   slug: 'v0-by-vercel-vs-hire-developer-2026',
+  updated: "2026-09-29",
+  seoTitle: "v0 vs Hiring a Developer: When to Switch",
+  seoDescription: "Compare v0 by Vercel with hiring a developer. Learn where generated interfaces help and where backend, integration and production work take over.",
   title: 'v0 by Vercel vs Hiring a Developer in 2026 — When Generative UI Hits the Day-30 Wall',
   date: '2026-05-08',
   excerpt: 'v0 ships a clickable Next.js + shadcn prototype in 20 minutes for $20 a month. Then on day 30 you need auth, a real database, RLS, Stripe webhooks that survive retries, and a deploy that does not break preview. Here is exactly when v0 is the right call, when a real engineer is, and the cost crossover most founders only see after the prototype is already in customer hands.',
@@ -16,7 +19,7 @@ export const v0ByVercelVsHireDeveloper2026: BlogPost = {
     'v0 vs founding engineer india',
     'ai ui builder vs real engineer 2026',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/v0-by-vercel-vs-hire-developer-2026-cover.jpg',
     alt: 'Floating geometric crystals in cyan and magenta neon illustrating v0 by Vercel vs hiring a developer 2026',

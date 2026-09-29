@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const howToHireDeveloperInterviewQuestions: BlogPost = {
   slug: 'how-to-hire-developer-interview-questions',
+  updated: "2026-09-29",
+  seoTitle: "Hiring a Developer: 10 Interview Questions",
+  seoDescription: "Use ten practical questions to assess a software developer before signing. Review technical judgment, delivery habits and project ownership.",
   title: 'How to Hire a Software Developer: 10 Questions to Ask Before Signing',
   date: '2026-04-05',
   excerpt: 'The 10 questions you should ask before hiring a freelance developer — how to evaluate technical skills, communication, and reliability without being technical yourself.',

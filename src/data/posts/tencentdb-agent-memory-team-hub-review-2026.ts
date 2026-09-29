@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const tencentdbAgentMemoryTeamHubReview2026: BlogPost = {
   slug: 'tencentdb-agent-memory-team-hub-review-2026',
+  updated: "2026-09-29",
+  seoTitle: "TencentDB Agent Memory: Self-Hosted Hub Review",
+  seoDescription: "Review TencentDB Agent Memory as a self-hosted memory hub for teams. Examine shared context, deployment and tradeoffs for AI agent workflows.",
   title:
     'TencentDB Agent Memory v2.0 Review: A Self-Hosted Team Memory Hub for AI Agents (2026)',
   date: '2026-08-06',
@@ -17,7 +20,7 @@ export const tencentdbAgentMemoryTeamHubReview2026: BlogPost = {
     'claude code team memory',
     'agent memory open source',
   ],
-  relatedProject: 'rohitrajTech',
+  relatedProject: "rohitraj-site",
   coverImage: {
     src: '/images/notes/tencentdb-agent-memory-team-hub-review-2026-cover.jpg',
     alt: 'TencentDB Agent Memory repository card illustrating a self-hosted team memory hub for AI agents',

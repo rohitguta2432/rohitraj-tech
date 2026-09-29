@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const pineconeVsQdrantVsPgvectorIndiaRagMvp2026: BlogPost = {
   slug: 'pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026',
+  updated: "2026-09-29",
+  seoTitle: "Pinecone vs Qdrant vs pgvector for RAG",
+  seoDescription: "Compare Pinecone, Qdrant and pgvector for a RAG MVP. Review hosting, retrieval and operating costs before choosing a vector database.",
   title: 'Pinecone vs Qdrant vs pgvector — Which Vector DB for India RAG MVP (2026)',
   date: '2026-05-15',
   excerpt: 'At 500K embeddings for an Indian RAG MVP, Pinecone Standard costs ~₹6,200/month, self-hosted Qdrant runs ~₹1,400/month on Hetzner, and pgvector inside the Postgres you already pay for adds ₹0. Here is the real cost math, recall benchmark on a Hindi+English corpus, and the migration story when you outgrow each.',

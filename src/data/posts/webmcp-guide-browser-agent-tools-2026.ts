@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const webmcpGuideBrowserAgentTools2026: BlogPost = {
     slug: 'webmcp-guide-browser-agent-tools-2026',
+  updated: "2026-09-29",
+    seoTitle: "WebMCP Guide: Browser Tools for AI Agents",
+    seoDescription: "Learn how WebMCP exposes website capabilities as tools for browser agents. Review integration patterns and where explicit tools help automation.",
     title: 'WebMCP Guide 2026: Turn Your Website Into Tools for Browser AI Agents',
     date: '2026-06-18',
     excerpt:
@@ -16,7 +19,7 @@ export const webmcpGuideBrowserAgentTools2026: BlogPost = {
         'webmcp chrome 149 origin trial',
         'browser ai agent tools',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/webmcp-guide-browser-agent-tools-2026-cover.jpg',
         alt: 'A constellation of luminous nodes bridging two glowing orbs illustrating WebMCP browser agent tools in 2026',

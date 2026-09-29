@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const springBootMcp: BlogPost = {
   slug: 'spring-boot-mcp',
+  updated: "2026-09-29",
+  seoTitle: "Build an MCP Server with Spring Boot",
+  seoDescription: "Build a Model Context Protocol server with Spring Boot. Review the tool integration patterns needed to connect an AI assistant to your backend.",
   title: 'Building an MCP Server with Spring Boot — A Practical Guide',
   date: '2026-01-20',
   excerpt: 'Implementing the Model Context Protocol for AI assistant tool integration using Spring Boot and Spring AI.',

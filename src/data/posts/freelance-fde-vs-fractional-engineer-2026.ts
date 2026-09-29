@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const freelanceFdeVsFractionalEngineer2026: BlogPost = {
   slug: "freelance-fde-vs-fractional-engineer-2026",
+  updated: "2026-09-29",
+  seoTitle: "Freelance FDE vs Fractional Engineer (2026)",
+  seoDescription: "Compare project-based freelance FDE work with a fractional engineer retainer. Choose an engagement by scope, ownership, budget and delivery needs.",
   title: "Freelance FDE vs Fractional Engineer: A Buyer Decision Guide (2026)",
   date: "2026-09-29",
   excerpt: "Choose between a bounded FDE project, ongoing fractional ownership and an internal hire using acceptance evidence, availability needs and a one-page decision brief.",

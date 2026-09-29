@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const posthogVsMixpanelVsAmplitudeIndiaMvp2026: BlogPost = {
   slug: 'posthog-vs-mixpanel-vs-amplitude-india-mvp-2026',
+  updated: "2026-09-29",
+  seoTitle: "PostHog vs Mixpanel vs Amplitude for MVPs",
+  seoDescription: "Compare PostHog, Mixpanel and Amplitude for an India MVP. Review event analytics, deployment and cost tradeoffs for an early-stage product.",
   title: 'PostHog vs Mixpanel vs Amplitude — Best Product Analytics for India MVP (2026)',
   date: '2026-05-23',
   excerpt: 'PostHog wins for engineering-led India MVPs because it self-hosts on AWS Mumbai for DPDP compliance and bundles session replay + feature flags into one tier. Mixpanel wins for PM-heavy teams that want the lowest learning curve. Amplitude wins for funded teams with a dedicated analyst. The real cost gap at 10M events/month is 8×. Here is the math, the data-residency reality, and the exact stack I run on myFinancial.',
@@ -16,7 +19,7 @@ export const posthogVsMixpanelVsAmplitudeIndiaMvp2026: BlogPost = {
     'best analytics tool indian startup',
     'hire founding engineer india',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/posthog-vs-mixpanel-vs-amplitude-india-mvp-2026-cover.jpg',
     alt: 'Translucent layered glass plates with embedded glowing lines illustrating PostHog vs Mixpanel vs Amplitude analytics comparison',
@@ -32,7 +35,7 @@ Skip all three and use Plausible or GA4 if you only need page-view counts.`,
       heading: 'PostHog vs Mixpanel vs Amplitude — Which One Should You Pick for an India MVP in 2026?',
       content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
-If you are picking a product analytics tool for an India MVP in 2026, the honest answer is PostHog for almost every engineering-led founder, Mixpanel for PM-led teams under 100K events/month, and Amplitude only after Series A. I have shipped analytics for four India-stack projects in the last 18 months — the [myFinancial](/en) personal-finance PWA (which tracks ~12,000 events per active user per month), a multi-tenant retail [SaaS on Spring Boot](/notes/build-multi-tenant-saas-spring-boot-java-21), a Sanskrit-to-SQL research tool, and a clinic-booking flow on the [WhatsApp Business API](/notes/whatsapp-business-api-integration-guide-india). I ended up on PostHog three out of four times, and the one exception was a clinic that needed a non-technical receptionist to read funnel charts.
+If you are picking a product analytics tool for an India MVP in 2026, the honest answer is PostHog for almost every engineering-led founder, Mixpanel for PM-led teams under 100K events/month, and Amplitude only after Series A. I have shipped analytics for four India-stack projects in the last 18 months — the [MyFinancial](/projects/myfinancial) personal-finance PWA (which tracks ~12,000 events per active user per month), a multi-tenant retail [SaaS on Spring Boot](/notes/build-multi-tenant-saas-spring-boot-java-21), a Sanskrit-to-SQL research tool, and a clinic-booking flow on the [WhatsApp Business API](/notes/whatsapp-business-api-integration-guide-india). I ended up on PostHog three out of four times, and the one exception was a clinic that needed a non-technical receptionist to read funnel charts.
 
 The cost math nobody runs before signup is this: at 1 million events/month, PostHog Cloud is roughly ₹2,500/mo, Mixpanel Growth is ₹2,000/mo (after the free 100K tracked users), and Amplitude Plus is ₹4,070/mo (\$49). At 10 million events/month — a normal scale for a 5K-MAU India consumer product — PostHog Cloud is ₹16,600/mo (\$200), Mixpanel jumps to a custom quote that has consistently landed at ₹25,000–35,000/mo in deals I have seen, and Amplitude Growth is genuinely 6-figure annual (custom, ₹18 lakh–21 lakh/year range based on three quotes I have reviewed in 2025–26). Self-host PostHog on AWS Mumbai at the same scale and the bill drops to about ₹4,000/mo for a t3.medium + db.t4g.medium RDS — that is the math that decides the platform for most India founders.
 

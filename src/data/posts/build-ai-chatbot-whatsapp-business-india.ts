@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const buildAiChatbotWhatsappBusinessIndia: BlogPost = {
   slug: 'build-ai-chatbot-whatsapp-business-india',
+  updated: "2026-09-29",
+  seoTitle: "Build a Business AI Chatbot: Cost and Architecture",
+  seoDescription: "Plan an AI chatbot for your business. Review architecture, integration and costs, with practical considerations for WhatsApp-based workflows.",
   title: 'How to Build an AI Chatbot for Your Business: Architecture, Cost & What Actually Works (2026)',
   date: '2026-04-05',
   excerpt: 'A developer\'s honest guide to building AI chatbots — WhatsApp bots, customer support agents, and LLM-powered assistants. What works, what doesn\'t, and what it actually costs.',

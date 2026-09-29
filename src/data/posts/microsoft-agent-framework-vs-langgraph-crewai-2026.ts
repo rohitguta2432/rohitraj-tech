@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const microsoftAgentFrameworkVsLangGraphCrewai2026: BlogPost = {
     slug: 'microsoft-agent-framework-vs-langgraph-crewai-2026',
+  updated: "2026-09-29",
+    seoTitle: "Microsoft Agent Framework vs LangGraph vs CrewAI",
+    seoDescription: "Compare Microsoft Agent Framework, LangGraph and CrewAI. Review orchestration choices and migration considerations for existing AutoGen work.",
     title: 'Microsoft Agent Framework vs LangGraph vs CrewAI: Which to Use Now That AutoGen Is Dead (2026)',
     date: '2026-06-28',
     excerpt:
@@ -17,7 +20,7 @@ export const microsoftAgentFrameworkVsLangGraphCrewai2026: BlogPost = {
         'langgraph vs crewai 2026',
         'agent framework migration autogen',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/microsoft-agent-framework-vs-langgraph-crewai-2026-cover.jpg',
         alt: 'Three glowing geometric cores of different shapes linked by light filaments illustrating Microsoft Agent Framework vs LangGraph vs CrewAI comparison',

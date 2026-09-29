@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const auditAgentSkillsSecurityClaudeCode2026: BlogPost = {
   slug: 'audit-agent-skills-security-claude-code-2026',
+  updated: "2026-09-29",
+  seoTitle: "Agent Skill Security Audit: A Practical Guide",
+  seoDescription: "Audit an agent skill before installation. Check its instructions, scripts and permissions for unsafe behavior and prompt-injection risks.",
   title:
     'How to Audit an Agent Skill Before You Install It (2026 Playbook)',
   date: '2026-09-18',

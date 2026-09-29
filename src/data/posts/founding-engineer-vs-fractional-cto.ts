@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const foundingEngineerVsFractionalCto: BlogPost = {
   slug: 'founding-engineer-vs-fractional-cto',
+  updated: "2026-09-29",
+  seoTitle: "Founding Engineer vs Fractional CTO (2026)",
+  seoDescription: "Compare a founding engineer and a fractional CTO. Decide whether your startup needs hands-on product delivery, technical leadership or both.",
   title: 'Founding Engineer vs Fractional CTO in 2026 — Which One Does Your Startup Actually Need?',
   date: '2026-04-23',
   excerpt: 'Fractional CTOs advise. Founding engineers ship. If you have an idea and no product, you need someone writing code — not slide decks. Here is the honest trade-off, with real costs, real timelines, and the signal that tells you which one to hire.',
@@ -19,7 +22,7 @@ export const foundingEngineerVsFractionalCto: BlogPost = {
     src: '/images/notes/founding-engineer-vs-fractional-cto-cover.jpg',
     alt: 'Abstract editorial cover illustrating Founding Engineer vs Fractional CTO in 2026',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
         {
       heading: 'TL;DR',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const howToIntegrateAiExistingBusinessApp: BlogPost = {
   slug: 'how-to-integrate-ai-existing-business-app',
+  updated: "2026-09-29",
+  seoTitle: "Add AI to an Existing Business App",
+  seoDescription: "Add AI features to an existing business application without a full rewrite. Review integration boundaries and a practical path to production.",
   title: 'How to Add AI to Your Existing Business App — Without Rebuilding Everything',
   date: '2026-04-05',
   excerpt: 'A practical guide to adding AI features to your existing application — where to start, what to avoid, and how to get real ROI without a complete rewrite.',

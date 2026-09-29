@@ -6,6 +6,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "freelance-fde-vs-fractional-engineer-2026",
     "title": "Freelance FDE vs Fractional Engineer: A Buyer Decision Guide (2026)",
     "date": "2026-09-29",
+    "updated": "2026-09-29",
     "excerpt": "Choose between a bounded FDE project, ongoing fractional ownership and an internal hire using acceptance evidence, availability needs and a one-page decision brief.",
     "readingTime": "12 min read",
     "keywords": [
@@ -25,6 +26,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "fractional-forward-deployed-engineer-engagement-model-2026",
     "title": "The Fractional Forward Deployed Engineer Engagement Model: How It Actually Runs (2026)",
     "date": "2026-09-26",
+    "updated": "2026-09-29",
     "excerpt": "Every page ranking for fractional forward deployed engineer helps you decide whether to rent one. None of them tells you how the engagement actually operates once you do. Here is the week-by-week shape, the artifacts that have to exist at exit, and the failure mode that turns a fractional retainer into an understaffed full-time role nobody budgeted for.",
     "readingTime": "14 min read",
     "keywords": [
@@ -40,12 +42,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/fractional-forward-deployed-engineer-engagement-model-2026-cover.jpg",
       "alt": "Forest green and gold forms rising in sequence on near-black illustrating fractional forward deployed engineer engagement model"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "claude-code-agents-md-vs-claude-md-precedence-2026",
     "title": "Claude Code and AGENTS.md in 2026: Which Instruction File Actually Loads",
     "date": "2026-09-25",
+    "updated": "2026-09-29",
     "excerpt": "Claude Code 2.1.277 added native AGENTS.md support on 18 September 2026 — then loaded it only when a remote feature flag came back on, so telemetry-disabled sessions and every Bedrock, Vertex and gateway user silently got nothing until 2.1.280. Here is the real four-mode precedence matrix, a two-command test that proves which file your agent read, and the four limitations the docs list and nobody repeats.",
     "readingTime": "12 min read",
     "keywords": [
@@ -61,12 +64,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/claude-code-agents-md-vs-claude-md-precedence-2026-cover.jpg",
       "alt": "low-poly nested translucent shells on a dark grid illustrating claude code agents.md instruction file precedence"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "ai-dev-week-2026-39",
     "title": "This Week in AI Dev: Frontier Prices Halved and a 27B Model Fit in 6GB (Week 39 of 2026)",
     "date": "2026-09-24",
+    "updated": "2026-09-29",
     "excerpt": "Anthropic shipped Claude Opus 5.5 and OpenAI shipped GPT-6 Sol ninety minutes later, both at roughly half the old price. The same 48 hours also put a 27B multimodal model into 5.95GB and taught transformers to run llama.cpp's Metal kernels in-process. The cost floor moved at both ends of the stack at once — here is what actually changed and what to do about it.",
     "readingTime": "7 min read",
     "keywords": [
@@ -82,12 +86,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/ai-dev-week-2026-39-cover.jpg",
       "alt": "descending constellation of luminous nodes in dark space illustrating falling AI model costs in week 39 of 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "jev-alternatives-open-weights-decision-models-2026",
     "title": "Open-Weights Jev Alternatives (2026): Which Decision Model To Actually Ship",
     "date": "2026-09-23",
+    "updated": "2026-09-29",
     "excerpt": "TypeSafe shipped Jev on 15 September 2026 and the open-weights clones landed inside a week. Here is the current field benchmarked on the number that actually decides the buy — calibration, not accuracy — plus a runnable ECE harness and the cost math.",
     "readingTime": "13 min read",
     "keywords": [
@@ -108,6 +113,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "fde-vs-solutions-engineer-vs-consultant-2026",
     "title": "Forward Deployed Engineer vs Solutions Engineer vs Consultant: Who Do You Actually Need in 2026?",
     "date": "2026-09-22",
+    "updated": "2026-09-29",
     "excerpt": "Every guide comparing a forward deployed engineer to a solutions engineer is published by someone who gets paid when you post a job. So all of them stop at the same place: which title to write. This one covers the fourth option they leave out, what six weeks of an actual deployment looks like, and a scorecard you can run before you commit headcount.",
     "readingTime": "15 min read",
     "keywords": [
@@ -123,12 +129,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/fde-vs-solutions-engineer-vs-consultant-2026-cover.jpg",
       "alt": "Ribbons of cyan light folding through dark space illustrating forward deployed engineer vs solutions engineer"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "qwen-image-2-1-commercial-license-alternatives-2026",
     "title": "Qwen-Image-2.1 Commercial Use: The License Problem and What to Ship Instead (2026)",
     "date": "2026-09-21",
+    "updated": "2026-09-29",
     "excerpt": "Qwen-Image-2.1 shipped on 20 September 2026 with 7B parameters, native 2K output and a real alpha channel — under a research-only license that forbids commercial use. Here is exactly what the license prohibits, which open image models you can actually ship, and how to catch a license downgrade in CI before it reaches production.",
     "readingTime": "13 min read",
     "keywords": [
@@ -149,6 +156,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "fractional-ai-engineer-vs-hiring-2026",
     "title": "Fractional AI Engineer vs Full-Time Hire: How to Decide (2026)",
     "date": "2026-09-20",
+    "updated": "2026-09-29",
     "excerpt": "Every comparison of a fractional AI engineer against a full-time hire is published by someone selling one side of it. This one is written from the delivery side — the five conditions that make fractional the right call, the four where it is the wrong one, the week-to-week cadence that actually works, and what has to be true on your side before any of it does.",
     "readingTime": "15 min read",
     "keywords": [
@@ -164,12 +172,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/fractional-ai-engineer-vs-hiring-2026-cover.jpg",
       "alt": "Abstract cracked monolith with glowing fissures illustrating fractional AI engineer vs full-time hire"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "forward-deployed-engineer-hiring-process-2026",
     "title": "How to Hire a Forward Deployed Engineer (Without the Full-Time Search)",
     "date": "2026-09-19",
+    "updated": "2026-09-29",
     "excerpt": "Every guide on how to hire a forward deployed engineer is written by someone selling you the placement. This one is written by the person who does the work — the scoping decision that comes before the hire, a paid trial project you can actually run, and the four ways the engagement dies in week three.",
     "readingTime": "14 min read",
     "keywords": [
@@ -185,12 +194,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/forward-deployed-engineer-hiring-process-2026-cover.jpg",
       "alt": "Abstract converging pathways on a dark grid illustrating the forward deployed engineer hiring process"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "audit-agent-skills-security-claude-code-2026",
     "title": "How to Audit an Agent Skill Before You Install It (2026 Playbook)",
     "date": "2026-09-18",
+    "updated": "2026-09-29",
     "excerpt": "Cloudflare, Alibaba and Tencent all shipped official Agent Skills this week, and `npx skills add` now installs to 78 different agents. Snyk scanned 3,984 skills and found security issues in 36.82% of them. Here is the review gate I run before any skill touches a client repo — what to read, what to diff, what to sandbox, and what to never auto-install.",
     "readingTime": "12 min read",
     "keywords": [
@@ -211,6 +221,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "rtx-pro-5500-blackwell-84gb-local-llm-2026",
     "title": "NVIDIA RTX PRO 5500 Blackwell: What Actually Fits in 84GB for Local LLMs (2026)",
     "date": "2026-09-15",
+    "updated": "2026-09-29",
     "excerpt": "NVIDIA quietly listed the RTX PRO 5500 Blackwell: 21,760 CUDA cores, 84GB of ECC GDDR7, 600W, no price yet. The news sites stopped at the spec sheet. Here is the question that matters if you run models locally: what actually fits in 84GB, what still does not, and when a used A100 or the API is the smarter buy.",
     "readingTime": "11 min read",
     "keywords": [
@@ -231,6 +242,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "deepseek-v4-1-flash-hardware-requirements-2026",
     "title": "DeepSeek V4.1 Flash Hardware Requirements: The 510GB Model Everyone Is Calling 8B (2026)",
     "date": "2026-09-14",
+    "updated": "2026-09-29",
     "excerpt": "DeepSeek V4.1 Flash activates 8B parameters per prefill token, so the internet decided it is a small model. The checkpoint is 510.30GB across 48 files and the self-hosting floor is an 8-GPU node. Here is the real memory table, why the KV cache collapsed to 890 bytes per token, and the cache-hit pricing that makes the local question mostly moot.",
     "readingTime": "14 min read",
     "keywords": [
@@ -251,6 +263,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "what-does-a-forward-deployed-engineer-do-2026",
     "title": "What Does a Forward Deployed Engineer Actually Do? (2026 Guide)",
     "date": "2026-09-05",
+    "updated": "2026-09-29",
     "excerpt": "Forward deployed engineer went from a Palantir job title to the fastest-growing role in tech. Here is what an FDE actually does week to week, how the role differs from a software engineer, solutions engineer, or consultant, why AI companies hire for it so aggressively, and the three ways a company can get FDE capacity without a six-month search.",
     "readingTime": "10 min read",
     "keywords": [
@@ -273,6 +286,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "qwen3-8-flash-next-vs-27b-local-memory-2026",
     "title": "Qwen3.8-Flash-Next vs Qwen3.8-27B: The Local Memory Math Behind the \"12GB VRAM\" Headline (2026)",
     "date": "2026-08-29",
+    "updated": "2026-09-29",
     "excerpt": "Qwen3.8-Flash-Next needs only 6B active parameters per token, so the internet decided it runs on 12GB of VRAM. It does — but only if you also have 75GB of total memory and an SSD willing to stream a 51B n-gram table. Here is the real memory table, the benchmark delta against the 27B you can already run on one 24GB card, and the two conflicting offload recipes reconciled.",
     "readingTime": "13 min read",
     "keywords": [
@@ -293,6 +307,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "ai-dev-week-2026-35",
     "title": "This Week in AI Dev: The Price War Reaches Anthropic's Flagship (Week 35 of 2026)",
     "date": "2026-08-25",
+    "updated": "2026-09-29",
     "excerpt": "Anthropic's priciest model took 8.0% of its own customers' spend in July while Opus 4.8 took 28.0%. OpenAI extended a discount to November. A 22.4 GB quant claims Opus-class coding. Week 35 is the week the AI price war stopped being a headline and started being a routing decision.",
     "readingTime": "7 min read",
     "keywords": [
@@ -309,12 +324,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/ai-dev-week-2026-35-cover.jpg",
       "alt": "Descending cascade of glowing liquid-metal spheres illustrating the collapsing cost of frontier AI in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "qwen3-8-27b-local-coding-agent-claude-code-2026",
     "title": "Qwen3.8-27B as Your Local Coding Agent: 24GB Setup, Quant Pick, and Claude Code Wiring (2026)",
     "date": "2026-08-24",
+    "updated": "2026-09-29",
     "excerpt": "Qwen3.8-27B is the first Apache-2.0 model that scores 61.7 on SWE-bench Pro and still fits on one 24GB GPU. Here is the working-developer build: which of the 790 GGUF quants to actually download (with KL-divergence data), the llama-server flags that matter, wiring it into Qwen Code natively and Claude Code through a router, the cost math against a cloud agent subscription, and the context-window ceiling nobody puts in the headline.",
     "readingTime": "14 min read",
     "keywords": [
@@ -335,6 +351,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "deepseek-v4-flash-vision-exp-api-guide-2026",
     "title": "DeepSeek-V4-Flash-Vision-Exp API Guide: Limits, Pricing, and the 800px Trap (2026)",
     "date": "2026-08-23",
+    "updated": "2026-09-29",
     "excerpt": "DeepSeek put image input on its V4-Flash API on August 21, 2026 as deepseek-v4-flash-vision-exp: 284B/13B-active MoE, 1M context, every image capped at 384 tokens at plain V4-Flash rates. Here is the working-developer read — the three ways to send an image, the limits that return 400, the 800×800 downscale that quietly breaks dense OCR, a cost table against Gemini 3.7 Flash and Qwen3.8-Max, and how I would wire it behind a router so the cheap path never becomes the only path.",
     "readingTime": "13 min read",
     "keywords": [
@@ -349,13 +366,13 @@ export const blogSummaries: BlogPostSummary[] = [
     "coverImage": {
       "src": "/images/notes/deepseek-v4-flash-vision-exp-api-guide-2026-cover.jpg",
       "alt": "Crystalline lens of glowing particles focusing light illustrating the DeepSeek-V4-Flash-Vision-Exp multimodal API"
-    },
-    "relatedProject": "vaani"
+    }
   },
   {
     "slug": "deepseek-harness-vs-claude-code-codex-cli-2026",
     "title": "DeepSeek Harness vs Claude Code vs Codex CLI: The v0.1 Developer Preview, Honestly — 2026",
     "date": "2026-08-14",
+    "updated": "2026-09-29",
     "excerpt": "DeepSeek open-sourced its agent harness on August 13, 2026 under MIT — 572 points on Hacker News in a day. Every page currently ranking for \"DeepSeek Harness vs Claude Code\" describes a different, older product. Here is what v0.1 actually ships: the Cordis plugin kernel, the real cordis.yml keys, 53 built-in tools, and the one config default that decides whether it touches your repo.",
     "readingTime": "14 min read",
     "keywords": [
@@ -371,12 +388,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/deepseek-harness-vs-claude-code-codex-cli-2026-cover.jpg",
       "alt": "Constellation of glowing teal and violet modular nodes illustrating DeepSeek Harness plugin agent architecture"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "ai-dev-week-2026-33",
     "title": "This Week in AI Dev: Models Day, Stolen Reasoning, and a $16,000 GPU (Week 33 of 2026)",
     "date": "2026-08-13",
+    "updated": "2026-09-29",
     "excerpt": "Week 33 of 2026 put three frontier models on the table inside 48 hours — DeepSeek V4 Pro at 1.6T params under MIT, Grok 4.6 one point behind Claude Opus 5, Meta back in open weights with Muse-Glimmer-30B. Then a paper showed the encrypted reasoning those closed models hide can be decoded by a weaker sibling model, and 315,320 scraped blocks gave up 182 credentials.",
     "readingTime": "7 min read",
     "keywords": [
@@ -393,12 +411,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/ai-dev-week-2026-33-cover.jpg",
       "alt": "Liquid-metal spheres fracturing into particle streams illustrating AI dev tool releases in week 33 of 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "prime-agent-rlm-continual-harness-guide-2026",
     "title": "Prime Agent: The RLM + Continual Harness Guide (And When to Skip It) — 2026",
     "date": "2026-08-09",
+    "updated": "2026-09-29",
     "excerpt": "Prime Intellect open-sourced Prime Agent on August 5, 2026 and it hit #1 on GitHub trending with +2,483 stars in 24 hours. It scores 95.5% on ARC-AGI-3 with Opus 5 — above the 95.4% human expert baseline. Here's what a Recursive Language Model actually is, the code that makes it different, and the line in the README that should stop you shipping it to production this week.",
     "readingTime": "13 min read",
     "keywords": [
@@ -414,12 +433,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/prime-agent-rlm-continual-harness-guide-2026-cover.jpg",
       "alt": "Low-poly constellation of glowing cyan nodes illustrating Prime Agent RLM recursive coding agent harness"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "cloudflare-computer-vs-sandbox-agent-guide-2026",
     "title": "Cloudflare Computer vs Cloudflare Sandbox: Which Agent Runtime Should You Actually Use? (2026)",
     "date": "2026-08-07",
+    "updated": "2026-09-29",
     "excerpt": "Cloudflare shipped @cloudflare/computer on August 3 and it hit #1 on GitHub trending with 2,802 stars in a day — four months after Sandboxes went GA. Cloudflare's own docs never compare the two, so here's the decision table, working wrangler.jsonc code, and the preview-status caveat the launch coverage buries.",
     "readingTime": "13 min read",
     "keywords": [
@@ -435,12 +455,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/cloudflare-computer-vs-sandbox-agent-guide-2026-cover.jpg",
       "alt": "Glowing crystalline chip with branching filaments illustrating Cloudflare Computer agent runtime vs Sandbox"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "tencentdb-agent-memory-team-hub-review-2026",
     "title": "TencentDB Agent Memory v2.0 Review: A Self-Hosted Team Memory Hub for AI Agents (2026)",
     "date": "2026-08-06",
+    "updated": "2026-09-29",
     "excerpt": "Tencent's Agent Memory hit #1 on GitHub trending this week at 15.3k stars — a self-hosted hub that turns chats, docs, and code into four governed memory assets shared across Claude Code, OpenClaw, and Hermes. I hand-roll this exact stack daily, so here's what the productized version gets right, the vs-Mem0/Zep/Letta comparison nobody else wrote, and the governance wiring you need before your team touches it.",
     "readingTime": "13 min read",
     "keywords": [
@@ -456,12 +477,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/tencentdb-agent-memory-team-hub-review-2026-cover.jpg",
       "alt": "TencentDB Agent Memory repository card illustrating a self-hosted team memory hub for AI agents"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "shieldstral-vs-llama-guard-openai-moderation-2026",
     "title": "Shieldstral vs Llama Guard vs OpenAI Moderation API: A Self-Hosted Content Moderation Guide (2026)",
     "date": "2026-08-05",
+    "updated": "2026-09-29",
     "excerpt": "Mistral released Shieldstral on August 4, 2026 — a 3B open-weights safety classifier that reads your moderation policy at inference time instead of training on fixed categories. Here's how it actually compares to Llama Guard and the OpenAI Moderation API, the real self-host commands, and the one case where I'd still reach for a fixed taxonomy instead.",
     "readingTime": "12 min read",
     "keywords": [
@@ -483,6 +505,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "ai-dev-week-2026-32",
     "title": "This Week in AI Dev: Everything Got Smaller, and Six CVEs Turned Out to Be Fake (Week 32 of 2026)",
     "date": "2026-08-04",
+    "updated": "2026-09-29",
     "excerpt": "Week 32 of 2026 was a compression week. MiniMax-H3 shipped open weights that fall from 123.6 GB to 42.5 GB, Cloudflare doubled Kimi K2.6 context to 1.37M tokens with an FP8 KV cache, and AirLLM hit 27.5k stars streaming a 2.8T model through 4 GB of VRAM. Meanwhile JFrog found 54 of 55 SQLite CVEs from one repo were AI-generated fiction — one briefly scored a CVSS 10.0.",
     "readingTime": "6 min read",
     "keywords": [
@@ -499,12 +522,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/ai-dev-week-2026-32-cover.jpg",
       "alt": "Swarm of luminous particles collapsing into one dense core illustrating AI model compression in week 32 of 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "deepseek-dspark-speculative-decoding-llamacpp-2026",
     "title": "DeepSeek DSpark in llama.cpp: How to Get 2x Local Inference on V4-Flash-0731 (2026)",
     "date": "2026-08-03",
+    "updated": "2026-09-29",
     "excerpt": "llama.cpp merged DeepSeek V4 DSpark support on August 2, 2026 — the docs still say Qwen3-only. Here are the actual flags, the measured 39.95 to 79.93 tokens/sec jump, why the config with the higher acceptance rate is the slower one, and the RAM you need before any of it matters.",
     "readingTime": "12 min read",
     "keywords": [
@@ -520,12 +544,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/deepseek-dspark-speculative-decoding-llamacpp-2026-cover.jpg",
       "alt": "Swarm of luminous particles surging ahead of a dense glowing core illustrating DSpark speculative decoding for local LLM inference"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "ai-dev-week-2026-31",
     "title": "This Week in AI Dev: Agent Skills Went GA, Then the Benchmark Landed (Week 31 of 2026)",
     "date": "2026-07-30",
+    "updated": "2026-09-29",
     "excerpt": "Week 31 of 2026 shipped one story twice. GitHub made agent skills and MCP generally available in Copilot code review, Google added hooks to Gemini Managed Agents — and on the same day, a benchmark showed the best model follows a written policy document just 36.2% of the time, while a self-propagating worm walked through Copilot for Word. Plus what Kimi K3 really costs to run locally (594 GB floor) and the 250B sleeper release you can actually serve.",
     "readingTime": "7 min read",
     "keywords": [
@@ -542,12 +567,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/ai-dev-week-2026-31-cover.jpg",
       "alt": "Glowing neural lattice sealed inside a translucent faceted shell illustrating AI agent skills and governance in week 31 of 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "codex-security-vs-snyk-semgrep-codeql-2026",
     "title": "OpenAI Codex Security vs Snyk vs Semgrep vs CodeQL: What the New Open-Source Scanner Actually Changes (2026)",
     "date": "2026-07-29",
+    "updated": "2026-09-29",
     "excerpt": "OpenAI open-sourced Codex Security under Apache-2.0 — a CLI and TypeScript SDK that builds a threat model of your repo, then runs an isolated validator to prove a finding is exploitable before it reports it. Here's how that differs from Snyk, Semgrep and CodeQL, the real commands, and the three cases where I'd still reach for Semgrep instead.",
     "readingTime": "13 min read",
     "keywords": [
@@ -563,12 +589,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/codex-security-vs-snyk-semgrep-codeql-2026-cover.jpg",
       "alt": "Constellation of glowing nodes with one fractured red node illustrating AI code security vulnerability scanning"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "block-buzz-agent-collaboration-platform-guide-2026",
     "title": "Block's Buzz (2026 Guide): Self-Host the Workspace Where AI Agents Are Teammates, Not Bots",
     "date": "2026-07-24",
+    "updated": "2026-09-29",
     "excerpt": "Block released Buzz on July 21, 2026 — an Apache-2.0, self-hostable workspace built on Nostr where AI agents join channels as cryptographically-signed members, not permission-restricted bots. It hit 7,600+ GitHub stars in three days. The launch coverage tells you what it is; this guide shows you how to actually run it: the exact install path, how to onboard a Claude Code or Codex agent with its own keypair, where Buzz genuinely beats Slack-plus-bots, the compliance gaps that should keep it out of production today, and the hardening checklist the same week's OpenAI–Hugging Face incident makes non-negotiable.",
     "readingTime": "12 min read",
     "keywords": [
@@ -590,6 +617,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "gemini-3-6-flash-vs-3-5-flash-lite-guide-2026",
     "title": "Gemini 3.6 Flash vs 3.5 Flash-Lite: Which One to Ship — and the Price Hike Nobody Leads With (2026)",
     "date": "2026-07-23",
+    "updated": "2026-09-29",
     "excerpt": "Google's July 21 drop is an efficiency release, not an intelligence release: Gemini 3.6 Flash scores the same Intelligence Index as 3.5 Flash but finishes tasks in half the time at a lower per-task cost — while Flash-Lite quietly got a 67% output-price increase. Here's the real per-task math, the migration code, and the tier decision I'd actually ship.",
     "readingTime": "12 min read",
     "keywords": [
@@ -610,6 +638,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "omniroute-ai-gateway-review-2026",
     "title": "OmniRoute Review (2026): Is the 20k-Star Free AI Gateway Worth It vs OpenRouter & LiteLLM?",
     "date": "2026-07-20",
+    "updated": "2026-09-29",
     "excerpt": "OmniRoute is the AI gateway that shot past 20,000 GitHub stars in days: one local, MIT-licensed, OpenAI-compatible endpoint that fans out to 268 providers and 500+ models, with an 18-strategy fallback engine and 15-95% token compression. The best part is real — it runs 100% on your machine with your own keys and never phones home. But the \"1.4 billion free tokens\" headline, the TLS-fingerprint stealth, and the Cursor-intercepting MITM proxy are exactly the features a careful engineer should treat with suspicion. This is the honest review: what OmniRoute genuinely does well, where it beats OpenRouter, LiteLLM, and Portkey, the failure modes the promo posts skip, and precisely when I would — and would not — put it in a workflow.",
     "readingTime": "11 min read",
     "keywords": [
@@ -631,6 +660,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "mcp-stateless-spec-migration-guide-2026",
     "title": "MCP Goes Stateless: Migrate Your Server Before the 2026-07-28 Spec",
     "date": "2026-07-19",
+    "updated": "2026-09-29",
     "excerpt": "The MCP 2026-07-28 specification goes final on July 28, 2026, and it rewrites the protocol to be stateless: no more initialize handshake (SEP-2575), no Mcp-Session-Id header (SEP-2567), with protocol version and client info moving into a _meta field on every request. That one change lets MCP servers deploy like any stateless service — serverless and Kubernetes autoscaling finally work without sticky sessions — but it breaks every server that assumed a session. Here is the full before/after migration in TypeScript: the stateless transport config, per-request _meta, the new Tasks extension lifecycle, the -32602 error change, the six auth-hardening SEPs, and exactly which servers should wait.",
     "readingTime": "12 min read",
     "keywords": [
@@ -652,6 +682,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "anti-ai-slop-design-skill-hallmark-guide-2026",
     "title": "The Anti-AI-Slop Design Skill: How Hallmark Fixes Generic AI UI in 2026",
     "date": "2026-07-18",
+    "updated": "2026-09-29",
     "excerpt": "Every site your AI coding agent builds looks the same: Inter font, a purple gradient, six identical cards, a bounce on every hover. Hallmark — a design skill for Claude Code, Cursor, and Codex that hit 12.4k stars this week — runs 57 \"slop-test gates\" to refuse those defaults before the code is emitted. Here is what AI slop actually is, exactly how Hallmark works, the four verbs with real commands, how it stacks up against frontend-design, Impeccable, and Stitch, and when a skill still will not save you from a bad design.",
     "readingTime": "11 min read",
     "keywords": [
@@ -673,6 +704,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "apple-speechanalyzer-vs-whisper-on-device-stt-2026",
     "title": "Apple SpeechAnalyzer vs Whisper: On-Device Speech-to-Text in 2026",
     "date": "2026-07-17",
+    "updated": "2026-09-29",
     "excerpt": "Apple shipped SpeechAnalyzer in iOS 26 and macOS 26 with zero published accuracy numbers. The first rigorous benchmark just landed: 2.12% word error rate on clean English, beating every on-device Whisper model and running ~3x faster than Whisper Small on an M2 Pro. Here is the full Apple vs Whisper vs Parakeet vs Qwen3 breakdown, the Swift to wire it up, the speaker-diarization gap nobody mentions, and exactly when you should still reach for Whisper.",
     "readingTime": "11 min read",
     "keywords": [
@@ -694,6 +726,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "inkling-975b-run-locally-vram-guide-2026",
     "title": "Inkling 975B: The Open-Weights Model Almost Nobody Should Self-Host (2026)",
     "date": "2026-07-16",
+    "updated": "2026-09-29",
     "excerpt": "Thinking Machines released Inkling on July 15, 2026 — 975B params, 41B active, Apache 2.0, 1M context, weights on Hugging Face. Every writeup tells you how to run it. None tells you whether to. The BF16 checkpoint needs 2 TB of VRAM; NVFP4 needs 600 GB. The 8x H200 box they name is an AWS p5en.48xlarge at $63.296/hr — $46,206/month always-on. Against the $4.68/M output API, self-hosting breaks even at 9.87 billion output tokens a month. Here is the VRAM ladder, the real cost math, the July 17 price hike everyone missed, and the quant trap that will eat your agent.",
     "readingTime": "12 min read",
     "keywords": [
@@ -715,6 +748,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "bonsai-27b-ternary-quantization-guide-2026",
     "title": "Bonsai 27B: A 27B Model on Your Phone — and the One Benchmark That Collapses (2026)",
     "date": "2026-07-15",
+    "updated": "2026-09-29",
     "excerpt": "PrismML shipped 1-bit and ternary builds of Qwen3.6-27B on July 14, 2026 — 5.9 GB for ternary, 3.9 GB for 1-bit, running at 163 tok/s on an RTX 5090 and 11 tok/s on an iPhone 17 Pro. Every writeup leads with \"retains 95% of baseline.\" Nobody breaks out the row that matters: tool-calling drops 80.0 to 66.0 at 1-bit — degrading 4.6x worse than math. For a model sold on laptop-local agents, that is the whole story. Here is the variant decision table, the runnable commands, the KV-cache trap that makes 5.9 GB of weights need 13.7 GB of RAM, and how I would ship this in production.",
     "readingTime": "12 min read",
     "keywords": [
@@ -736,6 +770,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "deepseek-v4-api-migration-guide-2026",
     "title": "DeepSeek V4 API Migration Guide: What Breaks on July 24, 2026 (and the 10-Minute Fix)",
     "date": "2026-07-13",
+    "updated": "2026-09-29",
     "excerpt": "On July 24, 2026 at 15:59 UTC, DeepSeek fully retires the deepseek-chat and deepseek-reasoner model names — every API call still using them starts returning errors. The replacement names (deepseek-v4-flash, deepseek-v4-pro) take ten minutes to wire in, but two silent gotchas can wreck your bill or your latency: thinking mode moved from a model name to a request parameter, and the naive migration path can turn your cheapest endpoint into a reasoning-token furnace. Here is the exact before/after code, the Flash vs Pro decision table, the Anthropic-SDK routing trick, and how I would stage the cutover in production.",
     "readingTime": "13 min read",
     "keywords": [
@@ -756,6 +791,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "ai-agent-command-guardrails-2026",
     "title": "Stop Your AI Coding Agent Running rm -rf: Command Guardrails Compared (2026)",
     "date": "2026-07-12",
+    "updated": "2026-09-29",
     "excerpt": "Destructive Command Guard (dcg) trended on GitHub in July 2026 (Rust, MIT, 2.3k stars) as a sub-millisecond PreToolUse hook that blocks your AI coding agent from running rm -rf, git reset --hard, force pushes and DROP TABLE before they execute. It wires into Claude Code, Cursor, Codex and Copilot in one install. But Adversa AI's GuardFall research bypassed the command guards in 10 of 11 popular agents. This is the builder's read: how dcg works, how to install it, whether these guards actually hold, how dcg stacks up against agent-guardrails, Shellfirm and SigmaShake, and exactly how I'd wire real agent safety into a production workflow — guard plus sandbox, not guard alone.",
     "readingTime": "12 min read",
     "keywords": [
@@ -771,12 +807,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/ai-agent-command-guardrails-2026-cover.jpg",
       "alt": "Glowing hexagonal shield deflecting sharp crimson shards illustrating AI coding agent command guardrails"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "gitlost-ai-agent-prompt-injection-defense-2026",
     "title": "GitLost: The Prompt-Injection Class Every AI Coding Agent Inherits — and How to Defend Yours (2026)",
     "date": "2026-07-10",
+    "updated": "2026-09-29",
     "excerpt": "On July 7, 2026, researchers tricked GitHub's AI agent into copying a private repo and posting it as a public comment — no code, no credentials, one word. GitLost is not a GitHub bug you wait for a patch on; it's the prompt-injection class every coding agent inherits the moment you give it real permissions. Here's how the attack works, why it can't be fully patched, and the least-privilege playbook I use to keep my own agents from leaking data.",
     "readingTime": "10 min read",
     "keywords": [
@@ -797,6 +834,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "gpt-5-6-sol-terra-luna-api-guide-2026",
     "title": "GPT-5.6 Sol vs Terra vs Luna: A Developer's Guide to Picking the Right Tier (2026)",
     "date": "2026-07-10",
+    "updated": "2026-09-29",
     "excerpt": "On July 9, 2026, OpenAI split GPT-5.6 into three tiers — Sol, Terra, and Luna — and the model string you pick now swings your bill by up to 5x. Sol is the flagship, Terra is near-flagship at roughly half the cost of GPT-5.5, and Luna is the cheap, fast one. Most teams reach for Sol and overpay. Here's the tier-selection framework I use, the benchmarks that justify each choice, and the exact migration code to switch.",
     "readingTime": "12 min read",
     "keywords": [
@@ -817,6 +855,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "ai-job-search-agent-claude-code-guide-2026",
     "title": "AI Job-Search Agent on Claude Code: Inside the 15k-Star ai-job-search Framework (2026)",
     "date": "2026-07-09",
+    "updated": "2026-09-29",
     "excerpt": "ai-job-search crossed 15,000 GitHub stars — 5,000+ in one day — as one of 2026's fastest-growing Claude Code workflows. It's not an app; it's a fork-and-fill framework that turns the Claude Code CLI into a job-hunting agent. Here's the architecture, the drafter-reviewer loop that makes it work, and the honest failure modes of auto-apply from someone who runs an outreach agent daily.",
     "readingTime": "9 min read",
     "keywords": [
@@ -837,6 +876,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "officecli-ai-agents-office-files-guide-2026",
     "title": "OfficeCLI: Give AI Agents Real Control of Word, Excel & PowerPoint (2026 Guide)",
     "date": "2026-07-08",
+    "updated": "2026-09-29",
     "excerpt": "OfficeCLI is the open-source tool developers are using to let an AI agent actually build Word, Excel and PowerPoint files — not describe them, build them, with formulas that compute. It crossed 10,576 GitHub stars and shipped v1.0.131 on 2026-07-08. Here is the builder read: what it is, the render-look-fix loop that gives your agent eyes, the one-line MCP install for Claude Code and Cursor, a worked example where an agent assembles a real Excel financial model, an honest 4-way comparison against Microsoft 365 Copilot Agents, python-docx and Aspose, and the prompt-injection failure mode you must gate before you ship it.",
     "readingTime": "12 min read",
     "keywords": [
@@ -853,12 +893,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/officecli-ai-agents-office-files-guide-2026-cover.jpg",
       "alt": "A luminous robotic hand arranging floating translucent glass document panels, illustrating an AI agent editing Office files with OfficeCLI in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "nvidia-locateanything-3b-visual-grounding-guide-2026",
     "title": "NVIDIA LocateAnything-3B: The Open Visual Grounding Model That Beats YOLO (2026 Guide)",
     "date": "2026-07-06",
+    "updated": "2026-09-29",
     "excerpt": "NVIDIA quietly shipped LocateAnything-3B on May 26, 2026 — a 3B open-weights vision-language model that turns a plain-English phrase like \"the submit button\" into exact pixel boxes, no fixed class list, no retraining. It grounds objects, GUI elements, and text with up to 2.5x higher throughput than older box-by-box decoders. By early July it had crossed 1.2M Hugging Face downloads. Here is what actually changed, runnable code to try it, how it stacks up against YOLO / Grounding DINO / Florence-2 / Qwen2.5-VL, and the license catch that will stop you shipping it to production if you are not careful.",
     "readingTime": "11 min read",
     "keywords": [
@@ -874,12 +915,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/nvidia-locateanything-3b-visual-grounding-guide-2026-cover.jpg",
       "alt": "Luminous particles converging to a focal point illustrating NVIDIA LocateAnything-3B visual grounding"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "safari-mcp-server-web-debugging-guide-2026",
     "title": "Safari MCP Server: Apple's Official Debugger vs the Community Tools (2026 Guide)",
     "date": "2026-07-04",
+    "updated": "2026-09-29",
     "excerpt": "Apple shipped an official Safari MCP server in Safari Technology Preview 247 on July 1, 2026 — 16 built-in tools that let AI coding agents see your rendered page, read the console, and evaluate JS directly instead of you describing screenshots. There's also a separate, older community safari-mcp npm ecosystem with 80+ tools that works on production Safari. Here's what's actually new, how to install either one, when Apple's version is the right pick, and how I'd wire it into a real dev workflow without waiting for a CI runner that supports Safari headless.",
     "readingTime": "11 min read",
     "keywords": [
@@ -895,12 +937,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/safari-mcp-server-web-debugging-guide-2026-cover.jpg",
       "alt": "Glowing compass rose over a fractured glass pane illustrating Safari MCP server browser debugging"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "strix-ai-penetration-testing-agent-guide-2026",
     "title": "Strix: The Open-Source AI Pentester That Proves Every Bug (2026 Guide)",
     "date": "2026-07-03",
+    "updated": "2026-09-29",
     "excerpt": "Strix (usestrix/strix) hit #1 on GitHub Trending on July 3, 2026 with +2,137 stars in a day — 32.8k total, Apache 2.0. It runs autonomous AI agents that act like real hackers: they exploit your app, validate each finding with a working proof-of-concept, and file only bugs they actually broke. On the XBEN benchmark it solved 100/104 web challenges (96%) at ~$3.37 each. This is the builder's read — what it is, how to install and run it, whether it hallucinates, how it stacks up against XBOW and PentAGI, when to skip it, and exactly how I'd wire it into a real MVP's CI pipeline without it torching your API budget.",
     "readingTime": "13 min read",
     "keywords": [
@@ -916,12 +959,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/strix-ai-penetration-testing-agent-guide-2026-cover.jpg",
       "alt": "Glowing owl-form constellation of nodes probing a dark fractured monolith illustrating Strix AI penetration testing"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "baidu-unlimited-ocr-open-model-guide-2026",
     "title": "Baidu Unlimited-OCR: The Open-Source Model That Reads 40+ Page Documents in One Pass (2026)",
     "date": "2026-07-02",
+    "updated": "2026-09-29",
     "excerpt": "Baidu open-sourced Unlimited-OCR on June 22, 2026 (MIT) — a 3B mixture-of-experts model with 500M active params that parses 40+ page documents in a single forward pass. Its new Reference Sliding Window Attention (R-SWA) keeps the KV cache flat, so memory and latency stay constant as output grows. It scores 93.23 on OmniDocBench v1.5 — beating DeepSeek-OCR by 6.22 points — at 12.7% higher throughput. This is the builder's read: what R-SWA actually does, how to run it locally with Transformers and vLLM, where it beats a cloud OCR API, when to skip it, and exactly how I'd wire it into a production RAG ingestion pipeline.",
     "readingTime": "13 min read",
     "keywords": [
@@ -937,12 +981,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/baidu-unlimited-ocr-open-model-guide-2026-cover.jpg",
       "alt": "A luminous ribbon threading a stack of translucent glass sheets illustrating Baidu Unlimited-OCR long-document parsing"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "ornith-1-self-improving-coding-model-guide-2026",
     "title": "Ornith-1.0: The Self-Improving Open-Source Coding Model, Tested (2026)",
     "date": "2026-07-01",
+    "updated": "2026-09-29",
     "excerpt": "DeepReinforce shipped Ornith-1.0 on June 25, 2026 — an MIT-licensed family of coding models that learn to write their own agentic scaffold during RL instead of using a human-designed harness. The 397B flagship hits 82.4 on SWE-bench Verified (DeepReinforce reports it edges past Claude Opus 4.7); the 9B runs on a single 24GB card. This is the builder's read: what self-scaffolding actually is, real vLLM and Ollama run commands, an honest comparison table, when to skip it, and the chat-template gotcha that will send your local copy into a runaway loop.",
     "readingTime": "10 min read",
     "keywords": [
@@ -959,12 +1004,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/ornith-1-self-improving-coding-model-guide-2026-cover.jpg",
       "alt": "Luminous 3D lattice scaffold assembling itself from glowing particles illustrating the Ornith-1.0 self-improving open-source coding model in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "best-open-source-deep-research-agent-self-host-2026",
     "title": "Best Open-Source Deep Research Agent to Self-Host in 2026 (Onyx vs DeerFlow vs Perplexica)",
     "date": "2026-06-29",
+    "updated": "2026-09-29",
     "excerpt": "An open-source deep research agent now sits at #1 on DeepResearch Bench — ahead of OpenAI, Gemini, and Perplexity. So you no longer have to rent deep research from a frontier lab. This is the builder's read on the four worth self-hosting in 2026 — Onyx, DeerFlow 2.0, Perplexica/Vane, and Khoj — with live star counts, a runnable Docker self-host, an honest comparison table, when to skip self-hosting entirely, and the production wiring the READMEs leave out.",
     "readingTime": "11 min read",
     "keywords": [
@@ -981,12 +1027,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/best-open-source-deep-research-agent-self-host-2026-cover.jpg",
       "alt": "Glowing pink particle swarm converging into a luminous core illustrating self-hosted open-source deep research agents in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "microsoft-agent-framework-vs-langgraph-crewai-2026",
     "title": "Microsoft Agent Framework vs LangGraph vs CrewAI: Which to Use Now That AutoGen Is Dead (2026)",
     "date": "2026-06-28",
+    "updated": "2026-09-29",
     "excerpt": "AutoGen is in maintenance mode — Microsoft folded it and Semantic Kernel into the new Microsoft Agent Framework, which hit 1.0 GA in 2026. So the old \"LangGraph vs CrewAI vs AutoGen\" advice is stale. This is the builder's read: the same agent written in all three frameworks, where each one actually wins, an honest comparison table, how to migrate an AutoGen AssistantAgent to a ChatAgent, when to skip the Microsoft stack entirely, and the setup I'd ship to production.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1003,12 +1050,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/microsoft-agent-framework-vs-langgraph-crewai-2026-cover.jpg",
       "alt": "Three glowing geometric cores of different shapes linked by light filaments illustrating Microsoft Agent Framework vs LangGraph vs CrewAI comparison"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "gemini-computer-use-vs-claude-openai-2026",
     "title": "Gemini Computer Use vs Claude vs OpenAI: Best Browser Agent 2026",
     "date": "2026-06-27",
+    "updated": "2026-09-29",
     "excerpt": "Google baked computer use into Gemini 3.5 Flash on June 24, 2026 — a vision-based agent that clicks, types, and scrolls across browser, mobile, and desktop. This is the builder's read: what actually shipped, the real interactions.create agent-loop code, honest OSWorld numbers (Gemini 78.4 vs GPT-5.5 78.7 vs Claude Opus 4.8 83.4), a side-by-side against Claude computer use and OpenAI, when to skip it, and exactly how I'd wire one into production without it draining a credit card or running a prompt injection.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1024,12 +1072,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/gemini-computer-use-vs-claude-openai-2026-cover.jpg",
       "alt": "A liquid-metal robotic hand reaching toward glowing orbital nodes illustrating Gemini computer use controlling a browser"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "glm-5-2-vs-claude-opus-coding-agent-2026",
     "title": "GLM-5.2 vs Claude Opus 4.8: Should You Switch Your Coding Agent? (2026)",
     "date": "2026-06-26",
+    "updated": "2026-09-29",
     "excerpt": "Z.ai shipped GLM-5.2 as open weights (MIT) in June 2026, and it matches Claude Opus 4.8 on real coding-agent tasks at a fraction of the per-token price. This is the builder's read: what actually shipped, the real code to call it and drop it into Claude Code, an honest cost breakdown (the per-token gap is huge but GLM burns ~3.3x more tokens), a side-by-side table, when to stay on Opus, and the hybrid routing setup I'd actually ship — Opus for the 20% of tasks where the gap bites, GLM-5.2 for the other 80%.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1046,12 +1095,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/glm-5-2-vs-claude-opus-coding-agent-2026-cover.jpg",
       "alt": "Two luminous crystalline cores of unequal size linked by glowing filaments illustrating GLM-5.2 vs Claude Opus coding agent comparison"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "gemini-interactions-api-migration-guide-2026",
     "title": "Gemini Interactions API: The Migration Guide from generateContent (2026)",
     "date": "2026-06-25",
+    "updated": "2026-09-29",
     "excerpt": "Google made the Gemini Interactions API generally available in 2026 and quietly made it the default interface for Gemini models and agents. The core method is `interactions.create`, and it keeps conversation state server-side via `previous_interaction_id` instead of resending the full history every turn like `generateContent`. This is the builder's migration read: the actual code diff from `generate_content` to `interactions.create`, the interaction-scoped-tools footgun the docs bury, a side-by-side against generateContent and OpenAI's Responses API, an honest \"when to stay on generateContent,\" and exactly how I'd wire it into production with a fallback and a `store=false` privacy path.",
     "readingTime": "11 min read",
     "keywords": [
@@ -1067,12 +1117,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/gemini-interactions-api-migration-guide-2026-cover.jpg",
       "alt": "A continuous luminous thread weaving through stateful nodes illustrating the Gemini Interactions API carrying conversation state server-side"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "mistral-ocr-4-vs-textract-google-document-ai-2026",
     "title": "Mistral OCR 4 vs AWS Textract vs Google Document AI: The Cheapest Accurate Document API (2026)",
     "date": "2026-06-24",
+    "updated": "2026-09-29",
     "excerpt": "Mistral shipped OCR 4 on June 23, 2026 — model `mistral-ocr-latest` — and it tops OlmOCRBench at 85.20, handles 170 languages, and costs $4 per 1,000 pages ($2 batch) against AWS Textract's $65 per 1,000 for forms-and-tables. Every comparison guide currently ranking still covers OCR 3 or ignores Mistral entirely. This is the builder's read: what actually changed in OCR 4, the API call with the new confidence-score gating, an honest accuracy-and-price table against Textract, Google Document AI, and Azure, where each one genuinely wins, when you should NOT pick Mistral, and exactly how I'd wire it into a RAG ingestion pipeline in production.",
     "readingTime": "13 min read",
     "keywords": [
@@ -1088,12 +1139,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/mistral-ocr-4-vs-textract-google-document-ai-2026-cover.jpg",
       "alt": "A radiant prism refracting a particle swarm into ordered streams illustrating Mistral OCR 4 document extraction vs Textract"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "ai-dev-week-2026-26",
     "title": "This Week in AI Dev: Open Weights Catch the Frontier While the Agent Stack Grows Plumbing (Week 26 of 2026)",
     "date": "2026-06-23",
+    "updated": "2026-09-29",
     "excerpt": "Week 26 of 2026 in AI dev tools: Z.ai's GLM-5.2 open weights match Claude Opus 4.8 and beat GPT-5.5 on coding at a sixth of the cost, MiniMax-M3 ships open multimodal weights with a 1M-token context, CircleCI adds an MCP server as MCP crosses 200 implementations, and indie devs ship agent-native version control (Oak), local memory for Claude Code (Recall), and proof a 0.6B model fine-tunes on a laptop.",
     "readingTime": "7 min read",
     "keywords": [
@@ -1108,13 +1160,13 @@ export const blogSummaries: BlogPostSummary[] = [
     "coverImage": {
       "src": "/images/notes/ai-dev-week-2026-26-cover.jpg",
       "alt": "Glowing amber and crimson constellation of connected nodes illustrating AI dev tools weekly roundup week 26 of 2026"
-    },
-    "relatedProject": "resolvr"
+    }
   },
   {
     "slug": "sakana-fugu-orchestration-model-guide-2026",
     "title": "Sakana Fugu: The Orchestration Model That Commands Other LLMs (2026)",
     "date": "2026-06-23",
+    "updated": "2026-09-29",
     "excerpt": "Sakana AI shipped Sakana Fugu on June 22, 2026 — an orchestration model that routes each request across a swappable pool of frontier LLMs behind one OpenAI-compatible API, in two tiers (fugu and fugu-ultra-20260615), with benchmarks showing Fugu Ultra leading 10 of 11 tests. This is the builder read: what actually shipped, the API call you paste today, the benchmark table against Opus 4.8 / Gemini 3.1 Pro / GPT-5.5, where an orchestration model earns its keep, when its black-box routing disqualifies it, and how I would wrap it in production so a fallback-as-a-service still has a fallback.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1130,12 +1182,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/sakana-fugu-orchestration-model-guide-2026-cover.jpg",
       "alt": "A luminous central orb conducting light streams to orbiting nodes illustrating Sakana Fugu multi-LLM orchestration model"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "vibethinker-3b-tiny-reasoning-model-guide-2026",
     "title": "VibeThinker-3B: A 3B Reasoning Model That Rivals 671B Giants (2026)",
     "date": "2026-06-21",
+    "updated": "2026-09-29",
     "excerpt": "Sina Weibo dropped VibeThinker-3B this week — a 3-billion-parameter, MIT-licensed reasoning model that matches DeepSeek V3.2 (671B) on AIME 2026 (94.3 vs 94.2) and runs from a ~6 GB file on a laptop. The catch the headlines skip: it ties on AIME but trails on harder math (HMMT 89.3 vs 90.2, IMO-AnswerBench 76.4 vs 78.3), which is exactly why the AI world is arguing about benchmarks again. This is the builder read — what actually shipped, the Spectrum-to-Signal training trick behind it, the vLLM and Ollama commands to run it (including the temperature setting that breaks it if you get it wrong), an honest comparison table, where a tiny verifiable-reasoning model is worth wiring into an agent, and where it absolutely is not.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1151,12 +1204,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/vibethinker-3b-tiny-reasoning-model-guide-2026-cover.jpg",
       "alt": "A tiny radiant crystalline core emitting an enormous particle constellation illustrating VibeThinker-3B small reasoning model"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "deepseek-v4-vision-cheapest-multimodal-api-2026",
     "title": "DeepSeek V4 Vision: The Cheapest Multimodal API to Ship in Production (2026)",
     "date": "2026-06-20",
+    "updated": "2026-09-29",
     "excerpt": "DeepSeek turned on vision for V4 this week — image understanding inside chat.deepseek.com and the API, hitting the Hacker News front page on June 18, 2026. The hook for builders: it encodes an ~800×800 image into roughly 90 KV-cache entries versus ~870 for Claude and ~1,100 for Gemini, which is where the \"10x cheaper multimodal\" headline comes from. This is the builder read — what actually shipped, the OpenAI-SDK call you paste today, where DeepSeek vision wins (OCR, documents, charts, UI screenshots), where it still loses to GPT and Gemini, an honest cost-and-capability comparison table, and how I would wire it in production with a fallback so a single cheap model never becomes a single point of failure.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1172,12 +1226,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/deepseek-v4-vision-cheapest-multimodal-api-2026-cover.jpg",
       "alt": "A glowing multi-faceted crystal lens refracting a spectrum of light illustrating DeepSeek V4 Vision cheap multimodal AI"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "mcp-server-authentication-oauth-guide-2026",
     "title": "MCP Server Authentication in 2026: OAuth 2.1, Zero-Touch Enterprise OAuth, and What to Actually Ship",
     "date": "2026-06-19",
+    "updated": "2026-09-29",
     "excerpt": "The Model Context Protocol just shipped Enterprise-Managed Authorization — \"zero-touch OAuth\" — on June 18, 2026, and it changes how you secure a remote MCP server. This is the builder read: what the spec actually mandates (OAuth 2.1, Protected Resource Metadata, token-audience binding), why Dynamic Client Registration is now deprecated in favour of Client ID Metadata Documents, how the new ID-JAG enterprise grant lets an IdP grant every approved server at login, a 3-way comparison of API keys vs OAuth 2.1 vs enterprise auth, and exactly how I would wire this in production without opening a confused-deputy hole.",
     "readingTime": "13 min read",
     "keywords": [
@@ -1193,12 +1248,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/mcp-server-authentication-oauth-guide-2026-cover.jpg",
       "alt": "A glowing fortified portal of interlocking metal rings guarding a core illustrating MCP server authentication and OAuth in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "webmcp-guide-browser-agent-tools-2026",
     "title": "WebMCP Guide 2026: Turn Your Website Into Tools for Browser AI Agents",
     "date": "2026-06-18",
+    "updated": "2026-09-29",
     "excerpt": "Google's WebMCP hit a public Chrome 149 origin trial this month, and it quietly changes how AI agents use your site: instead of scraping the DOM, your page hands the agent a typed list of things it can do. Here is the builder read — what WebMCP actually is, the exact document.modelContext API with copy-paste code, how it differs from MCP, the prompt-injection failure mode the tutorials skip, and whether you should ship it today (honest answer: register the API, gate the writes, wait on the trial).",
     "readingTime": "11 min read",
     "keywords": [
@@ -1214,12 +1270,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/webmcp-guide-browser-agent-tools-2026-cover.jpg",
       "alt": "A constellation of luminous nodes bridging two glowing orbs illustrating WebMCP browser agent tools in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "best-local-llm-for-coding-replace-cloud-2026",
     "title": "Best Local LLM for Coding in 2026: When It Actually Replaces Claude and GPT",
     "date": "2026-06-17",
+    "updated": "2026-09-29",
     "excerpt": "Two Hacker News front-page threads this week — one at 1,245 points — are asking the same thing: can a local model finally replace Claude or GPT for daily coding? The honest 2026 answer is \"for ~80% of your sessions, yes.\" Here is the builder read: which local coding models actually crossed the SWE-bench line, how to set one up with Ollama in ten minutes, exactly how much VRAM you need, and the hybrid routing pattern that keeps the hard 20% on the cloud.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1235,12 +1292,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/best-local-llm-for-coding-replace-cloud-2026-cover.jpg",
       "alt": "A luminous silicon processor radiating neural filaments illustrating the best local LLM for coding in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "ai-agent-memory-vs-context-window-2026",
     "title": "AI Agent Memory vs Context Window: Why a Bigger Window Isn't Memory (2026)",
     "date": "2026-06-15",
+    "updated": "2026-09-29",
     "excerpt": "A 1M-token context window is not memory — it is RAM that gets wiped when the session ends. On the LoCoMo benchmark a two-layer memory setup hit 91.6% accuracy at ~6,956 tokens vs 72.9% at ~26,000 tokens for full context. Here is the builder read: why context windows behave like RAM, the two-layer architecture every production agent needs, a minimal pgvector memory layer in code, and when a bigger window is still the right call.",
     "readingTime": "13 min read",
     "keywords": [
@@ -1256,12 +1314,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/ai-agent-memory-vs-context-window-2026-cover.jpg",
       "alt": "A crystalline memory core beside a dissolving particle cloud illustrating AI agent memory vs context window"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "kimi-k2-7-code-vs-claude-opus-gpt-2026",
     "title": "Kimi K2.7-Code vs Claude Opus 4.8 and GPT-5.5: Is the 1T Open Coding Model Worth It? (2026)",
     "date": "2026-06-14",
+    "updated": "2026-09-29",
     "excerpt": "Moonshot AI dropped Kimi K2.7-Code on June 12, 2026 — a 1T-parameter open-weight coding model that costs $0.95/$4.00 per million tokens, roughly 5-7x cheaper than Claude Opus 4.8 and GPT-5.5. Here is the developer read: the real benchmark numbers (and why they are all first-party), a verified cost-per-task comparison the hype guides skip, how to run it via API or locally, and when you should still reach for Claude or GPT.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1277,12 +1336,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/kimi-k2-7-code-vs-claude-opus-gpt-2026-cover.jpg",
       "alt": "Glowing faceted core radiating energy filaments illustrating Kimi K2.7-Code vs Claude and GPT coding models"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "ai-agent-payments-x402-vs-ap2-2026",
     "title": "AI Agent Payments in 2026: x402 vs AP2 — How to Let Your Agent Actually Pay",
     "date": "2026-06-13",
+    "updated": "2026-09-29",
     "excerpt": "x402 crossed 161M cumulative payments and got picked up by AWS Bedrock AgentCore in May 2026, while Google’s AP2 defines the trust layer above it. Here is the developer read: how x402 and AP2 actually work, working code to monetize an MCP server or API per request, the per-request settlement trap, and when to skip crypto rails entirely.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1298,12 +1358,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/ai-agent-payments-x402-vs-ap2-2026-cover.jpg",
       "alt": "Glowing coin of light passing between two abstract nodes over a dark grid illustrating AI agent payments with x402 and AP2"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "opencode-vs-claude-code-cursor-2026",
     "title": "OpenCode vs Claude Code vs Cursor: The Best AI Coding Agent in 2026?",
     "date": "2026-06-12",
+    "updated": "2026-09-29",
     "excerpt": "OpenCode just became the most-starred AI coding agent on GitHub — 172,198 stars under MIT, with v1.17.4 shipping June 12, 2026. Here is the developer read: how the free, model-agnostic OpenCode compares to Claude Code and Cursor, the Terminal-Bench numbers, the BYOK cost math, and when each one is the right call.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1319,12 +1380,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/opencode-vs-claude-code-cursor-2026-cover.jpg",
       "alt": "Glowing pink core orbited by translucent geometric shards illustrating the OpenCode open-source AI coding agent"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "diffusiongemma-text-diffusion-llm-guide-2026",
     "title": "DiffusionGemma: Text Diffusion LLMs Explained, and When to Actually Use One (2026)",
     "date": "2026-06-11",
+    "updated": "2026-09-29",
     "excerpt": "Google open-sourced DiffusionGemma on June 10, 2026 — a 26B MoE that writes a 256-token block in parallel instead of one token at a time, hitting 700+ tokens/sec on an RTX 5090 and up to 4x faster than Gemma 4. The catch: quality sits below standard Gemma 4. Here is the developer read — how text diffusion works, how to run it locally, the speed-vs-quality decision, and when to skip it.",
     "readingTime": "11 min read",
     "keywords": [
@@ -1340,12 +1402,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/diffusiongemma-text-diffusion-llm-guide-2026-cover.jpg",
       "alt": "Luminous particle swarm coalescing from dark noise into an ordered crystalline lattice illustrating DiffusionGemma text diffusion"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "run-diffusiongemma-locally-vllm-rtx5090-2026",
     "title": "How to Run DiffusionGemma Locally: A vLLM Serving Guide for RTX 5090 and H100 (2026)",
     "date": "2026-06-11",
+    "updated": "2026-09-29",
     "excerpt": "A build-focused guide to self-hosting Google's DiffusionGemma: the exact vLLM serve command, what each diffusion flag does, how to call it like an OpenAI endpoint, and how to tune the speed-vs-quality trade-off on an RTX 5090 or H100.",
     "readingTime": "11 min read",
     "keywords": [
@@ -1361,12 +1424,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/run-diffusiongemma-locally-vllm-rtx5090-2026-cover.jpg",
       "alt": "Glowing GPU emitting parallel streams of light into an ordered grid illustrating running DiffusionGemma locally on RTX 5090"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "claude-fable-5-developer-guide-2026",
     "title": "Claude Fable 5: Pricing, the API, and When to Use It vs Opus 4.8 (2026)",
     "date": "2026-06-10",
+    "updated": "2026-09-29",
     "excerpt": "Anthropic shipped Claude Fable 5 on June 9, 2026 — a Mythos-class model at $10/$50 per million tokens, double the Opus 4.8 rate. Here is the developer read: the claude-fable-5 API, the Opus-4.8 safeguard fallback you must design around, the new 30-day retention rule, Fable vs Mythos, and when to wait.",
     "readingTime": "11 min read",
     "keywords": [
@@ -1382,12 +1446,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/claude-fable-5-developer-guide-2026-cover.jpg",
       "alt": "Glowing teal-violet crystalline monolith with a molten core on black illustrating the Claude Fable 5 model release"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "ai-dev-week-2026-24",
     "title": "This Week in AI Dev: Codex Builds Apps, the Open-Weight Frontier Explodes, and Anthropic Meters the Agent SDK (Week 24 of 2026)",
     "date": "2026-06-09",
+    "updated": "2026-09-29",
     "excerpt": "Week 24 of 2026 in AI dev tools: OpenAI's Codex graduates from coding agent to app builder with Sites and role plugins, three open-weight models drop in 72 hours (MiniMax M3, Gemma 4 12B, NVIDIA Nemotron 3 Ultra), Anthropic moves the Agent SDK to metered billing on June 15, Microsoft Build hardens agent security, and the Gemini CLI consumer sunset hits June 18.",
     "readingTime": "6 min read",
     "keywords": [
@@ -1403,12 +1468,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/ai-dev-week-2026-24-cover.jpg",
       "alt": "Constellation of glowing connected nodes illustrating AI dev tools weekly roundup week 24 of 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "what-is-harness-engineering-codex-2026",
     "title": "What Is Harness Engineering? OpenAI’s Agent-First Codex Playbook (2026)",
     "date": "2026-06-08",
+    "updated": "2026-09-29",
     "excerpt": "Harness engineering is the discipline of building the scaffolding — docs, golden rules, custom linters, and agent-to-agent review loops — that lets AI coding agents ship reliable software at scale. OpenAI coined the term after building a ~1M-line beta product in 5 months with zero hand-written code using Codex. Here is what a harness actually contains, the architecture that makes it work, when it pays off, when to skip it, and how I run a smaller version of it today.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1425,12 +1491,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/what-is-harness-engineering-codex-2026-cover.jpg",
       "alt": "Dark editorial cover with a glowing geometric scaffold cradling a core orb illustrating harness engineering for AI coding agents"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "open-notebook-vs-khoj-vs-surfsense-notebooklm-2026",
     "title": "Open Notebook vs Khoj vs SurfSense: Best Self-Hosted NotebookLM Alternative (2026)",
     "date": "2026-06-07",
+    "updated": "2026-09-29",
     "excerpt": "Open Notebook just hit #1 on GitHub Trending — but is it the best self-hosted NotebookLM alternative? Here's how Open Notebook (MIT), Khoj (AGPL-3.0), and SurfSense (Apache-2.0) actually compare on Docker setup, RAG architecture, integrations, and the open-source license trap that can bite a commercial build.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1446,12 +1513,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/open-notebook-vs-khoj-vs-surfsense-notebooklm-2026-cover.jpg",
       "alt": "Dark editorial cover illustrating self-hosted open-source NotebookLM alternatives Open Notebook, Khoj and SurfSense in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "nvidia-rtx-spark-windows-ai-agents-2026",
     "title": "NVIDIA RTX Spark + Windows: What Microsoft’s Local-AI Superchip Means for Developers (2026)",
     "date": "2026-06-07",
+    "updated": "2026-09-29",
     "excerpt": "NVIDIA and Microsoft unveiled the RTX Spark superchip at Computex 2026 — a 20-core Grace Arm CPU plus a 6,144-core Blackwell RTX GPU and up to 128GB unified memory that runs 120B-parameter LLMs locally with up to 1M tokens of context. Here is the developer-only read: the confirmed specs, RTX Spark vs DGX Spark, how it ties into Satya Nadella’s agentic-AI push at Build 2026, what you can actually build on it this fall, and when to wait.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1468,12 +1536,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/nvidia-rtx-spark-windows-ai-agents-2026-cover.jpg",
       "alt": "Dark editorial cover with a glowing fractured chip illustrating NVIDIA RTX Spark local AI for Windows PCs"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "open-source-ai-agent-memory-mem0-vs-zep-letta-2026",
     "title": "AI Agent Memory in 2026: Mem0 vs Zep vs Letta vs MemPalace (Open-Source, Benchmarked)",
     "date": "2026-06-06",
+    "updated": "2026-09-29",
     "excerpt": "Agent memory — not the model — is the 2026 bottleneck. MemPalace just hit 54.1k GitHub stars and shipped v3.4.0 with a 96.6% LongMemEval score and zero API calls. Here's how the four open-source AI agent memory layers (Mem0, Zep, Letta, MemPalace) actually compare on architecture, real benchmarks, and honest licensing — plus a code snippet to add memory in minutes and how I'd wire it into a production agent.",
     "readingTime": "13 min read",
     "keywords": [
@@ -1489,12 +1558,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/open-source-ai-agent-memory-mem0-vs-zep-letta-2026-cover.jpg",
       "alt": "Glowing knowledge-graph nodes on a dark grid illustrating open-source AI agent memory layers compared in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "claude-ai-vulnerability-scanner-2026",
     "title": "Claude AI Vulnerability Scanner: Anthropic's Open-Source Code-Security Harness (2026)",
     "date": "2026-06-05",
+    "updated": "2026-09-29",
     "excerpt": "Anthropic open-sourced defending-code-reference-harness — a Claude-powered pipeline that finds and patches security bugs in your code — and it hit the GitHub Trending front page this week. Here's what actually shipped, how to run /vuln-scan on your own repo, how it compares to the claude-code-security-review Action, managed Claude Security, and Snyk/Semgrep/CodeQL, where it quietly breaks, and how I'd wire it into a production CI without burning your token budget.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1510,12 +1580,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/claude-ai-vulnerability-scanner-2026-cover.jpg",
       "alt": "Dark editorial cover with a cracked circuit trace illustrating an AI vulnerability scanner finding code security bugs with Claude in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "llm-context-compression-cut-token-costs-2026",
     "title": "Cut LLM Token Costs Up to 90% with Context Compression (2026)",
     "date": "2026-06-04",
+    "updated": "2026-09-29",
     "excerpt": "Headroom hit #1 on GitHub Trending on June 4, 2026 with a tool that compresses tool outputs, logs, and RAG chunks before they reach the model — cutting input tokens up to 92%. Here's how LLM context compression actually works, how Headroom stacks up against LLMLingua, prompt caching, and RAG reranking, when it quietly breaks, and how I'd wire it into a production MVP without losing accuracy.",
     "readingTime": "11 min read",
     "keywords": [
@@ -1531,12 +1602,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/llm-context-compression-cut-token-costs-2026-cover.jpg",
       "alt": "Dark editorial cover illustrating LLM context compression to cut token costs for AI agents in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "ai-dev-week-2026-23",
     "title": "This Week in AI Dev: Claude Opus 4.8, Copilot Goes Token-Metered, MCP's Stateless Next Spec (Week 23 of 2026)",
     "date": "2026-06-02",
+    "updated": "2026-09-29",
     "excerpt": "Six ships from Week 23 of 2026 that change how you build with AI: Claude Opus 4.8 lands, GitHub Copilot moves to token-metered AI Credits on June 1, the MCP next-spec RC locks a stateless protocol core, OpenAI Codex becomes an autonomous Goal-Mode runtime, Windsurf bundles Devin and raises prices, and the open-weight coding race tightens with Kimi K2.6 and GLM-5.1.",
     "readingTime": "6 min read",
     "keywords": [
@@ -1552,12 +1624,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/ai-dev-week-2026-23-cover.jpg",
       "alt": "Abstract editorial cover illustrating AI dev tools weekly roundup week 23 of 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "claude-code-dynamic-workflows-guide-2026",
     "title": "Claude Code Dynamic Workflows: A Hands-On Guide for Developers (2026)",
     "date": "2026-06-01",
+    "updated": "2026-09-29",
     "excerpt": "Anthropic shipped dynamic workflows in Claude Code on May 28, 2026 — a JavaScript script Claude writes to orchestrate up to 1,000 subagents on one task, in the background, while your session stays free. Here's what they actually are, how they differ from subagents and skills, the three ways to trigger one, where they earn their (heavy) token cost, when to skip them, and how I wire them into real client builds.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1573,12 +1646,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/claude-code-dynamic-workflows-guide-2026-cover.jpg",
       "alt": "Constellation of glowing cyan nodes illustrating Claude Code dynamic workflows orchestrating parallel AI subagents"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "openrouter-vs-litellm-vs-portkey-india-mvp-2026",
     "title": "OpenRouter vs LiteLLM vs Portkey: Which LLM Gateway for Your AI MVP? (2026)",
     "date": "2026-05-31",
+    "updated": "2026-09-29",
     "excerpt": "OpenRouter raised a $113M Series B on May 28, 2026 (led by CapitalG) — proof the LLM-gateway layer is now core infrastructure. But which one belongs in your AI MVP: OpenRouter's hosted marketplace, LiteLLM's self-hosted proxy, or Portkey's observability gateway? Here's the real cost math in ₹ and $, the minimal config for each, and the decision rule I use when wiring a gateway into a 6-week build.",
     "readingTime": "13 min read",
     "keywords": [
@@ -1594,12 +1668,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026-cover.jpg",
       "alt": "Glowing hourglass in teal and violet illustrating OpenRouter vs LiteLLM vs Portkey LLM gateway choice"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "ai-generated-code-anti-patterns-fixes-2026",
     "title": "AI-Generated Code Anti-Patterns: 9 Production Bugs Hiding in Vibe-Coded Apps (2026)",
     "date": "2026-05-29",
+    "updated": "2026-09-29",
     "excerpt": "AI coding agents produce roughly 1.7x more issues than human-written code (CodeRabbit, Dec 2025), and AI-generated code drove 35 new CVEs in March 2026 alone. Here are the 9 anti-patterns I catch reviewing vibe-coded MVPs — phantom validation, optimistic auth, IDOR, race conditions, retry storms, God components — with the before/after fix for each and a checklist to catch them before they ship.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1615,12 +1690,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/ai-generated-code-anti-patterns-fixes-2026-cover.jpg",
       "alt": "Cracked circuit board trace with one glowing fault line illustrating AI-generated code anti-patterns"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "claude-opus-4-8-vs-4-7-developers-2026",
     "title": "Claude Opus 4.8 vs 4.7 for Developers: What Changed and Should You Upgrade (2026)",
     "date": "2026-05-28",
+    "updated": "2026-09-29",
     "excerpt": "Anthropic shipped Claude Opus 4.8 on May 28, 2026 — agentic coding jumps 64.3% to 69.2%, it is around 4x less likely to let a code flaw pass unremarked, and pricing is unchanged at $5/$25 per million tokens. Here is the developer-only breakdown: the confirmed benchmark deltas, the code changes to make, where it actually beats 4.7, and the one reason you might wait.",
     "readingTime": "11 min read",
     "keywords": [
@@ -1636,12 +1712,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/claude-opus-4-8-vs-4-7-developers-2026-cover.jpg",
       "alt": "Editorial dark cover with glowing hourglass illustrating Claude Opus 4.8 vs 4.7 upgrade decision for developers"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "secure-mcp-server-typescript-2026",
     "title": "Build a Secure MCP Server in TypeScript: The Post-Copilot Defense Playbook (2026)",
     "date": "2026-05-27",
+    "updated": "2026-09-29",
     "excerpt": "Microsoft Copilot Cowork was exfiltrating SharePoint and OneDrive files via a 5-line prompt injection hidden inside an 81-line skill file — and it worked on 5 of 5 trials against Claude Opus 4.7, model-agnostic. Most \"build an MCP server\" tutorials ship code that has the same hole. This is the secure TypeScript build, end to end, with the defense layer none of the top tutorials include.",
     "readingTime": "13 min read",
     "keywords": [
@@ -1657,12 +1734,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/secure-mcp-server-typescript-2026-cover.jpg",
       "alt": "Editorial dark cover illustrating a secure MCP server build in TypeScript with prompt-injection defense layer"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "gemini-cli-to-antigravity-migration-alternatives-2026",
     "title": "Gemini CLI Shuts Down June 18, 2026: Antigravity CLI Migration + 4 Alternatives Worth Switching To",
     "date": "2026-05-25",
+    "updated": "2026-09-29",
     "excerpt": "Google is killing Gemini CLI for free, Pro, and Ultra users on June 18, 2026 — 24 days from today. The replacement, Antigravity CLI (agy), is closed-source, Go-based, and ships with weekly quotas instead of daily ones. Here is the 10-minute migration if you stay, the 4 alternatives worth switching to instead (Claude Code, Codex CLI, Aider, OpenCode), and the decision tree I would actually use for an India MVP client this month.",
     "readingTime": "14 min read",
     "keywords": [
@@ -1679,12 +1757,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/gemini-cli-to-antigravity-migration-alternatives-2026-cover.jpg",
       "alt": "Dark editorial cover illustrating Gemini CLI to Antigravity CLI migration and alternatives for 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "deepseek-vs-claude-vs-gpt-india-mvp-cost-2026",
     "title": "DeepSeek V4 Pro vs Claude Sonnet 4.6 vs GPT-5.5: The Real MVP Cost in 2026",
     "date": "2026-05-24",
+    "updated": "2026-09-29",
     "excerpt": "DeepSeek made its 75% V4 Pro discount permanent on 2026-05-22 — output tokens now sit at $0.87/M, roughly 34× below GPT-5.5 and 28× below Claude Sonnet 4.6. Here is the line-item math for a real India MVP, the benchmarks the pricing page hides, and the four production failure modes that decide whether the cheaper model actually saves you anything.",
     "readingTime": "13 min read",
     "keywords": [
@@ -1701,12 +1780,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/deepseek-vs-claude-vs-gpt-india-mvp-cost-2026-cover.jpg",
       "alt": "Dark editorial cover illustrating DeepSeek V4 Pro vs Claude Sonnet vs GPT-5.5 MVP API cost comparison 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "posthog-vs-mixpanel-vs-amplitude-india-mvp-2026",
     "title": "PostHog vs Mixpanel vs Amplitude — Best Product Analytics for India MVP (2026)",
     "date": "2026-05-23",
+    "updated": "2026-09-29",
     "excerpt": "PostHog wins for engineering-led India MVPs because it self-hosts on AWS Mumbai for DPDP compliance and bundles session replay + feature flags into one tier. Mixpanel wins for PM-heavy teams that want the lowest learning curve. Amplitude wins for funded teams with a dedicated analyst. The real cost gap at 10M events/month is 8×. Here is the math, the data-residency reality, and the exact stack I run on myFinancial.",
     "readingTime": "13 min read",
     "keywords": [
@@ -1723,12 +1803,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/posthog-vs-mixpanel-vs-amplitude-india-mvp-2026-cover.jpg",
       "alt": "Translucent layered glass plates with embedded glowing lines illustrating PostHog vs Mixpanel vs Amplitude analytics comparison"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "claude-code-plugins-context-engineering-2026",
     "title": "Claude Code Plugins in 2026: The Context-Engineering Stack Indie Devs Are Actually Installing",
     "date": "2026-05-23",
+    "updated": "2026-09-29",
     "excerpt": "Four of today's top 15 trending GitHub repos are Claude Code plugins. CodeGraph hit 2,434 stars in 24 hours. Karpathy's skills file: 3,372. This isn't noise — it's the moment context engineering became the differentiator. Here's what to install, what to skip, and why every listicle you've read this month is already wrong.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1750,6 +1831,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "hire-ios-developer-india-mvp-2026",
     "title": "Hire iOS Developer India 2026: Founding Engineer vs Agency vs Swift Freelancer (Real Cost)",
     "date": "2026-05-22",
+    "updated": "2026-09-29",
     "excerpt": "A founding engineer in India ships a native iOS MVP in 6–8 weeks for ₹7.5–10.5L fixed — Swift, SwiftUI, TestFlight, both review submissions, all in. A Bangalore agency quotes ₹28–42L for the same scope, lands in 17 weeks, and hands you a codebase mixing UIKit and SwiftUI across screens. Here is the May 2026 rate card, the App Store review traps that bite native iOS specifically, and the decision tree I wish my last three FinTech and consumer-app founders had read.",
     "readingTime": "13 min read",
     "keywords": [
@@ -1772,6 +1854,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "resend-vs-sendgrid-vs-aws-ses-india-mvp-2026",
     "title": "Resend vs SendGrid vs AWS SES for India MVPs in 2026 — Real Cost on 10K Transactional Emails",
     "date": "2026-05-21",
+    "updated": "2026-09-29",
     "excerpt": "Resend looks the friendliest, SendGrid looks the safest, and AWS SES looks the cheapest. Run a real 10K-email/month India MVP through each and the math, the deliverability to Indian Gmail inboxes, and the DLT-style compliance burden separate them by an order of magnitude. Here is which one survives a 50-user-to-5K-user growth curve, which one bankrupts you at scale, and the exact ₹ numbers I have logged across four client launches.",
     "readingTime": "14 min read",
     "keywords": [
@@ -1788,12 +1871,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/resend-vs-sendgrid-vs-aws-ses-india-mvp-2026-cover.jpg",
       "alt": "Single neon cyan spline arcing through dark space illustrating Resend vs SendGrid vs AWS SES transactional email comparison"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "hire-flutter-developer-india-2026",
     "title": "Hire Flutter Developer India 2026: Founding Engineer vs Agency vs FlutterFlow (Real Cost)",
     "date": "2026-05-20",
+    "updated": "2026-09-29",
     "excerpt": "A founding engineer in India ships a Flutter MVP in 5–8 weeks for ₹6.5–9.5L fixed. A Bangalore agency quotes ₹24–38L for the same scope and lands in 16. FlutterFlow saves 3 weeks of UI work and then traps you in a no-code stack you cannot extend. Here is the real cost math for May 2026, which Flutter packages survive production, and the decision tree I wish my last two FinTech clients had read.",
     "readingTime": "13 min read",
     "keywords": [
@@ -1816,6 +1900,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "langgraph-vs-crewai-vs-autogen-india-mvp-2026",
     "title": "LangGraph vs CrewAI vs AutoGen: Which Multi-Agent Framework Wins for India MVPs in 2026",
     "date": "2026-05-18",
+    "updated": "2026-09-29",
     "excerpt": "LangGraph, CrewAI, and AutoGen all promise the same thing — orchestrate three or four LLM calls into something that feels like an agent. Real cost, real latency, and real failure modes split them sharply once you ship. Here is which one survives a 200-user India MVP, which one bankrupts you, and which one I have spent ₹40K of OpenAI credits learning to avoid.",
     "readingTime": "13 min read",
     "keywords": [
@@ -1832,12 +1917,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/langgraph-vs-crewai-vs-autogen-india-mvp-2026-cover.jpg",
       "alt": "Topographic contour lines glowing on a dark surface illustrating LangGraph vs CrewAI vs AutoGen multi-agent framework comparison"
     },
-    "relatedProject": "rag-for-sql"
+    "relatedProject": "stellarmind"
   },
   {
     "slug": "hire-react-native-developer-india-2026",
     "title": "Hire React Native Developer India 2026: Founding Engineer vs Agency vs Freelance (Real Cost)",
     "date": "2026-05-18",
+    "updated": "2026-09-29",
     "excerpt": "A founding engineer in India ships your React Native MVP for ₹6–9L in 6 weeks. The same scope from a Bangalore agency quotes ₹22–35L and lands in 16. A Toptal freelancer is ₹4,500/hr and a 3-week hiring loop. Here is the real cost math for 2026, which model fails on which kind of app, and the decision tree I wish my last three clients had read.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1860,6 +1946,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "drizzle-vs-prisma-vs-typeorm-india-mvp-2026",
     "title": "Drizzle vs Prisma vs TypeORM — Real ORM Pick for India MVP 2026",
     "date": "2026-05-17",
+    "updated": "2026-09-29",
     "excerpt": "A Postgres-backed Next.js MVP shipping in 6 weeks: Drizzle cold-starts in ~40ms on Vercel Mumbai, Prisma at ~280ms (after the engine binary downloads), TypeORM at ~520ms with decorators bloating bundle size. Here is the real ORM math for an India MVP — cold start, type safety, migration story, edge runtime support, and which one to actually pick.",
     "readingTime": "14 min read",
     "keywords": [
@@ -1876,12 +1963,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026-cover.jpg",
       "alt": "Three glowing geometric nodes layered on dark grid illustrating Drizzle vs Prisma vs TypeORM comparison for India MVPs"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "openai-vs-claude-vs-gemini-api-cost-india-mvp-2026",
     "title": "OpenAI vs Claude vs Gemini API — Real Cost for India MVP 2026",
     "date": "2026-05-16",
+    "updated": "2026-09-29",
     "excerpt": "A WhatsApp support bot doing 10K conversations a month costs roughly ₹1,250 on Gemini 2.5 Flash, ₹3,800 on GPT-5-mini, and ₹7,200 on Claude Sonnet 4 — before GST, FX margin, and the 2% TDS your CA will flag on foreign invoices. Here is the line-item cost math, the latency truth from a Mumbai-based MVP, and which API actually wins for which India use case.",
     "readingTime": "15 min read",
     "keywords": [
@@ -1904,6 +1992,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "pinecone-vs-qdrant-vs-pgvector-india-rag-mvp-2026",
     "title": "Pinecone vs Qdrant vs pgvector — Which Vector DB for India RAG MVP (2026)",
     "date": "2026-05-15",
+    "updated": "2026-09-29",
     "excerpt": "At 500K embeddings for an Indian RAG MVP, Pinecone Standard costs ~₹6,200/month, self-hosted Qdrant runs ~₹1,400/month on Hetzner, and pgvector inside the Postgres you already pay for adds ₹0. Here is the real cost math, recall benchmark on a Hindi+English corpus, and the migration story when you outgrow each.",
     "readingTime": "14 min read",
     "keywords": [
@@ -1926,6 +2015,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026",
     "title": "Vercel vs Railway vs Hetzner — India MVP Hosting Cost & Latency (2026)",
     "date": "2026-05-14",
+    "updated": "2026-09-29",
     "excerpt": "At 100K monthly requests for an Indian MVP, Vercel Pro lands at roughly ₹2,800/month, Railway hovers around ₹1,800/month, and a Hetzner CX22 + Cloudflare combo is ₹420/month. Here is the real cost math, the Mumbai latency truth, and the migration story when one of them stops fitting your scale.",
     "readingTime": "13 min read",
     "keywords": [
@@ -1942,12 +2032,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/vercel-vs-railway-vs-hetzner-india-mvp-hosting-2026-cover.jpg",
       "alt": "Constellation of luminous nodes on dark backdrop illustrating Vercel vs Railway vs Hetzner India MVP hosting cost comparison 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "clerk-vs-supabase-auth-vs-better-auth-india-2026",
     "title": "Clerk vs Supabase Auth vs Better-Auth — Which to Pick for India MVP (2026)",
     "date": "2026-05-13",
+    "updated": "2026-09-29",
     "excerpt": "At 10K monthly active users for an Indian MVP, Clerk Pro lands around ₹17,000/month, Supabase Auth is included in the same ₹2,100 Pro plan, and Better-Auth on your own Postgres costs ₹0 plus a weekend of engineering. Here is the real cost math, lock-in tradeoff, and the migration story when you outgrow the hosted option.",
     "readingTime": "13 min read",
     "keywords": [
@@ -1964,12 +2055,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/clerk-vs-supabase-auth-vs-better-auth-india-2026-cover.jpg",
       "alt": "Three abstract auth stack pillars on dark backdrop illustrating Clerk vs Supabase Auth vs Better-Auth comparison for India MVP 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "supabase-vs-firebase-india-mvp-2026",
     "title": "Supabase vs Firebase for Indian MVPs in 2026 — Real Cost on 10K MAU",
     "date": "2026-05-12",
+    "updated": "2026-09-29",
     "excerpt": "Firebase tightened Spark-tier limits in Q1 2026 and Supabase opened the Mumbai ap-south-1 region in late 2025. At 10K MAU for an Indian MVP, Supabase Pro at $25/month now beats Firebase Blaze by 2-4x — here is the real cost math, RLS migration story, and when Firebase still wins.",
     "readingTime": "12 min read",
     "keywords": [
@@ -1986,12 +2078,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/supabase-vs-firebase-india-mvp-2026-cover.jpg",
       "alt": "Dark editorial render illustrating Supabase versus Firebase backend cost comparison for Indian MVP 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "self-host-n8n-vs-zapier-cost-india-2026",
     "title": "Self-Host n8n vs Zapier for Indian MVPs in 2026 — Real Cost on 50K Operations/Month",
     "date": "2026-05-11",
+    "updated": "2026-09-29",
     "excerpt": "Self-hosted n8n costs ₹600/month on a $7 Hetzner VPS for 50K operations; Zapier Professional charges $73/month (~₹6,100) for the same volume. Here is the real Docker setup, ops cost, and break-even math from my multi-platform social automation rig.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2007,12 +2100,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/self-host-n8n-vs-zapier-cost-india-2026-cover.jpg",
       "alt": "Dark editorial render illustrating self-hosted n8n versus Zapier cloud automation cost comparison India 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "razorpay-vs-stripe-india-mvp-2026",
     "title": "Razorpay vs Stripe for Indian MVPs in 2026 — Real Cost on a 100-User Month",
     "date": "2026-05-10",
+    "updated": "2026-09-29",
     "excerpt": "Razorpay charges 2% on cards and 0% on UPI for Indian MVPs; Stripe charges 4.3% plus GST plus cross-border 3% on the same volume. Here is the actual rupee math from MyFinancial production.",
     "readingTime": "9 min read",
     "keywords": [
@@ -2028,12 +2122,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/razorpay-vs-stripe-india-mvp-2026-cover.jpg",
       "alt": "Glowing topographic contours in teal and violet illustrating Razorpay vs Stripe India MVP cost comparison"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "claude-code-vs-hire-developer-2026",
     "title": "Claude Code vs Hiring a Developer in 2026: $20 CLI or $80K Engineer?",
     "date": "2026-05-09",
+    "updated": "2026-09-29",
     "excerpt": "Claude Code is the strongest agentic coding CLI of 2026. But $20–200/month buys assistance, not a finished product. This is the line between Claude Code as a developer multiplier and Claude Code as a developer replacement, with the cost math that actually matters when you ship to real users.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2049,12 +2144,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/claude-code-vs-hire-developer-2026-cover.jpg",
       "alt": "Glitched terminal stream in teal and violet illustrating Claude Code CLI vs hiring a developer in 2026"
     },
-    "relatedProject": "rohitrajTech"
+    "relatedProject": "rohitraj-site"
   },
   {
     "slug": "v0-by-vercel-vs-hire-developer-2026",
     "title": "v0 by Vercel vs Hiring a Developer in 2026 — When Generative UI Hits the Day-30 Wall",
     "date": "2026-05-08",
+    "updated": "2026-09-29",
     "excerpt": "v0 ships a clickable Next.js + shadcn prototype in 20 minutes for $20 a month. Then on day 30 you need auth, a real database, RLS, Stripe webhooks that survive retries, and a deploy that does not break preview. Here is exactly when v0 is the right call, when a real engineer is, and the cost crossover most founders only see after the prototype is already in customer hands.",
     "readingTime": "13 min read",
     "keywords": [
@@ -2071,12 +2167,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/v0-by-vercel-vs-hire-developer-2026-cover.jpg",
       "alt": "Floating geometric crystals in cyan and magenta neon illustrating v0 by Vercel vs hiring a developer 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "replit-agent-vs-hire-developer-2026",
     "title": "Replit Agent vs Hiring a Developer in 2026: Browser IDE Autonomy or Founding Engineer?",
     "date": "2026-05-06",
+    "updated": "2026-09-29",
     "excerpt": "Replit Agent v3 ships full-stack apps from a browser, runs its own tests, and deploys in one click. So why are founders still ending up with $400 monthly bills, broken auth, and rebuilds at month three? Honest pricing math, real failure modes, and when Replit Agent actually beats hiring a developer in 2026.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2093,12 +2190,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/replit-agent-vs-hire-developer-2026-cover.jpg",
       "alt": "Liquid metal mercury surface with amber ripples illustrating Replit Agent vs hire developer 2026 comparison"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "devin-ai-vs-hire-developer-2026",
     "title": "Devin AI vs Hiring a Developer in 2026: $20/Month Agent or Founding Engineer?",
     "date": "2026-05-05",
+    "updated": "2026-09-29",
     "excerpt": "Devin AI dropped from $500/mo to $20/mo and now scores 51.5% on SWE-bench. Should you fire your developer and let Cognition's autonomous agent ship your MVP? The honest math, real failure modes, and when Devin actually saves money in 2026.",
     "readingTime": "10 min read",
     "keywords": [
@@ -2115,12 +2213,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/devin-ai-vs-hire-developer-2026-cover.jpg",
       "alt": "Cracked monolith with glowing teal fissures illustrating Devin AI vs hire developer 2026 comparison"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "cursor-ai-vs-hire-developer-2026",
     "title": "Cursor AI vs Hire Developer 2026 — When $200 Plan Hurts More",
     "date": "2026-05-04",
+    "updated": "2026-09-29",
     "excerpt": "Cursor Pro is $20/month, Pro+ is $60, Ultra is $200. One Agent task burns 5–10 premium requests, and a single multi-step refactor on a real codebase eats your monthly credit pool by week two. Here is exactly when Cursor is the right call, when a developer is, and the cost crossover most founders only see after they have shipped a security bug to prod.",
     "readingTime": "13 min read",
     "keywords": [
@@ -2137,12 +2236,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/cursor-ai-vs-hire-developer-2026-cover.jpg",
       "alt": "Two glowing pillars on dark grid, one cracked, illustrating Cursor AI vs hiring a developer cost comparison 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "bolt-new-vs-hire-developer-2026",
     "title": "Bolt.new vs Hire Developer 2026 — When AI Builder Hits Limits",
     "date": "2026-05-03",
+    "updated": "2026-09-29",
     "excerpt": "Bolt.new ships a working prototype in 30 minutes for $25/month. Then complexity arrives — a 31% success rate on real SaaS apps, 5–8 million tokens burned on one Supabase auth bug, and a $5K–$40K hardening bill. Here is exactly when Bolt is the right call, when a developer is, and the cost crossover most founders find too late.",
     "readingTime": "12 min read",
     "keywords": [
@@ -2159,13 +2259,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/bolt-new-vs-hire-developer-2026-cover.jpg",
       "alt": "Two abstract glowing pillars on a dark grid illustrating Bolt.new vs hiring a developer cost comparison 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "hire-ai-engineer-india-2026",
     "title": "Hire AI Engineer India 2026 — Real Cost, Stack, Sprint Alternative",
     "date": "2026-05-02",
-    "updated": "2026-05-16",
+    "updated": "2026-09-29",
     "excerpt": "AI engineers in the US cost $180K-$280K all-in. India full-time: $45K-$95K. A 6-week senior contract with a builder who has shipped RAG, MCP, and on-device AI in production: $15K-$25K flat. Here is the honest breakdown.",
     "readingTime": "13 min read",
     "keywords": [
@@ -2188,7 +2288,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "hire-technical-cofounder-india-2026",
     "title": "Hire Technical Co-Founder India 2026 — Cost, Equity, Alternative",
     "date": "2026-05-01",
-    "updated": "2026-05-16",
+    "updated": "2026-09-29",
     "excerpt": "Technical co-founders in India cost 25-50% equity and 6-12 months to find. Here are the 2026 numbers, the 4-year dilution math, and the contrarian case that most pre-seed founders should hire a senior contractor first and a co-founder never.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2205,13 +2305,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/hire-technical-cofounder-india-2026-cover.jpg",
       "alt": "Abstract editorial cover illustrating Hire Technical Co-Founder India 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "founding-engineer-equity-percentage-2026",
     "title": "Founding Engineer Equity 2026 — How Much to Negotiate (India)",
     "date": "2026-04-29",
-    "updated": "2026-06-09",
+    "updated": "2026-09-29",
     "excerpt": "Carta says 1.5% for hire #1, dropping to 0.33% by hire #5. Pave median is 1%. AI talent pressure pushed the floor up since March 2026. Honest 2026 numbers — plus the $0-equity alternative most pre-seed founders should default to.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2228,12 +2328,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/founding-engineer-equity-percentage-2026-cover.jpg",
       "alt": "Abstract editorial cover illustrating Founding Engineer Equity 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "retool-vs-custom-build-internal-tool-2026",
     "title": "Retool vs Custom Internal Tool in 2026 — When to Buy, When to Build, When to Hire",
     "date": "2026-04-27",
+    "updated": "2026-09-29",
     "excerpt": "Retool wins for the first 18 months. Custom wins after $20K in seat licenses or when the workflow stops fitting tables and forms. Honest 2026 numbers from a senior engineer who builds both.",
     "readingTime": "9 min read",
     "keywords": [
@@ -2256,6 +2357,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "supabase-rls-production-bugs-need-real-engineer-2026",
     "title": "Your Supabase RLS Just Leaked Production Data — The 5 Bugs Every Vibe-Coded App Hits in 2026",
     "date": "2026-04-26",
+    "updated": "2026-09-29",
     "excerpt": "Supabase row-level security is opt-in, silent when wrong, and tested with a superuser token that bypasses everything. In January 2025, 170+ Lovable apps leaked their production databases because nobody enabled RLS. Here are the 5 RLS bugs every vibe-coded app ships, and the audit pattern a senior engineer runs to catch them before user 500.",
     "readingTime": "10 min read",
     "keywords": [
@@ -2271,12 +2373,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/supabase-rls-production-bugs-need-real-engineer-2026-cover.jpg",
       "alt": "Abstract editorial cover illustrating Your Supabase RLS Just Leaked Production Data"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "6-week-mvp-sprint-week-by-week-breakdown",
     "title": "6-Week MVP Sprint — Week-by-Week Breakdown of What Actually Ships",
     "date": "2026-04-25",
+    "updated": "2026-09-29",
     "excerpt": "Most \"6-week MVP\" promises are 12-week projects with marketing copy. This is what a real 6-week sprint looks like — week one through week six, what gets built, what gets cut, and what production-ready means at day 42.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2292,12 +2395,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/6-week-mvp-sprint-week-by-week-breakdown-cover.jpg",
       "alt": "Abstract editorial cover illustrating 6-Week MVP Sprint"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "6-week-mvp-tech-stack-2026",
     "title": "6-Week MVP Tech Stack in 2026 — The Boring Choices That Actually Ship",
     "date": "2026-04-25",
+    "updated": "2026-09-29",
     "excerpt": "Every \"should I use X or Y\" debate costs you a week of the sprint. Here is the boring, opinionated, time-tested stack that ships a production MVP in 6 weeks — Next.js, Postgres, Vercel, Stripe, and a handful of opinionated picks.",
     "readingTime": "12 min read",
     "keywords": [
@@ -2313,12 +2417,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/6-week-mvp-tech-stack-2026-cover.jpg",
       "alt": "Abstract editorial cover illustrating 6-Week MVP Tech Stack in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "what-15k-mvp-actually-includes-vs-50k-agency-quote",
     "title": "What a $15K MVP Actually Includes — vs. the $50K Agency Quote You Just Got",
     "date": "2026-04-25",
+    "updated": "2026-09-29",
     "excerpt": "A $15K-$30K fixed-price MVP and a $50K-$100K agency quote ship the same thing 80% of the time. The difference is who absorbs the markup. Here is the line-item breakdown — what is in scope, what is overhead, and where the agency margin actually comes from.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2334,12 +2439,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/what-15k-mvp-actually-includes-vs-50k-agency-quote-cover.jpg",
       "alt": "Abstract editorial cover illustrating What a $15K MVP Actually Includes"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "6-week-mvp-vs-3-month-agency-which-ships-first",
     "title": "6-Week MVP Sprint vs 3-Month Agency Build — Which One Actually Ships First in 2026?",
     "date": "2026-04-25",
+    "updated": "2026-09-29",
     "excerpt": "Most \"3-month MVP\" agency builds take 5-6 months. Most \"6-week sprints\" take 6 weeks. The difference is not engineer talent — it is the contract structure and the scope discipline. Honest comparison from someone who has seen both fail and succeed.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2355,12 +2461,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/6-week-mvp-vs-3-month-agency-which-ships-first-cover.jpg",
       "alt": "Abstract editorial cover illustrating 6-Week MVP Sprint vs 3-Month Agency Build"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "founding-engineer-india-vs-toptal-arc-uplers-2026",
     "title": "Hire a Founding Engineer in India — Direct vs Toptal, Arc, Uplers in 2026",
     "date": "2026-04-25",
+    "updated": "2026-09-29",
     "excerpt": "Marketplaces like Toptal, Arc, and Uplers add 30-50% markup, 2-4 weeks of recruiter delay, and zero portfolio transparency. Here is how going direct compares — pricing, speed, quality, and what each model actually optimizes for.",
     "readingTime": "12 min read",
     "keywords": [
@@ -2376,13 +2483,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/founding-engineer-india-vs-toptal-arc-uplers-2026-cover.jpg",
       "alt": "Abstract editorial cover illustrating Hire a Founding Engineer in India"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "lovable-app-production-bugs-need-real-engineer-2026",
     "title": "Lovable App Production Bugs — 5 Fixes Need a Real Engineer (2026)",
     "date": "2026-04-25",
-    "updated": "2026-05-16",
+    "updated": "2026-09-29",
     "excerpt": "Lovable, Bolt, and v0 ship 70% of an MVP in a weekend. The remaining 30% — auth edge cases, RLS, payment webhooks, performance, schema migrations — is where every vibe-coded app breaks. Here are the 5 production bugs that always need a real engineer to fix, and what the rescue work actually costs.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2398,12 +2505,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/lovable-app-production-bugs-need-real-engineer-2026-cover.jpg",
       "alt": "Abstract editorial cover illustrating Lovable App Production Bugs"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "ai-news-april-2026-what-founders-should-build",
     "title": "April 2026 AI News Decoded: 7 Stories That Actually Change What Founders Should Build",
     "date": "2026-04-24",
+    "updated": "2026-09-29",
     "excerpt": "Claude Mythos 5, GPT-5.4 Thinking, Gemini 3.1 Ultra, DeepSeek V4, Snap cutting 16% headcount — April 2026 reshaped the frontier. Most roundups list the news. This post tells founders, freelance devs, and founding engineers what to actually build, drop, or route next.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2428,6 +2536,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "founding-engineer-vs-fractional-cto",
     "title": "Founding Engineer vs Fractional CTO in 2026 — Which One Does Your Startup Actually Need?",
     "date": "2026-04-23",
+    "updated": "2026-09-29",
     "excerpt": "Fractional CTOs advise. Founding engineers ship. If you have an idea and no product, you need someone writing code — not slide decks. Here is the honest trade-off, with real costs, real timelines, and the signal that tells you which one to hire.",
     "readingTime": "12 min read",
     "keywords": [
@@ -2443,12 +2552,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/founding-engineer-vs-fractional-cto-cover.jpg",
       "alt": "Abstract editorial cover illustrating Founding Engineer vs Fractional CTO in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "lovable-alternative-developer-when-ai-builder-breaks",
     "title": "The Best Lovable Alternative in 2026 Is Not Another AI Builder — It Is a Developer Who Can Read the Code",
     "date": "2026-04-23",
+    "updated": "2026-09-29",
     "excerpt": "Every \"best Lovable alternative\" list recommends Bolt, Replit, v0, Emergent. The honest alternative for a founder whose Lovable app is breaking in production is a senior developer on a 2–4 week rescue contract. Here is why, what it costs, and what to look for.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2464,12 +2574,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/lovable-alternative-developer-when-ai-builder-breaks-cover.jpg",
       "alt": "Abstract editorial cover illustrating The Best Lovable Alternative in 2026 Is Not Another AI Builder"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "founding-engineer-vs-lovable-when-to-hire-2026",
     "title": "Founding Engineer vs Lovable in 2026 — When $180K Beats $25/mo",
     "date": "2026-04-22",
+    "updated": "2026-09-29",
     "excerpt": "Lovable ships your first prototype in a weekend. A founding engineer costs $180K + equity. Here is the honest trade-off, where Lovable breaks, and the in-between option nobody talks about.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2484,12 +2595,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/founding-engineer-vs-lovable-when-to-hire-2026-cover.jpg",
       "alt": "Abstract editorial cover illustrating Founding Engineer vs Lovable in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "india-vs-us-mvp-developer-cost-2026",
     "title": "India vs US MVP Developer Cost in 2026 — $18K or $120K for the Same App?",
     "date": "2026-04-22",
+    "updated": "2026-09-29",
     "excerpt": "The real 2026 breakdown of MVP cost in India vs the US — why the agency-vs-Silicon-Valley binary is a trap, and how independent senior engineers with AI tools now win on both axes.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2504,12 +2616,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/india-vs-us-mvp-developer-cost-2026-cover.jpg",
       "alt": "Abstract editorial cover illustrating India vs US MVP Developer Cost in 2026"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "vibe-coding-vs-hiring-developer-when-lovable-breaks",
     "title": "Vibe Coding vs Hiring a Developer — When Lovable, Bolt, and Cursor Stop Being Enough",
     "date": "2026-04-22",
+    "updated": "2026-09-29",
     "excerpt": "Vibe coding ships prototypes in 2.4 days. Then the 500-user wall hits — auth bugs, payment edges, DB drift. The honest handoff playbook from AI tool to human engineer.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2524,12 +2637,13 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks-cover.jpg",
       "alt": "Abstract editorial cover illustrating Vibe Coding vs Hiring a Developer"
     },
-    "relatedProject": "myFinancial"
+    "relatedProject": "myfinancial"
   },
   {
     "slug": "build-enterprise-deal-matching-platform-spring-boot-nextjs",
     "title": "How I Built an Enterprise Deal Matching Platform with Spring Boot + Next.js + GPT-4o",
     "date": "2026-04-16",
+    "updated": "2026-09-29",
     "excerpt": "Architecture deep-dive into SynFlow — a full-stack intelligence platform that matches deals to profiles using rule-based scoring and AI-powered profile extraction from LinkedIn text.",
     "readingTime": "10 min read",
     "keywords": [
@@ -2549,6 +2663,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "cloud-first-ai-is-dead-on-device-android-2026",
     "title": "Cloud-First AI Is Dead. I Built a Fully Offline AI App to Prove It.",
     "date": "2026-04-16",
+    "updated": "2026-09-29",
     "excerpt": "Google just shipped an offline AI dictation app. Android 16 runs notification summaries on-device. The \"cloud-first\" mentality for AI apps is dying — here's how I built a production Android app with zero network permissions using Gemma 4, LiteRT, and regex fallback.",
     "readingTime": "8 min read",
     "keywords": [
@@ -2568,6 +2683,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "upi-fraud-805-crore-why-i-built-offline-scam-detector",
     "title": "₹805 Crore Lost to UPI Fraud This Year. I Built an Offline Scam Detector That Needs Zero Internet.",
     "date": "2026-04-16",
+    "updated": "2026-09-29",
     "excerpt": "1 in 5 Indian families have been hit by UPI fraud. 51% never report it. Cloud-based scam checkers need internet — exactly what victims in Tier 2/3 India don't have. Here's why I built ScamRakshak with zero network permissions.",
     "readingTime": "9 min read",
     "keywords": [
@@ -2587,6 +2703,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "build-android-finance-tracker-kotlin-jetpack-compose",
     "title": "Building an Android Finance Tracker with SMS Auto-Import — Kotlin + Jetpack Compose",
     "date": "2026-04-15",
+    "updated": "2026-09-29",
     "excerpt": "How I built FinBaby — an offline Android app that reads bank SMS messages, auto-categorizes transactions, and provides 50/30/20 budgeting for Indian middle-class families.",
     "readingTime": "9 min read",
     "keywords": [
@@ -2606,6 +2723,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "build-multi-tenant-saas-spring-boot-java-21",
     "title": "Building a Multi-Tenant Retail SaaS with Spring Boot 3.4 + Java 21 — 12-Module Architecture",
     "date": "2026-04-14",
+    "updated": "2026-09-29",
     "excerpt": "How I architected RetailOS — an India-first multi-tenant retail platform with billing, inventory, GST invoicing, khata ledger, and offline sync in a 12-module Maven monorepo.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2625,6 +2743,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "i-built-multi-tenant-saas-alone-12-module-spring-boot",
     "title": "I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here's the Architecture That Made It Possible.",
     "date": "2026-04-14",
+    "updated": "2026-09-29",
     "excerpt": "The SaaS market hits $465B in 2026 and 70% of vendors use multi-tenancy. I built RetailOS — a 12-module Spring Boot monorepo with billing, inventory, GST invoicing, khata ledger, and offline sync — as a solo engineer. Here's every architecture decision.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2644,6 +2763,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "build-offline-first-trip-planner-react-native-watermelondb",
     "title": "Building an Offline-First Trip Planner with React Native + WatermelonDB + Offline Maps",
     "date": "2026-04-13",
+    "updated": "2026-09-29",
     "excerpt": "Architecture decisions behind TripHive — a collaborative trip planner that works without internet using WatermelonDB, PowerSync, and MapLibre with downloadable offline tiles.",
     "readingTime": "10 min read",
     "keywords": [
@@ -2663,6 +2783,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "build-on-device-ai-scam-detector-android-gemma",
     "title": "Building an On-Device AI Scam Detector for Android — Gemma 4 + LiteRT + Regex Fallback",
     "date": "2026-04-12",
+    "updated": "2026-09-29",
     "excerpt": "How I built ScamRakshak — a fully offline Android app that detects scams using a 3-tier AI inference engine with Gemma 4 on-device LLM, LiteRT classification, and regex fallback. Zero internet, zero data collection.",
     "readingTime": "11 min read",
     "keywords": [
@@ -2682,6 +2803,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "build-family-budget-app-android-offline-kotlin",
     "title": "Building a Family Budget App with 8 Financial Modules — Kotlin + Jetpack Compose, Fully Offline",
     "date": "2026-04-11",
+    "updated": "2026-09-29",
     "excerpt": "Architecture deep-dive into PaisaGuard — a privacy-first Android app for middle-class families with expense tracking, grocery budget mode, bill calendar, debt snowball, and 4 more modules. Zero backend.",
     "readingTime": "10 min read",
     "keywords": [
@@ -2701,6 +2823,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "building-multilanguage-react-native-app-expo",
     "title": "Building a Multi-Language React Native App with Expo SDK 52 — SanatanApp Architecture",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "How I architected a 5-language devotional app with bundled JSON content, offline-first storage, and expo-av audio streaming — shipping to Play Store at ~15MB.",
     "readingTime": "9 min read",
     "keywords": [
@@ -2720,6 +2843,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "expo-av-audio-streaming-react-native",
     "title": "Streaming Audio in React Native: expo-av with Public Domain Sources",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "A practical guide to building a streaming audio player in React Native with expo-av — background playback, progress tracking, and global player state with zero backend cost.",
     "readingTime": "7 min read",
     "keywords": [
@@ -2739,6 +2863,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "idea-to-play-store-sanatanapp-architecture",
     "title": "From Idea to Play Store: Shipping SanatanApp in 4 Weeks",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "The full story of building and shipping a React Native app to Google Play — from problem discovery to architecture decisions to the actual Play Store submission process.",
     "readingTime": "8 min read",
     "keywords": [
@@ -2758,6 +2883,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "how-much-does-it-cost-to-build-mobile-app-india-2026",
     "title": "How Much Does It Cost to Build a Mobile App in India? Real Numbers from a Developer (2026)",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "Honest cost breakdown for building Android and iOS apps in India — from a freelance developer who has shipped apps to Play Store. No agency markup, no inflated estimates.",
     "readingTime": "15 min read",
     "keywords": [
@@ -2776,6 +2902,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "build-ai-chatbot-whatsapp-business-india",
     "title": "How to Build an AI Chatbot for Your Business: Architecture, Cost & What Actually Works (2026)",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "A developer's honest guide to building AI chatbots — WhatsApp bots, customer support agents, and LLM-powered assistants. What works, what doesn't, and what it actually costs.",
     "readingTime": "16 min read",
     "keywords": [
@@ -2795,6 +2922,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "hire-freelance-developer-vs-agency-india",
     "title": "Freelance Developer vs Agency in India: An Honest Comparison from the Developer Side",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "When should you hire a freelancer? When does an agency make sense? A working developer breaks down the real trade-offs — cost, quality, communication, and delivery.",
     "readingTime": "15 min read",
     "keywords": [
@@ -2813,6 +2941,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "spring-boot-vs-nodejs-startup-backend-2026",
     "title": "Spring Boot vs Node.js for Your Startup Backend (2026)",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "An honest comparison of Spring Boot and Node.js for startup backends — performance, hiring, ecosystem, and when each one actually makes sense.",
     "readingTime": "7 min read",
     "keywords": [
@@ -2830,6 +2959,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "how-to-build-saas-mvp-2026",
     "title": "How to Build a SaaS MVP in 2026 — Complete Tech Stack Guide",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "A practical guide to building your SaaS MVP — tech stack choices, cost breakdown, timeline, and the mistakes that kill most first-time founders.",
     "readingTime": "9 min read",
     "keywords": [
@@ -2847,6 +2977,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "react-native-vs-flutter-2026",
     "title": "React Native vs Flutter in 2026: Which One for Your App?",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "A practical comparison of React Native and Flutter in 2026 — performance, ecosystem, hiring, and which one I recommend based on your specific situation.",
     "readingTime": "7 min read",
     "keywords": [
@@ -2864,6 +2995,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "whatsapp-business-api-integration-guide-india",
     "title": "WhatsApp Business API Integration Guide for Indian Startups",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "A practical guide to integrating WhatsApp Business API for Indian startups — providers, costs, message templates, and building automated bots that actually convert.",
     "readingTime": "8 min read",
     "keywords": [
@@ -2882,6 +3014,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "postgresql-vs-mongodb-startup-2026",
     "title": "PostgreSQL vs MongoDB: Which Database for Your Startup? (2026)",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "A practical comparison of PostgreSQL and MongoDB for startups — when to use each, real performance numbers, and why most startups should just pick Postgres.",
     "readingTime": "7 min read",
     "keywords": [
@@ -2900,6 +3033,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "how-to-integrate-ai-existing-business-app",
     "title": "How to Add AI to Your Existing Business App — Without Rebuilding Everything",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "A practical guide to adding AI features to your existing application — where to start, what to avoid, and how to get real ROI without a complete rewrite.",
     "readingTime": "8 min read",
     "keywords": [
@@ -2918,6 +3052,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "how-to-hire-developer-interview-questions",
     "title": "How to Hire a Software Developer: 10 Questions to Ask Before Signing",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "The 10 questions you should ask before hiring a freelance developer — how to evaluate technical skills, communication, and reliability without being technical yourself.",
     "readingTime": "7 min read",
     "keywords": [
@@ -2935,6 +3070,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "build-app-like-uber-zomato-architecture-cost",
     "title": "How to Build an App Like Uber or Zomato — Architecture & Real Costs",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "The real architecture and costs behind building an on-demand app like Uber or Zomato — what you actually need for an MVP vs what agencies will try to sell you.",
     "readingTime": "8 min read",
     "keywords": [
@@ -2952,6 +3088,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "why-your-mvp-should-cost-under-10k",
     "title": "Why Your MVP Should Cost Under $10,000 — And How to Make It Happen",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "Most MVPs are overbuilt and overpriced. Here is how to scope, build, and launch a real product for under $10K — with examples from projects I have shipped.",
     "readingTime": "7 min read",
     "keywords": [
@@ -2969,6 +3106,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "microservices-vs-monolith-startup",
     "title": "Microservices vs Monolith for Startups: Stop Overengineering",
     "date": "2026-04-05",
+    "updated": "2026-09-29",
     "excerpt": "Why your startup should start with a monolith, when microservices actually make sense, and how to avoid the architecture astronaut trap.",
     "readingTime": "7 min read",
     "keywords": [
@@ -2987,7 +3125,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "aws-bedrock-vs-openai",
     "title": "AWS Bedrock vs OpenAI — Which One to Pick for Your Startup (With Real Costs)",
     "date": "2026-04-02",
-    "updated": "2026-08-29",
+    "updated": "2026-09-29",
     "excerpt": "I built a financial advisor AI with AWS Bedrock (Nova Lite) after starting with OpenAI. Here's a real cost and latency comparison from production, not a marketing page.",
     "readingTime": "9 min read",
     "keywords": [
@@ -3008,6 +3146,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "rag-for-sql",
     "title": "Using RAG for SQL Generation — Why Embeddings Beat Prompt Stuffing",
     "date": "2026-01-28",
+    "updated": "2026-09-29",
     "excerpt": "How pgvector embeddings improve LLM-to-SQL accuracy by providing schema context instead of dumping entire schemas into prompts.",
     "readingTime": "8 min read",
     "keywords": [
@@ -3027,6 +3166,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "spring-boot-mcp",
     "title": "Building an MCP Server with Spring Boot — A Practical Guide",
     "date": "2026-01-20",
+    "updated": "2026-09-29",
     "excerpt": "Implementing the Model Context Protocol for AI assistant tool integration using Spring Boot and Spring AI.",
     "readingTime": "10 min read",
     "keywords": [
@@ -3045,6 +3185,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "pwa-offline-sync",
     "title": "Offline-First PWA Patterns — Service Workers, IndexedDB, and Background Sync",
     "date": "2026-01-15",
+    "updated": "2026-09-29",
     "excerpt": "Service workers, IndexedDB, and background sync patterns used in MicroItinerary for reliable offline-first travel planning.",
     "readingTime": "7 min read",
     "keywords": [

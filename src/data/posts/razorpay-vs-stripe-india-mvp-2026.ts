@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const razorpayVsStripeIndiaMvp2026: BlogPost = {
   slug: 'razorpay-vs-stripe-india-mvp-2026',
+  updated: "2026-09-29",
+  seoTitle: "Razorpay vs Stripe for India MVPs (2026)",
+  seoDescription: "Compare Razorpay and Stripe for an India MVP. Review payment integration and cost assumptions for a small product with 100 users.",
   title: 'Razorpay vs Stripe for Indian MVPs in 2026 — Real Cost on a 100-User Month',
   date: '2026-05-10',
   excerpt: 'Razorpay charges 2% on cards and 0% on UPI for Indian MVPs; Stripe charges 4.3% plus GST plus cross-border 3% on the same volume. Here is the actual rupee math from MyFinancial production.',
@@ -15,7 +18,7 @@ export const razorpayVsStripeIndiaMvp2026: BlogPost = {
     'mvp payment integration cost',
     'indian startup payment',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/razorpay-vs-stripe-india-mvp-2026-cover.jpg',
     alt: 'Glowing topographic contours in teal and violet illustrating Razorpay vs Stripe India MVP cost comparison',

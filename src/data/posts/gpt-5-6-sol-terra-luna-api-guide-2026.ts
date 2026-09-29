@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const gpt56SolTerraLunaApiGuide2026: BlogPost = {
   slug: 'gpt-5-6-sol-terra-luna-api-guide-2026',
+  updated: "2026-09-29",
+  seoTitle: "GPT-5.6 Sol vs Terra vs Luna: API Guide",
+  seoDescription: "Compare GPT-5.6 Sol, Terra and Luna for development workloads. Choose a model tier based on task complexity, latency and cost requirements.",
   title:
     'GPT-5.6 Sol vs Terra vs Luna: A Developer\'s Guide to Picking the Right Tier (2026)',
   date: '2026-07-10',

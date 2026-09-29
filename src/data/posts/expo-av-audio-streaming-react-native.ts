@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const expoAvAudioStreamingReactNative: BlogPost = {
   slug: 'expo-av-audio-streaming-react-native',
+  updated: "2026-09-29",
+  seoTitle: "React Native Audio Streaming with expo-av",
+  seoDescription: "Implement audio streaming in React Native with expo-av. Review playback behavior and the use of public-domain sources in a mobile app.",
   title: 'Streaming Audio in React Native: expo-av with Public Domain Sources',
   date: '2026-04-05',
   excerpt: 'A practical guide to building a streaming audio player in React Native with expo-av — background playback, progress tracking, and global player state with zero backend cost.',

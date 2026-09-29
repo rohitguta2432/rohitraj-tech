@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const aiAgentPaymentsX402VsAp22026: BlogPost = {
     slug: 'ai-agent-payments-x402-vs-ap2-2026',
+  updated: "2026-09-29",
+    seoTitle: "AI Agent Payments: x402 vs AP2 (2026)",
+    seoDescription: "Compare x402 and AP2 for AI agent payments. Review payment flows, authorization boundaries and what an application needs before agents transact.",
     title: 'AI Agent Payments in 2026: x402 vs AP2 — How to Let Your Agent Actually Pay',
     date: '2026-06-13',
     excerpt:
@@ -16,7 +19,7 @@ export const aiAgentPaymentsX402VsAp22026: BlogPost = {
         'agent payment protocol 2026',
         'x402 mcp server',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/ai-agent-payments-x402-vs-ap2-2026-cover.jpg',
         alt: 'Glowing coin of light passing between two abstract nodes over a dark grid illustrating AI agent payments with x402 and AP2',

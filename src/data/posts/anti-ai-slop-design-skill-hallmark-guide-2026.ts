@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const antiAiSlopDesignSkillHallmarkGuide2026: BlogPost = {
     slug: 'anti-ai-slop-design-skill-hallmark-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "Hallmark: Fixing Generic AI-Generated UI",
+    seoDescription: "Explore the Hallmark design skill and its approach to generic AI interfaces. Learn how clearer design direction improves generated UI.",
     title: 'The Anti-AI-Slop Design Skill: How Hallmark Fixes Generic AI UI in 2026',
     date: '2026-07-18',
     excerpt:

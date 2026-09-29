@@ -1,26 +1,26 @@
 {
     "home": {
-        "title": "AI Consultant · Forward Deployed Engineer — Ships AI to Production | Rohit Raj",
-        "description": "AI consultant working as a forward deployed engineer: embedded with your team, shipping agents, MCP integrations, and LLM features to production. Fractional retainer or fixed-scope pilot. Bengaluru, India — worldwide remote."
+        "title": "AI Consultant & Forward Deployed Engineer | Rohit Raj",
+        "description": "Hire Rohit Raj, an AI consultant and forward deployed engineer in Bengaluru. Production agents, MCP integrations and LLM features, with evals and code ownership."
     },
     "about": {
-        "title": "About | Rohit Raj",
-        "description": "Rohit Raj — backend + AI systems builder."
+        "title": "About: AI Consultant and Forward Deployed Engineer",
+        "description": "Meet Rohit Raj, an AI consultant and forward deployed engineer in Bengaluru. Explore his engineering background, production projects and approach."
     },
     "contact": {
         "title": "Contact | Rohit Raj",
         "description": "Get in touch — Email, LinkedIn, GitHub."
     },
     "projects": {
-        "title": "Projects | Rohit Raj",
-        "description": "Active projects and systems being built — CommCheck Processor, TripSmart AI, and more."
+        "title": "AI Projects and Engineering Case Studies",
+        "description": "Explore AI agents, mobile apps and production systems built by Rohit Raj. Read architecture decisions, source code and engineering case studies."
     },
     "repos": {
-        "title": "Repositories | Rohit Raj",
-        "description": "Curated list of repositories with context for why each exists."
+        "title": "Open-Source AI and Software Repositories",
+        "description": "Browse Rohit Raj's open-source repositories, with context on the AI systems, mobile apps and engineering tools behind each project."
     },
     "notes": {
-        "title": "Engineering Notes | Rohit Raj",
-        "description": "Public engineering notes from active repositories and open-source contributions."
+        "title": "AI Engineering Guides and Notes",
+        "description": "Read practical guides on AI agents, MCP, local models and software architecture, plus comparisons for founders building and hiring engineers."
     }
 }

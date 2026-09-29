@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const buildingMultilanguageReactNativeAppExpo: BlogPost = {
   slug: 'building-multilanguage-react-native-app-expo',
+  updated: "2026-09-29",
+  seoTitle: "Multi-Language React Native App with Expo",
+  seoDescription: "Explore SanatanApp's multi-language React Native architecture with Expo. Review localization, content organization and mobile implementation choices.",
   title: 'Building a Multi-Language React Native App with Expo SDK 52 — SanatanApp Architecture',
   date: '2026-04-05',
   excerpt: 'How I architected a 5-language devotional app with bundled JSON content, offline-first storage, and expo-av audio streaming — shipping to Play Store at ~15MB.',

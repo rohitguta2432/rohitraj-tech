@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const gemini36FlashVs35FlashLiteGuide2026: BlogPost = {
   slug: 'gemini-3-6-flash-vs-3-5-flash-lite-guide-2026',
+  updated: "2026-09-29",
+  seoTitle: "Gemini 3.6 Flash vs 3.5 Flash-Lite (2026)",
+  seoDescription: "Compare Gemini 3.6 Flash and 3.5 Flash-Lite by pricing and workload fit. Understand the tradeoffs before changing a production model.",
   title:
     'Gemini 3.6 Flash vs 3.5 Flash-Lite: Which One to Ship — and the Price Hike Nobody Leads With (2026)',
   date: '2026-07-23',

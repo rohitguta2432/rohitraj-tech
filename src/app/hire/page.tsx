@@ -9,7 +9,7 @@ import { createPageMetadata, SITE_CONFIG } from "@/lib/seo-config";
 export async function generateMetadata() {
     return createPageMetadata(
         "Hire an AI Consultant · Forward Deployed Engineer | Rohit Raj",
-        "Hire an AI consultant who works as a forward deployed engineer — embedded in your team, shipping agents, MCP integrations, and LLM features to production. Fractional retainer or fixed-scope pilot. India-based, remote worldwide.",
+        "Hire Rohit Raj for production AI agents, MCP integrations and LLM features. Embedded engineering on a fractional retainer or fixed-scope pilot, worldwide.",
         "/hire",
         { translated: false }
     );
@@ -224,7 +224,7 @@ export default async function HirePage() {
                             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1rem" }}>
                                 <div style={card}>
                                     <div style={{ color: "var(--text-primary)", fontWeight: 600, fontSize: "1.1rem", marginBottom: "0.5rem" }}>
-                                        Fractional retainer
+                                        <Link href="/services/fractional-forward-deployed-engineer">Fractional forward deployed engineer</Link>
                                     </div>
                                     <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, margin: 0 }}>
                                         Fixed days each week — typically two — embedded with your team on an
@@ -233,7 +233,7 @@ export default async function HirePage() {
                                 </div>
                                 <div style={card}>
                                     <div style={{ color: "var(--text-primary)", fontWeight: 600, fontSize: "1.1rem", marginBottom: "0.5rem" }}>
-                                        Fixed-scope pilot
+                                        <Link href="/services/forward-deployed-engineer">Forward deployed engineering pilot</Link>
                                     </div>
                                     <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, margin: 0 }}>
                                         One defined outcome — an agent, an MCP integration, an LLM feature —

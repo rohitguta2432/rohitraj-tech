@@ -17,8 +17,8 @@ import type { Metadata } from "next";
 const PAGE_PATH = '/reliability/load-testing';
 const DATE_PUBLISHED = '2026-01-31';
 const DATE_MODIFIED = '2026-04-24';
-const SEO_TITLE = 'k6 Load Testing for Spring Boot & Node.js APIs (2026 Guide) | Rohit Raj';
-const SEO_DESCRIPTION = 'Validate system capacity under real traffic with k6. Ramping, soak, and spike tests for REST and Kafka-backed APIs — the exact scripts I run before every production deploy in 2026.';
+const SEO_TITLE = "k6 Load Testing for Spring Boot and Node.js";
+const SEO_DESCRIPTION = "Validate API capacity with k6 ramping, soak and spike tests. Review production load-testing patterns for REST and Kafka-backed systems.";
 const SEO_KEYWORDS = [
     'k6 load testing spring boot',
     'k6 load testing tutorial 2026',

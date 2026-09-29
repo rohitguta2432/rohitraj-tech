@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const deepseekV4VisionCheapestMultimodalApi2026: BlogPost = {
     slug: 'deepseek-v4-vision-cheapest-multimodal-api-2026',
+  updated: "2026-09-29",
+    seoTitle: "DeepSeek V4 Vision: Multimodal API Guide",
+    seoDescription: "Review DeepSeek V4 Vision for multimodal applications. Explore pricing, integration and the tradeoffs of adding image understanding to an app.",
     title: 'DeepSeek V4 Vision: The Cheapest Multimodal API to Ship in Production (2026)',
     date: '2026-06-20',
     excerpt:
@@ -16,7 +19,7 @@ export const deepseekV4VisionCheapestMultimodalApi2026: BlogPost = {
         'deepseek vision vs gpt claude gemini',
         'how to use deepseek vision api',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/deepseek-v4-vision-cheapest-multimodal-api-2026-cover.jpg',
         alt: 'A glowing multi-faceted crystal lens refracting a spectrum of light illustrating DeepSeek V4 Vision cheap multimodal AI',

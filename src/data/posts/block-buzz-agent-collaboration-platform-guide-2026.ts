@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const blockBuzzAgentCollaborationPlatformGuide2026: BlogPost = {
     slug: 'block-buzz-agent-collaboration-platform-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "Block Buzz: Self-Hosted Agent Workspace Guide",
+    seoDescription: "Explore Block's Buzz as a shared workspace for AI agents. Review self-hosting, coordination and how agent activity becomes visible to a team.",
     title: "Block's Buzz (2026 Guide): Self-Host the Workspace Where AI Agents Are Teammates, Not Bots",
     date: '2026-07-24',
     excerpt:
@@ -118,7 +121,7 @@ None of these are design flaws — they're the honest cost of a three-day-old pl
         },
         {
             heading: "How I'd ship Buzz in production (and what the README won't tell you)",
-            content: `Here's what I'd actually build with it — and the wiring the launch posts skip. My use case: I run a fleet of Claude Code pipelines ([an autonomous 6-stage dev pipeline](/ai-projects), a freelance-lead hunter, a daily content shipper) that currently coordinate through files, cron logs, and a dashboard. Buzz is the missing coordination room: each pipeline becomes a channel member whose runs, patches, and failures land as signed, searchable events — so "which agent broke what overnight" becomes one query instead of four log greps.
+            content: `Here's what I'd actually build with it — and the wiring the launch posts skip. My use case: I run a fleet of Claude Code pipelines ([an autonomous 8-stage dev pipeline](/projects/claude-autodev), a freelance-lead hunter, a daily content shipper) that currently coordinate through files, cron logs, and a dashboard. Buzz is the missing coordination room: each pipeline becomes a channel member whose runs, patches, and failures land as signed, searchable events — so "which agent broke what overnight" becomes one query instead of four log greps.
 
 But the same week's [OpenAI–Hugging Face incident](https://simonwillison.net/2026/Jul/22/openai-cyberattack/) — where an agent chained a package-registry-proxy zero-day into internet access, credential harvesting, and lateral movement across production clusters — dictates the hardening checklist for *any* agents-as-members platform:
 

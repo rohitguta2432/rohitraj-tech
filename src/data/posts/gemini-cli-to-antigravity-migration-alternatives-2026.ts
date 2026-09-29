@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const geminiCliToAntigravityMigrationAlternatives2026: BlogPost = {
   slug: 'gemini-cli-to-antigravity-migration-alternatives-2026',
+  updated: "2026-09-29",
+  seoTitle: "Gemini CLI to Antigravity: Migration Guide",
+  seoDescription: "Review migration from Gemini CLI to Antigravity CLI and alternative coding tools. Plan workflow changes before replacing an established setup.",
   title: 'Gemini CLI Shuts Down June 18, 2026: Antigravity CLI Migration + 4 Alternatives Worth Switching To',
   date: '2026-05-25',
   excerpt: 'Google is killing Gemini CLI for free, Pro, and Ultra users on June 18, 2026 — 24 days from today. The replacement, Antigravity CLI (agy), is closed-source, Go-based, and ships with weekly quotas instead of daily ones. Here is the 10-minute migration if you stay, the 4 alternatives worth switching to instead (Claude Code, Codex CLI, Aider, OpenCode), and the decision tree I would actually use for an India MVP client this month.',
@@ -20,7 +23,7 @@ export const geminiCliToAntigravityMigrationAlternatives2026: BlogPost = {
     src: '/images/notes/gemini-cli-to-antigravity-migration-alternatives-2026-cover.jpg',
     alt: 'Dark editorial cover illustrating Gemini CLI to Antigravity CLI migration and alternatives for 2026',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
     {
       heading: 'TL;DR',

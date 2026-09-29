@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const secureMcpServerTypescript2026: BlogPost = {
     slug: 'secure-mcp-server-typescript-2026',
+  updated: "2026-09-29",
+    seoTitle: "Build a Secure MCP Server in TypeScript",
+    seoDescription: "Build a TypeScript MCP server with clear security boundaries. Review tool access, input validation and defenses for production agent integrations.",
     title: 'Build a Secure MCP Server in TypeScript: The Post-Copilot Defense Playbook (2026)',
     date: '2026-05-27',
     excerpt: 'Microsoft Copilot Cowork was exfiltrating SharePoint and OneDrive files via a 5-line prompt injection hidden inside an 81-line skill file — and it worked on 5 of 5 trials against Claude Opus 4.7, model-agnostic. Most "build an MCP server" tutorials ship code that has the same hole. This is the secure TypeScript build, end to end, with the defense layer none of the top tutorials include.',
@@ -15,7 +18,7 @@ export const secureMcpServerTypescript2026: BlogPost = {
         'mcp server production checklist',
         'claude skill security',
     ],
-    relatedProject: 'rohitrajTech',
+    relatedProject: "rohitraj-site",
     coverImage: {
         src: '/images/notes/secure-mcp-server-typescript-2026-cover.jpg',
         alt: 'Editorial dark cover illustrating a secure MCP server build in TypeScript with prompt-injection defense layer',

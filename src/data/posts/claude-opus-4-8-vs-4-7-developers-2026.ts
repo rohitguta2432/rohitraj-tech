@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const claudeOpus48Vs47Developers2026: BlogPost = {
     slug: 'claude-opus-4-8-vs-4-7-developers-2026',
+  updated: "2026-09-29",
+    seoTitle: "Claude Opus 4.8 vs 4.7: Developer Guide",
+    seoDescription: "Compare Claude Opus 4.8 with 4.7 for development. Review changes and upgrade considerations before switching a production coding workflow.",
     title: 'Claude Opus 4.8 vs 4.7 for Developers: What Changed and Should You Upgrade (2026)',
     date: '2026-05-28',
     excerpt: 'Anthropic shipped Claude Opus 4.8 on May 28, 2026 — agentic coding jumps 64.3% to 69.2%, it is around 4x less likely to let a code flaw pass unremarked, and pricing is unchanged at $5/$25 per million tokens. Here is the developer-only breakdown: the confirmed benchmark deltas, the code changes to make, where it actually beats 4.7, and the one reason you might wait.',
@@ -15,7 +18,7 @@ export const claudeOpus48Vs47Developers2026: BlogPost = {
         'claude opus 4.8 migration',
         'claude opus 4.8 release',
     ],
-    relatedProject: 'rohitrajTech',
+    relatedProject: "rohitraj-site",
     coverImage: {
         src: '/images/notes/claude-opus-4-8-vs-4-7-developers-2026-cover.jpg',
         alt: 'Editorial dark cover with glowing hourglass illustrating Claude Opus 4.8 vs 4.7 upgrade decision for developers',

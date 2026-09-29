@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const officecliAiAgentsOfficeFilesGuide2026: BlogPost = {
     slug: 'officecli-ai-agents-office-files-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "OfficeCLI: Office Files for AI Agents",
+    seoDescription: "Explore OfficeCLI for AI agents working with Word, Excel and PowerPoint. Review document control, integration and practical workflow choices.",
     title: 'OfficeCLI: Give AI Agents Real Control of Word, Excel & PowerPoint (2026 Guide)',
     date: '2026-07-08',
     excerpt:
@@ -17,7 +20,7 @@ export const officecliAiAgentsOfficeFilesGuide2026: BlogPost = {
         'python-docx alternative',
         'ai edit powerpoint files',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/officecli-ai-agents-office-files-guide-2026-cover.jpg',
         alt: 'A luminous robotic hand arranging floating translucent glass document panels, illustrating an AI agent editing Office files with OfficeCLI in 2026',

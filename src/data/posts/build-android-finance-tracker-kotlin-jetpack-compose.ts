@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const buildAndroidFinanceTrackerKotlinJetpackCompose: BlogPost = {
   slug: 'build-android-finance-tracker-kotlin-jetpack-compose',
+  updated: "2026-09-29",
+  seoTitle: "Android Finance Tracker: Kotlin and SMS Import",
+  seoDescription: "Build an Android finance tracker with Kotlin and Jetpack Compose. Explore SMS transaction import, local data handling and application architecture.",
   title: 'Building an Android Finance Tracker with SMS Auto-Import — Kotlin + Jetpack Compose',
   date: '2026-04-15',
   excerpt: 'How I built FinBaby — an offline Android app that reads bank SMS messages, auto-categorizes transactions, and provides 50/30/20 budgeting for Indian middle-class families.',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const iBuiltMultiTenantSaasAlone12ModuleSpringBoot: BlogPost = {
   slug: 'i-built-multi-tenant-saas-alone-12-module-spring-boot',
+  updated: "2026-09-29",
+  seoTitle: "Building a 12-Module SaaS as a Solo Engineer",
+  seoDescription: "Explore the architecture behind a solo-built, 12-module SaaS platform. Review boundaries and engineering choices that make the system manageable.",
   title: 'I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\'s the Architecture That Made It Possible.',
   date: '2026-04-14',
   excerpt: 'The SaaS market hits $465B in 2026 and 70% of vendors use multi-tenancy. I built RetailOS — a 12-module Spring Boot monorepo with billing, inventory, GST invoicing, khata ledger, and offline sync — as a solo engineer. Here\'s every architecture decision.',

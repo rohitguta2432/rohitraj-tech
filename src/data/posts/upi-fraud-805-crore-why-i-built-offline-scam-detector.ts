@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const upiFraud805CroreWhyIBuiltOfflineScamDetector: BlogPost = {
   slug: 'upi-fraud-805-crore-why-i-built-offline-scam-detector',
+  updated: "2026-09-29",
+  seoTitle: "Why I Built an Offline UPI Scam Detector",
+  seoDescription: "Explore the motivation and design behind an offline UPI scam detector. Learn how on-device analysis supports fraud checks without internet access.",
   title: '₹805 Crore Lost to UPI Fraud This Year. I Built an Offline Scam Detector That Needs Zero Internet.',
   date: '2026-04-16',
   excerpt: '1 in 5 Indian families have been hit by UPI fraud. 51% never report it. Cloud-based scam checkers need internet — exactly what victims in Tier 2/3 India don\'t have. Here\'s why I built ScamRakshak with zero network permissions.',

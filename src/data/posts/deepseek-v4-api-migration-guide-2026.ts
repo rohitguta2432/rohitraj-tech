@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const deepseekV4ApiMigrationGuide2026: BlogPost = {
     slug: 'deepseek-v4-api-migration-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "DeepSeek V4 API Migration Guide (2026)",
+    seoDescription: "Migrate from legacy DeepSeek model names to V4 endpoints. Review request changes, reasoning behavior and cost pitfalls before a production cutover.",
     title: 'DeepSeek V4 API Migration Guide: What Breaks on July 24, 2026 (and the 10-Minute Fix)',
     date: '2026-07-13',
     excerpt:

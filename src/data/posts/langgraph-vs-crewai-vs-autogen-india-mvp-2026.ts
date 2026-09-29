@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const langgraphVsCrewaiVsAutogenIndiaMvp2026: BlogPost = {
   slug: 'langgraph-vs-crewai-vs-autogen-india-mvp-2026',
+  updated: "2026-09-29",
+  seoTitle: "LangGraph vs CrewAI vs AutoGen for MVPs",
+  seoDescription: "Compare LangGraph, CrewAI and AutoGen for multi-agent MVPs. Review orchestration, production pitfalls and cost tradeoffs for an India startup.",
   title: 'LangGraph vs CrewAI vs AutoGen: Which Multi-Agent Framework Wins for India MVPs in 2026',
   date: '2026-05-18',
   excerpt: 'LangGraph, CrewAI, and AutoGen all promise the same thing — orchestrate three or four LLM calls into something that feels like an agent. Real cost, real latency, and real failure modes split them sharply once you ship. Here is which one survives a 200-user India MVP, which one bankrupts you, and which one I have spent ₹40K of OpenAI credits learning to avoid.',
@@ -16,7 +19,7 @@ export const langgraphVsCrewaiVsAutogenIndiaMvp2026: BlogPost = {
     'multi-agent rag india',
     'hire ai engineer multi-agent india',
   ],
-  relatedProject: 'rag-for-sql',
+  relatedProject: "stellarmind",
   coverImage: {
     src: '/images/notes/langgraph-vs-crewai-vs-autogen-india-mvp-2026-cover.jpg',
     alt: 'Topographic contour lines glowing on a dark surface illustrating LangGraph vs CrewAI vs AutoGen multi-agent framework comparison',
@@ -32,7 +35,7 @@ Skip multi-agent entirely if a single GPT-4o call with three tool definitions do
       heading: 'LangGraph vs CrewAI vs AutoGen — The Honest Answer Before You Pip Install',
       content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
-If you are picking a multi-agent framework for an India MVP in 2026, the honest answer is LangGraph for anything that will see real users, CrewAI for a 30-day prototype, and AutoGen almost never. I have shipped agent systems on all three across four client projects in the last 18 months — a Sanskrit-to-SQL RAG pipeline ([rag-for-sql](/projects)), an enterprise deal-matching engine on Spring Boot, an on-device scam detector, and a finance research assistant inside [myFinancial](/en). The frameworks are not equivalent; they fail in very different ways at very different price points.
+If you are picking a multi-agent framework for an India MVP in 2026, the honest answer is LangGraph for anything that will see real users, CrewAI for a 30-day prototype, and AutoGen almost never. I have shipped agent systems on all three across four client projects in the last 18 months — a Sanskrit-to-SQL RAG pipeline ([StellarMIND](/projects/stellarmind)), an enterprise deal-matching engine on Spring Boot, an on-device scam detector, and a finance research assistant inside [MyFinancial](/projects/myfinancial). The frameworks are not equivalent; they fail in very different ways at very different price points.
 
 The cost math nobody runs before they start is this: a two-agent CrewAI loop on GPT-4o that retries 3 times on a malformed JSON output burns roughly 18,000 tokens per user request. At ₹0.85 per 1K input tokens, that is ₹15.30 per request. A LangGraph state machine doing the same work with a structured-output node and one retry burns 4,500 tokens — about ₹3.80. At 200 requests per day, that is the difference between ₹2,280 per month and ₹9,180 per month in pure inference cost, before infra. India MVPs die on this kind of math.
 

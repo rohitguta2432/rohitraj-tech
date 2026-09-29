@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const openrouterVsLitellmVsPortkeyIndiaMvp2026: BlogPost = {
   slug: 'openrouter-vs-litellm-vs-portkey-india-mvp-2026',
+  updated: "2026-09-29",
+  seoTitle: "OpenRouter vs LiteLLM vs Portkey (2026)",
+  seoDescription: "Compare OpenRouter, LiteLLM and Portkey for an AI MVP. Review model routing, hosting and cost tradeoffs before choosing an LLM gateway.",
   title: 'OpenRouter vs LiteLLM vs Portkey: Which LLM Gateway for Your AI MVP? (2026)',
   date: '2026-05-31',
   excerpt: "OpenRouter raised a $113M Series B on May 28, 2026 (led by CapitalG) — proof the LLM-gateway layer is now core infrastructure. But which one belongs in your AI MVP: OpenRouter's hosted marketplace, LiteLLM's self-hosted proxy, or Portkey's observability gateway? Here's the real cost math in ₹ and $, the minimal config for each, and the decision rule I use when wiring a gateway into a 6-week build.",
@@ -19,7 +22,7 @@ export const openrouterVsLitellmVsPortkeyIndiaMvp2026: BlogPost = {
     src: '/images/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026-cover.jpg',
     alt: 'Glowing hourglass in teal and violet illustrating OpenRouter vs LiteLLM vs Portkey LLM gateway choice',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
     {
       heading: 'TL;DR',

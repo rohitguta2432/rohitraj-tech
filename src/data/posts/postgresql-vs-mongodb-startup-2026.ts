@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const postgresqlVsMongodbStartup2026: BlogPost = {
   slug: 'postgresql-vs-mongodb-startup-2026',
+  updated: "2026-09-29",
+  seoTitle: "PostgreSQL vs MongoDB for Startups (2026)",
+  seoDescription: "Compare PostgreSQL and MongoDB for a startup. Review data models, queries and operational tradeoffs before choosing your application's database.",
   title: 'PostgreSQL vs MongoDB: Which Database for Your Startup? (2026)',
   date: '2026-04-05',
   excerpt: 'A practical comparison of PostgreSQL and MongoDB for startups — when to use each, real performance numbers, and why most startups should just pick Postgres.',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const vibethinker3bTinyReasoningModelGuide2026: BlogPost = {
     slug: 'vibethinker-3b-tiny-reasoning-model-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "VibeThinker-3B: Small Reasoning Model Guide",
+    seoDescription: "Explore VibeThinker-3B and its reasoning model approach. Review benchmark claims and the tradeoffs of using a small model for complex tasks.",
     title: 'VibeThinker-3B: A 3B Reasoning Model That Rivals 671B Giants (2026)',
     date: '2026-06-21',
     excerpt:
@@ -16,7 +19,7 @@ export const vibethinker3bTinyReasoningModelGuide2026: BlogPost = {
         'vibethinker vs deepseek',
         'tiny reasoning model ollama',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/vibethinker-3b-tiny-reasoning-model-guide-2026-cover.jpg',
         alt: 'A tiny radiant crystalline core emitting an enormous particle constellation illustrating VibeThinker-3B small reasoning model',

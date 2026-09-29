@@ -2,9 +2,11 @@ import type { BlogPost } from '@/types/blog';
 
 export const hireTechnicalCofounderIndia2026: BlogPost = {
   slug: 'hire-technical-cofounder-india-2026',
+  seoTitle: "Hire a Technical Co-Founder in India",
+  seoDescription: "Review costs, equity and alternatives when hiring a technical co-founder in India. Decide what technical ownership your startup needs first.",
   title: 'Hire Technical Co-Founder India 2026 — Cost, Equity, Alternative',
   date: '2026-05-01',
-  updated: '2026-05-16',
+  updated: "2026-09-29",
   excerpt:
     'Technical co-founders in India cost 25-50% equity and 6-12 months to find. Here are the 2026 numbers, the 4-year dilution math, and the contrarian case that most pre-seed founders should hire a senior contractor first and a co-founder never.',
   readingTime: '11 min read',
@@ -22,7 +24,7 @@ export const hireTechnicalCofounderIndia2026: BlogPost = {
     src: '/images/notes/hire-technical-cofounder-india-2026-cover.jpg',
     alt: 'Abstract editorial cover illustrating Hire Technical Co-Founder India 2026',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
     {
       heading: 'TL;DR',

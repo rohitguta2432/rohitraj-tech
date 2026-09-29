@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const qwen3827bLocalCodingAgentClaudeCode2026: BlogPost = {
   slug: 'qwen3-8-27b-local-coding-agent-claude-code-2026',
+  updated: "2026-09-29",
+  seoTitle: "Qwen3.8-27B: Local Coding Agent Setup",
+  seoDescription: "Set up Qwen3.8-27B as a local coding agent. Review memory needs, quantization choices and how to connect the model to Claude Code workflows.",
   title:
     'Qwen3.8-27B as Your Local Coding Agent: 24GB Setup, Quant Pick, and Claude Code Wiring (2026)',
   date: '2026-08-24',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const whatsappBusinessApiIntegrationGuideIndia: BlogPost = {
   slug: 'whatsapp-business-api-integration-guide-india',
+  updated: "2026-09-29",
+  seoTitle: "WhatsApp Business API Integration in India",
+  seoDescription: "Integrate the WhatsApp Business API into an Indian startup's workflow. Review architecture and practical considerations for business messaging.",
   title: 'WhatsApp Business API Integration Guide for Indian Startups',
   date: '2026-04-05',
   excerpt: 'A practical guide to integrating WhatsApp Business API for Indian startups — providers, costs, message templates, and building automated bots that actually convert.',

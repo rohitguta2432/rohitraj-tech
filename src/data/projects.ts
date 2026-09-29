@@ -4,6 +4,9 @@ export type { Project } from '@/types/project';
 export const projects: Project[] = [
     {
         slug: "myfinancial",
+        updated: "2026-09-29",
+        seoTitle: "MyFinancial: Private Personal Finance Advisor",
+        seoDescription: "Explore MyFinancial, a privacy-first finance app for India with local data storage, financial planning and a guided advisory workflow.",
         name: "MyFinancial — Personal Financial Advisor",
         problem: "Financial planning in India is fragmented across banks, insurance, and tax documents. Most tools require sharing sensitive data with third parties.",
         solves: "Privacy-first PWA that consolidates financial data locally via a 6-step wizard — Profile, Income, Assets, Liabilities, Insurance, Tax — with real-time advisory metrics like Financial Runway and Savings Rate.",
@@ -48,6 +51,9 @@ export const projects: Project[] = [
     },
     {
         slug: "propcheck",
+        updated: "2026-09-29",
+        seoTitle: "PropCheck: AI Property Trust Scores for India",
+        seoDescription: "Explore PropCheck's property trust scoring for India. Review the listing checks, AI architecture and engineering decisions behind the project.",
         name: "PropCheck — AI Property Trust Score for India",
         problem: "Indian property buyers lose lakhs to fraudulent listings on Magicbricks, 99acres, Housing.com, and NoBroker. Fake RERA numbers, recycled stock photos, and inflated pricing slip past buyers because no neutral tool exists to verify a listing in seconds.",
         solves: "Paste any listing URL — the AI engine extracts the page (with an LLM parsing fallback when scrapers hit SPAs or rate-limit walls), cross-checks 8 trust signals against Karnataka RERA, a locality price index, and a perceptual-image database, and returns a 0–100 Trust Score with explainable red flags in 30 seconds. Free for buyers. API tier for lenders.",
@@ -97,6 +103,9 @@ export const projects: Project[] = [
     },
     {
         slug: "stellarmind",
+        updated: "2026-09-29",
+        seoTitle: "StellarMIND: Chat-to-SQL with RAG",
+        seoDescription: "Explore StellarMIND, a Spring Boot text-to-SQL system using pgvector and MCP. Review schema retrieval, query generation and architecture tradeoffs.",
         name: "StellarMIND — Chat-to-SQL with RAG",
         problem: "Business users need to query databases without knowing SQL. Existing tools lack context-aware query generation and safety guarantees.",
         solves: "Spring Boot MCP server that converts natural language questions into read-only SQL using LLM with retrieval-augmented context from pgvector.",
@@ -134,6 +143,9 @@ export const projects: Project[] = [
     },
     {
         slug: "clinicai",
+        updated: "2026-09-29",
+        seoTitle: "ClinicAI: WhatsApp Clinic Assistant",
+        seoDescription: "Explore ClinicAI, a WhatsApp assistant for Indian clinics built with Spring Boot and Twilio. Review its booking workflow and integration design.",
         name: "ClinicAI — WhatsApp AI Clinic Assistant",
         problem: "India has 12 lakh+ small clinics running on phone calls and paper diaries. Patients call multiple times to confirm, double bookings happen daily, and revenue leaks through manual invoicing.",
         solves: "WhatsApp-first AI assistant that handles appointment booking, reminders, and patient management for small clinics — in Hindi and English. No app downloads needed.",
@@ -178,6 +190,9 @@ export const projects: Project[] = [
     },
     {
         slug: "microitinerary",
+        updated: "2026-09-29",
+        seoTitle: "MicroItinerary: AI Travel Planner",
+        seoDescription: "Explore MicroItinerary's AI travel planning architecture. Review the React and Spring Boot stack, itinerary workflow and engineering tradeoffs.",
         name: "MicroItinerary — AI Travel Planner",
         problem: "Travel apps optimize for proximity and ratings. They don't consider human energy levels, group dynamics, or intelligent budget allocation.",
         solves: "AI-powered PWA that generates personalized annual travel itineraries with intelligent destination suggestions, cost estimation in INR, and Splitwise-style expense splitting.",
@@ -223,6 +238,9 @@ export const projects: Project[] = [
     },
     {
         slug: "sanatanapp",
+        updated: "2026-09-29",
+        seoTitle: "SanatanApp: Hindu Devotional App",
+        seoDescription: "Explore SanatanApp, a React Native devotional app. Review multi-language content, audio playback and the architecture behind its mobile release.",
         name: "SanatanApp — Hindu Devotional App",
         problem: "Devotional users in India juggle 5+ separate apps for Chalisa, Gita, Aarti, Ramayan, and Mahabharat. Most are ad-heavy, poorly designed, and lack multi-language support.",
         solves: "All-in-one Android app to read and listen to Ramayan, Mahabharat, Hanuman Chalisa, Bhagavad Gita, and Aartis — in Hindi, English, Sanskrit, Tamil, and Telugu. No login, no backend, no ads during prayers.",
@@ -266,6 +284,9 @@ export const projects: Project[] = [
     },
     {
         slug: "synflow",
+        updated: "2026-09-29",
+        seoTitle: "SynFlow: Enterprise Intelligence Platform",
+        seoDescription: "Explore SynFlow's enterprise intelligence and deal-matching platform. Review its Spring Boot, Next.js and AI integration architecture.",
         name: "SynFlow — Enterprise Intelligence Platform",
         problem: "Private deal networks rely on manual introductions and spreadsheets. Matching the right profile to the right deal is slow, subjective, and misses opportunities.",
         solves: "Full-stack intelligence platform that matches deals to profiles using rule-based scoring across industry, expertise, and geography — with AI-powered profile extraction from LinkedIn and website text.",
@@ -305,6 +326,9 @@ export const projects: Project[] = [
     },
     {
         slug: "finbaby",
+        updated: "2026-09-29",
+        seoTitle: "FinBaby: Android Personal Finance Tracker",
+        seoDescription: "Explore FinBaby, an Android personal finance tracker with SMS transaction import. Review Kotlin, Jetpack Compose and local data handling.",
         name: "FinBaby (Jama) — Personal Finance Tracker",
         problem: "Indian middle-class families track expenses across UPI apps, bank statements, and paper notebooks. No single tool auto-imports bank SMS, categorizes spending, and provides actionable savings advice — without cloud dependency.",
         solves: "Android app that reads bank SMS messages, auto-categorizes transactions, provides 50/30/20 budgeting, smart saving tips, and beautiful reports — all stored locally on the device.",
@@ -345,6 +369,9 @@ export const projects: Project[] = [
     },
     {
         slug: "retailos",
+        updated: "2026-09-29",
+        seoTitle: "RetailOS: Multi-Tenant Retail SaaS",
+        seoDescription: "Explore RetailOS, a multi-tenant retail SaaS platform. Review its Spring Boot modules, inventory workflows and tenant isolation architecture.",
         name: "RetailOS — Multi-Tenant Retail SaaS",
         problem: "Indian kirana stores and small retailers use paper registers or basic billing software with no inventory tracking, no GST compliance, and no offline support. Enterprise POS systems are too expensive and complex.",
         solves: "India-first multi-tenant retail SaaS platform with billing, inventory, GST invoicing, khata (credit ledger), offline sync, and analytics — all in one platform with complete tenant isolation.",
@@ -386,6 +413,9 @@ export const projects: Project[] = [
     },
     {
         slug: "triphive",
+        updated: "2026-09-29",
+        seoTitle: "TripHive: Offline Collaborative Trip Planner",
+        seoDescription: "Explore TripHive's offline-first trip planning architecture. Review collaborative workflows, local data storage and synchronization choices.",
         name: "TripHive — Offline-First Collaborative Trip Planner",
         problem: "Group trip planning is fragmented across WhatsApp, Google Docs, Maps, Splitwise, and email. Nothing talks to each other, and every app breaks the moment you lose WiFi — exactly when you need it most.",
         solves: "One offline-first app that combines collaborative itineraries, interactive offline maps, expense splitting, group polls, and packing lists — anyone can join with just a link, no login required.",
@@ -427,6 +457,9 @@ export const projects: Project[] = [
     },
     {
         slug: "scamrakshak",
+        updated: "2026-09-29",
+        seoTitle: "ScamRakshak: On-Device AI Scam Detection",
+        seoDescription: "Explore ScamRakshak, an Android scam detector using on-device AI. Review offline inference, privacy boundaries and the fallback detection design.",
         name: "ScamRakshak — On-Device AI Scam Detector",
         problem: "Indians lose thousands of crores annually to digital scams via WhatsApp, SMS, and social media. Existing solutions require internet, collect user data, or lack Indian language support.",
         solves: "Fully offline Android app that analyzes suspicious messages, screenshots, URLs, and UPI IDs using a 3-tier on-device AI engine — with bilingual explanations in Hindi and English. Zero data collection, zero internet required.",
@@ -468,6 +501,9 @@ export const projects: Project[] = [
     },
     {
         slug: "paisaguard",
+        updated: "2026-09-29",
+        seoTitle: "PaisaGuard: Offline Family Budget App",
+        seoDescription: "Explore PaisaGuard's offline family budgeting app. Review its Kotlin architecture, financial modules and local-first data handling.",
         name: "PaisaGuard — Family Budget Survival App",
         problem: "Middle-class families worldwide track expenses inconsistently — UPI apps show transactions but don't enforce budgets. No tool combines expense tracking, grocery budgeting, bill calendars, debt management, and family splitting in one offline app.",
         solves: "Privacy-first, fully offline Android app with 8 financial modules: expense tracking, grocery budget mode, bill calendar, emergency fund tracker, debt snowball, affordability calculator, family expense splitting, and auto-generated monthly reports.",
@@ -510,6 +546,9 @@ export const projects: Project[] = [
     },
     {
         slug: "rohitraj-site",
+        updated: "2026-09-29",
+        seoTitle: "rohitraj.tech: Engineering Portfolio Architecture",
+        seoDescription: "Explore the architecture of rohitraj.tech, a Next.js engineering portfolio with project case studies, technical notes and AWS Amplify hosting.",
         name: "rohitraj.tech",
         problem: "Engineering work is often invisible. Portfolios show polished results but not the thinking behind them.",
         solves: "A living project directory that documents problems, trade-offs, and architectural decisions in real-time.",
@@ -544,6 +583,9 @@ export const projects: Project[] = [
     },
     {
         slug: "agent-autopsy",
+        updated: "2026-09-29",
+        seoTitle: "Agent Autopsy: Debug Failed AI Agent Runs",
+        seoDescription: "Explore Agent Autopsy, a forensic debugger for failed agent runs. Review its failure classification, local model integration and Next.js architecture.",
         name: "Agent Autopsy — Forensic Debugger for Failed AI Agent Runs",
         problem: "Most AI agent failures are silent — the run completes, the status code is green, and the result is still wrong. Observability platforms show you the trace, but never the cause of death.",
         solves: "Paste a dead agent's transcript (JSON, JSONL, or raw logs) and get an instant forensic report that names the failure signature — death loop, error blindness, ghost tool, flatline, or context bloat — plus a local-LLM pathologist's note for deeper root cause. 100% local; nothing leaves your machine.",
@@ -582,6 +624,9 @@ export const projects: Project[] = [
     },
     {
         slug: "tinyvoice",
+        updated: "2026-09-29",
+        seoTitle: "tinyvoice: Fine-Tune a Model in Your Own Voice",
+        seoDescription: "Explore tinyvoice's local model fine-tuning workflow. Review MLX LoRA training and a comparison interface for testing a model in your own voice.",
         name: "tinyvoice — Fine-Tune a Model in Your Own Voice in an Afternoon",
         problem: "Training your own language model sounds like a PhD job that needs a GPU cluster, so most developers never try. The tooling looks intimidating from the outside.",
         solves: "A 0.5B-parameter model fine-tuned to write in my voice — trained in about three minutes on a laptop, on 28 of my own posts, with no GPU and no cloud. A side-by-side web UI streams the stock model against the tuned one so you can see exactly what fine-tuning changes.",
@@ -620,6 +665,9 @@ export const projects: Project[] = [
     },
     {
         slug: "snap3d",
+        updated: "2026-09-29",
+        seoTitle: "snap3d: Turn a Photo into an Editable 3D Model",
+        seoDescription: "Explore snap3d, a photo-to-3D project using Claude and Three.js. Review editable model parts, text-based changes and the Node.js implementation.",
         name: "snap3d — One Photo In, an Editable 3D Model Out",
         problem: "A photo shows you one side of an object; the other five sides are a guess. Turning a single 2D image into a usable 3D model normally needs a photogrammetry rig or hours of manual modeling.",
         solves: "Drop one photo and Claude Fable 5 infers depth and hidden geometry, then rebuilds the object as a parametric scene of named parts rendered live in Three.js. Because every part is named, you keep editing in plain English — 'make the wheels huge', 'paint it neon green' — and export to .obj for Blender or Unity.",
@@ -658,6 +706,8 @@ export const projects: Project[] = [
     },
     {
         slug: "agentic-os",
+        seoTitle: "Agentic OS: Visualize Claude Code Skills",
+        seoDescription: "Explore Agentic OS, a force-directed map of Claude Code skills. Review its Next.js interface, skill grouping and interactive graph architecture.",
         name: "Agentic OS — Force-Directed Map of a 387-Skill Claude Code Setup",
         problem: "An agent setup grows one plugin at a time until it has hundreds of skills, and nobody can see what it actually contains. There is no view of which skills overlap, which clusters are overweight, or which ones were hand-written versus pulled in by a marketplace plugin.",
         solves: "Renders every skill in a Claude Code install as a star in a searchable force-directed galaxy — 387 skills across 34 clusters, 67 hand-made and 320 from plugins. Search, filter by cluster, and click any node to read its front-matter. Hand-made skills wear a white ring so authored capability is visually separable from installed capability.",
@@ -667,7 +717,7 @@ export const projects: Project[] = [
         aiApproach: "A generator script walks the local personal skills directory and every installed plugin skill, reads each SKILL.md front-matter, and writes a committed snapshot at data/skills.json. The /api/graph route reshapes that snapshot into nodes, links, categories, and stats at build time — so a deployed build ships the map without ever needing to read a machine-local skills directory.",
         image: "/images/projects/agentic-os-poster.jpg",
         videoUrl: "/videos/agentic-os.mp4",
-        updated: "2026-08-26",
+        updated: "2026-09-29",
         details: {
             businessImpact: "Teams adopting agent tooling install skills and plugins faster than they can audit them, then wonder why the agent picks the wrong one. Agentic OS turns an invisible capability surface into a picture you can point at in a review — what exists, what clusters together, and what nobody wrote on purpose.",
             approach: [
@@ -697,6 +747,8 @@ export const projects: Project[] = [
     },
     {
         slug: "claude-autodev",
+        seoTitle: "claude-autodev: Autonomous Development Pipeline",
+        seoDescription: "Explore claude-autodev's eight-stage development pipeline. Review artifact gates, isolated worktrees and the live dashboard for coding agent runs.",
         name: "claude-autodev — Autonomous 8-Stage Dev Pipeline for Claude Code",
         problem: "Agentic coding tools stop at a diff. Nothing forces a spec to exist before implementation, nothing blocks a run that never wrote a test, and nothing catches a stage that quietly produced no artifact — so failures surface as a plausible-looking PR nobody can trust.",
         solves: "Give it a one-line requirement and a git repo. Eight gated stages — spec, analyze, implement, verify, push, review, test, deploy — each a fresh headless Claude Code session that only advances once it produces the artifact the next stage needs. Work happens in an isolated git worktree; you watch on a live mission-control dashboard and get a PR. Point the daemon at an issue tracker and issues become merged, deployed code.",
@@ -706,7 +758,7 @@ export const projects: Project[] = [
         aiApproach: "Every stage is a separate headless claude -p session with no shared context — the reviewer has never seen the plan, the builder has never seen the acceptance criteria. Advancement is gated on a real artifact check, not a model self-report: spec files non-empty, every checklist box ticked, verify.json PASS, review.json APPROVE, test command exit 0. A runner retries a failed stage a bounded number of times, then parks the run BLOCKED with a written diagnosis. A SQLite registry plus per-run events.jsonl is the source of truth; the dashboard reads both, and run correctness never depends on the server being up.",
         image: "/images/projects/claude-autodev-poster.jpg",
         videoUrl: "/videos/claude-autodev.mp4",
-        updated: "2026-08-26",
+        updated: "2026-09-29",
         details: {
             businessImpact: "The gap between an AI-written diff and shippable software is spec, review, and test discipline — exactly the parts teams skip when the agent looks confident. claude-autodev makes those parts mandatory gates, so an unattended run either produces a reviewed, tested PR or stops with a diagnosis instead of a false green.",
             approach: [
@@ -738,6 +790,8 @@ export const projects: Project[] = [
     },
     {
         slug: "kisansathi",
+        seoTitle: "KisanSathi: Local AI Farm Advisors",
+        seoDescription: "Explore KisanSathi's six AI farming specialists. Review the local-model architecture, regional-language interface and weather and market integrations.",
         name: "KisanSathi — Six AI Farm Experts, Keyless and Local",
         problem: "Farmer-facing AI tools die at the API-key step, answer in English, and hand back generic advice with no live numbers behind it. A smallholder asking when to sell or how to treat yellowing wheat leaves gets a paragraph, not a decision.",
         solves: "Ask one question in Hindi, Hinglish, English, or a regional language — typed or spoken. A router agent picks the right specialist from six, pulls live data its domain needs — real 7-day weather, real mandi prices — and streams back a short, practical answer in the farmer's own language, with a सुनें button that reads it aloud. Runs with zero API keys on a local model.",
@@ -747,7 +801,7 @@ export const projects: Project[] = [
         aiApproach: "One fast router LLM call classifies the question into agent, language, place, and commodity. The chosen specialist — crop advisor, pest and disease, weather and irrigation, mandi price analyst, govt schemes, or soil health — fetches the live data its domain needs and streams a grounded answer token by token. Keyless by default: Ollama locally so nothing leaves the machine, Open-Meteo for forecasts, and the data.gov.in public sample key for daily mandi prices, with an optional Anthropic provider for a hosted model. Mandi lookups degrade gracefully from state plus commodity, to commodity, to latest records. Implements the AgroAskAI multi-agent framework as working open source. Voice runs the same keyless way: browser SpeechRecognition (hi-IN) turns speech into the question, and speechSynthesis reads the answer back, picking a Hindi voice for Devanagari answers — no speech API account, no audio pipeline to host.",
         image: "/images/projects/kisansathi-poster.jpg",
         videoUrl: "/videos/kisansathi.mp4",
-        updated: "2026-08-30",
+        updated: "2026-09-29",
         details: {
             businessImpact: "India has more smallholder farmers than any advisory service can staff, and the ones who need advice most are furthest from a key, a card, or reliable bandwidth. A keyless multi-agent assistant that answers in Hindi with today's mandi price is deployable on a village kiosk, not just a demo laptop.",
             approach: [
@@ -779,6 +833,8 @@ export const projects: Project[] = [
     },
     {
         slug: "marginchef",
+        seoTitle: "MarginChef: Restaurant Margin Analysis",
+        seoDescription: "Explore MarginChef's restaurant margin analysis workflow. Review plate costing, leak detection and local AI recommendations from operational CSV data.",
         name: "MarginChef — AI Agent That Finds a Restaurant's Margin Leaks",
         problem: "Restaurants run on 3-5% net margins while food costs are up roughly 35% since 2019, and most owners never see per-dish economics. The leaks — a bestseller that bleeds, a price that never moved when its ingredients did — hide inside a POS export nobody reads.",
         solves: "Point it at four CSVs exported from any POS or supplier sheet. It costs every plate against live ingredient prices, runs five leak detectors, sorts the menu into Stars, Plowhorses, Puzzles, and Dogs, and returns concrete reprice suggestions plus a five-move action plan ranked by money at stake. Keyless — runs on a local model, and the numbers never leave the machine.",
@@ -788,7 +844,7 @@ export const projects: Project[] = [
         aiApproach: "Deterministic economics first, LLM second. Five rule-based detectors quantify each leak in money terms — high food cost, price lag where plate cost rose at least 5% in 30 days with no menu move, bleeding bestseller, dead weight, and kitchen waste — and each dish keeps only its biggest leak so overlapping detectors never double-count the monthly total. A local Ollama model then writes the ranked action plan on top of those numbers; if Ollama is down it silently falls back to rule-based advice, so the agent always answers.",
         image: "/images/projects/marginchef-poster.jpg",
         videoUrl: "/videos/marginchef.mp4",
-        updated: "2026-08-26",
+        updated: "2026-09-29",
         details: {
             businessImpact: "An independent restaurant losing two points of margin to unrepriced dishes is losing real money every month it goes unnoticed. MarginChef converts a POS export into a ranked list of fixes with a rupee or dollar figure attached to each — the difference between knowing food costs are up and knowing which three dishes to reprice on Monday.",
             approach: [
@@ -820,6 +876,8 @@ export const projects: Project[] = [
     },
     {
         slug: "quorum",
+        seoTitle: "Quorum: Deep Research Agents with GraphRAG",
+        seoDescription: "Explore Quorum's deep-research agent swarm. Review the shared GraphRAG memory, research roles and live graph interface used to coordinate work.",
         name: "Quorum — Deep-Research Agent Swarm with a Shared GraphRAG Brain",
         problem: "Most AI research tools are one model in a loop. It cannot hold a multi-hop question together, it has no second opinion, and vanilla vector RAG fumbles exactly the questions that need relationships rather than similar-looking paragraphs.",
         solves: "Ask a hard question and a swarm answers it together — a Planner splits it, several Researchers work in parallel, a Critic hunts gaps, a Synthesizer writes the grounded answer. They coordinate through one shared knowledge graph they build live, and the UI shows agents lighting up and the graph blooming node by node.",
@@ -829,7 +887,7 @@ export const projects: Project[] = [
         aiApproach: "Agents coordinate through a GraphRAG store rather than by passing blobs of text. Merge-on-write normalizes entity names so two researchers who discover the same thing converge on one node. Retrieval is graph-aware — embed the query, take the top-k nodes, expand to their neighbours, hand the subgraph to the Synthesizer — which is what lets the swarm answer multi-hop questions. Every agent action is an event streamed over SSE, so the interface is a live view of the run. Runs deterministic with zero config for demos, or against Anthropic or a local Ollama model for real research.",
         image: "/images/projects/quorum-poster.jpg",
         videoUrl: "/videos/quorum.mp4",
-        updated: "2026-08-26",
+        updated: "2026-09-29",
         details: {
             businessImpact: "Research questions that matter are multi-hop, and a single-model loop answers them confidently and wrongly. A swarm with an explicit Critic and a shared graph makes the reasoning inspectable — you can see which entity connected to which, and which agent found it.",
             approach: [
@@ -861,6 +919,8 @@ export const projects: Project[] = [
     },
     {
         slug: "regexforge",
+        seoTitle: "RegexForge: Plain English to Tested Regex",
+        seoDescription: "Explore RegexForge, a local AI regex builder. Review live match feedback, generated test cases and exports for multiple programming languages.",
         name: "RegexForge — Plain English to a Regex You Can Trust",
         problem: "Regex is not hard because the syntax is exotic. It is hard because you can never be sure the pattern does what you think — research on regex use names trust, test coverage, and cross-language portability as the real pains. Most AI regex generators print a pattern and wish you luck.",
         solves: "Describe the pattern in plain English and get a regex plus the evidence to trust it: live match highlighting as you type, auto-generated positive and negative test cases that pass or fail against the pattern in real time, a token-by-token breakdown, and one-click export to six languages. Runs fully local on your own LLM.",
@@ -870,7 +930,7 @@ export const projects: Project[] = [
         aiApproach: "The model drafts the pattern; the app proves it. Auto-generated positive and negative examples run live against the candidate regex, so a too-loose pattern is caught the moment it matches something it should not — the LLM is never the last word. Talks to any OpenAI-compatible chat endpoint, defaulting to a local Ollama model so no text and no API key leave the machine, with hosted providers a pure env-var swap.",
         image: "/images/projects/regexforge-poster.jpg",
         videoUrl: "/videos/regexforge.mp4",
-        updated: "2026-08-26",
+        updated: "2026-09-29",
         details: {
             businessImpact: "A wrong regex in a validator or a log parser fails quietly and in production. Shipping the pattern together with generated counter-examples turns a guess into something a reviewer can check in seconds.",
             approach: [
@@ -902,6 +962,8 @@ export const projects: Project[] = [
     },
     {
         slug: "skillet",
+        seoTitle: "Skillet: Turn Documentation into Agent Skills",
+        seoDescription: "Explore Skillet's documentation-to-skill workflow. Review how docs pages and PDFs become installable Claude Code skills using a local model.",
         name: "Skillet — Turn Any Docs Page Into an Installable Claude Code Skill",
         problem: "Agent skills are the fastest way to teach a coding agent a new tool, but writing a good SKILL.md by hand means reading the documentation yourself and distilling it into trigger phrases, usage, recipes, and gotchas. Most people never get past the reading.",
         solves: "Paste a docs URL or drop a PDF and get a complete, ready-to-install SKILL.md streamed live — frontmatter with trigger phrases, core usage, recipes, and gotchas. Download it into the skills directory and the agent knows the tool. Runs entirely on a local model: no API keys, no cloud, no cost.",
@@ -911,7 +973,7 @@ export const projects: Project[] = [
         aiApproach: "Server-side fetch strips a docs page to readable text; PDFs route through a single-file Python backend using pypdf for extraction. A local Ollama model then writes the full SKILL.md — frontmatter, trigger phrases, usage, recipes, gotchas — streamed token by token to the page. Any Ollama chat model works: smaller models cook faster, bigger ones write better skills. Without the optional PDF backend, URL mode still works and PDF requests fail with a clear message rather than silently.",
         image: "/images/projects/skillet-poster.jpg",
         videoUrl: "/videos/skillet.mp4",
-        updated: "2026-08-26",
+        updated: "2026-09-29",
         details: {
             businessImpact: "Every tool a team adopts is a skill nobody has time to write, so agents keep using tools badly. Skillet makes the distillation step a paste-and-download, which is the difference between a team having three good skills and thirty.",
             approach: [
@@ -941,6 +1003,8 @@ export const projects: Project[] = [
     },
     {
         slug: "ladle",
+        seoTitle: "Ladle: Restaurant Prep and Food-Cost Forecasting",
+        seoDescription: "Explore Ladle's open-source restaurant forecasting tools. Review prep planning, food-cost leak detection and the self-hosted Python and web stack.",
         name: "Ladle — Open-Source Prep Forecasting and Food-Cost Leak Detection",
         problem: "Restaurants throw away 4-10% of the food they buy before it reaches a plate, and most owners find out at month end from a food-cost percentage that moved the wrong way, with no idea which ingredient did it. The tools that solve this sit behind a per-location subscription, a sales call, and your data on someone else's servers.",
         solves: "Self-hosted answers to the three questions that matter every morning — how much to prep, what to order, and where food cost is leaking. Point it at any POS export: it ingests sales, trains per-item forecasts, explodes recipes, and compares theoretical against actual usage, priced in your currency. Runs on a laptop or a small VPS. No cloud, no per-site fee, no LLM required.",
@@ -950,7 +1014,7 @@ export const projects: Project[] = [
         aiApproach: "No LLM in the critical path — per-item statistical demand forecasting with a safety margin, then a deterministic four-step loop: ingest sales, forecast demand, explode recipes, compare theoretical versus actual usage. Leaks surface as a ranked board priced in the operator's currency. The bundled demo dataset ships 120 days of sales for a fictional cafe with two planted leaks, so the detection is verifiable rather than asserted.",
         image: "/images/projects/ladle-poster.jpg",
         videoUrl: "/videos/ladle.mp4",
-        updated: "2026-08-26",
+        updated: "2026-09-29",
         details: {
             businessImpact: "Nory, Winnow, Leanpath, MarketMan, and Tenzo solve this problem for restaurants that can afford a per-location subscription. Ladle is the open-source alternative for the ones that cannot — the same three morning answers, self-hosted, with the data staying on the operator's own machine.",
             approach: [
@@ -982,6 +1046,8 @@ export const projects: Project[] = [
     },
     {
         slug: "casita",
+        seoTitle: "Casita: Browser-Based 3D Home Design",
+        seoDescription: "Explore Casita, a browser-based 3D home design tool. Review snapping, furniture placement and video capture in its React Three Fiber architecture.",
         name: "Casita — Design Your Home in 3D in the Browser",
         problem: "Home design tools want an install, a login, or a CAD background. Someone who just wants to see whether a sofa fits has no fast way to lay out a room and look at it.",
         solves: "Drag rooms and furniture onto a live blueprint and watch the home come together in a real 3D scene — 18 pieces, click-to-place on a snapping grid, drag to move, recolor in a click, snapshot to PNG, and record a 15-second orbit video of the result. No install, no login, no backend, nothing leaves the browser.",
@@ -991,7 +1057,7 @@ export const projects: Project[] = [
         aiApproach: "No AI — this one is deliberately a rendering and interaction problem. Every furniture piece is a handful of boxes and cylinders in a readable source file, scenes save to localStorage so nothing leaves the machine, and the 15-second orbit clip is recorded client-side with the native MediaRecorder API rather than a server.",
         image: "/images/projects/casita-poster.jpg",
         videoUrl: "/videos/casita.mp4",
-        updated: "2026-08-26",
+        updated: "2026-09-29",
         details: {
             businessImpact: "The useful version of home design for most people is not CAD — it is five minutes of moving a sofa around before buying it. Casita is that, with a zero-friction path from opening a tab to a shareable orbit video.",
             approach: [
@@ -1023,6 +1089,8 @@ export const projects: Project[] = [
     },
     {
         slug: "voxelforge",
+        seoTitle: "VoxelForge: TypeScript Voxel Sandbox Engine",
+        seoDescription: "Explore VoxelForge's TypeScript and Three.js voxel engine. Review chunked terrain, meshing, procedural textures and the day-night simulation.",
         name: "VoxelForge — A Voxel Sandbox Engine Built Properly",
         problem: "Voxel sandboxes are the demo everyone builds with a coding agent right now, and almost all of them are a throwaway single HTML file that hitches on chunk generation, ships a texture pack, and cannot be read or extended.",
         solves: "A full voxel engine as a structured multi-module TypeScript app — chunked infinite terrain streamed around the camera on a per-frame budget, biomes from layered noise, caves and depth-scaled ore veins, culled-face meshing, a procedural texture atlas painted at boot, first-person movement with swept AABB collision, exact-voxel break and place, and a day-night cycle.",
@@ -1032,7 +1100,7 @@ export const projects: Project[] = [
         aiApproach: "No runtime AI — the interesting work is graphics and systems engineering. Terrain comes from seeded simplex noise with temperature and moisture fields driving biomes; chunk generation runs on a per-frame budget so streaming never hitches; only faces adjacent to air get triangles, with opaque and translucent water meshed separately per chunk; block targeting uses an exact Amanatides-Woo voxel DDA raycast. A cinematic demo mode flies a deterministic camera path and performs scripted world edits, which is how the demo video is recorded unattended.",
         image: "/images/projects/voxelforge-poster.jpg",
         videoUrl: "/videos/voxelforge.mp4",
-        updated: "2026-08-26",
+        updated: "2026-09-29",
         details: {
             businessImpact: "This is the reference answer to a question a lot of engineers are asking right now — what the agent-built demo looks like when it is built as real software instead of a one-file toy. Every subsystem is separated, named, and readable.",
             approach: [
@@ -1066,6 +1134,8 @@ export const projects: Project[] = [
     },
     {
         slug: "prompt-ocean",
+        seoTitle: "prompt-ocean: Describe and Render a Sea",
+        seoDescription: "Explore prompt-ocean, a text-controlled ocean simulation. Review Gerstner waves, shader parameters and the fallback that works without an AI key.",
         name: "prompt-ocean — Type a Sea, Watch It Exist",
         problem: "Generative interfaces usually hand a model the wheel and hope. Let an LLM write shader code or scene state directly and one hallucination breaks the render — which is why most text-to-3D demos snap between presets instead of responding continuously.",
         solves: "Describe the water in plain words — a raging midnight storm, a glassy tropical dawn — and the ocean morphs into it in real time. An AI turns the phrase into physical wave parameters that a Gerstner-wave shader renders on the GPU, and sky, sun, and stars react to the same prompt. Works with no API key out of the box.",
@@ -1075,7 +1145,7 @@ export const projects: Project[] = [
         aiApproach: "The LLM never writes code — it emits roughly twelve clamped numbers against a published parameter contract, and every value is validated before it reaches the renderer, so a hallucinating model cannot break the frame. With Ollama running, a real model interprets the phrase; without it, a zero-dependency rules engine composes the same parameters from regex, so the demo works with no key and no install. Anything that can emit that JSON can drive the ocean, which makes the model swappable by design.",
         image: "/images/projects/prompt-ocean-poster.jpg",
         videoUrl: "/videos/prompt-ocean.mp4",
-        updated: "2026-08-26",
+        updated: "2026-09-29",
         details: {
             businessImpact: "A clean demonstration of the pattern generative interfaces should use: let the model choose parameters inside a validated contract, and let deterministic code own the rendering. The result degrades to a rules engine instead of failing, which is what makes it shippable.",
             approach: [
@@ -1108,6 +1178,8 @@ export const projects: Project[] = [
     },
     {
         slug: "hexapod-sim",
+        seoTitle: "HEXAPOD: Inverse Kinematics and Gait Simulator",
+        seoDescription: "Explore the HEXAPOD simulator's leg kinematics and walking gaits. Review analytic IK, gait controls and the tests behind its motion engine.",
         name: "HEXAPOD — Inverse Kinematics and Gait Simulator",
         problem: "Hexapod gait and leg IK are usually explained with equations and a video, or hidden inside a robotics library. Neither lets you feel what changing duty factor or step height actually does to a walking robot.",
         solves: "A hexapod walking-robot simulator in the browser where the inverse kinematics and gait engine are written from scratch — no robotics libraries — using the same math that drives a real 18-servo hexapod. Switch between tripod, ripple, and wave gaits and drag speed, stride, step height, body height, and stance width sliders while it walks.",
@@ -1117,7 +1189,7 @@ export const projects: Project[] = [
         aiApproach: "No AI — pure kinematics. Analytic 3-DOF leg IK solves coxa yaw with atan2 and treats femur and tibia as a planar two-link problem via the law of cosines, six legs at 60 fps. The gait engine expresses tripod, ripple, and wave as phase offsets plus a per-leg duty factor; during stance each foot moves backward in the body frame at exactly body velocity, so feet never slide on the ground. Swing is a smoothstep return with a sinusoidal lift. Correctness is checked by an IK-to-FK round-trip self-test in the test suite.",
         image: "/images/projects/hexapod-sim-poster.jpg",
         videoUrl: "/videos/hexapod-sim.mp4",
-        updated: "2026-08-26",
+        updated: "2026-09-29",
         details: {
             businessImpact: "A working reference implementation of legged-robot IK and gait sequencing that runs in a tab. Useful for anyone building an actual hexapod, and a far better teaching artifact than a diagram because the parameters are live.",
             approach: [
@@ -1150,6 +1222,8 @@ export const projects: Project[] = [
     },
     {
         slug: "avatar-sync",
+        seoTitle: "avatar-sync: Real-Time Face and Hand Tracking",
+        seoDescription: "Explore avatar-sync's browser-based face and hand tracking. Review on-device landmarks, expression meters and its single-file implementation.",
         name: "avatar-sync — Real-Time Face and Hand Tracking in One HTML File",
         problem: "Face and hand tracking demos come wrapped in a build step, a server, and usually an API key — which puts a wall in front of anyone who just wants to see what the models actually output before building on them.",
         solves: "One HTML file, served statically, gives live on-device tracking: 478 face landmarks drawn on your face, an emotion readout, head pose in degrees, five expression meters, both hands as 21-point skeletons with open/closed detection, and a record button that captures a 10-second annotated clip. No server, no API keys, no install.",
@@ -1159,7 +1233,7 @@ export const projects: Project[] = [
         aiApproach: "Two pre-trained MediaPipe models download into the browser on first load — FaceLandmarker for 478 points, 52 expression blendshapes, and a head transform, and HandLandmarker for 21 points per hand with handedness. Everything runs on-device; nothing leaves the machine. The app is a requestAnimationFrame loop that draws the camera frame, runs both models, and annotates a canvas. The readouts are deliberately honest: the smile percentage is literally the model's mouthSmileLeft score, the emotion label is a one-line threshold check, and open-versus-closed hands are plain geometry — a hand is open when three or more fingertips sit farther from the wrist than their middle joints.",
         image: "/images/projects/avatar-sync-poster.jpg",
         videoUrl: "/videos/avatar-sync.mp4",
-        updated: "2026-08-26",
+        updated: "2026-09-29",
         details: {
             businessImpact: "A zero-setup base for VTuber puppeteering, gesture-controlled interfaces, and attention or drowsiness experiments — the part everyone rebuilds, already working and readable in a single file.",
             approach: [
@@ -1192,6 +1266,8 @@ export const projects: Project[] = [
     },
     {
         slug: "tabletalk",
+        seoTitle: "TableTalk: QR Ordering for Dine-In Restaurants",
+        seoDescription: "Explore TableTalk's QR ordering workflow for dine-in restaurants. Review the product design and engineering decisions behind the ordering system.",
         name: "TableTalk — Scan, Order, Eat: QR Ordering for Dine-In",
         problem: "Dine-in ordering still means flagging a waiter, squinting at a laminated menu with no photos, and repeating your order across the noise. The QR menus most restaurants adopted are static PDFs — no search, no cart, no way to actually order from them.",
         solves: "Scan the QR pasted on your table and the restaurant's live menu opens on your phone — every dish with a photo, price, and description. Search it by typing or speaking, add dishes in one tap, adjust quantities, and place the order right from the table, tagged with your table number. No app install, no login, no payment wall — you ask for the bill through the app when you're done.",
@@ -1201,7 +1277,7 @@ export const projects: Project[] = [
         aiApproach: "Voice search runs keyless in the browser — tap the mic in the search bar, say the dish, and on-device speech recognition (Web Speech API) turns it into a live menu filter. No speech service account, no audio leaves the phone.",
         image: "/images/projects/tabletalk-poster.jpg",
         videoUrl: "/videos/tabletalk.mp4",
-        updated: "2026-08-30",
+        updated: "2026-09-29",
         details: {
             businessImpact: "Small cafes can't staff enough waiters at peak, and the static QR-PDF menus they settled for kill upsell — no photos, no bestsellers, no \"complete your meal with\" moment. TableTalk is built multi-tenant (every guest page is \"Powered by tabletalk\"), so one deployment serves many restaurants, each with its own menu and per-table QR codes.",
             approach: [
@@ -1235,6 +1311,8 @@ export const projects: Project[] = [
     },
     {
         slug: "shoebox",
+        seoTitle: "Shoebox: Offline GST Bill Scanning and Ledger",
+        seoDescription: "Explore Shoebox's offline bill-to-ledger workflow. Review local vision extraction, GSTIN and tax checks, and purchase register export.",
         name: "Shoebox — Bill Photo to GST Ledger, Offline",
         problem: "Small shops in India keep supplier bills in a pile until the accountant asks. Typing them in is slow, and the bills carry mistakes nobody checks: a GSTIN copied wrong, CGST that doesn't match SGST, a handwritten total with two digits swapped, IGST charged on a same-state purchase. Each one can cost input tax credit.",
         solves: "Drop a phone photo of a bill and a local vision model fills in every field as it reads. Plain code then checks all of it — GSTIN checksum, line math, tax against the printed rates, CGST equals SGST, the right tax type for the states involved, the grand total, dates and duplicates — and points at the exact field that is wrong. Fix it, add it to the ledger, and download a purchase register CSV for your CA. Nothing leaves the laptop.",
@@ -1244,7 +1322,7 @@ export const projects: Project[] = [
         aiApproach: "The model reads; the code decides. A 9B vision model copies the bill into a JSON schema under constrained decoding and is told never to calculate or correct, so a bill whose own math is wrong gets copied wrong and caught. Every verdict comes from deterministic checks — including a Luhn mod-36 GSTIN checksum that catches any single misread character and offers the one-tap look-alike fix (0/O, 1/I, 8/B) when exactly one swap makes it valid. On four sample bills it read 188 of 192 fields exactly and got all four verdicts right, at about 17 seconds a bill on a laptop.",
         image: "/images/projects/shoebox-poster.jpg",
         videoUrl: "/videos/shoebox.mp4",
-        updated: "2026-09-26",
+        updated: "2026-09-29",
         details: {
             businessImpact: "Input tax credit is real money for a trading shop, and it is lost to boring errors: a misread GSTIN, a wrongly charged tax type, a bill entered twice. Shoebox catches those before the accountant sees the register, runs on the shop's own laptop with no subscription, and keeps every bill photo on that machine.",
             approach: [

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const claudeFable5DeveloperGuide2026: BlogPost = {
   slug: 'claude-fable-5-developer-guide-2026',
+  updated: "2026-09-29",
+  seoTitle: "Claude Fable 5: Pricing and API Guide",
+  seoDescription: "Explore Claude Fable 5 pricing and API use. Compare its fit with Opus 4.8 and choose a model based on the needs of your development workflow.",
   title: 'Claude Fable 5: Pricing, the API, and When to Use It vs Opus 4.8 (2026)',
   date: '2026-06-10',
   excerpt:
@@ -16,7 +19,7 @@ export const claudeFable5DeveloperGuide2026: BlogPost = {
     'claude mythos 5',
     'how to use claude fable 5',
   ],
-  relatedProject: 'rohitrajTech',
+  relatedProject: "rohitraj-site",
   coverImage: {
     src: '/images/notes/claude-fable-5-developer-guide-2026-cover.jpg',
     alt: 'Glowing teal-violet crystalline monolith with a molten core on black illustrating the Claude Fable 5 model release',

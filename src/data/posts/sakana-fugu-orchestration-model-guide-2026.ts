@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const sakanaFuguOrchestrationModelGuide2026: BlogPost = {
     slug: 'sakana-fugu-orchestration-model-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "Sakana Fugu: LLM Orchestration Guide",
+    seoDescription: "Explore Sakana Fugu as an orchestration model for other LLMs. Review how model coordination works and when it may fit an agent application.",
     title: 'Sakana Fugu: The Orchestration Model That Commands Other LLMs (2026)',
     date: '2026-06-23',
     excerpt:
@@ -16,7 +19,7 @@ export const sakanaFuguOrchestrationModelGuide2026: BlogPost = {
         'sakana fugu vs frontier models',
         'what is sakana fugu',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/sakana-fugu-orchestration-model-guide-2026-cover.jpg',
         alt: 'A luminous central orb conducting light streams to orbiting nodes illustrating Sakana Fugu multi-LLM orchestration model',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const aiDevWeek202639: BlogPost = {
   slug: "ai-dev-week-2026-39",
+  updated: "2026-09-29",
+  seoTitle: "AI Dev Week 39, 2026: Prices and Local Models",
+  seoDescription: "A developer-focused recap of AI week 39 in 2026, covering frontier pricing changes, smaller local models and their practical implications.",
   title: "This Week in AI Dev: Frontier Prices Halved and a 27B Model Fit in 6GB (Week 39 of 2026)",
   date: "2026-09-24",
   excerpt: "Anthropic shipped Claude Opus 5.5 and OpenAI shipped GPT-6 Sol ninety minutes later, both at roughly half the old price. The same 48 hours also put a 27B multimodal model into 5.95GB and taught transformers to run llama.cpp's Metal kernels in-process. The cost floor moved at both ends of the stack at once — here is what actually changed and what to do about it.",
@@ -15,7 +18,7 @@ export const aiDevWeek202639: BlogPost = {
     "transformers gguf metal kernels",
     "ternary quantization llm",
   ],
-  relatedProject: "myFinancial",
+  relatedProject: "myfinancial",
   coverImage: {
     src: "/images/notes/ai-dev-week-2026-39-cover.jpg",
     alt: "descending constellation of luminous nodes in dark space illustrating falling AI model costs in week 39 of 2026",

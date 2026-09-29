@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const whatIsHarnessEngineeringCodex2026: BlogPost = {
     slug: 'what-is-harness-engineering-codex-2026',
+  updated: "2026-09-29",
+    seoTitle: "Harness Engineering: The Codex Approach",
+    seoDescription: "Learn what harness engineering means for coding agents. Explore the context, tools and feedback loops that support an agent-first workflow.",
     title: 'What Is Harness Engineering? OpenAI’s Agent-First Codex Playbook (2026)',
     date: '2026-06-08',
     excerpt:
@@ -17,7 +20,7 @@ export const whatIsHarnessEngineeringCodex2026: BlogPost = {
         'openai codex harness',
         'ai coding agents 2026',
     ],
-    relatedProject: 'rohitrajTech',
+    relatedProject: "rohitraj-site",
     coverImage: {
         src: '/images/notes/what-is-harness-engineering-codex-2026-cover.jpg',
         alt: 'Dark editorial cover with a glowing geometric scaffold cradling a core orb illustrating harness engineering for AI coding agents',

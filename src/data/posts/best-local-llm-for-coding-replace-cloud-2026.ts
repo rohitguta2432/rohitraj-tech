@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const bestLocalLlmForCodingReplaceCloud2026: BlogPost = {
     slug: 'best-local-llm-for-coding-replace-cloud-2026',
+  updated: "2026-09-29",
+    seoTitle: "Best Local LLM for Coding: A 2026 Guide",
+    seoDescription: "Choose a local LLM for coding by hardware, workflow and task difficulty. Compare local deployment tradeoffs with hosted Claude and GPT models.",
     title: "Best Local LLM for Coding in 2026: When It Actually Replaces Claude and GPT",
     date: '2026-06-17',
     excerpt:
@@ -16,7 +19,7 @@ export const bestLocalLlmForCodingReplaceCloud2026: BlogPost = {
         'is local llm good enough for coding',
         'best open source coding model ollama',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/best-local-llm-for-coding-replace-cloud-2026-cover.jpg',
         alt: 'A luminous silicon processor radiating neural filaments illustrating the best local LLM for coding in 2026',

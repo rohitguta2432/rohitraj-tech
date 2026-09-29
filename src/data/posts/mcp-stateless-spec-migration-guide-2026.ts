@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const mcpStatelessSpecMigrationGuide2026: BlogPost = {
     slug: 'mcp-stateless-spec-migration-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "MCP Stateless Spec: Server Migration Guide",
+    seoDescription: "Prepare an MCP server for the July 2026 stateless specification. Review the protocol changes and plan a migration for existing integrations.",
     title: 'MCP Goes Stateless: Migrate Your Server Before the 2026-07-28 Spec',
     date: '2026-07-19',
     excerpt:

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const claudeCodeAgentsMdVsClaudeMdPrecedence2026: BlogPost = {
   slug: "claude-code-agents-md-vs-claude-md-precedence-2026",
+  updated: "2026-09-29",
+  seoTitle: "Claude Code: AGENTS.md vs CLAUDE.md (2026)",
+  seoDescription: "Learn which instruction files Claude Code loads, how AGENTS.md differs from CLAUDE.md, and how to avoid conflicting repository instructions.",
   title: "Claude Code and AGENTS.md in 2026: Which Instruction File Actually Loads",
   date: "2026-09-25",
   excerpt: "Claude Code 2.1.277 added native AGENTS.md support on 18 September 2026 — then loaded it only when a remote feature flag came back on, so telemetry-disabled sessions and every Bedrock, Vertex and gateway user silently got nothing until 2.1.280. Here is the real four-mode precedence matrix, a two-command test that proves which file your agent read, and the four limitations the docs list and nobody repeats.",
@@ -15,7 +18,7 @@ export const claudeCodeAgentsMdVsClaudeMdPrecedence2026: BlogPost = {
     "tengu_agents_md_mod feature flag",
     "share instruction file across ai agents",
   ],
-  relatedProject: "myFinancial",
+  relatedProject: "myfinancial",
   coverImage: {
     src: "/images/notes/claude-code-agents-md-vs-claude-md-precedence-2026-cover.jpg",
     alt: "low-poly nested translucent shells on a dark grid illustrating claude code agents.md instruction file precedence",

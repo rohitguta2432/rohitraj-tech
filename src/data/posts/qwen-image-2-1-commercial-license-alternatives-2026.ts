@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const qwenImage21CommercialLicenseAlternatives2026: BlogPost = {
   slug: "qwen-image-2-1-commercial-license-alternatives-2026",
+  updated: "2026-09-29",
+  seoTitle: "Qwen-Image-2.1: License and Alternatives",
+  seoDescription: "Review Qwen-Image-2.1 commercial licensing and alternative image models. Understand the deployment tradeoffs before choosing a production model.",
   title: "Qwen-Image-2.1 Commercial Use: The License Problem and What to Ship Instead (2026)",
   date: "2026-09-21",
   excerpt: "Qwen-Image-2.1 shipped on 20 September 2026 with 7B parameters, native 2K output and a real alpha channel \u2014 under a research-only license that forbids commercial use. Here is exactly what the license prohibits, which open image models you can actually ship, and how to catch a license downgrade in CI before it reaches production.",

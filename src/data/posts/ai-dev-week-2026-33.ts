@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const aiDevWeek2026W33: BlogPost = {
   slug: 'ai-dev-week-2026-33',
+  updated: "2026-09-29",
+  seoTitle: "AI Dev Week 33, 2026: Models and GPU Costs",
+  seoDescription: "A recap of AI week 33 in 2026, covering model releases, reasoning controversies and GPU costs through the lens of practical development.",
   title:
     'This Week in AI Dev: Models Day, Stolen Reasoning, and a $16,000 GPU (Week 33 of 2026)',
   date: '2026-08-13',
@@ -18,7 +21,7 @@ export const aiDevWeek2026W33: BlogPost = {
     'rtx pro 6000 price increase',
     'ai dev week 33 2026',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/ai-dev-week-2026-33-cover.jpg',
     alt: 'Liquid-metal spheres fracturing into particle streams illustrating AI dev tool releases in week 33 of 2026',

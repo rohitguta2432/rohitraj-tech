@@ -70,13 +70,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/notes": latestPostDate,
         "/services": latestServiceDate,
     };
+    const metadataReviewDate = new Date("2026-09-29");
+    const reviewedPages = new Set([
+        "/about", "/hire", "/agents", "/agents/resolvr",
+        "/reliability/api-testing", "/reliability/kafka-testing",
+        "/reliability/load-testing", "/reliability/observability",
+    ]);
 
     const allRoutes = [...staticRoutes, ...projectRoutes, ...serviceRoutes, ...blogRoutes];
 
     const sitemap: MetadataRoute.Sitemap = [];
 
     for (const route of allRoutes) {
-        let lastModified: Date = hubDates[route] ?? staticAnchor;
+        let lastModified: Date = hubDates[route]
+            ?? (reviewedPages.has(route) ? metadataReviewDate : staticAnchor);
         if (route.startsWith("/notes/")) {
             const slug = route.replace("/notes/", "");
             lastModified = postDateBySlug.get(slug) ?? now;

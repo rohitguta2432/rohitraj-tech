@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const omnirouteAiGatewayReview2026: BlogPost = {
     slug: 'omniroute-ai-gateway-review-2026',
+  updated: "2026-09-29",
+    seoTitle: "OmniRoute vs OpenRouter and LiteLLM: Review",
+    seoDescription: "Review OmniRoute as an AI gateway and compare it with OpenRouter and LiteLLM. Evaluate routing, operations and whether self-hosting fits.",
     title: 'OmniRoute Review (2026): Is the 20k-Star Free AI Gateway Worth It vs OpenRouter & LiteLLM?',
     date: '2026-07-20',
     excerpt:

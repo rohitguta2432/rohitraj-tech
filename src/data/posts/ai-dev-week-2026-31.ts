@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const aiDevWeek2026W31: BlogPost = {
   slug: 'ai-dev-week-2026-31',
+  updated: "2026-09-29",
+  seoTitle: "AI Dev Week 31, 2026: Agent Skills and Benchmarks",
+  seoDescription: "A recap of AI week 31 in 2026, covering agent skill releases and benchmark results, with a focus on what developers can use and verify.",
   title:
     'This Week in AI Dev: Agent Skills Went GA, Then the Benchmark Landed (Week 31 of 2026)',
   date: '2026-07-30',
@@ -18,7 +21,7 @@ export const aiDevWeek2026W31: BlogPost = {
     'solar-open2-250b upstage',
     'ai dev week 31 2026',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/ai-dev-week-2026-31-cover.jpg',
     alt: 'Glowing neural lattice sealed inside a translucent faceted shell illustrating AI agent skills and governance in week 31 of 2026',

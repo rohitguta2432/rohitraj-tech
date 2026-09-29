@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const drizzleVsPrismaVsTypeormIndiaMvp2026: BlogPost = {
   slug: 'drizzle-vs-prisma-vs-typeorm-india-mvp-2026',
+  updated: "2026-09-29",
+  seoTitle: "Drizzle vs Prisma vs TypeORM for MVPs (2026)",
+  seoDescription: "Compare Drizzle, Prisma and TypeORM for an India MVP. Review database access, migrations and the tradeoffs of each ORM in a production stack.",
   title: 'Drizzle vs Prisma vs TypeORM — Real ORM Pick for India MVP 2026',
   date: '2026-05-17',
   excerpt:
@@ -17,7 +20,7 @@ export const drizzleVsPrismaVsTypeormIndiaMvp2026: BlogPost = {
     'postgres orm next.js mvp',
     'edge runtime orm postgres',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/drizzle-vs-prisma-vs-typeorm-india-mvp-2026-cover.jpg',
     alt: 'Three glowing geometric nodes layered on dark grid illustrating Drizzle vs Prisma vs TypeORM comparison for India MVPs',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const diffusionGemmaTextDiffusionLlmGuide2026: BlogPost = {
   slug: 'diffusiongemma-text-diffusion-llm-guide-2026',
+  updated: "2026-09-29",
+  seoTitle: "DiffusionGemma: Text Diffusion LLMs Explained",
+  seoDescription: "Learn how DiffusionGemma approaches text generation with diffusion. Review where this model design helps and when conventional LLMs are simpler.",
   title: 'DiffusionGemma: Text Diffusion LLMs Explained, and When to Actually Use One (2026)',
   date: '2026-06-11',
   excerpt:
@@ -16,7 +19,7 @@ export const diffusionGemmaTextDiffusionLlmGuide2026: BlogPost = {
     'google diffusiongemma 2026',
     'text diffusion language model',
   ],
-  relatedProject: 'rohitrajTech',
+  relatedProject: "rohitraj-site",
   coverImage: {
     src: '/images/notes/diffusiongemma-text-diffusion-llm-guide-2026-cover.jpg',
     alt: 'Luminous particle swarm coalescing from dark noise into an ordered crystalline lattice illustrating DiffusionGemma text diffusion',

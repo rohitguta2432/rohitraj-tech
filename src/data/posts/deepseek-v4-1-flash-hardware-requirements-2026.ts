@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const deepseekV41FlashHardwareRequirements2026: BlogPost = {
   slug: 'deepseek-v4-1-flash-hardware-requirements-2026',
+  updated: "2026-09-29",
+  seoTitle: "DeepSeek V4.1 Flash: Hardware Requirements",
+  seoDescription: "Understand DeepSeek V4.1 Flash hardware requirements, including total model memory, active parameters and practical local deployment limits.",
   title:
     'DeepSeek V4.1 Flash Hardware Requirements: The 510GB Model Everyone Is Calling 8B (2026)',
   date: '2026-09-14',

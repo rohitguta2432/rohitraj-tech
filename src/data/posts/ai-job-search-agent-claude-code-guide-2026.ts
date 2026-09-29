@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const aiJobSearchAgentClaudeCodeGuide2026: BlogPost = {
   slug: 'ai-job-search-agent-claude-code-guide-2026',
+  updated: "2026-09-29",
+  seoTitle: "Claude Code AI Job-Search Agent Guide",
+  seoDescription: "Explore the ai-job-search framework on Claude Code. Review its workflow, automation boundaries and how its agents coordinate a job search.",
   title:
     'AI Job-Search Agent on Claude Code: Inside the 15k-Star ai-job-search Framework (2026)',
   date: '2026-07-09',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const indiaVsUsMvpDeveloperCost2026: BlogPost = {
   slug: 'india-vs-us-mvp-developer-cost-2026',
+  updated: "2026-09-29",
+  seoTitle: "India vs US MVP Developer Cost (2026)",
+  seoDescription: "Compare India and US MVP development costs. Review project scope, delivery assumptions and engineering ownership behind the headline quotes.",
   title: 'India vs US MVP Developer Cost in 2026 — $18K or $120K for the Same App?',
   date: '2026-04-22',
   excerpt: 'The real 2026 breakdown of MVP cost in India vs the US — why the agency-vs-Silicon-Valley binary is a trap, and how independent senior engineers with AI tools now win on both axes.',
@@ -18,7 +21,7 @@ export const indiaVsUsMvpDeveloperCost2026: BlogPost = {
     src: '/images/notes/india-vs-us-mvp-developer-cost-2026-cover.jpg',
     alt: 'Abstract editorial cover illustrating India vs US MVP Developer Cost in 2026',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
     {
       heading: 'TL;DR',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const mcpServerAuthenticationOauthGuide2026: BlogPost = {
     slug: 'mcp-server-authentication-oauth-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "MCP Authentication: OAuth 2.1 Guide (2026)",
+    seoDescription: "Build MCP server authentication with OAuth 2.1. Review enterprise authorization, token handling and the security boundaries your server needs.",
     title: 'MCP Server Authentication in 2026: OAuth 2.1, Zero-Touch Enterprise OAuth, and What to Actually Ship',
     date: '2026-06-19',
     excerpt:
@@ -16,7 +19,7 @@ export const mcpServerAuthenticationOauthGuide2026: BlogPost = {
         'mcp authorization spec 2026',
         'add oauth to mcp server',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/mcp-server-authentication-oauth-guide-2026-cover.jpg',
         alt: 'A glowing fortified portal of interlocking metal rings guarding a core illustrating MCP server authentication and OAuth in 2026',

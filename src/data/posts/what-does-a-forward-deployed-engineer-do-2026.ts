@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const whatDoesAForwardDeployedEngineerDo2026: BlogPost = {
   slug: 'what-does-a-forward-deployed-engineer-do-2026',
+  updated: "2026-09-29",
+  seoTitle: "What Does a Forward Deployed Engineer Do?",
+  seoDescription: "See what a forward deployed engineer does week to week, from finding a useful AI application to integrating, evaluating and shipping it.",
   title: 'What Does a Forward Deployed Engineer Actually Do? (2026 Guide)',
   date: '2026-09-05',
   excerpt:

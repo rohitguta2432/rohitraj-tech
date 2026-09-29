@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const deepseekHarnessVsClaudeCodeCodexCli2026: BlogPost = {
   slug: 'deepseek-harness-vs-claude-code-codex-cli-2026',
+  updated: "2026-09-29",
+  seoTitle: "DeepSeek Harness vs Claude Code vs Codex CLI",
+  seoDescription: "Compare the DeepSeek Harness developer preview with Claude Code and Codex CLI. Review capabilities, limitations and production tradeoffs.",
   title:
     'DeepSeek Harness vs Claude Code vs Codex CLI: The v0.1 Developer Preview, Honestly — 2026',
   date: '2026-08-14',
@@ -17,7 +20,7 @@ export const deepseekHarnessVsClaudeCodeCodexCli2026: BlogPost = {
     'codex cli alternative',
     'model agnostic agent harness',
   ],
-  relatedProject: 'rohitrajTech',
+  relatedProject: "rohitraj-site",
   coverImage: {
     src: '/images/notes/deepseek-harness-vs-claude-code-codex-cli-2026-cover.jpg',
     alt: 'Constellation of glowing teal and violet modular nodes illustrating DeepSeek Harness plugin agent architecture',

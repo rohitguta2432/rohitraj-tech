@@ -2,9 +2,11 @@ import type { BlogPost } from '@/types/blog';
 
 export const lovableAppProductionBugsNeedRealEngineer2026: BlogPost = {
   slug: 'lovable-app-production-bugs-need-real-engineer-2026',
+  seoTitle: "Lovable Production Bugs: Five Engineering Fixes",
+  seoDescription: "Review five production problems in Lovable-built apps. Learn when authentication, data access and backend work need a developer's attention.",
   title: 'Lovable App Production Bugs — 5 Fixes Need a Real Engineer (2026)',
   date: '2026-04-25',
-  updated: '2026-05-16',
+  updated: "2026-09-29",
   excerpt: 'Lovable, Bolt, and v0 ship 70% of an MVP in a weekend. The remaining 30% — auth edge cases, RLS, payment webhooks, performance, schema migrations — is where every vibe-coded app breaks. Here are the 5 production bugs that always need a real engineer to fix, and what the rescue work actually costs.',
   readingTime: '11 min read',
   keywords: [
@@ -20,7 +22,7 @@ export const lovableAppProductionBugsNeedRealEngineer2026: BlogPost = {
     src: '/images/notes/lovable-app-production-bugs-need-real-engineer-2026-cover.jpg',
     alt: 'Abstract editorial cover illustrating Lovable App Production Bugs',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
     {
       heading: 'TL;DR',

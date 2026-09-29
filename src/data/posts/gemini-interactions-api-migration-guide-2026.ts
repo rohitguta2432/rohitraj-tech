@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const geminiInteractionsApiMigrationGuide2026: BlogPost = {
     slug: 'gemini-interactions-api-migration-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "Gemini Interactions API: Migration Guide",
+    seoDescription: "Move from generateContent to the Gemini Interactions API. Review request changes, compatibility concerns and a staged migration approach.",
     title: 'Gemini Interactions API: The Migration Guide from generateContent (2026)',
     date: '2026-06-25',
     excerpt:
@@ -16,7 +19,7 @@ export const geminiInteractionsApiMigrationGuide2026: BlogPost = {
         'gemini interactions api vs generatecontent',
         'gemini interactions api tutorial',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/gemini-interactions-api-migration-guide-2026-cover.jpg',
         alt: 'A continuous luminous thread weaving through stateful nodes illustrating the Gemini Interactions API carrying conversation state server-side',

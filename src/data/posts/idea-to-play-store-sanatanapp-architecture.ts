@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const ideaToPlayStoreSanatanappArchitecture: BlogPost = {
   slug: 'idea-to-play-store-sanatanapp-architecture',
+  updated: "2026-09-29",
+  seoTitle: "SanatanApp: From Idea to Play Store in 4 Weeks",
+  seoDescription: "Follow SanatanApp from idea to Play Store release. Review the architecture, scope and practical decisions behind a four-week mobile build.",
   title: 'From Idea to Play Store: Shipping SanatanApp in 4 Weeks',
   date: '2026-04-05',
   excerpt: 'The full story of building and shipping a React Native app to Google Play — from problem discovery to architecture decisions to the actual Play Store submission process.',

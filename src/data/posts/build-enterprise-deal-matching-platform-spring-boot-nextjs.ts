@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const buildEnterpriseDealMatchingPlatformSpringBootNextjs: BlogPost = {
   slug: 'build-enterprise-deal-matching-platform-spring-boot-nextjs',
+  updated: "2026-09-29",
+  seoTitle: "Enterprise Deal Matching: Spring Boot and Next.js",
+  seoDescription: "Explore an enterprise deal-matching platform built with Spring Boot, Next.js and GPT-4o. Review the architecture and key engineering decisions.",
   title: 'How I Built an Enterprise Deal Matching Platform with Spring Boot + Next.js + GPT-4o',
   date: '2026-04-16',
   excerpt: 'Architecture deep-dive into SynFlow — a full-stack intelligence platform that matches deals to profiles using rule-based scoring and AI-powered profile extraction from LinkedIn text.',

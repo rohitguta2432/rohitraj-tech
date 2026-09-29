@@ -3,6 +3,8 @@ import { z } from 'zod';
 export const projectSchema = z.object({
   slug: z.string().min(1),
   name: z.string().min(1),
+  seoTitle: z.string().min(1).optional(),
+  seoDescription: z.string().min(1).optional(),
   problem: z.string().min(1),
   solves: z.string().min(1),
   techStack: z.array(z.string()),

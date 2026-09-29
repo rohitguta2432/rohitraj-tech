@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const rtxPro5500Blackwell84gbLocalLlm2026: BlogPost = {
   slug: 'rtx-pro-5500-blackwell-84gb-local-llm-2026',
+  updated: "2026-09-29",
+  seoTitle: "RTX PRO 5500: Local LLM Memory Guide (2026)",
+  seoDescription: "Plan local LLM deployment on the RTX PRO 5500 Blackwell. Review model memory, quantization and workload constraints before choosing hardware.",
   title:
     'NVIDIA RTX PRO 5500 Blackwell: What Actually Fits in 84GB for Local LLMs (2026)',
   date: '2026-09-15',

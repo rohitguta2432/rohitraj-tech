@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const sixWeekMvpTechStack2026: BlogPost = {
   slug: '6-week-mvp-tech-stack-2026',
+  updated: "2026-09-29",
+  seoTitle: "6-Week MVP Tech Stack Guide (2026)",
+  seoDescription: "Choose a practical stack for a six-week MVP. Review familiar backend, frontend and database options that support delivery and a clean handoff.",
   title: '6-Week MVP Tech Stack in 2026 — The Boring Choices That Actually Ship',
   date: '2026-04-25',
   excerpt: 'Every "should I use X or Y" debate costs you a week of the sprint. Here is the boring, opinionated, time-tested stack that ships a production MVP in 6 weeks — Next.js, Postgres, Vercel, Stripe, and a handful of opinionated picks.',
@@ -19,7 +22,7 @@ export const sixWeekMvpTechStack2026: BlogPost = {
     src: '/images/notes/6-week-mvp-tech-stack-2026-cover.jpg',
     alt: 'Abstract editorial cover illustrating 6-Week MVP Tech Stack in 2026',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
         {
       heading: 'TL;DR',

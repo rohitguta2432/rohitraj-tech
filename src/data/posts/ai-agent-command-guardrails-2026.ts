@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const aiAgentCommandGuardrails2026: BlogPost = {
     slug: 'ai-agent-command-guardrails-2026',
+  updated: "2026-09-29",
+    seoTitle: "AI Coding Agent Command Guardrails Compared",
+    seoDescription: "Compare command guardrails for AI coding agents. Learn how to constrain destructive shell actions without blocking routine development work.",
     title: 'Stop Your AI Coding Agent Running rm -rf: Command Guardrails Compared (2026)',
     date: '2026-07-12',
     excerpt:
@@ -16,7 +19,7 @@ export const aiAgentCommandGuardrails2026: BlogPost = {
         'dcg vs agent-guardrails vs shellfirm',
         'ai agent safety 2026',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/ai-agent-command-guardrails-2026-cover.jpg',
         alt: 'Glowing hexagonal shield deflecting sharp crimson shards illustrating AI coding agent command guardrails',

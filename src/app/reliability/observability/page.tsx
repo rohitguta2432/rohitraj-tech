@@ -17,8 +17,8 @@ import type { Metadata } from "next";
 const PAGE_PATH = '/reliability/observability';
 const DATE_PUBLISHED = '2026-01-31';
 const DATE_MODIFIED = '2026-04-24';
-const SEO_TITLE = 'Prometheus + Grafana Observability for Spring Boot (2026 Guide) | Rohit Raj';
-const SEO_DESCRIPTION = 'RED and USE metrics, SLO dashboards, and alerting for Spring Boot and Node.js services with Prometheus and Grafana — the production observability stack I ship in 2026.';
+const SEO_TITLE = "Spring Boot Observability: Prometheus and Grafana";
+const SEO_DESCRIPTION = "Monitor Spring Boot and Node.js with Prometheus and Grafana. Use RED and USE metrics, SLO dashboards and alerts to understand production behavior.";
 const SEO_KEYWORDS = [
     'prometheus grafana spring boot 2026',
     'RED USE metrics observability',

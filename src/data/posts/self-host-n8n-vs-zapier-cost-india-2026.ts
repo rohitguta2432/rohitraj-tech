@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const selfHostN8nVsZapierCostIndia2026: BlogPost = {
   slug: 'self-host-n8n-vs-zapier-cost-india-2026',
+  updated: "2026-09-29",
+  seoTitle: "Self-Hosted n8n vs Zapier: Cost Guide (2026)",
+  seoDescription: "Compare self-hosted n8n and Zapier for an India MVP. Review costs at 50,000 monthly operations alongside hosting and maintenance requirements.",
   title: 'Self-Host n8n vs Zapier for Indian MVPs in 2026 — Real Cost on 50K Operations/Month',
   date: '2026-05-11',
   excerpt: 'Self-hosted n8n costs ₹600/month on a $7 Hetzner VPS for 50K operations; Zapier Professional charges $73/month (~₹6,100) for the same volume. Here is the real Docker setup, ops cost, and break-even math from my multi-platform social automation rig.',
@@ -15,7 +18,7 @@ export const selfHostN8nVsZapierCostIndia2026: BlogPost = {
     'zapier alternative india',
     'n8n docker setup',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/self-host-n8n-vs-zapier-cost-india-2026-cover.jpg',
     alt: 'Dark editorial render illustrating self-hosted n8n versus Zapier cloud automation cost comparison India 2026',

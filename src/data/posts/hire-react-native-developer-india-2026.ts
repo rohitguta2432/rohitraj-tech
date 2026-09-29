@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const hireReactNativeDeveloperIndia2026: BlogPost = {
   slug: 'hire-react-native-developer-india-2026',
+  updated: "2026-09-29",
+  seoTitle: "Hire a React Native Developer in India",
+  seoDescription: "Compare React Native freelancers, agencies and founding engineers in India. Review MVP costs, delivery scope and ownership before hiring.",
   title: 'Hire React Native Developer India 2026: Founding Engineer vs Agency vs Freelance (Real Cost)',
   date: '2026-05-18',
   excerpt: 'A founding engineer in India ships your React Native MVP for ₹6–9L in 6 weeks. The same scope from a Bangalore agency quotes ₹22–35L and lands in 16. A Toptal freelancer is ₹4,500/hr and a 3-week hiring loop. Here is the real cost math for 2026, which model fails on which kind of app, and the decision tree I wish my last three clients had read.',

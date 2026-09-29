@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const microservicesVsMonolithStartup: BlogPost = {
   slug: 'microservices-vs-monolith-startup',
+  updated: "2026-09-29",
+  seoTitle: "Microservices vs Monolith for Startups",
+  seoDescription: "Compare microservices and a monolith for an early-stage product. Review complexity, deployment and the cost of splitting a system too soon.",
   title: 'Microservices vs Monolith for Startups: Stop Overengineering',
   date: '2026-04-05',
   excerpt: 'Why your startup should start with a monolith, when microservices actually make sense, and how to avoid the architecture astronaut trap.',

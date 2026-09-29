@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const sixWeekMvpSprintWeekByWeekBreakdown: BlogPost = {
   slug: '6-week-mvp-sprint-week-by-week-breakdown',
+  updated: "2026-09-29",
+  seoTitle: "6-Week MVP Sprint: Week-by-Week Breakdown",
+  seoDescription: "See what ships in a six-week MVP sprint, from discovery and architecture to testing, deployment and handoff, with clear scope for each week.",
   title: '6-Week MVP Sprint — Week-by-Week Breakdown of What Actually Ships',
   date: '2026-04-25',
   excerpt: 'Most "6-week MVP" promises are 12-week projects with marketing copy. This is what a real 6-week sprint looks like — week one through week six, what gets built, what gets cut, and what production-ready means at day 42.',
@@ -19,7 +22,7 @@ export const sixWeekMvpSprintWeekByWeekBreakdown: BlogPost = {
     src: '/images/notes/6-week-mvp-sprint-week-by-week-breakdown-cover.jpg',
     alt: 'Abstract editorial cover illustrating 6-Week MVP Sprint',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
         {
       heading: 'TL;DR',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const buildMultiTenantSaasSpringBootJava21: BlogPost = {
   slug: 'build-multi-tenant-saas-spring-boot-java-21',
+  updated: "2026-09-29",
+  seoTitle: "Multi-Tenant SaaS with Spring Boot and Java 21",
+  seoDescription: "Explore a multi-tenant retail SaaS built with Spring Boot and Java 21. Review module boundaries, tenant isolation and backend architecture.",
   title: 'Building a Multi-Tenant Retail SaaS with Spring Boot 3.4 + Java 21 — 12-Module Architecture',
   date: '2026-04-14',
   excerpt: 'How I architected RetailOS — an India-first multi-tenant retail platform with billing, inventory, GST invoicing, khata ledger, and offline sync in a 12-module Maven monorepo.',

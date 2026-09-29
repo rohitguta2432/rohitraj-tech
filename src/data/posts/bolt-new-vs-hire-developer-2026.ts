@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const boltNewVsHireDeveloper2026: BlogPost = {
   slug: 'bolt-new-vs-hire-developer-2026',
+  updated: "2026-09-29",
+  seoTitle: "Bolt.new vs Hiring a Developer (2026)",
+  seoDescription: "Compare Bolt.new with hiring a developer. Learn where an AI builder helps and when your app needs custom engineering to reach production.",
   title: 'Bolt.new vs Hire Developer 2026 — When AI Builder Hits Limits',
   date: '2026-05-03',
   excerpt: 'Bolt.new ships a working prototype in 30 minutes for $25/month. Then complexity arrives — a 31% success rate on real SaaS apps, 5–8 million tokens burned on one Supabase auth bug, and a $5K–$40K hardening bill. Here is exactly when Bolt is the right call, when a developer is, and the cost crossover most founders find too late.',
@@ -16,7 +19,7 @@ export const boltNewVsHireDeveloper2026: BlogPost = {
     'bolt new mvp cost 2026',
     'ai app builder vs engineer',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/bolt-new-vs-hire-developer-2026-cover.jpg',
     alt: 'Two abstract glowing pillars on a dark grid illustrating Bolt.new vs hiring a developer cost comparison 2026',

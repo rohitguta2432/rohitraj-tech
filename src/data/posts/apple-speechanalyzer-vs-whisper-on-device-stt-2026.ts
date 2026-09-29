@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const appleSpeechAnalyzerVsWhisperOnDeviceStt2026: BlogPost = {
     slug: 'apple-speechanalyzer-vs-whisper-on-device-stt-2026',
+  updated: "2026-09-29",
+    seoTitle: "Apple SpeechAnalyzer vs Whisper (2026)",
+    seoDescription: "Compare Apple SpeechAnalyzer and Whisper for on-device speech-to-text. Review platform fit, integration and local transcription tradeoffs.",
     title: 'Apple SpeechAnalyzer vs Whisper: On-Device Speech-to-Text in 2026',
     date: '2026-07-17',
     excerpt:

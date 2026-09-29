@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import siteMetadata from '../../content/en/meta.json';
 
 // High-Intent Keywords for Founder/Startup Audience
 export const SEO_KEYWORDS = [
@@ -51,12 +52,18 @@ export const SEO_KEYWORDS = [
 // Base Site Configuration
 export const SITE_CONFIG = {
     name: 'Rohit Raj',
-    title: 'AI Consultant · Forward Deployed Engineer — Ships AI to Production | Rohit Raj',
-    description: 'AI consultant working as a forward deployed engineer: embedded with your team, shipping agents, MCP integrations, and LLM features to production. 29 products shipped, every one documented.',
+    title: siteMetadata.home.title,
+    description: siteMetadata.home.description,
     url: 'https://rohitraj.tech',
     locale: 'en_US',
     personId: 'https://rohitraj.tech/#person',
     organizationId: 'https://rohitraj.tech/#organization',
+    address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Bengaluru',
+        addressRegion: 'Karnataka',
+        addressCountry: 'IN',
+    },
     author: {
         name: 'Rohit Raj',
         email: 'rohitgupta2432@gmail.com',
@@ -137,12 +144,7 @@ export const personSchema = {
     image: `${SITE_CONFIG.url}/opengraph-image`,
     jobTitle: 'AI Consultant · Forward Deployed Engineer',
     description: 'AI consultant working as a forward deployed engineer: embedded with client teams, shipping AI agents, MCP integrations, and LLM features to production — with evaluation suites proving they work. 10+ years shipping production systems.',
-    address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Bengaluru',
-        addressRegion: 'Karnataka',
-        addressCountry: 'IN',
-    },
+    address: SITE_CONFIG.address,
     nationality: {
         '@type': 'Country',
         name: 'India',
@@ -180,22 +182,6 @@ export const personSchema = {
         '@type': 'CollegeOrUniversity',
         name: 'Bharati Vidyapeeth University, Pune',
     },
-    hasCredential: [
-        {
-            '@type': 'EducationalOccupationalCredential',
-            credentialCategory: 'Professional Experience',
-            name: '10+ years shipping production AI systems, distributed backends, and mobile MVPs',
-        },
-        {
-            '@type': 'EducationalOccupationalCredential',
-            credentialCategory: 'Specialization',
-            name: 'Founding Engineer for early-stage startups (pre-seed to Series A)',
-        },
-    ],
-    award: [
-        'Shipped 9 production projects: MyFinancial PWA, StellarMIND Text-to-SQL, MicroItinerary AI Travel Planner, ClinicAI, SanatanApp, and others',
-        '59 in-depth technical case studies published on rohitraj.tech engineering notes',
-    ],
 };
 
 // JSON-LD Schema: Service (Engineering Services)
@@ -287,17 +273,9 @@ export const professionalServiceSchema = {
     alternateName: 'Rohit Raj — AI Systems Engineering',
     logo: `${SITE_CONFIG.url}${SITE_CONFIG.images.logo}`,
     url: SITE_CONFIG.url,
-    description: 'Founding Engineer specializing in AI systems for startups. Available for engineering partnerships.',
+    description: SITE_CONFIG.description,
     priceRange: '$$$$',
-    address: {
-        '@type': 'PostalAddress',
-        addressCountry: 'IN',
-    },
-    geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 28.6139,
-        longitude: 77.209,
-    },
+    address: SITE_CONFIG.address,
     openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -427,22 +405,6 @@ export function generateFAQSchema(faqs: { question: string; answer: string }[]) 
     };
 }
 
-// Helper to create page-specific metadata with canonical URLs and locale alternates
-/**
- * Truncate a description to Google's SERP-display limit while preserving sentence boundaries.
- * Google truncates meta descriptions at ~155-160 chars on mobile, ~160-170 on desktop.
- * Returns the original string if already short enough; otherwise cuts at the last word
- * boundary inside the limit and appends an ellipsis only if there's room.
- */
-export function truncateDescription(text: string, max: number = 158): string {
-    if (!text) return text;
-    if (text.length <= max) return text;
-    const slice = text.slice(0, max);
-    const lastSpace = slice.lastIndexOf(' ');
-    const cut = lastSpace > max * 0.6 ? slice.slice(0, lastSpace) : slice;
-    return cut.replace(/[.,;:\s]+$/, '') + '…';
-}
-
 /**
  * Resolve a possibly-relative image path to an absolute URL.
  * If the input is already absolute (starts with http), returns as-is.
@@ -460,7 +422,7 @@ export function createPageMetadata(
     options: {
         /** Page-specific image (e.g. blog cover). Falls back to site default. */
         image?: { src: string; alt: string };
-        /** Override the meta description (e.g. trimmed-to-160 version of post excerpt). */
+        /** An editorial summary, independent of the longer visible introduction. */
         metaDescription?: string;
         /** Kept for call-site compatibility; the site is English-only at bare paths now. */
         translated?: boolean;
@@ -475,9 +437,9 @@ export function createPageMetadata(
     const baseTitle = title.replace(/\s*\|\s*Rohit Raj\s*$/i, '').trim();
     const brandedTitle = `${baseTitle} | ${SITE_CONFIG.name}`;
 
-    // Truncate description for meta tags (Google SERP truncates at ~158 chars).
-    // The full description still ships in body text; only the head meta is shortened.
-    const metaDesc = truncateDescription(options.metaDescription ?? description);
+    // Keep complete editorial copy. Search snippets vary by query and device;
+    // a fixed character cut discarded useful text and left unfinished sentences.
+    const metaDesc = (options.metaDescription ?? description).trim();
 
     // Resolve page image. Fall back to site OG image so social cards never render naked.
     const ogImageUrl = resolveImageUrl(options.image?.src);

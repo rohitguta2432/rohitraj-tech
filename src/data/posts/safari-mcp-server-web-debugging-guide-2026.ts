@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const safariMcpServerWebDebuggingGuide2026: BlogPost = {
     slug: 'safari-mcp-server-web-debugging-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "Safari MCP Server: Web Debugging Guide",
+    seoDescription: "Compare Safari MCP debugging tools and their integration approaches. Learn how to connect browser inspection to an agent-assisted workflow.",
     title: 'Safari MCP Server: Apple\'s Official Debugger vs the Community Tools (2026 Guide)',
     date: '2026-07-04',
     excerpt:
@@ -16,7 +19,7 @@ export const safariMcpServerWebDebuggingGuide2026: BlogPost = {
         'safari technology preview 247',
         'model context protocol browser automation',
     ],
-    relatedProject: 'rohitrajTech',
+    relatedProject: "rohitraj-site",
     coverImage: {
         src: '/images/notes/safari-mcp-server-web-debugging-guide-2026-cover.jpg',
         alt: 'Glowing compass rose over a fractured glass pane illustrating Safari MCP server browser debugging',

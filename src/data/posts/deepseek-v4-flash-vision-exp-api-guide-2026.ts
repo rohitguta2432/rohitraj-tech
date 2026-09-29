@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const deepseekV4FlashVisionExpApiGuide2026: BlogPost = {
   slug: 'deepseek-v4-flash-vision-exp-api-guide-2026',
+  updated: "2026-09-29",
+  seoTitle: "DeepSeek V4 Flash Vision: API Limits and Cost",
+  seoDescription: "Explore DeepSeek V4 Flash Vision API input formats, pricing and image resolution limits, with guidance for routing OCR and screenshot tasks.",
   title:
     'DeepSeek-V4-Flash-Vision-Exp API Guide: Limits, Pricing, and the 800px Trap (2026)',
   date: '2026-08-23',
@@ -17,7 +20,7 @@ export const deepseekV4FlashVisionExpApiGuide2026: BlogPost = {
     'deepseek vision vs gemini 3.7 flash',
     'cheapest vision api for agents 2026',
   ],
-  relatedProject: 'vaani',
+
   coverImage: {
     src: '/images/notes/deepseek-v4-flash-vision-exp-api-guide-2026-cover.jpg',
     alt: 'Crystalline lens of glowing particles focusing light illustrating the DeepSeek-V4-Flash-Vision-Exp multimodal API',

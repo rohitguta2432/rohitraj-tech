@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const nvidiaRtxSparkWindowsAiAgents2026: BlogPost = {
     slug: 'nvidia-rtx-spark-windows-ai-agents-2026',
+  updated: "2026-09-29",
+    seoTitle: "NVIDIA RTX Spark: Windows AI Agent Guide",
+    seoDescription: "Explore NVIDIA RTX Spark and Windows for local AI agents. Review hardware implications and the practical limits of desktop inference workflows.",
     title: 'NVIDIA RTX Spark + Windows: What Microsoft’s Local-AI Superchip Means for Developers (2026)',
     date: '2026-06-07',
     excerpt: 'NVIDIA and Microsoft unveiled the RTX Spark superchip at Computex 2026 — a 20-core Grace Arm CPU plus a 6,144-core Blackwell RTX GPU and up to 128GB unified memory that runs 120B-parameter LLMs locally with up to 1M tokens of context. Here is the developer-only read: the confirmed specs, RTX Spark vs DGX Spark, how it ties into Satya Nadella’s agentic-AI push at Build 2026, what you can actually build on it this fall, and when to wait.',
@@ -16,7 +19,7 @@ export const nvidiaRtxSparkWindowsAiAgents2026: BlogPost = {
         'run local llm rtx spark',
         'rtx spark price',
     ],
-    relatedProject: 'rohitrajTech',
+    relatedProject: "rohitraj-site",
     coverImage: {
         src: '/images/notes/nvidia-rtx-spark-windows-ai-agents-2026-cover.jpg',
         alt: 'Dark editorial cover with a glowing fractured chip illustrating NVIDIA RTX Spark local AI for Windows PCs',

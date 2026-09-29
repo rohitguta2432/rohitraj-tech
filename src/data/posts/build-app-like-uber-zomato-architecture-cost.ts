@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const buildAppLikeUberZomatoArchitectureCost: BlogPost = {
   slug: 'build-app-like-uber-zomato-architecture-cost',
+  updated: "2026-09-29",
+  seoTitle: "Build an App Like Uber or Zomato: Cost Guide",
+  seoDescription: "Explore the architecture and costs behind an app like Uber or Zomato. Review core workflows and scope a realistic first version.",
   title: 'How to Build an App Like Uber or Zomato — Architecture & Real Costs',
   date: '2026-04-05',
   excerpt: 'The real architecture and costs behind building an on-demand app like Uber or Zomato — what you actually need for an MVP vs what agencies will try to sell you.',

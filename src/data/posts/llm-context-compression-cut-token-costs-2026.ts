@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const llmContextCompressionCutTokenCosts2026: BlogPost = {
   slug: 'llm-context-compression-cut-token-costs-2026',
+  updated: "2026-09-29",
+  seoTitle: "LLM Context Compression: Cut Token Costs",
+  seoDescription: "Learn how context compression can reduce LLM token use. Review approaches, cost tradeoffs and the information an application must preserve.",
   title: 'Cut LLM Token Costs Up to 90% with Context Compression (2026)',
   date: '2026-06-04',
   excerpt:
@@ -20,7 +23,7 @@ export const llmContextCompressionCutTokenCosts2026: BlogPost = {
     src: '/images/notes/llm-context-compression-cut-token-costs-2026-cover.jpg',
     alt: 'Dark editorial cover illustrating LLM context compression to cut token costs for AI agents in 2026',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
     {
       heading: 'TL;DR',

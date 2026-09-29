@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const aiGeneratedCodeAntiPatternsFixes2026: BlogPost = {
   slug: 'ai-generated-code-anti-patterns-fixes-2026',
+  updated: "2026-09-29",
+  seoTitle: "AI-Generated Code: Production Bugs and Fixes",
+  seoDescription: "Review nine production anti-patterns in AI-generated code. Learn what to inspect and how to turn a working prototype into a more reliable app.",
   title: 'AI-Generated Code Anti-Patterns: 9 Production Bugs Hiding in Vibe-Coded Apps (2026)',
   date: '2026-05-29',
   excerpt: 'AI coding agents produce roughly 1.7x more issues than human-written code (CodeRabbit, Dec 2025), and AI-generated code drove 35 new CVEs in March 2026 alone. Here are the 9 anti-patterns I catch reviewing vibe-coded MVPs — phantom validation, optimistic auth, IDOR, race conditions, retry storms, God components — with the before/after fix for each and a checklist to catch them before they ship.',
@@ -19,7 +22,7 @@ export const aiGeneratedCodeAntiPatternsFixes2026: BlogPost = {
     src: '/images/notes/ai-generated-code-anti-patterns-fixes-2026-cover.jpg',
     alt: 'Cracked circuit board trace with one glowing fault line illustrating AI-generated code anti-patterns',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
     {
       heading: 'TL;DR',

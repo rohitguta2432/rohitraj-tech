@@ -9,8 +9,8 @@ import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
     return createPageMetadata(
-        "Services | Rohit Raj",
-        "AI consulting delivered as a forward deployed engineer — fractional FDE retainers, MCP integration, Claude Code rollouts — plus founding-engineer MVP sprints. Hire a senior engineer who ships to production.",
+        "AI Consulting and Engineering Services",
+        "Explore AI consulting, fractional engineering, MCP integration, Claude Code training and MVP sprints. Work directly with a senior engineer who ships.",
         "/services"
             );
 }

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const cloudFirstAiIsDeadOnDeviceAndroid2026: BlogPost = {
   slug: 'cloud-first-ai-is-dead-on-device-android-2026',
+  updated: "2026-09-29",
+  seoTitle: "Building a Fully Offline AI App for Android",
+  seoDescription: "Explore the design of a fully offline Android AI app. Review on-device inference, privacy and the tradeoffs of replacing cloud-dependent features.",
   title: 'Cloud-First AI Is Dead. I Built a Fully Offline AI App to Prove It.',
   date: '2026-04-16',
   excerpt: 'Google just shipped an offline AI dictation app. Android 16 runs notification summaries on-device. The "cloud-first" mentality for AI apps is dying — here\'s how I built a production Android app with zero network permissions using Gemma 4, LiteRT, and regex fallback.',

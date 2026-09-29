@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const glm52VsClaudeOpusCodingAgent2026: BlogPost = {
     slug: 'glm-5-2-vs-claude-opus-coding-agent-2026',
+  updated: "2026-09-29",
+    seoTitle: "GLM-5.2 vs Claude Opus: Coding Agent Guide",
+    seoDescription: "Compare GLM-5.2 and Claude Opus for coding agents. Review workflow fit and the tradeoffs involved in switching an existing agent's model.",
     title: 'GLM-5.2 vs Claude Opus 4.8: Should You Switch Your Coding Agent? (2026)',
     date: '2026-06-26',
     excerpt:
@@ -17,7 +20,7 @@ export const glm52VsClaudeOpusCodingAgent2026: BlogPost = {
         'glm-5.2 claude code',
         'cheapest coding agent model 2026',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/glm-5-2-vs-claude-opus-coding-agent-2026-cover.jpg',
         alt: 'Two luminous crystalline cores of unequal size linked by glowing filaments illustrating GLM-5.2 vs Claude Opus coding agent comparison',

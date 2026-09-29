@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const openSourceAiAgentMemoryMem0VsZepLetta2026: BlogPost = {
   slug: 'open-source-ai-agent-memory-mem0-vs-zep-letta-2026',
+  updated: "2026-09-29",
+  seoTitle: "AI Agent Memory: Mem0 vs Zep vs Letta",
+  seoDescription: "Compare Mem0, Zep, Letta and MemPalace for AI agent memory. Review persistence, retrieval and deployment tradeoffs before choosing a memory stack.",
   title: 'AI Agent Memory in 2026: Mem0 vs Zep vs Letta vs MemPalace (Open-Source, Benchmarked)',
   date: '2026-06-06',
   excerpt:
@@ -20,7 +23,7 @@ export const openSourceAiAgentMemoryMem0VsZepLetta2026: BlogPost = {
     src: '/images/notes/open-source-ai-agent-memory-mem0-vs-zep-letta-2026-cover.jpg',
     alt: 'Glowing knowledge-graph nodes on a dark grid illustrating open-source AI agent memory layers compared in 2026',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
     {
       heading: 'TL;DR',

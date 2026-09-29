@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const aiDevWeek2026W23: BlogPost = {
   slug: 'ai-dev-week-2026-23',
+  updated: "2026-09-29",
+  seoTitle: "AI Dev Week 23, 2026: Opus, Copilot and MCP",
+  seoDescription: "A recap of AI week 23 in 2026, covering Claude Opus, Copilot metering and MCP specification changes with practical takeaways for developers.",
   title: "This Week in AI Dev: Claude Opus 4.8, Copilot Goes Token-Metered, MCP's Stateless Next Spec (Week 23 of 2026)",
   date: '2026-06-02',
   excerpt: 'Six ships from Week 23 of 2026 that change how you build with AI: Claude Opus 4.8 lands, GitHub Copilot moves to token-metered AI Credits on June 1, the MCP next-spec RC locks a stateless protocol core, OpenAI Codex becomes an autonomous Goal-Mode runtime, Windsurf bundles Devin and raises prices, and the open-weight coding race tightens with Kimi K2.6 and GLM-5.1.',
@@ -15,7 +18,7 @@ export const aiDevWeek2026W23: BlogPost = {
     'windsurf devin bundle',
     'ai coding agents 2026',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/ai-dev-week-2026-23-cover.jpg',
     alt: 'Abstract editorial cover illustrating AI dev tools weekly roundup week 23 of 2026',

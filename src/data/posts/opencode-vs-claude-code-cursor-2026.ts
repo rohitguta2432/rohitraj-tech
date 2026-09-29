@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const opencodeVsClaudeCodeCursor2026: BlogPost = {
   slug: 'opencode-vs-claude-code-cursor-2026',
+  updated: "2026-09-29",
+  seoTitle: "OpenCode vs Claude Code vs Cursor (2026)",
+  seoDescription: "Compare OpenCode, Claude Code and Cursor for software development. Choose a coding agent by workflow, control and integration requirements.",
   title: 'OpenCode vs Claude Code vs Cursor: The Best AI Coding Agent in 2026?',
   date: '2026-06-12',
   excerpt:
@@ -16,7 +19,7 @@ export const opencodeVsClaudeCodeCursor2026: BlogPost = {
     'best ai coding agent 2026',
     'is opencode free',
   ],
-  relatedProject: 'rohitrajTech',
+  relatedProject: "rohitraj-site",
   coverImage: {
     src: '/images/notes/opencode-vs-claude-code-cursor-2026-cover.jpg',
     alt: 'Glowing pink core orbited by translucent geometric shards illustrating the OpenCode open-source AI coding agent',

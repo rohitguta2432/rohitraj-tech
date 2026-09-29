@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const whyYourMvpShouldCostUnder10k: BlogPost = {
   slug: 'why-your-mvp-should-cost-under-10k',
+  updated: "2026-09-29",
+  seoTitle: "How to Scope an MVP Under $10,000",
+  seoDescription: "Learn how to scope an MVP around a $10,000 budget. Review feature priorities and engineering tradeoffs that support a focused first release.",
   title: 'Why Your MVP Should Cost Under $10,000 — And How to Make It Happen',
   date: '2026-04-05',
   excerpt: 'Most MVPs are overbuilt and overpriced. Here is how to scope, build, and launch a real product for under $10K — with examples from projects I have shipped.',

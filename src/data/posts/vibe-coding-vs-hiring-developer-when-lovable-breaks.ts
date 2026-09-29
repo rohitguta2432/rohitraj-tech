@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const vibeCodingVsHiringDeveloperWhenLovableBreaks: BlogPost = {
   slug: 'vibe-coding-vs-hiring-developer-when-lovable-breaks',
+  updated: "2026-09-29",
+  seoTitle: "Vibe Coding vs Hiring a Developer",
+  seoDescription: "Compare vibe coding with hiring a developer. Learn when Lovable, Bolt and Cursor help, and where production reliability requires deeper engineering.",
   title: 'Vibe Coding vs Hiring a Developer — When Lovable, Bolt, and Cursor Stop Being Enough',
   date: '2026-04-22',
   excerpt: 'Vibe coding ships prototypes in 2.4 days. Then the 500-user wall hits — auth bugs, payment edges, DB drift. The honest handoff playbook from AI tool to human engineer.',
@@ -18,7 +21,7 @@ export const vibeCodingVsHiringDeveloperWhenLovableBreaks: BlogPost = {
     src: '/images/notes/vibe-coding-vs-hiring-developer-when-lovable-breaks-cover.jpg',
     alt: 'Abstract editorial cover illustrating Vibe Coding vs Hiring a Developer',
   },
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   sections: [
     {
       heading: 'TL;DR',

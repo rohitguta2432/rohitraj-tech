@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const forwardDeployedEngineerHiringProcess2026: BlogPost = {
   slug: 'forward-deployed-engineer-hiring-process-2026',
+  updated: "2026-09-29",
+  seoTitle: "How to Hire a Forward Deployed Engineer",
+  seoDescription: "Learn how to hire a forward deployed engineer: define the outcome, assess delivery experience and structure a pilot before a longer engagement.",
   title: 'How to Hire a Forward Deployed Engineer (Without the Full-Time Search)',
   date: '2026-09-19',
   excerpt:
@@ -16,7 +19,7 @@ export const forwardDeployedEngineerHiringProcess2026: BlogPost = {
     'forward deployed engineer trial project',
     'ai consultant vs full time hire',
   ],
-  relatedProject: 'myFinancial',
+  relatedProject: "myfinancial",
   coverImage: {
     src: '/images/notes/forward-deployed-engineer-hiring-process-2026-cover.jpg',
     alt: 'Abstract converging pathways on a dark grid illustrating the forward deployed engineer hiring process',

@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const aiAgentMemoryVsContextWindow2026: BlogPost = {
     slug: 'ai-agent-memory-vs-context-window-2026',
+  updated: "2026-09-29",
+    seoTitle: "AI Agent Memory vs Context Window Explained",
+    seoDescription: "Understand the difference between an agent's memory and its context window. Learn when persistence, retrieval and a larger prompt each help.",
     title: "AI Agent Memory vs Context Window: Why a Bigger Window Isn't Memory (2026)",
     date: '2026-06-15',
     excerpt:
@@ -16,7 +19,7 @@ export const aiAgentMemoryVsContextWindow2026: BlogPost = {
         'do ai agents need a memory layer',
         'agent memory layer pgvector',
     ],
-    relatedProject: 'myFinancial',
+    relatedProject: "myfinancial",
     coverImage: {
         src: '/images/notes/ai-agent-memory-vs-context-window-2026-cover.jpg',
         alt: 'A crystalline memory core beside a dissolving particle cloud illustrating AI agent memory vs context window',

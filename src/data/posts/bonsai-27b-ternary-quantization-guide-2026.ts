@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const bonsai27bTernaryQuantizationGuide2026: BlogPost = {
     slug: 'bonsai-27b-ternary-quantization-guide-2026',
+  updated: "2026-09-29",
+    seoTitle: "Bonsai 27B: Ternary Quantization Tradeoffs",
+    seoDescription: "Explore Bonsai 27B and ternary quantization for local inference. Review mobile deployment claims alongside the model's benchmark limitations.",
     title: 'Bonsai 27B: A 27B Model on Your Phone — and the One Benchmark That Collapses (2026)',
     date: '2026-07-15',
     excerpt:

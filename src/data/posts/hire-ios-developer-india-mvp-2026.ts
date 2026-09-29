@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const hireIosDeveloperIndiaMvp2026: BlogPost = {
   slug: 'hire-ios-developer-india-mvp-2026',
+  updated: "2026-09-29",
+  seoTitle: "Hire an iOS Developer in India: Cost Guide",
+  seoDescription: "Compare an iOS freelancer, agency and founding engineer in India. Review delivery scope, stack choices and costs before hiring for an MVP.",
   title: 'Hire iOS Developer India 2026: Founding Engineer vs Agency vs Swift Freelancer (Real Cost)',
   date: '2026-05-22',
   excerpt: 'A founding engineer in India ships a native iOS MVP in 6–8 weeks for ₹7.5–10.5L fixed — Swift, SwiftUI, TestFlight, both review submissions, all in. A Bangalore agency quotes ₹28–42L for the same scope, lands in 17 weeks, and hands you a codebase mixing UIKit and SwiftUI across screens. Here is the May 2026 rate card, the App Store review traps that bite native iOS specifically, and the decision tree I wish my last three FinTech and consumer-app founders had read.',

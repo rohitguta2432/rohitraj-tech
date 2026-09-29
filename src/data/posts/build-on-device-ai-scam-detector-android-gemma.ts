@@ -2,6 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const buildOnDeviceAiScamDetectorAndroidGemma: BlogPost = {
   slug: 'build-on-device-ai-scam-detector-android-gemma',
+  updated: "2026-09-29",
+  seoTitle: "Android AI Scam Detector: Gemma and LiteRT",
+  seoDescription: "Explore an on-device Android scam detector using Gemma, LiteRT and a regex fallback. Review model integration and offline architecture choices.",
   title: 'Building an On-Device AI Scam Detector for Android — Gemma 4 + LiteRT + Regex Fallback',
   date: '2026-04-12',
   excerpt: 'How I built ScamRakshak — a fully offline Android app that detects scams using a 3-tier AI inference engine with Gemma 4 on-device LLM, LiteRT classification, and regex fallback. Zero internet, zero data collection.',
