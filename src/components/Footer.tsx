@@ -1,5 +1,6 @@
 import type { CommonDictionary } from "@/lib/i18n";
 import SubscribeForm from "./SubscribeForm";
+import { CookieSettingsLink } from "./CookieConsent";
 
 interface FooterProps {
     dict: CommonDictionary;
@@ -90,6 +91,7 @@ export default function Footer({ dict }: FooterProps) {
                                 </a>
                             ))}
                         </div>
+                        <CookieSettingsLink />
                     </div>
 
                     <div className="footer-services mb-6">

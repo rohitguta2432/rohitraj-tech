@@ -2,6 +2,7 @@
 
 import Script from "next/script";
 import { useEffect } from "react";
+import CookieConsent, { CONSENT_KEY, CONSENT_REGIONS } from "./CookieConsent";
 
 // GA4 + Google Ads via a single gtag.js load. IDs come from build-time env
 // vars; with none set this renders nothing, so local dev and forks stay clean.
@@ -61,12 +62,23 @@ export default function Analytics() {
   return (
     <>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${tagId}`} strategy="afterInteractive" />
+      {/* Consent defaults must precede config: denied in CONSENT_REGIONS,
+          granted elsewhere, then any stored choice from the banner. */}
       <Script id="gtag-init" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
+var denied = {ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'};
+gtag('consent', 'default', Object.assign({region: ${JSON.stringify(CONSENT_REGIONS)}}, denied));
+gtag('consent', 'default', {ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});
+gtag('set', 'ads_data_redaction', true);
+try {
+  var c = localStorage.getItem('${CONSENT_KEY}');
+  if (c === 'granted' || c === 'denied') gtag('consent', 'update', {ad_storage:c,ad_user_data:c,ad_personalization:c,analytics_storage:c});
+} catch (e) {}
 gtag('js', new Date());
 ${configs}`}
       </Script>
+      <CookieConsent />
     </>
   );
 }
