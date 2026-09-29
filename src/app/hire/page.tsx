@@ -184,7 +184,7 @@ export default async function HirePage() {
                                     className="btn btn-primary"
                                     style={{ display: "inline-block", padding: "0.875rem 2rem", fontSize: "1.05rem", fontWeight: 600, borderRadius: "8px", textDecoration: "none" }}
                                 >
-                                    Book a Scoping Call
+                                    Discuss Your Project
                                 </Link>
                                 <a
                                     href={`mailto:${SITE_CONFIG.author.email}?subject=AI%20consulting%20enquiry`}
@@ -329,7 +329,7 @@ export default async function HirePage() {
                                 className="btn btn-primary"
                                 style={{ display: "inline-block", padding: "0.875rem 2rem", fontSize: "1.1rem", fontWeight: 600, borderRadius: "8px", textDecoration: "none" }}
                             >
-                                Book a Scoping Call
+                                Discuss Your Project
                             </Link>
                         </div>
                     </div>

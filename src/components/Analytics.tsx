@@ -3,20 +3,14 @@
 import Script from "next/script";
 import { useEffect } from "react";
 import CookieConsent, { CONSENT_KEY, CONSENT_REGIONS } from "./CookieConsent";
+import { getContactMethod, getTrackingIds } from "@/lib/contact-tracking";
 
 // GA4 + Google Ads via a single gtag.js load. IDs come from build-time env
 // vars; with none set this renders nothing, so local dev and forks stay clean.
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
-const ADS_LEAD_LABEL = process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL;
-
-// The site has no contact form — leads start by clicking an email, WhatsApp
-// or booking link. Match those hrefs and report each click as a lead.
-const LEAD_LINKS: [RegExp, string][] = [
-  [/^mailto:/i, "email"],
-  [/^https?:\/\/(wa\.me|api\.whatsapp\.com)\//i, "whatsapp"],
-  [/^https?:\/\/([\w-]+\.)?(calendly\.com|cal\.com)\//i, "booking"],
-];
+const { gaId: GA_ID, adsId: ADS_ID, tagId } = getTrackingIds(
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_ID,
+);
 
 declare global {
   interface Window {
@@ -25,8 +19,6 @@ declare global {
 }
 
 export default function Analytics() {
-  const tagId = GA_ID ?? ADS_ID;
-
   useEffect(() => {
     if (!tagId) return;
 
@@ -36,21 +28,20 @@ export default function Analytics() {
       const link = (e.target as Element | null)?.closest?.("a[href]");
       if (!link || !window.gtag) return;
       const href = link.getAttribute("href") ?? "";
-      const match = LEAD_LINKS.find(([pattern]) => pattern.test(href));
-      if (!match) return;
+      const method = getContactMethod(href);
+      if (!method) return;
 
-      window.gtag("event", "generate_lead", {
-        method: match[1],
+      // Opening an email composer, WhatsApp or a booking page cannot prove
+      // that an enquiry or booking was actually received.
+      window.gtag("event", "contact_click", {
+        contact_method: method,
         page_path: window.location.pathname,
       });
-      if (ADS_ID && ADS_LEAD_LABEL) {
-        window.gtag("event", "conversion", { send_to: `${ADS_ID}/${ADS_LEAD_LABEL}` });
-      }
     };
 
     document.addEventListener("click", onClick, { capture: true });
     return () => document.removeEventListener("click", onClick, { capture: true });
-  }, [tagId]);
+  }, []);
 
   if (!tagId) return null;
 

@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "test": "jest",
-    "gen:blog-summaries": "tsx scripts/generate-blog-summaries.ts"
+    "gen:blog-summaries": "tsx scripts/generate-blog-summaries.ts",
+    "check:marketing": "tsx scripts/check-marketing-setup.ts"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.1116.0",

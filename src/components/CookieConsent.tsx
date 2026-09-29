@@ -72,8 +72,8 @@ export default function CookieConsent() {
     <section className="consent" role="dialog" aria-labelledby="consent-title" aria-live="polite">
       <p id="consent-title" className="consent-label">Cookies</p>
       <p className="consent-text">
-        Google Analytics and Google Ads cookies tell me which pages and ads bring people here.
-        Nothing loads that tracks you until you say yes.
+        Choose whether to allow Google Analytics and Google Ads cookies to measure visits
+        and advertising. If you reject, these cookies remain disabled.
       </p>
       <div className="consent-actions">
         <button type="button" className="btn btn-secondary btn-sm" onClick={() => choose("denied")}>
