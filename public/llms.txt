@@ -21,7 +21,9 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 - [StellarMIND](https://rohitraj.tech/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (153 posts)
+## All Engineering Notes (154 posts)
+
+- [Freelance FDE vs Fractional Engineer: A Buyer Decision Guide (2026)](https://rohitraj.tech/notes/freelance-fde-vs-fractional-engineer-2026)
 
 - [The Fractional Forward Deployed Engineer Engagement Model: How It Actually Runs (2026)](https://rohitraj.tech/notes/fractional-forward-deployed-engineer-engagement-model-2026)
 - [This Week in AI Dev: Frontier Prices Halved and a 27B Model Fit in 6GB (Week 39 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-39)

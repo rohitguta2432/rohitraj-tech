@@ -149,7 +149,10 @@ import { aiDevWeek202639 } from './ai-dev-week-2026-39';
 import { claudeCodeAgentsMdVsClaudeMdPrecedence2026 } from './claude-code-agents-md-vs-claude-md-precedence-2026';
 import { fractionalForwardDeployedEngineerEngagementModel2026 } from './fractional-forward-deployed-engineer-engagement-model-2026';
 
+import { freelanceFdeVsFractionalEngineer2026 } from './freelance-fde-vs-fractional-engineer-2026';
+
 const allPosts: BlogPost[] = [
+  freelanceFdeVsFractionalEngineer2026,
   ragForSql,
   springBootMcp,
   pwaOfflineSync,

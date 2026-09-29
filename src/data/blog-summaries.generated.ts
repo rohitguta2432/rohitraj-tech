@@ -3,6 +3,25 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "freelance-fde-vs-fractional-engineer-2026",
+    "title": "Freelance FDE vs Fractional Engineer: A Buyer Decision Guide (2026)",
+    "date": "2026-09-29",
+    "excerpt": "Choose between a bounded FDE project, ongoing fractional ownership and an internal hire using acceptance evidence, availability needs and a one-page decision brief.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "freelance forward deployed engineer vs fractional",
+      "freelance fde vs fractional",
+      "fde engagement comparison",
+      "project based forward deployed engineer",
+      "fractional fde ownership",
+      "fde pilot decision"
+    ],
+    "coverImage": {
+      "src": "/images/notes/freelance-fde-vs-fractional-engineer-2026-cover.jpg",
+      "alt": "Glowing orbital paths illustrating freelance FDE vs fractional engineering engagement choices"
+    }
+  },
+  {
     "slug": "fractional-forward-deployed-engineer-engagement-model-2026",
     "title": "The Fractional Forward Deployed Engineer Engagement Model: How It Actually Runs (2026)",
     "date": "2026-09-26",
