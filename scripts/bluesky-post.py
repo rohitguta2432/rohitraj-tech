@@ -54,9 +54,10 @@ def build_text(slug: str, meta: dict) -> tuple:
     if len(excerpt) > avail:
         excerpt = excerpt[: avail - 1].rsplit(" ", 1)[0] + "…"
     text = f"{head}{excerpt}{suffix}"
-    url_start = text.rfind(url)
+    # Bluesky facets use UTF-8 byte offsets, not Python character offsets.
+    url_start = len(text[:text.rfind(url)].encode("utf-8"))
     facets = [{
-        "index": {"byteStart": url_start, "byteEnd": url_start + len(url)},
+        "index": {"byteStart": url_start, "byteEnd": url_start + len(url.encode("utf-8"))},
         "features": [{"$type": "app.bsky.richtext.facet#link", "uri": url}],
     }]
     return text, facets
