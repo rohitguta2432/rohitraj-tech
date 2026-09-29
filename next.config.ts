@@ -1,5 +1,13 @@
 import type { NextConfig } from "next";
 
+// Google Ads conversion beacons go to the visitor's country Google domain
+// (google.co.in, google.co.uk, …) and CSP can't wildcard a TLD, so list the
+// domains for the geos we advertise in. Other countries still convert via
+// googleadservices.com; they just lose the first-party beacon.
+const googleCountryDomains = [
+  'com', 'co.in', 'co.uk', 'ca', 'com.au', 'ae', 'com.sg', 'de', 'fr', 'nl', 'ie',
+].map((tld) => `https://www.google.${tld}`).join(' ');
+
 const securityHeaders = [
   {
     key: 'X-Content-Type-Options',
@@ -27,7 +35,9 @@ const securityHeaders = [
   },
   {
     key: 'Content-Security-Policy',
-    value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://api.indexnow.org https://api.openai.com https://api.anthropic.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests",
+    // Google hosts per Google's GA4 + Google Ads CSP guidance (gtag.js loads
+    // from googletagmanager.com, then beacons/frames to the Ads hosts).
+    value: `default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com ${googleCountryDomains} https://api.indexnow.org https://api.openai.com https://api.anthropic.com; frame-src https://td.doubleclick.net https://bid.g.doubleclick.net https://www.googletagmanager.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests`,
   },
 ];
 

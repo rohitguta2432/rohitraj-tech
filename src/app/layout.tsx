@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Big_Shoulders, Chivo, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { defaultMetadata, generateAllSchemas } from "@/lib/seo-config";
+import Analytics from "@/components/Analytics";
 
 // Display + body pair chosen with the user from four directions (the "poster"
 // direction): Big Shoulders Display is a tall condensed grotesque that holds up at
@@ -74,6 +75,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );

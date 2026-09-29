@@ -1,0 +1,72 @@
+"use client";
+
+import Script from "next/script";
+import { useEffect } from "react";
+
+// GA4 + Google Ads via a single gtag.js load. IDs come from build-time env
+// vars; with none set this renders nothing, so local dev and forks stay clean.
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+const ADS_LEAD_LABEL = process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL;
+
+// The site has no contact form — leads start by clicking an email, WhatsApp
+// or booking link. Match those hrefs and report each click as a lead.
+const LEAD_LINKS: [RegExp, string][] = [
+  [/^mailto:/i, "email"],
+  [/^https?:\/\/(wa\.me|api\.whatsapp\.com)\//i, "whatsapp"],
+  [/^https?:\/\/([\w-]+\.)?(calendly\.com|cal\.com)\//i, "booking"],
+];
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+export default function Analytics() {
+  const tagId = GA_ID ?? ADS_ID;
+
+  useEffect(() => {
+    if (!tagId) return;
+
+    // One delegated listener covers every contact link on every page,
+    // including ones rendered from src/data.
+    const onClick = (e: MouseEvent) => {
+      const link = (e.target as Element | null)?.closest?.("a[href]");
+      if (!link || !window.gtag) return;
+      const href = link.getAttribute("href") ?? "";
+      const match = LEAD_LINKS.find(([pattern]) => pattern.test(href));
+      if (!match) return;
+
+      window.gtag("event", "generate_lead", {
+        method: match[1],
+        page_path: window.location.pathname,
+      });
+      if (ADS_ID && ADS_LEAD_LABEL) {
+        window.gtag("event", "conversion", { send_to: `${ADS_ID}/${ADS_LEAD_LABEL}` });
+      }
+    };
+
+    document.addEventListener("click", onClick, { capture: true });
+    return () => document.removeEventListener("click", onClick, { capture: true });
+  }, [tagId]);
+
+  if (!tagId) return null;
+
+  const configs = [GA_ID, ADS_ID]
+    .filter(Boolean)
+    .map((id) => `gtag('config', '${id}');`)
+    .join("\n");
+
+  return (
+    <>
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${tagId}`} strategy="afterInteractive" />
+      <Script id="gtag-init" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+${configs}`}
+      </Script>
+    </>
+  );
+}
