@@ -21,8 +21,9 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 - [StellarMIND](https://rohitraj.tech/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (154 posts)
+## All Engineering Notes (155 posts)
 
+- [GPT-6.1 Sol vs Claude Sonnet 5.5: Which Costs Less for a Coding Agent? (2026)](https://rohitraj.tech/notes/gpt-6-1-sol-vs-claude-sonnet-5-5-coding-agents-2026)
 - [Freelance FDE vs Fractional Engineer: A Buyer Decision Guide (2026)](https://rohitraj.tech/notes/freelance-fde-vs-fractional-engineer-2026)
 
 - [The Fractional Forward Deployed Engineer Engagement Model: How It Actually Runs (2026)](https://rohitraj.tech/notes/fractional-forward-deployed-engineer-engagement-model-2026)

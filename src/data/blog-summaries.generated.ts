@@ -3,6 +3,27 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "gpt-6-1-sol-vs-claude-sonnet-5-5-coding-agents-2026",
+    "title": "GPT-6.1 Sol vs Claude Sonnet 5.5: Which Costs Less for a Coding Agent? (2026)",
+    "date": "2026-09-30",
+    "excerpt": "GPT-6.1 Sol and Claude Sonnet 5.5 launched a day apart at the same $2/$10 price. Sol's cheaper cache reads win short agent loops. Its 272K long-context rule doubles the bill on big prompts, where Sonnet charges one flat rate to 1M. Here is the cost math, a working router, and the system-card numbers to check before either model runs your shell.",
+    "readingTime": "13 min read",
+    "keywords": [
+      "gpt 6.1 sol vs claude sonnet 5.5",
+      "gpt-6.1 sol",
+      "claude sonnet 5.5",
+      "gpt 6.1 sol pricing 272k",
+      "best model for coding agents 2026",
+      "gpt 6.1 sol vs sonnet 5.5 cost",
+      "llm model router typescript"
+    ],
+    "coverImage": {
+      "src": "/images/notes/gpt-6-1-sol-vs-claude-sonnet-5-5-coding-agents-2026-cover.jpg",
+      "alt": "two equal glowing crystalline cores with diverging particle paths illustrating gpt 6.1 sol vs claude sonnet 5.5"
+    },
+    "relatedProject": "propcheck"
+  },
+  {
     "slug": "freelance-fde-vs-fractional-engineer-2026",
     "title": "Freelance FDE vs Fractional Engineer: A Buyer Decision Guide (2026)",
     "date": "2026-09-29",

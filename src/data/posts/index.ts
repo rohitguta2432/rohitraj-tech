@@ -150,6 +150,7 @@ import { claudeCodeAgentsMdVsClaudeMdPrecedence2026 } from './claude-code-agents
 import { fractionalForwardDeployedEngineerEngagementModel2026 } from './fractional-forward-deployed-engineer-engagement-model-2026';
 
 import { freelanceFdeVsFractionalEngineer2026 } from './freelance-fde-vs-fractional-engineer-2026';
+import { gpt61SolVsClaudeSonnet55CodingAgents2026 } from './gpt-6-1-sol-vs-claude-sonnet-5-5-coding-agents-2026';
 
 const allPosts: BlogPost[] = [
   freelanceFdeVsFractionalEngineer2026,
@@ -300,6 +301,7 @@ const allPosts: BlogPost[] = [
   aiDevWeek202639,
   claudeCodeAgentsMdVsClaudeMdPrecedence2026,
   fractionalForwardDeployedEngineerEngagementModel2026,
+  gpt61SolVsClaudeSonnet55CodingAgents2026,
 ];
 
 // Validate all posts at module load time
