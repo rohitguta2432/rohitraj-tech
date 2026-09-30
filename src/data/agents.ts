@@ -19,7 +19,7 @@ export interface AgentShowcase {
     status: "live" | "development" | "production" | "active";
     repoUrl?: string;
     liveUrl?: string;
-    demo?: "resolvr" | "dispatchr" | "mcpguard" | "clauseguard" | "finscope" | "cadence" | "prospectr" | "loopr";
+    demo?: "resolvr" | "dispatchr" | "mcpguard" | "clauseguard" | "finscope" | "cadence" | "prospectr" | "loopr" | "chainlens";
     /** Optional screenshot of the standalone product, served from /public. */
     screenshot?: string;
     /** Optional dedicated landing page (without locale prefix), e.g. /agents/resolvr. */
@@ -52,6 +52,30 @@ export const agents: AgentShowcase[] = [
             { label: "Must-escalate recall", value: "100%" },
             { label: "LLM backend", value: "Ollama + API" },
             { label: "Stack", value: "FastAPI + React" },
+        ],
+    },
+    {
+        slug: "chainlens",
+        name: "Chainlens — On-Chain Risk X-Ray for Wallets & Contracts",
+        market: "Web3 wallet & smart-contract security",
+        marketSize: "Approval phishing, address poisoning and malicious EIP-7702 delegations are among the most common ways wallets get drained · few users ever audit what they've signed",
+        problem:
+            "Crypto users sign token approvals and interact with contracts they can't read. Months later a forgotten unlimited approval, a planted lookalike address, or a single-key admin that can freeze or upgrade a token is what drains them — and none of it is visible in a wallet UI.",
+        solution:
+            "Paste any EVM wallet or contract address (or ENS name). Chainlens pulls its real on-chain history, decodes every approval from calldata and re-checks it against live chain state, screens counterparties against the public scam-tag registry, detects address poisoning and EIP-7702 delegations, reads proxy admin slots and owner(), and turns it all into a plain-English report with explorer-linked evidence.",
+        autonomy:
+            "A collect → analyse → report pipeline: network I/O (Blockscout REST, the tag registry, batched JSON-RPC) is isolated in one stage that produces a replayable snapshot; 22 pure checks turn it into graded findings. Zero runtime dependencies — the ABI encoding is hand-written and verified against viem in tests — and a 35-case eval suite (30 attack scenarios + 5 live mainnet fixtures) gates every change at 100% recall with zero false positives.",
+        techStack: ["TypeScript", "Next.js API route", "Blockscout API", "JSON-RPC (eth_call, eth_getStorageAt)", "EIP-1967 / EIP-7702", "Eval-gated"],
+        status: "live",
+        repoUrl: "https://github.com/rohitguta2432/chainlens",
+        demo: "chainlens",
+        screenshot: "/agents/chainlens.png",
+        detailPath: "/agents/chainlens",
+        detailLabel: "Wallet & smart-contract risk scanner — how it works",
+        metrics: [
+            { label: "Eval recall", value: "100%" },
+            { label: "Chains", value: "5 EVM" },
+            { label: "API keys", value: "none" },
         ],
     },
     {

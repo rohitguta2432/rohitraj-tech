@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 
 
 const TITLE = "AI Agents: Live Demos and Open-Source Projects";
-const DESCRIPTION = "Try AI agents built by Rohit Raj for support, dispatch, contract review and security checks. Explore their workflows and open-source implementations.";
+const DESCRIPTION = "Try AI agents built by Rohit Raj for support, dispatch, contract review, security checks and on-chain wallet risk. Explore their workflows and open-source code.";
 
 export async function generateMetadata(): Promise<Metadata> {
     return createPageMetadata(TITLE, DESCRIPTION, "/agents", { translated: false });
@@ -28,7 +28,7 @@ export default async function AgentsPage() {
                         <p className="page-description">
                             I don&apos;t just talk about AI agents — I build and run them. These are autonomous systems that
                             decide, call tools, and complete real work on their own, each aimed at a billion-dollar market.
-                            Seven of them are live below: try them.
+                            Nine of them are live below: try them.
                         </p>
                     </div>
                 </div>

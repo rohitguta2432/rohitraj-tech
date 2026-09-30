@@ -9,6 +9,7 @@ import MCPGuardDemo from "@/components/MCPGuardDemo";
 import CadenceDemo from "@/components/CadenceDemo";
 import ProspectrDemo from "@/components/ProspectrDemo";
 import LooproDemo from "@/components/LooproDemo";
+import ChainlensDemo from "@/components/ChainlensDemo";
 
 interface Bullet {
     name: string;
@@ -52,6 +53,29 @@ const AGENTS: LabAgent[] = [
             { label: "LLM backend", value: "Ollama + API" },
         ],
         hint: "Run “Hacked account” or “Legal threat” — Resolvr refuses to auto-answer and escalates. Run “Password reset” and the reply is written live by Ollama.",
+    },
+    {
+        id: "chainlens",
+        label: "Chainlens",
+        title: "Chainlens — on-chain risk X-ray for wallets & contracts",
+        description:
+            "Paste any EVM wallet or contract address (or an ENS name) and Chainlens pulls its real on-chain history, decodes every token approval and re-checks it live, then flags what actually drains wallets — approvals to phishers, address poisoning, malicious EIP-7702 delegations, brand-new unverified contracts, and admin keys that can mint, freeze or upgrade. Live data from Blockscout and public RPC nodes; no API key, no wallet connection.",
+        Component: ChainlensDemo,
+        panelTitle: "What it checks",
+        bullets: [
+            { name: "Approvals", desc: "decoded from calldata, re-checked live — to phishers, EOAs, unverified code" },
+            { name: "Poisoning & scams", desc: "lookalike addresses, flagged counterparties, lure-named tokens" },
+            { name: "EIP-7702", desc: "whose code your account is delegated to" },
+            { name: "Contracts", desc: "proxy admin slots, owner(), access-controlled mint / blacklist / fee powers" },
+        ],
+        evalTitle: "Quality gate",
+        evals: [
+            { label: "Eval cases", value: "35 (5 live mainnet)" },
+            { label: "Recall", value: "100%" },
+            { label: "False-positive guards", value: "0 / 41 tripped" },
+            { label: "Chains", value: "ETH · Base · Arb · OP · Polygon" },
+        ],
+        hint: "Scan “USDC · Ethereum” — no scam signals, but a single-key admin can upgrade it. Then scan the flagged phishing contract.",
     },
     {
         id: "loopr",
@@ -224,9 +248,10 @@ export default function AgentLab() {
                 <div className="section-header">
                     <h2 className="section-title">Agent Lab — try them live</h2>
                     <p className="section-description">
-                        Eight working agents, running right here on this site. Resolvr drafts real replies on a local
-                        Ollama model, with a cloud-API and offline fallback; the other seven are deterministic and run
-                        with no API key. Every one is gated by its own eval suite. Pick one and put it to work.
+                        Nine working agents, running right here on this site. Resolvr drafts real replies on a local
+                        Ollama model, with a cloud-API and offline fallback; Chainlens scans live blockchain data through
+                        public, keyless APIs; the other seven are deterministic and run with no API key. Every one is
+                        gated by its own eval suite. Pick one and put it to work.
                     </p>
                 </div>
 

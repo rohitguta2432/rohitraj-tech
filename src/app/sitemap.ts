@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/hire",
         "/agents",
         "/agents/resolvr",
+        "/agents/chainlens",
         "/projects",
         "/repos",
         "/notes",
@@ -69,6 +70,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/repos": latestProjectDate,
         "/notes": latestPostDate,
         "/services": latestServiceDate,
+        // Chainlens launched: the agent host and its new detail page changed.
+        "/agents": new Date("2026-09-30"),
+        "/agents/chainlens": new Date("2026-09-30"),
     };
     const metadataReviewDate = new Date("2026-09-29");
     const reviewedPages = new Set([
