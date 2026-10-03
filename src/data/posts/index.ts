@@ -152,7 +152,10 @@ import { fractionalForwardDeployedEngineerEngagementModel2026 } from './fraction
 import { freelanceFdeVsFractionalEngineer2026 } from './freelance-fde-vs-fractional-engineer-2026';
 import { gpt61SolVsClaudeSonnet55CodingAgents2026 } from './gpt-6-1-sol-vs-claude-sonnet-5-5-coding-agents-2026';
 
+import { whyAiPilotsFailProduction2026 } from './why-ai-pilots-fail-production-2026';
+
 const allPosts: BlogPost[] = [
+  whyAiPilotsFailProduction2026,
   freelanceFdeVsFractionalEngineer2026,
   ragForSql,
   springBootMcp,

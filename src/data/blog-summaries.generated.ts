@@ -3,6 +3,26 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "why-ai-pilots-fail-production-2026",
+    "title": "Why AI Pilots Fail to Reach Production: A Release Decision Guide",
+    "date": "2026-10-03",
+    "updated": "2026-10-03",
+    "excerpt": "A working demo leaves release questions unanswered. Use a practical decision brief, failure drills and four checkpoints to decide whether your AI pilot should ship.",
+    "readingTime": "12 min read",
+    "keywords": [
+      "why ai pilots fail to reach production",
+      "ai pilot to production",
+      "ai pilot release checklist",
+      "ai proof of concept production",
+      "forward deployed engineer ai pilot",
+      "ai deployment ownership"
+    ],
+    "coverImage": {
+      "src": "/images/notes/why-ai-pilots-fail-production-2026-cover.jpg",
+      "alt": "A luminous seed with branching roots illustrating the path from an AI pilot to production"
+    }
+  },
+  {
     "slug": "gpt-6-1-sol-vs-claude-sonnet-5-5-coding-agents-2026",
     "title": "GPT-6.1 Sol vs Claude Sonnet 5.5: Which Costs Less for a Coding Agent? (2026)",
     "date": "2026-09-30",
