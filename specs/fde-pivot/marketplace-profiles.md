@@ -74,7 +74,7 @@ How I work: fixed-scope pilots (one defined production outcome) or ongoing part-
 retainers. Your repo, your IP, weekly written updates a non-technical founder can read.
 Based in Bengaluru, India; remote worldwide; daily overlap with US/EU hours.
 
-Portfolio: rohitraj.tech/en/hire
+Portfolio: rohitraj.tech/hire
 
 **Skills tags**: AI Agent Development, Model Context Protocol, Claude API, RAG, Python,
 TypeScript, LLM Evaluation, AWS
@@ -86,4 +86,4 @@ TypeScript, LLM Evaluation, AWS
 - [ ] Go Fractional application submitted
 - [ ] MentorCruise mentor/consultant application submitted
 - [ ] Upwork profile updated to FDE positioning + specialized profile created
-- [ ] All three link to rohitraj.tech/en/hire
+- [ ] All three link to rohitraj.tech/hire (or the matching /services page)
