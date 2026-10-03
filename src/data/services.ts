@@ -550,7 +550,7 @@ export const services: Service[] = [
  ],
  timeline: "Fractional: ongoing, 2 days/week. Pilot: fixed scope.",
  costRange: "Scoped per engagement",
- portfolioSlugs: ["agentic-os", "claude-autodev"],
+ portfolioSlugs: ["stellarmind", "agent-autopsy", "claude-autodev", "quorum"],
  faqs: [
  {
  question: "What does a forward deployed engineer actually do?",
@@ -573,8 +573,122 @@ export const services: Service[] = [
  answer: "First step is a scoping call — free, 30 minutes, NDA signed beforehand if you want. Within the first week of an engagement I'm in your repo and your Slack, and the first working slice ships within the first two weeks: something real in staging touching your actual data, not a slide about what could be built.",
  },
  ],
+ sections: [
+ {
+ heading: "When you need a forward deployed engineer, and when you don't",
+ paragraphs: [
+ "The forward deployed model fits a specific kind of problem: the AI part is possible, but the value depends on your systems. Your ticketing tool, your warehouse, your permission model, your compliance rules, the three people whose daily work changes when the agent goes live. A model vendor can't see any of that from outside, and neither can an agency working from a requirements doc. Someone has to sit inside the environment and do the integration work.",
+ "If your problem is mostly a model problem, like choosing between providers or tuning a prompt, you don't need an embedded engineer. A few hours of advice will do. Hire a forward deployed engineer when the problem is getting a working system through your infrastructure, your data and your people.",
+ ],
+ bullets: [
+ "Good fit: a pilot that worked in a demo and stalled before production",
+ "Good fit: an agent that needs to read or act on internal systems, where nobody trusts it with production credentials yet",
+ "Good fit: leadership wants AI shipped this quarter, and the in-house team is fully booked on the core product",
+ "Not a fit: you want a strategy document with no build. Hire an advisor for that",
+ "Not a fit: a standalone app with a fixed spec and no integration with your systems. A fixed-price build is cheaper",
+ "Not a fit: the AI workload already fills five days a week, permanently. Hire full-time, and I can help write that spec",
+ ],
+ },
+ {
+ heading: "How a forward deployed engineer pilot runs",
+ paragraphs: [
+ "A pilot is scoped around one production outcome agreed in the first week, with a number attached. 'Explore AI for support' is not a pilot. 'Route 80% of inbound tickets correctly on a held-out set of last month's tickets' is. The rough shape:",
+ ],
+ bullets: [
+ "Week 1: in your repo, Slack and standups. Map the workflow with the people who do it, pull real examples, and agree the success metric and the eval set before writing agent code",
+ "Week 2: first working slice in staging against your real data. Small, ugly and real",
+ "Weeks 3–4: the work that separates a demo from production: evals in CI, permission scopes, audit logging, failure handling, a fallback when the model is down or wrong",
+ "Week 5: limited production rollout behind a flag or a human-approval step, measured against the agreed number",
+ "Week 6: decision point. Stop with a documented system your team owns, or continue on a fractional retainer for the next items on the backlog",
+ ],
+ },
+ {
+ heading: "What I need from your side",
+ paragraphs: [
+ "Most stalled AI projects stall on access and ownership, not on models. Before day one, I ask for:",
+ ],
+ bullets: [
+ "One named owner on your side who can make product calls the same day",
+ "Repo access and a staging environment. Production access is earned later, with scoped credentials",
+ "Real examples of the task: tickets, documents, queries or transcripts. A few hundred beats a perfect spec",
+ "One success metric we both agree is the definition of done",
+ "Time with the people whose workflow changes. They decide whether the system gets used",
+ ],
+ },
+ {
+ heading: "Shipped work that maps to forward deployed problems",
+ paragraphs: [
+ "Everything below is open source, so you can read the code before the scoping call. Each project is a pattern I reuse inside client environments.",
+ ],
+ bullets: [
+ "StellarMIND: an MCP server that turns plain-English questions into read-only SQL, using schema retrieval from pgvector. Only SELECT and WITH can run. That is the data-access pattern most internal agents need first",
+ "Agent Autopsy: classifies why an agent run failed (loops, ignored errors, made-up tools, context bloat) from the raw transcript. I use the same discipline to rescue stalled pilots",
+ "claude-autodev: an eight-stage pipeline where each stage only advances when it produces a real artifact, not when the model says it finished. I apply the same gating to production agents",
+ "Quorum: a multi-agent research swarm that coordinates through a shared knowledge graph, with an explicit critic agent so the swarm doesn't just agree with itself",
+ ],
+ },
+ ],
+ comparison: {
+ heading: "Forward deployed engineer vs AI consultant vs agency vs full-time hire",
+ intro: "All four can be the right call. The difference is who builds, where the work lives, and who owns the system after launch.",
+ columns: ["", "Forward deployed engineer", "AI consultant", "AI agency", "Full-time AI hire"],
+ rows: [
+ ["Who builds", "The same person who scoped it", "Nobody. You get recommendations", "An agency team, outside your context", "Your employee"],
+ ["Where the work lives", "Your repo, your Slack, your data", "Slides and documents", "Usually their repo, handed over at the end", "Your repo"],
+ ["First working software", "In staging within about two weeks", "Not part of the deliverable", "After a statement of work and a build phase", "After the hiring search and ramp-up"],
+ ["After launch", "Tunes it against real users, then a documented handoff", "Engagement has ended", "Support is a separate contract", "Ongoing"],
+ ["Commitment", "Fixed-scope pilot or part-week retainer", "Project fee", "Statement of work", "Full-time headcount"],
+ ["Best when", "Value depends on integrating with your systems and data", "You have builders and need a second opinion", "A well-specified build with no integration", "AI work fills a full week, long-term"],
+ ],
+ },
+ engagementExamples: {
+ heading: "Typical first pilots",
+ intro: "Most first engagements take one of these shapes. Each is scoped so that 'production' is measurable before any code is written.",
+ items: [
+ {
+ title: "Support triage agent",
+ situation: "Every inbound ticket is read by a person just to decide where it goes, and first-response time slips on busy days.",
+ build: [
+ "Read tickets through your helpdesk API with a narrow, read-only tool layer",
+ "Classify, route and draft a reply. A person approves before anything is sent",
+ "Eval set built from a few hundred past tickets with known correct routing",
+ ],
+ doneMeans: "routing accuracy on the held-out set meets the number agreed in week one, and the support team accepts drafts without rewriting them at an agreed rate.",
+ },
+ {
+ title: "Chat-to-SQL over internal data",
+ situation: "Ops and finance keep asking engineers for the same queries, and the backlog of 'quick questions' never shrinks.",
+ build: [
+ "Read-only database role with SELECT and WITH only, enforced in code and in the database",
+ "Schema retrieval so the model sees the relevant tables, not the whole warehouse",
+ "Query log and a verified-answer eval set of real questions",
+ ],
+ doneMeans: "answers match the verified set, every query is logged, and no write path exists anywhere in the system.",
+ },
+ {
+ title: "MCP server for internal tools",
+ situation: "The team wants Claude or an in-house agent to act on internal systems, but nobody will hand it production credentials.",
+ build: [
+ "MCP server exposing a small set of named tools, each with its own permission scope",
+ "Audit log of every call, rate limits, and staging first",
+ "Runbook so your engineers can add tools without me",
+ ],
+ doneMeans: "the agreed workflows run end to end through the server, every call is traceable, and your security review signs off.",
+ },
+ {
+ title: "Rescue a stalled pilot",
+ situation: "The demo impressed everyone. With real traffic, the agent loops, ignores errors or answers confidently and wrongly.",
+ build: [
+ "Replay real transcripts and classify each failure by cause",
+ "Fix the top cause first, often retrieval or tool design rather than the prompt",
+ "Turn every fixed failure into a regression eval that runs in CI",
+ ],
+ doneMeans: "the failure rate on replayed traffic drops below the agreed threshold, and the eval suite blocks regressions on every change.",
+ },
+ ],
+ },
  cta: "Book a Scoping Call",
- updated: "2026-09-29",
+ updated: "2026-10-03",
  related: [
  {
  href: "/services/fractional-forward-deployed-engineer",
@@ -966,7 +1080,7 @@ export const services: Service[] = [
  ],
  timeline: "Ongoing retainer, 2 fixed days/week. Minimum 3 months.",
  costRange: "Scoped per engagement",
- portfolioSlugs: ["agent-autopsy", "claude-autodev"],
+ portfolioSlugs: ["agent-autopsy", "claude-autodev", "marginchef"],
  faqs: [
  {
  question: "What is a fractional forward deployed engineer?",
@@ -993,8 +1107,78 @@ export const services: Service[] = [
  answer: "Week one I am in your repo, your Slack, and your standups, mapping where AI actually creates value against what your systems will allow. By week two something real is running in staging against your data — not a slide. Weeks three and four harden that first slice: evals, permissions, monitoring, a runbook. From then on the cadence is steady: ship, measure, tune, next item on the backlog.",
  },
  ],
+ sections: [
+ {
+ heading: "How the retainer works, week to week",
+ paragraphs: [
+ "A fractional engagement only works if the days are predictable. Interrupt-driven hours, where the engineer is half-available all week, produce half-finished work. So the structure is fixed from the start:",
+ ],
+ bullets: [
+ "Named days agreed up front, for example Tuesday and Thursday. Those days are yours, in your Slack and your standups",
+ "Between days I'm reachable in Slack for anything that blocks your team. Deep work waits for the named days",
+ "A written note every week: what shipped, what the evals say, what's next, what I need from you",
+ "A monthly backlog review with whoever owns AI on your leadership team, re-ranked by return",
+ "A quarterly check on three options: keep going, scale down, or hire full-time and hand over",
+ ],
+ },
+ {
+ heading: "Signs your AI workload fits two days a week",
+ paragraphs: [
+ "Most companies overestimate how many engineer-days AI work needs, and underestimate how much continuity it needs. You're probably a fractional fit if:",
+ ],
+ bullets: [
+ "You have three to six AI use cases worth doing, not thirty",
+ "Each one depends on your internal systems, so the same context gets reused across them",
+ "Shipped systems need tuning as real users find edge cases, but not every day",
+ "Your engineers can own day-to-day operation once someone builds it properly and documents it",
+ "You want proof that AI pays off before committing a senior headcount",
+ ],
+ },
+ {
+ heading: "A sample first quarter",
+ paragraphs: [
+ "Every retainer starts from a ranked backlog. The quarter usually looks like this:",
+ ],
+ bullets: [
+ "Month 1: the highest-return use case goes from discovery to a working slice in staging, with an eval set agreed with the people whose work it changes",
+ "Month 2: that system goes to limited production with permissions, audit logging and monitoring. The second use case starts, reusing the integrations from the first",
+ "Month 3: both systems are tuned against real usage. Runbooks are written so your team handles routine operation, and the backlog is re-ranked on what the first two taught us",
+ ],
+ },
+ {
+ heading: "Handing off to a full-time hire",
+ paragraphs: [
+ "The retainer is meant to end well. When the AI workload grows past two or three days a week, the right move is usually a full-time hire, and a fractional engineer makes that hire easier. The new engineer joins a working codebase with evals and runbooks instead of a blank page.",
+ ],
+ bullets: [
+ "I write the job spec from the real system, not a generic template",
+ "I join the technical interviews if you want a second opinion",
+ "Two weeks of overlap with pairing on the live systems",
+ "Ownership of evals, runbooks and on-call moves to the new hire, with nothing left in my head",
+ ],
+ },
+ {
+ heading: "The engineering behind the retainer",
+ paragraphs: [
+ "The habits that keep a part-week engagement reliable come from open-source projects you can inspect. Agent Autopsy diagnoses failed agent runs from their transcripts. claude-autodev refuses to advance a stage without a real artifact. MarginChef computes the numbers deterministically and uses the model only to write the advice, with a fallback when the model is unavailable. The same rules apply to every client system: measure before you trust it, and make sure it fails loudly.",
+ ],
+ },
+ ],
+ comparison: {
+ heading: "Fractional FDE vs full-time hire vs contractor vs fractional AI engineer",
+ intro: "Fractional is not always the answer. Here is where each model fits.",
+ columns: ["", "Fractional FDE", "Full-time FDE hire", "Freelance contractor", "Fractional AI engineer"],
+ rows: [
+ ["Commitment", "Fixed days each week, three-month minimum", "Full-time headcount", "Per task or per hour", "Fixed days each week"],
+ ["Time to start", "In your repo in the first week", "Hiring search, then ramp-up", "Fast, for a single task", "In your repo in the first week"],
+ ["Context over time", "Same engineer, compounding", "Highest", "Resets with each task", "Same engineer, compounding"],
+ ["Owns production", "Yes, including tuning after launch", "Yes", "Usually ends at delivery", "Yes"],
+ ["Where the work lives", "Your operations: integrations, data, permissions, adoption", "Same as fractional, full-time", "Whatever the task is", "Your product backlog: features and pipelines"],
+ ["Best when", "AI work is two or three days a week and tied to your systems", "AI work fills a full week, long-term", "You have one bounded task", "The hard part is shipping product features"],
+ ],
+ },
  cta: "Book a Scoping Call",
- updated: "2026-09-29",
+ updated: "2026-10-03",
  related: [
  {
  href: "/services/forward-deployed-engineer",

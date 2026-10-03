@@ -165,6 +165,144 @@ export default async function ServicePage({ params }: ServicePageProps) {
                             </ul>
                         </div>
 
+                        {/* Long-form body */}
+                        {service.sections?.map((section) => (
+                            <div key={section.heading} style={{ marginTop: "3rem" }}>
+                                <h2 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
+                                    {section.heading}
+                                </h2>
+                                {section.paragraphs.map((paragraph, i) => (
+                                    <p key={i} style={{ color: "var(--text-secondary)", lineHeight: 1.7, margin: "0 0 1rem" }}>
+                                        {paragraph}
+                                    </p>
+                                ))}
+                                {section.bullets && (
+                                    <ul style={{ color: "var(--text-secondary)", lineHeight: 1.7, paddingLeft: "1.25rem", margin: 0 }}>
+                                        {section.bullets.map((bullet, i) => (
+                                            <li key={i} style={{ padding: "0.25rem 0" }}>{bullet}</li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </div>
+                        ))}
+
+                        {/* Comparison table */}
+                        {service.comparison && (
+                            <div style={{ marginTop: "3rem" }}>
+                                <h2 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
+                                    {service.comparison.heading}
+                                </h2>
+                                {service.comparison.intro && (
+                                    <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, margin: "0 0 1rem" }}>
+                                        {service.comparison.intro}
+                                    </p>
+                                )}
+                                <div style={{ overflowX: "auto", border: "1px solid var(--border)", borderRadius: "12px" }}>
+                                    <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.9rem", minWidth: "560px" }}>
+                                        <thead>
+                                            <tr>
+                                                {service.comparison.columns.map((column) => (
+                                                    <th
+                                                        key={column}
+                                                        scope="col"
+                                                        style={{
+                                                            textAlign: "left",
+                                                            padding: "0.6rem 0.75rem",
+                                                            borderBottom: "2px solid var(--border)",
+                                                            color: "var(--text-primary)",
+                                                            fontWeight: 600,
+                                                            background: "var(--card-bg)",
+                                                        }}
+                                                    >
+                                                        {column}
+                                                    </th>
+                                                ))}
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {service.comparison.rows.map((row) => (
+                                                <tr key={row[0]}>
+                                                    {row.map((cell, i) =>
+                                                        i === 0 ? (
+                                                            <th
+                                                                key={i}
+                                                                scope="row"
+                                                                style={{
+                                                                    textAlign: "left",
+                                                                    padding: "0.6rem 0.75rem",
+                                                                    borderBottom: "1px solid var(--border)",
+                                                                    color: "var(--text-primary)",
+                                                                    fontWeight: 600,
+                                                                    verticalAlign: "top",
+                                                                }}
+                                                            >
+                                                                {cell}
+                                                            </th>
+                                                        ) : (
+                                                            <td
+                                                                key={i}
+                                                                style={{
+                                                                    padding: "0.6rem 0.75rem",
+                                                                    borderBottom: "1px solid var(--border)",
+                                                                    color: "var(--text-secondary)",
+                                                                    verticalAlign: "top",
+                                                                    lineHeight: 1.55,
+                                                                }}
+                                                            >
+                                                                {cell}
+                                                            </td>
+                                                        )
+                                                    )}
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Example engagements */}
+                        {service.engagementExamples && (
+                            <div style={{ marginTop: "3rem" }}>
+                                <h2 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
+                                    {service.engagementExamples.heading}
+                                </h2>
+                                {service.engagementExamples.intro && (
+                                    <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, margin: "0 0 1rem" }}>
+                                        {service.engagementExamples.intro}
+                                    </p>
+                                )}
+                                <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                                    {service.engagementExamples.items.map((item) => (
+                                        <div
+                                            key={item.title}
+                                            style={{
+                                                background: "var(--card-bg)",
+                                                border: "1px solid var(--border)",
+                                                borderRadius: "12px",
+                                                padding: "1.25rem",
+                                            }}
+                                        >
+                                            <h3 style={{ color: "var(--text-primary)", fontSize: "1.1rem", fontWeight: 600, margin: "0 0 0.5rem" }}>
+                                                {item.title}
+                                            </h3>
+                                            <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, margin: "0 0 0.75rem" }}>
+                                                {item.situation}
+                                            </p>
+                                            <ul style={{ color: "var(--text-secondary)", lineHeight: 1.7, paddingLeft: "1.25rem", margin: "0 0 0.75rem" }}>
+                                                {item.build.map((step, i) => (
+                                                    <li key={i}>{step}</li>
+                                                ))}
+                                            </ul>
+                                            <p style={{ color: "var(--text-primary)", lineHeight: 1.6, margin: 0, fontSize: "0.95rem" }}>
+                                                <strong>Done means:</strong> {item.doneMeans}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
                         {slug === "ai-engineering-foundations" && <AiEngineeringFoundations />}
 
                         {/* Tech Stack */}

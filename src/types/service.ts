@@ -20,6 +20,34 @@ export const serviceSchema = z.object({
   cta: z.string(),
   /** ISO date of the last meaningful copy change — feeds sitemap lastmod. */
   updated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+  /**
+   * Long-form body rendered between "What You Get" and "Tech Stack", so a
+   * money page carries page-specific depth instead of only the shared
+   * template blocks.
+   */
+  sections: z.array(z.object({
+    heading: z.string().min(1),
+    paragraphs: z.array(z.string()),
+    bullets: z.array(z.string()).optional(),
+  })).optional(),
+  /** Side-by-side comparison table, e.g. FDE vs agency vs in-house hire. */
+  comparison: z.object({
+    heading: z.string().min(1),
+    intro: z.string().optional(),
+    columns: z.array(z.string()).min(2),
+    rows: z.array(z.array(z.string())),
+  }).optional(),
+  /** Concrete first-engagement shapes: what gets built and how it is judged. */
+  engagementExamples: z.object({
+    heading: z.string().min(1),
+    intro: z.string().optional(),
+    items: z.array(z.object({
+      title: z.string().min(1),
+      situation: z.string(),
+      build: z.array(z.string()),
+      doneMeans: z.string(),
+    })),
+  }).optional(),
   /** Sibling money pages / cluster notes rendered as a "Related" section. */
   related: z.array(z.object({
     href: z.string().min(1),
