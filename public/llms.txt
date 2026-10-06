@@ -21,7 +21,9 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 - [StellarMIND](https://rohitraj.tech/projects/stellarmind): Chat-to-SQL with pgvector and Spring AI MCP server
 - [MyFinancial](https://rohitraj.tech/projects/myfinancial): Privacy-first personal finance advisor PWA
 
-## All Engineering Notes (156 posts)
+## All Engineering Notes (157 posts)
+
+- [Hiring a Freelance AI Engineer: Scope and Acceptance Criteria (2026)](https://rohitraj.tech/notes/freelance-ai-engineer-project-scope-2026)
 
 - [Why AI Pilots Fail to Reach Production: A Release Decision Guide](https://rohitraj.tech/notes/why-ai-pilots-fail-production-2026)
 

@@ -1,6 +1,8 @@
 import { blogPostSchema } from '@/types/blog';
 import type { BlogPost } from '@/types/blog';
 
+import { freelanceAiEngineerProjectScope2026 } from './freelance-ai-engineer-project-scope-2026';
+
 import { ragForSql } from './rag-for-sql';
 import { springBootMcp } from './spring-boot-mcp';
 import { pwaOfflineSync } from './pwa-offline-sync';
@@ -155,6 +157,7 @@ import { gpt61SolVsClaudeSonnet55CodingAgents2026 } from './gpt-6-1-sol-vs-claud
 import { whyAiPilotsFailProduction2026 } from './why-ai-pilots-fail-production-2026';
 
 const allPosts: BlogPost[] = [
+  freelanceAiEngineerProjectScope2026,
   whyAiPilotsFailProduction2026,
   freelanceFdeVsFractionalEngineer2026,
   ragForSql,

@@ -3,6 +3,26 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "freelance-ai-engineer-project-scope-2026",
+    "title": "Hiring a Freelance AI Engineer: Scope and Acceptance Criteria (2026)",
+    "date": "2026-10-06",
+    "excerpt": "Define the workflow, deliverables and acceptance tests before hiring an AI engineer. A practical buyer guide with a scope template, failure drills and handover checks.",
+    "readingTime": "14 min read",
+    "keywords": [
+      "freelance ai engineer project scope",
+      "hire freelance ai engineer",
+      "freelance ai engineer india",
+      "ai project acceptance criteria",
+      "ai engineer deliverables",
+      "ai project scope template",
+      "fractional ai engineer"
+    ],
+    "coverImage": {
+      "src": "/images/notes/freelance-ai-engineer-project-scope-2026-cover.jpg",
+      "alt": "Luminous orbital rings around a crystal illustrating freelance AI engineer project scope"
+    }
+  },
+  {
     "slug": "why-ai-pilots-fail-production-2026",
     "title": "Why AI Pilots Fail to Reach Production: A Release Decision Guide",
     "date": "2026-10-03",
