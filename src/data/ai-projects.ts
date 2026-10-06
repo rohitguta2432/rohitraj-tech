@@ -276,4 +276,21 @@ export const aiProjectSummaries: AIProjectSummary[] = [
             { label: "Runs", value: "offline, no key" },
         ],
     },
+    {
+        title: "BridgeTrace — Find Where a USDC Transfer Stopped",
+        slug: "bridgetrace",
+        problem: "A USDC transfer between chains can stop at the source burn, Circle's attestation or the destination receive. Circle's 'complete' status means the attestation is ready, not that the funds arrived.",
+        solution: "Paste a CCTP V2 source transaction hash. BridgeTrace checks the burn, the attestation and the destination receipt, shows the evidence for each, names the missing step, and exports a JSON report or support summary. Ethereum ↔ Base, mainnet and Sepolia.",
+        techStack: ["React 19", "TypeScript", "viem", "Zod", "Cloudflare Workers"],
+        aiApproach: "No model in the verdict path. Each stage is decided by evidence anyone can re-check — the source MessageSent log, Circle's decoded message and the destination usedNonces at a recorded block. Missing data is reported as a gap, never guessed.",
+        repoUrl: "https://github.com/rohitguta2432/bridgetrace",
+        liveUrl: "https://bridgetrace-rohit.myfinancial-cfp.chatgpt.site",
+        status: "live",
+        image: "/images/projects/bridgetrace-poster.jpg",
+        metrics: [
+            { label: "Evidence stages", value: "3" },
+            { label: "Automated tests", value: "20" },
+            { label: "Wallet needed", value: "none" },
+        ],
+    },
 ];

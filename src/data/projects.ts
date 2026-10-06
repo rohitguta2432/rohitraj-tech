@@ -1352,6 +1352,50 @@ export const projects: Project[] = [
             ]
         }
     },
+    {
+        slug: "bridgetrace",
+        seoTitle: "BridgeTrace: Trace Stuck CCTP V2 USDC Transfers",
+        seoDescription: "Explore BridgeTrace, an open-source, read-only CCTP V2 tracer. Paste a source hash to check the USDC burn, Circle attestation and destination receipt.",
+        name: "BridgeTrace — Find Where a USDC Transfer Stopped",
+        problem: "A USDC transfer between chains can stop at three points: the source burn, Circle's attestation, or the destination receive transaction. Circle's 'complete' status only means the attestation is ready; it does not prove the destination receive happened. Users and support teams end up hopping between explorers and APIs, with no wallet-free way to see which step is missing.",
+        solves: "Paste a CCTP V2 source transaction hash and BridgeTrace checks three stages — source burn, Circle attestation, destination receipt — and shows the evidence behind each. It names the outcome (awaiting attestation, destination submission pending, expired attestation, confirmed receipt, reverted source or incomplete evidence), suggests the next step, and exports a JSON report or a copy-ready support summary. Ethereum ↔ Base, on mainnet and the Sepolia testnets.",
+        techStack: ["React 19", "TypeScript", "Vinext (Vite)", "viem", "Zod", "Cloudflare Workers"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/bridgetrace",
+        liveUrl: "https://bridgetrace-rohit.myfinancial-cfp.chatgpt.site",
+        aiApproach: "No model in the verdict path. Every stage is decided by evidence anyone can re-check: the source MessageSent log, Circle's decoded amount and recipient, and the destination usedNonces read at a recorded block. When a provider is down or rate-limited, the report lists the gap instead of guessing, and an attestation marked 'complete' is never treated as delivery.",
+        image: "/images/projects/bridgetrace-poster.jpg",
+        videoUrl: "/videos/bridgetrace.mp4",
+        updated: "2026-10-06",
+        details: {
+            businessImpact: "'My USDC left the source chain — why hasn't it arrived?' is the question cross-chain support has to answer, and 'the attestation is complete' is not proof of delivery. BridgeTrace turns a transaction hash into one evidence report that names the missing step, so a user or support agent can answer with facts instead of assumptions — without connecting a wallet or jumping between explorers.",
+            approach: [
+                "Source check: reads the MessageSent log, validates the route and the canonical USDC contract, and matches Circle's decoded amount and recipient",
+                "Attestation check: reads the message status from Circle's attestation (Iris) API, including expired attestations",
+                "Destination check: reads usedNonces(bytes32) on the destination chain at an observed block; without RPC, a hinted destination transaction only counts after its MessageReceived event is verified",
+                "Six named outcomes: awaiting attestation, destination submission pending, expired attestation, confirmed receipt, reverted source, incomplete evidence",
+                "JSON report with provenance and evidence gaps, plus a copy-ready support summary",
+                "Server-side /api/trace endpoint built as a Cloudflare Worker — up to eight decoded messages per transaction, optional server-only RPC overrides"
+            ],
+            decisions: [
+                "Read-only by design: no wallet connection, no transaction submission, no re-attestation requests",
+                "Attestation ready is never treated as delivered — only destination-chain evidence confirms receipt",
+                "Honest gaps: outages, rate limits, indexer lag or pruned history leave a stage marked incomplete instead of guessed",
+                "Three simulated samples are clearly labeled and make no blockchain requests, so demo data is never passed off as real",
+                "Tight v1 scope — CCTP V2 USDC between Ethereum and Base; other bridges, CCTP V1 and other chains are explicitly out of scope"
+            ],
+            currentStatus: "Public and open source (MIT) at github.com/rohitguta2432/bridgetrace, with a live public app. On October 6, 2026 a live lookup independently confirmed a completed 15-USDC Base Sepolia → Ethereum Sepolia transfer. Gated by 20 deterministic tests built on a captured public Circle response and mocked RPC receipts, covering delivery, expiry and missing-data cases.",
+            roadmap: [
+                "More CCTP V2 chains beyond Ethereum and Base",
+                "Watch mode: re-check a pending transfer and flag when the destination receipt lands",
+                "Support for CCTP hooks and multiple identical burns in one transaction"
+            ],
+            improvements: [
+                "Show the burn amount net of CCTP fees next to the gross amount",
+                "Fallback providers so one rate-limited RPC or explorer doesn't leave a stage incomplete"
+            ]
+        }
+    },
 ];
 
 export const repos = [
@@ -1510,6 +1554,12 @@ export const repos = [
         description: "avatar-sync — real-time face + hand tracking in one HTML file. 478 face landmarks, blendshape expression meters, head pose, 21-point hands, on-device MediaPipe",
         modules: ["index.html", "demo.gif"],
         url: "https://github.com/rohitguta2432/avatar-sync"
+    },
+    {
+        name: "bridgetrace",
+        description: "BridgeTrace — read-only CCTP V2 USDC transfer tracer for Ethereum ↔ Base. Source burn, Circle attestation and destination receipt evidence; JSON report and support summary export",
+        modules: ["app", "lib", "tests", "docs"],
+        url: "https://github.com/rohitguta2432/bridgetrace"
     }
 ];
 
