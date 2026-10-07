@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import ContactActions from "@/components/ContactActions";
+import EnquiryForm from "@/components/EnquiryForm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
@@ -125,6 +127,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                             <p style={{ color: "var(--text-secondary)", fontSize: "1.15rem", lineHeight: 1.6 }}>
                                 {service.subheadline}
                             </p>
+                            <ContactActions enquiryHref="#enquiry" />
                         </div>
 
                         {/* Problem */}
@@ -441,22 +444,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
                             <Testimonials limit={2} />
                         </div>
 
-                        {/* CTA */}
-                        <div style={{ marginTop: "3rem", marginBottom: "3rem", textAlign: "center" }}>
-                            <Link
-                                href={`/contact`}
-                                className="btn btn-primary"
-                                style={{
-                                    display: "inline-block",
-                                    padding: "0.875rem 2rem",
-                                    fontSize: "1.1rem",
-                                    fontWeight: 600,
-                                    borderRadius: "8px",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                {service.cta}
-                            </Link>
+                        <div style={{ marginTop: "3rem", marginBottom: "3rem" }}>
+                            <EnquiryForm sourcePath={`/services/${service.slug}`} />
+                            <ContactActions enquiryHref="#enquiry" />
                         </div>
                     </div>
                 </section>

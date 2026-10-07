@@ -5,6 +5,7 @@ describe("Contact attribution", () => {
   it("recognizes real contact channels without treating unrelated links as enquiries", () => {
     expect(getContactMethod("mailto:hello@example.com?subject=Private%20details")).toBe("email");
     expect(getContactMethod("https://wa.me/911234567890")).toBe("whatsapp");
+    expect(getContactMethod("tel:+918130313297")).toBe("phone");
     expect(getContactMethod("https://calendly.com/example")).toBe("booking");
     expect(getContactMethod("https://calendly.com.evil.example/example")).toBeUndefined();
     expect(getContactMethod("https://example.com")).toBeUndefined();

@@ -1,56 +1,64 @@
 # Contact enquiries and advertising measurement
 
-The hire and service pages send visitors to the existing `/contact` page.
-Visitors can use its email, WhatsApp and social links. No Calendar or Google Meet
-booking integration is required.
+The homepage, hire page and service pages offer direct call and WhatsApp links.
+Visitors can also send a project brief from the hire, contact and service pages.
 
 ## Production configuration
 
-Set these **public, build-time** variables on the existing Amplify app or its
-`main` branch, preserving other variables, then rebuild and deploy:
+Set these public, build-time variables on the existing Amplify main branch,
+preserving its other variables, then rebuild:
 
-- `NEXT_PUBLIC_GA_MEASUREMENT_ID`: the website stream's `G-…` measurement ID.
-- `NEXT_PUBLIC_GOOGLE_ADS_ID`: the Google tag's `AW-…` ID. A Google Ads customer
-  number is a different identifier and must not be used here.
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID`: the website stream's `G-…` ID.
+- `NEXT_PUBLIC_GOOGLE_ADS_ID`: the installed Google tag's `AW-…` ID.
+- `NEXT_PUBLIC_GOOGLE_ADS_ENQUIRY_LABEL`: the label for the primary
+  **Website enquiry received** action in Google Ads.
 
-Check the configuration with `npm run check:marketing` in the build environment.
-Missing or invalid values return a nonzero exit status. The site can still build
-without analytics for local development and forks. An empty GA4 variable does
-not prevent a correctly configured Ads tag from loading.
+Run `npm run check:marketing` in the build environment. Local builds can omit
+analytics. The old `NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL` remains unused.
 
-Use GA4 Admin → Data streams to obtain the measurement ID. Obtain the Ads tag ID
-from the intended account's Google tag setup. Do not generate placeholder IDs.
+## Confirmed enquiries
+
+`POST /api/enquiry` validates a same-origin submission, rejects the honeypot,
+limits submissions to five per IP per hour, and saves it in DynamoDB table
+`rohitraj-tech-enquiries` in `ap-south-1`. A UUID receipt makes retries
+idempotent. Success is returned only after the enquiry has been saved. Failed
+submissions retain the form contents and offer direct email contact.
+
+The table stream invokes `rohitraj-tech-enquiry-notifier`. It emails the site
+owner and sets Reply-To to the enquirer's address. SMTP credentials stay in
+AWS Secrets Manager. The Lambda retries failures; exhausted failures go to its
+SQS failure queue. Enquiries expire after 90 days; rate buckets expire after
+one to two hours. CloudWatch logs retain only error types, never form contents.
+
+Provision or update the backend with `python3 scripts/setup-enquiries.py`.
+The Amplify compute role needs the narrow DynamoDB policy this script installs.
+The notifier has its own role for the stream, table, secret, logs and failure
+queue. The existing owner SMTP configuration is required on first setup; do not
+commit credentials or use public environment variables for them.
 
 ## What gets measured
 
-The delegated click listener emits `contact_click` with `contact_method` equal
-to `email`, `whatsapp` or `booking` for recognized external scheduling links,
-plus the current page's pathname. It does not send the destination URL, email
-address or query-string contents as event parameters. Visiting `/contact`
-alone does not emit a contact-click or completed-lead event.
+Call, email, WhatsApp and recognised booking links emit the observational
+`contact_click` event with `contact_method` and page pathname. They do not emit
+an Ads conversion or prove that a conversation occurred.
 
-Contact clicks do **not** emit `generate_lead` or an Ads `conversion`. The old
-`NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL` is intentionally unused. Keep contact clicks
-secondary if importing them into Google Ads; do not optimize lead bidding for
-opening an email composer or WhatsApp page.
+After a valid saved receipt, the form emits GA4 `generate_lead` and the direct
+Ads **Website enquiry received** conversion, with the receipt as
+`transaction_id`. No names, email addresses, brief contents or query strings
+are sent to Google. An analytics blocker cannot undo a received enquiry.
 
-This site cannot observe whether an enquiry was actually received in email or
-WhatsApp. Report completed or qualified enquiries through an independently
-verified integration or an appropriate offline-conversion process. Do not count
-an outbound click or revisiting `/contact` as a completed enquiry.
+Use **Website enquiry received** as the primary action under **Submit lead
+form**, counting one lead per ad interaction with zero assigned monetary value.
+Keep contact clicks secondary. Do not import GA4 generate_lead as another
+primary action for the same enquiry. Enhanced conversions are not enabled.
 
-If importing both GA4 and direct Ads conversions in future, ensure the same
-business action is not counted as two primary conversions.
+## Verification
 
-## Verification before paid traffic
-
-1. Confirm that the hire and service CTAs lead to `/contact` and that the existing
-   contact links work.
-2. Verify the published site has the expected tag IDs using Tag Assistant and
-   confirm that GA4 receives a contact-click event when tested intentionally.
-3. Confirm that no completed-lead or Ads conversion is emitted by a contact
-   click, and that the campaign's primary goal represents an actual outcome.
-4. Review the Ads campaign's budget, geography, keywords and bidding separately.
-   A successful website deployment does not publish an Ads campaign.
+1. Run the enquiry API, form and contact tracking tests, typecheck and build.
+2. Submit a clearly labelled verification brief without firing live advertising
+   events. Confirm a persisted receipt and the notification_sent marker.
+3. Verify the published form, direct links and deferred Google tag load.
+4. Confirm the campaign uses the Submit lead form goal. Review lead quality
+   separately from contact clicks and account for the campaign's limited traffic.
 
 Reference: [Google Ads primary/secondary conversions](https://support.google.com/google-ads/answer/11461796).

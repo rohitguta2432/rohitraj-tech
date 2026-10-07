@@ -52,7 +52,7 @@ export default function Analytics() {
 
   return (
     <>
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${tagId}`} strategy="afterInteractive" />
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${tagId}`} strategy="lazyOnload" />
       {/* Consent defaults must precede config: denied in CONSENT_REGIONS,
           granted elsewhere, then any stored choice from the banner. */}
       <Script id="gtag-init" strategy="afterInteractive">

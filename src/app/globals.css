@@ -5621,3 +5621,33 @@ code,
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* Direct contact and a short project brief on commercial pages. */
+.contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-top: 1.5rem; }
+.contact-actions .btn { min-height: 44px; text-align: center; }
+.contact-brief-link { color: var(--accent); font-weight: 600; padding: .6rem .2rem; text-underline-offset: .2em; }
+.contact-actions-poster .btn-primary { background: var(--on-brand); color: var(--brand-flood); border-color: var(--on-brand); }
+.contact-actions-poster .btn-secondary { color: var(--on-brand); border-color: var(--on-brand); background: transparent; }
+.contact-actions-poster .contact-brief-link { color: var(--on-brand); }
+.enquiry-card { max-width: 800px; margin: 0 auto; padding: 2rem; border: 1px solid var(--border); border-radius: 12px; background: var(--card-bg); scroll-margin-top: 6rem; }
+.enquiry-card h2 { font-size: clamp(1.4rem, 4vw, 1.8rem); margin: 0 0 .75rem; color: var(--text-primary); }
+.enquiry-card p { color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem; }
+.enquiry-card form { display: grid; gap: 1rem; }
+.enquiry-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.enquiry-card label { display: grid; gap: .5rem; font-weight: 600; color: var(--text-primary); }
+.enquiry-card input, .enquiry-card textarea { width: 100%; min-width: 0; padding: .8rem; border: 1px solid var(--border-hover); border-radius: 6px; background: var(--bg); color: var(--text-primary); font: inherit; font-size: 16px; }
+.enquiry-card input:focus-visible, .enquiry-card textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.enquiry-card textarea { resize: vertical; }
+.enquiry-card .btn { justify-self: start; min-height: 44px; }
+.enquiry-card .enquiry-privacy { font-size: .85rem; margin: 0; }
+.enquiry-card .enquiry-error { color: var(--error); margin: 0; }
+.enquiry-success { padding: 1.25rem; border: 1px solid var(--success-text); border-radius: 8px; }
+.enquiry-success h3 { color: var(--success-text); font-size: 1.15rem; margin-bottom: .75rem; }
+.enquiry-success p { margin: 0; }
+.enquiry-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+@media (max-width: 600px) {
+  .enquiry-card { padding: 1.25rem; }
+  .enquiry-field-row { grid-template-columns: 1fr; }
+  .contact-actions .btn { flex: 1 1 140px; padding-inline: .8rem; }
+  .contact-brief-link { flex-basis: 100%; }
+}

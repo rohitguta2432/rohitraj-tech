@@ -1,3 +1,4 @@
+import ContactActions from "@/components/ContactActions";
 import Link from "next/link";
 import type { HomeDictionary } from "@/lib/i18n";
 import { projects } from "@/data/projects";
@@ -20,7 +21,6 @@ interface HeroProps {
  * happened before (copy claimed 29, data held 26).
  */
 export default function Hero({ dict }: HeroProps) {
-    const bookCallCta = dict.hero.bookCallCta ?? "Book a free 30-min call";
     const documented = projects.length + agents.length;
 
     const counters = [
@@ -49,13 +49,9 @@ export default function Hero({ dict }: HeroProps) {
 
                     <p className="poster-deck">{dict.hero.deck ?? dict.hero.subtitle}</p>
 
+                    <ContactActions poster />
                     <div className="poster-actions">
-                        <Link href={`/contact`} className="poster-cta">
-                            {bookCallCta}
-                        </Link>
-                        <Link href={`#work`} className="poster-alt">
-                            or see what shipped <span aria-hidden="true">→</span>
-                        </Link>
+                        <Link href="#work" className="poster-alt">See what shipped <span aria-hidden="true">→</span></Link>
                     </div>
                 </div>
 

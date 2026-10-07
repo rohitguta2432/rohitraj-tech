@@ -4,7 +4,7 @@ export type { Service } from '@/types/service';
 export const services: Service[] = [
  {
  slug: "mobile-app-development",
- updated: "2026-09-29",
+ updated: "2026-10-07",
  title: "Mobile App Development",
  metaTitle: "React Native Mobile App Developer in India",
  metaDescription:
@@ -53,7 +53,7 @@ export const services: Service[] = [
  },
  {
  slug: "ai-chatbot-development",
- updated: "2026-09-29",
+ updated: "2026-10-07",
  title: "AI Chatbot & WhatsApp Bot Development",
  metaTitle: "AI Chatbot and WhatsApp Bot Developer in India",
  metaDescription:
@@ -94,7 +94,7 @@ export const services: Service[] = [
  },
  {
  slug: "full-stack-development",
- updated: "2026-09-29",
+ updated: "2026-10-07",
  title: "Full-Stack Development & AI Integration",
  metaTitle: "Full Stack Developer: Spring Boot and React",
  metaDescription:
@@ -152,7 +152,7 @@ export const services: Service[] = [
  },
  {
  slug: "fintech-app-development",
- updated: "2026-09-29",
+ updated: "2026-10-07",
  title: "Fintech & Financial App Development",
  metaTitle: "Fintech App Developer in India",
  metaDescription:
@@ -201,7 +201,7 @@ export const services: Service[] = [
  },
  {
  slug: "healthcare-clinic-app",
- updated: "2026-09-29",
+ updated: "2026-10-07",
  title: "Healthcare & Clinic App Development",
  metaTitle: "Healthcare and Clinic App Developer in India",
  metaDescription:
@@ -254,7 +254,7 @@ export const services: Service[] = [
  },
  {
  slug: "startup-mvp-development",
- updated: "2026-09-29",
+ updated: "2026-10-07",
  title: "Startup MVP Development",
  metaTitle: "Startup MVP Developer in India",
  metaDescription:
@@ -308,7 +308,7 @@ export const services: Service[] = [
  },
  {
  slug: "6-week-mvp",
- updated: "2026-09-29",
+ updated: "2026-10-07",
  title: "6-Week MVP Sprint",
  metaTitle: "6-Week MVP Sprint: Founding Engineer for Hire",
  metaDescription:
@@ -441,7 +441,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Hire a Founding Engineer",
- updated: "2026-09-29",
+ updated: "2026-10-07",
  related: [
  {
  href: "/services/6-week-mvp",
@@ -462,7 +462,7 @@ export const services: Service[] = [
  },
  {
  slug: "hire-fractional-cto-india",
- updated: "2026-09-29",
+ updated: "2026-10-07",
  title: "Hire a Fractional CTO in India — Or Skip Straight to a Builder",
  metaTitle: "Fractional CTO in India: When to Hire One",
  metaDescription:
@@ -687,8 +687,8 @@ export const services: Service[] = [
  },
  ],
  },
- cta: "Book a Scoping Call",
- updated: "2026-10-03",
+ cta: "Discuss Your Project",
+ updated: "2026-10-07",
  related: [
  {
  href: "/services/fractional-forward-deployed-engineer",
@@ -763,7 +763,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Discuss Your Integration",
- updated: "2026-09-29",
+ updated: "2026-10-07",
  related: [
  {
  href: "/services/forward-deployed-engineer",
@@ -848,7 +848,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-09-29",
+ updated: "2026-10-07",
  related: [
  {
  href: "/services/fractional-forward-deployed-engineer",
@@ -930,7 +930,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Book a Free Half-Day Demo",
- updated: "2026-09-29",
+ updated: "2026-10-07",
  related: [
  {
  href: "/services/claude-code-consultant",
@@ -1018,7 +1018,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Book a Claude Code Working Session",
- updated: "2026-09-29",
+ updated: "2026-10-07",
  related: [
  {
  href: "/services/fractional-ai-engineer",
@@ -1177,8 +1177,8 @@ export const services: Service[] = [
  ["Best when", "AI work is two or three days a week and tied to your systems", "AI work fills a full week, long-term", "You have one bounded task", "The hard part is shipping product features"],
  ],
  },
- cta: "Book a Scoping Call",
- updated: "2026-10-03",
+ cta: "Discuss Your Project",
+ updated: "2026-10-07",
  related: [
  {
  href: "/services/forward-deployed-engineer",

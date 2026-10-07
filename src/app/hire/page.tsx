@@ -1,5 +1,7 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
+import ContactActions from "@/components/ContactActions";
+import EnquiryForm from "@/components/EnquiryForm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
@@ -178,22 +180,7 @@ export default async function HirePage() {
                                 your Slack and your repo — building agents, MCP integrations, and LLM features
                                 until they run in production with evals proving it.
                             </p>
-                            <div style={{ marginTop: "1.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-                                <Link
-                                    href={`/contact`}
-                                    className="btn btn-primary"
-                                    style={{ display: "inline-block", padding: "0.875rem 2rem", fontSize: "1.05rem", fontWeight: 600, borderRadius: "8px", textDecoration: "none" }}
-                                >
-                                    Discuss Your Project
-                                </Link>
-                                <a
-                                    href={`mailto:${SITE_CONFIG.author.email}?subject=AI%20consulting%20enquiry`}
-                                    className="btn"
-                                    style={{ display: "inline-block", padding: "0.875rem 2rem", fontSize: "1.05rem", fontWeight: 600, borderRadius: "8px", textDecoration: "none", border: "1px solid var(--border)", color: "var(--text-primary)" }}
-                                >
-                                    Email Directly
-                                </a>
-                            </div>
+                            <ContactActions enquiryHref="#enquiry" />
                         </div>
 
                         {/* Outcomes */}
@@ -325,13 +312,14 @@ export default async function HirePage() {
                         {/* CTA */}
                         <div style={{ marginTop: "3rem", marginBottom: "3rem", textAlign: "center" }}>
                             <Link
-                                href={`/contact`}
+                                href="#enquiry"
                                 className="btn btn-primary"
                                 style={{ display: "inline-block", padding: "0.875rem 2rem", fontSize: "1.1rem", fontWeight: 600, borderRadius: "8px", textDecoration: "none" }}
                             >
                                 Discuss Your Project
                             </Link>
                         </div>
+                        <EnquiryForm sourcePath="/hire" />
                     </div>
                 </section>
             </main>

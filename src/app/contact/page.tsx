@@ -1,3 +1,5 @@
+import ContactActions from "@/components/ContactActions";
+import EnquiryForm from "@/components/EnquiryForm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getDictionary } from "@/lib/i18n";
@@ -30,22 +32,22 @@ export default async function ContactPage() {
                 <div className="page-header">
                     <div className="container">
                         <h1 className="page-title">{dict.pages.contact.title}</h1>
-                        <p className="page-description">{dict.pages.contact.description}</p>
+                        <p className="page-description">Call, WhatsApp, or send a brief about your project.</p>
+                        <ContactActions enquiryHref="#enquiry" />
                     </div>
                 </div>
 
                 <section>
                     <div className="container">
-                        <div className="contact-card">
+                        <EnquiryForm sourcePath="/contact" />
+                        <div className="contact-card" style={{ marginTop: "2rem" }}>
                             <div className="contact-list">
                                 <div className="contact-item">
                                     <svg className="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
                                     </svg>
                                     <a
-                                        href="https://wa.me/918130313297"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                        href="tel:+918130313297"
                                         className="contact-link"
                                     >
                                         +91 81303 13297

@@ -65,7 +65,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const latestProjectDate = maxDate([...projectDateBySlug.values()], staticAnchor);
     const latestPostDate = maxDate([...postDateBySlug.values()], staticAnchor);
     const hubDates: Record<string, Date> = {
-        "": maxDate([latestProjectDate, latestPostDate], staticAnchor),
+        "": maxDate([latestProjectDate, latestPostDate, new Date("2026-10-07")], staticAnchor),
+        "/contact": new Date("2026-10-07"),
+        "/hire": new Date("2026-10-07"),
         "/projects": latestProjectDate,
         "/repos": latestProjectDate,
         "/notes": latestPostDate,
