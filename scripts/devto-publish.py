@@ -8,6 +8,11 @@
 #   python3 scripts/devto-publish.py --slug spring-boot-mcp           # publish one
 #   python3 scripts/devto-publish.py --slug spring-boot-mcp --dry-run # preview
 #   python3 scripts/devto-publish.py --slug spring-boot-mcp --tags java,ai,mcp,backend  # override tags
+#   python3 scripts/devto-publish.py --slug spring-boot-mcp --fix-tags  # retag the LIVE article, no new post
+#
+# Tags come from scripts/crosspost_tags.py — topic signals mapped onto a curated
+# allowlist of real dev.to tags, max 4, `ai` always included. Off-allowlist tags
+# are rejected rather than emitted.
 #
 # Called automatically by daily-seo-content skill (Step 13: cross-post for backlink).
 #
@@ -23,6 +28,9 @@ import argparse
 import urllib.request
 import urllib.error
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from crosspost_tags import devto_tags, filter_devto_tags  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 POSTS_DIR = REPO / "src" / "data" / "posts"
@@ -56,30 +64,10 @@ def read_post_meta(slug: str) -> dict:
     return {"title": title, "excerpt": excerpt, "keywords": keywords}
 
 
-STOP_WORDS = {
-    "vs", "the", "and", "for", "with", "how", "why", "what", "when", "into",
-    "your", "you", "are", "now", "new", "top", "best", "get", "use", "its",
-    "our", "from", "this", "that", "than", "but", "not", "all", "any", "can",
-    "has", "had", "have", "was", "were", "will", "would", "should", "could",
-    "vs.", "or", "of", "to", "in", "on", "at", "by", "an", "a",
-}
-
-def sanitize_tags(keywords: list, max_tags: int = 4) -> list:
-    """dev.to tags: lowercase, alphanumeric only (no hyphens, no spaces), max 4.
-
-    Prefers meaningful multi-char tokens, drops stop-words.
-    """
-    seen = set()
-    tags = []
-    for kw in keywords:
-        for tok in re.split(r"[\s\-_/]+", kw.lower()):
-            tok = re.sub(r"[^a-z0-9]", "", tok)
-            if len(tok) >= 3 and tok not in STOP_WORDS and tok not in seen:
-                seen.add(tok)
-                tags.append(tok)
-                if len(tags) >= max_tags:
-                    return tags
-    return tags or ["webdev"]
+# Tag derivation lives in scripts/crosspost_tags.py: keyword phrases are
+# matched against topic signals and mapped onto a curated allowlist of real
+# dev.to tags. Never tokenize keyword phrases into words — that produced
+# meaningless tags like ['model', 'price', 'war', 'august'] with zero reach.
 
 
 def build_payload(slug: str, meta: dict, tags: list) -> dict:
@@ -105,6 +93,101 @@ def build_payload(slug: str, meta: dict, tags: list) -> dict:
     if cover_url:
         article["main_image"] = cover_url
     return {"article": article}
+
+
+def api_get(url: str, api_key: str) -> tuple:
+    req = urllib.request.Request(
+        url,
+        method="GET",
+        headers={
+            "api-key": api_key,
+            "Accept": "application/vnd.forem.api-v1+json",
+            "User-Agent": "rohitraj-tech-crosspost/1.0",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return True, json.loads(r.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        return False, {"status": e.code, "error": e.read().decode("utf-8", "ignore")}
+    except Exception as e:
+        return False, {"error": str(e)}
+
+
+def find_my_article(slug: str, api_key: str) -> dict:
+    """Locate an already-published dev.to article by its canonical_url.
+
+    Matching on canonical_url (not title) is what makes --fix-tags safe: it
+    resolves to the exact existing article id, and PUT /articles/{id} edits
+    that record in place. No POST is issued, so no duplicate can be created.
+    """
+    canonical = f"{BASE_URL}/{slug}"
+    for page in range(1, 6):
+        ok, body = api_get(f"{API}/me/published?per_page=100&page={page}", api_key)
+        if not ok:
+            raise RuntimeError(f"dev.to list failed: {body}")
+        if not body:
+            break
+        for art in body:
+            if (art.get("canonical_url") or "").rstrip("/") == canonical:
+                return art
+    return {}
+
+
+def update_tags(article_id: int, tags: list, api_key: str) -> tuple:
+    """PUT /articles/{id} with tags only — in-place edit, never a new post."""
+    data = json.dumps({"article": {"tags": tags}}).encode("utf-8")
+    req = urllib.request.Request(
+        f"{API}/{article_id}",
+        data=data,
+        method="PUT",
+        headers={
+            "api-key": api_key,
+            "Content-Type": "application/json",
+            "Accept": "application/vnd.forem.api-v1+json",
+            "User-Agent": "rohitraj-tech-crosspost/1.0",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return True, json.loads(r.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        return False, {"status": e.code, "error": e.read().decode("utf-8", "ignore")}
+    except Exception as e:
+        return False, {"error": str(e)}
+
+
+def fix_tags(slug: str, tags: list, api_key: str, assume_yes: bool) -> int:
+    try:
+        art = find_my_article(slug, api_key)
+    except RuntimeError as e:
+        print(f"ERROR: {e}")
+        return 2
+    if not art:
+        print(f"ERROR: no published dev.to article with canonical_url {BASE_URL}/{slug}")
+        print("       Nothing updated. (Not publishing a new one — use the default mode for that.)")
+        return 2
+
+    print(f"--- Fixing tags on existing dev.to article (no new post) ---")
+    print(f"    id:      {art['id']}")
+    print(f"    url:     {art.get('url')}")
+    print(f"    before:  {art.get('tag_list')}")
+    print(f"    after:   {tags}")
+    if not assume_yes:
+        if input("Apply this in-place update? [y/N] ").strip().lower() not in ("y", "yes"):
+            print("  aborted, nothing changed.")
+            return 1
+
+    ok, body = update_tags(art["id"], tags, api_key)
+    if not ok:
+        print(f"  ✗ {body}")
+        return 2
+    if body.get("id") != art["id"]:
+        print(f"  ✗ UNEXPECTED: response id {body.get('id')} != {art['id']} — verify manually.")
+        return 2
+    print(f"  ✓ updated in place: id {body['id']} → tags {body.get('tag_list')}")
+    print(f"  ✓ {body.get('url')}")
+    return 0
 
 
 def publish(payload: dict, api_key: str, retry_on_rate_limit: bool = True) -> tuple:
@@ -139,7 +222,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--slug", required=True, help="Post slug (matches src/data/posts/<slug>.ts)")
     ap.add_argument("--dry-run", action="store_true", help="Print payload, no API call")
-    ap.add_argument("--tags", help="Comma-separated tag override (max 4)")
+    ap.add_argument("--tags", help="Comma-separated tag override (max 4, allowlisted)")
+    ap.add_argument("--fix-tags", action="store_true",
+                    help="Update tags on the ALREADY-published article (PUT /articles/{id}). "
+                         "Never creates a new post.")
+    ap.add_argument("--yes", action="store_true", help="Skip the --fix-tags confirmation prompt")
     args = ap.parse_args()
 
     try:
@@ -149,14 +236,18 @@ def main():
         sys.exit(1)
 
     if args.tags:
-        tags = [t.strip().lower() for t in args.tags.split(",") if t.strip()][:4]
+        tags, rejected = filter_devto_tags(args.tags.split(","))
+        if rejected:
+            print(f"  ! dropped non-dev.to tags: {rejected}")
+        if not tags:
+            print("ERROR: no valid dev.to tags in --tags. See DEVTO_TOP_TAGS in "
+                  "scripts/crosspost_tags.py for the allowlist.")
+            sys.exit(1)
     else:
-        tags = sanitize_tags(meta["keywords"])
+        tags = devto_tags(meta["keywords"], meta["title"])
 
-    payload = build_payload(args.slug, meta, tags)
-
-    if args.dry_run:
-        print(json.dumps(payload, indent=2))
+    if args.dry_run and not args.fix_tags:
+        print(json.dumps(build_payload(args.slug, meta, tags), indent=2))
         print(f"\nDry-run done. Tags: {tags}")
         return
 
@@ -167,6 +258,10 @@ def main():
         print("Then: export DEV_TO_API_KEY='your_key' (add to ~/.config/fish/config.fish for persistence)")
         sys.exit(1)
 
+    if args.fix_tags:
+        sys.exit(fix_tags(args.slug, tags, api_key, args.yes))
+
+    payload = build_payload(args.slug, meta, tags)
     print(f"--- Cross-posting to dev.to: {args.slug} ---")
     print(f"    title: {meta['title']}")
     print(f"    tags:  {tags}")

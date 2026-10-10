@@ -24,6 +24,9 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from crosspost_tags import hashnode_tags, filter_hashnode_tags  # noqa: E402
+
 REPO = Path(__file__).resolve().parent.parent
 POSTS_DIR = REPO / "src" / "data" / "posts"
 BASE_URL = "https://rohitraj.tech/en/notes"
@@ -54,23 +57,11 @@ def read_post_meta(slug: str) -> dict:
     return {"title": title, "excerpt": excerpt, "keywords": keywords}
 
 
-def slugify_tag(s: str) -> str:
-    s = re.sub(r"[^a-zA-Z0-9\s-]", "", s.lower())
-    s = re.sub(r"\s+", "-", s.strip())
-    return s[:50]
-
-
-def derive_tags(keywords: list, max_tags: int = 5) -> list:
-    seen = set()
-    tags = []
-    for kw in keywords:
-        slug = slugify_tag(kw)
-        if slug and slug not in seen and len(slug) >= 2:
-            seen.add(slug)
-            tags.append({"slug": slug, "name": kw})
-            if len(tags) >= max_tags:
-                break
-    return tags or [{"slug": "webdev", "name": "WebDev"}]
+# Tag derivation lives in scripts/crosspost_tags.py: keyword phrases are
+# matched against topic signals and mapped onto a curated allowlist of real
+# Hashnode tags. Never slugify a whole keyword phrase — Hashnode auto-creates
+# unknown slugs, so that minted dead tags like
+# 'ai-model-price-war-august-2026' that no reader follows.
 
 
 def build_payload(slug: str, meta: dict, tags: list, publication_id: str) -> dict:
@@ -133,7 +124,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--slug", required=True)
     ap.add_argument("--dry-run", action="store_true")
-    ap.add_argument("--tags", help="Comma-separated tag override")
+    ap.add_argument("--tags", help="Comma-separated tag override (max 5, allowlisted)")
     args = ap.parse_args()
 
     try:
@@ -143,9 +134,15 @@ def main():
         sys.exit(1)
 
     if args.tags:
-        tags = [{"slug": slugify_tag(t), "name": t.strip()} for t in args.tags.split(",") if t.strip()][:5]
+        tags, rejected = filter_hashnode_tags(args.tags.split(","))
+        if rejected:
+            print(f"  ! dropped non-Hashnode tags: {rejected}")
+        if not tags:
+            print("ERROR: no valid Hashnode tags in --tags. See HASHNODE_TAGS in "
+                  "scripts/crosspost_tags.py for the allowlist.")
+            sys.exit(1)
     else:
-        tags = derive_tags(meta["keywords"])
+        tags = hashnode_tags(meta["keywords"], meta["title"])
 
     api_key = os.environ.get("HASHNODE_API_KEY", "").strip()
     pub_id = os.environ.get("HASHNODE_PUBLICATION_ID", "").strip()

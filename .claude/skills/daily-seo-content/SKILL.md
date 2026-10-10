@@ -802,7 +802,13 @@ Requires `DEV_TO_API_KEY` env var. Get key at https://dev.to/settings/extensions
 Persist via `~/.config/fish/config.fish`: `set -gx DEV_TO_API_KEY "..."`
 
 Script reads title/excerpt/keywords directly from `src/data/posts/<slug>.ts` — no manual config per post.
-Tags auto-derived from `keywords` (sanitized, max 4, stop-words filtered). Override with `--tags a,b,c,d` if needed.
+Tags auto-derived by `scripts/crosspost_tags.py`: the post's keywords + title are matched against a topic-signal table and mapped onto a curated allowlist of **real dev.to tags** (`ai` always included, max 4). Off-allowlist candidates are rejected — never emitted as raw keyword fragments. Override with `--tags a,b,c,d`; override values are allowlist-checked too.
+
+To retag an article that is already live (in-place `PUT /articles/{id}`, never creates a duplicate):
+
+```bash
+python3 scripts/devto-publish.py --slug "<slug>" --fix-tags
+```
 
 Rate limit: dev.to allows 9 articles per 30s. Script auto-retries once on 429 with 90s backoff.
 
@@ -831,7 +837,7 @@ set -gx HASHNODE_API_KEY "..."
 set -gx HASHNODE_PUBLICATION_ID "..."
 ```
 
-Tags auto-derived (max 5) from `keywords`. Override with `--tags a,b,c`.
+Tags auto-derived by `scripts/crosspost_tags.py` (same topic-signal table as dev.to, mapped to Hashnode slugs, max 5). Hashnode silently creates unknown tag slugs, so the allowlist is what stops dead tags like `ai-model-price-war-august-2026`. Override with `--tags a,b,c`; override values are allowlist-checked too.
 
 Failures non-fatal. Skip if env not set or `--no-deploy` passed.
 
