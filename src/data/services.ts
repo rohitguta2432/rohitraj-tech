@@ -795,7 +795,7 @@ export const services: Service[] = [
  "Hire a freelance AI engineer to design and ship agents, RAG and LLM features. Fractional availability, hands-on delivery and remote work worldwide.",
  headline: "Freelance AI Engineer & AI Architect — Senior AI Delivery, a Few Days a Week",
  subheadline:
- "You have real AI work to ship, but not enough to justify a permanent senior salary. I work as an independent AI engineer and architect on a fractional retainer: I design the system, build it, and keep it working in production.",
+ "You have real AI work to ship, but not enough to justify a permanent senior salary. I work as an independent freelance AI engineer and architect on a fractional retainer: I design the system, build it, and keep it working in production.",
  problem:
  "Somewhere between 'we should use AI' and 'we have a full AI team' is where most companies actually live: a backlog of LLM features, an agent idea that would save real money, a RAG search that half-works. A full-time senior AI engineer is a large salary plus months of hiring. Interns and task-by-task freelancing produce demos that collapse under real users, usually because nobody owned the architecture — which model, what the agent may touch, how retrieval gets evaluated, what it costs at scale. The fractional model fixes the mismatch: you get two or three days a week of someone who makes those architecture calls and has shipped production AI, and the backlog actually moves.",
  whatYouGet: [
@@ -848,7 +848,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-07",
+ updated: "2026-10-13",
  related: [
  {
  href: "/services/fractional-forward-deployed-engineer",
