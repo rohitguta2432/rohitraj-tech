@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import StatusBadge from "@/components/StatusBadge";
 import ImageCarousel from "@/components/ImageCarousel";
 import { projects } from "@/data/projects";
+import { services } from "@/data/services";
 import { getDictionary } from "@/lib/i18n";
 import { createPageMetadata, generateSoftwareApplicationSchema, generateBreadcrumbSchema, SITE_CONFIG } from "@/lib/seo-config";
 
@@ -40,6 +41,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
     const project = projects.find((p) => p.slug === slug);
     if (!project) notFound();
+
+    const relatedAiServices = services.filter((service) =>
+        ["forward-deployed-engineer", "fractional-ai-engineer"].includes(service.slug)
+        && service.portfolioSlugs.includes(project.slug)
+    );
 
     const dict = await getDictionary();
 
@@ -209,6 +215,27 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                                 ))}
                             </ul>
                         </div>
+                        {relatedAiServices.length > 0 && (
+                            <div className="project-detail-section">
+                                <h2>Work with me on an AI system</h2>
+                                <p>
+                                    If you need help building or integrating a system like {project.name},
+                                    choose the scope that fits your team:
+                                </p>
+                                <ul>
+                                    {relatedAiServices.map((service) => (
+                                        <li key={service.slug}>
+                                            <Link href={`/services/${service.slug}`}>
+                                                {service.title}
+                                            </Link>{" "}
+                                            — {service.slug === "forward-deployed-engineer"
+                                                ? "Work embedded with your users and engineers, from workflow discovery through integration, evaluation and rollout."
+                                                : "Scope an AI feature or reserve ongoing engineering time for architecture, implementation, evaluation and handover."}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
                         <div className="project-detail-section">
                             <h2>Explore More</h2>
                             <ul>

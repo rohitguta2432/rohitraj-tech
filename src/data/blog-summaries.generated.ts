@@ -3207,7 +3207,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "rag-for-sql",
     "title": "Using RAG for SQL Generation — Why Embeddings Beat Prompt Stuffing",
     "date": "2026-01-28",
-    "updated": "2026-09-29",
+    "updated": "2026-10-17",
     "excerpt": "How pgvector embeddings improve LLM-to-SQL accuracy by providing schema context instead of dumping entire schemas into prompts.",
     "readingTime": "8 min read",
     "keywords": [
@@ -3227,7 +3227,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "spring-boot-mcp",
     "title": "Building an MCP Server with Spring Boot — A Practical Guide",
     "date": "2026-01-20",
-    "updated": "2026-09-29",
+    "updated": "2026-10-17",
     "excerpt": "Implementing the Model Context Protocol for AI assistant tool integration using Spring Boot and Spring AI.",
     "readingTime": "10 min read",
     "keywords": [

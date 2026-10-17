@@ -2,7 +2,7 @@ import type { BlogPost } from '@/types/blog';
 
 export const springBootMcp: BlogPost = {
   slug: 'spring-boot-mcp',
-  updated: "2026-09-29",
+  updated: "2026-10-17",
   seoTitle: "Build an MCP Server with Spring Boot",
   seoDescription: "Build a Model Context Protocol server with Spring Boot. Review the tool integration patterns needed to connect an AI assistant to your backend.",
   title: 'Building an MCP Server with Spring Boot — A Practical Guide',
@@ -124,7 +124,7 @@ The stdio transport means Claude spawns your Java process locally. For productio
 4. **Spring AI's @Tool annotation is magical** — it handles JSON schema generation, parameter validation, and MCP compliance automatically.
 5. **MCP is early but growing fast** — building MCP servers now gives you first-mover advantage in the AI tooling ecosystem.
 
-If you'd rather hand the build off and review weekly, the [6-week MVP sprint](/services/6-week-mvp) is the fastest path; for a longer-term engineering relationship, look at [founding engineer in India](/services/hire-founding-engineer-india). If you only need the MCP layer built against your existing Java services, that is an [MCP integration consultant](/services/mcp-integration-consultant) engagement.
+For an MCP server built against your existing Java services, see [MCP integration consulting](/services/mcp-integration-consultant). If the work also involves understanding operators' workflows, integrating approved tools and preparing a monitored rollout, my [forward deployed engineer engagement](/services/forward-deployed-engineer) covers that broader delivery scope.
 
 Adjacent reads: [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot) for the stack-level decision, [From Idea to Play Store: Shipping SanatanApp in 4 Weeks](/notes/idea-to-play-store-sanatanapp-architecture) for the hiring-level one.`
     },

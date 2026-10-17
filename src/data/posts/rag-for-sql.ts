@@ -2,7 +2,7 @@ import type { BlogPost } from '@/types/blog';
 
 export const ragForSql: BlogPost = {
   slug: 'rag-for-sql',
-  updated: "2026-09-29",
+  updated: "2026-10-17",
   seoTitle: "RAG for SQL Generation: A Practical Guide",
   seoDescription: "Use retrieval-augmented generation for SQL queries. Learn how schema embeddings give an LLM useful database context beyond a large prompt.",
   title: 'Using RAG for SQL Generation — Why Embeddings Beat Prompt Stuffing',
@@ -111,7 +111,7 @@ This is defense-in-depth: even if the LLM hallucinates a destructive query, it n
 4. **Enforce read-only at the application layer** — database roles aren't sufficient for LLM-generated queries
 5. **Measure accuracy on real queries** — toy benchmarks don't reflect production complexity
 
-The pattern I run for founders in this situation is either a [AI chatbot build](/services/ai-chatbot-development) or a [fractional CTO engagement](/services/hire-fractional-cto-india) — pick based on whether you need shipped code or shipped *and* maintained code.
+If you need help implementing this pattern, my [freelance AI engineering service](/services/fractional-ai-engineer) covers schema retrieval, read-only database integration, evaluation queries and handover. Bring representative questions and your data-access restrictions so we can define a useful first scope.
 
 Adjacent reads: [I Built a 12-Module Multi-Tenant SaaS Platform Alone. Here\](/notes/i-built-multi-tenant-saas-alone-12-module-spring-boot) for the stack-level decision, [From Idea to Play Store: Shipping SanatanApp in 4 Weeks](/notes/idea-to-play-store-sanatanapp-architecture) for the hiring-level one.`
     },
