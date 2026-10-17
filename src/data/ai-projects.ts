@@ -293,4 +293,20 @@ export const aiProjectSummaries: AIProjectSummary[] = [
             { label: "Wallet needed", value: "none" },
         ],
     },
+    {
+        title: "x402-lab — Test AI-Agent Payments Before They Cost Real Money",
+        slug: "x402-lab",
+        problem: "AI agents now pay for APIs over x402 in USDC, but testing costs real money, a verified payment can still fail to settle, and failures come back as opaque codes.",
+        solution: "One command runs the full x402 payment flow on a local chain with the official SDKs. Break it with five chaos modes, run 35 conformance checks against the lab or your own API, and decode 139 error codes into causes and fixes.",
+        techStack: ["TypeScript", "x402 SDKs", "viem", "Hono", "Foundry / Anvil"],
+        aiApproach: "No model in the verdict path. Each check compares what the server said with what the chain did — receipts, Transfer events, balances and nonce state — so a run replays the same way every time.",
+        repoUrl: "https://github.com/rohitguta2432/x402-lab",
+        status: "active",
+        image: "/images/projects/x402-lab-poster.jpg",
+        metrics: [
+            { label: "Conformance checks", value: "35" },
+            { label: "Error codes decoded", value: "139" },
+            { label: "Local settle", value: "~170 ms" },
+        ],
+    },
 ];

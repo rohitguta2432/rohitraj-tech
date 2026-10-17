@@ -1396,6 +1396,51 @@ export const projects: Project[] = [
             ]
         }
     },
+    {
+        slug: "x402-lab",
+        seoTitle: "x402-lab: Test AI Agent Payments Locally",
+        seoDescription: "Explore x402-lab, an open-source lab for x402 agent payments. Run the HTTP 402 flow on a local chain, inject failures and run 35 conformance checks.",
+        name: "x402-lab — Test AI-Agent Payments Before They Cost Real Money",
+        problem: "AI agents can now pay for APIs over x402 (HTTP 402) in USDC, but there is no safe place to test it. Every try on a testnet or mainnet facilitator needs a funded wallet, a facilitator can verify a payment and still fail to settle it, and failures come back as opaque codes like invalid_exact_evm_transaction_simulation_failed.",
+        solves: "One command boots a complete x402 stack on your laptop — a local Anvil chain, an EIP-3009 test USDC, the official @x402/evm facilitator, an @x402/hono paid API and a live route-map dashboard. Break it on purpose with five chaos modes, run 35 conformance checks against the lab or your own paid endpoint, and decode any of 139 error codes into causes and fixes.",
+        techStack: ["TypeScript", "Node.js", "x402 SDKs (@x402/core, @x402/evm, @x402/hono, @x402/fetch)", "viem", "Hono", "Foundry (Anvil, forge)", "Solidity", "Vanilla JS + SVG + SSE", "Vitest"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/x402-lab",
+        aiApproach: "Built for AI-agent payments, with no model in the verdict path. Every check compares what the server said with what the chain did — receipts, Transfer events, balances and nonce state — so a run replays the same way every time. The x402 SDKs run unmodified; fault injection wraps only the facilitator's HTTP surface, so the stock client and server see exactly what production would show them.",
+        image: "/images/projects/x402-lab-poster.jpg",
+        videoUrl: "/videos/x402-lab.mp4",
+        updated: "2026-10-17",
+        details: {
+            businessImpact: "x402 lets AI agents pay for APIs per request, and a payment bug either takes the buyer's money or the seller's revenue. Testing it today means a funded wallet and real settlements. x402-lab makes that loop free and local, and it catches the failure that hurts most: while building it, rate-limited receipt polling made the stock stack charge the agent and still answer 402. Conformance check C04 flags that by comparing the response with on-chain balances.",
+            approach: [
+                "One command (x402-lab dev) boots Anvil, an EIP-3009 test USDC, Multicall3, the official @x402/evm facilitator, an @x402/hono paid API and the dashboard in about a second; a local payment settles in ~170 ms",
+                "Route-map dashboard: every request is drawn as a train from the agent to the chain, and failures exit down branch lines to counted termini with the last reason",
+                "Five chaos modes inside the facilitator: settle-fail, rpc-rate-limit (settlement_pending), hang, latency and flaky",
+                "35 conformance checks across the resource server, the chain and the facilitator, runnable against the lab or any paid endpoint, with JSON output and a non-zero exit code for CI",
+                "Error decoder for 139 codes from the reference TypeScript, Go and Python SDKs and FiatToken reverts, plus schema checks for PAYMENT-* headers and JSON",
+                "Programmatic API (Lab.start, runConformance) for test suites and GitHub Actions"
+            ],
+            decisions: [
+                "Test the official SDKs, never reimplement the protocol: @x402/core, @x402/evm, @x402/hono and @x402/fetch run as shipped",
+                "LabUSDC mirrors USDC's EIP-712 domain and revert strings, so real x402 payloads verify and settle unchanged",
+                "Multicall3 is installed on boot — without it the reference facilitator reports nonce, balance and token-domain failures as one generic simulation error",
+                "Safe with real keys: negative tests sign with a throwaway key, and a real key signs one payment only for the named --asset, under --max-amount, on the --rpc chain, valid for at most 600 seconds",
+                "The dashboard API only answers localhost Host and Origin headers and JSON requests, which blocks CSRF and DNS rebinding",
+                "A zero-build vanilla JS dashboard, so the whole lab ships inside npx"
+            ],
+            currentStatus: "Public and open source (MIT) at github.com/rohitguta2432/x402-lab since October 17, 2026. 26 automated tests, including end-to-end runs that settle real EIP-3009 payments on Anvil, run in GitHub Actions. Install with npx github:rohitguta2432/x402-lab dev (Node 20+ and Foundry).",
+            roadmap: [
+                "Solana (SVM) lane next to the EVM one",
+                "upto, Permit2 and ERC-7710 transfer methods",
+                "Validator for origin-hosted discovery (/.well-known/x402.json)",
+                "MCP server so coding agents can run the suite"
+            ],
+            improvements: [
+                "Publish to npm so the install becomes npx x402-lab",
+                "Record and replay real facilitator traffic"
+            ]
+        }
+    },
 ];
 
 export const repos = [
@@ -1560,6 +1605,12 @@ export const repos = [
         description: "BridgeTrace — read-only CCTP V2 USDC transfer tracer for Ethereum ↔ Base. Source burn, Circle attestation and destination receipt evidence; JSON report and support summary export",
         modules: ["app", "lib", "tests", "docs"],
         url: "https://github.com/rohitguta2432/bridgetrace"
+    },
+    {
+        name: "x402-lab",
+        description: "x402-lab — local test lab, 35-check conformance suite and error decoder for x402 (HTTP 402) agent payments. Anvil + official @x402 SDKs, five chaos modes, live route-map dashboard",
+        modules: ["src", "dashboard", "contracts", "test"],
+        url: "https://github.com/rohitguta2432/x402-lab"
     }
 ];
 
