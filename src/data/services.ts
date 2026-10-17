@@ -528,12 +528,12 @@ export const services: Service[] = [
  subheadline:
  "A forward deployed engineer embeds inside your company, learns your workflows, and builds AI systems through to production. Not advice from the sidelines — working software in your repo.",
  problem:
- "Your company knows AI should be doing more, but pilots keep dying in the demo stage. Agencies hand over a proof-of-concept and disappear. Advisory consultants produce slide decks, not systems. In-house engineers are busy keeping the product running. What's missing is one senior engineer who sits inside your context — your data, your compliance rules, your users — and owns an AI system from first prompt to production traffic. That is what a forward deployed engineer does, and hiring one full-time costs a senior-AI-hire salary you may not need yet.",
+ "An AI pilot can work in a demo while the route to production is still unclear: who grants data access, how permissions are enforced, what happens when the model fails, and who supports the feature after launch. I work with your operators and engineers to turn those questions into a scoped build in your environment. The engagement covers workflow discovery, implementation, evaluation, and an agreed rollout and handover.",
  whatYouGet: [
  "An AI consultant who works as a forward deployed engineer — embedded in your Slack, your standups, your codebase",
  "Production AI systems: agents, RAG pipelines, LLM features, MCP tool integrations — shipped, monitored, and owned to stability",
  "Two engagement models: fractional (2 days/week, ongoing) or a fixed-scope pilot with a defined production outcome",
- "Evaluation harnesses before launch — every agent ships with evals, not vibes",
+ "Evaluation harnesses before launch, with recorded results and visible failure cases",
  "Your stack, your repo, your IP — I work inside your GitHub from day one",
  "Weekly written progress notes a non-technical founder can read",
  "Handoff documentation so your team can run the system without me",
@@ -554,63 +554,63 @@ export const services: Service[] = [
  faqs: [
  {
  question: "What does a forward deployed engineer actually do?",
- answer: "A forward deployed engineer (FDE) is a senior engineer placed directly inside a customer's environment to build and own a system through to production — the model Palantir pioneered and AI companies like OpenAI and Anthropic now hire for aggressively. Instead of receiving requirements and delivering a artifact months later, an FDE sits in your meetings, learns how your team actually works, finds where AI creates value, and ships working software inside your infrastructure. The role combines software engineering with domain understanding: less 'here is a recommendation', more 'here is the system, running, with your data'.",
+ answer: "A forward deployed engineer (FDE) works directly with the people who will use a system, learns their workflow, and builds the integration inside their environment. In my engagement, that includes mapping the task, connecting approved data and tools, evaluating the results, and preparing the rollout and handover. You work with the same engineer through discovery and implementation, with a named owner on your side for product and release decisions.",
  },
  {
  question: "How is this different from hiring an AI consultant or an agency?",
- answer: "A traditional consultant advises — you still need someone to build. An agency builds — but from outside your context, usually handing off a demo that your team then struggles to productionize. A forward deployed engineer does both halves: consults on where AI fits, then personally builds it to production inside your environment. You get one accountable person, not a deck or a handoff.",
+ answer: "Consultants and agencies can also build, integrate and support production systems. Compare the proposed responsibilities: who works with users, who writes the code, whose repository and accounts are used, and who handles release and support. My FDE engagement keeps discovery and hands-on implementation with me in your environment. An agency may fit work that needs several specialists at once; an advisory engagement may fit a team that already has implementation capacity.",
  },
  {
  question: "What is a fractional forward deployed engineer?",
- answer: "Fractional means you get a fraction of my week — typically 2 focused days — on an ongoing retainer, instead of hiring a full-time senior AI engineer. You get the output that matters (agents built, LLM features shipped, integrations running) without the salary, hiring lag, or long-term commitment. Most companies' AI workload doesn't need five days a week; it needs two good ones, consistently.",
+ answer: "Fractional means reserving part of my week, typically two days, for an ongoing delivery backlog. We agree working days, priorities and review checkpoints, with an internal owner who can make decisions between sessions. It fits work that benefits from continuity but does not require a full-time engineer. Incident coverage and response expectations need a separate agreement; reserved delivery days do not provide continuous on-call coverage.",
  },
  {
  question: "Should I hire a freelance FDE or go fractional?",
- answer: "Freelance framing fits one-off, well-scoped tasks: a single integration, a proof-of-concept sprint. Fractional fits what AI work actually is: iterative, embedded, and ongoing — systems need tuning after they meet real users. I structure engagements as either a fixed-scope pilot (you want proof first) or a fractional retainer (you want sustained delivery). Both come with production ownership, not task completion.",
+ answer: "Freelance describes working with an independent engineer; fractional describes reserving part of that engineer's week. You can hire me for a fixed-scope FDE pilot with acceptance criteria and a handover, or for ongoing fractional delivery. Choose a pilot for one bounded outcome and a retainer for a changing backlog. In either case, we write down the release responsibilities and what support is included.",
  },
  {
  question: "How fast can you start, and what happens first?",
- answer: "First step is a scoping call — free, 30 minutes, NDA signed beforehand if you want. Within the first week of an engagement I'm in your repo and your Slack, and the first working slice ships within the first two weeks: something real in staging touching your actual data, not a slide about what could be built.",
+ answer: "Start with a free 30-minute scoping call; an NDA can be signed beforehand. Bring the workflow, representative input and output examples, the systems involved, and the person who can approve the result. I confirm availability and the first milestone after reviewing the scope and access requirements. The first build targets one complete path in staging; its delivery date depends on the integration and data being ready.",
  },
  ],
  sections: [
  {
  heading: "When you need a forward deployed engineer, and when you don't",
  paragraphs: [
- "The forward deployed model fits a specific kind of problem: the AI part is possible, but the value depends on your systems. Your ticketing tool, your warehouse, your permission model, your compliance rules, the three people whose daily work changes when the agent goes live. A model vendor can't see any of that from outside, and neither can an agency working from a requirements doc. Someone has to sit inside the environment and do the integration work.",
- "If your problem is mostly a model problem, like choosing between providers or tuning a prompt, you don't need an embedded engineer. A few hours of advice will do. Hire a forward deployed engineer when the problem is getting a working system through your infrastructure, your data and your people.",
+ "The forward deployed model fits work where requirements emerge from using the real systems: your ticketing tool, your warehouse, your permission rules and the people whose daily work changes. The engineer needs access to those people and approved examples to discover the constraints, build the integration, and review it with the users.",
+ "Choose embedded delivery when workflow discovery and implementation need to happen together. A model evaluation with a clear dataset may fit a narrower consulting project. A product feature with stable requirements may fit a scoped freelance AI engineering build. The engagement should match the decisions and access the work requires.",
  ],
  bullets: [
  "Good fit: a pilot that worked in a demo and stalled before production",
  "Good fit: an agent that needs to read or act on internal systems, where nobody trusts it with production credentials yet",
  "Good fit: leadership wants AI shipped this quarter, and the in-house team is fully booked on the core product",
  "Not a fit: you want a strategy document with no build. Hire an advisor for that",
- "Not a fit: a standalone app with a fixed spec and no integration with your systems. A fixed-price build is cheaper",
+ "Consider scoped freelance delivery: a standalone feature with clear requirements and a defined handover",
  "Not a fit: the AI workload already fills five days a week, permanently. Hire full-time, and I can help write that spec",
  ],
  },
  {
  heading: "How a forward deployed engineer pilot runs",
  paragraphs: [
- "A pilot is scoped around one production outcome agreed in the first week, with a number attached. 'Explore AI for support' is not a pilot. 'Route 80% of inbound tickets correctly on a held-out set of last month's tickets' is. The rough shape:",
+ "We scope a pilot around one workflow and an acceptance decision. For ticket routing, that could mean measuring correct routes on held-out tickets while separately checking sensitive categories and escalation behavior. Targets are chosen from your baseline and risk. The six-week sequence below is an illustrative plan; access readiness, integration work and review findings determine the actual dates.",
  ],
  bullets: [
  "Week 1: in your repo, Slack and standups. Map the workflow with the people who do it, pull real examples, and agree the success metric and the eval set before writing agent code",
- "Week 2: first working slice in staging against your real data. Small, ugly and real",
+ "Week 2: target a first working slice in staging against approved examples, with gaps and dependencies visible",
  "Weeks 3–4: the work that separates a demo from production: evals in CI, permission scopes, audit logging, failure handling, a fallback when the model is down or wrong",
- "Week 5: limited production rollout behind a flag or a human-approval step, measured against the agreed number",
+ "Week 5: review acceptance evidence with the release owner; if approved, begin a limited rollout behind a flag or a human-approval step",
  "Week 6: decision point. Stop with a documented system your team owns, or continue on a fractional retainer for the next items on the backlog",
  ],
  },
  {
  heading: "What I need from your side",
  paragraphs: [
- "Most stalled AI projects stall on access and ownership, not on models. Before day one, I ask for:",
+ "To scope the work and identify dependencies before implementation, I ask for:",
  ],
  bullets: [
  "One named owner on your side who can make product calls the same day",
  "Repo access and a staging environment. Production access is earned later, with scoped credentials",
- "Real examples of the task: tickets, documents, queries or transcripts. A few hundred beats a perfect spec",
+ "Approved examples of the task: tickets, documents, queries or transcripts, including ambiguous inputs and known failure cases",
  "One success metric we both agree is the definition of done",
  "Time with the people whose workflow changes. They decide whether the system gets used",
  ],
@@ -631,27 +631,27 @@ export const services: Service[] = [
  {
  heading: "Shipped work that maps to forward deployed problems",
  paragraphs: [
- "Everything below is open source, so you can read the code before the scoping call. Each project is a pattern I reuse inside client environments.",
+ "These public portfolio projects let you inspect implementation choices before a scoping call. Use their linked repositories to review the relevant pattern, then assess it against your own workflow, data and acceptance criteria. They are engineering examples; the results for a new engagement must be measured separately.",
  ],
  bullets: [
- "StellarMIND: an MCP server that turns plain-English questions into read-only SQL, using schema retrieval from pgvector. Only SELECT and WITH can run. That is the data-access pattern most internal agents need first",
- "Agent Autopsy: classifies why an agent run failed (loops, ignored errors, made-up tools, context bloat) from the raw transcript. I use the same discipline to rescue stalled pilots",
- "claude-autodev: an eight-stage pipeline where each stage only advances when it produces a real artifact, not when the model says it finished. I apply the same gating to production agents",
- "Quorum: a multi-agent research swarm that coordinates through a shared knowledge graph, with an explicit critic agent so the swarm doesn't just agree with itself",
+ "StellarMIND: a Spring Boot MCP server for chat-to-SQL, with schema retrieval through pgvector and query restrictions to inspect when planning database access",
+ "Agent Autopsy: transcript analysis for failure patterns such as repeated loops, ignored errors, invented tools and growing context",
+ "claude-autodev: a staged development pipeline with required artifacts and checks before a stage advances",
+ "Quorum: a research-agent workflow using a shared knowledge graph, an explicit critic and a live view of agent activity",
  ],
  },
  ],
  comparison: {
  heading: "Forward deployed engineer vs AI consultant vs agency vs full-time hire",
- intro: "All four can be the right call. The difference is who builds, where the work lives, and who owns the system after launch.",
- columns: ["", "Forward deployed engineer", "AI consultant", "AI agency", "Full-time AI hire"],
+ intro: "These roles overlap, and delivery terms vary by provider. Use the comparison to check a proposal's scope, team capacity and operating responsibilities.",
+ columns: ["Decision", "My FDE engagement", "AI consultant", "AI agency", "Full-time AI hire"],
  rows: [
- ["Who builds", "The same person who scoped it", "Nobody. You get recommendations", "An agency team, outside your context", "Your employee"],
- ["Where the work lives", "Your repo, your Slack, your data", "Slides and documents", "Usually their repo, handed over at the end", "Your repo"],
- ["First working software", "In staging within about two weeks", "Not part of the deliverable", "After a statement of work and a build phase", "After the hiring search and ramp-up"],
- ["After launch", "Tunes it against real users, then a documented handoff", "Engagement has ended", "Support is a separate contract", "Ongoing"],
- ["Commitment", "Fixed-scope pilot or part-week retainer", "Project fee", "Statement of work", "Full-time headcount"],
- ["Best when", "Value depends on integrating with your systems and data", "You have builders and need a second opinion", "A well-specified build with no integration", "AI work fills a full week, long-term"],
+ ["Useful when", "Discovery and integration need regular work with your operators", "You need specialist advice, implementation, or both", "The scope needs several disciplines or parallel delivery", "The workload needs continuing full-time ownership"],
+ ["Who implements", "I scope and build with your team", "Confirm whether delivery is included and who does it", "Confirm the delivery team and technical owner", "Your employee, with your team's support"],
+ ["Repository and access", "Work in your repository with approved access", "Agree ownership and access in the scope", "Agree repository, account ownership and handover", "Your organization's repositories and accounts"],
+ ["First milestone", "A staging slice scoped around available data and integrations", "An agreed assessment or implementation milestone", "An agreed milestone and its staffing dependencies", "An onboarding and delivery plan"],
+ ["After release", "Agreed monitoring, support window and documented handover", "Define follow-up and support responsibilities", "Define support coverage and the receiving owner", "Ongoing ownership with an explicit incident plan"],
+ ["Engagement shape", "Fixed-scope pilot or part-week retainer", "A defined advisory or delivery scope", "A team delivery agreement", "Full-time employment"],
  ],
  },
  engagementExamples: {
@@ -703,6 +703,16 @@ export const services: Service[] = [
  cta: "Discuss Your Project",
  updated: "2026-10-17",
  related: [
+ {
+ href: "/services/fractional-ai-engineer",
+ label: "Freelance AI Engineer",
+ description: "For a defined AI product feature or recurring engineering backlog, with scope and handover agreed upfront.",
+ },
+ {
+ href: "/notes/freelance-ai-engineer-project-scope-2026",
+ label: "AI project scope and acceptance checklist",
+ description: "Prepare the workflow, test cases, access boundaries and receiving owner for a pilot.",
+ },
  {
  href: "/services/fractional-forward-deployed-engineer",
  label: "Fractional Forward Deployed Engineer",
@@ -810,16 +820,16 @@ export const services: Service[] = [
  subheadline:
  "Work directly with an independent AI engineer to scope, build, evaluate and deploy agents, retrieval and LLM features. Start with a defined deliverable or use a fractional engagement for an evolving product backlog.",
  problem:
- "Somewhere between 'we should use AI' and 'we have a full AI team' is where most companies actually live: a backlog of LLM features, an agent idea that would save real money, a RAG search that half-works. A full-time senior AI engineer is a large salary plus months of hiring. Interns and task-by-task freelancing produce demos that collapse under real users, usually because nobody owned the architecture — which model, what the agent may touch, how retrieval gets evaluated, what it costs at scale. The fractional model fixes the mismatch: you get two or three days a week of someone who makes those architecture calls and has shipped production AI, and the backlog actually moves.",
+ "You may have one AI feature to deliver, a prototype that needs evaluation, or a backlog that needs consistent engineering attention. The practical questions are similar: which data the system can use, what the model may do, how quality is measured, and who runs it after release. I handle the architecture and implementation with you. We can agree a scoped project with a defined handover, or reserve regular days for an evolving backlog.",
  whatYouGet: [
  "AI architecture before code: model and provider choice, retrieval and agent design, permission boundaries, eval plan, and cost envelope — written down and agreed",
- "A senior AI engineer on retainer — consistent days each week, not ad-hoc task work",
+ "Direct delivery with me: a scoped project with review milestones, or reserved days each week for a fractional engagement",
  "Production delivery: AI agents, LLM features, RAG pipelines, workflow automation",
  "Claude Code consulting: agentic development workflows, custom skills, MCP tooling for your engineering team",
  "Evals and monitoring for every system shipped — you can see it working",
  "Embedded ways of working: your repo, your Slack, your standup",
- "Priority ordering of your AI backlog by ROI, revisited monthly",
- "Zero lock-in: documented handoff whenever you hire full-time",
+ "For ongoing work, a prioritized AI backlog reviewed against observed results and business needs",
+ "Source code, deployment instructions and a documented handover to your receiving engineer",
  ],
  techStack: [
  "Claude API",
@@ -872,11 +882,19 @@ export const services: Service[] = [
  faqs: [
  {
  question: "What exactly does 'fractional' mean here?",
- answer: "You hire a fraction of my week — typically two or three fixed days — on a monthly retainer. Those days are yours: same standups, same repo, same accountability as an employee, without the full-time salary, equity, or hiring pipeline. I work with a small number of clients at once so each gets real, focused days rather than context-switched hours.",
+ answer: "You reserve part of my week, typically two or three agreed days, for an ongoing backlog. We set priorities, review checkpoints and an internal owner who can make decisions between sessions. A scoped project is also available when you have one defined deliverable. Working days, availability and support expectations are confirmed in the agreement.",
  },
  {
  question: "Are you a freelance AI engineer or a fractional one?",
  answer: "I work independently, so you work with me directly. A scoped project fits a defined deliverable with agreed acceptance criteria and handover. A fractional retainer fits an evolving backlog that needs consistent architecture, implementation and production follow-up. We agree the scope and ownership before choosing the engagement.",
+ },
+ {
+ question: "Can you take over an existing AI prototype?",
+ answer: "Yes. Start with the repository, the intended workflow, representative examples and the failures you have observed. I review the architecture, data access, evaluation coverage and deployment path, then propose a bounded next step. That could be repairing retrieval, adding permission checks, measuring answer quality or shipping a narrow staging slice. The review establishes what can be retained and what needs further work before we agree a larger delivery scope.",
+ },
+ {
+ question: "What should I prepare before hiring a freelance AI engineer?",
+ answer: "Bring the workflow you want to improve, a few approved input and expected-output examples, the systems involved, and the person who will accept the result. Include access constraints, known failure cases and any deadline dependencies. We use those materials to define the deliverable, evaluation criteria, repository and account ownership, and the handover. Sensitive production data can stay in your approved environment.",
  },
  {
  question: "What does an AI architect do before any code is written?",
@@ -888,16 +906,21 @@ export const services: Service[] = [
  },
  {
  question: "Do you work with companies outside India?",
- answer: "Yes — I'm based in Bengaluru, India and work remote-first with companies worldwide. For US and EU clients that means significant daily timezone overlap plus async written updates. Contracts and IP assignment are structured for international engagements; NDAs signed before any scoping conversation.",
+ answer: "Yes. I am based in Bengaluru, India and work remotely with teams worldwide. We agree review hours and timezone overlap before starting, and use written updates between sessions. We also confirm repository and cloud ownership, access permissions, and any NDA or IP terms needed for the engagement.",
  },
  {
  question: "When should I hire full-time instead of fractional?",
- answer: "When the AI workload consistently fills a full week and shapes your core product roadmap, hire full-time — and I'll help you do it: writing the job spec, interviewing candidates, and handing over a documented, monitored system rather than a mystery codebase. Fractional is the bridge that gets you to that point without burning a year of salary finding out.",
+ answer: "Consider a full-time hire when the workload consistently needs a full week, the engineer must own a continuing part of your product roadmap, or your operating needs exceed the agreed delivery schedule. A scoped or fractional engagement can include a documented handover to that person. Define incident coverage separately whichever hiring model you choose.",
  },
  ],
  cta: "Start the Conversation",
  updated: "2026-10-17",
  related: [
+ {
+ href: "/notes/freelance-ai-engineer-project-scope-2026",
+ label: "Freelance AI engineer project scope",
+ description: "Use the project brief, acceptance matrix and handover checklist to prepare a concrete delivery scope.",
+ },
  {
  href: "/services/fractional-forward-deployed-engineer",
  label: "Fractional Forward Deployed Engineer",
