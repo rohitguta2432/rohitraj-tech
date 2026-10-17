@@ -616,6 +616,19 @@ export const services: Service[] = [
  ],
  },
  {
+ heading: "Before you hire a forward deployed engineer: agree the acceptance criteria",
+ paragraphs: [
+ "A useful pilot ends with evidence your team can inspect. Before implementation, we agree what the system must do, which examples will test it, and who owns the rollout decision. A polished demo alone is not an acceptance test.",
+ ],
+ bullets: [
+ "Scope: one named workflow, its users and integrations, plus an explicit list of tasks the pilot will not attempt",
+ "Quality: a held-out set of real examples, a baseline and an agreed acceptance threshold; keep failures visible alongside successes",
+ "Safety: permission checks, audit logs and tests showing that disallowed actions fail safely",
+ "Operations: agreed latency and cost limits, monitoring, a fallback path and a person responsible for incidents",
+ "Handover: source code in your repository, deployment instructions, evaluation results and a runbook your team can use",
+ ],
+ },
+ {
  heading: "Shipped work that maps to forward deployed problems",
  paragraphs: [
  "Everything below is open source, so you can read the code before the scoping call. Each project is a pattern I reuse inside client environments.",
@@ -688,7 +701,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-07",
+ updated: "2026-10-17",
  related: [
  {
  href: "/services/fractional-forward-deployed-engineer",
@@ -743,7 +756,7 @@ export const services: Service[] = [
  ],
  timeline: "First production MCP server: 1-4 weeks",
  costRange: "Scoped per engagement",
- portfolioSlugs: ["rag-for-sql", "agent-autopsy"],
+ portfolioSlugs: ["stellarmind", "agent-autopsy"],
  faqs: [
  {
  question: "What is MCP and why does my company need it?",
@@ -763,7 +776,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Discuss Your Integration",
- updated: "2026-10-07",
+ updated: "2026-10-17",
  related: [
  {
  href: "/services/forward-deployed-engineer",
@@ -793,9 +806,9 @@ export const services: Service[] = [
  metaTitle: "Freelance AI Engineer and AI Architect for Hire",
  metaDescription:
  "Hire a freelance AI engineer to design and ship agents, RAG and LLM features. Fractional availability, hands-on delivery and remote work worldwide.",
- headline: "Freelance AI Engineer & AI Architect — Senior AI Delivery, a Few Days a Week",
+ headline: "Freelance AI Engineer & AI Architect — Build, Evaluate and Ship Your AI System",
  subheadline:
- "You have real AI work to ship, but not enough to justify a permanent senior salary. I work as an independent freelance AI engineer and architect on a fractional retainer: I design the system, build it, and keep it working in production.",
+ "Work directly with an independent AI engineer to scope, build, evaluate and deploy agents, retrieval and LLM features. Start with a defined deliverable or use a fractional engagement for an evolving product backlog.",
  problem:
  "Somewhere between 'we should use AI' and 'we have a full AI team' is where most companies actually live: a backlog of LLM features, an agent idea that would save real money, a RAG search that half-works. A full-time senior AI engineer is a large salary plus months of hiring. Interns and task-by-task freelancing produce demos that collapse under real users, usually because nobody owned the architecture — which model, what the agent may touch, how retrieval gets evaluated, what it costs at scale. The fractional model fixes the mismatch: you get two or three days a week of someone who makes those architecture calls and has shipped production AI, and the backlog actually moves.",
  whatYouGet: [
@@ -818,9 +831,44 @@ export const services: Service[] = [
  "Python",
  "PostgreSQL",
  ],
- timeline: "Ongoing retainer, 2-3 days/week",
+ timeline: "Scoped delivery or an ongoing fractional retainer",
  costRange: "Scoped per engagement",
- portfolioSlugs: ["agentic-os", "rag-for-sql"],
+ portfolioSlugs: ["agentic-os", "stellarmind", "agent-autopsy"],
+ sections: [
+ {
+ heading: "What to hire a freelance AI engineer for",
+ paragraphs: [
+ "Start with a workflow and a way to tell whether it improved. Useful scopes include searching internal documents with source citations, turning business questions into read-only database queries, or adding a narrowly scoped agent to an existing product. The architecture choice follows the task: some problems need retrieval or tools; others are better solved with ordinary application code.",
+ "I work across design and implementation. The output includes the integration, tests and evaluation examples, deployment configuration, and documentation. If the data or acceptance criteria are not ready, the first deliverable is a clear assessment of those gaps before a larger build is agreed.",
+ ],
+ },
+ {
+ heading: "A scoped project or a fractional AI engineer?",
+ paragraphs: [
+ "A scoped project fits one defined outcome with stable inputs and a clear handover. A fractional engagement fits an evolving backlog that needs the same engineer making architecture decisions, shipping changes and checking how the system behaves after release. We choose the engagement around the work rather than treating every AI task as a long retainer.",
+ "For work that requires daily contact with operators and several internal systems, the forward deployed engineer pilot is the more specific option. For a product backlog of agents, retrieval and LLM features, this freelance AI engineering engagement keeps design and delivery with one person.",
+ ],
+ },
+ {
+ heading: "What you receive and how we check it",
+ paragraphs: [
+ "We agree acceptance criteria before building: the examples the system must handle, which actions it may take, and the limits on response time and operating cost. Targets depend on your task and baseline; a demonstration is not a measured production result.",
+ ],
+ bullets: [
+ "A written design covering the data flow, model choice, integration boundaries and the reasons for those choices",
+ "A working slice in your repository and staging environment, reviewed against representative inputs",
+ "An evaluation set with documented results and failure cases, plus application tests for permissions and integrations",
+ "Deployment and monitoring instructions, credential ownership and a fallback when the model or an upstream service fails",
+ "A documented handover so your team can maintain the system or continue with a fractional engagement",
+ ],
+ },
+ {
+ heading: "Review the engineering before a scoping call",
+ paragraphs: [
+ "The public portfolio examples below let you inspect the architecture and tradeoffs before a scoping call. StellarMIND shows a Spring Boot MCP server, schema retrieval with pgvector and read-only SQL boundaries. Agent Autopsy shows how agent failures can be examined from transcripts. Their project pages link to the repositories; acceptance targets for your system are agreed separately against your own workflow and data.",
+ ],
+ },
+ ],
  faqs: [
  {
  question: "What exactly does 'fractional' mean here?",
@@ -828,7 +876,7 @@ export const services: Service[] = [
  },
  {
  question: "Are you a freelance AI engineer or a fractional one?",
- answer: "Both, in the sense that matters to you. I'm an independent freelance AI engineer, not an agency — you work with me directly. But I don't sell gig-shaped tasks: the engagement is a fractional retainer where I own outcomes — deciding what to build, building it, measuring it in production, and iterating. That matters for AI systems, which need tuning after contact with real users; a task-based freelancer is gone by then.",
+ answer: "I work independently, so you work with me directly. A scoped project fits a defined deliverable with agreed acceptance criteria and handover. A fractional retainer fits an evolving backlog that needs consistent architecture, implementation and production follow-up. We agree the scope and ownership before choosing the engagement.",
  },
  {
  question: "What does an AI architect do before any code is written?",
@@ -848,7 +896,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-13",
+ updated: "2026-10-17",
  related: [
  {
  href: "/services/fractional-forward-deployed-engineer",

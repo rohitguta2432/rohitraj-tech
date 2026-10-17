@@ -2,7 +2,7 @@ import type { BlogPost } from '@/types/blog';
 
 export const fractionalAiEngineerVsHiring2026: BlogPost = {
   slug: "fractional-ai-engineer-vs-hiring-2026",
-  updated: "2026-10-13",
+  updated: "2026-10-17",
   seoTitle: "Fractional AI Engineer vs Full-Time Hire (2026)",
   seoDescription: "Compare a fractional AI engineer with a full-time hire. Evaluate scope, budget, continuity and ownership for your team's AI backlog.",
   title: "Fractional AI Engineer vs Full-Time Hire: How to Decide (2026)",

@@ -1,4 +1,6 @@
-@import "tailwindcss";
+/* Scan UI sources explicitly so nested agent worktrees cannot stall builds. */
+@import "tailwindcss" source("../");
+@source "../../content";
 
 :root {
   /* Warm paper + vermilion. Replaces the grey/blue documentation palette: the

@@ -57,6 +57,21 @@ export default function HireBlock({ dict }: HireBlockProps) {
                             </li>
                         ))}
                     </ul>
+                    <nav
+                        aria-label="Choose an AI engineering engagement"
+                        style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem", marginBottom: 32 }}
+                    >
+                        {[
+                            { href: "/services/forward-deployed-engineer", label: "Hire a Forward Deployed Engineer", detail: "An embedded engineer to scope, build and deploy a system inside your team." },
+                            { href: "/services/fractional-ai-engineer", label: "Freelance AI Engineer", detail: "Hands-on AI architecture, agents and RAG delivery for your product backlog." },
+                            { href: "/notes/what-does-a-forward-deployed-engineer-do-2026", label: "What is a Forward Deployed Engineer?", detail: "Understand the role, responsibilities and the engagement options before hiring." },
+                        ].map((option) => (
+                            <Link key={option.href} href={option.href} style={{ display: "block", padding: "1.1rem", border: "1px solid var(--border)", borderRadius: 12, textDecoration: "none" }}>
+                                <span style={{ display: "block", fontWeight: 600, color: "var(--text-primary)", marginBottom: 8 }}>{option.label} &rarr;</span>
+                                <span style={{ fontSize: 14, lineHeight: 1.55, color: "var(--text-secondary)" }}>{option.detail}</span>
+                            </Link>
+                        ))}
+                    </nav>
                     <div>
                         <Link href={`/hire`} className="btn btn-primary">
                             {hire.cta}

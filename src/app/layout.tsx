@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Big_Shoulders, Chivo, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { defaultMetadata, generateAllSchemas } from "@/lib/seo-config";
 import Analytics from "@/components/Analytics";
@@ -9,20 +9,23 @@ import Analytics from "@/components/Analytics";
 // 100px+ and gives the hero an actual voice; Chivo is a neutral, slightly warm
 // workhorse for body copy. Two families on a real contrast axis beat one neutral
 // sans doing both jobs.
-const bigShoulders = Big_Shoulders({
-  subsets: ["latin"],
+const bigShoulders = localFont({
+  src: "./fonts/big-shoulders.woff2",
+  weight: "100 900",
   display: "swap",
   variable: "--font-display",
 });
 
-const chivo = Chivo({
-  subsets: ["latin"],
+const chivo = localFont({
+  src: "./fonts/chivo.woff2",
+  weight: "100 900",
   display: "swap",
   variable: "--font-sans",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
+const jetbrainsMono = localFont({
+  src: "./fonts/jetbrains-mono.woff2",
+  weight: "100 800",
   display: "swap",
   variable: "--font-mono",
   preload: false,
@@ -66,9 +69,6 @@ export default function RootLayout({
         <meta name="geo.region" content="IN" />
         <meta name="geo.placename" content="India" />
 
-        {/* Preconnect to external resources for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
         <a href="#main" className="skip-link">
