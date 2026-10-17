@@ -322,10 +322,10 @@ export const blogSummaries: BlogPostSummary[] = [
   },
   {
     "slug": "what-does-a-forward-deployed-engineer-do-2026",
-    "title": "What Does a Forward Deployed Engineer Actually Do? (2026 Guide)",
+    "title": "Forward Deployed Engineer: What the Role Involves and When to Hire One",
     "date": "2026-09-05",
-    "updated": "2026-09-29",
-    "excerpt": "Forward deployed engineer went from a Palantir job title to the fastest-growing role in tech. Here is what an FDE actually does week to week, how the role differs from a software engineer, solutions engineer, or consultant, why AI companies hire for it so aggressively, and the three ways a company can get FDE capacity without a six-month search.",
+    "updated": "2026-10-17",
+    "excerpt": "A forward deployed engineer works with customers to turn a business problem into deployed software. This guide explains the day-to-day responsibilities, relevant skills, how the role differs across teams, and when an embedded FDE or freelance AI engineer fits the work.",
     "readingTime": "10 min read",
     "keywords": [
       "forward deployed engineer",
