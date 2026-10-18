@@ -531,7 +531,7 @@ export const services: Service[] = [
  "An AI pilot can work in a demo while the route to production is still unclear: who grants data access, how permissions are enforced, what happens when the model fails, and who supports the feature after launch. I work with your operators and engineers to turn those questions into a scoped build in your environment. The engagement covers workflow discovery, implementation, evaluation, and an agreed rollout and handover.",
  whatYouGet: [
  "An AI consultant who works as a forward deployed engineer — embedded in your Slack, your standups, your codebase",
- "Production AI systems: agents, RAG pipelines, LLM features, MCP tool integrations — shipped, monitored, and owned to stability",
+ "AI systems: agents, RAG pipelines, LLM features and MCP integrations, with rollout, monitoring and a support window agreed in the scope",
  "Two engagement models: fractional (2 days/week, ongoing) or a fixed-scope pilot with a defined production outcome",
  "Evaluation harnesses before launch, with recorded results and visible failure cases",
  "Your stack, your repo, your IP — I work inside your GitHub from day one",
@@ -619,13 +619,15 @@ export const services: Service[] = [
  heading: "Before you hire a forward deployed engineer: agree the acceptance criteria",
  paragraphs: [
  "A useful pilot ends with evidence your team can inspect. Before implementation, we agree what the system must do, which examples will test it, and who owns the rollout decision. A polished demo alone is not an acceptance test.",
+ "The release review can approve a limited rollout, hold for a specific repair, or stop with a documented handover. If a target is missed, I record the failed cases, likely cause and proposed next step. You approve any revised scope before more work begins; a pilot does not automatically become a retainer.",
  ],
  bullets: [
  "Scope: one named workflow, its users and integrations, plus an explicit list of tasks the pilot will not attempt",
  "Quality: a held-out set of real examples, a baseline and an agreed acceptance threshold; keep failures visible alongside successes",
  "Safety: permission checks, audit logs and tests showing that disallowed actions fail safely",
- "Operations: agreed latency and cost limits, monitoring, a fallback path and a person responsible for incidents",
- "Handover: source code in your repository, deployment instructions, evaluation results and a runbook your team can use",
+ "Operations: rehearse an upstream outage or failed tool call in staging; show how work reaches a human or the existing workflow, and how to disable the integration",
+ "Release decision: your named release owner reviews the evaluation results, latency and cost against the agreed limits, plus unresolved risks, before authorizing production access",
+ "Handover: source code, deployment instructions, evaluation results and a runbook; name the receiving engineer, alert destination, support hours and escalation contact before rollout",
  ],
  },
  {
@@ -701,7 +703,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-17",
+ updated: "2026-10-18",
  related: [
  {
  href: "/services/fractional-ai-engineer",
@@ -863,13 +865,14 @@ export const services: Service[] = [
  heading: "What you receive and how we check it",
  paragraphs: [
  "We agree acceptance criteria before building: the examples the system must handle, which actions it may take, and the limits on response time and operating cost. Targets depend on your task and baseline; a demonstration is not a measured production result.",
+ "For an internal-document search feature, the evaluation separates finding the right evidence from writing a supported answer. A correct-looking answer can still cite the wrong source. We review these checks separately so the next fix addresses retrieval, answer generation or access control as appropriate.",
  ],
  bullets: [
- "A written design covering the data flow, model choice, integration boundaries and the reasons for those choices",
- "A working slice in your repository and staging environment, reviewed against representative inputs",
- "An evaluation set with documented results and failure cases, plus application tests for permissions and integrations",
- "Deployment and monitoring instructions, credential ownership and a fallback when the model or an upstream service fails",
- "A documented handover so your team can maintain the system or continue with a fractional engagement",
+ "Design and baseline: document the data flow and model choice, then compare the staging feature with your current search or manual process on the same held-out questions",
+ "Retrieval checks: record the expected source for each answerable question and whether the permitted evidence was retrieved; include missing and outdated documents",
+ "Answer checks: inspect whether each citation supports the answer and whether the system asks for clarification or declines when the available evidence is insufficient",
+ "Access checks: test the same question as users with different permissions, verifying that restricted content stays out of retrieved context, answers and citations",
+ "Delivery evidence: code and evaluation cases in your repository, per-case results and unresolved failures, measured latency and operating cost, plus deployment, fallback and handover instructions",
  ],
  },
  {
@@ -914,7 +917,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-17",
+ updated: "2026-10-18",
  related: [
  {
  href: "/notes/freelance-ai-engineer-project-scope-2026",
