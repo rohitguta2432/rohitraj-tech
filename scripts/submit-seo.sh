@@ -2,6 +2,7 @@
 # Notify IndexNow about changed pages and show supported Google discovery links.
 # Google does not support the Indexing API for ordinary articles/services.
 # Usage: ./scripts/submit-seo.sh [--dry-run] [changed-url ...]
+# Explicit URLs are used as given; include a listing URL only when it changed.
 # With a GSC key, the closing URL Inspection call reports real index status.
 
 set -euo pipefail
@@ -18,13 +19,6 @@ DEFAULT_URLS=(
   "https://${HOST}/services"
 )
 
-# Always append homepage + notes index when explicit URLs are passed —
-# refreshes the link graph + freshens listing page on every ship.
-ALWAYS_INCLUDE=(
-  "https://${HOST}"
-  "https://${HOST}/notes"
-)
-
 DRY_RUN=0
 if [ "${1:-}" = "--dry-run" ]; then
   DRY_RUN=1
@@ -33,14 +27,6 @@ fi
 
 if [ $# -gt 0 ]; then
   URLS=("$@")
-  # De-dupe: only append ALWAYS_INCLUDE entries not already in $@
-  for inc in "${ALWAYS_INCLUDE[@]}"; do
-    skip=0
-    for u in "${URLS[@]}"; do
-      [ "$u" = "$inc" ] && skip=1 && break
-    done
-    [ $skip -eq 0 ] && URLS+=("$inc")
-  done
 else
   URLS=("${DEFAULT_URLS[@]}")
 fi
