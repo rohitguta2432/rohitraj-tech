@@ -237,11 +237,11 @@ export const blogSummaries: BlogPostSummary[] = [
   },
   {
     "slug": "forward-deployed-engineer-hiring-process-2026",
-    "title": "How to Hire a Forward Deployed Engineer (Without the Full-Time Search)",
+    "title": "How to Hire a Forward Deployed Engineer: Scope, Trial and Handover",
     "date": "2026-09-19",
-    "updated": "2026-09-29",
-    "excerpt": "Every guide on how to hire a forward deployed engineer is written by someone selling you the placement. This one is written by the person who does the work — the scoping decision that comes before the hire, a paid trial project you can actually run, and the four ways the engagement dies in week three.",
-    "readingTime": "14 min read",
+    "updated": "2026-10-18",
+    "excerpt": "Use a real workflow, a paid work sample and explicit acceptance criteria to assess a forward deployed engineer. This guide covers a pilot, fractional engagement and full-time hire.",
+    "readingTime": "8 min read",
     "keywords": [
       "how to hire a forward deployed engineer",
       "hire a forward deployed engineer",
@@ -255,7 +255,7 @@ export const blogSummaries: BlogPostSummary[] = [
       "src": "/images/notes/forward-deployed-engineer-hiring-process-2026-cover.jpg",
       "alt": "Abstract converging pathways on a dark grid illustrating the forward deployed engineer hiring process"
     },
-    "relatedProject": "myfinancial"
+    "relatedProject": "stellarmind"
   },
   {
     "slug": "audit-agent-skills-security-claude-code-2026",
