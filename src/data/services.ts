@@ -631,6 +631,18 @@ export const services: Service[] = [
  ],
  },
  {
+ heading: "How an agent gets permission to change a system",
+ paragraphs: [
+ "A model proposing an action does not authorize that action. For a pilot that sends messages or changes records, we agree the write boundary with your system owner before enabling it. The first staging slice can remain read-only while the approval path is reviewed.",
+ ],
+ bullets: [
+ "Define the allowed action, target system and records, credential scope and person who can approve it; keep credentials outside prompts and retrieved documents",
+ "Show the approver the exact target and proposed change. Enforce approval in application code, bind it to that action, and recheck permissions before execution; changed inputs require a new approval",
+ "Test rejected and expired approvals, changed permissions, duplicate requests and tool timeouts in staging. Check the recorded outcome before retrying a write, with an agreed retry limit and a human escalation path",
+ "Include the approval record, execution result and disable procedure in the handover; your system owner controls production credentials and can revoke the integration's access",
+ ],
+ },
+ {
  heading: "Shipped work that maps to forward deployed problems",
  paragraphs: [
  "These public portfolio projects let you inspect implementation choices before a scoping call. Use their linked repositories to review the relevant pattern, then assess it against your own workflow, data and acceptance criteria. They are engineering examples; the results for a new engagement must be measured separately.",
@@ -703,7 +715,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-18",
+ updated: "2026-10-19",
  related: [
  {
  href: "/services/fractional-ai-engineer",
@@ -876,6 +888,18 @@ export const services: Service[] = [
  ],
  },
  {
+ heading: "Agree where your data goes before connecting a model",
+ paragraphs: [
+ "Keeping source documents in your cloud does not by itself describe the model's data flow. Before connecting a provider, we map what leaves each system and who approves it. You receive that data-flow note alongside the architecture and evaluation plan.",
+ ],
+ bullets: [
+ "List the fields sent for generation and embeddings, plus what prompts, responses and tool results appear in traces; use approved or redacted examples for initial evaluation",
+ "Review the chosen provider's processing region, retention and training-use settings against your requirements. Record constraints and unresolved approvals before using sensitive data; local inference is an option to evaluate when external processing is restricted",
+ "Agree retention and deletion responsibilities for uploaded files, vector indexes, evaluation fixtures and logs, including any provider-managed copies and backup limitations",
+ "Use your repository and provider accounts with scoped access. Document secret storage, billing ownership and credential revocation so your team controls the system after handover",
+ ],
+ },
+ {
  heading: "Review the engineering before a scoping call",
  paragraphs: [
  "The public portfolio examples below let you inspect the architecture and tradeoffs before a scoping call. StellarMIND shows a Spring Boot MCP server, schema retrieval with pgvector and read-only SQL boundaries. Agent Autopsy shows how agent failures can be examined from transcripts. Their project pages link to the repositories; acceptance targets for your system are agreed separately against your own workflow and data.",
@@ -917,7 +941,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-18",
+ updated: "2026-10-19",
  related: [
  {
  href: "/notes/freelance-ai-engineer-project-scope-2026",
