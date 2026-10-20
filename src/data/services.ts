@@ -686,11 +686,12 @@ export const services: Service[] = [
  title: "Chat-to-SQL over internal data",
  situation: "Ops and finance keep asking engineers for the same queries, and the backlog of 'quick questions' never shrinks.",
  build: [
- "Read-only database role with SELECT and WITH only, enforced in code and in the database",
- "Schema retrieval so the model sees the relevant tables, not the whole warehouse",
+ "Database role limited to approved tables or views, with grants and read-only transactions reviewed by your database owner",
+ "Schema retrieval limited to that scope; review query structure and permitted functions rather than trusting a SELECT or WITH prefix",
+ "Query timeouts and result limits, plus staging tests for writes, restricted data and expensive queries",
  "Query log and a verified-answer eval set of real questions",
  ],
- doneMeans: "answers match the verified set, every query is logged, and no write path exists anywhere in the system.",
+ doneMeans: "answers match the verified set, queries stay within the approved data scope, and recorded negative tests show denied writes and out-of-scope reads. Your database owner reviews the access configuration and remaining limitations before rollout.",
  },
  {
  title: "MCP server for internal tools",
@@ -715,7 +716,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-19",
+ updated: "2026-10-20",
  related: [
  {
  href: "/services/fractional-ai-engineer",
@@ -883,6 +884,8 @@ export const services: Service[] = [
  "Design and baseline: document the data flow and model choice, then compare the staging feature with your current search or manual process on the same held-out questions",
  "Retrieval checks: record the expected source for each answerable question and whether the permitted evidence was retrieved; include missing and outdated documents",
  "Answer checks: inspect whether each citation supports the answer and whether the system asks for clarification or declines when the available evidence is insufficient",
+ "Freshness checks: agree how quickly source changes must reach search, then update and remove approved test documents to verify the new content appears and removed content stops being retrieved within that window",
+ "Sync failure handling: make the last successful sync and failed updates visible, test the agreed stale-data fallback, and name the receiving engineer who owns ingestion failures after handover",
  "Access checks: test the same question as users with different permissions, verifying that restricted content stays out of retrieved context, answers and citations",
  "Delivery evidence: code and evaluation cases in your repository, per-case results and unresolved failures, measured latency and operating cost, plus deployment, fallback and handover instructions",
  ],
@@ -941,7 +944,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-19",
+ updated: "2026-10-20",
  related: [
  {
  href: "/notes/freelance-ai-engineer-project-scope-2026",
