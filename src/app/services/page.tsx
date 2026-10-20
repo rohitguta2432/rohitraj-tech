@@ -57,6 +57,18 @@ export default async function ServicesPage() {
 
                 <section>
                     <div className="container">
+                        <div style={{ marginBottom: "2.5rem" }}>
+                            <h2>Choose the scope you need</h2>
+                            <p style={{ color: "var(--text-secondary)", lineHeight: 1.7 }}>
+                                For a defined feature such as document search or an AI product backlog, choose{" "}
+                                <Link href="/services/fractional-ai-engineer">freelance AI engineering</Link>.
+                                {" "}If the work starts with operators and spans several internal systems, an{" "}
+                                <Link href="/services/forward-deployed-engineer">embedded forward deployed engineer</Link>
+                                {" "}covers workflow discovery through rollout. If you already have an agent and need
+                                it to reach an approved API or database, start with{" "}
+                                <Link href="/services/mcp-integration-consultant">MCP integration consulting</Link>.
+                            </p>
+                        </div>
                         {/* How AI engagements chain together */}
                         <ol
                             aria-label="How I work with engineering teams"

@@ -522,7 +522,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "tencentdb-agent-memory-team-hub-review-2026",
     "title": "TencentDB Agent Memory v2.0 Review: A Self-Hosted Team Memory Hub for AI Agents (2026)",
     "date": "2026-08-06",
-    "updated": "2026-09-29",
+    "updated": "2026-10-20",
     "excerpt": "Tencent's Agent Memory hit #1 on GitHub trending this week at 15.3k stars — a self-hosted hub that turns chats, docs, and code into four governed memory assets shared across Claude Code, OpenClaw, and Hermes. I hand-roll this exact stack daily, so here's what the productized version gets right, the vs-Mem0/Zep/Letta comparison nobody else wrote, and the governance wiring you need before your team touches it.",
     "readingTime": "13 min read",
     "keywords": [

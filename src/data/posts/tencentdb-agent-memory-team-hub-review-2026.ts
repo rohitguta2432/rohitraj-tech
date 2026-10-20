@@ -2,7 +2,7 @@ import type { BlogPost } from '@/types/blog';
 
 export const tencentdbAgentMemoryTeamHubReview2026: BlogPost = {
   slug: 'tencentdb-agent-memory-team-hub-review-2026',
-  updated: "2026-09-29",
+  updated: "2026-10-20",
   seoTitle: "TencentDB Agent Memory: Self-Hosted Hub Review",
   seoDescription: "Review TencentDB Agent Memory as a self-hosted memory hub for teams. Examine shared context, deployment and tradeoffs for AI agent workflows.",
   title:
@@ -126,16 +126,17 @@ The failure mode I'd watch hardest: **memory poisoning at team scale**. One conf
     },
     {
       heading: 'Wiring Agent Memory Into a Real Product?',
-      content: `A team memory hub is infrastructure — the product is what your agents *do* with the compounding context. If you're building an AI-heavy MVP and want the agent architecture (memory, tooling, governance) done right the first time instead of retrofitted after the third incident, that's exactly what I ship: a working product in six weeks, with the boring-but-critical wiring — secrets hygiene, review gates, restore-tested state — included rather than discovered.
+      content: `A team memory hub is infrastructure. Before connecting it to a product, choose one workflow, the data it may retain, and the person responsible for reviewing shared memories. Test whether retrieval respects user permissions, whether deleted source material stops appearing, and how the team restores or disables the integration after a failure.
 
-- [6-Week MVP Development](/services/6-week-mvp) — scope to shipped product, agent infrastructure included
-- [Hire a Founding Engineer (India)](/services/hire-founding-engineer-india) — senior product engineering, 10+ years, AI-native stack
+For help implementing retrieval, memory evaluation and a documented handover, see my [freelance AI engineering service](/services/fractional-ai-engineer). If the scope also requires working with operators across several internal systems, the [forward deployed engineer engagement](/services/forward-deployed-engineer) covers discovery, integration and a monitored rollout.
+
+If your agent already exists and the missing piece is access to an approved knowledge source or API, [MCP integration consulting](/services/mcp-integration-consultant) covers that connection and its permission checks. A memory store does not replace those checks: tool authorization still needs to be enforced when the agent reads or acts.
 
 Or start smaller: run \`./start-all.sh\` on a spare box this weekend, import one codebase, and see what your agents stop re-learning. I break down agent memory vs context windows in [this note](/notes/ai-agent-memory-vs-context-window-2026).`,
     },
   ],
   cta: {
-    text: 'Ship your AI MVP in 6 weeks',
-    href: '/services/6-week-mvp',
+    text: 'Scope your agent memory integration',
+    href: '/services/fractional-ai-engineer',
   },
 };

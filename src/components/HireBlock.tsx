@@ -64,6 +64,7 @@ export default function HireBlock({ dict }: HireBlockProps) {
                         {[
                             { href: "/services/forward-deployed-engineer", label: "Hire a Forward Deployed Engineer", detail: "An embedded engineer to scope, build and deploy a system inside your team." },
                             { href: "/services/fractional-ai-engineer", label: "Freelance AI Engineer", detail: "Hands-on AI architecture, agents and RAG delivery for your product backlog." },
+                            { href: "/services/mcp-integration-consultant", label: "MCP Integration Consultant", detail: "Connect an existing agent to approved APIs and data, with access checks and a documented handover." },
                             { href: "/notes/what-does-a-forward-deployed-engineer-do-2026", label: "What is a Forward Deployed Engineer?", detail: "Understand the role, responsibilities and the engagement options before hiring." },
                         ].map((option) => (
                             <Link key={option.href} href={option.href} style={{ display: "block", padding: "1.1rem", border: "1px solid var(--border)", borderRadius: 12, textDecoration: "none" }}>

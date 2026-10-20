@@ -764,8 +764,8 @@ export const services: Service[] = [
  whatYouGet: [
  "Custom MCP servers connecting your agents to internal APIs, databases, and third-party tools",
  "Security design first: authentication, scoped permissions, input validation, audit logging",
- "Tool definitions engineered for reliable agent use — schemas an LLM cannot misread",
- "Evaluation suite proving the agent uses each tool correctly before production",
+ "Documented tool schemas tested with your chosen MCP client and representative inputs",
+ "Evaluation cases for permitted calls, denied access and upstream failures before rollout",
  "Deployment into your infrastructure (AWS, GCP, on-prem) with monitoring",
  "Team handoff: documentation and a working session so your engineers own it",
  "Advisory option: architecture review of MCP servers your team is already building",
@@ -782,6 +782,34 @@ export const services: Service[] = [
  timeline: "First production MCP server: 1-4 weeks",
  costRange: "Scoped per engagement",
  portfolioSlugs: ["stellarmind", "agent-autopsy"],
+ sections: [
+ {
+ heading: "Start with one approved integration",
+ paragraphs: [
+ "Bring the agent or MCP client you use, the API or database it needs, and a few examples of the task. We first check whether an existing connector or a direct API call already solves it. A custom MCP server fits when several clients need the same tools or the integration needs permissions and operational controls your existing connector does not provide.",
+ "A first scope might expose approved support-ticket fields to a triage agent, or let an internal assistant query reviewed database views. We agree the permitted inputs, identity used for each request, allowed output fields and receiving engineer before implementation. Work involving new agent behavior or several operational workflows is scoped separately from the connector.",
+ ],
+ },
+ {
+ heading: "What the integration handover includes",
+ paragraphs: [
+ "The acceptance review uses your chosen client and a staging system with approved examples. A successful tool call is only one case: the review also records what happens when access is denied, inputs are invalid or the upstream system fails. Targets for latency and cost depend on that system and are agreed before delivery.",
+ ],
+ bullets: [
+ "Tool contracts: documented input and output schemas, field filtering, error responses and the supported MCP client configuration",
+ "Access boundaries: server-side identity and permission checks with scoped credentials; tests that attempt cross-user reads and unapproved actions",
+ "Failure cases: invalid arguments, expired credentials, upstream timeouts and rate limits, with bounded retries and clear errors",
+ "Write controls where needed: approval bound to the specific target and change, duplicate-request handling, and a way for your owner to revoke access",
+ "Operating handover: source and deployment configuration in your accounts, redacted diagnostic logs, the acceptance results and unresolved cases, plus disable and rollback instructions",
+ ],
+ },
+ {
+ heading: "Inspect a public MCP implementation",
+ paragraphs: [
+ "StellarMIND, linked in the portfolio below, is a public Spring Boot MCP and schema-retrieval example. Its repository is available to review before a scoping call. It is an engineering example, not a measured result for your environment; your data-access policy and acceptance cases still need their own review.",
+ ],
+ },
+ ],
  faqs: [
  {
  question: "What is MCP and why does my company need it?",
@@ -801,7 +829,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Discuss Your Integration",
- updated: "2026-10-17",
+ updated: "2026-10-20",
  related: [
  {
  href: "/services/forward-deployed-engineer",
