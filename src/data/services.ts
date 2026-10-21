@@ -676,11 +676,12 @@ export const services: Service[] = [
  title: "Support triage agent",
  situation: "Every inbound ticket is read by a person just to decide where it goes, and first-response time slips on busy days.",
  build: [
- "Read tickets through your helpdesk API with a narrow, read-only tool layer",
- "Classify, route and draft a reply. A person approves before anything is sent",
- "Eval set built from a few hundred past tickets with known correct routing",
+ "Start in shadow mode: read approved tickets through a narrow tool layer and propose routes and drafts without changing the live queue or sending replies",
+ "Have your support owner label representative tickets, including ambiguous and sensitive cases; keep evaluation tickets separate from development examples",
+ "Compare operator handling time and correction work with the current process on the same evaluation tickets, alongside route accuracy, draft edits and required escalations",
+ "Review misroutes and extra review work with the operators before enabling a limited rollout; a person approves routing changes and replies during that rollout",
  ],
- doneMeans: "routing accuracy on the held-out set meets the number agreed in week one, and the support team accepts drafts without rewriting them at an agreed rate.",
+ doneMeans: "the held-out routing, draft-quality and operator-workload checks meet the criteria agreed with your support owner. Report corrections and escalations alongside successes; if review work increases or a sensitive case is mishandled, hold rollout and agree the repair. Draft acceptance alone is not evidence of time saved.",
  },
  {
  title: "Chat-to-SQL over internal data",
@@ -716,7 +717,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-20",
+ updated: "2026-10-21",
  related: [
  {
  href: "/services/fractional-ai-engineer",
@@ -931,6 +932,18 @@ export const services: Service[] = [
  ],
  },
  {
+ heading: "Check the operating budget before release",
+ paragraphs: [
+ "A short demo does not show what an AI feature costs under your workload. We agree representative inputs, expected usage and response-time limits, then deliver the measurements and configured limits with the release evidence. These are operating costs in your provider accounts, separate from the engineering engagement.",
+ ],
+ bullets: [
+ "Measure cost per completed task, including retrieval, model calls, tool calls and retries; report failed or abandoned attempts as well as successful runs, with provider usage separated from application infrastructure",
+ "Test representative short and long inputs at agreed concurrency, recording typical and slow responses, timeouts and rate-limit failures rather than only the fastest example",
+ "Set input-size, tool-call, retry and usage limits in application code. Agree what happens at the limit: a clear failure, a queued task or a handoff to the existing workflow; rehearse that path in staging",
+ "Hand over the workload assumptions, measured results, alert destination and person responsible for usage review. Recheck quality, latency and cost before approving a model or workflow change",
+ ],
+ },
+ {
  heading: "Review the engineering before a scoping call",
  paragraphs: [
  "The public portfolio examples below let you inspect the architecture and tradeoffs before a scoping call. StellarMIND shows a Spring Boot MCP server, schema retrieval with pgvector and read-only SQL boundaries. Agent Autopsy shows how agent failures can be examined from transcripts. Their project pages link to the repositories; acceptance targets for your system are agreed separately against your own workflow and data.",
@@ -972,7 +985,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-20",
+ updated: "2026-10-21",
  related: [
  {
  href: "/notes/freelance-ai-engineer-project-scope-2026",
