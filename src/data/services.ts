@@ -708,16 +708,17 @@ export const services: Service[] = [
  title: "Rescue a stalled pilot",
  situation: "The demo impressed everyone. With real traffic, the agent loops, ignores errors or answers confidently and wrongly.",
  build: [
- "Replay real transcripts and classify each failure by cause",
- "Fix the top cause first, often retrieval or tool design rather than the prompt",
- "Turn every fixed failure into a regression eval that runs in CI",
+ "Review approved transcripts with your operators, reproduce the priority failures in staging, and record the model, prompt, tool and data versions used",
+ "Keep repair examples separate from held-out acceptance cases; agree the baseline and failure categories before changing the system",
+ "Repair the highest-impact reproducible cause first, then compare the original and repaired versions on the same acceptance cases, including cases that already worked",
+ "Add reproducible failure cases to CI and hand over per-case results, unresolved failures and the fallback procedure",
  ],
- doneMeans: "the failure rate on replayed traffic drops below the agreed threshold, and the eval suite blocks regressions on every change.",
+ doneMeans: "the repaired version meets the agreed acceptance threshold on held-out cases, with remaining failures and any newly broken cases shown to your release owner. Passing known failures alone does not establish production readiness; hold rollout when the agreed criteria are missed.",
  },
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-21",
+ updated: "2026-10-22",
  related: [
  {
  href: "/services/fractional-ai-engineer",
@@ -964,6 +965,10 @@ export const services: Service[] = [
  answer: "Yes. Start with the repository, the intended workflow, representative examples and the failures you have observed. I review the architecture, data access, evaluation coverage and deployment path, then propose a bounded next step. That could be repairing retrieval, adding permission checks, measuring answer quality or shipping a narrow staging slice. The review establishes what can be retained and what needs further work before we agree a larger delivery scope.",
  },
  {
+ question: "How can my team change models or prompts after handover?",
+ answer: "The handover records the released model identifier, prompt and tool versions, retrieval configuration and evaluation cases in your repository. Before a change, compare the released and proposed versions on the same cases, including permissions and failure paths, and review quality, latency and cost together. Your release owner approves the change against the agreed limits. We also rehearse restoring the previous application configuration or disabling the AI path in staging; if the previous provider model is unavailable, use the documented fallback. A passing evaluation reduces uncertainty but does not guarantee future behavior.",
+ },
+ {
  question: "What should I prepare before hiring a freelance AI engineer?",
  answer: "Bring the workflow you want to improve, a few approved input and expected-output examples, the systems involved, and the person who will accept the result. Include access constraints, known failure cases and any deadline dependencies. We use those materials to define the deliverable, evaluation criteria, repository and account ownership, and the handover. Sensitive production data can stay in your approved environment.",
  },
@@ -985,7 +990,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-21",
+ updated: "2026-10-22",
  related: [
  {
  href: "/notes/freelance-ai-engineer-project-scope-2026",
