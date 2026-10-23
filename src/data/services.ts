@@ -698,11 +698,12 @@ export const services: Service[] = [
  title: "MCP server for internal tools",
  situation: "The team wants Claude or an in-house agent to act on internal systems, but nobody will hand it production credentials.",
  build: [
- "MCP server exposing a small set of named tools, each with its own permission scope",
- "Audit log of every call, rate limits, and staging first",
- "Runbook so your engineers can add tools without me",
+ "Agree the first workflow and MCP client, connection method and supported versions; define each tool's inputs, outputs, permission scope and expected business errors",
+ "Test the agreed MCP client against the staging server: discover the intended tools, submit valid and invalid inputs, and check that returned results match the documented contract",
+ "Exercise an upstream timeout and a business failure, such as a record that cannot be updated. Verify the client shows a failed outcome rather than reporting completion, and apply the agreed retry and approval rules before another attempt",
+ "Hand over the client configuration, per-case results, access, rate-limit and audit-log setup, and a runbook for adding or changing a tool; rerun the workflow checks when the client or tool contract changes",
  ],
- doneMeans: "the agreed workflows run end to end through the server, every call is traceable, and your security review signs off.",
+ doneMeans: "the named client completes the agreed staging workflow, invalid inputs and failed operations produce the expected outcomes, and the receiving engineer can repeat those checks. Your system owner reviews access, call records and unresolved limitations before production credentials are enabled; connecting successfully alone does not establish readiness.",
  },
  {
  title: "Rescue a stalled pilot",
@@ -718,7 +719,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-22",
+ updated: "2026-10-23",
  related: [
  {
  href: "/services/fractional-ai-engineer",
@@ -909,6 +910,7 @@ export const services: Service[] = [
  paragraphs: [
  "We agree acceptance criteria before building: the examples the system must handle, which actions it may take, and the limits on response time and operating cost. Targets depend on your task and baseline; a demonstration is not a measured production result.",
  "For an internal-document search feature, the evaluation separates finding the right evidence from writing a supported answer. A correct-looking answer can still cite the wrong source. We review these checks separately so the next fix addresses retrieval, answer generation or access control as appropriate.",
+ "Retrieved content can contain instructions aimed at the agent. A relevant search result is evidence to assess, not permission to change the task or use another tool. We include these attempts in the release review; passing the recorded cases does not establish immunity to prompt injection.",
  ],
  bullets: [
  "Design and baseline: document the data flow and model choice, then compare the staging feature with your current search or manual process on the same held-out questions",
@@ -917,6 +919,7 @@ export const services: Service[] = [
  "Freshness checks: agree how quickly source changes must reach search, then update and remove approved test documents to verify the new content appears and removed content stops being retrieved within that window",
  "Sync failure handling: make the last successful sync and failed updates visible, test the agreed stale-data fallback, and name the receiving engineer who owns ingestion failures after handover",
  "Access checks: test the same question as users with different permissions, verifying that restricted content stays out of retrieved context, answers and citations",
+ "Instruction-boundary checks: treat retrieved documents and tool results as untrusted input. Test approved examples containing instructions to ignore the task, expose restricted data or call an unrelated tool; record the attempted action and whether application permissions and approval checks reject it",
  "Delivery evidence: code and evaluation cases in your repository, per-case results and unresolved failures, measured latency and operating cost, plus deployment, fallback and handover instructions",
  ],
  },
@@ -990,7 +993,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-22",
+ updated: "2026-10-23",
  related: [
  {
  href: "/notes/freelance-ai-engineer-project-scope-2026",
