@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: ProjectPageProps) {
         project.seoDescription ?? project.problem,
         `/projects/${slug}`,
         // English-only body in every locale — see createPageMetadata({ translated })
-        { translated: false }
+        { translated: false, ownCard: true }
     );
 }
 

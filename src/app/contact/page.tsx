@@ -12,8 +12,9 @@ export async function generateMetadata(): Promise<Metadata> {
     return createPageMetadata(
         dict.meta.contact.title,
         dict.meta.contact.description,
-        '/contact'
-            );
+        '/contact',
+        { ownCard: true }
+    );
 }
 
 export default async function ContactPage() {

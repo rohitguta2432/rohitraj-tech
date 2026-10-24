@@ -74,7 +74,7 @@ export const SITE_CONFIG = {
     images: {
         og: '/opengraph-image',
         twitter: '/twitter-image',
-        logo: '/icon.png',
+        logo: '/icon/512',
     },
 } as const;
 
@@ -422,6 +422,12 @@ export function createPageMetadata(
     options: {
         /** Page-specific image (e.g. blog cover). Falls back to site default. */
         image?: { src: string; alt: string };
+        /**
+         * The route draws its own share card (an opengraph-image file beside the
+         * page). Next attaches a file card only when the page's metadata names no
+         * images, and fills twitter:image from it, so both are left out here.
+         */
+        ownCard?: boolean;
         /** An editorial summary, independent of the longer visible introduction. */
         metaDescription?: string;
         /** Kept for call-site compatibility; the site is English-only at bare paths now. */
@@ -443,7 +449,7 @@ export function createPageMetadata(
 
     // Resolve page image. Fall back to site OG image so social cards never render naked.
     const ogImageUrl = resolveImageUrl(options.image?.src);
-    const ogImageAlt = options.image?.alt ?? 'Rohit Raj — AI Consultant · Forward Deployed Engineer';
+    const ogImageAlt = options.image?.alt ?? 'Rohit Raj — AI consultant and forward deployed engineer. One engineer. Whole product.';
 
     return {
         title: baseTitle,
@@ -455,20 +461,22 @@ export function createPageMetadata(
             type: path.startsWith('/notes/') ? 'article' : 'website',
             siteName: SITE_CONFIG.name,
             locale: SITE_CONFIG.locale,
-            images: [
-                {
-                    url: ogImageUrl,
-                    width: 1200,
-                    height: 630,
-                    alt: ogImageAlt,
-                },
-            ],
+            ...(!options.ownCard && {
+                images: [
+                    {
+                        url: ogImageUrl,
+                        width: 1200,
+                        height: 630,
+                        alt: ogImageAlt,
+                    },
+                ],
+            }),
         },
         twitter: {
             card: 'summary_large_image',
             title: brandedTitle,
             description: metaDesc,
-            images: [ogImageUrl],
+            ...(!options.ownCard && { images: [ogImageUrl] }),
             creator: SITE_CONFIG.author.twitter,
         },
         alternates: {

@@ -36,10 +36,13 @@ const svgUri = (svg: string) => `data:image/svg+xml,${encodeURIComponent(svg)}`;
 /**
  * The proof mark as an image: one ray per product, as long as its stack.
  * `lit` lights one product's ray in the accent and dims the rest, the way the
- * live mark's sweep does; `weight` thickens the strokes for small sizes.
+ * live mark's sweep does. `rays` draws an even sample of the products instead
+ * of all of them, and `weight` thickens the strokes: in a browser tab, 34 thin
+ * rays fuse into a disc.
  */
-function burstImage({ color, lit, weight = 9 }: { color: string; lit?: number; weight?: number }) {
-    const lines = burstRays(STACKS).map((r, i) => {
+function burstImage({ color, lit, weight = 9, rays = STACKS.length }: { color: string; lit?: number; weight?: number; rays?: number }) {
+    const stacks = Array.from({ length: rays }, (_, k) => STACKS[Math.floor((k * STACKS.length) / rays)]);
+    const lines = burstRays(stacks).map((r, i) => {
         const stroke = i === lit ? ACCENT : color;
         const opacity = lit === undefined || i === lit ? 1 : 0.3;
         return `<line x1="${r.x1}" y1="${r.y1}" x2="${r.x2}" y2="${r.y2}" stroke="${stroke}" stroke-opacity="${opacity}" stroke-width="${weight}" stroke-linecap="round"/>`;
@@ -74,7 +77,7 @@ export function brandIcon(size: number) {
                     borderRadius: tab ? Math.round(size * 0.22) : 0,
                 }}
             >
-                <img src={burstImage({ color: CREAM, weight: tab ? 17 : 11 })} width={mark} height={mark} alt="" />
+                <img src={burstImage({ color: CREAM, weight: tab ? 24 : 11, rays: tab ? 12 : undefined })} width={mark} height={mark} alt="" />
             </div>
         ),
         { width: size, height: size }
@@ -96,17 +99,43 @@ function loadFonts() {
 }
 
 const TEXT_WIDTH = 620;
-// Big Shoulders 800 caps average under 0.47em, measured. Enough to keep each
-// title line on one row and the longest word unbroken.
-const CAP_EM = 0.47;
 
+// Advance widths of the Big Shoulders 800 cut, in em, measured from the TTF.
+// Satori can't measure before it draws, and caps vary too much (I at 0.24em,
+// W at 0.83em) for an average to keep a title clear of the sticker.
+const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,-'’:&!?()/+—·";
+const ADVANCES = [
+    0.493, 0.488, 0.5, 0.503, 0.428, 0.421, 0.504, 0.508, 0.242, 0.467, 0.503, 0.398, 0.809, 0.597, 0.509, 0.487, 0.509, 0.49, 0.489,
+    0.421, 0.507, 0.503, 0.829, 0.464, 0.449, 0.415, 0.508, 0.281, 0.488, 0.492, 0.513, 0.507, 0.501, 0.467, 0.502, 0.5, 0.218, 0.244,
+    0.261, 0.448, 0.208, 0.265, 0.26, 0.619, 0.264, 0.495, 0.304, 0.286, 0.418, 0.541, 0.894, 0.185,
+];
+const em = (text: string) => [...text].reduce((w, c) => w + (ADVANCES[GLYPHS.indexOf(c)] ?? 0.6), 0);
+
+/** Rows a title takes at `size`, wrapping greedily on spaces. */
+function rowsAt(text: string, size: number) {
+    let rows = 1;
+    let line = 0;
+    for (const word of text.split(" ")) {
+        const w = em(word) * size;
+        if (line > 0 && line + em(" ") * size + w > TEXT_WIDTH) {
+            rows += 1;
+            line = w;
+        } else {
+            line += (line > 0 ? em(" ") * size : 0) + w;
+        }
+    }
+    return rows;
+}
+
+/**
+ * The largest size, up to 124px, at which every set line fits on one row, the
+ * longest word fits unbroken, and a wrapping title stays within three rows.
+ */
 function titleSize(lines: string[]) {
-    const longest = Math.max(...lines.map((l) => (lines.length > 1 ? l : l.split(/\s+/).reduce((a, w) => (w.length > a.length ? w : a), "")).length));
-    let size = Math.min(124, Math.floor(TEXT_WIDTH / (CAP_EM * longest)));
-    // A single wrapping title (a long project name, a sentence) also has to fit
-    // the page's height: at most three rows.
+    const widest = Math.max(...lines.map((l) => (lines.length > 1 ? em(l) : Math.max(...l.split(" ").map(em)))));
+    let size = Math.min(124, Math.floor(TEXT_WIDTH / widest));
     if (lines.length === 1) {
-        while (size > 56 && Math.ceil((CAP_EM * size * lines[0].length) / TEXT_WIDTH) > 3) size -= 4;
+        while (size > 56 && rowsAt(lines[0], size) > 3) size -= 4;
     }
     return size;
 }
@@ -148,6 +177,8 @@ interface ShareCardProps {
     line: string;
     /** A product's index in projects.ts: lights its ray on the sticker. */
     lit?: number;
+    /** A product's stack, set as the site's slash-separated tag line. */
+    stack?: string[];
 }
 
 /**
@@ -155,10 +186,9 @@ interface ShareCardProps {
  * cloth, one page bound into it and running off the bottom edge, and the proof
  * mark as a holographic sticker on that page.
  */
-export async function shareCard({ kicker, title, line, lit }: ShareCardProps) {
+export async function shareCard({ kicker, title, line, lit, stack }: ShareCardProps) {
     const lines = title.toUpperCase().split("\n");
     const size = titleSize(lines);
-    const label = lit === undefined ? `${projects.length} running` : `${String(lit + 1).padStart(2, "0")} of ${projects.length}`;
 
     return new ImageResponse(
         (
@@ -206,10 +236,13 @@ export async function shareCard({ kicker, title, line, lit }: ShareCardProps) {
                         <div style={{ fontSize: 24, color: MUTED }}>{kicker}</div>
                         <div style={{ display: "flex", flexDirection: "column", marginTop: 14, fontFamily: "Big Shoulders", fontSize: size, lineHeight: 0.92 }}>
                             {lines.map((l) => (
-                                <div key={l}>{l}</div>
+                                <div key={l} style={{ textWrap: "balance" }}>
+                                    {l}
+                                </div>
                             ))}
                         </div>
-                        <div style={{ marginTop: 26, fontSize: 26, lineHeight: 1.4, color: BODY }}>{line}</div>
+                        <div style={{ marginTop: 26, fontSize: 26, lineHeight: 1.4, color: BODY, textWrap: "balance" }}>{line}</div>
+                        {stack && <div style={{ marginTop: 22, fontSize: 21, color: MUTED }}>{stack.join("  /  ")}</div>}
                     </div>
 
                     <div
@@ -241,7 +274,7 @@ export async function shareCard({ kicker, title, line, lit }: ShareCardProps) {
                             }}
                         >
                             <img src={burstImage({ color: INK, lit })} width={190} height={190} alt="" />
-                            <div style={{ marginTop: 4, fontFamily: "Big Shoulders", fontSize: 30, letterSpacing: 1.5 }}>{label.toUpperCase()}</div>
+                            <div style={{ marginTop: 4, fontFamily: "Big Shoulders", fontSize: 30, letterSpacing: 1.5 }}>{`${projects.length} RUNNING`}</div>
                         </div>
                     </div>
                 </div>

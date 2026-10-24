@@ -13,7 +13,7 @@ export async function generateMetadata() {
         "Hire an AI Consultant · Forward Deployed Engineer | Rohit Raj",
         "Hire Rohit Raj for production AI agents, MCP integrations and LLM features. Embedded engineering on a fractional retainer or fixed-scope pilot, worldwide.",
         "/hire",
-        { translated: false }
+        { translated: false, ownCard: true }
     );
 }
 
