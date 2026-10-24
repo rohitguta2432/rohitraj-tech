@@ -711,23 +711,6 @@ section {
   line-height: 1.6;
 }
 
-/* About */
-.about-content {
-  max-width: 640px;
-}
-
-.about-name {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.about-bio {
-  font-size: 1.0625rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
-}
-
 /* Contact */
 .contact-card {
   max-width: 400px;
@@ -2256,290 +2239,6 @@ code,
   .ai-project-image {
     margin-bottom: 1rem;
   }
-}
-
-/* ===== About page redesign ===== */
-.about-hero {
-  padding: 3.5rem 0 2rem;
-  border-bottom: 1px solid var(--border);
-}
-
-@media (min-width: 768px) {
-  .about-hero { padding: 5rem 0 3rem; }
-}
-
-.about-hero-inner {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: start;
-}
-
-@media (min-width: 768px) {
-  .about-hero-inner {
-    grid-template-columns: 180px 1fr;
-    gap: 3rem;
-  }
-}
-
-.about-avatar {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--accent) 0%, #7c3aed 100%);
-  position: relative;
-  box-shadow: 0 14px 36px -12px rgba(59, 130, 246, 0.45);
-  flex-shrink: 0;
-  border: 4px solid var(--surface);
-  outline: 1px solid var(--border);
-}
-
-@media (min-width: 768px) {
-  .about-avatar { width: 200px; height: 200px; }
-}
-
-.about-avatar-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
-  display: block;
-}
-
-.about-hero-body { min-width: 0; }
-
-.about-eyebrow {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
-}
-
-.about-headline {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.03em;
-}
-
-@media (min-width: 768px) {
-  .about-headline { font-size: 3.25rem; }
-}
-
-.about-role {
-  font-size: 1rem;
-  color: var(--text-muted);
-  margin-bottom: 1.25rem;
-  font-weight: 500;
-}
-
-.about-lead {
-  font-size: 1.0625rem;
-  color: var(--text-secondary);
-  line-height: 1.75;
-  margin-bottom: 1.75rem;
-  max-width: 62ch;
-}
-
-.about-cta-row {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-bottom: 1.5rem;
-}
-
-.about-socials {
-  display: flex;
-  gap: 1.25rem;
-  list-style: none;
-  padding: 0;
-  flex-wrap: wrap;
-}
-
-.about-socials a {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
-  transition: all 150ms ease;
-}
-
-.about-socials a:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-
-/* Stats strip */
-.about-stats-section {
-  padding: 2rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.about-stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-@media (min-width: 768px) {
-  .about-stats { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-}
-
-.about-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding: 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 150ms ease;
-}
-
-.about-stat-link:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
-.about-stat-value {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-
-.about-stat-label {
-  font-size: 0.8125rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-}
-
-/* Narrative cards */
-.about-narrative-section { padding: 3rem 0; }
-
-.about-narrative {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .about-narrative { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-}
-
-.about-narrative-card {
-  padding: 1.75rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  border: 1px solid var(--border);
-}
-
-.about-narrative-card h2 {
-  font-size: 1.0625rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  color: var(--text-primary);
-}
-
-.about-narrative-card p {
-  font-size: 0.9375rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin: 0;
-}
-
-/* Stack */
-.about-stack-section {
-  padding: 3rem 0;
-  background: var(--bg-alt);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.about-stack-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-@media (min-width: 768px) {
-  .about-stack-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-.about-stack-title {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-}
-
-.about-stack-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0;
-}
-
-.about-chip {
-  font-size: 0.8125rem;
-  padding: 0.375rem 0.75rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--text-secondary);
-  font-family: var(--font-mono);
-}
-
-/* Final CTA */
-.about-final-cta { padding: 3rem 0 5rem; }
-
-.about-final-cta-card {
-  padding: 2.5rem;
-  background: linear-gradient(135deg, var(--accent-light), transparent);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .about-final-cta-card { padding: 3.5rem; }
-}
-
-.about-final-cta-card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.about-final-cta-card p {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  max-width: 55ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.about-final-cta-card .about-cta-row {
-  justify-content: center;
-  margin-bottom: 0;
-}
-
-/* RTL */
-.rtl .about-narrative-card {
-  border-left: 1px solid var(--border);
-  border: 1px solid var(--border);
 }
 
 /* ===== Reliability detail pages ===== */
@@ -6067,7 +5766,6 @@ code,
 .page-title,
 .project-detail-title,
 .rel-headline,
-.about-headline,
 .headline {
   max-width: none;
   font-family: var(--font-display), "Arial Narrow", sans-serif;
@@ -6248,18 +5946,147 @@ code,
   padding: 0 0.25rem 1.25rem;
 }
 
-/* Topic reading paths on /notes: columns under a heavy rule, like the sprint
-   schedule, not boxed cards. */
-.notes-topics {
+/* Topic reading paths on /notes, drawn as routes off the departures board: a
+   flap code, then the guides as stops on one line. A guide that several
+   routes share is an interchange (the ringed stop), not a repeat. */
+.routes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-  gap: 2.5rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 3rem 3.5rem;
 }
 
-.notes-topic {
-  padding: 1rem 0 0;
-  border-top: 2px solid var(--text-primary);
+.route {
+  padding: 0;
   scroll-margin-top: 6rem;
+}
+
+.route-head {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.route-code {
+  flex: none;
+  font-size: 1.15rem;
+}
+
+/* :where(main) h3 sets the body face; the route names are board lines. */
+.route-name {
+  margin: 0;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.route-desc {
+  margin: 0.85rem 0 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.route-stops {
+  --line: var(--accent);
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 2rem;
+  list-style: none;
+}
+
+/* The line itself, from the first stop to the last. */
+.route-stops::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.55rem;
+  bottom: 1.6rem;
+  width: 3px;
+  background: var(--line);
+}
+
+.route-stop {
+  position: relative;
+  padding: 0 0 1.05rem;
+}
+
+.route-stop::before {
+  content: "";
+  position: absolute;
+  left: calc(-2rem + 0.5rem + 1.5px - 0.45rem);
+  top: 0.3rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--line);
+}
+
+.route-interchange::before {
+  left: calc(-2rem + 0.5rem + 1.5px - 0.6rem);
+  top: 0.15rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-color: var(--text-primary);
+  box-shadow: inset 0 0 0 2px var(--bg), inset 0 0 0 5px var(--text-primary);
+}
+
+.route-stop a {
+  color: var(--text-primary);
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.route-stop a:hover,
+.route-stop a:focus-visible {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.route-meta {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.route-onward {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 1.1rem;
+  margin: 0.4rem 0 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.route-onward span {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.route-onward a {
+  color: var(--accent-text);
+  text-decoration: none;
+}
+
+.route-onward a::after {
+  content: " →";
+}
+
+.route-onward a:hover,
+.route-onward a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* ---------- Brand: departures board, holographic foil, stickers, proof ----------
@@ -6456,11 +6283,15 @@ code,
   border-bottom: 1px solid rgba(255, 244, 232, 0.16);
 }
 
-/* Two stickers across the page's long edges, half on paper, half on cloth.
-   Positioned against the sheet width of whichever page is showing; the home
-   page opens on the film, so it skips them. */
+/* Two stickers on the cloth, each catching the page's edge by --tuck, like
+   stickers on a case. They sit in the cloth margin, so they show only once
+   that margin holds a whole sticker plus clearance from the window edge
+   (112 - 14 + 20 = 118px a side): each sheet width gets its own breakpoint.
+   Never far enough onto the paper to crowd the text; never cut off. */
 .edge-stickers {
-  --sw: min(var(--sheet-width, 1280px), 100vw - 2 * clamp(0px, 5vw - 1.25rem, 3rem));
+  --tuck: 14px;
+  --sw: var(--sheet-width, 1280px);
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -6470,18 +6301,34 @@ code,
   pointer-events: none;
 }
 
-body:has(> main.sheet-narrow) .edge-stickers {
-  --sheet-width: 880px;
+@media (min-width: 1516px) {
+  .edge-stickers {
+    display: block;
+  }
 }
 
-body:has(> main.sheet-column) .edge-stickers {
-  --sheet-width: 960px;
+@media (min-width: 1236px) {
+  body:has(> main.sheet-notes) .edge-stickers {
+    --sheet-width: 1000px;
+    display: block;
+  }
 }
 
-body:has(> main.sheet-notes) .edge-stickers {
-  --sheet-width: 1000px;
+@media (min-width: 1196px) {
+  body:has(> main.sheet-column) .edge-stickers {
+    --sheet-width: 960px;
+    display: block;
+  }
 }
 
+@media (min-width: 1116px) {
+  body:has(> main.sheet-narrow) .edge-stickers {
+    --sheet-width: 880px;
+    display: block;
+  }
+}
+
+/* The home page opens on the film, so it skips them. */
 body:has(> main.stage) .edge-stickers,
 body:not(:has(> main)) .edge-stickers {
   display: none;
@@ -6493,18 +6340,12 @@ body:not(:has(> main)) .edge-stickers {
 
 .edge-sticker-right {
   top: 168px;
-  left: calc(50% + var(--sw) / 2 - 56px);
+  left: calc(50% + var(--sw) / 2 - var(--tuck));
 }
 
 .edge-sticker-left {
   top: 640px;
-  left: calc(50% - var(--sw) / 2 - 56px);
-}
-
-@media (max-width: 1099px) {
-  .edge-stickers {
-    display: none;
-  }
+  left: calc(50% - var(--sw) / 2 + var(--tuck) - 112px);
 }
 
 /* The proof mark beside the work index. */
@@ -6592,5 +6433,722 @@ body:not(:has(> main)) .edge-stickers {
   [data-reveal-wait] {
     opacity: 1 !important;
     transform: none !important;
+  }
+}
+
+/* ---------- About: the engineer's passport ----------
+   The page is the passport that goes with the departures-board logo: a data
+   page facing the holder's statement, then visas (the numbers, as rubber
+   stamps) facing observations, then the declared stack and a boarding pass.
+   The passport is a printed object, so its pages keep their own colours in
+   either theme; the declared stack sits on the sheet and uses the tokens. */
+.passport {
+  --pp-paper: #f1f5ee;
+  --pp-ink: #1a1512;
+  --pp-body: #4a4139;
+  --pp-label: #23685c;
+  --pp-red: #b7300f;
+  --pp-blue: #1f4fa3;
+  --pp-green: #2f6b3a;
+  --pp-violet: #5b3a8c;
+  --pp-pad: clamp(1.25rem, 2.6vw, 2.25rem);
+  /* Security print: two families of fine rings, crossing into a moire. */
+  --pp-guilloche:
+    repeating-radial-gradient(circle at 0% 100%, transparent 0 11px, rgba(35, 104, 92, 0.085) 11px 12px),
+    repeating-radial-gradient(circle at 100% 0%, transparent 0 15px, rgba(183, 48, 15, 0.06) 15px 16px);
+  --pp-speckle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2 1.75'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E");
+}
+
+.passport [lang="hi"] {
+  font-family: "Noto Sans Devanagari", "Kohinoor Devanagari", "Devanagari Sangam MN", "Nirmala UI", sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.pp-spread {
+  padding: 3rem 0 1.25rem;
+}
+
+.pp-spread + .pp-spread {
+  padding-top: 1.25rem;
+}
+
+/* The open book: two pages in a vermilion cover cut from the site's cloth. */
+.pp-book {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  padding: 10px;
+  border-radius: 18px;
+  background-color: var(--cloth);
+  background-image: var(--cloth-weave);
+  box-shadow: 0 1px 0 rgba(40, 6, 0, 0.25), 0 34px 60px -34px rgba(40, 6, 0, 0.55);
+}
+
+.pp-page {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  padding: var(--pp-pad);
+  color: var(--pp-ink);
+  background-color: var(--pp-paper);
+  background-image: var(--pp-guilloche);
+}
+
+/* The fold: each page darkens toward the spine. */
+.pp-page:first-child {
+  border-radius: 10px 3px 3px 10px;
+  box-shadow: inset -22px 0 26px -22px rgba(26, 21, 18, 0.3);
+}
+
+.pp-page:last-child {
+  border-radius: 3px 10px 10px 3px;
+  box-shadow: inset 22px 0 26px -22px rgba(26, 21, 18, 0.3);
+}
+
+.pp-label,
+.pp-field dt {
+  display: block;
+  margin: 0 0 0.25rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pp-label);
+}
+
+.pp-folio {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 0.8rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  color: var(--pp-label);
+}
+
+/* Data page. */
+.pp-data {
+  container-type: inline-size;
+}
+
+.pp-watermark {
+  position: absolute;
+  right: -8%;
+  bottom: -16%;
+  width: 64%;
+  fill: none;
+  stroke: var(--pp-label);
+  stroke-width: 7;
+  stroke-linecap: round;
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+.pp-data-head {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(35, 104, 92, 0.35);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pp-label);
+}
+
+.pp-data-body {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(1rem, 2.4vw, 1.75rem);
+  align-items: start;
+}
+
+.pp-photo {
+  position: relative;
+  width: clamp(112px, 14vw, 180px);
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(26, 21, 18, 0.25);
+}
+
+.pp-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92);
+}
+
+/* The security film over the photo: the stickers' foil, laid on in soft
+   light, so it shifts with the pointer like the logo does. */
+.pp-film {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: soft-light;
+  opacity: 0.75;
+}
+
+.pp-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem 1.25rem;
+  margin: 0;
+}
+
+.pp-field {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.pp-field-half {
+  grid-column: auto;
+}
+
+.pp-field dd {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--pp-ink);
+}
+
+.pp-name {
+  margin: 0;
+  max-width: none;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: clamp(2.4rem, 1.2rem + 3.4vw, 4.4rem);
+  font-weight: 800;
+  line-height: 0.88;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: var(--pp-ink);
+}
+
+.pp-sign {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+/* The ghost portrait printed beside the signature. */
+.pp-ghost {
+  width: 56px;
+  height: auto;
+  border-radius: 3px;
+  opacity: 0.22;
+  filter: grayscale(1) contrast(1.2);
+  mix-blend-mode: multiply;
+}
+
+.pp-signature {
+  display: block;
+  width: 150px;
+  height: auto;
+  fill: none;
+  stroke: #1e3a6e;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The machine-readable zone: two 44-character lines across the page foot,
+   sized to the page so they never wrap. */
+.pp-mrz {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 1.25rem calc(-1 * var(--pp-pad)) calc(-1 * var(--pp-pad));
+  padding: 0.75rem var(--pp-pad) 0.85rem;
+  overflow: hidden;
+  border-top: 1px solid rgba(35, 104, 92, 0.25);
+  background: rgba(255, 255, 255, 0.55);
+  font-family: var(--font-mono), monospace;
+  font-size: min(1.1rem, 2.85cqi);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: #2a2622;
+}
+
+/* Facing page: the statement, on ruled paper. */
+.pp-facing {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  background-image: var(--pp-guilloche), repeating-linear-gradient(180deg, transparent 0 31px, rgba(35, 104, 92, 0.12) 31px 32px);
+}
+
+.pp-lead {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 1.06rem;
+  line-height: 1.75;
+  color: var(--pp-ink);
+}
+
+.pp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.pp-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+}
+
+.pp-socials a {
+  color: var(--pp-ink);
+  text-decoration: underline;
+  text-decoration-color: rgba(26, 21, 18, 0.3);
+  text-underline-offset: 3px;
+}
+
+.pp-socials a:hover,
+.pp-socials a:focus-visible {
+  color: var(--pp-red);
+  text-decoration-color: currentColor;
+}
+
+.pp-page-title {
+  margin: 0.2rem 0 1.5rem;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: clamp(1.8rem, 1.2rem + 1.6vw, 2.6rem);
+  font-weight: 800;
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--pp-ink);
+}
+
+/* Visas: the numbers as rubber stamps, in four inks, spread down the page
+   however tall the facing observations make it. */
+.pp-visas {
+  display: flex;
+  flex-direction: column;
+}
+
+.pp-stamps {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: space-evenly;
+  gap: 1.5rem 1.25rem;
+  align-items: center;
+  justify-items: center;
+  padding: 0.25rem 0 1.75rem;
+}
+
+.pp-stamp {
+  --ink: var(--pp-red);
+  --tilt: -6deg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem;
+  border: 3px solid var(--ink);
+  color: var(--ink);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transform: rotate(var(--tilt));
+  mix-blend-mode: multiply;
+  -webkit-mask-image: var(--pp-speckle);
+  mask-image: var(--pp-speckle);
+  -webkit-mask-size: 180px;
+  mask-size: 180px;
+  transition: transform 0.25s ease;
+}
+
+.pp-stamp-top,
+.pp-stamp-bottom {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+}
+
+.pp-stamp-value {
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: 2.7rem;
+  font-weight: 800;
+  line-height: 0.9;
+}
+
+.pp-stamp-round {
+  --tilt: -8deg;
+  width: 9.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 4px var(--pp-paper), inset 0 0 0 6px var(--ink);
+}
+
+.pp-stamp-rect {
+  --ink: var(--pp-blue);
+  --tilt: 5deg;
+  min-width: 9rem;
+  border-style: double;
+  border-width: 6px;
+  border-radius: 4px;
+}
+
+.pp-stamp-oval {
+  --ink: var(--pp-green);
+  --tilt: -3deg;
+  width: 10.5rem;
+  aspect-ratio: 1.45;
+  border-radius: 50%;
+}
+
+.pp-stamp-wide {
+  --ink: var(--pp-violet);
+  --tilt: 2.5deg;
+  grid-column: 1 / -1;
+  padding: 0.8rem 1.75rem;
+  border-style: dashed;
+  border-radius: 10px;
+}
+
+.pp-stamp-wide .pp-stamp-value {
+  font-size: 2.2rem;
+}
+
+a.pp-stamp:hover,
+a.pp-stamp:focus-visible {
+  transform: rotate(var(--tilt)) scale(1.05);
+}
+
+/* Observations: the longer story, as numbered entries. */
+.pp-notes {
+  display: grid;
+  gap: 1.1rem;
+  margin: 0.6rem 0 1rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: obs;
+}
+
+.pp-notes li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  column-gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(35, 104, 92, 0.28);
+  counter-increment: obs;
+}
+
+.pp-notes li::before {
+  content: counter(obs, decimal-leading-zero);
+  grid-row: span 2;
+  padding-top: 0.3rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  color: var(--pp-label);
+}
+
+.pp-note-title {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--pp-ink);
+}
+
+.pp-notes p {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--pp-body);
+}
+
+/* Declared: the stack, as a customs declaration on the sheet. */
+.pp-declared {
+  padding: 4rem 0 2rem;
+}
+
+.pp-declared .pp-label {
+  color: var(--accent-text);
+}
+
+.pp-declared-head {
+  max-width: 46rem;
+  margin-bottom: 1.75rem;
+}
+
+.pp-declared-head .pp-page-title {
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+}
+
+.pp-declared-sub {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.pp-declared-list {
+  margin: 0;
+  border-top: 2px solid var(--text-primary);
+}
+
+.pp-declared-row {
+  display: grid;
+  grid-template-columns: minmax(10rem, 14rem) minmax(0, 1fr);
+  gap: 0.5rem 2rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pp-declared-row dt {
+  padding-top: 0.2rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.pp-declared-row dd {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.3rem;
+  margin: 0;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.pp-declared-row dd span:not(:last-child)::after {
+  content: "/";
+  margin: 0 0.6rem;
+  color: var(--border-hover);
+}
+
+/* The closing ask: a boarding pass from BLR to the visitor's team. */
+.pp-boarding-section {
+  padding: 3rem 0 5rem;
+}
+
+.boarding {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 11rem;
+  max-width: 60rem;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+  color: #1a1512;
+  background: #ffffff;
+  box-shadow: 0 0 0 1px rgba(40, 6, 0, 0.12), 0 30px 50px -30px rgba(40, 6, 0, 0.5);
+}
+
+.boarding-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.4rem, 3vw, 2.4rem);
+}
+
+.boarding-kicker {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px dashed rgba(26, 21, 18, 0.25);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6e6358;
+}
+
+.boarding-route {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: clamp(3rem, 2rem + 4vw, 5.25rem);
+  font-weight: 800;
+  line-height: 0.85;
+  color: #1a1512;
+}
+
+.boarding-route svg {
+  width: clamp(2.5rem, 6vw, 4.5rem);
+  height: auto;
+  fill: none;
+  stroke: var(--pp-red);
+  stroke-width: 3;
+  stroke-linecap: square;
+}
+
+.boarding-title {
+  margin: 0;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: clamp(1.6rem, 1.1rem + 1.4vw, 2.3rem);
+  font-weight: 800;
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: #1a1512;
+}
+
+.boarding-body {
+  margin: 0;
+  max-width: 46ch;
+  line-height: 1.6;
+  color: #4e453d;
+}
+
+.boarding-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2.25rem;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.boarding-fields dt {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6e6358;
+}
+
+.boarding-fields dd {
+  margin: 0.1rem 0 0;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* The stub: foil, a barcode, torn off along the perforation. */
+.boarding-stub {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.6rem 1rem;
+  border-left: 2px dashed rgba(26, 21, 18, 0.3);
+  background:
+    radial-gradient(farthest-corner at var(--holo-x) var(--holo-y), rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 45%),
+    conic-gradient(from var(--holo-a) at 40% 45%, #ffd3df, #fff0c2, #d6f8e2, #cdebff, #e6d7ff, #ffd3df);
+}
+
+/* The notches either end of the perforation. */
+.boarding-stub::before,
+.boarding-stub::after {
+  content: "";
+  position: absolute;
+  left: -15px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.boarding-stub::before {
+  top: -14px;
+}
+
+.boarding-stub::after {
+  bottom: -14px;
+}
+
+.boarding-stub-route {
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.boarding-barcode {
+  width: 100%;
+  height: 5.5rem;
+  background: repeating-linear-gradient(90deg, #1a1512 0 2px, transparent 2px 4px, #1a1512 4px 5px, transparent 5px 8px, #1a1512 8px 11px, transparent 11px 12px, #1a1512 12px 13px, transparent 13px 17px);
+}
+
+.boarding-stub-foot {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 899px) {
+  .pp-book {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .pp-page:first-child {
+    border-radius: 10px 10px 3px 3px;
+    box-shadow: inset 0 -22px 26px -22px rgba(26, 21, 18, 0.3);
+  }
+
+  .pp-page:last-child {
+    border-radius: 3px 3px 10px 10px;
+    box-shadow: inset 0 22px 26px -22px rgba(26, 21, 18, 0.3);
+  }
+}
+
+@media (max-width: 640px) {
+  .pp-data-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pp-declared-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .boarding {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .boarding-stub {
+    flex-direction: row;
+    border-left: 0;
+    border-top: 2px dashed rgba(26, 21, 18, 0.3);
+  }
+
+  .boarding-stub::before {
+    top: -15px;
+    left: -14px;
+  }
+
+  .boarding-stub::after {
+    top: -15px;
+    bottom: auto;
+    left: auto;
+    right: -14px;
+  }
+
+  .boarding-barcode {
+    height: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-stamp {
+    transition: none;
   }
 }

@@ -46,20 +46,45 @@ export default function NotesPageClient({ commonDict }: NotesPageClientProps) {
 
                 <section aria-labelledby="topic-heading" style={{ padding: 0, marginBottom: '4rem' }}>
                     <h2 id="topic-heading" style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>Explore AI delivery by topic</h2>
-                    <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Practical guides for building AI systems and choosing the right engineering support.</p>
-                    <div className="notes-topics">
+                    <p style={{ color: 'var(--text-secondary)', marginBottom: '2.25rem' }}>Practical guides for building AI systems and choosing the right engineering support.</p>
+                    {/* Each topic is a reading route on the departures board: its stops
+                        are the guides in order, and a guide several routes share is an
+                        interchange, marked as one instead of looking like a repeat. */}
+                    <div className="routes">
                         {blogTopics.map((topic) => (
-                            <section key={topic.id} id={topic.id} className="notes-topic">
-                                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{topic.name}</h3>
-                                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>{topic.description}</p>
-                                <ul style={{ paddingLeft: '1.25rem', lineHeight: 1.6, margin: '1rem 0' }}>
+                            <section key={topic.id} id={topic.id} className="route" aria-labelledby={`${topic.id}-name`}>
+                                <header className="route-head">
+                                    <span className="flaps route-code" aria-hidden="true">
+                                        {[...topic.code].map((c, i) => (
+                                            <span key={i} className="flap">{c}</span>
+                                        ))}
+                                    </span>
+                                    <h3 id={`${topic.id}-name`} className="route-name">{topic.name}</h3>
+                                </header>
+                                <p className="route-desc">{topic.description}</p>
+                                <ol className="route-stops">
                                     {topic.articles.map((slug) => {
                                         const post = blogSummaries.find((item) => item.slug === slug);
-                                        return post ? <li key={slug} style={{ marginBottom: '0.6rem' }}><Link href={`/notes/${slug}`}>{post.title}</Link></li> : null;
+                                        if (!post) return null;
+                                        const also = blogTopics.filter((t) => t.id !== topic.id && (t.articles as readonly string[]).includes(slug)).map((t) => t.code);
+                                        return (
+                                            <li key={slug} className={also.length ? "route-stop route-interchange" : "route-stop"}>
+                                                <Link href={`/notes/${slug}`}>{post.title}</Link>
+                                                <span className="route-meta">
+                                                    {post.readingTime}
+                                                    {also.length > 0 && <> · change for {also.join(", ")}</>}
+                                                </span>
+                                            </li>
+                                        );
                                     })}
-                                </ul>
-                                <p style={{ fontSize: '0.9rem', marginBottom: '0.75rem' }}><Link href={topic.project.href}>{topic.project.label} →</Link></p>
-                                {topic.services.map((service) => <p key={service.href} style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}><Link href={service.href} style={{ color: 'var(--accent)' }}>{service.label} →</Link></p>)}
+                                </ol>
+                                <p className="route-onward">
+                                    <span>Onward</span>
+                                    <Link href={topic.project.href}>{topic.project.label}</Link>
+                                    {topic.services.map((service) => (
+                                        <Link key={service.href} href={service.href}>{service.label}</Link>
+                                    ))}
+                                </p>
                             </section>
                         ))}
                     </div>
