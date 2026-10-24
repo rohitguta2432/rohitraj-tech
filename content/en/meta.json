@@ -15,10 +15,6 @@
         "title": "AI Projects and Engineering Case Studies",
         "description": "Explore AI agents, mobile apps and production systems built by Rohit Raj. Read architecture decisions, source code and engineering case studies."
     },
-    "repos": {
-        "title": "Open-Source AI and Software Repositories",
-        "description": "Browse Rohit Raj's open-source repositories, with context on the AI systems, mobile apps and engineering tools behind each project."
-    },
     "notes": {
         "title": "AI Engineering Guides and Notes",
         "description": "Read practical guides on AI agents, MCP, local models and software architecture, plus comparisons for founders building and hiring engineers."

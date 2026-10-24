@@ -13,29 +13,24 @@ export default function Header({ dict }: HeaderProps) {
     const pathname = usePathname();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+    // The masthead name links home, so there is no separate Home item.
     const navLinks = [
-        { href: "/", label: dict.nav.home },
         { href: `/agents`, label: 'Agents' },
         { href: `/projects`, label: dict.nav.projects },
         { href: `/services`, label: 'Services' },
-        { href: `/repos`, label: dict.nav.repos },
         { href: `/notes`, label: dict.nav.notes },
         { href: `/about`, label: dict.nav.about },
         { href: `/contact`, label: dict.nav.contact },
     ];
 
-    const isActive = (href: string) => {
-        if (href === "/") {
-            return pathname === "/" || pathname === `/`;
-        }
-        return pathname.startsWith(href);
-    };
+    const isActive = (href: string) => pathname.startsWith(href);
 
     return (
         <header className="header">
             <div className="container header-inner">
                 <Link href={"/"} className="logo">
-                    Rohit Raj
+                    <span className="logo-name">Rohit Raj</span>
+                    <span className="logo-role">Forward Deployed Engineer</span>
                 </Link>
 
                 <nav className={`nav-links ${mobileMenuOpen ? "mobile-open" : ""}`}>

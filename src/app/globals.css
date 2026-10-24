@@ -3,17 +3,27 @@
 @source "../../content";
 
 :root {
-  /* Warm paper + vermilion. Replaces the grey/blue documentation palette: the
-     old one was neutral in the sense of having no opinion, and a page whose job
-     is to make one person memorable cannot afford that. Vermilion carries the
-     brand; the neutrals are tinted toward it rather than toward grey. */
-  --bg: #FBF6EF;
-  --bg-alt: #F5EDE3;
-  --surface: #FFFCF8;
-  --surface-hover: #F7EFE5;
-  --card-bg: #FFFCF8;
-  --border: #E6DBCC;
-  --border-hover: #D3C4AF;
+  /* A vermilion case and a white sheet. Every page is one sheet (--bg) laid on
+     vermilion bookcloth (--cloth): the header, the footer and the home page's
+     film and closing call sit on the cloth, and the reading happens on the sheet.
+     A flat cream ground is what generated landing pages ship with by default, so
+     the brand colour is the ground itself and the sheet is a near-white tinted
+     toward vermilion, not toward cream. Neutrals lean the same way. */
+  --bg: #FFFCFA;
+  --bg-alt: #F7F1EE;
+  --surface: #FFFFFF;
+  --surface-hover: #F8F2EF;
+  --card-bg: #FFFFFF;
+  --border: #ECE2DD;
+  --border-hover: #D8C8C0;
+  --cloth: #A3290E;
+  /* Bookcloth: cream fibre flecks over a 2px warp-and-weft hatch. */
+  --cloth-weave:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 .92 0 0 0 0 .86 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(0deg, rgba(40, 4, 0, 0.035) 0 1px, transparent 1px 2px),
+    repeating-linear-gradient(90deg, rgba(255, 230, 210, 0.035) 0 1px, transparent 1px 2px);
+  /* Body copy on the cloth: 5:1 on --cloth. */
+  --on-cloth-muted: rgba(255, 244, 232, 0.82);
   --text-primary: #1A1512;
   --text-secondary: #4E453D;
   --text-muted: #6E6358;
@@ -54,6 +64,13 @@
     --accent-light: rgba(242, 112, 63, 0.16);
     /* --brand-flood deliberately does NOT change with the theme. */
     --brand-deep: #8F2409;
+    /* The case darkens to oxblood with the room; fewer flecks so it reads as
+       cloth, not dust. */
+    --cloth: #46150A;
+    --cloth-weave:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 .92 0 0 0 0 .86 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+      repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0 1px, transparent 1px 2px),
+      repeating-linear-gradient(90deg, rgba(255, 230, 210, 0.025) 0 1px, transparent 1px 2px);
     --on-brand: #FFF4E8;
     --success: #4ade80;
     --success-text: #4ade80;
@@ -77,12 +94,87 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background: var(--bg);
+  background-color: var(--cloth);
+  background-image: var(--cloth-weave);
   color: var(--text-primary);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+}
+
+/* The page. Each page's <main> is one ledger page bound into the cloth: it runs
+   from the header straight down to the footer, and a cream running stitch on
+   the cloth beside each long edge sews it in, so it reads as a bound page
+   rather than a card floating on a background. The home page opts out
+   (main.stage) so its film and closing call can sit on the cloth, and wraps
+   what lies between them in a .sheet instead. Below ~400px the gutter reaches
+   0 and the page goes edge to edge. */
+body > main:not(.stage),
+.sheet {
+  --sheet-gutter: clamp(0px, 5vw - 1.25rem, 3rem);
+  position: relative;
+  width: min(var(--sheet-width, 1280px), 100% - 2 * var(--sheet-gutter));
+  margin-inline: auto;
+  background: var(--bg);
+  box-shadow: 0 0 0 1px rgba(40, 6, 0, 0.3);
+  /* Error codes and identifiers in copy wrap instead of pushing the page wide. */
+  overflow-wrap: break-word;
+}
+
+body > main:not(.stage)::before,
+body > main:not(.stage)::after,
+.sheet::before,
+.sheet::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: repeating-linear-gradient(to bottom, rgba(255, 244, 232, 0.6) 0 10px, transparent 10px 18px);
+  pointer-events: none;
+}
+
+body > main:not(.stage)::before,
+.sheet::before {
+  left: -14px;
+}
+
+body > main:not(.stage)::after,
+.sheet::after {
+  right: -14px;
+}
+
+/* No cloth beside the page on a phone, so nothing to sew. */
+@media (max-width: 719px) {
+  body > main:not(.stage)::before,
+  body > main:not(.stage)::after,
+  .sheet::before,
+  .sheet::after {
+    display: none;
+  }
+}
+
+/* Single-column pages get a sheet that hugs the column, so the cloth, not
+   empty paper, fills the rest of a wide screen. */
+.sheet-narrow {
+  --sheet-width: 880px;
+}
+
+.sheet-column {
+  --sheet-width: 960px;
+}
+
+.sheet-notes {
+  --sheet-width: 1000px;
+  padding: 3rem clamp(1.5rem, 5vw, 4rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  body > main:not(.stage),
+  .sheet {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.55);
+  }
 }
 
 /* Typography */
@@ -156,13 +248,14 @@ section {
 }
 
 /* Header */
+/* The header is printed on the cloth, above the sheet. */
 .header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--bg) 90%, transparent);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+  background-color: var(--cloth);
+  background-image: var(--cloth-weave);
+  border-bottom: 1px solid rgba(255, 244, 232, 0.16);
 }
 
 .header-inner {
@@ -172,13 +265,41 @@ section {
   height: 64px;
 }
 
+/* A masthead, not a nav bar: the name set in the poster face with the job
+   title beside it, so a founder knows what this person does before reading a
+   word of the page. The whole header speaks the display face. */
 .logo {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.03em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  text-transform: uppercase;
+  color: var(--on-brand);
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+.logo-name {
+  font-size: 1.875rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.logo-role {
+  padding-left: 0.75rem;
+  border-left: 1px solid rgba(255, 244, 232, 0.45);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: var(--on-cloth-muted);
+}
+
+@media (max-width: 1279px) {
+  .logo-role {
+    display: none;
+  }
 }
 
 .nav-links {
@@ -192,18 +313,44 @@ section {
 }
 
 .nav-link {
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--on-cloth-muted);
   transition: color 150ms ease;
 }
 
 .nav-link:hover {
-  color: var(--text-primary);
+  color: var(--on-brand);
 }
 
+/* Cream at 82% vs 100% is too close to carry state alone, so the current page
+   is also underlined. */
 .nav-link.active {
-  color: var(--text-primary);
+  color: var(--on-brand);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.5em;
+}
+
+/* Inverted against the cloth: a cream tab with vermilion type. */
+.header .btn-primary {
+  padding: 0.45rem 0.95rem;
+  border-radius: 2px;
+  background: var(--on-brand);
+  color: var(--brand-deep);
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.header .btn-primary:hover {
+  background: #fff;
+  color: var(--brand-deep);
 }
 
 /* Buttons */
@@ -527,42 +674,6 @@ section {
   background: var(--neutral);
 }
 
-/* Repo List */
-.repo-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.repo-item {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  transition: border-color 150ms ease;
-}
-
-.repo-item:hover {
-  border-color: var(--border-hover);
-}
-
-.repo-name {
-  font-size: 0.9375rem;
-  font-weight: 600;
-  font-family: var(--font-mono);
-  color: var(--text-primary);
-  margin-bottom: 0.25rem;
-}
-
-.repo-description {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-}
-
 /* Notes / Blog */
 .note-list {
   display: flex;
@@ -653,10 +764,10 @@ section {
   color: var(--accent);
 }
 
-/* Footer */
+/* Footer: on the cloth, below the sheet. */
 .footer {
   padding: 3rem 0;
-  border-top: 1px solid var(--border);
+  color: var(--on-cloth-muted);
 }
 
 .footer-inner {
@@ -675,7 +786,13 @@ section {
 
 .footer-brand {
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: var(--on-cloth-muted);
+}
+
+/* A plain class, not a Tailwind colour utility: utilities sit in a cascade layer,
+   so the unlayered global p colour would beat them. */
+.footer-label {
+  color: var(--on-cloth-muted);
 }
 
 .footer-links {
@@ -686,11 +803,11 @@ section {
 
 .footer-link {
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: var(--on-cloth-muted);
 }
 
 .footer-link:hover {
-  color: var(--text-primary);
+  color: var(--on-brand);
 }
 
 .footer-icons {
@@ -707,22 +824,22 @@ section {
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  color: var(--text-muted);
-  background: color-mix(in srgb, var(--text-primary) 6%, transparent);
-  border: 1px solid color-mix(in srgb, var(--text-primary) 8%, transparent);
+  color: var(--on-cloth-muted);
+  background: rgba(255, 244, 232, 0.08);
+  border: 1px solid rgba(255, 244, 232, 0.18);
   transition: color 160ms ease, background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 .footer-icon-link:hover,
 .footer-icon-link:focus-visible {
-  color: var(--text-primary);
-  background: color-mix(in srgb, var(--text-primary) 12%, transparent);
-  border-color: color-mix(in srgb, var(--text-primary) 18%, transparent);
+  color: var(--on-brand);
+  background: rgba(255, 244, 232, 0.14);
+  border-color: rgba(255, 244, 232, 0.32);
   transform: translateY(-1px);
 }
 
 .footer-icon-link:focus-visible {
-  outline: 2px solid var(--accent, #10b981);
+  outline: 2px solid var(--on-brand);
   outline-offset: 2px;
 }
 
@@ -1271,6 +1388,13 @@ code,
   outline-offset: 2px;
 }
 
+/* A vermilion ring disappears on the cloth; flip it to cream there. */
+.header :focus-visible,
+.footer :focus-visible,
+.closing :focus-visible {
+  outline-color: var(--on-brand);
+}
+
 /* Skip link */
 .skip-link {
   position: absolute;
@@ -1306,9 +1430,10 @@ code,
     left: 0;
     right: 0;
     width: 100%;
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--cloth);
+    background-image: var(--cloth-weave);
+    border-bottom: 1px solid rgba(255, 244, 232, 0.16);
+    box-shadow: 0 12px 24px rgba(25, 3, 0, 0.35);
     flex-direction: column;
     padding: 1rem 1.5rem;
     gap: 0;
@@ -1323,9 +1448,9 @@ code,
   .nav-links .nav-link {
     padding: 0.875rem 0.5rem;
     border-radius: 0;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(255, 244, 232, 0.14);
     text-align: left;
-    font-size: 1rem;
+    font-size: 1.375rem;
   }
 
   .nav-links .nav-link:last-of-type {
@@ -1333,7 +1458,7 @@ code,
   }
 
   .nav-links .nav-link:hover {
-    background: var(--bg-alt);
+    background: rgba(255, 244, 232, 0.08);
   }
 
   .nav-links .btn {
@@ -1365,7 +1490,7 @@ code,
   background: transparent;
   border: none;
   cursor: pointer;
-  color: var(--text-primary);
+  color: var(--on-brand);
 }
 
 /* Back link */
@@ -1518,7 +1643,7 @@ code,
 .footer-subscribe-title {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--on-brand);
   margin-bottom: 0.75rem;
 }
 
@@ -1543,10 +1668,11 @@ code,
   transition: all 150ms ease;
 }
 
+/* The form lives in the footer, on the cloth: a cream halo, not a vermilion one. */
 .subscribe-input:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-light);
+  border-color: var(--on-brand);
+  box-shadow: 0 0 0 3px rgba(255, 244, 232, 0.45);
 }
 
 .subscribe-input::placeholder {
@@ -1555,8 +1681,8 @@ code,
 
 .subscribe-button {
   padding: 0.625rem 1rem;
-  background: var(--accent);
-  color: white;
+  background: var(--on-brand);
+  color: var(--brand-deep);
   border: none;
   border-radius: 6px;
   font-size: 0.875rem;
@@ -1567,7 +1693,7 @@ code,
 }
 
 .subscribe-button:hover {
-  background: var(--accent-hover);
+  background: #fff;
   transform: translateY(-1px);
 }
 
@@ -1584,14 +1710,12 @@ code,
   border-radius: 4px;
 }
 
-.subscribe-message.success {
-  color: var(--success-text);
-  background: color-mix(in srgb, var(--success) 10%, transparent);
-}
-
+/* Green and red text both fail on the cloth; the message wording carries the
+   outcome, set in cream on a cream tint. */
+.subscribe-message.success,
 .subscribe-message.error {
-  color: var(--error);
-  background: color-mix(in srgb, var(--error) 10%, transparent);
+  color: var(--on-brand);
+  background: rgba(255, 244, 232, 0.12);
 }
 
 @media (max-width: 640px) {
@@ -2134,187 +2258,6 @@ code,
   }
 }
 
-/* ==============================================
-   RELIABILITY SECTION STYLES
-   ============================================== */
-
-.reliability-section {
-  padding: 80px 0;
-  background: var(--bg-alt);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-/* .reliability-container removed — now uses .container for consistent alignment */
-
-.reliability-header {
-  margin-bottom: 48px;
-}
-
-.reliability-label {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-text);
-  background: var(--accent-light);
-  padding: 6px 14px;
-  border-radius: 100px;
-  margin-bottom: 16px;
-}
-
-.reliability-heading {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0;
-}
-
-.reliability-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.reliability-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 24px;
-  transition: all 0.2s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.reliability-card:hover {
-  border-color: var(--accent-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transform: translateY(-2px);
-}
-
-.reliability-card-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.reliability-card-icon {
-  /* Was an emoji (📊 ⚡ 🔗 📨) at 28px. Emoji render differently on every OS,
-     carry no meaning here, and read as clip-art on a page selling engineering
-     judgement. A tabular numeral is quieter and matches the index elsewhere. */
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-variant-numeric: tabular-nums;
-  color: var(--text-muted);
-  flex-shrink: 0;
-  padding-top: 0.2rem;
-}
-
-.reliability-card-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin: 0 0 2px 0;
-}
-
-.reliability-card-subtitle {
-  font-size: 13px;
-  color: var(--accent-color);
-  font-weight: 500;
-  font-family: var(--font-mono);
-}
-
-.reliability-card-description {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.reliability-card-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px 0;
-  flex-grow: 1;
-}
-
-.reliability-card-bullets li {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.5;
-  padding-left: 16px;
-  position: relative;
-  margin-bottom: 8px;
-}
-
-.reliability-card-bullets li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--accent-color);
-}
-
-.reliability-card-link {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--accent-color);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  transition: opacity 0.2s;
-}
-
-.reliability-card-link:hover {
-  opacity: 0.8;
-}
-
-/* Responsive: 2 columns on tablet */
-@media (max-width: 1024px) {
-  .reliability-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Responsive: 1 column on mobile */
-@media (max-width: 640px) {
-  .reliability-section {
-    padding: 48px 0;
-  }
-
-  .reliability-heading {
-    font-size: 24px;
-  }
-
-  .reliability-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .reliability-card {
-    padding: 20px;
-  }
-}
-
-/* RTL Support for Reliability Section */
-.rtl .reliability-card-bullets li {
-  padding-left: 0;
-  padding-right: 16px;
-}
-
-.rtl .reliability-card-bullets li::before {
-  left: auto;
-  right: 0;
-}
-
-.rtl .reliability-card-header {
-  flex-direction: row-reverse;
-}
-
-.rtl .reliability-card {
-  text-align: right;
-}
 /* ===== About page redesign ===== */
 .about-hero {
   padding: 3.5rem 0 2rem;
@@ -2557,47 +2500,6 @@ code,
   border-radius: 999px;
   color: var(--text-secondary);
   font-family: var(--font-mono);
-}
-
-/* Reliability tiles */
-.about-reliability-section { padding: 3rem 0; }
-
-.about-reliability-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-@media (min-width: 768px) {
-  .about-reliability-grid { grid-template-columns: repeat(4, 1fr); }
-}
-
-.about-reliability-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 1.5rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-top: 3px solid var(--accent);
-  border-radius: 8px;
-  text-decoration: none;
-  color: var(--text-primary);
-  transition: all 150ms ease;
-}
-
-.about-reliability-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--border-hover);
-}
-
-.about-reliability-icon { font-size: 1.5rem; }
-
-.about-reliability-label {
-  font-size: 0.9375rem;
-  font-weight: 600;
 }
 
 /* Final CTA */
@@ -5455,22 +5357,6 @@ code,
   padding-bottom: 1.75rem;
 }
 
-.poster-eyebrow {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.poster-eyebrow span:last-child {
-  font-weight: 400;
-  opacity: 0.92;
-}
-
 .poster-body {
   flex: 1;
   display: flex;
@@ -5618,8 +5504,9 @@ code,
   letter-spacing: 0.005em;
 }
 
+/* The closing call is printed on the cloth itself, after the sheet ends. */
 .closing {
-  background: var(--brand-flood);
+  background: none;
   color: var(--on-brand);
 }
 
@@ -6171,4 +6058,191 @@ code,
       }
     }
   }
+}
+
+/* Page titles. Every page's h1 is set like the home page's poster lines:
+   condensed, uppercase and big. Kept as the last rule so it outranks the older
+   per-page title sizes; .headline is for titles that had inline styles. */
+.page-title,
+.project-detail-title,
+.rel-headline,
+.about-headline,
+.headline {
+  max-width: none;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: clamp(2.5rem, 1.5rem + 3.6vw, 4.75rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  color: var(--text-primary);
+}
+
+/* Section headings speak the same poster face. Low specificity on purpose: a
+   component that sets its own heading face still wins. */
+:where(main) h2 {
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.project-detail-section h2 {
+  font-size: clamp(1.75rem, 1.4rem + 1vw, 2.25rem);
+  font-weight: 800;
+}
+
+/* No chips. A tech stack reads as one typeset line, mono words split by
+   slashes, instead of a row of little boxes. */
+.project-tags {
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.tag + .tag::before {
+  content: "/";
+  margin-right: 0.5rem;
+  color: var(--border-hover);
+}
+
+/* Status as a rubber stamp, not a pill. */
+.status-badge {
+  gap: 0;
+  padding: 0.2rem 0.55rem 0.1rem;
+  border: 2px solid currentColor;
+  border-radius: 3px;
+  background: none;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+}
+
+.status-badge::before {
+  display: none;
+}
+
+.status-paused {
+  color: var(--text-muted);
+}
+
+/* A screenshot sits on the page like a print: no gradient mat, no rounded
+   frame, no hover lift. */
+.project-hero-image {
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
+.project-image-wrapper,
+.project-image-wrapper:hover {
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px var(--border);
+  transform: none;
+}
+
+.project-screenshot {
+  border-radius: 0;
+}
+
+/* Square-cut buttons, like the tickets and stamps around them. */
+.btn {
+  border-radius: 2px;
+}
+
+/* The notes index runs to ~150 rows; cap the entrance stagger so rows below
+   the fold are not still invisible seconds after load. */
+@media (prefers-reduced-motion: no-preference) {
+  .notes-index .widx-row {
+    animation-delay: calc(min(var(--row-i, 0), 10) * 40ms);
+  }
+}
+
+/* Index names wrap to two lines once they are note titles; keep the lines of
+   one name tight so a row still reads as one entry. */
+.widx-name {
+  line-height: 1.05;
+}
+
+/* Long identifiers in card copy (an x402 error code is 48 characters with no
+   break) must wrap, or one card widens the whole grid past a phone screen. */
+.project-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* The stamp lands from 1.7x scale; keep that flourish inside the section now
+   that the page itself no longer clips (its stitches sit outside its edges). */
+.terms {
+  overflow-x: clip;
+}
+
+/* The sprint as a printed schedule: each week a column under a heavy rule,
+   its number set in the poster face, instead of six identical boxes. */
+.process-timeline {
+  column-gap: 2rem;
+  row-gap: 2.5rem;
+}
+
+.process-week,
+.process-week:hover {
+  padding: 1rem 0 0;
+  background: none;
+  border: 0;
+  border-top: 2px solid var(--text-primary);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.process-week-num {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent-text);
+}
+
+/* Questions as a ruled list: hairlines between them, no boxes. */
+.faq-list {
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.faq-item,
+.faq-item[open] {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+}
+
+.faq-question {
+  padding: 1.1rem 0.25rem;
+  font-size: 1rem;
+}
+
+.faq-question:hover {
+  background: none;
+  color: var(--accent-text);
+}
+
+.faq-answer {
+  padding: 0 0.25rem 1.25rem;
 }

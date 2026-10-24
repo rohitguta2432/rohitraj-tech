@@ -134,8 +134,8 @@ function faqSchema() {
 
 const sectionHeading: CSSProperties = {
     color: "var(--text-primary)",
-    fontSize: "1.5rem",
-    fontWeight: 600,
+    fontSize: "2rem",
+    fontWeight: 800,
     marginBottom: "1rem",
 };
 
@@ -164,7 +164,7 @@ export default async function HirePage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema()) }}
             />
             <Header dict={dict.common} />
-            <main id="main">
+            <main id="main" className="sheet-column">
                 <section>
                     <div className="container" style={{ maxWidth: "800px", margin: "0 auto", padding: "2rem 1rem" }}>
                         {/* Hero */}
@@ -172,7 +172,7 @@ export default async function HirePage() {
                             <span style={{ color: "var(--accent)", fontSize: "0.9rem", fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase" }}>
                                 AI Consultant · Forward Deployed Engineer
                             </span>
-                            <h1 style={{ color: "var(--text-primary)", fontSize: "2.25rem", fontWeight: 700, lineHeight: 1.2, margin: "0.75rem 0" }}>
+                            <h1 className="headline" style={{ margin: "0.75rem 0" }}>
                                 I embed with your team and ship AI to production.
                             </h1>
                             <p style={{ color: "var(--text-secondary)", fontSize: "1.15rem", lineHeight: 1.6 }}>

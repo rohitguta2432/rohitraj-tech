@@ -43,14 +43,14 @@ const FEATURED_SLUGS = [
 ] as const;
 
 /** "2026-02-14" → "Feb 2026" */
-function formatMonth(iso: string): string {
+export function formatMonth(iso: string): string {
     const [y, m] = iso.split("-");
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     return `${months[Number(m) - 1] ?? ""} ${y}`.trim();
 }
 
 /** "Bolt.new vs Hiring a Developer: ..." → ["Bolt.new vs Hiring a Developer", "..."] */
-function splitTitle(title: string): [string, string] {
+export function splitTitle(title: string): [string, string] {
     const parts = title.split(/\s*[:—]\s+/);
     if (parts.length < 2) return [title, ""];
     return [parts[0], parts.slice(1).join(" — ")];

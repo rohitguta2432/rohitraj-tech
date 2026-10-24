@@ -15,9 +15,7 @@ export type Dictionary = {
 
 export interface CommonDictionary {
     nav: {
-        home: string;
         projects: string;
-        repos: string;
         notes: string;
         about: string;
         contact: string;
@@ -75,16 +73,6 @@ export interface HomeDictionary {
         };
         readNotes: string;
     };
-    reliability?: {
-        sectionTitle: string;
-        sectionHeading: string;
-        cards: {
-            observability: ReliabilityCard;
-            loadTesting: ReliabilityCard;
-            apiTesting: ReliabilityCard;
-            kafkaTesting: ReliabilityCard;
-        };
-    };
     process?: {
         eyebrow: string;
         heading: string;
@@ -109,14 +97,6 @@ export interface HomeDictionary {
     };
 }
 
-export interface ReliabilityCard {
-    title: string;
-    subtitle: string;
-    description: string;
-    bullets: string[];
-    linkText: string;
-}
-
 export interface PagesDictionary {
     about: {
         title: string;
@@ -139,34 +119,9 @@ export interface PagesDictionary {
         paused: string;
         pausedDescription: string;
     };
-    repos: {
-        title: string;
-        description: string;
-    };
     notes: {
         title: string;
         description: string;
-        contributionFeed: string;
-        repositorySummary: string;
-        projectNotes: string;
-        viewAllRepos: string;
-        noContributions: string;
-        noNotes: string;
-        whyExists: string;
-        coreChallenge: string;
-        architecture: string;
-        tradeoffs: string;
-    };
-    reliability: {
-        title: string;
-        description: string;
-        dashboard: {
-            title: string;
-            cpu: string;
-            memory: string;
-            requests: string;
-            latency: string;
-        };
     };
 }
 
@@ -184,10 +139,6 @@ export interface MetaDictionary {
         description: string;
     };
     projects: {
-        title: string;
-        description: string;
-    };
-    repos: {
         title: string;
         description: string;
     };

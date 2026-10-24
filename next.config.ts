@@ -64,6 +64,11 @@ const nextConfig: NextConfig = {
       { source: '/projects/rag-for-sql', destination: '/projects/stellarmind', permanent: true },
       { source: '/projects/resolvr', destination: '/agents/resolvr', permanent: true },
       { source: '/ai-projects', destination: '/projects', permanent: true },
+      // Removed 2026-10-24: zero search impressions in 90 days. /repos repeated
+      // /projects (every project links its repo); the /reliability pages were a
+      // k6/Postman/Kafka showcase from the backend-consulting era.
+      { source: '/repos', destination: '/projects', permanent: true },
+      { source: '/reliability/:path*', destination: '/services/forward-deployed-engineer', permanent: true },
       // Site is English-only at bare paths now. Locale-prefixed URLs
       // (/en/*, /hi/*, …) are the previously indexed URLs — 301 them to the
       // bare path so link equity consolidates on one URL per page.

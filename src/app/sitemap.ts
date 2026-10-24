@@ -18,13 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/agents/resolvr",
         "/agents/chainlens",
         "/projects",
-        "/repos",
         "/notes",
-        "/reliability",
-        "/reliability/api-testing",
-        "/reliability/kafka-testing",
-        "/reliability/load-testing",
-        "/reliability/observability",
     ];
 
     const projectRoutes = projects.map((project) => `/projects/${project.slug}`);
@@ -69,7 +63,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/contact": new Date("2026-10-07"),
         "/hire": new Date("2026-10-07"),
         "/projects": latestProjectDate,
-        "/repos": latestProjectDate,
         "/notes": latestPostDate,
         "/services": latestServiceDate,
         // Chainlens launched: the agent host and its new detail page changed.
@@ -79,8 +72,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const metadataReviewDate = new Date("2026-09-29");
     const reviewedPages = new Set([
         "/about", "/hire", "/agents", "/agents/resolvr",
-        "/reliability/api-testing", "/reliability/kafka-testing",
-        "/reliability/load-testing", "/reliability/observability",
     ]);
 
     const allRoutes = [...staticRoutes, ...projectRoutes, ...serviceRoutes, ...blogRoutes];

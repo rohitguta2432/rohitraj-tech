@@ -20,33 +20,8 @@
         "paused": "Paused",
         "pausedDescription": "On hold, may revisit later."
     },
-    "repos": {
-        "title": "Repositories",
-        "description": "Curated list of repositories — not a dump, but context for why each exists."
-    },
     "notes": {
-        "title": "Engineering Notes & Open-Source Work",
-        "description": "Public engineering notes derived directly from active repositories and projects.",
-        "contributionFeed": "Contribution Feed",
-        "repositorySummary": "Repository Summary",
-        "projectNotes": "Project Notes",
-        "viewAllRepos": "View all repositories on GitHub →",
-        "noContributions": "No contributions match this filter.",
-        "noNotes": "No project notes match this filter.",
-        "whyExists": "Why it exists",
-        "coreChallenge": "Core technical challenge",
-        "architecture": "Architecture",
-        "tradeoffs": "Trade-offs"
-    },
-    "reliability": {
-        "title": "Reliability & Production Readiness",
-        "description": "Real-time metrics and system health indicators.",
-        "dashboard": {
-            "title": "Live System Status",
-            "cpu": "CPU Usage",
-            "memory": "Memory Usage",
-            "requests": "Requests/sec",
-            "latency": "Avg Latency"
-        }
+        "title": "Engineering Notes",
+        "description": "Notes on AI agents, MCP integrations, model costs and getting LLM features into production, newest first."
     }
 }

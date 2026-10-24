@@ -15,9 +15,7 @@ jest.mock('@/lib/supabase', () => ({
 
 const mockDict: CommonDictionary = {
   nav: {
-    home: 'Home',
     projects: 'Projects',
-    repos: 'Repos',
     notes: 'Notes',
     about: 'About',
     contact: 'Contact',

@@ -79,7 +79,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 />
             )}
             <Header dict={dict.common} />
-            <main id="main">
+            <main id="main" className="sheet-narrow">
                 <section>
                     <div className="container project-detail">
                         <Link href={`/projects`} className="back-link">
@@ -236,30 +236,27 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                                 </ul>
                             </div>
                         )}
+                        {/* The next four projects in catalogue order (wrapping), not the
+                            whole catalogue: every project still gets linked from four
+                            others, and the full list lives on /projects. */}
                         <div className="project-detail-section">
                             <h2>Explore More</h2>
                             <ul>
-                                {projects
-                                    .filter((p) => p.slug !== project.slug)
-                                    .map((p) => (
-                                        <li key={p.slug}>
-                                            <Link href={`/projects/${p.slug}`}>
-                                                {p.name}
-                                            </Link>{" "}
-                                            — {p.problem.split('.')[0]}.
-                                        </li>
-                                    ))}
+                                {Array.from({ length: Math.min(4, projects.length - 1) }, (_, i) =>
+                                    projects[(projects.indexOf(project) + 1 + i) % projects.length]
+                                ).map((p) => (
+                                    <li key={p.slug}>
+                                        <Link href={`/projects/${p.slug}`}>
+                                            {p.name}
+                                        </Link>{" "}
+                                        — {p.problem.split('.')[0]}.
+                                    </li>
+                                ))}
                                 <li>
-                                    <Link href={`/reliability`}>
-                                        Reliability & Production Readiness
+                                    <Link href={`/projects`}>
+                                        All {projects.length} projects
                                     </Link>{" "}
-                                    — Load testing, observability, and API contracts.
-                                </li>
-                                <li>
-                                    <Link href={`/repos`}>
-                                        Open Source Repos
-                                    </Link>{" "}
-                                    — Browse the source code behind these projects.
+                                    — the full catalogue, with live links and repos.
                                 </li>
                             </ul>
                         </div>

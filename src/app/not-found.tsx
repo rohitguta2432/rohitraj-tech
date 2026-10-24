@@ -12,7 +12,7 @@ export default function LocaleNotFound() {
       >
         404
       </p>
-      <h1 className="mb-3 text-2xl font-semibold">Page not found</h1>
+      <h1 className="headline mb-3">Page not found</h1>
       <p
         className="mb-6 max-w-md"
         style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}

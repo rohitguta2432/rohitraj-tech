@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import { getDictionary } from "@/lib/i18n";
 import { createPageMetadata } from "@/lib/seo-config";
 import { projects } from "@/data/projects";
-import { cardConfigs } from "@/data/reliability";
 import type { Metadata } from "next";
 
 
@@ -147,23 +146,6 @@ export default async function AboutPage() {
                                         ))}
                                     </ul>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                <section className="about-reliability-section">
-                    <div className="container">
-                        <div className="section-header">
-                            <h2 className="section-title">Every project ships with real infrastructure</h2>
-                            <p className="section-description">Not demos. Observability, load tests, contract tests, and Kafka verification by default.</p>
-                        </div>
-                        <div className="about-reliability-grid">
-                            {cardConfigs.map(c => (
-                                <Link key={c.key} href={`${c.route}`} className="about-reliability-card" style={{ borderTopColor: c.accentColor }}>
-                                    <span className="about-reliability-icon" aria-hidden="true">{c.icon}</span>
-                                    <span className="about-reliability-label">{c.key.replace(/([A-Z])/g, ' $1').replace(/^./, ch => ch.toUpperCase())}</span>
-                                </Link>
                             ))}
                         </div>
                     </div>

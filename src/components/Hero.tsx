@@ -44,11 +44,6 @@ export default function Hero({ dict }: HeroProps) {
             <div className="container poster-inner">
                 <HeroFilmControls playLabel={film.play} pauseLabel={film.pause} />
 
-                <div className="poster-eyebrow">
-                    <span>Rohit Raj</span>
-                    <span>AI Consultant · Forward Deployed Engineer</span>
-                </div>
-
                 <div className="poster-body">
                     <h1 className="poster-title">
                         {dict.hero.titleLine1}

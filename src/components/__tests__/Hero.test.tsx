@@ -39,16 +39,6 @@ const mockDict: HomeDictionary = {
     labels: { problem: 'Problem', solution: 'Solution', aiApproach: 'AI Approach', techStack: 'Tech Stack' },
     readNotes: 'Read full architecture notes',
   },
-  reliability: {
-    sectionTitle: 'Engineering Quality',
-    sectionHeading: 'Reliability & Production Readiness',
-    cards: {
-      observability: { title: 'Observability', subtitle: 'Prometheus', description: 'Metrics.', bullets: ['bullet'], linkText: 'Learn more' },
-      loadTesting: { title: 'Load Testing', subtitle: 'k6', description: 'Perf.', bullets: ['bullet'], linkText: 'Learn more' },
-      apiTesting: { title: 'API Testing', subtitle: 'Postman', description: 'Regression.', bullets: ['bullet'], linkText: 'Learn more' },
-      kafkaTesting: { title: 'Kafka Testing', subtitle: 'Kafka', description: 'Events.', bullets: ['bullet'], linkText: 'Learn more' },
-    },
-  },
 };
 
 describe('Hero', () => {

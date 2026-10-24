@@ -310,7 +310,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 />
             )}
             <Header dict={dict.common} />
-            <main id="main" style={{ maxWidth: '920px', margin: '0 auto', padding: '3rem 1.5rem' }}>
+            <main id="main" className="sheet-notes">
                 {/* Article Header */}
                 <header style={{ marginBottom: '3rem' }}>
                     <Link
@@ -325,13 +325,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     >
                         ← Back to Notes
                     </Link>
-                    <h1 style={{
-                        fontSize: '2.25rem',
-                        fontWeight: 700,
-                        lineHeight: 1.25,
-                        marginBottom: '1rem',
-                        color: 'var(--text-primary)'
-                    }}>
+                    <h1 className="headline" style={{ marginBottom: '1rem' }}>
                         {post.title}
                     </h1>
                     <div style={{
@@ -409,8 +403,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     {post.sections.map((section, i) => (
                         <section key={i} style={{ marginBottom: '2.5rem' }}>
                             <h2 style={{
-                                fontSize: '1.5rem',
-                                fontWeight: 600,
+                                fontSize: '2rem',
+                                fontWeight: 800,
                                 marginBottom: '1rem',
                                 color: 'var(--text-primary)',
                                 paddingTop: '0.5rem'

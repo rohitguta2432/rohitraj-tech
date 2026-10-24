@@ -6,7 +6,7 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 
 ## Key Pages
 
-- [Homepage](https://rohitraj.tech): Portfolio overview with AI projects and reliability engineering
+- [Homepage](https://rohitraj.tech): AI consultant and forward deployed engineer: shipped products, agents and engagement terms
 - [About](https://rohitraj.tech/about): Background and experience
 - [Projects](https://rohitraj.tech/projects): Full project catalog with architecture details
 - [AI Agents](https://rohitraj.tech/agents): Live, autonomous AI agents you can try in the browser

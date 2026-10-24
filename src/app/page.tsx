@@ -4,7 +4,6 @@ import HireBlock from "@/components/HireBlock";
 import WorkIndex from "@/components/WorkIndex";
 import WritingIndex from "@/components/WritingIndex";
 import ProcessTimeline from "@/components/ProcessTimeline";
-import ReliabilitySection from "@/components/ReliabilitySection";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import ClosingCta from "@/components/ClosingCta";
@@ -34,15 +33,18 @@ export default async function Home() {
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
             )}
             <Header dict={dict.common} />
-            <main id="main">
+            {/* The film and the closing call sit on the cloth; everything between
+                them is one sheet. */}
+            <main id="main" className="stage">
                 <Hero dict={dict.home} />
-                <HireBlock dict={dict.home} />
-                <WorkIndex />
-                <WritingIndex />
-                <ProcessTimeline dict={dict.home} />
-                <ReliabilitySection dictionary={dict.home} />
-                <Testimonials />
-                <FAQ dict={dict.home} />
+                <div className="sheet">
+                    <HireBlock dict={dict.home} />
+                    <WorkIndex />
+                    <WritingIndex />
+                    <ProcessTimeline dict={dict.home} />
+                    <Testimonials />
+                    <FAQ dict={dict.home} />
+                </div>
                 <ClosingCta />
             </main>
             <Footer dict={dict.common} />

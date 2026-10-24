@@ -109,7 +109,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             />
             {slug === "ai-engineering-foundations" && <AiEngineeringFoundationsSchema />}
             <Header dict={dict.common} />
-            <main id="main">
+            <main id="main" className="sheet-column">
                 <section>
                     <div className="container" style={{ maxWidth: "800px", margin: "0 auto", padding: "2rem 1rem" }}>
                         <Link
@@ -121,7 +121,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
                         {/* Hero */}
                         <div style={{ marginTop: "2rem" }}>
-                            <h1 style={{ color: "var(--text-primary)", fontSize: "2.25rem", fontWeight: 700, lineHeight: 1.2, marginBottom: "0.75rem" }}>
+                            <h1 className="headline" style={{ marginBottom: "0.75rem" }}>
                                 {service.headline}
                             </h1>
                             <p style={{ color: "var(--text-secondary)", fontSize: "1.15rem", lineHeight: 1.6 }}>
@@ -132,7 +132,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
                         {/* Problem */}
                         <div style={{ marginTop: "3rem" }}>
-                            <h2 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
+                            <h2 style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
                                 The Problem
                             </h2>
                             <p style={{ color: "var(--text-secondary)", lineHeight: 1.7 }}>
@@ -142,7 +142,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
                         {/* What You Get */}
                         <div style={{ marginTop: "3rem" }}>
-                            <h2 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
+                            <h2 style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
                                 What You Get
                             </h2>
                             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
@@ -171,7 +171,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                         {/* Long-form body */}
                         {service.sections?.map((section) => (
                             <div key={section.heading} style={{ marginTop: "3rem" }}>
-                                <h2 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
+                                <h2 style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
                                     {section.heading}
                                 </h2>
                                 {section.paragraphs.map((paragraph, i) => (
@@ -192,7 +192,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                         {/* Comparison table */}
                         {service.comparison && (
                             <div style={{ marginTop: "3rem" }}>
-                                <h2 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
+                                <h2 style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
                                     {service.comparison.heading}
                                 </h2>
                                 {service.comparison.intro && (
@@ -267,7 +267,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                         {/* Example engagements */}
                         {service.engagementExamples && (
                             <div style={{ marginTop: "3rem" }}>
-                                <h2 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
+                                <h2 style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
                                     {service.engagementExamples.heading}
                                 </h2>
                                 {service.engagementExamples.intro && (
@@ -310,7 +310,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
                         {/* Tech Stack */}
                         <div style={{ marginTop: "3rem" }}>
-                            <h2 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
+                            <h2 style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
                                 Tech Stack
                             </h2>
                             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
@@ -355,7 +355,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                         {/* Portfolio */}
                         {portfolioProjects.length > 0 && (
                             <div style={{ marginTop: "3rem" }}>
-                                <h2 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
+                                <h2 style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
                                     Related Work
                                 </h2>
                                 <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
@@ -387,7 +387,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
                         {/* FAQ */}
                         <div style={{ marginTop: "3rem" }}>
-                            <h2 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
+                            <h2 style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
                                 Frequently Asked Questions
                             </h2>
                             <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
@@ -407,7 +407,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                         {/* Related engagements & reading */}
                         {service.related && service.related.length > 0 && (
                             <div style={{ marginTop: "3rem" }}>
-                                <h2 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
+                                <h2 style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
                                     Related Engagements &amp; Reading
                                 </h2>
                                 <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>

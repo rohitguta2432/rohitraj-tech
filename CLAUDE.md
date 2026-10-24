@@ -34,7 +34,6 @@ All content data is hardcoded in `src/data/`:
 - `projects.ts` — AI project definitions
 - `blog-posts.ts` — engineering notes (~3K lines, monolithic)
 - `services.ts` — freelance service offerings
-- `github.ts` — GitHub repo metadata
 
 ### Key modules
 
@@ -56,7 +55,11 @@ Configured in `next.config.ts`: HSTS, X-Frame-Options DENY, CSP-adjacent headers
 
 ## Landing page sections (in render order)
 
-Header > Hero > HireBlock > WorkIndex > WritingIndex > ProcessTimeline > ReliabilitySection > Testimonials > FAQ > ClosingCta > Footer — all in `src/components/`. Most receive dictionary props for i18n.
+Header > Hero > HireBlock > WorkIndex > WritingIndex > ProcessTimeline > Testimonials > FAQ > ClosingCta > Footer — all in `src/components/`. Most receive dictionary props for i18n.
+
+The ground is a vermilion cloth case (`--cloth`, `--cloth-weave` in `globals.css`): every page's `<main>` is one white ledger page bound into it, stitched along its long edges, with the header and footer printed on the cloth. Narrow pages size their page with `sheet-narrow` (project detail), `sheet-column` (services, hire) or `sheet-notes`; the home page uses `main.stage` with a `.sheet` between the film and the closing call, which sit on the cloth. Page titles share one poster rule (`.page-title`, `.headline` and friends) in the display face; text on the cloth uses `--on-brand` / `--on-cloth-muted`.
+
+`/repos` and `/reliability/*` were removed on 2026-10-24 (zero search impressions in 90 days) and 301 to `/projects` and `/services/forward-deployed-engineer` in `next.config.ts`; don't recreate them.
 
 `Testimonials` (also on `/hire` and every `/services/*` page) renders nothing while `src/data/testimonials.ts` is empty. Add only real client quotes published with the client's permission — never placeholder or invented ones.
 

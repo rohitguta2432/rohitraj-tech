@@ -20,7 +20,7 @@ export default function LocaleError({
       className="flex min-h-[60vh] flex-col items-center justify-center px-6 py-16 text-center"
       style={{ backgroundColor: 'var(--bg)', color: 'var(--text-primary)' }}
     >
-      <h1 className="mb-3 text-2xl font-semibold">Something went wrong</h1>
+      <h1 className="headline mb-3">Something went wrong</h1>
       <p className="mb-6 max-w-md" style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
         An unexpected error occurred while loading this page. Please try again.
       </p>
