@@ -5653,3 +5653,327 @@ code,
   .contact-actions .btn { flex: 1 1 140px; padding-inline: .8rem; }
   .contact-brief-link { flex-basis: 100%; }
 }
+
+/* ---------- Motion lab: Megacity Awakening ----------
+   A night film framed on the paper page. The screen and its controls keep their own
+   dark palette in both themes, because the film itself is always set at night. */
+.mfilm {
+  padding: clamp(4rem, 9vw, 7.5rem) 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.mfilm-head {
+  max-width: 48rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.mfilm-eyebrow {
+  display: block;
+  margin-bottom: 0.875rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.mfilm-h2 {
+  margin: 0 0 0.875rem;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  text-wrap: balance;
+}
+
+.mfilm-sub {
+  margin: 0;
+  max-width: 60ch;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  text-wrap: pretty;
+}
+
+.mfilm-screen {
+  --film-ink: #e9eef7;
+  --film-signal: #5ee7ff;
+  --film-dusk: #9b7bff;
+  --film-edge: rgba(116, 228, 255, 0.24);
+  --film-edge-strong: rgba(116, 228, 255, 0.55);
+  position: relative;
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #03050b;
+  box-shadow: 0 0 0 1px var(--border), 0 28px 60px -32px rgba(26, 21, 18, 0.6);
+  isolation: isolate;
+}
+
+.mfilm-screen:fullscreen {
+  aspect-ratio: auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.mfilm-poster,
+.mfilm-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.mfilm-poster {
+  object-fit: cover;
+  transition: opacity 600ms ease;
+}
+
+.mfilm-screen[data-ready="true"] .mfilm-poster {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mfilm-canvas {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.mfilm-screen.is-idle .mfilm-canvas {
+  cursor: none;
+}
+
+.mfilm-note {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(6, 10, 20, 0.72);
+  color: var(--film-ink);
+  font-size: 0.8125rem;
+}
+
+.mfilm-hud {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--film-edge);
+  border-radius: 10px;
+  background: rgba(6, 10, 20, 0.66);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  backdrop-filter: blur(12px) saturate(1.2);
+  color: var(--film-ink);
+  font-family: var(--font-mono);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.mfilm-screen.is-idle .mfilm-hud {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+.mfilm-btn {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  height: 34px;
+  min-width: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--film-edge);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--film-ink);
+  font: 500 0.6875rem/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 200ms ease, color 200ms ease, background 200ms ease;
+}
+
+.mfilm-btn:hover,
+.mfilm-btn[aria-pressed="true"] {
+  border-color: var(--film-edge-strong);
+  color: var(--film-signal);
+}
+
+.mfilm-btn[aria-pressed="true"] {
+  background: rgba(94, 231, 255, 0.07);
+}
+
+.mfilm-icon {
+  width: 34px;
+  padding: 0;
+}
+
+.mfilm-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mfilm-btn:focus-visible,
+.mfilm-track:focus-visible {
+  outline: 2px solid var(--film-signal);
+  outline-offset: 2px;
+}
+
+.mfilm-scrub {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.mfilm-phases {
+  position: relative;
+  height: 13px;
+}
+
+.mfilm-phases span {
+  position: absolute;
+  top: 0;
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(233, 238, 247, 0.62);
+  transition: color 300ms ease;
+}
+
+.mfilm-phases span.is-on {
+  color: var(--film-signal);
+}
+
+.mfilm-track {
+  position: relative;
+  height: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.mfilm-track::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 8px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(233, 238, 247, 0.16);
+}
+
+.mfilm-fill {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--film-signal), var(--film-dusk));
+  box-shadow: 0 0 10px rgba(94, 231, 255, 0.6);
+}
+
+.mfilm-tick {
+  position: absolute;
+  top: 4px;
+  width: 1px;
+  height: 10px;
+  background: rgba(233, 238, 247, 0.3);
+}
+
+.mfilm-knob {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: var(--film-ink);
+  box-shadow: 0 0 0 3px rgba(94, 231, 255, 0.25), 0 0 12px rgba(94, 231, 255, 0.8);
+}
+
+.mfilm-readout {
+  flex: none;
+  display: grid;
+  justify-items: end;
+  gap: 2px;
+  min-width: 104px;
+}
+
+.mfilm-readout b {
+  font-weight: 500;
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--film-signal);
+}
+
+.mfilm-readout span {
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.mfilm-meta {
+  margin: 1rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 860px) {
+  .mfilm-phases {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .mfilm-hud {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .mfilm-readout {
+    display: none;
+  }
+
+  .mfilm-btn {
+    height: 36px;
+    min-width: 36px;
+    padding: 0 10px;
+  }
+
+  .mfilm-icon {
+    width: 36px;
+    padding: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mfilm-hud,
+  .mfilm-poster {
+    transition: none;
+  }
+}

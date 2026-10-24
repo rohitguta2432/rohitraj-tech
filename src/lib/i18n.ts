@@ -103,6 +103,15 @@ export interface HomeDictionary {
         points: string[];
         cta: string;
     };
+    film?: {
+        eyebrow: string;
+        heading: string;
+        intro: string;
+        meta: string;
+        canvasLabel: string;
+        posterAlt: string;
+        fallback: string;
+    };
 }
 
 export interface ReliabilityCard {
