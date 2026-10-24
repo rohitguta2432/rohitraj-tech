@@ -1441,6 +1441,49 @@ export const projects: Project[] = [
             ]
         }
     },
+    {
+        slug: "opscope",
+        seoTitle: "OpScope: ERC-4337 UserOperation Debugger",
+        seoDescription: "Explore OpScope, an open-source, local-first ERC-4337 v0.7 debugger. Replay a failed UserOperation on Anvil and see the failing stage with evidence.",
+        name: "OpScope — Find Where a UserOperation Failed, and Prove It",
+        problem: "When an ERC-4337 UserOperation fails, the bundler returns a two-word code like AA24 or AA31, or the operation is included and its call quietly reverts. The cause can sit in the smart account, the paymaster, the bundler's gas settings or the application contract, and reproducing it means hand-building forks, simulations and traces.",
+        solves: "Paste the UserOperation JSON, pick the chain, the EntryPoint and a server-side RPC connection, and OpScope pins the block, runs a bundler-style preflight and replays handleOps on an isolated Anvil fork. It shows the lifecycle — RPC checks, wallet validation, sponsor checks, execution — with the failing stage, the responsible component, the decoded reason, a call trace, the evidence behind each claim and the checks to run next. Every session exports a reproduction bundle that re-runs at the same pinned block.",
+        techStack: ["TypeScript", "React 19 + Vite", "Tailwind CSS 4", "viem", "Fastify", "Foundry (Anvil, Forge)", "SQLite + Drizzle", "Zod", "Monaco Editor", "Commander.js"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/opscope",
+        aiApproach: "No model in the verdict path. Every verdict comes from the EVM: EntryPoint's own FailedOp codes, simulateValidation through the same EntryPointSimulations state override v0.7 bundlers use, UserOperationEvent and revert logs from a replayed handleOps, and decoded call traces. Observed facts and inferred explanations are kept apart, a missing trace is reported as missing evidence, and a local replay never claims to reproduce a bundler's mempool rules.",
+        image: "/images/projects/opscope-poster.jpg",
+        videoUrl: "/videos/opscope.mp4",
+        updated: "2026-10-24",
+        details: {
+            businessImpact: "Account-abstraction wallets can fail in more places than a plain transaction: the account, the sponsor, the bundler and the app each have their own rules, and what reaches the user is a two-word code. OpScope turns one failed operation into a diagnosis a team can act on — stage, responsible component, decoded reason and evidence — plus a bundle a teammate or a wallet vendor can re-run, so support and engineering argue from facts instead of guesses.",
+            approach: [
+                "Shared diagnosis package used by both the web app and the CLI: lifecycle stages, failure code, responsible component, observed facts, inferences, suggested checks, unknowns and limitations",
+                "Bundler-style preflight: chain and block pin, EntryPoint code hash, nonce, deposits and prefund, owner-signature recovery, and EntryPointSimulations.simulateValidation through an eth_call state override",
+                "One isolated, localhost-bound Anvil fork per job with a timeout and a concurrency limit; pending operations replay as the next block, included operations re-execute the original bundle from the exact pre-transaction state and original block environment",
+                "Six executable fixtures on canonical EntryPoint v0.7 and SimpleAccount v0.7 bytecode (code hashes match Base Sepolia): paymaster deposit, wrong-chain signature, token balance spent by an earlier same-block transaction, reused nonce, account prefund, paymaster policy",
+                "Web inspector (React, Vite, Tailwind, shadcn-style components, Monaco, TanStack Query, Motion): failure readout, the lifecycle drawn as an oscilloscope trace that dies at the failing stage, a keyboard-navigable call tree beside an evidence ledger",
+                "Fastify API with SQLite + Drizzle sessions; CLI with inspect, replay, export and fixtures; bundles carry diagnosis.md, userop.json, the replay config, the trace and a sha256 manifest"
+            ],
+            decisions: [
+                "Preflight and replay are reported separately: a bundler-style simulation on the RPC and an EVM replay on a fork are different evidence, and agreement between them raises confidence",
+                "Exactness is labelled on every run — exact (included operation, receipt matched), pinned (pending operation as a hypothetical next block) or approximate — and every state override and block-environment change is recorded",
+                "Observed vs inferred: each explanation lists the observations it rests on, and a missing trace is an unknown, never a pass",
+                "Local-first: the API answers on localhost only, refuses other Host headers and cross-site origins, keeps RPC URLs on the server and redacts them from every export; no private keys, nothing broadcast",
+                "Narrow MVP: EntryPoint v0.7 and SimpleAccount v0.7 only; v0.6 and v0.8 are recognised and reported as unsupported rather than guessed"
+            ],
+            currentStatus: "Public at github.com/rohitguta2432/opscope since October 24, 2026. All six fixtures reproduce their expected results (AA31, AA24, execution revert, AA25, AA21, AA33) end to end through the API, the CLI and the web app. The included-operation fixture replays exactly — gasUsed and all logs identical to the original receipt — and exported bundles re-run to the same result with the pinned block hash verified.",
+            roadmap: [
+                "EntryPoint v0.8 and EIP-7702 accounts",
+                "Signature analysis for Kernel, Safe and Coinbase Smart Wallet accounts",
+                "ERC-7562 validation-rule tracing to explain mempool rejections"
+            ],
+            improvements: [
+                "Self-contained bundles for live sessions from a prestate trace of the touched accounts",
+                "User-supplied ABIs for decoding application reverts"
+            ]
+        }
+    },
 ];
 
 export const repos = [

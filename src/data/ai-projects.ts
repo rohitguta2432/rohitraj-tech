@@ -309,4 +309,20 @@ export const aiProjectSummaries: AIProjectSummary[] = [
             { label: "Local settle", value: "~170 ms" },
         ],
     },
+    {
+        title: "OpScope — Find Where a UserOperation Failed",
+        slug: "opscope",
+        problem: "An ERC-4337 operation fails with a two-word code like AA24, or is included and quietly reverts. The cause can be the account, the paymaster, the bundler or the app, and reproducing it means hand-building forks and traces.",
+        solution: "Paste the UserOperation. OpScope pins the block, runs a bundler-style preflight, replays handleOps on an isolated Anvil fork and shows the failing stage, the responsible component, a decoded trace, the evidence and the next checks — plus a bundle that re-runs at the same block.",
+        techStack: ["TypeScript", "viem", "Foundry / Anvil", "Fastify", "React + Vite"],
+        aiApproach: "No model in the verdict path. EntryPoint's FailedOp codes, simulateValidation via state override and replayed handleOps logs decide; every inference is labelled and names the observations it rests on.",
+        repoUrl: "https://github.com/rohitguta2432/opscope",
+        status: "active",
+        image: "/images/projects/opscope-poster.jpg",
+        metrics: [
+            { label: "Executable fixtures", value: "6" },
+            { label: "Included-op replay", value: "exact" },
+            { label: "Keys needed", value: "none" },
+        ],
+    },
 ];
