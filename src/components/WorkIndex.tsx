@@ -2,6 +2,7 @@ import Link from "next/link";
 import { aiProjectSummaries } from "@/data/ai-projects";
 import { agents } from "@/data/agents";
 import { projects } from "@/data/projects";
+import ProofMark from "@/components/brand/ProofMark";
 
 /**
  * The shipped-work index.
@@ -109,18 +110,24 @@ export function IndexRow({ row, n }: { row: Row; n: number }) {
     );
 }
 
+// The proof mark: one ray per product, sized by its stack, named on the board.
+const PROOF = projects.map((p) => ({ name: splitTitle(p.name)[0], stack: p.techStack.length }));
+
 export default function WorkIndex() {
     return (
         <section id="work" className="widx">
             <div className="container">
-                <header className="widx-head">
-                    <h2 className="widx-h2">All of it is public.</h2>
-                    <p className="widx-sub">
-                        {projects.length} products and {agents.length} autonomous agents. Every one
-                        has a live URL or an open repo, so nothing here is a case study you have to
-                        take my word for.
-                    </p>
-                </header>
+                <div className="widx-top">
+                    <header className="widx-head">
+                        <h2 className="widx-h2">All of it is public.</h2>
+                        <p className="widx-sub">
+                            {projects.length} products and {agents.length} autonomous agents. Every one
+                            has a live URL or an open repo, so nothing here is a case study you have to
+                            take my word for.
+                        </p>
+                    </header>
+                    <ProofMark products={PROOF} />
+                </div>
 
                 <div className="widx-group">
                     <h3 className="widx-group-title">

@@ -1,6 +1,7 @@
 import type { CommonDictionary } from "@/lib/i18n";
 import SubscribeForm from "./SubscribeForm";
 import { CookieSettingsLink } from "./CookieConsent";
+import { StickerSheet } from "./brand/Stickers";
 
 interface FooterProps {
     dict: CommonDictionary;
@@ -72,6 +73,9 @@ const socials = [
 export default function Footer({ dict }: FooterProps) {
     return (
         <footer className="footer">
+            <div className="container">
+                <StickerSheet />
+            </div>
             <div className="container footer-inner">
                 <div className="footer-content">
                     <div className="footer-main">

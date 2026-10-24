@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { defaultMetadata, generateAllSchemas } from "@/lib/seo-config";
 import Analytics from "@/components/Analytics";
+import HoloLight from "@/components/brand/HoloLight";
+import { EdgeStickers } from "@/components/brand/Stickers";
 
 // Display + body pair chosen with the user from four directions (the "poster"
 // direction): Big Shoulders Display is a tall condensed grotesque that holds up at
@@ -75,6 +77,8 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
+        <EdgeStickers />
+        <HoloLight />
         <Analytics />
       </body>
     </html>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import type { CommonDictionary } from "@/lib/i18n";
+import { DepartureLogo } from "@/components/brand/Flaps";
 
 interface HeaderProps {
     dict: CommonDictionary;
@@ -29,8 +30,11 @@ export default function Header({ dict }: HeaderProps) {
         <header className="header">
             <div className="container header-inner">
                 <Link href={"/"} className="logo">
-                    <span className="logo-name">Rohit Raj</span>
-                    <span className="logo-role">Forward Deployed Engineer</span>
+                    <DepartureLogo />
+                    <span className="logo-text">
+                        <span className="logo-name">Rohit Raj</span>
+                        <span className="logo-role">Forward Deployed Engineer</span>
+                    </span>
                 </Link>
 
                 <nav className={`nav-links ${mobileMenuOpen ? "mobile-open" : ""}`}>

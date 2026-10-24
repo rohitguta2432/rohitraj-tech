@@ -6260,3 +6260,327 @@ code,
   border-top: 2px solid var(--text-primary);
   scroll-margin-top: 6rem;
 }
+
+/* ---------- Brand: departures board, holographic foil, stickers, proof ----------
+   One identity in three parts. The logo is a split-flap board reading BLR → the
+   visitor's own city. Its tiles and the stickers share one holographic foil
+   whose light follows the pointer (HoloLight). The proof mark on the home page
+   is drawn from the project list: one ray per product still running. */
+:root {
+  --holo-x: 30%;
+  --holo-y: 22%;
+  --holo-a: 0deg;
+}
+
+.holo,
+.flap {
+  background:
+    radial-gradient(farthest-corner at var(--holo-x) var(--holo-y), rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 42%),
+    repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.2) 0 2px, transparent 2px 7px),
+    conic-gradient(from var(--holo-a) at 40% 45%, #ffb7cb, #ffe39a, #b9f6cf, #a3ddff, #d3b7ff, #ffb7cb);
+}
+
+/* Split-flap tiles: foil faces with ink letters, set in a black board. */
+.flaps {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 4px;
+  background: #110e0c;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.flap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 1.05em;
+  height: 1.45em;
+  border-radius: 2px;
+  overflow: hidden;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 800;
+  line-height: 1;
+  color: #1a1512;
+}
+
+/* The hinge every split-flap tile has across its middle. */
+.flap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - 0.5px);
+  height: 1px;
+  background: rgba(17, 14, 12, 0.55);
+}
+
+.flap-arrow {
+  color: var(--brand-deep);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .flap {
+    animation: flap-drop 140ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @keyframes flap-drop {
+    from {
+      transform: scaleY(0.2);
+    }
+    to {
+      transform: none;
+    }
+  }
+}
+
+.flaps-logo {
+  font-size: 1.125rem;
+}
+
+.flaps-readout {
+  font-size: 1.2rem;
+}
+
+/* Logo lockup: the board, then the name over the role. */
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.logo-name {
+  font-size: 1.625rem;
+  line-height: 0.9;
+}
+
+.logo-role {
+  padding-left: 0;
+  border-left: 0;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+}
+
+@media (max-width: 359px) {
+  .flaps-logo {
+    display: none;
+  }
+}
+
+/* Die-cut holographic stickers: a cream cut margin around a foil face. */
+.sticker {
+  display: inline-flex;
+  flex: 0 0 auto;
+  padding: 6px;
+  background: #fffaf3;
+  transform: rotate(var(--tilt, 0deg));
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), 0 14px 26px -12px rgba(40, 4, 0, 0.6);
+}
+
+.sticker-face {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  color: #1a1512;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.sticker-face b {
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.sticker-face .sticker-big {
+  font-size: 2.5rem;
+}
+
+.sticker-face .sticker-small {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+}
+
+.sticker-round,
+.sticker-round .sticker-face {
+  border-radius: 50%;
+}
+
+.sticker-round .sticker-face,
+.sticker-app .sticker-face {
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.sticker-pill {
+  height: 58px;
+  border-radius: 999px;
+}
+
+.sticker-pill .sticker-face {
+  padding: 0 1.1rem;
+  border-radius: 999px;
+}
+
+.sticker-rect {
+  height: 64px;
+  border-radius: 8px;
+}
+
+.sticker-rect .sticker-face {
+  padding: 0 1rem;
+  border-radius: 4px;
+}
+
+.sticker-app {
+  border-radius: 28%;
+}
+
+.sticker-app .sticker-face {
+  border-radius: 24%;
+}
+
+/* The full set on the cloth, above the footer links. */
+.sticker-sheet {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 0.5rem 0 2.5rem;
+  margin-bottom: 2.25rem;
+  border-bottom: 1px solid rgba(255, 244, 232, 0.16);
+}
+
+/* Two stickers across the page's long edges, half on paper, half on cloth.
+   Positioned against the sheet width of whichever page is showing; the home
+   page opens on the film, so it skips them. */
+.edge-stickers {
+  --sw: min(var(--sheet-width, 1280px), 100vw - 2 * clamp(0px, 5vw - 1.25rem, 3rem));
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+body:has(> main.sheet-narrow) .edge-stickers {
+  --sheet-width: 880px;
+}
+
+body:has(> main.sheet-column) .edge-stickers {
+  --sheet-width: 960px;
+}
+
+body:has(> main.sheet-notes) .edge-stickers {
+  --sheet-width: 1000px;
+}
+
+body:has(> main.stage) .edge-stickers,
+body:not(:has(> main)) .edge-stickers {
+  display: none;
+}
+
+.edge-sticker {
+  position: absolute;
+}
+
+.edge-sticker-right {
+  top: 168px;
+  left: calc(50% + var(--sw) / 2 - 56px);
+}
+
+.edge-sticker-left {
+  top: 640px;
+  left: calc(50% - var(--sw) / 2 - 56px);
+}
+
+@media (max-width: 1099px) {
+  .edge-stickers {
+    display: none;
+  }
+}
+
+/* The proof mark beside the work index. */
+.widx-top {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.widx-top .widx-head {
+  margin-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .widx-top {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 3rem;
+  }
+}
+
+.proof {
+  display: grid;
+  justify-items: center;
+  gap: 0.9rem;
+  margin: 0;
+}
+
+.proof-burst {
+  width: clamp(200px, 22vw, 280px);
+  height: auto;
+  aspect-ratio: 1;
+  overflow: visible;
+}
+
+.proof-ray {
+  stroke: var(--text-primary);
+  stroke-width: 6;
+  stroke-linecap: round;
+  opacity: 0.55;
+}
+
+.proof-hub {
+  fill: none;
+  stroke: var(--text-primary);
+  stroke-width: 4;
+}
+
+.proof-count {
+  fill: var(--text-primary);
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.proof-readout {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.proof-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Fourteen tiles plus the label outgrow a phone; stack the label, shrink the tiles. */
+@media (max-width: 480px) {
+  .proof-readout {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .flaps-readout {
+    font-size: 1rem;
+  }
+}
