@@ -22,7 +22,7 @@ const mockDict: CommonDictionary = {
     viewCurrentWork: 'View Current Work',
   },
   footer: {
-    brand: 'Rohit Raj · Backend & AI Systems',
+    brand: 'Rohit Raj · Forward Deployed Engineer · AI Consultant',
   },
   buttons: {
     viewProjects: 'View AI Projects',
@@ -45,6 +45,6 @@ const mockDict: CommonDictionary = {
 describe('Footer', () => {
   it('renders without crashing', () => {
     render(<Footer dict={mockDict} />);
-    expect(screen.getByText('Rohit Raj · Backend & AI Systems')).toBeInTheDocument();
+    expect(screen.getByText('Rohit Raj · Forward Deployed Engineer · AI Consultant')).toBeInTheDocument();
   });
 });
