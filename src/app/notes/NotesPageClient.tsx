@@ -44,7 +44,7 @@ export default function NotesPageClient({ commonDict }: NotesPageClientProps) {
                     </p>
                 </header>
 
-                <section aria-labelledby="topic-heading" style={{ marginBottom: '4rem' }}>
+                <section aria-labelledby="topic-heading" style={{ padding: 0, marginBottom: '4rem' }}>
                     <h2 id="topic-heading" style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>Explore AI delivery by topic</h2>
                     <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Practical guides for building AI systems and choosing the right engineering support.</p>
                     <div className="notes-topics">
@@ -65,7 +65,7 @@ export default function NotesPageClient({ commonDict }: NotesPageClientProps) {
                     </div>
                 </section>
 
-                <section aria-labelledby="all-articles-heading">
+                <section aria-labelledby="all-articles-heading" style={{ padding: 0 }}>
                     <h2 id="all-articles-heading" style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>All articles</h2>
                     <ol className="widx-list notes-index">
                         {rows.map((row, i) => (

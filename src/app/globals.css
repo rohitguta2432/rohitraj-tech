@@ -6256,7 +6256,7 @@ code,
 }
 
 .notes-topic {
-  padding-top: 1rem;
+  padding: 1rem 0 0;
   border-top: 2px solid var(--text-primary);
   scroll-margin-top: 6rem;
 }
