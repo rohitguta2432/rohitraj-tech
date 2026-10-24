@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AuthorBio from "@/components/AuthorBio";
+import AIDeliveryRoadmap from "@/components/AIDeliveryRoadmap";
 import { blogPosts } from "@/data/blog-posts";
 import { getDictionary } from "@/lib/i18n";
 import { createPageMetadata, generateBlogPostingSchema, generateBreadcrumbSchema, generateFAQSchema, generateTechArticleSchema, extractFAQsFromSections, SITE_CONFIG } from "@/lib/seo-config";
@@ -402,9 +403,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 )}
 
                 {/* Article Body */}
+                {slug === 'ai-project-delivery-roadmap' && <AIDeliveryRoadmap />}
                 <article>
                     {post.sections.map((section, i) => (
-                        <section key={i} style={{ marginBottom: '2.5rem' }}>
+                        <section key={i} id={section.id} style={{ marginBottom: '2.5rem', scrollMarginTop: '6rem' }}>
                             <h2 style={{
                                 fontSize: '2rem',
                                 fontWeight: 800,

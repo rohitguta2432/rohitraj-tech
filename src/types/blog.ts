@@ -1,6 +1,7 @@
 import { z } from 'zod';
 
 const blogSectionSchema = z.object({
+  id: z.string().regex(/^[a-z][a-z0-9-]*$/).optional(),
   heading: z.string().min(1),
   content: z.string().min(1),
   image: z.object({

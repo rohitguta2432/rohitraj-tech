@@ -23,6 +23,7 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 
 ## All Engineering Notes
 
+- [AI Project Delivery Roadmap: From Scope to Production](https://rohitraj.tech/notes/ai-project-delivery-roadmap)
 - [RAG Evaluation: A Runnable Retrieval and Permissions Harness](https://rohitraj.tech/notes/rag-evaluation-harness-retrieval-permissions)
 - [RAG Implementation Cost: A Worked Budget You Can Recalculate](https://rohitraj.tech/notes/rag-implementation-cost-worked-budget)
 - [Hiring a Freelance AI Engineer: Scope and Acceptance Criteria (2026)](https://rohitraj.tech/notes/freelance-ai-engineer-project-scope-2026)

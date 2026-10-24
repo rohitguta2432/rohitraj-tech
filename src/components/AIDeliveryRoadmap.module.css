@@ -1,0 +1,23 @@
+.roadmap { margin: 0 0 3rem; padding: 1.5rem 0; border-top: 3px solid var(--accent); border-bottom: 1px solid var(--border-hover); }
+.eyebrow { margin-bottom: .75rem; font: .75rem/1.5 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--accent-text); }
+.roadmap h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.15; margin-bottom: 1rem; }
+.intro { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem; max-width: 65ch; }
+.stages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; column-gap: 1.5rem; }
+.stage { min-width: 0; padding: 1rem 0; border-top: 1px solid var(--border-hover); }
+.stage:last-child { grid-column: 1 / -1; }
+.stageLink { display: flex; align-items: baseline; gap: .65rem; color: var(--text-primary); font-weight: 700; text-decoration: none; line-height: 1.4; }
+.stageLink:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: .2em; }
+.number { color: var(--accent-text); font: .8rem/1.5 var(--font-mono); flex-shrink: 0; }
+.arrow { margin-left: auto; color: var(--accent-text); }
+.question { margin: .55rem 0 .7rem; font-size: .92rem; line-height: 1.6; color: var(--text-secondary); }
+.evidence { color: var(--text-secondary); font-size: .9rem; line-height: 1.6; }
+.evidence summary { cursor: pointer; color: var(--accent-text); padding: .3rem 0; width: fit-content; }
+.evidence dl { margin: .7rem 0 0; padding-left: .9rem; border-left: 2px solid var(--border-hover); }
+.evidence dt { font-weight: 700; color: var(--text-primary); margin-top: .6rem; }
+.evidence dd { margin: .15rem 0 0; }
+.downloads { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-top: 1.5rem; }
+.downloads a { font-weight: 600; color: var(--accent-text); text-underline-offset: .2em; line-height: 1.6; }
+.note { font-size: .8rem; color: var(--text-muted); line-height: 1.6; margin: .75rem 0 0; }
+.roadmap a:focus-visible, .roadmap summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) { .stages { grid-template-columns: 1fr; } .downloads { flex-direction: column; } }
+@media print { .roadmap { break-inside: avoid; } }

@@ -3,6 +3,21 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "ai-project-delivery-roadmap",
+    "title": "AI Project Delivery Roadmap: From Scope to Production",
+    "date": "2026-10-24",
+    "excerpt": "A practical AI implementation roadmap: define the workflow, prepare data, choose an architecture, build, evaluate, deploy and hand over. Each stage has an owner and evidence to review.",
+    "readingTime": "10 min read",
+    "keywords": [
+      "ai project delivery roadmap",
+      "ai implementation roadmap",
+      "production ai checklist",
+      "rag project delivery",
+      "ai engineering workflow"
+    ],
+    "relatedProject": "stellarmind"
+  },
+  {
     "slug": "rag-evaluation-harness-retrieval-permissions",
     "title": "RAG Evaluation: A Runnable Retrieval and Permissions Harness",
     "date": "2026-10-24",

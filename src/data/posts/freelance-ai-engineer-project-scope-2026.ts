@@ -29,7 +29,7 @@ export const freelanceAiEngineerProjectScope2026: BlogPost = {
     },
     {
       heading: "Download the brief and test the acceptance evidence",
-      content: "Copy the [AI delivery brief](/examples/ai-delivery-brief.md) into your project and replace its placeholders with the agreed workflow, receiving owner and acceptance thresholds. For retrieval work, the [runnable RAG evaluation harness](/notes/rag-evaluation-harness-retrieval-permissions) supplies synthetic test cases and explicit failure reports. The [RAG cost worksheet](/notes/rag-implementation-cost-worked-budget) makes implementation and maintenance assumptions editable. These are planning and testing examples, not client performance claims."
+      content: "Use the [AI project delivery roadmap](/notes/ai-project-delivery-roadmap) to turn the agreed scope into seven delivery stages with evidence reviews and an operating handover.\n\nCopy the [AI delivery brief](/examples/ai-delivery-brief.md) into your project and replace its placeholders with the agreed workflow, receiving owner and acceptance thresholds. For retrieval work, the [runnable RAG evaluation harness](/notes/rag-evaluation-harness-retrieval-permissions) supplies synthetic test cases and explicit failure reports. The [RAG cost worksheet](/notes/rag-implementation-cost-worked-budget) makes implementation and maintenance assumptions editable. These are planning and testing examples, not client performance claims."
     },
     {
       heading: "What should you agree before hiring an AI engineer?",
