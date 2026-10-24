@@ -13,8 +13,9 @@ export async function generateMetadata(): Promise<Metadata> {
     return createPageMetadata(
         dict.meta.about.title,
         dict.meta.about.description,
-        '/about'
-            );
+        '/about',
+        { ownCard: true }
+    );
 }
 
 export default async function AboutPage() {

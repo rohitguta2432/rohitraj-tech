@@ -1,91 +1,13 @@
-import { ImageResponse } from 'next/og';
+import { shareCard } from '@/components/brand/share';
 
-export const runtime = 'edge';
-export const alt = 'Rohit Raj — AI Consultant · Forward Deployed Engineer';
+export const alt = 'Rohit Raj — AI consultant and forward deployed engineer. One engineer. Whole product.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default async function OpengraphImage() {
-    return new ImageResponse(
-        (
-            <div
-                style={{
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    padding: '80px',
-                    background: 'linear-gradient(135deg, #0a0a0a 0%, #111827 60%, #1f2937 100%)',
-                    fontFamily: 'system-ui, -apple-system, sans-serif',
-                    color: '#fff',
-                }}
-            >
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-                    <div
-                        style={{
-                            width: 48,
-                            height: 48,
-                            borderRadius: 12,
-                            background: 'linear-gradient(135deg, #10b981, #3b82f6)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            fontSize: 28,
-                            fontWeight: 800,
-                        }}
-                    >
-                        R
-                    </div>
-                    <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: -0.5 }}>
-                        rohitraj.tech
-                    </div>
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            fontSize: 80,
-                            fontWeight: 800,
-                            lineHeight: 1.05,
-                            letterSpacing: -2,
-                            maxWidth: 1000,
-                        }}
-                    >
-                        <div style={{ display: 'flex' }}>Founding Engineer &amp;</div>
-                        <div style={{ display: 'flex' }}>AI Systems Architect</div>
-                    </div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            fontSize: 32,
-                            color: '#9ca3af',
-                            maxWidth: 1000,
-                            lineHeight: 1.3,
-                        }}
-                    >
-                        Building production AI systems, RAG pipelines, and distributed backends for startups.
-                    </div>
-                </div>
-
-                <div
-                    style={{
-                        display: 'flex',
-                        gap: 24,
-                        fontSize: 22,
-                        color: '#d1d5db',
-                    }}
-                >
-                    <span>10+ years shipping</span>
-                    <span style={{ color: '#4b5563' }}>·</span>
-                    <span>Java · Next.js · Kafka · GPT-4</span>
-                    <span style={{ color: '#4b5563' }}>·</span>
-                    <span>India · Worldwide</span>
-                </div>
-            </div>
-        ),
-        { ...size }
-    );
+export default function OpengraphImage() {
+    return shareCard({
+        kicker: 'AI consultant · forward deployed engineer',
+        title: 'One engineer.\nWhole product.',
+        line: 'Agents, MCP integrations and LLM features, shipped to production with evals proving they work.',
+    });
 }
