@@ -9,6 +9,8 @@ import { getDictionary } from "@/lib/i18n";
 import { createPageMetadata, generateBlogPostingSchema, generateBreadcrumbSchema, generateFAQSchema, generateTechArticleSchema, extractFAQsFromSections, SITE_CONFIG } from "@/lib/seo-config";
 import type { Metadata } from "next";
 import { getRelatedWork } from "@/lib/related-work";
+import { getRelatedPosts } from "@/lib/related-posts";
+import { getPostTopics } from "@/data/blog-topics";
 
 const LOCALE_PREFIX_RE = /^\/(en|hi|fr|de|ar)\//;
 const stripLocalePrefix = (path: string) => path.replace(LOCALE_PREFIX_RE, '/');
@@ -266,7 +268,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const dict = await getDictionary();
     const relatedWork = getRelatedWork(post);
 
-    const otherPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
+    const otherPosts = getRelatedPosts(post, blogPosts);
+    const topics = getPostTopics(slug);
 
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', url: `${SITE_CONFIG.url}` },
@@ -484,6 +487,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 )}
 
                 {/* Read Next */}
+                {topics.length > 0 && (
+                    <nav aria-label="Explore article topics" style={{ marginTop: '2rem', display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+                        {topics.map((topic) => <Link key={topic.id} href={`/notes#${topic.id}`} style={{ color: 'var(--accent)' }}>{topic.name} guides →</Link>)}
+                    </nav>
+                )}
                 {otherPosts.length > 0 && (
                     <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid var(--border)' }}>
                         <h3 style={{

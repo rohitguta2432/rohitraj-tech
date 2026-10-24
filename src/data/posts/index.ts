@@ -1,5 +1,7 @@
 import { blogPostSchema } from '@/types/blog';
 import type { BlogPost } from '@/types/blog';
+import { ragEvaluationHarness } from './rag-evaluation-harness-retrieval-permissions';
+import { ragImplementationCost } from './rag-implementation-cost-worked-budget';
 
 import { freelanceAiEngineerProjectScope2026 } from './freelance-ai-engineer-project-scope-2026';
 
@@ -157,6 +159,8 @@ import { gpt61SolVsClaudeSonnet55CodingAgents2026 } from './gpt-6-1-sol-vs-claud
 import { whyAiPilotsFailProduction2026 } from './why-ai-pilots-fail-production-2026';
 
 const allPosts: BlogPost[] = [
+  ragEvaluationHarness,
+  ragImplementationCost,
   freelanceAiEngineerProjectScope2026,
   whyAiPilotsFailProduction2026,
   freelanceFdeVsFractionalEngineer2026,

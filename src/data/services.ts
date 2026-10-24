@@ -724,6 +724,11 @@ export const services: Service[] = [
  updated: "2026-10-24",
  related: [
  {
+ href: "/notes/rag-evaluation-harness-retrieval-permissions",
+ label: "Runnable RAG acceptance example",
+ description: "Inspect synthetic test cases and failure reports for retrieval, permissions and abstention.",
+ },
+ {
  href: "/services/fractional-ai-engineer",
  label: "Freelance AI Engineer",
  description: "For a defined AI product feature or recurring engineering backlog, with scope and handover agreed upfront.",
@@ -998,6 +1003,16 @@ export const services: Service[] = [
  cta: "Start the Conversation",
  updated: "2026-10-24",
  related: [
+ {
+ href: "/notes/rag-evaluation-harness-retrieval-permissions",
+ label: "RAG evaluation harness",
+ description: "Run the offline example and adapt its acceptance checks to your data.",
+ },
+ {
+ href: "/notes/rag-implementation-cost-worked-budget",
+ label: "RAG implementation budget worksheet",
+ description: "Separate implementation work, usage and maintenance with editable hypothetical inputs.",
+ },
  {
  href: "/notes/freelance-ai-engineer-project-scope-2026",
  label: "Freelance AI engineer project scope",

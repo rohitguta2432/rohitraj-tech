@@ -3,9 +3,48 @@ import type { BlogPostSummary } from '@/types/blog-summary';
 
 export const blogSummaries: BlogPostSummary[] = [
   {
+    "slug": "rag-evaluation-harness-retrieval-permissions",
+    "title": "RAG Evaluation: A Runnable Retrieval and Permissions Harness",
+    "date": "2026-10-24",
+    "excerpt": "Run an offline RAG evaluation harness for recall, ranking, access boundaries and abstention. Includes synthetic fixtures, failure reports and Python code.",
+    "readingTime": "7 min read",
+    "keywords": [
+      "rag evaluation",
+      "rag evaluation harness",
+      "retrieval recall at k",
+      "rag permissions testing",
+      "rag acceptance tests"
+    ],
+    "coverImage": {
+      "src": "/images/notes/rag-evaluation-harness-retrieval-permissions-cover.png",
+      "alt": "Check each boundary: Relevant evidence, Permitted context, Supported answer"
+    },
+    "relatedProject": "stellarmind"
+  },
+  {
+    "slug": "rag-implementation-cost-worked-budget",
+    "title": "RAG Implementation Cost: A Worked Budget You Can Recalculate",
+    "date": "2026-10-24",
+    "excerpt": "Estimate RAG implementation and running costs with an editable Python worksheet. Separate integration, evaluation, model usage, hosting and maintenance.",
+    "readingTime": "6 min read",
+    "keywords": [
+      "rag implementation cost",
+      "rag development cost",
+      "rag operating costs",
+      "rag cost calculator",
+      "ai consulting project budget"
+    ],
+    "coverImage": {
+      "src": "/images/notes/rag-implementation-cost-worked-budget-cover.png",
+      "alt": "Make assumptions visible: Build the system, Run the workload, Maintain and review"
+    },
+    "relatedProject": "stellarmind"
+  },
+  {
     "slug": "freelance-ai-engineer-project-scope-2026",
     "title": "Hiring a Freelance AI Engineer: Scope and Acceptance Criteria (2026)",
     "date": "2026-10-06",
+    "updated": "2026-10-24",
     "excerpt": "Define the workflow, deliverables and acceptance tests before hiring an AI engineer. A practical buyer guide with a scope template, failure drills and handover checks.",
     "readingTime": "14 min read",
     "keywords": [
@@ -324,7 +363,7 @@ export const blogSummaries: BlogPostSummary[] = [
     "slug": "what-does-a-forward-deployed-engineer-do-2026",
     "title": "Forward Deployed Engineer: What the Role Involves and When to Hire One",
     "date": "2026-09-05",
-    "updated": "2026-10-17",
+    "updated": "2026-10-24",
     "excerpt": "A forward deployed engineer works with customers to turn a business problem into deployed software. This guide explains the day-to-day responsibilities, relevant skills, how the role differs across teams, and when an embedded FDE or freelance AI engineer fits the work.",
     "readingTime": "10 min read",
     "keywords": [

@@ -119,10 +119,6 @@ export interface PagesDictionary {
         paused: string;
         pausedDescription: string;
     };
-    notes: {
-        title: string;
-        description: string;
-    };
 }
 
 export interface MetaDictionary {

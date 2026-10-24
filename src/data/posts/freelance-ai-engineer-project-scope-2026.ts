@@ -6,6 +6,7 @@ export const freelanceAiEngineerProjectScope2026: BlogPost = {
   seoTitle: "Freelance AI Engineer: Scope and Acceptance Criteria",
   seoDescription: "Scope production AI work before hiring: define deliverables, test cases, access boundaries and handover. Includes a project brief and acceptance matrix.",
   date: "2026-10-06",
+  updated: "2026-10-24",
   excerpt: "Define the workflow, deliverables and acceptance tests before hiring an AI engineer. A practical buyer guide with a scope template, failure drills and handover checks.",
   readingTime: "14 min read",
   keywords: [
@@ -25,6 +26,10 @@ export const freelanceAiEngineerProjectScope2026: BlogPost = {
     {
       heading: "TL;DR",
       content: "Before hiring a freelance AI engineer, agree on one workflow, the data it can use, the output it must produce, and the evidence required for acceptance. Separate a useful prototype from a service your team can operate. Put source code, evaluation cases, deployment instructions and handover in the deliverables. Test missing data, permission failures and model errors alongside normal inputs. Start with a bounded pilot when requirements are uncertain; choose ongoing fractional work when a named internal owner can support regular improvements."
+    },
+    {
+      heading: "Download the brief and test the acceptance evidence",
+      content: "Copy the [AI delivery brief](/examples/ai-delivery-brief.md) into your project and replace its placeholders with the agreed workflow, receiving owner and acceptance thresholds. For retrieval work, the [runnable RAG evaluation harness](/notes/rag-evaluation-harness-retrieval-permissions) supplies synthetic test cases and explicit failure reports. The [RAG cost worksheet](/notes/rag-implementation-cost-worked-budget) makes implementation and maintenance assumptions editable. These are planning and testing examples, not client performance claims."
     },
     {
       heading: "What should you agree before hiring an AI engineer?",

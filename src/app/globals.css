@@ -6246,3 +6246,17 @@ code,
 .faq-answer {
   padding: 0 0.25rem 1.25rem;
 }
+
+/* Topic reading paths on /notes: columns under a heavy rule, like the sprint
+   schedule, not boxed cards. */
+.notes-topics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 2.5rem 2rem;
+}
+
+.notes-topic {
+  padding-top: 1rem;
+  border-top: 2px solid var(--text-primary);
+  scroll-margin-top: 6rem;
+}

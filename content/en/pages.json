@@ -19,9 +19,5 @@
         "iteratingDescription": "Refining based on feedback or new requirements.",
         "paused": "Paused",
         "pausedDescription": "On hold, may revisit later."
-    },
-    "notes": {
-        "title": "Engineering Notes",
-        "description": "Notes on AI agents, MCP integrations, model costs and getting LLM features into production, newest first."
     }
 }
