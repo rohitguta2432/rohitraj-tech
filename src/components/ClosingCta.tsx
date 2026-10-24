@@ -19,7 +19,7 @@ export default function ClosingCta() {
                 <p className="closing-body">
                     Tell me what you are shipping and I will tell you, on the call, whether six
                     weeks is realistic and what I would cut to get there. If it is not a fit I
-                    will say so — that is a faster answer than a proposal.
+                    will say so. That is a faster answer than a proposal.
                 </p>
 
                 <div className="closing-actions">

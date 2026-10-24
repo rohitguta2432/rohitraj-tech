@@ -1,18 +1,18 @@
 {
     "hire": {
         "eyebrow": "AI Consultant · Forward Deployed Engineer",
-        "heading": "An AI consultant who embeds with your team — and ships to production.",
-        "intro": "Most companies don't need another AI strategy deck. They need one senior engineer inside their Slack and their repo who finds where AI creates value and builds it — agents, MCP integrations, LLM features — until it runs in production with evals proving it. That is forward deployed engineering, and it is how I work.",
+        "heading": "An AI consultant who embeds with your team and ships to production.",
+        "intro": "Most companies don't need another AI strategy deck. They need one senior engineer inside their Slack and their repo who finds where AI creates value and builds it (agents, MCP integrations, LLM features) until it runs in production with evals proving it. That is forward deployed engineering, and it is how I work.",
         "points": [
-            "AI Consultant · Forward Deployed Engineer — based in Bengaluru, India, working with companies worldwide.",
-            "Embedded delivery: your repo, your standups, your infrastructure — from day one.",
+            "AI Consultant · Forward Deployed Engineer, based in Bengaluru, India, working with companies worldwide.",
+            "Embedded delivery: your repo, your standups, your infrastructure, from day one.",
             "Agents, MCP servers, and LLM features shipped with evaluation suites, not vibes.",
-            "Fractional retainer (2 days/week) or fixed-scope pilot — you own the code and IP throughout."
+            "Fractional retainer (2 days/week) or fixed-scope pilot. You own the code and IP throughout."
         ],
         "cta": "Book a free 30-min scoping call"
     },
     "hero": {
-        "subtitle": "AI consultant · forward deployed engineer — embeds with your team and ships agents, MCP integrations, and LLM features to production, on any stack.",
+        "subtitle": "AI consultant · forward deployed engineer who embeds with your team and ships agents, MCP integrations, and LLM features to production, on any stack.",
         "titleLine1": "One engineer.",
         "titleLine2": "Whole product.",
         "bookCallCta": "Book free 30-min call",
@@ -43,12 +43,12 @@
                 }
             }
         },
-        "deck": "Agents, MCP integrations, and LLM features — built inside your team by the person you actually talk to, and shipped to production with evals proving they work. Every repo below is open to read before you email me."
+        "deck": "Agents, MCP integrations, and LLM features, built inside your team by the person you actually talk to, and shipped to production with evals proving they work. Every repo below is open to read before you email me."
     },
     "aiProjects": {
         "sectionTitle": "AI Projects",
         "sectionHeading": "Production-Ready AI Systems",
-        "sectionDescription": "Not experiments — full-stack applications with real infrastructure.",
+        "sectionDescription": "Not experiments: full-stack applications with real infrastructure.",
         "labels": {
             "problem": "Problem",
             "solution": "Solution",
@@ -124,11 +124,11 @@
         "items": [
             {
                 "q": "Why hire a founding engineer for hire in India over a US contractor?",
-                "a": "A senior founding engineer for hire in India ships the same production AI MVP at 30–40% of US contractor cost, with full code ownership and daily timezone overlap on Slack/WhatsApp. You get end-to-end execution — backend, frontend, mobile, infra, AI — from one person who has shipped and publicly documented every product listed on this site."
+                "a": "A senior founding engineer for hire in India ships the same production AI MVP at 30–40% of US contractor cost, with full code ownership and daily timezone overlap on Slack/WhatsApp. You get end-to-end execution (backend, frontend, mobile, infra, AI) from one person who has shipped and publicly documented every product listed on this site."
             },
             {
                 "q": "How fast can a founding engineer in India ship my AI MVP?",
-                "a": "First production commit on day 5, fully-live MVP at week 6 — fixed scope, fixed timeline, no \"agency surprise\". Every project on rohitraj.tech follows this 6-week shipping cadence."
+                "a": "First production commit on day 5, fully-live MVP at week 6. Fixed scope, fixed timeline, no \"agency surprise\". Every project on rohitraj.tech follows this 6-week shipping cadence."
             },
             {
                 "q": "What if 6 weeks slips?",

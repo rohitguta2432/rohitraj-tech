@@ -85,7 +85,7 @@ export default function WritingIndex() {
                     <h2 className="widx-h2">The arguments, written down.</h2>
                     <p className="widx-sub">
                         {blogPosts.length} engineering notes. These are the ones worth reading
-                        before you decide whether to buy a builder tool or hire a person — each one
+                        before you decide whether to buy a builder tool or hire a person. Each one is
                         costed, with the tradeoff stated plainly rather than sold.
                     </p>
                 </Reveal>

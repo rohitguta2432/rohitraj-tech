@@ -365,7 +365,7 @@ section {
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  transition: all 150ms ease;
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -962,7 +962,7 @@ section {
   border: 1px solid var(--border);
   border-radius: 50%;
   cursor: pointer;
-  transition: all 200ms ease;
+  transition: background-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
   z-index: 10;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -1015,7 +1015,7 @@ section {
   background: var(--border);
   border: none;
   cursor: pointer;
-  transition: all 200ms ease;
+  transition: background-color 200ms ease, transform 200ms ease;
   padding: 0;
 }
 
@@ -1142,7 +1142,7 @@ section {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  transition: all 200ms ease;
+  transition: background-color 200ms ease, transform 200ms ease;
   color: white;
   z-index: 10;
 }
@@ -1182,7 +1182,7 @@ section {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  transition: all 200ms ease;
+  transition: background-color 200ms ease, transform 200ms ease;
   color: white;
 }
 
@@ -1248,7 +1248,7 @@ section {
   overflow: hidden;
   border: 2px solid transparent;
   cursor: pointer;
-  transition: all 200ms ease;
+  transition: opacity 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
   padding: 0;
   background: none;
   opacity: 0.6;
@@ -1513,7 +1513,7 @@ code,
   font-size: 0.8125rem;
   font-weight: 500;
   color: var(--text-secondary);
-  transition: all 150ms ease;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
 }
 
 .language-button:hover {
@@ -1648,7 +1648,7 @@ code,
   background: var(--surface);
   color: var(--text-primary);
   font-size: 0.875rem;
-  transition: all 150ms ease;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
 }
 
 /* The form lives in the footer, on the cloth: a cream halo, not a vermilion one. */
@@ -1671,7 +1671,7 @@ code,
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 150ms ease;
+  transition: background-color 150ms ease, opacity 150ms ease, transform 150ms ease;
   white-space: nowrap;
 }
 
@@ -3366,7 +3366,7 @@ code,
   background: var(--surface);
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all 150ms ease;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
 }
 
 .agentlab-tab:hover {
@@ -3463,7 +3463,7 @@ code,
   background: var(--surface);
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all 150ms ease;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
 }
 
 .agentlab-chip:hover:not(:disabled) {
