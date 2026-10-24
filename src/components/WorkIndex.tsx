@@ -3,6 +3,7 @@ import { aiProjectSummaries } from "@/data/ai-projects";
 import { agents } from "@/data/agents";
 import { projects } from "@/data/projects";
 import ProofMark from "@/components/brand/ProofMark";
+import Reveal from "@/components/Reveal";
 
 /**
  * The shipped-work index.
@@ -117,7 +118,7 @@ export default function WorkIndex() {
     return (
         <section id="work" className="widx">
             <div className="container">
-                <div className="widx-top">
+                <Reveal className="widx-top" move="rise">
                     <header className="widx-head">
                         <h2 className="widx-h2">All of it is public.</h2>
                         <p className="widx-sub">
@@ -127,17 +128,17 @@ export default function WorkIndex() {
                         </p>
                     </header>
                     <ProofMark products={PROOF} />
-                </div>
+                </Reveal>
 
                 <div className="widx-group">
                     <h3 className="widx-group-title">
                         Products <span aria-hidden="true">/ {projects.length}</span>
                     </h3>
-                    <ol className="widx-list">
+                    <Reveal as="ol" className="widx-list" move="rows" items=".widx-row">
                         {PRODUCT_ROWS.map((row, i) => (
                             <IndexRow key={row.id} row={row} n={i + 1} />
                         ))}
-                    </ol>
+                    </Reveal>
                     <Link href={`/projects`} className="widx-more">
                         Every project, in full <span aria-hidden="true">→</span>
                     </Link>
@@ -147,11 +148,11 @@ export default function WorkIndex() {
                     <h3 className="widx-group-title">
                         Autonomous agents <span aria-hidden="true">/ {agents.length}</span>
                     </h3>
-                    <ol className="widx-list">
+                    <Reveal as="ol" className="widx-list" move="rows" items=".widx-row">
                         {AGENT_ROWS.map((row, i) => (
                             <IndexRow key={row.id} row={row} n={i + 1} />
                         ))}
-                    </ol>
+                    </Reveal>
                     <Link href={`/agents`} className="widx-more">
                         Run one in the browser <span aria-hidden="true">→</span>
                     </Link>

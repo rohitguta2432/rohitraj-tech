@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 
 /**
  * The closing ask.
@@ -11,7 +12,7 @@ import Link from "next/link";
 export default function ClosingCta() {
     return (
         <section className="closing" id="start">
-            <div className="container closing-inner">
+            <Reveal className="container closing-inner" move="rise">
                 <h2 className="closing-h2">
                     Still reading? Then you have a build in mind.
                 </h2>
@@ -34,7 +35,7 @@ export default function ClosingCta() {
                     You own the code, the IP and the repo from week one · First production
                     commit inside 5 days · Daily Slack or WhatsApp access
                 </p>
-            </div>
+            </Reveal>
         </section>
     );
 }

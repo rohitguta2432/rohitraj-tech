@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { HomeDictionary } from "@/lib/i18n";
+import Reveal from "@/components/Reveal";
 
 interface HireBlockProps {
     dict: HomeDictionary;
@@ -41,7 +42,7 @@ export default function HireBlock({ dict }: HireBlockProps) {
     return (
         <section className="terms" aria-labelledby="hire-heading" id="founding-engineer-for-hire">
             <div className="container terms-grid">
-                <article className="terms-sheet">
+                <Reveal as="article" className="terms-sheet" move="lay">
                     <div className="terms-band" aria-hidden="true" />
                     <div className="terms-meta">
                         <span>Terms of engagement</span>
@@ -101,9 +102,9 @@ export default function HireBlock({ dict }: HireBlockProps) {
                             </text>
                         </g>
                     </svg>
-                </article>
+                </Reveal>
 
-                <div className="terms-side">
+                <Reveal className="terms-side" move="deal" items=".terms-ticket, .terms-sign">
                     <p className="terms-label">Schedule A · Pick an engagement</p>
                     <nav className="terms-tickets" aria-label="Choose an AI engineering engagement">
                         {ENGAGEMENTS.map((option, i) => (
@@ -132,7 +133,7 @@ export default function HireBlock({ dict }: HireBlockProps) {
                             →
                         </span>
                     </Link>
-                </div>
+                </Reveal>
             </div>
         </section>
     );

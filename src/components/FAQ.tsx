@@ -1,4 +1,5 @@
 import type { HomeDictionary } from "@/lib/i18n";
+import Reveal from "@/components/Reveal";
 
 interface FAQProps {
     dict: HomeDictionary;
@@ -24,14 +25,14 @@ export default function FAQ({ dict }: FAQProps) {
             className="faq-section"
         >
             <div className="container">
-                <div className="faq-header">
+                <Reveal className="faq-header" move="rise">
                     <span className="faq-eyebrow">{faq.eyebrow}</span>
                     <h2 id="faq-heading" className="faq-heading">
                         {faq.heading}
                     </h2>
-                </div>
+                </Reveal>
 
-                <div className="faq-list">
+                <Reveal className="faq-list" move="rows" items=".faq-item">
                     {faq.items.map((item) => (
                         <details key={item.q} className="faq-item">
                             <summary className="faq-question">
@@ -45,7 +46,7 @@ export default function FAQ({ dict }: FAQProps) {
                             </div>
                         </details>
                     ))}
-                </div>
+                </Reveal>
             </div>
         </section>
     );

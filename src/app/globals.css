@@ -5135,11 +5135,12 @@ code,
   }
 }
 
-/* Staggered entrance. The default state is fully visible — the animation only
-   plays forward from a translated start, so a headless renderer or a background
-   tab that never fires it still shows the content. */
+/* Staggered entrance on the notes index. The default state is fully visible —
+   the animation only plays forward from a translated start, so a headless
+   renderer or a background tab that never fires it still shows the content.
+   The home page's rows enter on scroll instead (components/Reveal.tsx). */
 @media (prefers-reduced-motion: no-preference) {
-  .widx-row {
+  .notes-index .widx-row {
     animation: widx-in 460ms cubic-bezier(0.22, 1, 0.36, 1) both;
     animation-delay: calc(var(--row-i, 0) * 40ms);
   }
@@ -6582,5 +6583,14 @@ body:not(:has(> main)) .edge-stickers {
 
   .flaps-readout {
     font-size: 1rem;
+  }
+}
+
+/* Reveal (components/Reveal.tsx) parks below-the-fold blocks in their start
+   pose until they scroll in. Paper has no scroll, so print them as laid out. */
+@media print {
+  [data-reveal-wait] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

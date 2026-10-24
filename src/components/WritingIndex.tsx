@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { blogPosts } from "@/data/blog-posts";
 import { IndexRow, type Row } from "@/components/WorkIndex";
+import Reveal from "@/components/Reveal";
 
 /**
  * The buyer-intent writing index.
@@ -80,24 +81,24 @@ export default function WritingIndex() {
     return (
         <section id="writing" className="widx">
             <div className="container">
-                <header className="widx-head">
+                <Reveal as="header" className="widx-head" move="rise">
                     <h2 className="widx-h2">The arguments, written down.</h2>
                     <p className="widx-sub">
                         {blogPosts.length} engineering notes. These are the ones worth reading
                         before you decide whether to buy a builder tool or hire a person — each one
                         costed, with the tradeoff stated plainly rather than sold.
                     </p>
-                </header>
+                </Reveal>
 
                 <div className="widx-group">
                     <h3 className="widx-group-title">
                         Build vs hire <span aria-hidden="true">/ {POST_ROWS.length}</span>
                     </h3>
-                    <ol className="widx-list">
+                    <Reveal as="ol" className="widx-list" move="rows" items=".widx-row">
                         {POST_ROWS.map((row, i) => (
                             <IndexRow key={row.id} row={row} n={i + 1} />
                         ))}
-                    </ol>
+                    </Reveal>
                     <Link href={`/notes`} className="widx-more">
                         Every note, in full <span aria-hidden="true">→</span>
                     </Link>

@@ -16,6 +16,7 @@
     "@aws-sdk/client-dynamodb": "^3.1116.0",
     "@struktoai/mirage-node": "^0.0.1",
     "@supabase/supabase-js": "^2.93.3",
+    "motion": "^12.43.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",

@@ -1,4 +1,5 @@
 import type { HomeDictionary } from "@/lib/i18n";
+import Reveal from "@/components/Reveal";
 
 interface ProcessTimelineProps {
     dict: HomeDictionary;
@@ -28,15 +29,15 @@ export default function ProcessTimeline({ dict }: ProcessTimelineProps) {
             className="process-section"
         >
             <div className="container">
-                <div className="process-header">
+                <Reveal className="process-header" move="rise">
                     <span className="process-eyebrow">{process.eyebrow}</span>
                     <h2 id="process-heading" className="process-heading">
                         {process.heading}
                     </h2>
                     <p className="process-subtitle">{process.subtitle}</p>
-                </div>
+                </Reveal>
 
-                <ol className="process-timeline">
+                <Reveal as="ol" className="process-timeline" move="sequence" items=".process-week">
                     {process.weeks.map((week, i) => (
                         <li key={week.label} className="process-week">
                             <div className="process-week-marker">
@@ -53,7 +54,7 @@ export default function ProcessTimeline({ dict }: ProcessTimelineProps) {
                             </div>
                         </li>
                     ))}
-                </ol>
+                </Reveal>
             </div>
         </section>
     );
