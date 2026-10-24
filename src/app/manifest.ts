@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'Rohit Raj — Forward Deployed Engineer',
+        name: 'Rohit Raj · Forward Deployed Engineer',
         short_name: 'Rohit Raj',
         description:
-            'AI consultant · forward deployed engineer — embeds with your team and ships agents, MCP integrations, and LLM features to production, on any stack.',
+            'AI consultant · forward deployed engineer who embeds with your team and ships agents, MCP integrations, and LLM features to production, on any stack.',
         start_url: '/',
         display: 'standalone',
         // The cloth the site is bound in (--cloth), so the splash screen and the

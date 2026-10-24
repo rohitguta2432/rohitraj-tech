@@ -102,7 +102,7 @@ export default function Footer({ dict }: FooterProps) {
                         <p className="footer-label text-sm uppercase tracking-widest mb-3">Services</p>
                         <div className="footer-links">
                             <a href={`/hire`} className="footer-link">
-                                Hire Me — AI Consultant · Forward Deployed Engineer
+                                Hire Me: AI Consultant · Forward Deployed Engineer
                             </a>
                             <a href={`/services/forward-deployed-engineer`} className="footer-link">
                                 Forward Deployed Engineer (AI)
