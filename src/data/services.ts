@@ -626,6 +626,8 @@ export const services: Service[] = [
  "Quality: a held-out set of real examples, a baseline and an agreed acceptance threshold; keep failures visible alongside successes",
  "Safety: permission checks, audit logs and tests showing that disallowed actions fail safely",
  "Operations: rehearse an upstream outage or failed tool call in staging; show how work reaches a human or the existing workflow, and how to disable the integration",
+ "Limited rollout: agree the first users, allowed actions, review period and stop criteria before enabling the feature. Your release owner reviews incorrect actions, operator corrections, latency and cost before expanding access",
+ "Recovery: disabling the agent stops new work but does not undo completed actions. Keep a record of affected items and outcomes; rehearse a partial failure in staging and agree which corrections need system-owner approval or manual handling. Do not overwrite later human changes or resend messages as a rollback",
  "Release decision: your named release owner reviews the evaluation results, latency and cost against the agreed limits, plus unresolved risks, before authorizing production access",
  "Handover: source code, deployment instructions, evaluation results and a runbook; name the receiving engineer, alert destination, support hours and escalation contact before rollout",
  ],
@@ -719,7 +721,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-23",
+ updated: "2026-10-24",
  related: [
  {
  href: "/services/fractional-ai-engineer",
@@ -911,6 +913,7 @@ export const services: Service[] = [
  "We agree acceptance criteria before building: the examples the system must handle, which actions it may take, and the limits on response time and operating cost. Targets depend on your task and baseline; a demonstration is not a measured production result.",
  "For an internal-document search feature, the evaluation separates finding the right evidence from writing a supported answer. A correct-looking answer can still cite the wrong source. We review these checks separately so the next fix addresses retrieval, answer generation or access control as appropriate.",
  "Retrieved content can contain instructions aimed at the agent. A relevant search result is evidence to assess, not permission to change the task or use another tool. We include these attempts in the release review; passing the recorded cases does not establish immunity to prompt injection.",
+ "After launch, review task outcomes as well as service uptime. Agree a privacy-approved sample of real questions for a named reviewer to check for supported answers, missed evidence, unnecessary refusals and human corrections. Record the review schedule, escalation thresholds and fallback owner in the handover. Turn approved failure examples into regression cases while keeping a separate acceptance set; a successful API response alone does not establish answer quality.",
  ],
  bullets: [
  "Design and baseline: document the data flow and model choice, then compare the staging feature with your current search or manual process on the same held-out questions",
@@ -993,7 +996,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-23",
+ updated: "2026-10-24",
  related: [
  {
  href: "/notes/freelance-ai-engineer-project-scope-2026",
