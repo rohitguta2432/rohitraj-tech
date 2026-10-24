@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { repositories, contributions, projectNotes, filterCategories } from "@/data/github";
 import { blogSummaries } from "@/data/blog-summaries.generated";
+import { blogTopics } from "@/data/blog-topics";
 import type { CommonDictionary, PagesDictionary } from "@/lib/i18n";
 
 type FilterType = 'all' | 'open-source' | 'ai-systems' | 'backend-infrastructure' | 'experiments';
@@ -298,12 +299,33 @@ export default function NotesPageClient({ commonDict, pagesDict }: NotesPageClie
                 {/* Header */}
                 <header style={{ marginBottom: '3rem' }}>
                     <h1 style={{ fontSize: '2rem', fontWeight: 600, marginBottom: '0.5rem' }}>
-                        {pagesDict.notes.title}
+                        AI engineering notes & guides
                     </h1>
                     <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.6 }}>
-                        {pagesDict.notes.description}
+                        Forward deployed engineering, AI consulting and RAG — with practical examples, project decisions and implementation notes.
                     </p>
                 </header>
+
+                <section aria-labelledby="topic-heading" style={{ marginBottom: '3rem' }}>
+                    <h2 id="topic-heading" style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>Explore AI delivery by topic</h2>
+                    <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Practical guides for building AI systems and choosing the right engineering support.</p>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.25rem' }}>
+                        {blogTopics.map((topic) => (
+                            <section key={topic.id} id={topic.id} style={{ border: '1px solid var(--border)', background: 'var(--card-bg)', padding: '1.5rem', scrollMarginTop: '6rem' }}>
+                                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{topic.name}</h3>
+                                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>{topic.description}</p>
+                                <ul style={{ paddingLeft: '1.25rem', lineHeight: 1.6, margin: '1rem 0' }}>
+                                    {topic.articles.map((slug) => {
+                                        const post = blogSummaries.find((item) => item.slug === slug);
+                                        return post ? <li key={slug} style={{ marginBottom: '0.6rem' }}><Link href={`/notes/${slug}`}>{post.title}</Link></li> : null;
+                                    })}
+                                </ul>
+                                <p style={{ fontSize: '0.9rem', marginBottom: '0.75rem' }}><Link href={topic.project.href}>{topic.project.label} →</Link></p>
+                                {topic.services.map((service) => <p key={service.href} style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}><Link href={service.href} style={{ color: 'var(--accent)' }}>{service.label} →</Link></p>)}
+                            </section>
+                        ))}
+                    </div>
+                </section>
 
                 {/* Blog Articles */}
                 {blogSummaries.length > 0 && (
@@ -315,7 +337,7 @@ export default function NotesPageClient({ commonDict, pagesDict }: NotesPageClie
                             color: 'var(--text-muted)',
                             marginBottom: '1.5rem'
                         }}>
-                            Blog Articles
+                            All articles
                         </h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                             {blogSummaries.map((post) => (

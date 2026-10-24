@@ -1,54 +1,19 @@
 ---
-description: How to deploy rohitraj.tech to Vercel
+description: Validate and deploy rohitraj.tech through its AWS Amplify main branch
 ---
 
-# Deploying to Vercel
+# Production deployment
 
-## Production Deployment
+Use the current clean checkout of `rohitguta2432/rohitraj-tech`, Node 22 and the lockfile. Preserve unrelated work. Review the intended diff, run types, scoped lint, relevant tests and `npm run build` before committing explicit paths.
 
-// turbo
+Production configuration (verified 24 October 2026): AWS Amplify app `d222exnwyksjmg`, branch `main`, region `ap-south-1`, AWS CLI profile `mine`, automatic build enabled. Recheck before use:
+
 ```bash
-cd /home/t0266li/Documents/nexusai && npx vercel --prod
+aws amplify get-branch --app-id d222exnwyksjmg --branch-name main --region ap-south-1 --profile mine
 ```
 
-This deploys to: **https://rohitraj.tech**
+An authorized ordinary push to `origin/main` triggers deployment. Fetch/reconcile upstream first; never force push or stage unrelated files. There is no separate Vercel step.
 
-## Preview Deployment (for testing)
+Find the Amplify job whose commit ID matches the pushed commit. Verify BUILD, DEPLOY and VERIFY are successful. Check https://rohitraj.tech and changed bare paths for the actual new content, status 200, one H1, self-canonical, indexable body, correct links and sitemap entries. Historical locale URLs redirect; do not create new translated copies.
 
-// turbo
-```bash
-cd /home/t0266li/Documents/nexusai && npx vercel
-```
-
-Creates a preview URL without affecting production.
-
-## Pre-Deployment Checklist
-
-1. **Build locally first:**
-   ```bash
-   npm run build
-   ```
-
-2. **Commit changes:**
-   ```bash
-   git add -A && git commit -m "your message"
-   git push origin main
-   ```
-
-3. **Deploy:**
-   ```bash
-   npx vercel --prod
-   ```
-
-## Vercel Project Details
-
-- **Project:** nexusai
-- **Domain:** rohitraj.tech
-- **GitHub Repo:** rohitguta2432/backendscale
-
-## Verification After Deploy
-
-- Visit https://rohitraj.tech/en (English)
-- Visit https://rohitraj.tech/hi (Hindi)
-- Visit https://rohitraj.tech/fr (French)
-- Visit https://rohitraj.tech/de (German)
+A successful build or indexing submission does not confirm Google indexing. Use URL Inspection and the existing monitoring workflow, avoiding repeated unchanged requests.

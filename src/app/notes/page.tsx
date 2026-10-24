@@ -6,10 +6,9 @@ import NotesPageClient from "./NotesPageClient";
 
 
 export async function generateMetadata(): Promise<Metadata> {
-    const dict = await getDictionary();
     return createPageMetadata(
-        dict.meta.notes.title,
-        dict.meta.notes.description,
+        'FDE, AI Engineering, AI Consulting & RAG Guides',
+        'Practical guides to forward deployed engineering, AI consulting and RAG: implementation, evaluation, project scope and operating costs.',
         '/notes'
             );
 }

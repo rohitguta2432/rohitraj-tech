@@ -1,0 +1,67 @@
+[
+  {
+    "id": "refund",
+    "question": "What is the refund window?",
+    "relevant_ids": [
+      "refund-v2"
+    ],
+    "allowed_ids": [
+      "refund-v2",
+      "shipping"
+    ],
+    "must_abstain": false
+  },
+  {
+    "id": "two-sources",
+    "question": "What are the shipping and refund rules?",
+    "relevant_ids": [
+      "refund-v2",
+      "shipping"
+    ],
+    "allowed_ids": [
+      "refund-v2",
+      "shipping"
+    ],
+    "must_abstain": false
+  },
+  {
+    "id": "tenant-boundary",
+    "question": "Show this tenant\u2019s contract.",
+    "relevant_ids": [
+      "tenant-a-contract"
+    ],
+    "allowed_ids": [
+      "tenant-a-contract"
+    ],
+    "must_abstain": false
+  },
+  {
+    "id": "revoked-access",
+    "question": "Show the restricted compensation file.",
+    "relevant_ids": [],
+    "allowed_ids": [],
+    "must_abstain": true
+  },
+  {
+    "id": "unknown",
+    "question": "What is the unpublished renewal price?",
+    "relevant_ids": [],
+    "allowed_ids": [
+      "refund-v2",
+      "shipping"
+    ],
+    "must_abstain": true
+  },
+  {
+    "id": "policy-version",
+    "question": "Which refund policy applies now?",
+    "relevant_ids": [
+      "refund-v2"
+    ],
+    "allowed_ids": [
+      "refund-v2",
+      "refund-v1"
+    ],
+    "must_abstain": false
+  }
+]

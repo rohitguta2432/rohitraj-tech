@@ -1,0 +1,15 @@
+{
+  "monthly_queries": 10000,
+  "generation_calls_per_query": 1.2,
+  "input_tokens_per_call": 4000,
+  "output_tokens_per_call": 500,
+  "input_usd_per_million": 1,
+  "output_usd_per_million": 4,
+  "monthly_embedding_tokens": 5000000,
+  "embedding_usd_per_million": 0.1,
+  "monthly_fixed_usd": 150,
+  "monthly_maintenance_hours": 8,
+  "hourly_usd": 50,
+  "implementation_hours": 120,
+  "contingency_percent": 20
+}

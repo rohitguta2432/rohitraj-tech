@@ -1,0 +1,10 @@
+{
+  "monthly_generation_usd": 72.0,
+  "monthly_embeddings_usd": 0.5,
+  "monthly_fixed_usd": 150,
+  "monthly_maintenance_usd": 400,
+  "monthly_subtotal_usd": 622.5,
+  "monthly_with_contingency_usd": 747.0,
+  "implementation_before_contingency_usd": 6000,
+  "implementation_with_contingency_usd": 7200.0
+}

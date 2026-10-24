@@ -1,0 +1,112 @@
+{
+  "k": 3,
+  "cases": 6,
+  "answerable_cases": 4,
+  "mean_recall_at_k": 0.625,
+  "mrr_at_k": 0.625,
+  "access_failure_cases": 2,
+  "passed_cases": 1,
+  "passed": false,
+  "results": [
+    {
+      "id": "refund",
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "forbidden_ids": [],
+      "unretrieved_citation_ids": [],
+      "checks": {
+        "full_recall_at_k": true,
+        "access_boundary": true,
+        "citation_ids_retrieved": true,
+        "abstention_matches": true,
+        "answer_has_citation": true,
+        "abstention_has_no_citations": true
+      },
+      "passed": true
+    },
+    {
+      "id": "two-sources",
+      "recall_at_k": 0.5,
+      "reciprocal_rank_at_k": 1.0,
+      "forbidden_ids": [],
+      "unretrieved_citation_ids": [],
+      "checks": {
+        "full_recall_at_k": false,
+        "access_boundary": true,
+        "citation_ids_retrieved": true,
+        "abstention_matches": true,
+        "answer_has_citation": true,
+        "abstention_has_no_citations": true
+      },
+      "passed": false
+    },
+    {
+      "id": "tenant-boundary",
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 0.5,
+      "forbidden_ids": [
+        "tenant-b-contract"
+      ],
+      "unretrieved_citation_ids": [],
+      "checks": {
+        "full_recall_at_k": true,
+        "access_boundary": false,
+        "citation_ids_retrieved": true,
+        "abstention_matches": true,
+        "answer_has_citation": true,
+        "abstention_has_no_citations": true
+      },
+      "passed": false
+    },
+    {
+      "id": "revoked-access",
+      "recall_at_k": null,
+      "reciprocal_rank_at_k": null,
+      "forbidden_ids": [
+        "compensation"
+      ],
+      "unretrieved_citation_ids": [],
+      "checks": {
+        "full_recall_at_k": true,
+        "access_boundary": false,
+        "citation_ids_retrieved": true,
+        "abstention_matches": false,
+        "answer_has_citation": true,
+        "abstention_has_no_citations": true
+      },
+      "passed": false
+    },
+    {
+      "id": "unknown",
+      "recall_at_k": null,
+      "reciprocal_rank_at_k": null,
+      "forbidden_ids": [],
+      "unretrieved_citation_ids": [],
+      "checks": {
+        "full_recall_at_k": true,
+        "access_boundary": true,
+        "citation_ids_retrieved": true,
+        "abstention_matches": false,
+        "answer_has_citation": false,
+        "abstention_has_no_citations": true
+      },
+      "passed": false
+    },
+    {
+      "id": "policy-version",
+      "recall_at_k": 0.0,
+      "reciprocal_rank_at_k": 0.0,
+      "forbidden_ids": [],
+      "unretrieved_citation_ids": [],
+      "checks": {
+        "full_recall_at_k": false,
+        "access_boundary": true,
+        "citation_ids_retrieved": true,
+        "abstention_matches": true,
+        "answer_has_citation": true,
+        "abstention_has_no_citations": true
+      },
+      "passed": false
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "refund",
+    "retrieved_ids": [
+      "refund-v2"
+    ],
+    "citation_ids": [
+      "refund-v2"
+    ],
+    "abstained": false
+  },
+  {
+    "id": "two-sources",
+    "retrieved_ids": [
+      "refund-v2",
+      "shipping"
+    ],
+    "citation_ids": [
+      "refund-v2",
+      "shipping"
+    ],
+    "abstained": false
+  },
+  {
+    "id": "tenant-boundary",
+    "retrieved_ids": [
+      "tenant-a-contract"
+    ],
+    "citation_ids": [
+      "tenant-a-contract"
+    ],
+    "abstained": false
+  },
+  {
+    "id": "revoked-access",
+    "retrieved_ids": [],
+    "citation_ids": [],
+    "abstained": true
+  },
+  {
+    "id": "unknown",
+    "retrieved_ids": [],
+    "citation_ids": [],
+    "abstained": true
+  },
+  {
+    "id": "policy-version",
+    "retrieved_ids": [
+      "refund-v2"
+    ],
+    "citation_ids": [
+      "refund-v2"
+    ],
+    "abstained": false
+  }
+]

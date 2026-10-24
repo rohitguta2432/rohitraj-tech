@@ -2,7 +2,7 @@ import type { BlogPost } from '@/types/blog';
 
 export const whatDoesAForwardDeployedEngineerDo2026: BlogPost = {
   slug: 'what-does-a-forward-deployed-engineer-do-2026',
-  updated: "2026-10-17",
+  updated: "2026-10-24",
   seoTitle: "Forward Deployed Engineer: Role, Skills and Hiring",
   seoDescription: "What is a forward deployed engineer? Understand the responsibilities, delivery work and skills, and when to hire an FDE or a freelance AI engineer.",
   title: 'Forward Deployed Engineer: What the Role Involves and When to Hire One',
@@ -31,6 +31,12 @@ export const whatDoesAForwardDeployedEngineerDo2026: BlogPost = {
       content: `A **forward deployed engineer (FDE)** is a customer-facing software engineer who turns a specific customer's problem into working software: understanding the workflow, integrating data and systems, deploying the solution, and checking whether it works for users. Responsibilities vary by company; the defining feature is close involvement in the customer's delivery outcome. If you need that embedded ownership, [hire a forward deployed engineer](/services/forward-deployed-engineer). If you need hands-on AI delivery for an existing product backlog, compare the [freelance AI engineer engagement](/services/fractional-ai-engineer).`,
     },
     {
+      heading: 'What evidence should an FDE hand over?',
+      content: `Ask for a small delivery pack that another engineer can run: the agreed workflow and exclusions, source code, deployment instructions, evaluation cases, known limitations and a named operational owner. For an AI retrieval feature, include tenant-boundary and missing-evidence tests alongside successful examples.
+
+Use the [downloadable AI delivery brief](/examples/ai-delivery-brief.md) to record acceptance criteria before work begins. The [RAG evaluation guide](/notes/rag-evaluation-harness-retrieval-permissions) shows an executable example, while the [RAG budget worksheet](/notes/rag-implementation-cost-worked-budget) separates implementation from maintenance. These artifacts help a buyer evaluate delivery evidence instead of relying on a role title.`,
+    },
+    {
       heading: 'What is a forward deployed engineer?',
       content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
@@ -52,13 +58,13 @@ The title is strongly associated with Palantir. Its [description of software eng
 
 **3. Building the integration layer.** This is most of the engineering. Connecting the product to the customer's CRM, ticketing system, data warehouse, identity provider. Writing the data pipelines that clean fifteen years of inconsistent records into something a model can use. In AI deployments today, this frequently means building [MCP servers](/services/mcp-integration-consultant) so agents can safely call internal systems.
 
-**4. Deploying into the customer's environment.** Their cloud account, their VPC, their security review, their change-management process. An FDE knows how to get software through an enterprise's front door without a six-month procurement cycle.
+**4. Deploying into the customer's environment.** Their cloud account, their VPC, their security review, their change-management process. The FDE works with the customer’s security and platform owners to agree on access, review requirements and a release path.
 
-**5. Owning production.** When the system misbehaves at 2 AM, the FDE is the last line of defence — and, more importantly, the person who then fixes the root cause rather than restarting the service. For AI systems this includes evaluation: measuring whether the agent's outputs are still correct after the customer's data shifted.
+**5. Owning production.** Production ownership needs an explicit agreement: support hours, escalation, rollback authority and the receiving team. The FDE helps diagnose failures and improve the system within that agreed responsibility. For AI systems this includes evaluation: measuring whether the agent's outputs are still correct after the customer's data shifted.
 
 **6. Feeding learnings back to product.** What broke at this customer is what will break at the next ten. A good FDE turns bespoke fixes into product improvements, which is why the role sits between customer and product rather than fully inside either.
 
-A concrete example from my own work: an India-based fintech-education company needed content and product engineering to run without a full-time team. Embedding as an FDE meant building a production platform on their infrastructure plus an autonomous daily pipeline — an agent that researches, writes, typechecks, and deploys a new article every day — and then owning it in production so it kept publishing while product features shipped alongside. That is FDE work: not a recommendation, a running system in their account.`,
+A useful way to assess delivery is to ask for an inspectable artifact. The [StellarMIND project](/projects/stellarmind) describes a chat-to-SQL system with schema retrieval and MCP integration. Separately, the [RAG evaluation harness](/notes/rag-evaluation-harness-retrieval-permissions) publishes synthetic cases, executable checks and failure reports. These are public project and teaching materials, not evidence of a particular client’s results. They make the implementation and evaluation approach easier to review.`,
     },
     {
       heading: 'Forward deployed engineer vs software engineer vs solutions engineer vs consultant',
