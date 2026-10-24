@@ -104,13 +104,8 @@ export interface HomeDictionary {
         cta: string;
     };
     film?: {
-        eyebrow: string;
-        heading: string;
-        intro: string;
-        meta: string;
-        canvasLabel: string;
-        posterAlt: string;
-        fallback: string;
+        play: string;
+        pause: string;
     };
 }
 

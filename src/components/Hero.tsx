@@ -1,4 +1,5 @@
 import ContactActions from "@/components/ContactActions";
+import { HeroFilm, HeroFilmControls } from "@/components/HeroFilm";
 import Link from "next/link";
 import type { HomeDictionary } from "@/lib/i18n";
 import { projects } from "@/data/projects";
@@ -8,13 +9,20 @@ interface HeroProps {
     dict: HomeDictionary;
 }
 
+const FILM_FALLBACK: NonNullable<HomeDictionary["film"]> = {
+    play: "Play the background film",
+    pause: "Pause the background film",
+};
+
 /**
- * Hero — the "poster" direction, picked from four on a design canvas.
+ * Hero — the "poster" direction, now set over a live film.
  *
- * One vermilion field, one enormous condensed headline, one button. The headline
+ * One enormous condensed headline over Megacity Awakening, a 15-second WebGL film of a
+ * rainy South Asian street rebuilding itself into an AI-connected city. The headline
  * answers the objection that actually blocks hiring a solo engineer ("can one person
  * really do all of it?"); the deck and the counters answer the second one ("can I
- * check any of this?") by pointing at repos rather than asking to be believed.
+ * check any of this?") by pointing at repos rather than asking to be believed. The
+ * film is the proof of craft running underneath, and the copy reads the same without it.
  *
  * Counters are derived from the project and agent data so a hand-typed number can
  * never drift out of agreement with the index below — which is exactly what had
@@ -22,6 +30,7 @@ interface HeroProps {
  */
 export default function Hero({ dict }: HeroProps) {
     const documented = projects.length + agents.length;
+    const film = dict.film ?? FILM_FALLBACK;
 
     const counters = [
         { value: String(projects.length), label: "Products still running" },
@@ -31,10 +40,10 @@ export default function Hero({ dict }: HeroProps) {
     ];
 
     return (
-        <section className="poster">
-            <div className="poster-orb" aria-hidden="true" />
-
+        <HeroFilm className="poster">
             <div className="container poster-inner">
+                <HeroFilmControls playLabel={film.play} pauseLabel={film.pause} />
+
                 <div className="poster-eyebrow">
                     <span>Rohit Raj</span>
                     <span>AI Consultant · Forward Deployed Engineer</span>
@@ -67,6 +76,6 @@ export default function Hero({ dict }: HeroProps) {
                     ))}
                 </dl>
             </div>
-        </section>
+        </HeroFilm>
     );
 }

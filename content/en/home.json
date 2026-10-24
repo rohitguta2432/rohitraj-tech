@@ -211,12 +211,7 @@
         ]
     },
     "film": {
-        "eyebrow": "Motion lab",
-        "heading": "A city, rendered live in your browser.",
-        "intro": "Megacity Awakening is a 15-second film your device draws in real time with WebGL, so there is no video file to download. Every raindrop, rickshaw and tower is generated in code. One drone shot follows a rainy South Asian street at night as it rebuilds itself into an AI-connected city.",
-        "meta": "Three.js and hand-written GLSL shaders, built solo",
-        "canvasLabel": "Animation: a drone shot down a rainy, aging South Asian street at night as it transforms into a glowing, AI-connected city",
-        "posterAlt": "Rainy night street in an aging South Asian city, with sodium streetlights, buses and auto-rickshaws",
-        "fallback": "This browser didn't start WebGL, so this is a still from the film."
+        "play": "Play the background film",
+        "pause": "Pause the background film"
     }
 }

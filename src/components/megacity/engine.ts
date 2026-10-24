@@ -6,7 +6,7 @@
  * of the timeline position `t` — nothing accumulates between frames except the
  * clock — which is what makes scrubbing, looping and frame-exact capture work.
  *
- * Only MegacityFilm loads this module, through a dynamic import, so three.js never
+ * Only HeroFilm loads this module, through a dynamic import, so three.js never
  * lands in the landing page's first bundle.
  */
 import * as THREE from "three";
@@ -20,6 +20,10 @@ import { FILM_DURATION } from "./timeline";
 export interface FilmOptions {
     /** Fewer buildings, cars and particles, lower pixel ratio, no MSAA. */
     lite: boolean;
+    /** Tone-mapping exposure; 1.2 is the film's own grade. */
+    exposure?: number;
+    /** Brightness left in the corners by the vignette, 0–1; 0.42 is the film's own grade. */
+    vignette?: number;
     onFrame?: (t: number) => void;
     onPlayState?: (playing: boolean) => void;
 }
@@ -605,7 +609,7 @@ const FINISH_SHADER = {
     vertexShader: /* glsl */ `varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
     fragmentShader: /* glsl */ `
     uniform sampler2D tDiffuse; uniform vec2 uRes; uniform float uTime; uniform float uGrain; uniform float uFade; uniform float uGrade;
-    uniform vec3 uFlare; uniform vec3 uFlareCol;
+    uniform vec3 uFlare; uniform vec3 uFlareCol; uniform float uVig;
     varying vec2 vUv;
     float h2(vec2 p) { return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
     void main() {
@@ -614,7 +618,7 @@ const FINISH_SHADER = {
       vec3 c = vec3(texture2D(tDiffuse, vUv + off).r, texture2D(tDiffuse, vUv).g, texture2D(tDiffuse, vUv - off).b);
       c = mix(c * vec3(1.05, 0.98, 0.88) + vec3(0.010, 0.004, 0.0), c * vec3(0.95, 1.0, 1.06) + vec3(0.0, 0.002, 0.008), uGrade);
       float vig = 1.0 - smoothstep(0.2, 1.0, length(dc * vec2(1.0, 0.9)) * 1.25);
-      c *= mix(0.42, 1.0, vig);
+      c *= mix(uVig, 1.0, vig);
       float asp = uRes.x / uRes.y;
       float dy = vUv.y - uFlare.y; float dx = (vUv.x - uFlare.x) * asp;
       c += uFlareCol * (exp(-dy * dy * 14000.0) * exp(-abs(dx) * 1.6) * 0.55 + exp(-(dx * dx + dy * dy) * 90.0) * 0.4) * uFlare.z;
@@ -832,7 +836,7 @@ function createScore() {
     };
 }
 
-export function createFilm(canvas: HTMLCanvasElement, opts: FilmOptions): Film {
+export async function createFilm(canvas: HTMLCanvasElement, opts: FilmOptions): Promise<Film> {
     const LITE = opts.lite;
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: "high-performance" });
     if (!renderer.capabilities.isWebGL2) {
@@ -840,7 +844,7 @@ export function createFilm(canvas: HTMLCanvasElement, opts: FilmOptions): Film {
         throw new Error("WebGL 2 is required");
     }
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.2;
+    renderer.toneMappingExposure = opts.exposure ?? 1.2;
     renderer.setClearColor(0x03050b, 1);
 
     function mulberry32(a: number) {
@@ -1680,6 +1684,7 @@ export function createFilm(canvas: HTMLCanvasElement, opts: FilmOptions): Film {
         uniforms: {
             tDiffuse: { value: null }, uRes: { value: new THREE.Vector2(1, 1) }, uTime: { value: 0 }, uGrain: { value: 0.03 },
             uFade: { value: 1 }, uGrade: { value: 0 }, uFlare: { value: new THREE.Vector3(0.5, 0.5, 0) }, uFlareCol: { value: new THREE.Vector3(1.0, 0.78, 0.45) },
+            uVig: { value: opts.vignette ?? 0.42 },
         },
         ...FINISH_SHADER,
     });
@@ -1705,7 +1710,7 @@ export function createFilm(canvas: HTMLCanvasElement, opts: FilmOptions): Film {
     const camPos = new THREE.Vector3(), camTgt = new THREE.Vector3(), bufSize = new THREE.Vector2(), flareP = new THREE.Vector3();
     const looping = true;
     let t = 0, playing = false, loops = 0, dirty = true, scrubbing = false;
-    let raf = 0, last = performance.now(), sampled = 0, slow = 0;
+    let raf = 0, last = performance.now(), sampled = 0, slow = 0, compiled = false;
 
     function renderFrame() {
         U.uTime.value = t;
@@ -1763,7 +1768,7 @@ export function createFilm(canvas: HTMLCanvasElement, opts: FilmOptions): Film {
         if (playing) kick();
     }
     function kick() {
-        if (!raf) raf = requestAnimationFrame(frame);
+        if (compiled && !raf) raf = requestAnimationFrame(frame);
     }
     function setPlaying(p: boolean) {
         if (playing === p) return;
@@ -1791,6 +1796,15 @@ export function createFilm(canvas: HTMLCanvasElement, opts: FilmOptions): Film {
     };
     document.addEventListener("visibilitychange", onVisibility);
 
+    // Compile every program up front (in parallel where KHR_parallel_shader_compile
+    // exists) so the first frame — and the seam at 6 s — never stall the main thread.
+    seam.visible = true;
+    try {
+        await renderer.compileAsync(scene, camera);
+    } catch {
+        // Older drivers: programs compile on first use instead.
+    }
+    compiled = true;
     resize();
     renderFrame();
     dirty = false;

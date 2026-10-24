@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import MegacityFilm from "@/components/MegacityFilm";
 import HireBlock from "@/components/HireBlock";
 import WorkIndex from "@/components/WorkIndex";
 import WritingIndex from "@/components/WritingIndex";
@@ -37,7 +36,6 @@ export default async function Home() {
             <Header dict={dict.common} />
             <main id="main">
                 <Hero dict={dict.home} />
-                <MegacityFilm dict={dict.home} />
                 <HireBlock dict={dict.home} />
                 <WorkIndex />
                 <WritingIndex />
