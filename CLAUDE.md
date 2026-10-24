@@ -58,4 +58,6 @@ Configured in `next.config.ts`: HSTS, X-Frame-Options DENY, CSP-adjacent headers
 
 Header > Hero > HireBlock > WorkIndex > WritingIndex > ProcessTimeline > ReliabilitySection > Testimonials > FAQ > ClosingCta > Footer — all in `src/components/`. Most receive dictionary props for i18n.
 
+`Testimonials` (also on `/hire` and every `/services/*` page) renders nothing while `src/data/testimonials.ts` is empty. Add only real client quotes published with the client's permission — never placeholder or invented ones.
+
 The Hero plays Megacity Awakening, a live WebGL film, behind its server-rendered copy. `HeroFilm` (client) wraps the hero, shows `public/images/megacity/poster.webp` first, and dynamically imports `src/components/megacity/engine.ts` (three.js, pinned to 0.160.0) only after page load — so three.js never enters the page's first bundle. Keep any new import of the engine dynamic; `timeline.ts` is the three-free module for shared timeline constants.
