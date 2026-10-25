@@ -55,9 +55,9 @@ Configured in `next.config.ts`: HSTS, X-Frame-Options DENY, CSP-adjacent headers
 
 ## Landing page sections (in render order)
 
-Header > Hero > HireBlock > WorkIndex > WritingIndex > ProcessTimeline > Testimonials > FAQ > ClosingCta > Footer — all in `src/components/`. Most receive dictionary props for i18n.
+Header > Hero > HireBlock > WorkIndex > WritingIndex > Testimonials > FAQ > ClosingCta > Footer — all in `src/components/`. Most receive dictionary props for i18n.
 
-Below the hero, each section enters on scroll through `src/components/Reveal.tsx` (Motion's WAAPI `animate` and `inView`), with a move that fits what it reveals: the terms card is laid down (`lay`), the engagement tickets are dealt in (`deal`), index rows tick in (`rows`), the process weeks arrive in order (`sequence`) and headings `rise`. The server HTML stays fully visible. After hydration only targets still below the fold are parked in their start pose, and each is handed back to its stylesheet once it lands. Reduced motion, no-JS, crawlers and print get the plain page. Don't give the same elements a second, CSS load-time entrance.
+Below the hero, each section enters on scroll through `src/components/Reveal.tsx` (Motion's WAAPI `animate` and `inView`), with a move that fits what it reveals: the terms card is laid down (`lay`), the engagement tickets are dealt in (`deal`), index rows tick in (`rows`) and headings `rise`. The server HTML stays fully visible. After hydration only targets still below the fold are parked in their start pose, and each is handed back to its stylesheet once it lands. Reduced motion, no-JS, crawlers and print get the plain page. Don't give the same elements a second, CSS load-time entrance.
 
 The ground is a vermilion cloth case (`--cloth`, `--cloth-weave` in `globals.css`): every page's `<main>` is one white ledger page bound into it, stitched along its long edges, with the header and footer printed on the cloth. Narrow pages size their page with `sheet-narrow` (project detail), `sheet-column` (services, hire) or `sheet-notes`; the home page uses `main.stage` with a `.sheet` between the film and the closing call, which sit on the cloth. Page titles share one poster rule (`.page-title`, `.headline` and friends) in the display face; text on the cloth uses `--on-brand` / `--on-cloth-muted`.
 

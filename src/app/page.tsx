@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import HireBlock from "@/components/HireBlock";
 import WorkIndex from "@/components/WorkIndex";
 import WritingIndex from "@/components/WritingIndex";
-import ProcessTimeline from "@/components/ProcessTimeline";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import ClosingCta from "@/components/ClosingCta";
@@ -41,7 +40,6 @@ export default async function Home() {
                     <HireBlock dict={dict.home} />
                     <WorkIndex />
                     <WritingIndex />
-                    <ProcessTimeline dict={dict.home} />
                     <Testimonials />
                     <FAQ dict={dict.home} />
                 </div>

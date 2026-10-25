@@ -25,8 +25,6 @@ const MOVES = {
     deal: { from: "translateX(48px) rotate(2.5deg)", to: "translateX(0px) rotate(0deg)", duration: 0.8, gap: 0.12 },
     // Index rows ticking in down the list.
     rows: { from: "translateY(18px)", to: "translateY(0px)", duration: 0.65, gap: 0.06 },
-    // Steps arriving in their order.
-    sequence: { from: "translateY(32px)", to: "translateY(0px)", duration: 0.85, gap: 0.18 },
     // Rubber stamps thunking down onto the page, one after another.
     stamp: { from: "scale(1.45) rotate(-9deg)", to: "scale(1) rotate(0deg)", duration: 0.5, gap: 0.16 },
 } as const;

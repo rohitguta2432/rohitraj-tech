@@ -1,47 +1,49 @@
 import Link from "next/link";
-import { blogPosts } from "@/data/blog-posts";
-import { IndexRow, type Row } from "@/components/WorkIndex";
+import { blogPosts, type BlogPost } from "@/data/blog-posts";
 import Reveal from "@/components/Reveal";
 
 /**
- * The buyer-intent writing index.
+ * The buyer-intent writing, set as a bout card.
  *
- * This section exists for one measurable reason. Search Console's URL
- * Inspection API reports `/en/notes` as "Discovered - currently not indexed,
- * last crawled: never", and the same for nearly every post behind it — while
- * `/en` is crawled regularly. Googlebot reaches the homepage and stops, so 141
- * posts sit two hops away behind a hub it has never fetched, and the sitemap
- * alone has not been enough to pull it deeper.
+ * This section exists for a measured reason. After the locale migration Google
+ * crawled the homepage and stopped: `/notes` and nearly every post behind it sat
+ * "Discovered - currently not indexed", two hops from the only page it fetched.
+ * The homepage carried 91 links and not one pointed at a post. These anchors are
+ * that path, and the homepage is still the strongest internal link on the site,
+ * so they stay: the comparison cluster a founder reads while deciding whether to
+ * buy a builder tool or hire a person, plus the forward deployed engineer
+ * explainer that heads the consulting cluster.
  *
- * The homepage carried 91 links and not one of them pointed at a post. These
- * rows are that missing path: real anchors, on the only page that is reliably
- * crawled, pointing at the posts that answer a buying question rather than a
- * debugging one.
+ * Curated, not sliced from the latest N: a recency slice would fill this with
+ * whatever the daily pipeline shipped that morning. Keep it short, since the
+ * signal to each page dilutes as the list grows.
  *
- * Curated deliberately, not sliced from the latest N. A recency slice would
- * fill this with whatever the daily pipeline shipped that morning; what belongs
- * here is the comparison cluster a founder reads while deciding whether to buy
- * a builder tool or hire a person. Keep it short — the value is a strong signal
- * to a few pages, and that dilutes as the list grows.
+ * It used to be a thirteen-row index. Now the seven "tool vs a hire" notes are a
+ * fight card in the poster face (seven challengers, one outlined VS), with the
+ * explainer and the money questions beside it: every link kept, about half the
+ * scroll.
  */
-const FEATURED_SLUGS = [
-    // Informational head term for the FDE consulting cluster. Sat behind
-    // `/notes` (itself "Discovered - currently not indexed") with no homepage
-    // anchor, so Googlebot had no one-hop path to it at all.
-    "what-does-a-forward-deployed-engineer-do-2026",
-    "founding-engineer-equity-percentage-2026",
-    "bolt-new-vs-hire-developer-2026",
-    "cursor-ai-vs-hire-developer-2026",
-    "v0-by-vercel-vs-hire-developer-2026",
-    "devin-ai-vs-hire-developer-2026",
-    "replit-agent-vs-hire-developer-2026",
-    "claude-code-vs-hire-developer-2026",
-    "founding-engineer-vs-lovable-when-to-hire-2026",
-    "founding-engineer-india-vs-toptal-arc-uplers-2026",
-    "india-vs-us-mvp-developer-cost-2026",
-    "what-15k-mvp-actually-includes-vs-50k-agency-quote",
-    "hire-freelance-developer-vs-agency-india",
-] as const;
+const BOUTS: { slug: string; tool: string; against?: string }[] = [
+    { slug: "bolt-new-vs-hire-developer-2026", tool: "Bolt.new" },
+    { slug: "cursor-ai-vs-hire-developer-2026", tool: "Cursor" },
+    { slug: "v0-by-vercel-vs-hire-developer-2026", tool: "v0" },
+    { slug: "devin-ai-vs-hire-developer-2026", tool: "Devin" },
+    { slug: "replit-agent-vs-hire-developer-2026", tool: "Replit Agent" },
+    { slug: "claude-code-vs-hire-developer-2026", tool: "Claude Code" },
+    { slug: "founding-engineer-vs-lovable-when-to-hire-2026", tool: "Lovable", against: "a founding engineer" },
+];
+
+// The head term of the forward deployed engineer cluster.
+const LEAD = "what-does-a-forward-deployed-engineer-do-2026";
+
+// Short, descriptive anchors, without the price figures some of the titles carry.
+const MONEY: { slug: string; label: string }[] = [
+    { slug: "founding-engineer-equity-percentage-2026", label: "Founding engineer equity: how much to negotiate" },
+    { slug: "india-vs-us-mvp-developer-cost-2026", label: "India vs US: what an MVP developer costs" },
+    { slug: "what-15k-mvp-actually-includes-vs-50k-agency-quote", label: "What a fixed-price MVP includes, vs an agency quote" },
+    { slug: "hire-freelance-developer-vs-agency-india", label: "Freelance developer vs agency, in India" },
+    { slug: "founding-engineer-india-vs-toptal-arc-uplers-2026", label: "Founding engineer in India: direct vs Toptal, Arc, Uplers" },
+];
 
 /** "2026-02-14" → "Feb 2026" */
 export function formatMonth(iso: string): string {
@@ -57,25 +59,19 @@ export function splitTitle(title: string): [string, string] {
     return [parts[0], parts.slice(1).join(" — ")];
 }
 
-const POST_ROWS: Row[] = FEATURED_SLUGS.map((slug) => {
-    const post = blogPosts.find((p) => p.slug === slug);
-    if (!post) return null;
-    const [name, descriptor] = splitTitle(post.title);
-    return {
-        id: post.slug,
-        name,
-        // Fall back to the excerpt's first clause when the title has no subtitle,
-        // so the middle column is never blank.
-        descriptor: descriptor || post.excerpt.split(/\.\s/)[0],
-        note: post.readingTime,
-        // The tag column is sized for short labels (WorkIndex puts "React 19"
-        // here). Post keywords are full long-tail phrases and would wrap into a
-        // paragraph, so this carries freshness instead — which is what actually
-        // matters on a dated comparison.
-        stack: [formatMonth(post.updated ?? post.date)],
-        href: `/notes/${post.slug}`,
-    };
-}).filter((r): r is Row => r !== null);
+const bySlug = new Map(blogPosts.map((p) => [p.slug, p]));
+// "12 min read" → "12 min"
+const minutes = (post: BlogPost) => post.readingTime.replace(/\s*read$/, "");
+
+const bouts = BOUTS.flatMap((b) => {
+    const post = bySlug.get(b.slug);
+    return post ? [{ ...b, post }] : [];
+});
+const lead = bySlug.get(LEAD);
+const money = MONEY.flatMap((m) => {
+    const post = bySlug.get(m.slug);
+    return post ? [{ ...m, post }] : [];
+});
 
 export default function WritingIndex() {
     return (
@@ -84,25 +80,68 @@ export default function WritingIndex() {
                 <Reveal as="header" className="widx-head" move="rise">
                     <h2 className="widx-h2">The arguments, written down.</h2>
                     <p className="widx-sub">
-                        {blogPosts.length} engineering notes. These are the ones worth reading
-                        before you decide whether to buy a builder tool or hire a person. Each one is
-                        costed, with the tradeoff stated plainly rather than sold.
+                        {blogPosts.length} engineering notes, each one costed and dated. If you are
+                        deciding between a builder tool and a person, start with these.
                     </p>
                 </Reveal>
 
-                <div className="widx-group">
-                    <h3 className="widx-group-title">
-                        Build vs hire <span aria-hidden="true">/ {POST_ROWS.length}</span>
-                    </h3>
-                    <Reveal as="ol" className="widx-list" move="rows" items=".widx-row">
-                        {POST_ROWS.map((row, i) => (
-                            <IndexRow key={row.id} row={row} n={i + 1} />
-                        ))}
+                <div className="args">
+                    <div className="args-bouts">
+                        <p className="args-label">
+                            <span>Builder tool vs a hire</span>
+                            <span aria-hidden="true">{bouts.length} bouts</span>
+                        </p>
+                        <span className="args-vs" aria-hidden="true">
+                            VS
+                        </span>
+                        <Reveal as="ol" className="args-list" move="rows" items=".args-bout">
+                            {bouts.map((b) => (
+                                <li key={b.slug} className="args-bout">
+                                    <Link href={`/notes/${b.slug}`}>
+                                        <span className="args-tool">{b.tool}</span>
+                                        <span className="args-meta">
+                                            vs {b.against ?? "hiring a developer"} · {minutes(b.post)}
+                                        </span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </Reveal>
+                    </div>
+
+                    <Reveal className="args-side" move="rise">
+                        {lead && (
+                            <Link href={`/notes/${lead.slug}`} className="args-lead">
+                                <span className="args-kicker">Start here · {minutes(lead)}</span>
+                                <span className="args-lead-title">{lead.title}</span>
+                                <span className="args-lead-text">{lead.excerpt.split(/(?<=\.)\s/)[0]}</span>
+                                <span className="args-go">
+                                    Read it <span aria-hidden="true">→</span>
+                                </span>
+                            </Link>
+                        )}
+
+                        <div className="args-money">
+                            <p className="args-label">
+                                <span>The money questions</span>
+                                <span aria-hidden="true">{money.length}</span>
+                            </p>
+                            <ol className="args-money-list">
+                                {money.map((m) => (
+                                    <li key={m.slug}>
+                                        <Link href={`/notes/${m.slug}`}>
+                                            <span>{m.label}</span>
+                                            <span className="args-meta">{minutes(m.post)}</span>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
                     </Reveal>
-                    <Link href={`/notes`} className="widx-more">
-                        Every note, in full <span aria-hidden="true">→</span>
-                    </Link>
                 </div>
+
+                <Link href={`/notes`} className="widx-more">
+                    Every note, in full <span aria-hidden="true">→</span>
+                </Link>
             </div>
         </section>
     );

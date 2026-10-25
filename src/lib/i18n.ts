@@ -73,12 +73,6 @@ export interface HomeDictionary {
         };
         readNotes: string;
     };
-    process?: {
-        eyebrow: string;
-        heading: string;
-        subtitle: string;
-        weeks: { label: string; title: string; items: string[] }[];
-    };
     faq?: {
         eyebrow: string;
         heading: string;
