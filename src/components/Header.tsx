@@ -29,7 +29,18 @@ export default function Header({ dict }: HeaderProps) {
     return (
         <header className="header">
             <div className="container header-inner">
-                <Link href={"/"} className="logo">
+                <Link
+                    href={"/"}
+                    className="logo"
+                    onClick={(e) => {
+                        setMobileMenuOpen(false);
+                        // The router keeps scroll on a same-URL link, so on the home page go back to the top.
+                        if (pathname === "/") {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0 });
+                        }
+                    }}
+                >
                     <DepartureLogo />
                     <span className="logo-text">
                         <span className="logo-name">Rohit Raj</span>
