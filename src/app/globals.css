@@ -5555,11 +5555,11 @@ code,
 .duck {
   position: absolute;
   left: 0;
-  bottom: 0;
-  width: 54px;
+  bottom: -1px;
+  width: 72px;
   pointer-events: auto;
   transform: translateX(0) scaleX(1);
-  filter: drop-shadow(0 2px 6px rgba(3, 5, 11, 0.55));
+  filter: drop-shadow(0 3px 8px rgba(3, 5, 11, 0.55));
 }
 
 .duck-svg {
@@ -5569,69 +5569,76 @@ code,
   overflow: visible;
 }
 
-.duck-shell { fill: var(--on-brand); }
-.duck-seam { fill: none; stroke: #ff6a3d; stroke-width: 2; stroke-linecap: round; }
-.duck-bolt { fill: #ff6a3d; }
-.duck-beak { fill: #ff6a3d; }
-.duck-lens { fill: #0b1020; stroke: #ff6a3d; stroke-width: 1.2; }
+/* Drawn after Pollen Robotics' Microduck, white-shell variant: a white shell, an
+   orange bill and feet, one camera eye, and the bare servos it walks on. */
+.duck-shell,
+.duck-panel { fill: #f3eee7; }
+.duck-orange { fill: #f4731c; }
+.duck-seam { fill: none; stroke: rgba(28, 30, 37, 0.22); stroke-width: 0.8; stroke-linecap: round; }
+.duck-servo { fill: #1c1e25; stroke: rgba(255, 244, 232, 0.55); stroke-width: 0.9; }
+/* A light rim under each black servo, so it reads against the night film. */
+.duck-rim { fill: none; stroke: rgba(255, 244, 232, 0.55); stroke-linecap: round; stroke-linejoin: round; }
+.duck-thigh-rim { stroke-width: 9.8; }
+.duck-shin-rim { stroke-width: 8; }
+.duck-neck-rim { stroke-width: 8.8; }
+.duck-limb,
+.duck-neck { fill: none; stroke: #1c1e25; stroke-linecap: round; stroke-linejoin: round; }
+.duck-thigh { stroke-width: 8; }
+.duck-shin { stroke-width: 6.2; }
+.duck-neck { stroke-width: 7; }
+.duck-joint { fill: #3a3e49; }
+.duck-screw { fill: #c8ccd4; }
+.duck-sole { fill: #2a2d36; }
+.duck-mouth { fill: #0d0f14; }
+.duck-eye-ring { fill: #ff9f1c; }
+.duck-lens { fill: #12141b; }
+.duck-iris { fill: none; stroke: #3d4352; stroke-width: 0.8; }
 .duck-glint { fill: #fff; }
-.duck-antenna { stroke: var(--on-brand); stroke-width: 1.5; stroke-linecap: round; }
-.duck-led { fill: #ff5a2e; }
-.duck-foot { fill: #ff6a3d; stroke: none; }
+.duck-ground { fill: rgba(3, 5, 11, 0.45); }
 
-.duck-leg path:first-child {
-  fill: none;
-  stroke: #d8cfc4;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
+/* The far leg, a shade darker, so the two legs read apart. */
+.duck-far .duck-panel { fill: #cfc6bb; }
+.duck-far .duck-orange { fill: #c95d17; }
 
-.duck-leg,
-.duck-bob,
-.duck-head {
+.duck-hop,
+.duck-head,
+.duck-bill {
   transform-box: view-box;
 }
 
-.duck-leg-back { transform-origin: 20px 40px; }
-.duck-leg-front { transform-origin: 25px 40px; }
-.duck-head { transform-origin: 28px 22px; }
+.duck-hop { transform-origin: 30px 79px; }
+.duck-head { transform-origin: 35px 24px; }
+.duck-bill { transform-origin: 32px 22px; }
 
-.duck[data-state="walk"] .duck-leg-front { animation: duck-step 0.46s ease-in-out infinite alternate; }
-.duck[data-state="walk"] .duck-leg-back { animation: duck-step 0.46s ease-in-out -0.46s infinite alternate-reverse; }
-.duck[data-state="walk"] .duck-bob { animation: duck-bob 0.23s ease-in-out infinite alternate; }
-.duck[data-state="look"] .duck-head { animation: duck-look 1.4s ease-in-out infinite; }
-.duck[data-state="walk"] .duck-led,
-.duck[data-state="look"] .duck-led { animation: poster-hud-blink 1.2s steps(2, jump-none) infinite; }
-.duck[data-hop] .duck-svg { animation: duck-hop 0.52s cubic-bezier(0.3, 0, 0.3, 1); }
-
-@keyframes duck-step {
-  from { transform: rotate(-24deg); }
-  to { transform: rotate(24deg); }
-}
-
-@keyframes duck-bob {
-  from { transform: translateY(0); }
-  to { transform: translateY(-1.6px) rotate(-2deg); }
-}
+.duck[data-state="look"] .duck-head { animation: duck-look 1.6s ease-in-out infinite; }
+.duck[data-hop] .duck-hop { animation: duck-hop 0.56s cubic-bezier(0.3, 0, 0.3, 1); }
+.duck[data-hop] .duck-bill { animation: duck-quack 0.56s ease-out; }
 
 @keyframes duck-look {
   0%, 100% { transform: rotate(0deg); }
-  30% { transform: rotate(-14deg); }
-  65% { transform: rotate(10deg); }
+  30% { transform: rotate(-12deg); }
+  65% { transform: rotate(9deg); }
 }
 
 @keyframes duck-hop {
   0%, 100% { transform: translateY(0); }
-  45% { transform: translateY(-16px) rotate(-6deg); }
+  45% { transform: translateY(-14px) rotate(-5deg); }
+}
+
+/* Its beak is its gripper: on a hover it opens twice, a quack. */
+@keyframes duck-quack {
+  0%, 100% { transform: rotate(0deg); }
+  20%, 60% { transform: rotate(16deg); }
+  40% { transform: rotate(3deg); }
 }
 
 @media (max-width: 720px) {
-  .duck { width: 42px; }
+  .duck { width: 52px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .duck[data-hop] .duck-svg { animation: none; }
+  .duck[data-hop] .duck-hop,
+  .duck[data-hop] .duck-bill { animation: none; }
 }
 
 .poster-counters {
