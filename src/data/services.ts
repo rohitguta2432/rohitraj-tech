@@ -692,9 +692,10 @@ export const services: Service[] = [
  "Database role limited to approved tables or views, with grants and read-only transactions reviewed by your database owner",
  "Schema retrieval limited to that scope; review query structure and permitted functions rather than trusting a SELECT or WITH prefix",
  "Query timeouts and result limits, plus staging tests for writes, restricted data and expensive queries",
- "Query log and a verified-answer eval set of real questions",
+ "Agree metric definitions, reporting timezone, currency and exclusions with your operations or finance owner; ask for clarification when a question leaves them unresolved",
+ "Record generated queries and compare result rows and totals against independently checked answers on approved data snapshots, including duplicate joins and reporting-period boundaries",
  ],
- doneMeans: "answers match the verified set, queries stay within the approved data scope, and recorded negative tests show denied writes and out-of-scope reads. Your database owner reviews the access configuration and remaining limitations before rollout.",
+ doneMeans: "the domain owner accepts the result checks against agreed metric definitions, and the database owner accepts the access checks, including denied writes and out-of-scope reads. Keep unresolved questions and failed cases visible before rollout; a query executing without an error is not business acceptance.",
  },
  {
  title: "MCP server for internal tools",
@@ -721,8 +722,13 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-24",
+ updated: "2026-10-25",
  related: [
+ {
+ href: "/notes/rag-for-sql",
+ label: "Chat-to-SQL result acceptance example",
+ description: "Run a synthetic join-error fixture and inspect schema context, business-result checks and database access boundaries.",
+ },
  {
  href: "/notes/rag-evaluation-harness-retrieval-permissions",
  label: "Runnable RAG acceptance example",
@@ -924,6 +930,7 @@ export const services: Service[] = [
  "Design and baseline: document the data flow and model choice, then compare the staging feature with your current search or manual process on the same held-out questions",
  "Retrieval checks: record the expected source for each answerable question and whether the permitted evidence was retrieved; include missing and outdated documents",
  "Answer checks: inspect whether each citation supports the answer and whether the system asks for clarification or declines when the available evidence is insufficient",
+ "Chat-to-SQL checks: agree the business meaning, reporting period and units before generating a query. Compare returned rows and totals with domain-owner-approved answers on a fixed data snapshot; include duplicate joins, empty results and ambiguous questions that need clarification. Successful SQL execution alone does not establish a correct answer",
  "Freshness checks: agree how quickly source changes must reach search, then update and remove approved test documents to verify the new content appears and removed content stops being retrieved within that window",
  "Sync failure handling: make the last successful sync and failed updates visible, test the agreed stale-data fallback, and name the receiving engineer who owns ingestion failures after handover",
  "Access checks: test the same question as users with different permissions, verifying that restricted content stays out of retrieved context, answers and citations",
@@ -1001,8 +1008,13 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-24",
+ updated: "2026-10-25",
  related: [
+ {
+ href: "/notes/rag-for-sql",
+ label: "Chat-to-SQL result acceptance example",
+ description: "Run a synthetic join-error fixture and inspect schema context, business-result checks and database access boundaries.",
+ },
  {
  href: "/notes/rag-evaluation-harness-retrieval-permissions",
  label: "RAG evaluation harness",

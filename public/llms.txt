@@ -174,7 +174,7 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 - [Why Your MVP Should Cost Under $10,000 — And How to Make It Happen](https://rohitraj.tech/notes/why-your-mvp-should-cost-under-10k)
 - [Microservices vs Monolith for Startups: Stop Overengineering](https://rohitraj.tech/notes/microservices-vs-monolith-startup)
 - [AWS Bedrock vs OpenAI — Which One to Pick for Your Startup (With Real Costs)](https://rohitraj.tech/notes/aws-bedrock-vs-openai)
-- [Using RAG for SQL Generation — Why Embeddings Beat Prompt Stuffing](https://rohitraj.tech/notes/rag-for-sql)
+- [RAG for SQL Generation: Schema Context and Acceptance Tests](https://rohitraj.tech/notes/rag-for-sql)
 - [Building an MCP Server with Spring Boot — A Practical Guide](https://rohitraj.tech/notes/spring-boot-mcp)
 - [Offline-First PWA Patterns — Service Workers, IndexedDB, and Background Sync](https://rohitraj.tech/notes/pwa-offline-sync)
 

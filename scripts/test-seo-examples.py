@@ -9,6 +9,38 @@ def module(name,path):
 rag=module('rag','public/examples/rag-evaluation/evaluate.py')
 cost=module('cost','public/examples/rag-cost/calculate.py')
 weekly=module('weekly','scripts/seo-weekly-report.py')
+sql=module('sql','public/examples/sql-acceptance/demo.py')
+
+class SqlAcceptanceTests(unittest.TestCase):
+ def setUp(self):
+  self.db=sql.connect_fixture()
+  self.addCleanup(self.db.close)
+ def total(self,query='order_grain'):
+  return self.db.execute(sql.QUERIES[query]).fetchone()[0]
+ def test_recorded_result_and_intentional_failures(self):
+  saved=json.loads((ROOT/'public/examples/sql-acceptance/result.json').read_text())
+  self.assertEqual(sql.run_demo(),saved)
+  self.assertEqual([self.total(name) for name in sql.QUERIES],[35000,15000,25000])
+ def test_another_line_item_changes_wrong_total_only(self):
+  self.db.execute('INSERT INTO order_items VALUES (9, 1)')
+  self.assertEqual(self.total(),25000)
+  self.assertEqual(self.total('duplicate_join'),45000)
+ def test_equal_amount_orders_are_not_duplicates(self):
+  self.db.execute("INSERT INTO orders VALUES (8, 10000, 'USD', 'paid', '2026-09-20T00:00:00Z')")
+  self.db.execute('INSERT INTO order_items VALUES (9, 8)')
+  self.assertEqual(self.total(),35000)
+  self.assertEqual(self.total('distinct_amount'),15000)
+ def test_period_status_and_currency_exclusions(self):
+  for order_id in (4,5,6,7):
+   with self.subTest(order_id=order_id):
+    self.db.execute('UPDATE orders SET total_cents = 999999 WHERE id = ?', (order_id,))
+    self.assertEqual(self.total(),25000)
+ def test_lower_boundary_included_and_empty_total_defined(self):
+  self.db.execute("UPDATE orders SET status = 'cancelled' WHERE id IN (2,3)")
+  self.assertEqual(self.total(),10000)
+  self.db.execute("UPDATE orders SET status = 'cancelled' WHERE id = 1")
+  self.assertEqual(self.total(),0)
+
 class RegressionTests(unittest.TestCase):
  def setUp(self):
   self.cases=json.loads((ROOT/'public/examples/rag-evaluation/cases.json').read_text())

@@ -3259,11 +3259,11 @@ export const blogSummaries: BlogPostSummary[] = [
   },
   {
     "slug": "rag-for-sql",
-    "title": "Using RAG for SQL Generation — Why Embeddings Beat Prompt Stuffing",
+    "title": "RAG for SQL Generation: Schema Context and Acceptance Tests",
     "date": "2026-01-28",
-    "updated": "2026-10-17",
-    "excerpt": "How pgvector embeddings improve LLM-to-SQL accuracy by providing schema context instead of dumping entire schemas into prompts.",
-    "readingTime": "8 min read",
+    "updated": "2026-10-25",
+    "excerpt": "A runnable synthetic SQL example, inspectable StellarMIND source and a checklist for evaluating retrieved schema, business results and database access.",
+    "readingTime": "7 min read",
     "keywords": [
       "rag sql generation",
       "pgvector embeddings sql",
@@ -3273,7 +3273,7 @@ export const blogSummaries: BlogPostSummary[] = [
     ],
     "coverImage": {
       "src": "/images/notes/rag-for-sql-cover.jpg",
-      "alt": "Abstract editorial cover illustrating Using RAG for SQL Generation"
+      "alt": "Abstract editorial cover for schema retrieval and SQL acceptance tests"
     },
     "relatedProject": "stellarmind"
   },

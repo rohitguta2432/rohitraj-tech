@@ -1,0 +1,24 @@
+{
+  "synthetic": true,
+  "metric": "Paid order value in USD, September 2026 UTC, one row per order",
+  "results": [
+    {
+      "case": "duplicate_join",
+      "actual_cents": 35000,
+      "expected_cents": 25000,
+      "matches_expected": false
+    },
+    {
+      "case": "distinct_amount",
+      "actual_cents": 15000,
+      "expected_cents": 25000,
+      "matches_expected": false
+    },
+    {
+      "case": "order_grain",
+      "actual_cents": 25000,
+      "expected_cents": 25000,
+      "matches_expected": true
+    }
+  ]
+}
