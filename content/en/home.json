@@ -123,12 +123,12 @@
         "heading": "Common questions before we start",
         "items": [
             {
-                "q": "Why hire a founding engineer for hire in India over a US contractor?",
-                "a": "A senior founding engineer for hire in India ships the same production AI MVP at 30–40% of US contractor cost, with full code ownership and daily timezone overlap on Slack/WhatsApp. You get end-to-end execution (backend, frontend, mobile, infra, AI) from one person who has shipped and publicly documented every product listed on this site."
+                "q": "Why hire an AI consultant in India over a US contractor?",
+                "a": "You get the consulting and the engineering from one senior person, at 30–40% of US contractor cost. I find where AI earns its place in your product, then build it inside your Slack and repo until it runs in production: agents, MCP integrations and LLM features, plus the backend, frontend, mobile and infra around them. You own all the code and get daily timezone overlap on Slack/WhatsApp. Every product listed on this site is one I shipped and documented in public."
             },
             {
-                "q": "How fast can a founding engineer in India ship my AI MVP?",
-                "a": "First production commit on day 5, fully-live MVP at week 6. Fixed scope, fixed timeline, no \"agency surprise\". Every project on rohitraj.tech follows this 6-week shipping cadence."
+                "q": "How fast can a forward deployed engineer ship to production?",
+                "a": "First production commit on day 5, straight into your repo. Fully live in production at week 6. Fixed scope, fixed timeline, no \"agency surprise\". Every project on rohitraj.tech follows this 6-week shipping cadence."
             },
             {
                 "q": "What if 6 weeks slips?",
