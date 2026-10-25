@@ -48,7 +48,7 @@ export default function Hero({ dict }: HeroProps) {
                     <h1 className="poster-title">
                         <FilmScramble text={dict.hero.titleLine1} />
                         <br />
-                        <FilmScramble text={dict.hero.titleLine2} />
+                        <FilmScramble text={dict.hero.titleLine2} delay={220} />
                     </h1>
 
                     <p className="poster-deck">{dict.hero.deck ?? dict.hero.subtitle}</p>
@@ -60,12 +60,14 @@ export default function Hero({ dict }: HeroProps) {
                 </div>
 
                 <dl className="poster-counters">
-                    {counters.map((c) => (
+                    {counters.map((c, i) => (
                         <div key={c.label} className="poster-counter">
                             <dt className="sr-only">{c.label}</dt>
-                            <dd className="poster-counter-value">{c.value}</dd>
+                            <dd className="poster-counter-value">
+                                <FilmScramble text={c.value} digits delay={520 + i * 140} />
+                            </dd>
                             <dd className="poster-counter-label" aria-hidden="true">
-                                {c.label}
+                                <FilmScramble text={c.label} delay={600 + i * 140} />
                             </dd>
                         </div>
                     ))}

@@ -4993,6 +4993,70 @@ code,
     linear-gradient(180deg, rgba(3, 5, 11, 0.4) 0%, rgba(3, 5, 11, 0) 18%);
 }
 
+/* The camera frame over the film (FilmHud): corner marks and two mono readouts,
+   above the scrim, under the copy. */
+.poster-hud {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  color: var(--on-brand);
+  text-shadow: 0 1px 2px rgba(3, 5, 11, 0.6);
+}
+
+.poster-hud-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 0 solid rgba(255, 244, 232, 0.7);
+}
+
+.poster-hud-corner[data-at="tl"] { top: 14px; left: 14px; border-top-width: 2px; border-left-width: 2px; }
+.poster-hud-corner[data-at="tr"] { top: 14px; right: 14px; border-top-width: 2px; border-right-width: 2px; }
+.poster-hud-corner[data-at="bl"] { bottom: 14px; left: 14px; border-bottom-width: 2px; border-left-width: 2px; }
+.poster-hud-corner[data-at="br"] { bottom: 14px; right: 14px; border-bottom-width: 2px; border-right-width: 2px; }
+
+.poster-hud-read {
+  position: absolute;
+  top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: 500 0.6875rem/1 var(--font-mono);
+  letter-spacing: 0.12em;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.8;
+}
+
+.poster-hud-read[data-at="tl"] { left: 46px; }
+.poster-hud-read[data-at="tr"] { right: 46px; }
+
+/* A recording light, lit only while the film runs. */
+.poster-hud-live {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 244, 232, 0.35);
+}
+
+.poster[data-film="ready"] .poster-hud-live {
+  background: #ff5a2e;
+  box-shadow: 0 0 10px rgba(255, 90, 46, 0.8);
+  animation: poster-hud-blink 1.6s steps(2, jump-none) infinite;
+}
+
+@keyframes poster-hud-blink {
+  50% { opacity: 0.25; }
+}
+
+@media (max-width: 720px) {
+  .poster-hud-read[data-at="tl"] { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster[data-film="ready"] .poster-hud-live { animation: none; }
+}
+
 /* The film's pause control: out of sight until keyboard focus reaches it. */
 .poster-film-pause {
   position: absolute;
@@ -5077,8 +5141,8 @@ code,
   color: var(--on-brand);
 }
 
-/* The headline decoding over the film (FilmScramble). Each scrambling letter floats
-   its cycling glyph over its own hidden real glyph, so the line keeps its width. */
+/* Text decoding over the film (FilmScramble). Each letter still to land floats its
+   cycling glyph (or nothing) over its own hidden real glyph, so the line keeps its width. */
 .film-scramble-cell {
   position: relative;
 }
@@ -6422,6 +6486,42 @@ body:not(:has(> main)) .edge-stickers {
   font-weight: 900;
 }
 
+/* The leader off the lit ray, drawn out from its tip each time the sweep moves on. */
+.proof-callout {
+  color: var(--accent);
+}
+
+.proof-callout circle {
+  fill: currentColor;
+}
+
+.proof-callout polyline {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-dasharray: 1;
+  animation: proof-leader 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.proof-callout text {
+  fill: currentColor;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  animation: proof-leader-label 300ms ease 260ms both;
+}
+
+@keyframes proof-leader {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes proof-leader-label {
+  from { opacity: 0; }
+}
+
 .proof-readout {
   display: flex;
   align-items: center;
@@ -6445,6 +6545,35 @@ body:not(:has(> main)) .edge-stickers {
 
   .flaps-readout {
     font-size: 1rem;
+  }
+}
+
+/* A vermilion rule under the home page's section headings. Reveal parks a block
+   with data-reveal-wait; when it lets go, the rule draws itself out as the block rises. */
+.widx-h2::after,
+.process-heading::after,
+.faq-heading::after {
+  content: "";
+  display: block;
+  width: 4.5rem;
+  height: 4px;
+  margin-top: 0.55em;
+  background: var(--accent);
+  transform-origin: left center;
+  transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1) 350ms;
+}
+
+[data-reveal-wait] .widx-h2::after,
+[data-reveal-wait] .process-heading::after,
+[data-reveal-wait] .faq-heading::after {
+  transform: scaleX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .widx-h2::after,
+  .process-heading::after,
+  .faq-heading::after {
+    transition: none;
   }
 }
 

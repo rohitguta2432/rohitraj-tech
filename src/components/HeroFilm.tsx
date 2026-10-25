@@ -2,7 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { Film } from "@/components/megacity/engine";
-import { FILM_DURATION } from "@/components/megacity/timeline";
+import { FILM_DURATION, phaseAt } from "@/components/megacity/timeline";
 
 type Status = "idle" | "loading" | "ready" | "failed";
 
@@ -10,6 +10,8 @@ interface FilmControls {
     status: Status;
     playing: boolean;
     togglePlay: () => void;
+    /** Hear the film's clock every frame, without re-rendering anything. */
+    onFrame: (listener: (t: number) => void) => () => void;
 }
 
 const FilmContext = createContext<FilmControls | null>(null);
@@ -31,6 +33,7 @@ export function HeroFilm({ className, children }: { className: string; children:
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const filmRef = useRef<Film | null>(null);
     const userPaused = useRef(false);
+    const frameListeners = useRef(new Set<(t: number) => void>());
     const [status, setStatus] = useState<Status>("idle");
     const [playing, setPlaying] = useState(false);
 
@@ -61,7 +64,14 @@ export function HeroFilm({ className, children }: { className: string; children:
             setStatus("loading");
             import("@/components/megacity/engine")
                 // A background sits under copy, so it runs a touch brighter with a lighter vignette.
-                .then(({ createFilm }) => createFilm(canvas, { lite, exposure: 1.45, vignette: 0.78, onPlayState: setPlaying }))
+                .then(({ createFilm }) => createFilm(canvas, {
+                    lite,
+                    exposure: 1.45,
+                    vignette: 0.78,
+                    onPlayState: setPlaying,
+                    onFrame: (t) => frameListeners.current.forEach((listener) => listener(t)),
+                }),
+            )
                 .then((film) => {
                     if (cancelled) {
                         film.dispose();
@@ -118,6 +128,10 @@ export function HeroFilm({ className, children }: { className: string; children:
         () => ({
             status,
             playing,
+            onFrame: (listener) => {
+                frameListeners.current.add(listener);
+                return () => frameListeners.current.delete(listener);
+            },
             togglePlay: () => {
                 const film = filmRef.current;
                 if (!film) return;
@@ -143,6 +157,7 @@ export function HeroFilm({ className, children }: { className: string; children:
                     <canvas ref={canvasRef} />
                 </div>
                 <div className="poster-scrim" aria-hidden="true" />
+                <FilmHud />
                 {children}
             </section>
         </FilmContext.Provider>
@@ -173,55 +188,95 @@ export function HeroFilmControls({ playLabel, pauseLabel }: HeroFilmControlsProp
     );
 }
 
-const SCRAMBLE_GLYPHS = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789#%&/<>";
-const SCRAMBLE_MS = 1100;
-const SCRAMBLE_STEP_MS = 45;
+const LETTERS = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789#%&/<>";
+const DIGITS = "0123456789";
+// How many cycling glyphs run ahead of the decoded text.
+const EDGE = 4;
+const STEP_MS = 45;
+
+/** One frame of a decode: "" shows the real letter, a glyph cycles over it, null holds its place blank. */
+type Cell = string | null;
+
+interface FilmScrambleProps {
+    text: string;
+    /** Wait this long after the film starts before decoding, to stagger lines. */
+    delay?: number;
+    /** Cycle digits only, for figures. */
+    digits?: boolean;
+}
 
 /**
- * Headline text that decodes over the film. The server paints the plain words; when
- * the film starts playing behind them, each letter cycles through glyphs and settles
- * left to right, so the copy "tunes in" with the picture. Hovering the headline
- * replays it. Each letter keeps its real glyph in place (hidden) under the cycling
- * one, so the line never changes width mid-scramble. Screen readers only ever get
- * the words, and reduced-motion visitors never see the scramble.
+ * Text that decodes over the film. The server paints the plain words; when the
+ * film starts playing behind them, the line clears and types back in from the
+ * left behind a short edge of cycling glyphs, so the copy "tunes in" with the
+ * picture. Hovering replays it. Every letter keeps its real glyph in place
+ * (hidden) while it is blank or cycling, so the line never changes width.
+ * Screen readers only ever get the words, and reduced-motion visitors never see
+ * the decode.
  */
-export function FilmScramble({ text }: { text: string }) {
+export function FilmScramble({ text, delay = 0, digits = false }: FilmScrambleProps) {
     const film = useContext(FilmContext);
-    const [frame, setFrame] = useState<string[] | null>(null);
+    const [frame, setFrame] = useState<Cell[] | null>(null);
     const raf = useRef(0);
+    const wait = useRef(0);
     const played = useRef(false);
 
-    const run = useCallback(() => {
-        if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
-        cancelAnimationFrame(raf.current);
-        const chars = [...text];
-        // Letters settle in order, each one after a short spin of its own.
-        const settleAt = chars.map((_, i) => (SCRAMBLE_MS * 0.35) + (SCRAMBLE_MS * 0.65 * i) / Math.max(1, chars.length - 1));
-        const start = performance.now();
-        let last = -Infinity;
-        const tick = (now: number) => {
-            const t = now - start;
-            if (t >= SCRAMBLE_MS) {
-                setFrame(null);
-                return;
-            }
-            if (now - last >= SCRAMBLE_STEP_MS) {
-                last = now;
-                setFrame(chars.map((c, i) => (c === " " || t >= settleAt[i] ? "" : SCRAMBLE_GLYPHS[Math.floor(Math.random() * SCRAMBLE_GLYPHS.length)])));
-            }
-            raf.current = requestAnimationFrame(tick);
-        };
-        raf.current = requestAnimationFrame(tick);
-    }, [text]);
+    const run = useCallback(
+        (after = 0) => {
+            if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+            cancelAnimationFrame(raf.current);
+            window.clearTimeout(wait.current);
+            const chars = [...text];
+            const glyphs = digits ? DIGITS : LETTERS;
+            const duration = Math.min(1100, 260 + chars.length * 55);
+            const blank = chars.map((c) => (c === " " ? "" : null));
+            const tick = (now: number, start: number, last: number) => {
+                const p = (now - start) / duration;
+                if (p >= 1) {
+                    setFrame(null);
+                    return;
+                }
+                if (now - last >= STEP_MS) {
+                    last = now;
+                    // The edge runs from off the left to past the end, so the first
+                    // and last letters both get a full spin.
+                    const head = p * (chars.length + EDGE);
+                    setFrame(
+                        chars.map((c, i) =>
+                            c === " " || i < head - EDGE ? "" : i < head ? glyphs[Math.floor(Math.random() * glyphs.length)] : null,
+                        ),
+                    );
+                }
+                raf.current = requestAnimationFrame((n) => tick(n, start, last));
+            };
+            const begin = () => {
+                raf.current = requestAnimationFrame((now) => tick(now, now, -Infinity));
+            };
+            if (after > 0) {
+                // Clear a staggered line with the first one, so it does not sit decoded, then blank, then decode.
+                raf.current = requestAnimationFrame(() => {
+                    setFrame(blank);
+                    wait.current = window.setTimeout(begin, after);
+                });
+            } else begin();
+        },
+        [text, digits],
+    );
 
     // Decode once, the moment the film starts playing behind the copy.
     useEffect(() => {
         if (played.current || !film?.playing) return;
         played.current = true;
-        run();
-    }, [film?.playing, run]);
+        run(delay);
+    }, [film?.playing, run, delay]);
 
-    useEffect(() => () => cancelAnimationFrame(raf.current), []);
+    useEffect(
+        () => () => {
+            cancelAnimationFrame(raf.current);
+            window.clearTimeout(wait.current);
+        },
+        [],
+    );
 
     return (
         <span className="film-scramble" onPointerEnter={(e) => e.pointerType === "mouse" && run()}>
@@ -230,13 +285,13 @@ export function FilmScramble({ text }: { text: string }) {
                     <span className="sr-only">{text}</span>
                     <span aria-hidden="true">
                         {[...text].map((c, i) =>
-                            frame[i] ? (
+                            frame[i] === "" ? (
+                                c
+                            ) : (
                                 <span key={i} className="film-scramble-cell">
                                     <span className="film-scramble-real">{c}</span>
-                                    <span className="film-scramble-glyph">{frame[i]}</span>
+                                    {frame[i] && <span className="film-scramble-glyph">{frame[i]}</span>}
                                 </span>
-                            ) : (
-                                c
                             ),
                         )}
                     </span>
@@ -245,5 +300,44 @@ export function FilmScramble({ text }: { text: string }) {
                 text
             )}
         </span>
+    );
+}
+
+const pad = (n: number) => String(n).padStart(2, "0");
+
+/**
+ * A camera operator's frame over the film: corner marks, where the shot is from,
+ * and the film's own clock and chapter, read straight off the engine each frame
+ * (written to the DOM, not through React state). Decorative, so hidden from
+ * assistive tech; the chapter names come from the shared timeline.
+ */
+function FilmHud() {
+    const film = useContext(FilmContext);
+    const clock = useRef<HTMLSpanElement>(null);
+    const onFrame = film?.onFrame;
+
+    useEffect(() => {
+        if (!onFrame) return;
+        let shown = "";
+        return onFrame((t) => {
+            const text = `T+${pad(Math.floor(t))}.${Math.floor((t % 1) * 10)} / ${phaseAt(t).toUpperCase()}`;
+            if (text !== shown && clock.current) clock.current.textContent = shown = text;
+        });
+    }, [onFrame]);
+
+    return (
+        <div className="poster-hud" aria-hidden="true">
+            <span className="poster-hud-corner" data-at="tl" />
+            <span className="poster-hud-corner" data-at="tr" />
+            <span className="poster-hud-corner" data-at="bl" />
+            <span className="poster-hud-corner" data-at="br" />
+            <span className="poster-hud-read" data-at="tl">
+                <FilmScramble text="BLR 12.97N 77.59E" delay={200} />
+            </span>
+            <span className="poster-hud-read" data-at="tr">
+                <span className="poster-hud-live" />
+                <span ref={clock}>T+00.0 / {phaseAt(0).toUpperCase()}</span>
+            </span>
+        </div>
     );
 }

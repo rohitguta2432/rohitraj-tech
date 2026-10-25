@@ -2,7 +2,27 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Flaps } from "@/components/brand/Flaps";
-import { burstRays } from "@/components/brand/burst";
+import { burstRays, type BurstRay } from "@/components/brand/burst";
+
+/**
+ * A leader line off the tip of a ray: out along it past the longest ray, so the
+ * label clears its neighbours, then level, away from the hub, ending at the stack
+ * count, as in an annotated diagram.
+ */
+function leader(ray: BurstRay, reach: number) {
+    const run = 14;
+    const ex = Math.cos(ray.angle) * reach;
+    const ey = Math.sin(ray.angle) * reach;
+    const dir = Math.cos(ray.angle) >= -0.01 ? 1 : -1;
+    return {
+        x0: ray.x2,
+        y0: ray.y2,
+        points: `${ray.x2},${ray.y2} ${ex.toFixed(1)},${ey.toFixed(1)} ${(ex + dir * run).toFixed(1)},${ey.toFixed(1)}`,
+        tx: +(ex + dir * (run + 5)).toFixed(1),
+        ty: +(ey + 6).toFixed(1),
+        anchor: dir > 0 ? ("start" as const) : ("end" as const),
+    };
+}
 
 interface ProofMarkProps {
     products: { name: string; stack: number }[];
@@ -68,6 +88,8 @@ export default function ProofMark({ products }: ProofMarkProps) {
     }, [rays]);
 
     const label = current === null ? `${products.length} running` : products[current].name;
+    const reach = useMemo(() => Math.max(...rays.map((r) => Math.hypot(r.x2, r.y2))) + 14, [rays]);
+    const callout = current === null ? null : leader(rays[current], reach);
 
     return (
         <figure className="proof">
@@ -79,6 +101,16 @@ export default function ProofMark({ products }: ProofMarkProps) {
                 <text className="proof-count" y="10" textAnchor="middle">
                     {products.length}
                 </text>
+                {callout && current !== null && (
+                    // Keyed to the ray, so the leader draws itself out again for each product.
+                    <g key={current} className="proof-callout">
+                        <circle cx={callout.x0} cy={callout.y0} r="5" />
+                        <polyline points={callout.points} pathLength={1} />
+                        <text x={callout.tx} y={callout.ty} textAnchor={callout.anchor}>
+                            {products[current].stack} tools
+                        </text>
+                    </g>
+                )}
             </svg>
             <figcaption className="proof-readout">
                 <span className="proof-label">Running</span>
