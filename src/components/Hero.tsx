@@ -1,5 +1,5 @@
 import ContactActions from "@/components/ContactActions";
-import { FilmScramble, HeroFilm, HeroFilmControls } from "@/components/HeroFilm";
+import { FilmDuck, FilmScramble, HeroFilm, HeroFilmControls } from "@/components/HeroFilm";
 import Link from "next/link";
 import type { HomeDictionary } from "@/lib/i18n";
 import { projects } from "@/data/projects";
@@ -59,19 +59,22 @@ export default function Hero({ dict }: HeroProps) {
                     </div>
                 </div>
 
-                <dl className="poster-counters">
-                    {counters.map((c, i) => (
-                        <div key={c.label} className="poster-counter">
-                            <dt className="sr-only">{c.label}</dt>
-                            <dd className="poster-counter-value">
-                                <FilmScramble text={c.value} digits delay={520 + i * 140} />
-                            </dd>
-                            <dd className="poster-counter-label" aria-hidden="true">
-                                <FilmScramble text={c.label} delay={600 + i * 140} />
-                            </dd>
-                        </div>
-                    ))}
-                </dl>
+                <div className="poster-rail">
+                    <FilmDuck />
+                    <dl className="poster-counters">
+                        {counters.map((c, i) => (
+                            <div key={c.label} className="poster-counter">
+                                <dt className="sr-only">{c.label}</dt>
+                                <dd className="poster-counter-value">
+                                    <FilmScramble text={c.value} digits delay={520 + i * 140} />
+                                </dd>
+                                <dd className="poster-counter-label" aria-hidden="true">
+                                    <FilmScramble text={c.label} delay={600 + i * 140} />
+                                </dd>
+                            </div>
+                        ))}
+                    </dl>
+                </div>
             </div>
         </HeroFilm>
     );

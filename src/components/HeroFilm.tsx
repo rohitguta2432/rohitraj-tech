@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import DuckBot from "@/components/brand/DuckBot";
 import type { Film } from "@/components/megacity/engine";
 import { FILM_DURATION, phaseAt } from "@/components/megacity/timeline";
 
@@ -340,4 +341,10 @@ function FilmHud() {
             </span>
         </div>
     );
+}
+
+/** The duck robot on the counter rail, walking only while the film plays. */
+export function FilmDuck() {
+    const film = useContext(FilmContext);
+    return <DuckBot walking={!!film?.playing} />;
 }

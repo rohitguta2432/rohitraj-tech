@@ -5217,6 +5217,102 @@ code,
   border-bottom-color: var(--on-brand);
 }
 
+/* The counters' top rule doubles as a rail for the duck robot (DuckBot). */
+.poster-rail {
+  position: relative;
+}
+
+.duck-rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 0;
+  pointer-events: none;
+}
+
+.duck {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 54px;
+  pointer-events: auto;
+  transform: translateX(0) scaleX(1);
+  filter: drop-shadow(0 2px 6px rgba(3, 5, 11, 0.55));
+}
+
+.duck-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.duck-shell { fill: var(--on-brand); }
+.duck-seam { fill: none; stroke: #ff6a3d; stroke-width: 2; stroke-linecap: round; }
+.duck-bolt { fill: #ff6a3d; }
+.duck-beak { fill: #ff6a3d; }
+.duck-lens { fill: #0b1020; stroke: #ff6a3d; stroke-width: 1.2; }
+.duck-glint { fill: #fff; }
+.duck-antenna { stroke: var(--on-brand); stroke-width: 1.5; stroke-linecap: round; }
+.duck-led { fill: #ff5a2e; }
+.duck-foot { fill: #ff6a3d; stroke: none; }
+
+.duck-leg path:first-child {
+  fill: none;
+  stroke: #d8cfc4;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.duck-leg,
+.duck-bob,
+.duck-head {
+  transform-box: view-box;
+}
+
+.duck-leg-back { transform-origin: 20px 40px; }
+.duck-leg-front { transform-origin: 25px 40px; }
+.duck-head { transform-origin: 28px 22px; }
+
+.duck[data-state="walk"] .duck-leg-front { animation: duck-step 0.46s ease-in-out infinite alternate; }
+.duck[data-state="walk"] .duck-leg-back { animation: duck-step 0.46s ease-in-out -0.46s infinite alternate-reverse; }
+.duck[data-state="walk"] .duck-bob { animation: duck-bob 0.23s ease-in-out infinite alternate; }
+.duck[data-state="look"] .duck-head { animation: duck-look 1.4s ease-in-out infinite; }
+.duck[data-state="walk"] .duck-led,
+.duck[data-state="look"] .duck-led { animation: poster-hud-blink 1.2s steps(2, jump-none) infinite; }
+.duck[data-hop] .duck-svg { animation: duck-hop 0.52s cubic-bezier(0.3, 0, 0.3, 1); }
+
+@keyframes duck-step {
+  from { transform: rotate(-24deg); }
+  to { transform: rotate(24deg); }
+}
+
+@keyframes duck-bob {
+  from { transform: translateY(0); }
+  to { transform: translateY(-1.6px) rotate(-2deg); }
+}
+
+@keyframes duck-look {
+  0%, 100% { transform: rotate(0deg); }
+  30% { transform: rotate(-14deg); }
+  65% { transform: rotate(10deg); }
+}
+
+@keyframes duck-hop {
+  0%, 100% { transform: translateY(0); }
+  45% { transform: translateY(-16px) rotate(-6deg); }
+}
+
+@media (max-width: 720px) {
+  .duck { width: 42px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .duck[data-hop] .duck-svg { animation: none; }
+}
+
 .poster-counters {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
