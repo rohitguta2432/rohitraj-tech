@@ -5077,6 +5077,27 @@ code,
   color: var(--on-brand);
 }
 
+/* The headline decoding over the film (FilmScramble). Each scrambling letter floats
+   its cycling glyph over its own hidden real glyph, so the line keeps its width. */
+.film-scramble-cell {
+  position: relative;
+}
+
+.film-scramble-real {
+  visibility: hidden;
+}
+
+.film-scramble-glyph {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  /* A lit vermilion, bright enough to hold against the night film, with a glow so
+     the spinning letters read over moving footage rather than dissolving into it. */
+  color: #ff7a4d;
+  text-shadow: 0 0 18px rgba(255, 106, 61, 0.55), 0 2px 10px rgba(3, 5, 11, 0.6);
+}
+
 .poster-deck {
   max-width: 46ch;
   margin: 1.75rem 0 0;

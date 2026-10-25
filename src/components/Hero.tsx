@@ -1,5 +1,5 @@
 import ContactActions from "@/components/ContactActions";
-import { HeroFilm, HeroFilmControls } from "@/components/HeroFilm";
+import { FilmScramble, HeroFilm, HeroFilmControls } from "@/components/HeroFilm";
 import Link from "next/link";
 import type { HomeDictionary } from "@/lib/i18n";
 import { projects } from "@/data/projects";
@@ -46,9 +46,9 @@ export default function Hero({ dict }: HeroProps) {
 
                 <div className="poster-body">
                     <h1 className="poster-title">
-                        {dict.hero.titleLine1}
+                        <FilmScramble text={dict.hero.titleLine1} />
                         <br />
-                        {dict.hero.titleLine2}
+                        <FilmScramble text={dict.hero.titleLine2} />
                     </h1>
 
                     <p className="poster-deck">{dict.hero.deck ?? dict.hero.subtitle}</p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { Film } from "@/components/megacity/engine";
 import { FILM_DURATION } from "@/components/megacity/timeline";
 
@@ -170,5 +170,80 @@ export function HeroFilmControls({ playLabel, pauseLabel }: HeroFilmControlsProp
             </svg>
             {label}
         </button>
+    );
+}
+
+const SCRAMBLE_GLYPHS = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789#%&/<>";
+const SCRAMBLE_MS = 1100;
+const SCRAMBLE_STEP_MS = 45;
+
+/**
+ * Headline text that decodes over the film. The server paints the plain words; when
+ * the film starts playing behind them, each letter cycles through glyphs and settles
+ * left to right, so the copy "tunes in" with the picture. Hovering the headline
+ * replays it. Each letter keeps its real glyph in place (hidden) under the cycling
+ * one, so the line never changes width mid-scramble. Screen readers only ever get
+ * the words, and reduced-motion visitors never see the scramble.
+ */
+export function FilmScramble({ text }: { text: string }) {
+    const film = useContext(FilmContext);
+    const [frame, setFrame] = useState<string[] | null>(null);
+    const raf = useRef(0);
+    const played = useRef(false);
+
+    const run = useCallback(() => {
+        if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+        cancelAnimationFrame(raf.current);
+        const chars = [...text];
+        // Letters settle in order, each one after a short spin of its own.
+        const settleAt = chars.map((_, i) => (SCRAMBLE_MS * 0.35) + (SCRAMBLE_MS * 0.65 * i) / Math.max(1, chars.length - 1));
+        const start = performance.now();
+        let last = -Infinity;
+        const tick = (now: number) => {
+            const t = now - start;
+            if (t >= SCRAMBLE_MS) {
+                setFrame(null);
+                return;
+            }
+            if (now - last >= SCRAMBLE_STEP_MS) {
+                last = now;
+                setFrame(chars.map((c, i) => (c === " " || t >= settleAt[i] ? "" : SCRAMBLE_GLYPHS[Math.floor(Math.random() * SCRAMBLE_GLYPHS.length)])));
+            }
+            raf.current = requestAnimationFrame(tick);
+        };
+        raf.current = requestAnimationFrame(tick);
+    }, [text]);
+
+    // Decode once, the moment the film starts playing behind the copy.
+    useEffect(() => {
+        if (played.current || !film?.playing) return;
+        played.current = true;
+        run();
+    }, [film?.playing, run]);
+
+    useEffect(() => () => cancelAnimationFrame(raf.current), []);
+
+    return (
+        <span className="film-scramble" onPointerEnter={(e) => e.pointerType === "mouse" && run()}>
+            {frame ? (
+                <>
+                    <span className="sr-only">{text}</span>
+                    <span aria-hidden="true">
+                        {[...text].map((c, i) =>
+                            frame[i] ? (
+                                <span key={i} className="film-scramble-cell">
+                                    <span className="film-scramble-real">{c}</span>
+                                    <span className="film-scramble-glyph">{frame[i]}</span>
+                                </span>
+                            ) : (
+                                c
+                            ),
+                        )}
+                    </span>
+                </>
+            ) : (
+                text
+            )}
+        </span>
     );
 }
