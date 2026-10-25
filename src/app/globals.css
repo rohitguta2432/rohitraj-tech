@@ -4781,6 +4781,306 @@ code,
   text-decoration: underline;
 }
 
+/* ---------- Work reel (WorkReel.tsx): products and agents as one swipeable strip ---------- */
+.reel {
+  container-type: inline-size;
+}
+
+.reel-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.reel-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.reel-filter,
+.reel-btn {
+  min-height: 40px;
+  padding: 0 0.95rem;
+  border: 1.5px solid var(--text-primary);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-primary);
+  font: 600 0.8125rem/1 var(--font-sans, inherit);
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.reel-filter span {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.reel-filter[aria-pressed="true"] {
+  background: var(--text-primary);
+  color: var(--bg);
+}
+
+.reel-filter:hover:not([aria-pressed="true"]),
+.reel-btn:hover:not(:disabled) {
+  background: var(--accent-light);
+}
+
+.reel-filter:focus-visible,
+.reel-btn:focus-visible,
+.reel-card a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.reel-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reel-count {
+  margin-right: 0.35rem;
+  font: 500 0.8125rem/1 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+
+.reel-btn {
+  min-width: 40px;
+  padding: 0 0.75rem;
+  font-size: 0.95rem;
+}
+
+.reel-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.reel-pause {
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* Cards snap to the middle; side padding lets the first and last centre too. */
+.reel-strip {
+  --card-w: min(680px, 80cqi);
+  position: relative;
+  display: flex;
+  gap: clamp(0.875rem, 2cqi, 1.5rem);
+  margin: 0;
+  padding: 0.25rem calc((100cqi - var(--card-w)) / 2) 1rem;
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.reel-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.reel-card {
+  position: relative;
+  flex: 0 0 var(--card-w);
+  scroll-snap-align: center;
+  opacity: 0.42;
+  transform: scale(0.94);
+  transition: opacity 320ms ease, transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.reel-card[data-active] {
+  opacity: 1;
+  transform: none;
+  cursor: auto;
+}
+
+.reel-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1.5px solid var(--text-primary);
+  border-radius: 6px;
+  background: #0b0d14;
+}
+
+.reel-media video,
+.reel-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Demos are recorded at mixed shapes (16:9, 16:10, square): show all of each. */
+.reel-media video {
+  object-fit: contain;
+}
+
+.reel-media img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* No footage, no screenshot: a set plate in the night of the hero film. */
+.reel-plate {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: clamp(1.25rem, 4cqi, 2.25rem);
+  background:
+    radial-gradient(120% 90% at 85% 10%, rgba(255, 106, 61, 0.28), transparent 60%),
+    #0b0d14;
+  color: var(--on-brand);
+}
+
+.reel-plate-name {
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: clamp(2rem, 7cqi, 3.75rem);
+  font-weight: 800;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.reel-plate-note {
+  font: 500 0.8125rem/1.4 var(--font-mono);
+  color: rgba(255, 244, 232, 0.75);
+}
+
+.reel-tag {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 3px;
+  background: rgba(11, 13, 20, 0.78);
+  color: var(--on-brand);
+  font: 500 0.6875rem/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.reel-body {
+  padding: 1rem 0.125rem 0;
+}
+
+.reel-name {
+  margin: 0;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-size: clamp(1.5rem, 4cqi, 2rem);
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* The name's link covers the whole card; Live and Code sit above it. */
+.reel-hit {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.reel-hit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.reel-desc {
+  margin: 0.35rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+.reel-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.reel-note {
+  font: 0.75rem/1.5 var(--font-mono);
+  color: var(--text-muted);
+}
+
+.reel-links {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.reel-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.reel-links a:hover {
+  color: var(--accent-text);
+  text-decoration: underline;
+}
+
+.reel-arrow {
+  color: var(--accent-text);
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reel-card[data-active]:hover .reel-arrow {
+  transform: translateX(4px);
+}
+
+.reel-more {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2rem;
+}
+
+@media (max-width: 720px) {
+  .reel-strip {
+    --card-w: 86cqi;
+  }
+
+  .reel-bar {
+    margin-bottom: 1rem;
+  }
+
+  /* One swipeable row of filters rather than two wrapped ones. */
+  .reel-filters {
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .reel-filter {
+    flex: none;
+    padding: 0 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel-card {
+    transition: none;
+  }
+}
+
 /* Tablet: drop the note column before anything has to truncate. */
 @media (max-width: 900px) {
   .widx-row {

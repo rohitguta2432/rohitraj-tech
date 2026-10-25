@@ -4,6 +4,7 @@ import { agents } from "@/data/agents";
 import { projects } from "@/data/projects";
 import ProofMark from "@/components/brand/ProofMark";
 import Reveal from "@/components/Reveal";
+import WorkReel, { type ReelItem } from "@/components/WorkReel";
 
 /**
  * The shipped-work index.
@@ -14,10 +15,11 @@ import Reveal from "@/components/Reveal";
  * the one thing that actually differentiates a solo engineer from an agency — the sheer
  * length of the list, with a clickable repo behind every line.
  *
- * So the section is built as an index rather than a gallery: numbered rows, aligned
- * columns, one accent, no boxes. It reads as a catalogue of receipts, it scans in a
- * single vertical sweep, and it degrades to a two-line row on a phone instead of a
- * 300px-wide card that has to be scrolled past twelve times.
+ * It was then an index of numbered rows, which read well until the list passed forty
+ * entries and became most of the page's scroll. Now products and agents share one
+ * swipeable reel (components/WorkReel), demos first: the work is shown running rather
+ * than listed, and the page's length no longer grows with every product shipped. The
+ * row (IndexRow) stays here because the writing index and /notes still use it.
  */
 
 export type Row = {
@@ -38,35 +40,49 @@ function splitTitle(title: string): [string, string] {
     return [parts[0], parts.slice(1).join(" — ")];
 }
 
-const PRODUCT_ROWS: Row[] = aiProjectSummaries.map((p) => {
-    const [name, descriptor] = splitTitle(p.title);
+const SUMMARIES = new Map(aiProjectSummaries.map((s) => [s.slug, s]));
+
+const PRODUCT_ITEMS: ReelItem[] = projects.map((p) => {
+    const [name, descriptor] = splitTitle(p.name);
+    const metric = SUMMARIES.get(p.slug)?.metrics?.[0];
     return {
         id: p.slug,
+        kind: "product",
         name,
         descriptor,
-        note: p.metrics?.[0] ? `${p.metrics[0].label}: ${p.metrics[0].value}` : "",
-        stack: p.techStack.slice(0, 3),
+        note: metric ? `${metric.label}: ${metric.value}` : p.techStack.slice(0, 3).join(" · "),
         href: `/projects/${p.slug}`,
         liveUrl: p.liveUrl,
         repoUrl: p.repoUrl,
+        video: p.videoUrl,
+        image: p.image,
     };
 });
 
-const AGENT_ROWS: Row[] = agents.slice(0, 6).map((a) => {
+const AGENT_ITEMS: ReelItem[] = agents.map((a) => {
     const [name, descriptor] = splitTitle(a.name);
     return {
-        id: a.slug,
+        id: `agent-${a.slug}`,
+        kind: "agent",
         name,
         descriptor,
         // The market line is the only short field agents carry; strip the CAGR tail so
-        // the column stays a glance, not a paragraph.
+        // it stays a glance, not a paragraph.
         note: a.marketSize.split(" · ")[0].split(",")[0],
-        stack: a.techStack.slice(0, 3),
-        href: `/agents#${a.slug}`,
+        href: a.detailPath ?? `/agents#${a.slug}`,
         liveUrl: a.liveUrl,
         repoUrl: a.repoUrl,
+        image: a.screenshot,
+        runsHere: !!a.demo,
     };
 });
+
+// Running demos lead, then the agents, then the rest of the products.
+const REEL: ReelItem[] = [
+    ...PRODUCT_ITEMS.filter((p) => p.video),
+    ...AGENT_ITEMS,
+    ...PRODUCT_ITEMS.filter((p) => !p.video),
+];
 
 export function IndexRow({ row, n }: { row: Row; n: number }) {
     return (
@@ -130,31 +146,16 @@ export default function WorkIndex() {
                     <ProofMark products={PROOF} />
                 </Reveal>
 
-                <div className="widx-group">
-                    <h3 className="widx-group-title">
-                        Products <span aria-hidden="true">/ {projects.length}</span>
-                    </h3>
-                    <Reveal as="ol" className="widx-list" move="rows" items=".widx-row">
-                        {PRODUCT_ROWS.map((row, i) => (
-                            <IndexRow key={row.id} row={row} n={i + 1} />
-                        ))}
-                    </Reveal>
-                    <Link href={`/projects`} className="widx-more">
+                <Reveal move="rise">
+                    <WorkReel items={REEL} />
+                </Reveal>
+
+                <div className="reel-more">
+                    <Link href="/projects" className="widx-more">
                         Every project, in full <span aria-hidden="true">→</span>
                     </Link>
-                </div>
-
-                <div className="widx-group">
-                    <h3 className="widx-group-title">
-                        Autonomous agents <span aria-hidden="true">/ {agents.length}</span>
-                    </h3>
-                    <Reveal as="ol" className="widx-list" move="rows" items=".widx-row">
-                        {AGENT_ROWS.map((row, i) => (
-                            <IndexRow key={row.id} row={row} n={i + 1} />
-                        ))}
-                    </Reveal>
-                    <Link href={`/agents`} className="widx-more">
-                        Run one in the browser <span aria-hidden="true">→</span>
+                    <Link href="/agents" className="widx-more">
+                        Run an agent in the browser <span aria-hidden="true">→</span>
                     </Link>
                 </div>
             </div>
