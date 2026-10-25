@@ -51,6 +51,7 @@ const PRODUCT_ITEMS: ReelItem[] = projects.map((p) => {
         name,
         descriptor,
         note: metric ? `${metric.label}: ${metric.value}` : p.techStack.slice(0, 3).join(" · "),
+        stack: p.techStack.slice(0, 5),
         href: `/projects/${p.slug}`,
         liveUrl: p.liveUrl,
         repoUrl: p.repoUrl,
@@ -69,6 +70,7 @@ const AGENT_ITEMS: ReelItem[] = agents.map((a) => {
         // The market line is the only short field agents carry; strip the CAGR tail so
         // it stays a glance, not a paragraph.
         note: a.marketSize.split(" · ")[0].split(",")[0],
+        stack: a.techStack.slice(0, 5),
         href: a.detailPath ?? `/agents#${a.slug}`,
         liveUrl: a.liveUrl,
         repoUrl: a.repoUrl,

@@ -10,6 +10,8 @@ export type ReelItem = {
     name: string;
     descriptor: string;
     note: string;
+    /** The first few tools in its stack, shown on the plate when there is no footage. */
+    stack: string[];
     href: string;
     liveUrl?: string;
     repoUrl?: string;
@@ -193,8 +195,13 @@ export default function WorkReel({ items }: { items: ReelItem[] }) {
                                 <Image src={item.image} alt={`${item.name} screenshot`} fill sizes="(max-width: 720px) 86vw, 680px" />
                             ) : (
                                 <div className="reel-plate" aria-hidden="true">
-                                    <span className="reel-plate-name">{item.name}</span>
-                                    <span className="reel-plate-note">{item.note}</span>
+                                    <span className="reel-plate-num">{pad(i + 1)}</span>
+                                    <span className="reel-plate-label">Built with</span>
+                                    <span className="reel-plate-stack">
+                                        {item.stack.map((t) => (
+                                            <span key={t}>{t}</span>
+                                        ))}
+                                    </span>
                                 </div>
                             )}
                             <span className="reel-tag">

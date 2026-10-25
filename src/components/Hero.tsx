@@ -46,9 +46,9 @@ export default function Hero({ dict }: HeroProps) {
 
                 <div className="poster-body">
                     <h1 className="poster-title">
-                        <FilmScramble text={dict.hero.titleLine1} />
+                        <FilmScramble text={dict.hero.titleLine1} wideOnly />
                         <br />
-                        <FilmScramble text={dict.hero.titleLine2} delay={220} />
+                        <FilmScramble text={dict.hero.titleLine2} delay={220} wideOnly />
                     </h1>
 
                     <p className="poster-deck">{dict.hero.deck ?? dict.hero.subtitle}</p>

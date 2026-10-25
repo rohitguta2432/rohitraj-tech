@@ -204,6 +204,11 @@ interface FilmScrambleProps {
     delay?: number;
     /** Cycle digits only, for figures. */
     digits?: boolean;
+    /**
+     * Skip the film-start decode on phones. There the film starts seconds after the
+     * copy has been read, so clearing a line that is already on screen reads as a glitch.
+     */
+    wideOnly?: boolean;
 }
 
 /**
@@ -215,7 +220,7 @@ interface FilmScrambleProps {
  * Screen readers only ever get the words, and reduced-motion visitors never see
  * the decode.
  */
-export function FilmScramble({ text, delay = 0, digits = false }: FilmScrambleProps) {
+export function FilmScramble({ text, delay = 0, digits = false, wideOnly = false }: FilmScrambleProps) {
     const film = useContext(FilmContext);
     const [frame, setFrame] = useState<Cell[] | null>(null);
     const raf = useRef(0);
@@ -268,8 +273,9 @@ export function FilmScramble({ text, delay = 0, digits = false }: FilmScramblePr
     useEffect(() => {
         if (played.current || !film?.playing) return;
         played.current = true;
+        if (wideOnly && window.matchMedia?.("(max-width: 720px)").matches) return;
         run(delay);
-    }, [film?.playing, run, delay]);
+    }, [film?.playing, run, delay, wideOnly]);
 
     useEffect(
         () => () => {
