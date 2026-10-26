@@ -572,6 +572,10 @@ export const services: Service[] = [
  question: "How fast can you start, and what happens first?",
  answer: "Start with a free 30-minute scoping call; an NDA can be signed beforehand. Bring the workflow, representative input and output examples, the systems involved, and the person who can approve the result. I confirm availability and the first milestone after reviewing the scope and access requirements. The first build targets one complete path in staging; its delivery date depends on the integration and data being ready.",
  },
+ {
+ question: "How does our team take over when the FDE pilot ends?",
+ answer: "We agree the transfer tasks before the final review. Your operator and receiving engineer lead a staging rehearsal using the runbook: complete an approved task, handle a failed integration, find its recorded outcome and route unresolved work to the named owner. I observe and correct missing instructions. Record which tasks they completed, where help was needed and who owns each remaining gap. Before closing, confirm the support end date, escalation route and removal of my access. If a required task is still blocked, agree a repair or keep that workflow disabled; a handover meeting alone is not acceptance.",
+ },
  ],
  sections: [
  {
@@ -722,8 +726,13 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-25",
+ updated: "2026-10-26",
  related: [
+ {
+ href: "/examples/ai-delivery-brief.md",
+ label: "Download the delivery and handover brief",
+ description: "Record operator and engineer rehearsal results, unresolved tasks and the decision to transfer ownership.",
+ },
  {
  href: "/notes/rag-for-sql",
  label: "Chat-to-SQL result acceptance example",
@@ -983,6 +992,10 @@ export const services: Service[] = [
  answer: "Yes. Start with the repository, the intended workflow, representative examples and the failures you have observed. I review the architecture, data access, evaluation coverage and deployment path, then propose a bounded next step. That could be repairing retrieval, adding permission checks, measuring answer quality or shipping a narrow staging slice. The review establishes what can be retained and what needs further work before we agree a larger delivery scope.",
  },
  {
+ question: "How do we check that our engineer can maintain the system?",
+ answer: "Your receiving engineer runs the handover checks in staging from a clean checkout, using your team's accounts and the documented setup. They build the application, run the versioned evaluation command, deploy the agreed release and locate a failed request in the approved logs. They also exercise the documented fallback. We save the release version, commands, results and any steps that needed my help, then correct the instructions and repeat blocked tasks. This makes missing access or undocumented setup visible before ownership transfers. The delivery brief includes a record for these checks; a screen-share demonstration is not a substitute for your engineer running them.",
+ },
+ {
  question: "How can my team change models or prompts after handover?",
  answer: "The handover records the released model identifier, prompt and tool versions, retrieval configuration and evaluation cases in your repository. Before a change, compare the released and proposed versions on the same cases, including permissions and failure paths, and review quality, latency and cost together. Your release owner approves the change against the agreed limits. We also rehearse restoring the previous application configuration or disabling the AI path in staging; if the previous provider model is unavailable, use the documented fallback. A passing evaluation reduces uncertainty but does not guarantee future behavior.",
  },
@@ -1008,8 +1021,13 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-25",
+ updated: "2026-10-26",
  related: [
+ {
+ href: "/examples/ai-delivery-brief.md",
+ label: "Download the delivery and handover brief",
+ description: "Record your receiving engineer's build, evaluation, deployment and fallback checks before accepting the handover.",
+ },
  {
  href: "/notes/rag-for-sql",
  label: "Chat-to-SQL result acceptance example",
