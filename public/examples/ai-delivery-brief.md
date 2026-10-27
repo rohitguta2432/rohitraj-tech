@@ -25,6 +25,29 @@ Editable planning template. Replace every placeholder with a project decision; e
 | Dependency failure | Use the agreed fallback without duplicate actions | Failure drill | Agree before testing |
 | Source update or deletion | Refresh or remove derived content | Replayable update/deletion test | Agree freshness window |
 
+## Write outcome and retry drills
+
+Use this section when the workflow changes records or sends messages. For a read-only scope, mark it inapplicable. Run approved synthetic cases in staging; this is a test plan, not evidence that a client system passed.
+
+A timeout does not establish whether the destination applied a change. Keep confirmed success, confirmed failure and unknown outcomes distinct. [AWS explains why a timed-out call may already have had side effects](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/).
+
+- Allowed action, target system and approval owner:
+- Action identifier and destination record or status lookup:
+- API duplicate-prevention contract, supported operations and retention window:
+- Retry owner, attempt limit and maximum elapsed time:
+- Reviewer and escalation deadline for an unknown outcome:
+
+| Staging drill | Required behavior | Evidence to retain |
+|---|---|---|
+| Destination accepts the write; its response is lost | Show an unknown outcome until checked. Use the agreed lookup or a retry permitted by the API contract; do not issue a fresh action simply because the caller timed out | Action identifier, destination state, attempt log and final decision |
+| Same approved action is delivered twice | Apply the agreed duplicate-prevention rule and inspect the destination for extra effects | Both deliveries, destination records and any emitted messages |
+| Inputs change after approval, or a retry falls outside the API's retention window | Hold for review; do not assume the old approval or identifier makes the new request safe | Changed inputs or elapsed time, review decision and any renewed approval |
+| First workflow step completes; the next fails | Keep the completed step visible and resolve the failed step separately; do not replay the entire workflow blindly | Per-step outcomes, unresolved items and system-owner decision |
+
+Record the release version, actual result, reviewer and retest date for every applicable drill. Keep payloads in approved storage and link to them here. Without a reliable lookup or documented retry guarantee, leave the outcome unresolved for the system owner; a missing log entry is not proof that nothing happened.
+
+Duplicate prevention depends on the destination API. For example, [Stripe documents parameter matching and key retention](https://docs.stripe.com/api/idempotent_requests); use the actual integration's contract rather than assuming those rules apply everywhere. Approval and current permissions still need checking before execution.
+
 ## Handover
 
 - Source repository and build instructions:

@@ -644,7 +644,8 @@ export const services: Service[] = [
  bullets: [
  "Define the allowed action, target system and records, credential scope and person who can approve it; keep credentials outside prompts and retrieved documents",
  "Show the approver the exact target and proposed change. Enforce approval in application code, bind it to that action, and recheck permissions before execution; changed inputs require a new approval",
- "Test rejected and expired approvals, changed permissions, duplicate requests and tool timeouts in staging. Check the recorded outcome before retrying a write, with an agreed retry limit and a human escalation path",
+ "Test rejected and expired approvals, changed permissions and duplicate requests in staging. Record the approved action and destination identifier so the operator can match a request to its actual result",
+ "An unresolved write stays on hold until its outcome is checked. Rehearse a destination accepting a change while its response is lost: show the operator an unknown outcome, check the destination through the agreed status or record lookup, and route unresolved work to the system owner. Any retry must follow the destination API's duplicate-prevention rules and agreed attempt limit; a timeout alone is not permission to repeat the action",
  "Include the approval record, execution result and disable procedure in the handover; your system owner controls production credentials and can revoke the integration's access",
  ],
  },
@@ -707,7 +708,7 @@ export const services: Service[] = [
  build: [
  "Agree the first workflow and MCP client, connection method and supported versions; define each tool's inputs, outputs, permission scope and expected business errors",
  "Test the agreed MCP client against the staging server: discover the intended tools, submit valid and invalid inputs, and check that returned results match the documented contract",
- "Exercise an upstream timeout and a business failure, such as a record that cannot be updated. Verify the client shows a failed outcome rather than reporting completion, and apply the agreed retry and approval rules before another attempt",
+ "Exercise a confirmed business rejection and a write whose response times out after the destination accepts it. Verify the client distinguishes confirmed failure from an unknown outcome, preserves the action identifier and avoids a completion claim until the result is established. Follow the agreed reconciliation and retry rules before another write",
  "Hand over the client configuration, per-case results, access, rate-limit and audit-log setup, and a runbook for adding or changing a tool; rerun the workflow checks when the client or tool contract changes",
  ],
  doneMeans: "the named client completes the agreed staging workflow, invalid inputs and failed operations produce the expected outcomes, and the receiving engineer can repeat those checks. Your system owner reviews access, call records and unresolved limitations before production credentials are enabled; connecting successfully alone does not establish readiness.",
@@ -726,7 +727,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-26",
+ updated: "2026-10-27",
  related: [
  {
  href: "/examples/ai-delivery-brief.md",
@@ -992,6 +993,10 @@ export const services: Service[] = [
  answer: "Yes. Start with the repository, the intended workflow, representative examples and the failures you have observed. I review the architecture, data access, evaluation coverage and deployment path, then propose a bounded next step. That could be repairing retrieval, adding permission checks, measuring answer quality or shipping a narrow staging slice. The review establishes what can be retained and what needs further work before we agree a larger delivery scope.",
  },
  {
+ question: "What happens if an agent times out while changing a record?",
+ answer: "A timeout can leave the outcome unknown even when the external system completed the change. For agents that write to another system, we agree how the application distinguishes confirmed success, confirmed failure and an unresolved outcome. In staging, we test a completed write whose response is lost, then check the destination record and action identifier before allowing another attempt. Where the API supports duplicate prevention, retries reuse the same identifier and unchanged inputs within its documented limits. If the outcome cannot be established safely, the application holds the action for a named reviewer instead of blindly repeating it. You receive the per-case evidence and retry rules; the delivery brief includes these drills.",
+ },
+ {
  question: "How do we check that our engineer can maintain the system?",
  answer: "Your receiving engineer runs the handover checks in staging from a clean checkout, using your team's accounts and the documented setup. They build the application, run the versioned evaluation command, deploy the agreed release and locate a failed request in the approved logs. They also exercise the documented fallback. We save the release version, commands, results and any steps that needed my help, then correct the instructions and repeat blocked tasks. This makes missing access or undocumented setup visible before ownership transfers. The delivery brief includes a record for these checks; a screen-share demonstration is not a substitute for your engineer running them.",
  },
@@ -1021,7 +1026,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-26",
+ updated: "2026-10-27",
  related: [
  {
  href: "/examples/ai-delivery-brief.md",
