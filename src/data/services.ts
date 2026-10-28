@@ -644,7 +644,8 @@ export const services: Service[] = [
  bullets: [
  "Define the allowed action, target system and records, credential scope and person who can approve it; keep credentials outside prompts and retrieved documents",
  "Show the approver the exact target and proposed change. Enforce approval in application code, bind it to that action, and recheck permissions before execution; changed inputs require a new approval",
- "Test rejected and expired approvals, changed permissions and duplicate requests in staging. Record the approved action and destination identifier so the operator can match a request to its actual result",
+ "Test rejected and expired approvals and duplicate requests in staging. Record the approved action and destination identifier so the operator can match a request to its actual result",
+ "Remove a test operator's access while their approved work is queued. Before execution, the worker must check the current permission for that operator, action and target; a shared service credential or earlier approval is insufficient. Keep denied jobs visible to authorized operators without executing them, and have the system owner cancel or explicitly reauthorize the work under an authorized identity. Record the affected job IDs, permission-change time and decision in the delivery brief",
  "An unresolved write stays on hold until its outcome is checked. Rehearse a destination accepting a change while its response is lost: show the operator an unknown outcome, check the destination through the agreed status or record lookup, and route unresolved work to the system owner. Any retry must follow the destination API's duplicate-prevention rules and agreed attempt limit; a timeout alone is not permission to repeat the action",
  "Include the approval record, execution result and disable procedure in the handover; your system owner controls production credentials and can revoke the integration's access",
  ],
@@ -727,7 +728,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-27",
+ updated: "2026-10-28",
  related: [
  {
  href: "/examples/ai-delivery-brief.md",
@@ -943,7 +944,8 @@ export const services: Service[] = [
  "Chat-to-SQL checks: agree the business meaning, reporting period and units before generating a query. Compare returned rows and totals with domain-owner-approved answers on a fixed data snapshot; include duplicate joins, empty results and ambiguous questions that need clarification. Successful SQL execution alone does not establish a correct answer",
  "Freshness checks: agree how quickly source changes must reach search, then update and remove approved test documents to verify the new content appears and removed content stops being retrieved within that window",
  "Sync failure handling: make the last successful sync and failed updates visible, test the agreed stale-data fallback, and name the receiving engineer who owns ingestion failures after handover",
- "Access checks: test the same question as users with different permissions, verifying that restricted content stays out of retrieved context, answers and citations",
+ "Access checks: test the same question as users with different permissions, verifying that restricted content stays out of retrieved context, answers and citations. Repeat with a populated answer cache so one user's result cannot bypass another user's access rules",
+ "Revocation checks: remove a test user's document access after starting a conversation and caching an answer. Repeat the question and a follow-up to check that newly generated answers, retrieved context and citations stop using that document within the agreed revocation window. Record the permission-change time and observed enforcement time; agree how retained conversation history is restricted or cleared. Previously delivered content cannot be recalled from the user's own copies",
  "Instruction-boundary checks: treat retrieved documents and tool results as untrusted input. Test approved examples containing instructions to ignore the task, expose restricted data or call an unrelated tool; record the attempted action and whether application permissions and approval checks reject it",
  "Delivery evidence: code and evaluation cases in your repository, per-case results and unresolved failures, measured latency and operating cost, plus deployment, fallback and handover instructions",
  ],
@@ -1026,7 +1028,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-27",
+ updated: "2026-10-28",
  related: [
  {
  href: "/examples/ai-delivery-brief.md",

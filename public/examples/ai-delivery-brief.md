@@ -25,6 +25,26 @@ Editable planning template. Replace every placeholder with a project decision; e
 | Dependency failure | Use the agreed fallback without duplicate actions | Failure drill | Agree before testing |
 | Source update or deletion | Refresh or remove derived content | Replayable update/deletion test | Agree freshness window |
 
+## Permission-change acceptance
+
+Use synthetic users, documents and queued jobs in staging. These are proposed acceptance cases, not measured results. A successful login or a connector's broad access does not establish the requesting user's permission. [OWASP recommends validating authorization on every request](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html#validate-the-permissions-on-every-request).
+
+- Permission source of truth and person authorized to change it:
+- User, tenant, resource and action checked at each boundary:
+- Maximum accepted revocation delay and how it is measured:
+- Permission-sync failure alert and owner; protected work to pause when current access cannot be established:
+- Answer-cache invalidation and retained conversation-history policy:
+
+Do not assume changing a source permission updates every derived copy immediately. Record the actual propagation path. For example, [Azure AI Search documents query-time checks against synchronized permission metadata](https://learn.microsoft.com/en-us/azure/search/search-document-level-access-overview#enforce-document-level-permissions-at-query-time-preview); assess the synchronization behavior of the chosen system.
+
+| Staging drill | Acceptance evidence | Decision if the check fails |
+|---|---|---|
+| An authorized user populates an answer cache; a second user without document access asks the same question | Record both identities, cache hit/miss, retrieved source IDs and returned answer/citations; no restricted content reaches the second user | Block release of the affected cache path until isolation is repaired and retested |
+| Remove document access after a conversation has started and an answer has been cached; repeat the question and a follow-up | Record revocation and enforcement times; inspect retrieval, reused context, new answers and citations, plus treatment of retained history under the agreed policy | If the permitted delay is exceeded, pause the affected path and repair synchronization or invalidation before retesting |
+| Remove an operator's permission while an approved job is queued but has not started | Attempt execution; retain the job ID and denied authorization decision, and verify no destination write occurred | Keep the job on hold for an authorized system owner to cancel or explicitly reauthorize; never silently run it as a more privileged account |
+
+Save the release/configuration version, actual results, reviewer and retest date. Use approved evidence storage; do not copy restricted payloads into this brief. Revocation controls future access and reuse under the agreed policy; it cannot erase content someone already downloaded. Retention of audit records and backups is a separate documented decision. For work that may already have executed, use the outcome checks below before deciding on another attempt.
+
 ## Write outcome and retry drills
 
 Use this section when the workflow changes records or sends messages. For a read-only scope, mark it inapplicable. Run approved synthetic cases in staging; this is a test plan, not evidence that a client system passed.
