@@ -576,6 +576,10 @@ export const services: Service[] = [
  question: "How does our team take over when the FDE pilot ends?",
  answer: "We agree the transfer tasks before the final review. Your operator and receiving engineer lead a staging rehearsal using the runbook: complete an approved task, handle a failed integration, find its recorded outcome and route unresolved work to the named owner. I observe and correct missing instructions. Record which tasks they completed, where help was needed and who owns each remaining gap. Before closing, confirm the support end date, escalation route and removal of my access. If a required task is still blocked, agree a repair or keep that workflow disabled; a handover meeting alone is not acceptance.",
  },
+ {
+ question: "What happens to integrations and data if we stop the pilot?",
+ answer: "A stopped pilot needs a closure record as well as a code handover. With your system owners, stop new work, disable scheduled jobs and incoming triggers, and reconcile queued or unresolved actions before retiring their access. Record which connectors, credentials and resources are removed, and which remain under a named owner with an agreed running cost and purpose. Apply the agreed data-retention plan to test data, indexes, caches and provider copies; list pending deletion or expiry with an owner and review date. Your account owner confirms the final state. Preserve required audit evidence and resolve incomplete actions through the agreed recovery procedure; switching off the interface alone does not close the integration.",
+ },
  ],
  sections: [
  {
@@ -728,7 +732,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-28",
+ updated: "2026-10-29",
  related: [
  {
  href: "/examples/ai-delivery-brief.md",
@@ -958,7 +962,8 @@ export const services: Service[] = [
  bullets: [
  "List the fields sent for generation and embeddings, plus what prompts, responses and tool results appear in traces; use approved or redacted examples for initial evaluation",
  "Review the chosen provider's processing region, retention and training-use settings against your requirements. Record constraints and unresolved approvals before using sensitive data; local inference is an option to evaluate when external processing is restricted",
- "Agree retention and deletion responsibilities for uploaded files, vector indexes, evaluation fixtures and logs, including any provider-managed copies and backup limitations",
+ "Map stored copies before agreeing deletion: source uploads, extracted text and embeddings, answer caches, conversation history, evaluation fixtures, traces and provider-managed files. For each, name the owner, removal or expiry mechanism, retention window and any backup or audit-record exception",
+ "Rehearse deletion with a synthetic document in staging. Record its identifiers, the removal request, checks of the affected stores and any pending expiry. Keep deletion evidence separate from a search test: no retrieved result does not prove every stored copy is gone. Document remaining copies and their access restrictions; the delivery brief provides the record",
  "Use your repository and provider accounts with scoped access. Document secret storage, billing ownership and credential revocation so your team controls the system after handover",
  ],
  },
@@ -1028,7 +1033,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-28",
+ updated: "2026-10-29",
  related: [
  {
  href: "/examples/ai-delivery-brief.md",

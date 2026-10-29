@@ -68,6 +68,33 @@ Record the release version, actual result, reviewer and retest date for every ap
 
 Duplicate prevention depends on the destination API. For example, [Stripe documents parameter matching and key retention](https://docs.stripe.com/api/idempotent_requests); use the actual integration's contract rather than assuming those rules apply everywhere. Approval and current permissions still need checking before execution.
 
+## Data deletion and pilot closure record
+
+Use synthetic data in staging to rehearse the agreed lifecycle before handling sensitive inputs. These are proposed checks, not proof of a completed deletion or a client outcome. Source removal, loss of search visibility and removal of every stored copy are different observations.
+
+| Copy or resource | Responsible owner | Removal, expiry or retention decision | Evidence / remaining limit / review date |
+|---|---|---|---|
+| Source uploads, extracted text, chunks and embeddings | | | |
+| Answer caches and conversation history | | | |
+| Evaluation fixtures, traces and exported debug files | | | |
+| Provider-managed files and stored responses | | | |
+| Backups, previous object versions and required audit records | | | |
+
+For each applicable row, record the synthetic document or resource IDs, request time, completion evidence and any asynchronous expiry still pending. Check the affected stores as well as repeating retrieval; a missing answer is not proof of erasure. Record the next sync result to detect accidental re-ingestion. Use approved storage for evidence links without copying the deleted content into this record.
+
+Verify the actual storage contract. For example, [S3 current-version expiration leaves noncurrent versions unaffected](https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-expire-general-considerations.html). [OWASP's log-disposal guidance includes temporary logs and copies](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html#disposal-of-logs). Agree applicable retention requirements with the data owner; do not promise immediate removal from every backup or delete required audit evidence. List retained copies, restricted access, expiry dates and the person who will verify completion.
+
+If the pilot stops, record these decisions with the receiving system owners:
+
+- Stop-new-work time; scheduled jobs, webhooks and consumers disabled or transferred:
+- Queued and unknown-outcome actions; reconciliation evidence and owner for each unresolved item:
+- Connectors and credentials retired after reconciliation, with revocation evidence:
+- Resources kept running; purpose, billing owner and agreed operating cost:
+- Data copies removed, retained or awaiting expiry, with follow-up owner and date:
+- Account owner's closure decision, exceptions and next review:
+
+Do not replay unresolved writes or remove the access needed to establish their outcome without an agreed recovery path. If a deletion check fails, record the affected copy, restrict its use under the agreed policy and assign repair and retest; do not mark the row complete. Closing a pilot does not undo its completed business actions.
+
 ## Handover
 
 - Source repository and build instructions:
