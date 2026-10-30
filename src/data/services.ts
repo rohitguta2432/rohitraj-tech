@@ -628,6 +628,7 @@ export const services: Service[] = [
  paragraphs: [
  "A useful pilot ends with evidence your team can inspect. Before implementation, we agree what the system must do, which examples will test it, and who owns the rollout decision. A polished demo alone is not an acceptance test.",
  "The release review can approve a limited rollout, hold for a specific repair, or stop with a documented handover. If a target is missed, I record the failed cases, likely cause and proposed next step. You approve any revised scope before more work begins; a pilot does not automatically become a retainer.",
+ "For a retrieval replacement, agree whether users can tolerate a planned pause or need the existing index to keep serving during a separate build. Reconcile source updates, deletions and permission changes before switching traffic. Keep the query encoder and its matching index together during rollout and rollback. Your release owner reviews the comparison results and a staging switch-back drill; an older index is only a recovery option if its data and permissions still meet the agreed requirements. Otherwise use the documented fallback. Record these decisions in the delivery brief.",
  ],
  bullets: [
  "Scope: one named workflow, its users and integrations, plus an explicit list of tasks the pilot will not attempt",
@@ -732,7 +733,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-29",
+ updated: "2026-10-30",
  related: [
  {
  href: "/examples/ai-delivery-brief.md",
@@ -1009,7 +1010,7 @@ export const services: Service[] = [
  },
  {
  question: "How can my team change models or prompts after handover?",
- answer: "The handover records the released model identifier, prompt and tool versions, retrieval configuration and evaluation cases in your repository. Before a change, compare the released and proposed versions on the same cases, including permissions and failure paths, and review quality, latency and cost together. Your release owner approves the change against the agreed limits. We also rehearse restoring the previous application configuration or disabling the AI path in staging; if the previous provider model is unavailable, use the documented fallback. A passing evaluation reduces uncertainty but does not guarantee future behavior.",
+ answer: "The handover records the released generation model, prompt, tools, embedding model and index version. Compare proposed prompt or generation-model changes against the released version on the same acceptance cases, including permissions and failure paths, and review quality, latency and cost together. Changing the embedding model is a data migration, not just a configuration switch: scope re-embedding the corpus and pair the new query encoder with its matching index. Equal vector dimensions alone do not establish compatibility. Keep the existing index available during validation where required, and record rebuild time, temporary storage and failed documents alongside retrieval and answer checks. Your release owner approves the change. Rehearse restoring a compatible configuration and index in staging, or use the documented fallback if the old model or valid index is unavailable. The delivery brief includes a migration record; passing recorded cases does not guarantee future behavior.",
  },
  {
  question: "What should I prepare before hiring a freelance AI engineer?",
@@ -1033,7 +1034,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-29",
+ updated: "2026-10-30",
  related: [
  {
  href: "/examples/ai-delivery-brief.md",

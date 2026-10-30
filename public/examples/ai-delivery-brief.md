@@ -95,6 +95,27 @@ If the pilot stops, record these decisions with the receiving system owners:
 
 Do not replay unresolved writes or remove the access needed to establish their outcome without an agreed recovery path. If a deletion check fails, record the affected copy, restrict its use under the agreed policy and assign repair and retest; do not mark the row complete. Closing a pilot does not undo its completed business actions.
 
+## Retrieval migration record
+
+Use when replacing the embedding model or rebuilding a retrieval index. This is a proposed acceptance plan, not a migration result. [Azure AI Search describes an embedding space built with the same model](https://learn.microsoft.com/en-us/azure/search/vector-search-how-to-create-index); matching vector length alone is not evidence that two models are interchangeable. Record compatible query and document encoders, including any model-specific input modes. [Cloud SQL recommends explicit stable embedding model versions](https://docs.cloud.google.com/sql/docs/postgres/generate-manage-vector-embeddings#fully_qualify_the_model_id_to_avoid_errors).
+
+- Reason for the change and release owner:
+- Current and candidate model IDs/versions, dimensions, chunking, filters and index names:
+- Corpus snapshot, document IDs and source-change checkpoint:
+- Planned service pause or separate build while the current index serves traffic:
+- Estimated re-embedding work, temporary storage, operating budget and rollback window:
+
+| Review | Evidence to record | Hold condition |
+|---|---|---|
+| Rebuild coverage | Expected source IDs, indexed IDs, failed/skipped documents and approved exclusions; compare IDs and versions rather than only chunk counts | Missing or stale required content |
+| Quality and access | Same held-out questions run through each compatible encoder/index pair; per-case retrieved sources, answer review, denied-access cases, latency and cost | An agreed acceptance threshold or access check fails |
+| Changes during the build | Replay approved source updates, deletions and permission changes after the snapshot; record the final checkpoint and enforcement results | Candidate index has not caught up within the agreed window |
+| Switch and recovery | Staging trace showing each request uses a matching query encoder and index, including during a switch back; check old-index freshness and permissions | Mixed configuration, stale permissions or unavailable old model; use the agreed fallback |
+
+[Azure's rebuild guidance describes testing a new production index alongside the existing one](https://learn.microsoft.com/en-us/azure/search/search-howto-reindex). Choose the method for the actual system; a planned pause may be simpler when users can accept it. An index alias alone does not prove that the application's query encoder changed with it. Before switching, name who reconciles ongoing source changes, who authorizes traffic and who can stop rollout.
+
+Record the receiving owner's decision, exceptions, observation period and fallback drill result. Keep a recovery index only for the agreed window, with current access controls and source changes accounted for; reverting must not restore deleted or newly restricted content. After that window, record retirement of the old model/index resources under the agreed retention plan. Link the evidence here without copying sensitive payloads.
+
 ## Handover
 
 - Source repository and build instructions:
