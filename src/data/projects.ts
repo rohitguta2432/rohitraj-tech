@@ -1484,6 +1484,48 @@ export const projects: Project[] = [
             ]
         }
     },
+    {
+        slug: "orderpilot",
+        seoTitle: "OrderPilot: AI-Assisted Order Intake for Distributors",
+        seoDescription: "Explore OrderPilot, an order-intake review app for electrical distributors. It turns PDF and email purchase orders into sales-order drafts a person approves.",
+        name: "OrderPilot — From Purchase Order PDF to Reviewed Sales-Order Draft",
+        problem: "Electrical-parts distributors receive purchase orders as PDFs and emails written in the customer's own words: '20A single pole breaker', '#12 THHN black copper, 1500 FT'. Someone has to find every line, match it to a catalog SKU, choose between near-identical parts and convert units before a sales order exists, and a tool that guesses can quietly put the wrong part on the order.",
+        solves: "Upload a text-based PDF or paste an email, and OrderPilot extracts the header and line items, then matches each line to the catalog by part number, learned customer aliases and spec-aware text similarity. Every suggestion shows the source line it came from and why it matched. Lines that fit several parts, or need a unit conversion, wait for a person. Nothing exports until a reviewer approves, any later edit withdraws the approval, and the export is a documented sales-order CSV.",
+        techStack: ["TypeScript", "React 19 + Vite", "Hono", "pdf.js (unpdf)", "Anthropic Messages API (optional)", "Vitest", "Playwright"],
+        status: "active",
+        aiApproach: "Deterministic first, so it works with no key: PDF text-layer parsing, exact SKU and manufacturer-part lookups, learned aliases and a spec-aware similarity score in which tokens like 20 A, 1-pole and 12 AWG count double and conflicting specs are penalised. An optional server-side Anthropic adapter can suggest matches from a validated shortlist and extract lines from unusual layouts, but every AI quantity must appear on its cited source line and AI never confirms a match. Without a key the app runs in a clearly labelled demo mode.",
+        image: "/images/projects/orderpilot-poster.jpg",
+        videoUrl: "/videos/orderpilot.mp4",
+        updated: "2026-10-31",
+        details: {
+            businessImpact: "Order entry is where a wrong variant or a misread unit becomes a wrong shipment. OrderPilot keeps the speed of automatic extraction but makes every uncertain decision visible and human: the reviewer sees the evidence, resolves the ambiguous lines and signs off, and the approved draft exports as a documented CSV that an ERP import can map.",
+            approach: [
+                "Text-layer PDF extraction with line reconstruction (pdf.js via unpdf) and a pasted-email parser for quantity-first and description-first bullets; every extracted line keeps a pointer to its exact source line",
+                "Matching in a fixed order: exact SKU or manufacturer part number, then customer-specific or global aliases, then spec-aware fuzzy similarity with penalties for conflicting specs and unrequested extras such as GFCI",
+                "Line states — Ready, Needs review, Ambiguous, Unit to resolve, No match, Excluded — each with a plain reason such as '3 catalog items fit about equally well. Choose one.'",
+                "Unit conversions only from catalog rules (1 ROLL = 500 FT) or a validated custom factor, applied by the reviewer and recorded in the export",
+                "Split-view review workspace: source text and the original PDF beside an inline inspector with evidence, candidates, catalog search and keyboard navigation",
+                "Approval bound to a SHA-256 hash of the header, the lines and the catalog fields they use; export re-checks it and refuses with HTTP 409 if anything changed"
+            ],
+            decisions: [
+                "Ask, don't guess: lines whose top candidates score within a small gap are marked Ambiguous instead of auto-selected",
+                "Never infer prices or availability: no catalog price means an empty unit_price and price_status unknown in the export",
+                "A generic, documented 21-column CSV with spreadsheet formula-injection protection instead of a claimed ERP integration",
+                "Local-first, single-user MVP: a JSON file store with atomic writes and a localhost-only API that rejects foreign hosts and cross-site writes",
+                "Scanned, image-only PDFs are refused with a clear message instead of being guessed at; there is no OCR yet"
+            ],
+            currentStatus: "MVP built on October 31, 2026; the repository is private. 47 Vitest tests (extraction, matching, unit conversion, approval invalidation, CSV export, the HTTP workflow and the AI adapter with mocked responses) and a 27-step Playwright walkthrough of the production build pass, from catalog import and PDF upload through ambiguity, conversions, approval and CSV download, plus tablet and mobile layouts. Live AI mode is implemented but has only been tested with mocked provider responses, and matching has only been tuned on a 30-item synthetic catalog.",
+            roadmap: [
+                "OCR for scanned purchase orders",
+                "Direct ERP import formats once a target system is chosen and tested",
+                "Multi-user review with sign-in and an audit trail"
+            ],
+            improvements: [
+                "Matching tested against larger real catalogs",
+                "More purchase-order layouts covered by the extraction rules"
+            ]
+        }
+    },
 ];
 
 export const repos = [
