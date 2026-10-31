@@ -614,6 +614,7 @@ export const services: Service[] = [
  heading: "What I need from your side",
  paragraphs: [
  "To scope the work and identify dependencies before implementation, I ask for:",
+ "For a document-based pilot, bring a small approved sample covering the formats, languages and layouts users rely on, including scans and tables when relevant. Name a source owner who can review extraction errors and approve corrections or exclusions. The first milestone records which content is usable, which files failed or were only partly read, and what needs repair. If required evidence cannot be read reliably, agree a corrected source, a narrower pilot or a hold before rollout. Use the source-readiness record in the delivery brief to capture the decision.",
  ],
  bullets: [
  "One named owner on your side who can make product calls the same day",
@@ -733,7 +734,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-30",
+ updated: "2026-10-31",
  related: [
  {
  href: "/examples/ai-delivery-brief.md",
@@ -944,7 +945,8 @@ export const services: Service[] = [
  ],
  bullets: [
  "Design and baseline: document the data flow and model choice, then compare the staging feature with your current search or manual process on the same held-out questions",
- "Retrieval checks: record the expected source for each answerable question and whether the permitted evidence was retrieved; include missing and outdated documents",
+ "Document readiness: agree supported formats and languages, then sample scanned pages, tables and difficult layouts. Check extracted content against the original before tuning retrieval: preserve the labels, units and source locations needed to interpret an answer. Record empty, partial or rejected files and any approved exclusions; a completed import alone does not establish usable evidence",
+ "Retrieval checks: for each answerable question, record the expected source passage and whether permitted evidence reached the model. Trace a miss back through extraction, chunking and search; include missing and outdated documents so a parser failure is not mistaken for a model failure",
  "Answer checks: inspect whether each citation supports the answer and whether the system asks for clarification or declines when the available evidence is insufficient",
  "Chat-to-SQL checks: agree the business meaning, reporting period and units before generating a query. Compare returned rows and totals with domain-owner-approved answers on a fixed data snapshot; include duplicate joins, empty results and ambiguous questions that need clarification. Successful SQL execution alone does not establish a correct answer",
  "Freshness checks: agree how quickly source changes must reach search, then update and remove approved test documents to verify the new content appears and removed content stops being retrieved within that window",
@@ -1034,7 +1036,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-30",
+ updated: "2026-10-31",
  related: [
  {
  href: "/examples/ai-delivery-brief.md",

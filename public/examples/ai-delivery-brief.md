@@ -25,6 +25,32 @@ Editable planning template. Replace every placeholder with a project decision; e
 | Dependency failure | Use the agreed fallback without duplicate actions | Failure drill | Agree before testing |
 | Source update or deletion | Refresh or remove derived content | Replayable update/deletion test | Agree freshness window |
 
+## Document source readiness
+
+Use for document-based retrieval; mark inapplicable for other workflows. This is a proposed review record, not a completed benchmark. Choose approved or synthetic samples for the formats, languages and layouts in scope before a bulk import.
+
+- Source owner, reviewer and authoritative document versions:
+- Supported formats/languages; scan, table and image requirements:
+- Required questions and source passages that should answer them:
+- Parser/OCR configuration, version and approved processing environment:
+- Acceptance rules for missing text, changed numbers and unsupported files:
+
+Compare the original, extracted content and resulting chunks before judging retrieval. [Databricks describes parsing and chunking as separate preparation stages](https://docs.databricks.com/aws/en/agents/tutorials/ai-cookbook/quality-data-pipeline-rag). A tool supporting a file extension does not establish that it preserves the content your task needs. [Amazon Textract documents inconsistent extraction for some table structures](https://docs.aws.amazon.com/textract/latest/dg/textract-best-practices.html).
+
+| Proposed sample | What the reviewer checks | Evidence / decision |
+|---|---|---|
+| Scanned page with a critical identifier or number | Compare the required characters with the original; record unreadable content rather than accepting empty output | Source version/page, extracted span, correction or rejection |
+| Table with headers, units and a footnote | Check that each required value retains its row/column meaning, unit and qualifying note in the chunks supplied to retrieval | Original cells, resulting chunks, reviewer result |
+| Multi-column or mixed-layout page | Check that reading order preserves the required statement and that its citation identifies the correct source location | Source passage, chunk IDs and citation destination |
+| Unsupported, corrupt or partly processed file | Show a visible failure or partial status; reconcile required source IDs and pages against processed, failed and explicitly excluded items | Import report, affected questions and repair owner |
+
+Save actual observations, not just a pass label. OCR confidence can help select items for review; it does not replace checking the task's required content. Keep sensitive source material in approved storage and link to evidence here.
+
+If required content is missing or altered, hold the affected source or workflow, correct the extraction or obtain a usable source, and repeat the checks. A narrower pilot needs the owner's explicit acceptance of excluded questions and a fallback for them. After any repair, rerun retrieval and answer cases too; correct extraction alone does not establish a correct answer.
+
+- Review decision and approved exclusions:
+- Repair owner, retest date and remaining coverage limits:
+
 ## Permission-change acceptance
 
 Use synthetic users, documents and queued jobs in staging. These are proposed acceptance cases, not measured results. A successful login or a connector's broad access does not establish the requesting user's permission. [OWASP recommends validating authorization on every request](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html#validate-the-permissions-on-every-request).
