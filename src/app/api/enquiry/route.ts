@@ -24,7 +24,7 @@ export async function POST(request: Request) {
   }
   const parsed = enquirySchema.safeParse(raw);
   if (!parsed.success) return NextResponse.json({ success: false, error: parsed.error.issues[0].message }, { status: 400 });
-  const { requestId, name, email, message, sourcePath } = parsed.data;
+  const { requestId, name, email, message, sourcePath, discoverySource, attribution } = parsed.data;
   const id = `enquiry:${requestId}`;
   try {
     // A retry uses the same receipt: no duplicate stored lead or notification.
@@ -47,7 +47,10 @@ export async function POST(request: Request) {
     try {
       await client.send(new PutItemCommand({
         TableName: table,
-        Item: { id: { S: id }, name: { S: name }, email: { S: email }, message: { S: message }, source_path: { S: sourcePath }, received_at: { S: new Date().toISOString() }, expires_at: { N: String(Math.floor(Date.now() / 1000) + 90 * 86400) } },
+        Item: { id: { S: id }, name: { S: name }, email: { S: email }, message: { S: message }, source_path: { S: sourcePath }, lead_status: { S: "new" },
+          ...(discoverySource ? { discovery_source: { S: discoverySource } } : {}),
+          ...(attribution ? { landing_path: { S: attribution.landingPath }, visit_source: { S: attribution.source }, attribution_basis: { S: "consented_browser_hint_v1" } } : {}),
+          received_at: { S: new Date().toISOString() }, expires_at: { N: String(Math.floor(Date.now() / 1000) + 90 * 86400) } },
         ConditionExpression: "attribute_not_exists(id)",
       }));
     } catch (error) {

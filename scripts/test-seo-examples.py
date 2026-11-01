@@ -76,6 +76,11 @@ class RegressionTests(unittest.TestCase):
   self.assertEqual(weekly.aggregate([dict(impressions=1,clicks=0,position=2),dict(impressions=9,clicks=1,position=12)])['position'],11)
  def test_enquiries_date_boundary_privacy_and_deduplication(self):
   row={'id':{'S':'enquiry:test'},'received_at':{'S':'2026-10-23T01:00:00Z'},'source_path':{'S':'/contact?email=private'}}
-  self.assertEqual(weekly.count_enquiries([row,row],date(2026,10,22),date(2026,10,22)),{'total':1,'by_form_page':{'other':1}})
+  result=weekly.count_enquiries([row,row],date(2026,10,22),date(2026,10,22))
+  self.assertEqual(result['total'],1)
+  self.assertEqual(result['by_form_page'],{'other':1})
+  self.assertEqual(result['by_visit_source'],{'unavailable':1})
+  self.assertEqual(result['by_lead_status'],{'unreviewed':1})
+  self.assertNotIn('private',json.dumps(result))
   self.assertEqual(weekly.count_enquiries([row],date(2026,10,23),date(2026,10,23))['total'],0)
 if __name__=='__main__':unittest.main()

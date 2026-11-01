@@ -5885,8 +5885,8 @@ code,
 .enquiry-card form { display: grid; gap: 1rem; }
 .enquiry-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .enquiry-card label { display: grid; gap: .5rem; font-weight: 600; color: var(--text-primary); }
-.enquiry-card input, .enquiry-card textarea { width: 100%; min-width: 0; padding: .8rem; border: 1px solid var(--border-hover); border-radius: 6px; background: var(--bg); color: var(--text-primary); font: inherit; font-size: 16px; }
-.enquiry-card input:focus-visible, .enquiry-card textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.enquiry-card input, .enquiry-card textarea, .enquiry-card select { width: 100%; min-width: 0; padding: .8rem; border: 1px solid var(--border-hover); border-radius: 6px; background: var(--bg); color: var(--text-primary); font: inherit; font-size: 16px; }
+.enquiry-card input:focus-visible, .enquiry-card textarea:focus-visible, .enquiry-card select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .enquiry-card textarea { resize: vertical; }
 .enquiry-card .btn { justify-self: start; min-height: 44px; }
 .enquiry-card .enquiry-privacy { font-size: .85rem; margin: 0; }

@@ -60,3 +60,27 @@ it("returns a clear limit response rather than persisting another lead", async (
   expect(response.status).toBe(429);
   expect(send.mock.calls.some(([command]) => command instanceof PutItemCommand)).toBe(false);
 });
+
+it("stores separate discovery and browser hints with a new, unqualified status", async () => {
+  const response = await POST(request({ ...brief, discoverySource: "github", attribution: { landingPath: "/notes/rag-for-sql", source: "google_search", capturedAt: Date.now(), rawQuery: "private" } }));
+  expect(response.status).toBe(200);
+  const item = send.mock.calls.find(([command]) => command instanceof PutItemCommand)?.[0].input.Item;
+  expect(item.lead_status.S).toBe("new");
+  expect(item.discovery_source.S).toBe("github");
+  expect(item.visit_source.S).toBe("google_search");
+  expect(item.landing_path.S).toBe("/notes/rag-for-sql");
+  expect(item.attribution_basis.S).toBe("consented_browser_hint_v1");
+  expect(JSON.stringify(item)).not.toContain("private");
+});
+
+it.each([
+  { landingPath: "/contact?email=secret", source: "google_search", capturedAt: Date.now() },
+  { landingPath: "/contact", source: "invented", capturedAt: Date.now() },
+  { landingPath: "/contact", source: "google_search", capturedAt: 1 },
+  { landingPath: "/contact", source: "google_search", capturedAt: Date.now() + 3600000 },
+])("discards invalid attribution while receiving a valid brief", async attribution => {
+  expect((await POST(request({ ...brief, attribution }))).status).toBe(200);
+  const item = send.mock.calls.find(([command]) => command instanceof PutItemCommand)?.[0].input.Item;
+  expect(item.visit_source).toBeUndefined();
+  expect(item.landing_path).toBeUndefined();
+});

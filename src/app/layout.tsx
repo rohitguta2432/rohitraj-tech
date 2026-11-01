@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { defaultMetadata, generateAllSchemas } from "@/lib/seo-config";
 import Analytics from "@/components/Analytics";
+import VisitAttribution from "@/components/VisitAttribution";
 import HoloLight from "@/components/brand/HoloLight";
 import { EdgeStickers } from "@/components/brand/Stickers";
 
@@ -79,6 +80,7 @@ export default function RootLayout({
         {children}
         <EdgeStickers />
         <HoloLight />
+        <VisitAttribution />
         <Analytics />
       </body>
     </html>

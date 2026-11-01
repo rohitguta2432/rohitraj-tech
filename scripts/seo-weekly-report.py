@@ -59,9 +59,20 @@ def window(token, start, end):
             'pages':[r for r in pages if '/services/' in r['keys'][0] or any(word in r['keys'][0] for word in ('/notes/rag-', 'forward-deployed','freelance-ai-engineer'))]}
 
 
+DISCOVERY_SOURCES = {'google', 'other_search', 'linkedin', 'github', 'referral', 'other'}
+VISIT_SOURCES = {'google_search', 'bing_search', 'other_search', 'social', 'github', 'referral', 'paid', 'campaign', 'direct_or_unknown'}
+LEAD_STATUSES = {'new', 'qualified', 'call_scheduled', 'won', 'not_fit', 'spam_test'}
+QUALIFIED_STATUSES = {'qualified', 'call_scheduled', 'won'}
+
+
 def count_enquiries(items, start, end):
     # Align calendar boundaries with GSC's Pacific dates. IDs stay in memory only.
     counts = Counter()
+    discovery = Counter()
+    visits = Counter()
+    statuses = Counter()
+    qualified_visits = Counter()
+    landing_pages = Counter()
     seen = set()
     for row in items:
         key = row.get('id',{}).get('S','')
@@ -78,14 +89,34 @@ def count_enquiries(items, start, end):
             source = row.get('source_path',{}).get('S','')
             category = source if source in ('/contact','/hire') else 'other'
             counts[category] += 1
+            def allowed(field, choices, fallback):
+                value = row.get(field, {}).get('S', '')
+                return value if value in choices else fallback
+            reported = allowed('discovery_source', DISCOVERY_SOURCES, 'unreported')
+            status = allowed('lead_status', LEAD_STATUSES, 'unreviewed')
+            source = allowed('visit_source', VISIT_SOURCES, 'unavailable')
+            if row.get('attribution_basis', {}).get('S') != 'consented_browser_hint_v1':
+                source = 'unavailable'
+            discovery[reported] += 1
+            visits[source] += 1
+            statuses[status] += 1
+            if status in QUALIFIED_STATUSES:
+                qualified_visits[source] += 1
+            landing = row.get('landing_path', {}).get('S', '')
+            # Export only known public route shapes, never query strings or arbitrary input.
+            safe_landing = landing in ('/', '/contact', '/hire', '/about', '/notes', '/projects', '/services') or bool(re.fullmatch(r'/(notes|projects|services)/[a-z0-9-]{1,150}', landing))
+            landing_pages[landing if source != 'unavailable' and safe_landing else 'unavailable'] += 1
             seen.add(key)
-    return {'total':sum(counts.values()),'by_form_page':dict(counts)}
+    return {'total':sum(counts.values()), 'by_form_page':dict(counts),
+            'by_discovery_source':dict(discovery), 'by_visit_source':dict(visits),
+            'by_lead_status':dict(statuses), 'qualified_by_visit_source':dict(qualified_visits),
+            'by_landing_page':dict(landing_pages)}
 
 
 def enquiry_items(profile):
     command = ['aws','dynamodb','scan','--table-name','rohitraj-tech-enquiries',
                '--region','ap-south-1','--profile',profile,'--consistent-read',
-               '--projection-expression','id, source_path, received_at','--output','json']
+               '--projection-expression','id, source_path, received_at, discovery_source, visit_source, attribution_basis, landing_path, lead_status','--output','json']
     run = subprocess.run(command, capture_output=True, text=True, timeout=90)
     if run.returncode:
         raise RuntimeError('Read-only enquiry aggregation failed; check AWS profile permissions')
@@ -114,7 +145,9 @@ def main():
             'limitations':['Average GSC position is not a fixed live rank; low impression counts are noisy.',
                           'Missing query rows are unreported, not zero. Privacy filtering and top-row limits apply.',
                           'Clusters overlap and use disclosed query rows; do not add them or compare their sum with property totals.',
-                          'Website enquiries include all traffic sources and may include spam/tests. They are not qualified or SEO-attributed leads.',
+                          'Website enquiries include all traffic sources and may include spam/tests. Qualification is a manually assigned status, not inferred from submission.',
+                          'Visitor-reported discovery and consented browser hints are separate, unverified attribution signals; missing attribution is not direct traffic.',
+                          'Lead status is current at report time, not a historical funnel snapshot. Changes can alter earlier-period qualification counts.',
                           'Enquiry records have a 90-day retention policy; earlier periods can be incomplete.']}
     for slug in TARGETS:
         url='https://rohitraj.tech/services/'+slug

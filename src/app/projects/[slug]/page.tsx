@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StatusBadge from "@/components/StatusBadge";
+import AgentAutopsyEvidence from "@/components/AgentAutopsyEvidence";
 import ImageCarousel from "@/components/ImageCarousel";
 import { projects } from "@/data/projects";
 import { services } from "@/data/services";
@@ -215,6 +216,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                                 ))}
                             </ul>
                         </div>
+                        {project.slug === "agent-autopsy" && <AgentAutopsyEvidence />}
                         {relatedAiServices.length > 0 && (
                             <div className="project-detail-section">
                                 <h2>Work with me on an AI system</h2>

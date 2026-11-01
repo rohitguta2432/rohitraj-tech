@@ -1,0 +1,192 @@
+{
+  "measured_at": "2026-11-01T04:30:31.882Z",
+  "upstream_commit": "0545ad32084c41d3a22275451f0903c9aabbc08c",
+  "engine_sha256": "6174e77087e1209550c5fb620c4a20e37d50ae919107c7bce830e29fc31cc271",
+  "runtime": {
+    "node": "v22.23.3",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "cpu": "Apple M5 Pro"
+  },
+  "method": {
+    "warmups_per_case": 10,
+    "timed_runs_per_case": 100,
+    "scope": "parseTranscript + runAutopsy only; excludes UI, HTTP and Ollama",
+    "api_calls": 0
+  },
+  "limitations": "Author-created synthetic cases after source inspection; not a held-out dataset, production accuracy estimate, client outcome or proof of security. INCORRECT_ANSWER is an intentionally unsupported capability probe. Timing varies by machine and load. No paid model calls; infrastructure and engineering costs are not measured.",
+  "groups": {
+    "signature_controls": {
+      "matched": 7,
+      "total": 7
+    },
+    "boundary_probes": {
+      "matched": 0,
+      "total": 5
+    }
+  },
+  "rows": [
+    {
+      "id": "clean",
+      "group": "signature_controls",
+      "why": "Ordinary completed exchange.",
+      "expected": [],
+      "actual": [],
+      "matched": true,
+      "input_bytes": 78,
+      "median_ms": 0.0008,
+      "p95_ms": 0.0018
+    },
+    {
+      "id": "two-calls",
+      "group": "signature_controls",
+      "why": "Two calls stay below the repeat threshold.",
+      "expected": [],
+      "actual": [],
+      "matched": true,
+      "input_bytes": 206,
+      "median_ms": 0.0022,
+      "p95_ms": 0.0032
+    },
+    {
+      "id": "identical-loop",
+      "group": "signature_controls",
+      "why": "Three identical calls without new evidence.",
+      "expected": [
+        "DEATH_LOOP"
+      ],
+      "actual": [
+        "DEATH_LOOP"
+      ],
+      "matched": true,
+      "input_bytes": 185,
+      "median_ms": 0.002,
+      "p95_ms": 0.0036
+    },
+    {
+      "id": "repeated-errors",
+      "group": "signature_controls",
+      "why": "The same call fails twice without a changed strategy.",
+      "expected": [
+        "ERROR_BLINDNESS"
+      ],
+      "actual": [
+        "ERROR_BLINDNESS"
+      ],
+      "matched": true,
+      "input_bytes": 222,
+      "median_ms": 0.0027,
+      "p95_ms": 0.003
+    },
+    {
+      "id": "undeclared-tool",
+      "group": "signature_controls",
+      "why": "send_email is absent from the declared tool list.",
+      "expected": [
+        "GHOST_TOOL"
+      ],
+      "actual": [
+        "GHOST_TOOL"
+      ],
+      "matched": true,
+      "input_bytes": 95,
+      "median_ms": 0.0015,
+      "p95_ms": 0.0016
+    },
+    {
+      "id": "unfinished",
+      "group": "signature_controls",
+      "why": "The log ends at a tool call.",
+      "expected": [
+        "FLATLINE"
+      ],
+      "actual": [
+        "FLATLINE"
+      ],
+      "matched": true,
+      "input_bytes": 48,
+      "median_ms": 0.0008,
+      "p95_ms": 0.0011
+    },
+    {
+      "id": "large-context",
+      "group": "signature_controls",
+      "why": "More than 200,000 characters trigger this heuristic, irrespective of model context size.",
+      "expected": [
+        "CONTEXT_BLOAT"
+      ],
+      "actual": [
+        "CONTEXT_BLOAT"
+      ],
+      "matched": true,
+      "input_bytes": 200074,
+      "median_ms": 0.0639,
+      "p95_ms": 0.1429
+    },
+    {
+      "id": "legitimate-polling",
+      "group": "boundary_probes",
+      "why": "Polling a changing job three times is legitimate in this fixture; identical arguments alone cannot distinguish it from a loop.",
+      "expected": [],
+      "actual": [
+        "DEATH_LOOP"
+      ],
+      "matched": false,
+      "input_bytes": 293,
+      "median_ms": 0.0027,
+      "p95_ms": 0.0036
+    },
+    {
+      "id": "success-says-no-error",
+      "group": "boundary_probes",
+      "why": "Two successful responses say no error; keyword matching should not mean failure.",
+      "expected": [],
+      "actual": [
+        "ERROR_BLINDNESS"
+      ],
+      "matched": false,
+      "input_bytes": 230,
+      "median_ms": 0.0022,
+      "p95_ms": 0.0041
+    },
+    {
+      "id": "equivalent-string-arguments",
+      "group": "boundary_probes",
+      "why": "Three semantically identical JSON argument strings differ only in whitespace/key order.",
+      "expected": [
+        "DEATH_LOOP"
+      ],
+      "actual": [],
+      "matched": false,
+      "input_bytes": 265,
+      "median_ms": 0.002,
+      "p95_ms": 0.0029
+    },
+    {
+      "id": "second-parallel-tool",
+      "group": "boundary_probes",
+      "why": "The second parallel call is undeclared; inspecting only the first misses it.",
+      "expected": [
+        "GHOST_TOOL"
+      ],
+      "actual": [],
+      "matched": false,
+      "input_bytes": 180,
+      "median_ms": 0.0014,
+      "p95_ms": 0.0015
+    },
+    {
+      "id": "wrong-final-answer",
+      "group": "boundary_probes",
+      "why": "Deliberate out-of-scope probe: 2 + 2 = 5. This engine has no answer-correctness evaluator; a clean scan cannot mean a correct answer.",
+      "expected": [
+        "INCORRECT_ANSWER"
+      ],
+      "actual": [],
+      "matched": false,
+      "input_bytes": 79,
+      "median_ms": 0.0008,
+      "p95_ms": 0.0009
+    }
+  ]
+}

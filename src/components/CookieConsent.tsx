@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 // Google Consent Mode v2. Analytics.tsx sets the defaults: denied in the
 // regions below (Google geolocates the visitor), granted everywhere else.
 // This banner records the visitor's choice and pushes it as a consent update.
-export const CONSENT_KEY = "rr-consent";
+import { CONSENT_KEY, CONSENT_EVENT, VISIT_CONSENT_KEY } from "@/lib/lead-attribution";
+export { CONSENT_KEY } from "@/lib/lead-attribution";
 const OPEN_EVENT = "rr-open-cookie-settings";
 
 // EEA + UK + Switzerland: where Google Ads requires consent for ad cookies.
@@ -54,6 +55,7 @@ export default function CookieConsent() {
   const choose = (choice: Choice) => {
     try {
       localStorage.setItem(CONSENT_KEY, choice);
+      localStorage.setItem(VISIT_CONSENT_KEY, choice);
     } catch {
       // Storage blocked: the choice still applies for this page view.
     }
@@ -63,6 +65,7 @@ export default function CookieConsent() {
       ad_personalization: choice,
       analytics_storage: choice,
     });
+    window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: choice }));
     setOpen(false);
   };
 
@@ -73,7 +76,9 @@ export default function CookieConsent() {
       <p id="consent-title" className="consent-label">Cookies</p>
       <p className="consent-text">
         Choose whether to allow Google Analytics and Google Ads cookies to measure visits
-        and advertising. If you reject, these cookies remain disabled.
+        and advertising. Accepting also lets this site remember your landing page and a broad
+        visit source for up to 30 minutes in this tab and attach them to a project enquiry.
+        If you reject, these cookies and visit attribution remain disabled.
       </p>
       <div className="consent-actions">
         <button type="button" className="btn btn-secondary btn-sm" onClick={() => choose("denied")}>

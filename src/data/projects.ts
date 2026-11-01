@@ -583,11 +583,11 @@ export const projects: Project[] = [
     },
     {
         slug: "agent-autopsy",
-        updated: "2026-09-29",
+        updated: "2026-11-01",
         seoTitle: "Agent Autopsy: Debug Failed AI Agent Runs",
-        seoDescription: "Explore Agent Autopsy, a forensic debugger for failed agent runs. Review its failure classification, local model integration and Next.js architecture.",
+        seoDescription: "Read a reproducible Agent Autopsy evaluation: seven signature controls, five boundary probes, measured latency and the failures a clean scan can miss.",
         name: "Agent Autopsy — Forensic Debugger for Failed AI Agent Runs",
-        problem: "Most AI agent failures are silent — the run completes, the status code is green, and the result is still wrong. Observability platforms show you the trace, but never the cause of death.",
+        problem: "An agent run can complete successfully while its answer or actions are wrong. A transcript can reveal repeated calls, ignored errors and unfinished work, but a clean scan does not establish correctness.",
         solves: "Paste a dead agent's transcript (JSON, JSONL, or raw logs) and get an instant forensic report that names the failure signature — death loop, error blindness, ghost tool, flatline, or context bloat — plus a local-LLM pathologist's note for deeper root cause. 100% local; nothing leaves your machine.",
         techStack: ["Next.js 16", "TypeScript", "App Router", "Ollama (qwen3:14b)", "Vitest"],
         status: "active",
@@ -596,7 +596,7 @@ export const projects: Project[] = [
         image: "/images/projects/agent-autopsy-poster.jpg",
         videoUrl: "/videos/agent-autopsy.mp4",
         details: {
-            businessImpact: "Teams ship agents that fail silently and only hear about it from angry users. Agent Autopsy turns an opaque transcript into a one-line cause of death, so engineers stop guessing and start fixing — without shipping private traces to a third-party SaaS.",
+            businessImpact: "Agent Autopsy helps an engineer prioritize suspicious parts of an agent transcript. Its findings are heuristic signals to investigate, not verified root causes. The reproducible evaluation below records both detected patterns and cases where the engine raises a false alarm or misses a problem; it does not claim measured customer savings.",
             approach: [
                 "Next.js 16 App Router app with the forensic engine in lib/autopsy.ts",
                 "scan + diagnose API routes: heuristic classifier first, optional LLM pass second",

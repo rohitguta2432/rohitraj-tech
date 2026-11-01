@@ -2,6 +2,7 @@
 
 import { useRef, useState, type FormEvent } from "react";
 import { trackConfirmedEnquiry } from "@/lib/contact-tracking";
+import { readVisit } from "@/lib/lead-attribution";
 
 export default function EnquiryForm({ sourcePath }: { sourcePath: string }) {
   const requestId = useRef<string | null>(null);
@@ -19,7 +20,7 @@ export default function EnquiryForm({ sourcePath }: { sourcePath: string }) {
       const response = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ requestId: requestId.current, name: fields.get("name"), email: fields.get("email"), message: fields.get("message"), website: fields.get("website"), sourcePath }),
+        body: JSON.stringify({ requestId: requestId.current, name: fields.get("name"), email: fields.get("email"), message: fields.get("message"), website: fields.get("website"), sourcePath, discoverySource: fields.get("discoverySource") || undefined, attribution: readVisit() }),
       });
       const result = await response.json();
       if (!response.ok || result.success !== true || result.receiptId !== requestId.current) {
@@ -49,8 +50,19 @@ export default function EnquiryForm({ sourcePath }: { sourcePath: string }) {
             <label htmlFor="enquiry-email">Email<input id="enquiry-email" name="email" type="email" autoComplete="email" maxLength={254} required disabled={status === "sending"} /></label>
           </div>
           <label htmlFor="enquiry-message">What do you need help with?<textarea id="enquiry-message" name="message" rows={4} minLength={10} maxLength={2000} placeholder="For example: an AI agent for our support team, with a first pilot this month." required disabled={status === "sending"} /></label>
+          <label htmlFor="enquiry-discovery">How did you find me? (optional)
+            <select id="enquiry-discovery" name="discoverySource" defaultValue="" disabled={status === "sending"}>
+              <option value="">Prefer not to say</option>
+              <option value="google">Google search</option>
+              <option value="other_search">Another search engine</option>
+              <option value="linkedin">LinkedIn</option>
+              <option value="github">GitHub</option>
+              <option value="referral">Someone recommended you</option>
+              <option value="other">Somewhere else</option>
+            </select>
+          </label>
           <div className="enquiry-honeypot" aria-hidden="true"><label htmlFor="enquiry-website">Website<input id="enquiry-website" name="website" tabIndex={-1} autoComplete="off" /></label></div>
-          <p className="enquiry-privacy">Your details are used only to respond to this enquiry.</p>
+          <p className="enquiry-privacy">Your contact details and brief are used to respond to and manage this enquiry. Optional source information helps me understand how people find my work.</p>
           {error && <p className="enquiry-error" role="alert">{error} You can also <a href="mailto:rohitgupta2432@gmail.com">email me directly</a>.</p>}
           <button type="submit" className="btn btn-primary" disabled={status === "sending"}>{status === "sending" ? "Sending…" : "Send project brief"}</button>
         </form>

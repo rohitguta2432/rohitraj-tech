@@ -53,3 +53,16 @@ it("keeps the success message if analytics is blocked", async () => {
   await waitFor(() => expect(screen.queryByRole("alert")).toBeNull());
   await screen.findByText("Your enquiry has been received.");
 });
+
+it("accepts an optional discovery answer without cookies or automatic attribution", async () => {
+  localStorage.clear(); sessionStorage.clear();
+  fetchMock.mockResolvedValue({ ok: true, json: async () => ({ success: true, receiptId }) });
+  render(<EnquiryForm sourcePath="/contact" />);
+  fill();
+  fireEvent.change(screen.getByLabelText("How did you find me? (optional)"), { target: { value: "google" } });
+  fireEvent.click(screen.getByRole("button", { name: "Send project brief" }));
+  await screen.findByText("Your enquiry has been received.");
+  const body = JSON.parse(fetchMock.mock.calls[0][1].body);
+  expect(body.discoverySource).toBe("google");
+  expect(body.attribution).toBeUndefined();
+});
