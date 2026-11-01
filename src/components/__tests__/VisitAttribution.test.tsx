@@ -16,11 +16,11 @@ it("captures the original landing after explicit consent, then clears it on reje
   window.history.replaceState({}, "", "/contact");
   fireEvent(window, new Event("rr-open-cookie-settings"));
   expect(screen.getByText(/remember your landing page/)).toBeTruthy();
-  fireEvent.click(screen.getByRole("button", { name: "Accept", exact: true }));
+  fireEvent.click(screen.getByRole("button", { name: /^Accept$/ }));
   expect(localStorage.getItem(VISIT_CONSENT_KEY)).toBe("granted");
   expect(readVisit()).toMatchObject({ landingPath: "/notes/rag-for-sql", source: "campaign" });
   expect(JSON.stringify(readVisit())).not.toContain("private");
   fireEvent(window, new Event("rr-open-cookie-settings"));
-  fireEvent.click(screen.getByRole("button", { name: "Reject", exact: true }));
+  fireEvent.click(screen.getByRole("button", { name: /^Reject$/ }));
   expect(readVisit()).toBeUndefined();
 });

@@ -660,10 +660,11 @@ export const services: Service[] = [
  heading: "Shipped work that maps to forward deployed problems",
  paragraphs: [
  "These public portfolio projects let you inspect implementation choices before a scoping call. Use their linked repositories to review the relevant pattern, then assess it against your own workflow, data and acceptance criteria. They are engineering examples; the results for a new engagement must be measured separately.",
+ "Agent Autopsy's reproducible evaluation shows why operators must review diagnostic alerts before treating them as pilot acceptance evidence. In one synthetic case, a job moved from queued to running to complete, but repeated status calls triggered a loop warning. Other probes exposed missed failures. These author-written cases are not client results or a production accuracy estimate. For your pilot, agree which repeated actions are legitimate, who reviews an alert and how the final task outcome is checked. The linked case study includes the inputs, expected and observed findings, and unchanged engine source.",
  ],
  bullets: [
  "StellarMIND: a Spring Boot MCP server for chat-to-SQL, with schema retrieval through pgvector and query restrictions to inspect when planning database access",
- "Agent Autopsy: transcript analysis for failure patterns such as repeated loops, ignored errors, invented tools and growing context",
+ "Agent Autopsy: inspect false alarms and missed failures in a runnable transcript-analysis example before deciding how diagnostics should support your operators",
  "claude-autodev: a staged development pipeline with required artifacts and checks before a stage advances",
  "Quorum: a research-agent workflow using a shared knowledge graph, an explicit critic and a live view of agent activity",
  ],
@@ -734,8 +735,13 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-10-31",
+ updated: "2026-11-01",
  related: [
+ {
+ href: "/projects/agent-autopsy#autopsy-evidence",
+ label: "Agent diagnostics: inspect the measured failures",
+ description: "Review synthetic false alarms and missed failures, then define operator review and task-outcome checks for your pilot.",
+ },
  {
  href: "/examples/ai-delivery-brief.md",
  label: "Download the delivery and handover brief",
@@ -985,7 +991,8 @@ export const services: Service[] = [
  {
  heading: "Review the engineering before a scoping call",
  paragraphs: [
- "The public portfolio examples below let you inspect the architecture and tradeoffs before a scoping call. StellarMIND shows a Spring Boot MCP server, schema retrieval with pgvector and read-only SQL boundaries. Agent Autopsy shows how agent failures can be examined from transcripts. Their project pages link to the repositories; acceptance targets for your system are agreed separately against your own workflow and data.",
+ "StellarMIND shows a Spring Boot MCP server, schema retrieval with pgvector and read-only SQL boundaries. For agent evaluation, the linked Agent Autopsy case study includes a pinned engine, runnable synthetic transcripts and per-case expected and observed findings. Its unchanged heuristic engine flags some successful responses as errors and misses an undeclared tool in a second parallel call. A wrong final answer also produces no finding: answer correctness is outside this engine's scope.",
+ "Use the example to review what an evaluation actually measures before commissioning a repair. Ask for the input, expected behavior, observed result and limitation for each check, with task correctness evaluated separately from diagnostic signatures. These author-written fixtures are not held-out tests, client results or a production accuracy estimate. Acceptance cases for your system must come from your approved workflow and data.",
  ],
  },
  ],
@@ -1036,8 +1043,13 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-10-31",
+ updated: "2026-11-01",
  related: [
+ {
+ href: "/projects/agent-autopsy#autopsy-evidence",
+ label: "Agent evaluation: reproduce the boundary cases",
+ description: "Inspect the pinned code, synthetic inputs and per-case results, including what the diagnostic engine cannot evaluate.",
+ },
  {
  href: "/examples/ai-delivery-brief.md",
  label: "Download the delivery and handover brief",

@@ -44,8 +44,10 @@ export default function AgentAutopsyEvidence() {
         <a href="/examples/agent-autopsy-evaluation/engine.ts">Pinned engine source</a>
       </p>
       <p>
-        Need this kind of evaluation for your agent?{" "}
-        <Link href="/services/fractional-ai-engineer">Discuss an AI engineering scope</Link>.
+        For a defined evaluation or repair, <Link href="/services/fractional-ai-engineer">discuss an AI engineering scope</Link>.{" "}
+        If interpreting failures needs work with your operators and internal systems,{" "}
+        <Link href="/services/forward-deployed-engineer">scope a forward deployed engineering pilot</Link>{" "}
+        with agreed task-outcome checks, an alert reviewer and a handover.
       </p>
     </section>
   );
