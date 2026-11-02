@@ -71,6 +71,24 @@ Do not assume changing a source permission updates every derived copy immediatel
 
 Save the release/configuration version, actual results, reviewer and retest date. Use approved evidence storage; do not copy restricted payloads into this brief. Revocation controls future access and reuse under the agreed policy; it cannot erase content someone already downloaded. Retention of audit records and backups is a separate documented decision. For work that may already have executed, use the outcome checks below before deciding on another attempt.
 
+## Human review capacity and overdue work
+
+Use when a person must review an output or approve an action. This is a proposed staging worksheet, not a measured staffing requirement or client result. [AWS recommends measuring queue age and limiting backlogs](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_mitigate_interaction_failure_fail_fast.html); apply those operating checks to the review step as well as automated processing.
+
+- Review owner, authorized backup and covered hours:
+- Expected arrivals and bursts; observed review time per item:
+- Pending-count and oldest-item thresholds; alert destination:
+- Maximum useful wait, user-visible status and expiry decision:
+- Hold or manual fallback; person responsible for reconciling the queue:
+
+| Staging drill | Evidence to record | Required decision |
+|---|---|---|
+| Approved synthetic work arrives faster than reviewers can handle it | Arrival and completion times, pending count, oldest-item age and reviewer effort | Apply the agreed intake limit or fallback; record who owns every outstanding item |
+| Primary reviewer is unavailable | Backup notification, acknowledgement and overdue-item status | Keep required approvals enforced; waiting longer never authorizes an action |
+| Approval arrives after a task expired or was completed manually | Request ID, terminal status, late approval and destination check | Reject execution of the old request; any renewed work needs current inputs, permissions and approval |
+
+Measure submission-to-result time separately from model latency and active review time. Record the release version, observed results, reviewer and repair/retest date. If a required drill fails, hold that workflow's rollout. Expiry prevents a pending action from starting; it does not undo an action already in progress or completed. Reconcile an unknown write using the next section. Retain the decision record without copying sensitive payloads into this brief.
+
 ## Write outcome and retry drills
 
 Use this section when the workflow changes records or sends messages. For a read-only scope, mark it inapplicable. Run approved synthetic cases in staging; this is a test plan, not evidence that a client system passed.

@@ -650,7 +650,8 @@ export const services: Service[] = [
  bullets: [
  "Define the allowed action, target system and records, credential scope and person who can approve it; keep credentials outside prompts and retrieved documents",
  "Show the approver the exact target and proposed change. Enforce approval in application code, bind it to that action, and recheck permissions before execution; changed inputs require a new approval",
- "Test rejected and expired approvals and duplicate requests in staging. Record the approved action and destination identifier so the operator can match a request to its actual result",
+ "Name the review owner, backup and covered hours before enabling an approval queue. Rehearse a busy period with the reviewer unavailable: show pending count and oldest waiting item, alert the backup at the agreed threshold, and route overdue work to the agreed hold or manual process. Waiting longer must never grant approval",
+ "Test rejected and expired approvals and duplicate requests in staging, including an approval arriving after the work expired or was handled manually. Prevent that old request from executing; renewed work needs current inputs, permissions and approval. Record the request, review decision and destination identifier so operators can reconcile the outcome. Use the review-queue worksheet in the delivery brief",
  "Remove a test operator's access while their approved work is queued. Before execution, the worker must check the current permission for that operator, action and target; a shared service credential or earlier approval is insufficient. Keep denied jobs visible to authorized operators without executing them, and have the system owner cancel or explicitly reauthorize the work under an authorized identity. Record the affected job IDs, permission-change time and decision in the delivery brief",
  "An unresolved write stays on hold until its outcome is checked. Rehearse a destination accepting a change while its response is lost: show the operator an unknown outcome, check the destination through the agreed status or record lookup, and route unresolved work to the system owner. Any retry must follow the destination API's duplicate-prevention rules and agreed attempt limit; a timeout alone is not permission to repeat the action",
  "Include the approval record, execution result and disable procedure in the handover; your system owner controls production credentials and can revoke the integration's access",
@@ -735,7 +736,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-01",
+ updated: "2026-11-02",
  related: [
  {
  href: "/projects/agent-autopsy#autopsy-evidence",
@@ -983,8 +984,8 @@ export const services: Service[] = [
  ],
  bullets: [
  "Measure cost per completed task, including retrieval, model calls, tool calls and retries; report failed or abandoned attempts as well as successful runs, with provider usage separated from application infrastructure",
- "Test representative short and long inputs at agreed concurrency, recording typical and slow responses, timeouts and rate-limit failures rather than only the fastest example",
- "Set input-size, tool-call, retry and usage limits in application code. Agree what happens at the limit: a clear failure, a queued task or a handoff to the existing workflow; rehearse that path in staging",
+ "Test representative short and long inputs at agreed concurrency, recording typical and slow responses, timeouts and rate-limit failures. Measure from task submission to the usable result, including queue and approval waits; a fast model call can hide a slow workflow. Report reviewer handling time separately so the operating estimate includes human effort",
+ "Set input-size, tool-call, retry and usage limits in application code. If work queues, agree pending-work and age limits, the alert owner and what users see when a task is delayed. Rehearse a burst of arrivals and unavailable reviewers in staging; expired work stays unexecuted pending an explicit decision, and an overloaded queue follows the agreed hold or manual fallback. Record the results in the delivery brief",
  "Hand over the workload assumptions, measured results, alert destination and person responsible for usage review. Recheck quality, latency and cost before approving a model or workflow change",
  ],
  },
@@ -1043,7 +1044,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-01",
+ updated: "2026-11-02",
  related: [
  {
  href: "/projects/agent-autopsy#autopsy-evidence",
