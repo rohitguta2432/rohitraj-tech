@@ -636,6 +636,7 @@ export const services: Service[] = [
  "Quality: a held-out set of real examples, a baseline and an agreed acceptance threshold; keep failures visible alongside successes",
  "Safety: permission checks, audit logs and tests showing that disallowed actions fail safely",
  "Operations: rehearse an upstream outage or failed tool call in staging; show how work reaches a human or the existing workflow, and how to disable the integration",
+ "Incident evidence: have your operator investigate a staged failure using a request identifier instead of pasting the conversation into a support ticket. With their assigned access, they should find the failed step, approval and destination outcome, then escalate to the named engineer. Check that an unauthorized support role cannot open restricted traces or exports. Agree any separately approved content access and record the rehearsal in the delivery brief",
  "Limited rollout: agree the first users, allowed actions, review period and stop criteria before enabling the feature. Your release owner reviews incorrect actions, operator corrections, latency and cost before expanding access",
  "Recovery: disabling the agent stops new work but does not undo completed actions. Keep a record of affected items and outcomes; rehearse a partial failure in staging and agree which corrections need system-owner approval or manual handling. Do not overwrite later human changes or resend messages as a rollback",
  "Release decision: your named release owner reviews the evaluation results, latency and cost against the agreed limits, plus unresolved risks, before authorizing production access",
@@ -736,7 +737,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-02",
+ updated: "2026-11-03",
  related: [
  {
  href: "/projects/agent-autopsy#autopsy-evidence",
@@ -970,7 +971,8 @@ export const services: Service[] = [
  "Keeping source documents in your cloud does not by itself describe the model's data flow. Before connecting a provider, we map what leaves each system and who approves it. You receive that data-flow note alongside the architecture and evaluation plan.",
  ],
  bullets: [
- "List the fields sent for generation and embeddings, plus what prompts, responses and tool results appear in traces; use approved or redacted examples for initial evaluation",
+ "List the fields sent for generation and embeddings; use approved or redacted examples for initial evaluation. For routine diagnostics, agree a minimal field list such as request identifier, configuration version, step status, latency and usage. Keep credentials and private prompt, document and tool-result content out of general logs and alerts; any content capture needs an approved purpose, restricted destination and retention period",
+ "Debugging checks: use synthetic private text and fake credentials to exercise successful and failed requests, including tool errors. Inspect application logs, tracing exports and alerts for those markers, and confirm the retained metadata still identifies the failed step. Record destinations checked, access roles and remaining gaps in the delivery brief. A clean dashboard view alone does not show what its collectors or exports stored",
  "Review the chosen provider's processing region, retention and training-use settings against your requirements. Record constraints and unresolved approvals before using sensitive data; local inference is an option to evaluate when external processing is restricted",
  "Map stored copies before agreeing deletion: source uploads, extracted text and embeddings, answer caches, conversation history, evaluation fixtures, traces and provider-managed files. For each, name the owner, removal or expiry mechanism, retention window and any backup or audit-record exception",
  "Rehearse deletion with a synthetic document in staging. Record its identifiers, the removal request, checks of the affected stores and any pending expiry. Keep deletion evidence separate from a search test: no retrieved result does not prove every stored copy is gone. Document remaining copies and their access restrictions; the delivery brief provides the record",
@@ -1044,7 +1046,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-02",
+ updated: "2026-11-03",
  related: [
  {
  href: "/projects/agent-autopsy#autopsy-evidence",

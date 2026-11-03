@@ -160,6 +160,29 @@ Use when replacing the embedding model or rebuilding a retrieval index. This is 
 
 Record the receiving owner's decision, exceptions, observation period and fallback drill result. Keep a recovery index only for the agreed window, with current access controls and source changes accounted for; reverting must not restore deleted or newly restricted content. After that window, record retirement of the old model/index resources under the agreed retention plan. Link the evidence here without copying sensitive payloads.
 
+## Diagnostic evidence without copying private inputs
+
+Agree what support needs to diagnose a failed task and which fields may be recorded. Use synthetic markers and fake credentials in staging, never real secrets. These are proposed acceptance checks, not measured results or a guarantee that every sensitive value will be detected.
+
+[OpenTelemetry recommends minimizing collected data and reviewing what instrumentation libraries emit](https://opentelemetry.io/docs/security/handling-sensitive-data/). Record a field allowlist for each destination, rather than assuming a dashboard's hidden fields were never stored. Avoid raw prompt, document and tool-result content in routine telemetry. If a specific investigation needs content, name its approver, restricted store and expiry before enabling capture.
+
+- Diagnostic purpose and allowed fields, including request identifier and configuration version:
+- Application logs, SDK/collector exports, error reports and alert destinations in scope:
+- Excluded fields; separately approved content capture, if any:
+- Roles allowed to view or export evidence; access-review owner:
+- Retention, temporary debug-setting expiry and removal owner:
+
+| Staging drill | Evidence to review | Hold or repair condition |
+|---|---|---|
+| Send synthetic private-text and fake-secret markers through a normal request and a tool error | Inspect each configured log, trace, export and alert destination; record where each marker is absent, removed or explicitly permitted | Excluded content appears in a destination, including an error payload |
+| Have an operator investigate the failed request using their assigned role | Request identifier links the failed step, release/configuration, approval and destination outcome; operator records the escalation owner | Diagnosis requires copying the full conversation into a ticket or opening unrestricted content access |
+| Attempt to view and export restricted evidence as an unauthorized support role | Access is denied; save the result and the role tested | Trace or export permissions bypass the agreed access boundary |
+
+[OWASP's logging guidance covers interaction identifiers, sensitive fields to exclude and verification of log access controls](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html). Keep enough approved metadata to investigate failures; do not solve a leak by removing required audit events. Fix collection or filtering before affected data leaves its approved boundary, then rerun the failed and normal paths. Record untested destinations as gaps. A successful synthetic-marker check establishes only the cases and destinations examined.
+
+- Release/configuration tested, evidence links, reviewer and decision:
+- Missing diagnostic fields or exposed markers; repair owner and retest date:
+
 ## Handover
 
 - Source repository and build instructions:
