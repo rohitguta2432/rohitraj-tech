@@ -635,7 +635,7 @@ export const services: Service[] = [
  "Scope: one named workflow, its users and integrations, plus an explicit list of tasks the pilot will not attempt",
  "Quality: a held-out set of real examples, a baseline and an agreed acceptance threshold; keep failures visible alongside successes",
  "Safety: permission checks, audit logs and tests showing that disallowed actions fail safely",
- "Operations: rehearse an upstream outage or failed tool call in staging; show how work reaches a human or the existing workflow, and how to disable the integration",
+ "Model outage: rehearse provider timeouts and rate-limit failures with your operator in staging. Confirm that only an approved model route can receive the task; if it is unavailable too, show the agreed hold or manual workflow after bounded retries. The operator identifies delayed or stopped work, the model used and the escalation owner. Agree who can resume service and how outstanding work is reconciled; record the drill in the delivery brief",
  "Incident evidence: have your operator investigate a staged failure using a request identifier instead of pasting the conversation into a support ticket. With their assigned access, they should find the failed step, approval and destination outcome, then escalate to the named engineer. Check that an unauthorized support role cannot open restricted traces or exports. Agree any separately approved content access and record the rehearsal in the delivery brief",
  "Limited rollout: agree the first users, allowed actions, review period and stop criteria before enabling the feature. Your release owner reviews incorrect actions, operator corrections, latency and cost before expanding access",
  "Recovery: disabling the agent stops new work but does not undo completed actions. Keep a record of affected items and outcomes; rehearse a partial failure in staging and agree which corrections need system-owner approval or manual handling. Do not overwrite later human changes or resend messages as a rollback",
@@ -737,7 +737,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-03",
+ updated: "2026-11-04",
  related: [
  {
  href: "/projects/agent-autopsy#autopsy-evidence",
@@ -1013,6 +1013,10 @@ export const services: Service[] = [
  answer: "Yes. Start with the repository, the intended workflow, representative examples and the failures you have observed. I review the architecture, data access, evaluation coverage and deployment path, then propose a bounded next step. That could be repairing retrieval, adding permission checks, measuring answer quality or shipping a narrow staging slice. The review establishes what can be retained and what needs further work before we agree a larger delivery scope.",
  },
  {
+ question: "What happens if the model provider is unavailable?",
+ answer: "A fallback model is a separate release choice, not an automatic substitute for an unavailable provider. Before enabling one, we agree which provider, endpoint and processing regions may receive the task data, including conversation history and tool results. Evaluate the alternate on the same acceptance cases, checking answer quality, tool and structured-output compatibility, latency and cost. Keep permission and approval checks enforced whichever model runs. If no alternate meets those requirements, use the agreed hold, manual process or temporarily unavailable response after bounded retries. The handover records allowed routes, retry limits, the user-visible status and the owner who can restore normal service. The delivery brief includes an outage rehearsal; switching models does not resolve an external action whose outcome is still unknown.",
+ },
+ {
  question: "What happens if an agent times out while changing a record?",
  answer: "A timeout can leave the outcome unknown even when the external system completed the change. For agents that write to another system, we agree how the application distinguishes confirmed success, confirmed failure and an unresolved outcome. In staging, we test a completed write whose response is lost, then check the destination record and action identifier before allowing another attempt. Where the API supports duplicate prevention, retries reuse the same identifier and unchanged inputs within its documented limits. If the outcome cannot be established safely, the application holds the action for a named reviewer instead of blindly repeating it. You receive the per-case evidence and retry rules; the delivery brief includes these drills.",
  },
@@ -1046,7 +1050,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-03",
+ updated: "2026-11-04",
  related: [
  {
  href: "/projects/agent-autopsy#autopsy-evidence",

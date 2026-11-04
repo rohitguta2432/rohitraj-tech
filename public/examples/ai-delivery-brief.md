@@ -25,6 +25,26 @@ Editable planning template. Replace every placeholder with a project decision; e
 | Dependency failure | Use the agreed fallback without duplicate actions | Failure drill | Agree before testing |
 | Source update or deletion | Refresh or remove derived content | Replayable update/deletion test | Agree freshness window |
 
+## Model outage and fallback decision
+
+Use this record before enabling an alternate model or provider. These are proposed staging checks, not availability promises or recorded client results. An alternate must meet the agreed task requirements and data-handling boundaries before it receives inputs, conversation history or tool results.
+
+- Primary and approved alternate models, endpoints and processing regions:
+- Approved data sent to each route; retention and access decision owner:
+- Comparison evidence: answer quality, tool calls, structured outputs, latency and cost:
+- Retry count and elapsed-time limit; hold or manual workflow if no route is usable:
+- User-visible status, alert destination and owner authorized to resume service:
+
+Routing can change where inference runs; for example, [Amazon Bedrock documents source and destination regions for cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html). Check the actual route configuration against the agreed data boundary. A shared API format does not establish equivalent model behavior.
+
+| Staging drill | Evidence to retain | Acceptance decision |
+|---|---|---|
+| Primary model times out or returns a rate-limit error | Attempt count, elapsed time, selected route and task result | Only an approved route receives data; permission and approval checks still apply |
+| All approved routes are unavailable | User-visible status, operator notification and location of pending work | Retries stop at the agreed limit; work reaches the agreed hold or manual process |
+| Primary service recovers | Operator's resumption decision and outstanding-task review | Resume under the agreed policy without replaying completed or unresolved external actions |
+
+[Akka's readiness guidance includes rehearsing a provider outage with a slow or failing mock](https://doc.akka.io/deployment/production-readiness/agentic-ai.html). A mock tests routing and failure handling; evaluate the real alternate separately before approving it. Record the tested release, results, reviewer and repair date. Reconcile unknown writes using the write-outcome drills below before retrying them.
+
 ## Document source readiness
 
 Use for document-based retrieval; mark inapplicable for other workflows. This is a proposed review record, not a completed benchmark. Choose approved or synthetic samples for the formats, languages and layouts in scope before a bulk import.
