@@ -520,6 +520,17 @@ export const services: Service[] = [
  },
  {
  slug: "forward-deployed-engineer",
+ pageGuide: {
+ title: "Plan your FDE pilot and team handover",
+ links: [
+ { label: "Pilot plan", href: "#pilot-plan" },
+ { label: "Acceptance and rollout", href: "#acceptance" },
+ { label: "Action permissions", href: "#action-permissions" },
+ { label: "Public engineering evidence", href: "#project-evidence" },
+ { label: "Handover and engagement FAQs", href: "#service-faqs" },
+ { label: "Delivery brief and further reading", href: "#delivery-resources" },
+ ],
+ },
  title: "Hire a Forward Deployed Engineer (AI)",
  metaTitle: "Hire a Forward Deployed Engineer (AI FDE)",
  metaDescription:
@@ -599,6 +610,7 @@ export const services: Service[] = [
  },
  {
  heading: "How a forward deployed engineer pilot runs",
+ id: "pilot-plan",
  paragraphs: [
  "We scope a pilot around one workflow and an acceptance decision. For ticket routing, that could mean measuring correct routes on held-out tickets while separately checking sensitive categories and escalation behavior. Targets are chosen from your baseline and risk. The six-week sequence below is an illustrative plan; access readiness, integration work and review findings determine the actual dates.",
  ],
@@ -626,6 +638,7 @@ export const services: Service[] = [
  },
  {
  heading: "Before you hire a forward deployed engineer: agree the acceptance criteria",
+ id: "acceptance",
  paragraphs: [
  "A useful pilot ends with evidence your team can inspect. Before implementation, we agree what the system must do, which examples will test it, and who owns the rollout decision. A polished demo alone is not an acceptance test.",
  "The release review can approve a limited rollout, hold for a specific repair, or stop with a documented handover. If a target is missed, I record the failed cases, likely cause and proposed next step. You approve any revised scope before more work begins; a pilot does not automatically become a retainer.",
@@ -645,6 +658,7 @@ export const services: Service[] = [
  },
  {
  heading: "How an agent gets permission to change a system",
+ id: "action-permissions",
  paragraphs: [
  "A model proposing an action does not authorize that action. For a pilot that sends messages or changes records, we agree the write boundary with your system owner before enabling it. The first staging slice can remain read-only while the approval path is reviewed.",
  ],
@@ -660,6 +674,7 @@ export const services: Service[] = [
  },
  {
  heading: "Shipped work that maps to forward deployed problems",
+ id: "project-evidence",
  paragraphs: [
  "These public portfolio projects let you inspect implementation choices before a scoping call. Use their linked repositories to review the relevant pattern, then assess it against your own workflow, data and acceptance criteria. They are engineering examples; the results for a new engagement must be measured separately.",
  "Agent Autopsy's reproducible evaluation shows why operators must review diagnostic alerts before treating them as pilot acceptance evidence. In one synthetic case, a job moved from queued to running to complete, but repeated status calls triggered a loop warning. Other probes exposed missed failures. These author-written cases are not client results or a production accuracy estimate. For your pilot, agree which repeated actions are legitimate, who reviews an alert and how the final task outcome is checked. The linked case study includes the inputs, expected and observed findings, and unchanged engine source.",
@@ -737,7 +752,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-04",
+ updated: "2026-11-05",
  related: [
  {
  href: "/projects/agent-autopsy#autopsy-evidence",
@@ -896,6 +911,17 @@ export const services: Service[] = [
  },
  {
  slug: "fractional-ai-engineer",
+ pageGuide: {
+ title: "Review your AI build, acceptance and ownership",
+ links: [
+ { label: "Project or fractional scope", href: "#engagement-scope" },
+ { label: "Deliverables and acceptance checks", href: "#acceptance" },
+ { label: "Data access and retention", href: "#data-boundaries" },
+ { label: "Operating budget and limits", href: "#operating-budget" },
+ { label: "Handover and engagement FAQs", href: "#service-faqs" },
+ { label: "Delivery brief and further reading", href: "#delivery-resources" },
+ ],
+ },
  title: "Freelance AI Engineer & AI Architect",
  metaTitle: "Freelance AI Engineer and AI Architect for Hire",
  metaDescription:
@@ -938,6 +964,7 @@ export const services: Service[] = [
  },
  {
  heading: "A scoped project or a fractional AI engineer?",
+ id: "engagement-scope",
  paragraphs: [
  "A scoped project fits one defined outcome with stable inputs and a clear handover. A fractional engagement fits an evolving backlog that needs the same engineer making architecture decisions, shipping changes and checking how the system behaves after release. We choose the engagement around the work rather than treating every AI task as a long retainer.",
  "For work that requires daily contact with operators and several internal systems, the forward deployed engineer pilot is the more specific option. For a product backlog of agents, retrieval and LLM features, this freelance AI engineering engagement keeps design and delivery with one person.",
@@ -945,6 +972,7 @@ export const services: Service[] = [
  },
  {
  heading: "What you receive and how we check it",
+ id: "acceptance",
  paragraphs: [
  "We agree acceptance criteria before building: the examples the system must handle, which actions it may take, and the limits on response time and operating cost. Targets depend on your task and baseline; a demonstration is not a measured production result.",
  "For an internal-document search feature, the evaluation separates finding the right evidence from writing a supported answer. A correct-looking answer can still cite the wrong source. We review these checks separately so the next fix addresses retrieval, answer generation or access control as appropriate.",
@@ -967,6 +995,7 @@ export const services: Service[] = [
  },
  {
  heading: "Agree where your data goes before connecting a model",
+ id: "data-boundaries",
  paragraphs: [
  "Keeping source documents in your cloud does not by itself describe the model's data flow. Before connecting a provider, we map what leaves each system and who approves it. You receive that data-flow note alongside the architecture and evaluation plan.",
  ],
@@ -981,6 +1010,7 @@ export const services: Service[] = [
  },
  {
  heading: "Check the operating budget before release",
+ id: "operating-budget",
  paragraphs: [
  "A short demo does not show what an AI feature costs under your workload. We agree representative inputs, expected usage and response-time limits, then deliver the measurements and configured limits with the release evidence. These are operating costs in your provider accounts, separate from the engineering engagement.",
  ],
@@ -1050,7 +1080,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-04",
+ updated: "2026-11-05",
  related: [
  {
  href: "/projects/agent-autopsy#autopsy-evidence",

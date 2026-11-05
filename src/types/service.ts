@@ -18,6 +18,14 @@ export const serviceSchema = z.object({
     answer: z.string(),
   })),
   cta: z.string(),
+  /** Curated shortcuts to the buyer's main delivery questions on a long page. */
+  pageGuide: z.object({
+    title: z.string().min(1),
+    links: z.array(z.object({
+      label: z.string().min(1),
+      href: z.string().regex(/^#[a-z][a-z0-9-]*$/),
+    })).min(1),
+  }).optional(),
   /** ISO date of the last meaningful copy change — feeds sitemap lastmod. */
   updated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   /**
@@ -26,6 +34,7 @@ export const serviceSchema = z.object({
    * template blocks.
    */
   sections: z.array(z.object({
+    id: z.string().regex(/^[a-z][a-z0-9-]*$/).optional(),
     heading: z.string().min(1),
     paragraphs: z.array(z.string()),
     bullets: z.array(z.string()).optional(),

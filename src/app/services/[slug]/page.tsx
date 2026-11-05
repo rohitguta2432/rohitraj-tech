@@ -130,6 +130,26 @@ export default async function ServicePage({ params }: ServicePageProps) {
                             <ContactActions enquiryHref="#enquiry" />
                         </div>
 
+                        {service.pageGuide && (
+                            <nav
+                                aria-labelledby="service-page-guide"
+                                style={{ marginTop: "2rem", padding: "1.25rem", border: "1px solid var(--border)", borderRadius: "12px", background: "var(--card-bg)" }}
+                            >
+                                <h2 id="service-page-guide" style={{ color: "var(--text-primary)", fontSize: "1.1rem", fontWeight: 600, margin: "0 0 0.75rem" }}>
+                                    {service.pageGuide.title}
+                                </h2>
+                                <ul style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 14rem), 1fr))", gap: "0.25rem 1rem", listStyle: "none", margin: 0, padding: 0 }}>
+                                    {service.pageGuide.links.map((link) => (
+                                        <li key={link.href}>
+                                            <a href={link.href} style={{ display: "block", padding: "0.5rem 0", color: "var(--accent)", lineHeight: 1.5, textUnderlineOffset: "0.2em" }}>
+                                                {link.label}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </nav>
+                        )}
+
                         {/* Problem */}
                         <div style={{ marginTop: "3rem" }}>
                             <h2 style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
@@ -171,7 +191,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                         {/* Long-form body */}
                         {service.sections?.map((section) => (
                             <div key={section.heading} style={{ marginTop: "3rem" }}>
-                                <h2 style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
+                                <h2 id={section.id} tabIndex={section.id ? -1 : undefined} style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem", scrollMarginTop: "6rem" }}>
                                     {section.heading}
                                 </h2>
                                 {section.paragraphs.map((paragraph, i) => (
@@ -387,7 +407,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
                         {/* FAQ */}
                         <div style={{ marginTop: "3rem" }}>
-                            <h2 style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
+                            <h2 id={service.pageGuide ? "service-faqs" : undefined} tabIndex={service.pageGuide ? -1 : undefined} style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem", scrollMarginTop: "6rem" }}>
                                 Frequently Asked Questions
                             </h2>
                             <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
@@ -407,7 +427,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                         {/* Related engagements & reading */}
                         {service.related && service.related.length > 0 && (
                             <div style={{ marginTop: "3rem" }}>
-                                <h2 style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
+                                <h2 id={service.pageGuide ? "delivery-resources" : undefined} tabIndex={service.pageGuide ? -1 : undefined} style={{ color: "var(--text-primary)", fontSize: "2rem", fontWeight: 800, marginBottom: "1rem", scrollMarginTop: "6rem" }}>
                                     Related Engagements &amp; Reading
                                 </h2>
                                 <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
