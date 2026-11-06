@@ -561,7 +561,7 @@ export const services: Service[] = [
  ],
  timeline: "Fractional: ongoing, 2 days/week. Pilot: fixed scope.",
  costRange: "Scoped per engagement",
- portfolioSlugs: ["stellarmind", "agent-autopsy", "claude-autodev", "quorum"],
+ portfolioSlugs: ["stellarmind", "agent-autopsy", "claude-autodev", "orderpilot"],
  faqs: [
  {
  question: "What does a forward deployed engineer actually do?",
@@ -676,14 +676,14 @@ export const services: Service[] = [
  heading: "Shipped work that maps to forward deployed problems",
  id: "project-evidence",
  paragraphs: [
- "These public portfolio projects let you inspect implementation choices before a scoping call. Use their linked repositories to review the relevant pattern, then assess it against your own workflow, data and acceptance criteria. They are engineering examples; the results for a new engagement must be measured separately.",
+ "These portfolio case studies let you inspect delivery patterns before a scoping call. Review the linked repositories where available; OrderPilot has a public recorded demo and a private repository. Assess each example against your workflow, data and acceptance criteria. They are engineering examples; results for a new engagement must be measured separately.",
  "Agent Autopsy's reproducible evaluation shows why operators must review diagnostic alerts before treating them as pilot acceptance evidence. In one synthetic case, a job moved from queued to running to complete, but repeated status calls triggered a loop warning. Other probes exposed missed failures. These author-written cases are not client results or a production accuracy estimate. For your pilot, agree which repeated actions are legitimate, who reviews an alert and how the final task outcome is checked. The linked case study includes the inputs, expected and observed findings, and unchanged engine source.",
  ],
  bullets: [
  "StellarMIND: a Spring Boot MCP server for chat-to-SQL, with schema retrieval through pgvector and query restrictions to inspect when planning database access",
  "Agent Autopsy: inspect false alarms and missed failures in a runnable transcript-analysis example before deciding how diagnostics should support your operators",
  "claude-autodev: a staged development pipeline with required artifacts and checks before a stage advances",
- "Quorum: a research-agent workflow using a shared knowledge graph, an explicit critic and a live view of agent activity",
+ "OrderPilot: a recorded order-review workflow showing source evidence, ambiguous catalog matches, unit conversions and approval before CSV export. Use it to agree what an operator must resolve and what the receiving system must check. It is a single-user MVP with synthetic catalog data, not a live ERP integration; the optional AI path has only been tested with mocked provider responses",
  ],
  },
  ],
@@ -752,8 +752,13 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-05",
+ updated: "2026-11-06",
  related: [
+ {
+ href: "/projects/orderpilot",
+ label: "Order review demo: operator decisions before export",
+ description: "Watch the recorded review flow and inspect its limits before scoping approval roles, exception handling and the receiving-system integration.",
+ },
  {
  href: "/projects/agent-autopsy#autopsy-evidence",
  label: "Agent diagnostics: inspect the measured failures",
@@ -953,7 +958,7 @@ export const services: Service[] = [
  ],
  timeline: "Scoped delivery or an ongoing fractional retainer",
  costRange: "Scoped per engagement",
- portfolioSlugs: ["agentic-os", "stellarmind", "agent-autopsy"],
+ portfolioSlugs: ["orderpilot", "stellarmind", "agent-autopsy"],
  sections: [
  {
  heading: "What to hire a freelance AI engineer for",
@@ -1024,6 +1029,7 @@ export const services: Service[] = [
  {
  heading: "Review the engineering before a scoping call",
  paragraphs: [
+ "The OrderPilot demo shows source lines beside catalog suggestions, with ambiguous matches and unit conversions left for a reviewer. Use the linked case study to scope document-to-record acceptance: which source supports each field, what needs correction, and when an approved draft may be exported. Its documented boundary is a CSV export, not a live ERP integration. This is a single-user MVP with synthetic catalog data and a private repository; the optional AI path has only been tested with mocked provider responses. Treat it as a review-workflow example, not a measured extraction benchmark or client outcome.",
  "StellarMIND shows a Spring Boot MCP server, schema retrieval with pgvector and read-only SQL boundaries. For agent evaluation, the linked Agent Autopsy case study includes a pinned engine, runnable synthetic transcripts and per-case expected and observed findings. Its unchanged heuristic engine flags some successful responses as errors and misses an undeclared tool in a second parallel call. A wrong final answer also produces no finding: answer correctness is outside this engine's scope.",
  "Use the example to review what an evaluation actually measures before commissioning a repair. Ask for the input, expected behavior, observed result and limitation for each check, with task correctness evaluated separately from diagnostic signatures. These author-written fixtures are not held-out tests, client results or a production accuracy estimate. Acceptance cases for your system must come from your approved workflow and data.",
  ],
@@ -1080,8 +1086,13 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-05",
+ updated: "2026-11-06",
  related: [
+ {
+ href: "/projects/orderpilot",
+ label: "Document extraction: inspect the review workflow",
+ description: "See the recorded source-to-draft review and documented CSV boundary; use the limitations to define your own extraction and field-acceptance tests.",
+ },
  {
  href: "/projects/agent-autopsy#autopsy-evidence",
  label: "Agent evaluation: reproduce the boundary cases",
