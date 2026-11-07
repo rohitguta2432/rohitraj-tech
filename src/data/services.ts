@@ -664,7 +664,8 @@ export const services: Service[] = [
  ],
  bullets: [
  "Define the allowed action, target system and records, credential scope and person who can approve it; keep credentials outside prompts and retrieved documents",
- "Show the approver the exact target and proposed change. Enforce approval in application code, bind it to that action, and recheck permissions before execution; changed inputs require a new approval",
+ "Show the approver the exact target, proposed change and record version being reviewed. Enforce approval in application code, bind it to that action, and recheck permissions before execution; changed inputs require a new approval. If the destination record changes after approval, hold the write for a fresh review instead of overwriting a colleague's update. Use a destination-enforced version check or conditional update where supported; a separate read followed by a write can still race. Agree a controlled manual path when the integration cannot enforce the required condition",
+ "Stale-record rehearsal: approve a change in staging, then have a second operator edit the destination before the queued write runs. Verify that the original write is rejected or held and the newer values survive. Record the reviewed and current versions, conflict result and renewed decision in the delivery brief. Do not silently fetch a new version and reuse the old approval",
  "Name the review owner, backup and covered hours before enabling an approval queue. Rehearse a busy period with the reviewer unavailable: show pending count and oldest waiting item, alert the backup at the agreed threshold, and route overdue work to the agreed hold or manual process. Waiting longer must never grant approval",
  "Test rejected and expired approvals and duplicate requests in staging, including an approval arriving after the work expired or was handled manually. Prevent that old request from executing; renewed work needs current inputs, permissions and approval. Record the request, review decision and destination identifier so operators can reconcile the outcome. Use the review-queue worksheet in the delivery brief",
  "Remove a test operator's access while their approved work is queued. Before execution, the worker must check the current permission for that operator, action and target; a shared service credential or earlier approval is insufficient. Keep denied jobs visible to authorized operators without executing them, and have the system owner cancel or explicitly reauthorize the work under an authorized identity. Record the affected job IDs, permission-change time and decision in the delivery brief",
@@ -752,7 +753,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-06",
+ updated: "2026-11-07",
  related: [
  {
  href: "/projects/orderpilot",
@@ -989,6 +990,7 @@ export const services: Service[] = [
  "Document readiness: agree supported formats and languages, then sample scanned pages, tables and difficult layouts. Check extracted content against the original before tuning retrieval: preserve the labels, units and source locations needed to interpret an answer. Record empty, partial or rejected files and any approved exclusions; a completed import alone does not establish usable evidence",
  "Retrieval checks: for each answerable question, record the expected source passage and whether permitted evidence reached the model. Trace a miss back through extraction, chunking and search; include missing and outdated documents so a parser failure is not mistaken for a model failure",
  "Answer checks: inspect whether each citation supports the answer and whether the system asks for clarification or declines when the available evidence is insufficient",
+ "Structured-output checks: valid JSON can still contain the wrong customer, unit or total. For document-to-record work, validate required fields and allowed values in application code, then check identifiers, units and totals against approved sources and business rules. Include schema-valid but incorrect examples in acceptance; missing or conflicting evidence goes to review before downstream use. Record the field, source, failed rule and correction decision in the delivery brief",
  "Chat-to-SQL checks: agree the business meaning, reporting period and units before generating a query. Compare returned rows and totals with domain-owner-approved answers on a fixed data snapshot; include duplicate joins, empty results and ambiguous questions that need clarification. Successful SQL execution alone does not establish a correct answer",
  "Freshness checks: agree how quickly source changes must reach search, then update and remove approved test documents to verify the new content appears and removed content stops being retrieved within that window",
  "Sync failure handling: make the last successful sync and failed updates visible, test the agreed stale-data fallback, and name the receiving engineer who owns ingestion failures after handover",
@@ -1086,7 +1088,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-06",
+ updated: "2026-11-07",
  related: [
  {
  href: "/projects/orderpilot",

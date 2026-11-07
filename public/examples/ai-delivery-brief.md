@@ -25,6 +25,29 @@ Editable planning template. Replace every placeholder with a project decision; e
 | Dependency failure | Use the agreed fallback without duplicate actions | Failure drill | Agree before testing |
 | Source update or deletion | Refresh or remove derived content | Replayable update/deletion test | Agree freshness window |
 
+## Structured outputs and destination changes
+
+Use for extracted records or approved updates to another system. These are proposed synthetic staging drills, not client results. Mark inapplicable checks with a reason and keep payloads in approved evidence storage.
+
+[OWASP distinguishes format checks from checks of business meaning](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html). Agree required fields, permitted values, reference identifiers, units and cross-field rules before evaluating model output. A schema-valid record still needs source and business review; authorization is a separate check.
+
+- Output schema/version, source evidence and business-rule owner:
+- Missing, conflicting or invalid field handling; correction reviewer:
+- Destination API operation and documented version/precondition support:
+- Record version shown at approval; fields the proposed write may change:
+- Conflict owner, renewed approval path and manual fallback:
+
+| Synthetic staging drill | Evidence to retain | Acceptance decision |
+|---|---|---|
+| Correct field types but the wrong customer identifier, unit or total | Source reference, failed rule and review result for each deliberately wrong value | Hold the affected output before downstream use; do not accept it merely because it parses |
+| A required field is absent, or sources disagree | Validation result, visible exception and correction or rejection decision | Keep the exception explicit; no guessed default silently becomes an approved record |
+| A colleague changes the target after approval but before execution | Approved version, newer version, rejected/held action and destination values | Preserve the newer edit and request a fresh decision; do not refresh the version and reuse the old approval |
+| The target changes between the application's last read and its write | Destination response and final record state | The destination enforces the agreed precondition; a client-side reread alone does not pass this check |
+
+Where an HTTP API supports it, [RFC 9110 defines If-Match with strong entity tags to prevent lost updates](https://www.rfc-editor.org/rfc/rfc9110.html#name-if-match). Verify the actual operation's contract and behavior; sending a header to an API that ignores it provides no protection. If the required condition cannot be enforced, keep automated writes disabled for that path and agree a controlled manual process with the system owner.
+
+Save the release version, actual observations, reviewer and repair/retest date. A version conflict differs from an unknown write outcome: use the retry drills below if a write may already have completed. Duplicate prevention does not establish that the destination still matches the state the person reviewed.
+
 ## Model outage and fallback decision
 
 Use this record before enabling an alternate model or provider. These are proposed staging checks, not availability promises or recorded client results. An alternate must meet the agreed task requirements and data-handling boundaries before it receives inputs, conversation history or tool results.
