@@ -2,9 +2,9 @@ import type { BlogPost } from '@/types/blog';
 
 export const qwen38FlashNextVs27bLocalMemory2026: BlogPost = {
   slug: 'qwen3-8-flash-next-vs-27b-local-memory-2026',
-  updated: "2026-09-29",
-  seoTitle: "Qwen3.8-Flash-Next vs 27B: Local Memory Guide",
-  seoDescription: "Compare Qwen3.8-Flash-Next and Qwen3.8-27B for local inference. Work through model memory and quantization instead of relying on VRAM headlines.",
+  updated: "2026-11-07",
+  seoTitle: "Qwen3.8-Flash-Next vs 27B: VRAM, RAM & SSD",
+  seoDescription: "Can Qwen3.8-Flash-Next run on 12GB VRAM? Compare it with Qwen3.8-27B, including total RAM, quantization, SSD offload and workload tradeoffs.",
   title:
     'Qwen3.8-Flash-Next vs Qwen3.8-27B: The Local Memory Math Behind the "12GB VRAM" Headline (2026)',
   date: '2026-08-29',
@@ -181,14 +181,24 @@ The pattern I keep coming back to on client work is that local models rarely rep
 That is the same trade I walk clients through when we scope an [AI MVP in 6 weeks](/services/6-week-mvp): the model is rarely the bottleneck. The routing, the warm-up, and the memory budget are.`,
     },
     {
-      heading: 'Building with local models and hitting the memory wall?',
-      content: `Getting a local coding agent from "it loads" to "it survives a Tuesday" is mostly plumbing — routing rules, warm-up scheduling, KV budgets, and honest fallbacks to a metered API when the local tier is cold. That is the work I do.
+      heading: 'Turn the memory comparison into a deployment decision',
+      content: `Before buying hardware or changing your production model, write down the deployment you need to support:
 
-If you are wiring open-weight models into a product and want the integration done without losing three weekends to \`--override-tensor\`, I build [AI MVPs in 6 weeks](/services/6-week-mvp) and take on [founding-engineer engagements](/services/hire-founding-engineer-india) for teams shipping AI features in production. Related reading: [Qwen3.8-27B as your local coding agent](/notes/qwen3-8-27b-local-coding-agent-claude-code-2026) for the 24GB build this post compares against.`,
+- The model revision, quantization and inference runtime you intend to use.
+- Available VRAM, system or unified memory, and SSD capacity.
+- Representative tasks, target context length and concurrent requests.
+- Acceptable answer quality, cold-start time and warm-request latency.
+- Which requests may use a hosted fallback, and which data must stay local.
+
+Measure the candidates against the same tasks and record peak memory alongside task success. A model that loads successfully has passed only the first check; the decision also needs evidence that it meets your workload and operating limits.
+
+My [freelance AI engineering service](/services/fractional-ai-engineer) covers model evaluation, routing, integration and a documented handover. Send the hardware, workload and acceptance criteria above to scope that work. For ongoing delivery inside your team on fixed days each week, see the [fractional forward deployed engineer engagement](/services/fractional-forward-deployed-engineer).
+
+Related reading: [Qwen3.8-27B as your local coding agent](/notes/qwen3-8-27b-local-coding-agent-claude-code-2026) for the 24GB build this post compares against.`,
     },
   ],
   cta: {
-    text: 'Ship your AI MVP in 6 weeks',
-    href: '/services/6-week-mvp',
+    text: 'Scope your local-model evaluation and integration',
+    href: '/services/fractional-ai-engineer',
   },
 };

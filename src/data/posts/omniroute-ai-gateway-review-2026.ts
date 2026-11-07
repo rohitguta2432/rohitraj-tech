@@ -2,7 +2,7 @@ import type { BlogPost } from '@/types/blog';
 
 export const omnirouteAiGatewayReview2026: BlogPost = {
     slug: 'omniroute-ai-gateway-review-2026',
-  updated: "2026-09-29",
+    updated: "2026-11-07",
     seoTitle: "OmniRoute vs OpenRouter and LiteLLM: Review",
     seoDescription: "Review OmniRoute as an AI gateway and compare it with OpenRouter and LiteLLM. Evaluate routing, operations and whether self-hosting fits.",
     title: 'OmniRoute Review (2026): Is the 20k-Star Free AI Gateway Worth It vs OpenRouter & LiteLLM?',
@@ -122,11 +122,19 @@ The pattern is clear. **OpenRouter** wins on zero-ops simplicity — one key, no
 
 **I would not put it in production, and here is the failure mode I actually worry about.** The dangerous version of this tool is not the one that breaks loudly — it is the one where \`cost-optimized\` routing quietly sends a customer's request to a free-tier provider whose terms forbid commercial use, or where 89% compression silently trims the context that made an answer correct, and you only discover it three weeks later in a bug report you cannot reproduce. Those are the bugs that survive the demo and die in production. For anything customer-facing I want the boring, audited path: OpenRouter for zero-ops, LiteLLM for self-hosted control, or Portkey for guardrails and PII redaction — the exact trade-offs I walked through in my [gateway comparison](/notes/openrouter-vs-litellm-vs-portkey-india-mvp-2026).
 
-That line — between "delightful local tool" and "load-bearing production dependency" — is the entire review. OmniRoute is emphatically the first and, for now, emphatically not the second. If you are wiring an AI gateway into a product and want the routing, fallback, and compliance decisions made by someone who has debugged them in production rather than by a viral README, that is the work I do: [6-week MVPs](/services/6-week-mvp) that ship with the resilient provider layer already right, or a [founding engineer](/services/hire-founding-engineer-india) embedded to get your model infrastructure sound the first time. A gateway is a great place to move fast; it is a terrible place to find out later you moved carelessly.`,
+For your own rollout, evaluate the gateway against an explicit workload and approved providers. Record what happens when a provider times out, a budget is reached, a credential expires, or a request must stay within a particular data boundary. Keep a rollback path and compare output quality before enabling compression or automatic routing.`,
+        },
+        {
+            heading: 'Need help integrating a gateway with your agents?',
+            content: `Start with a brief listing your agent runtime, approved providers, the APIs it needs to reach, and the actions each user may perform. Include the failure cases that must pass before rollout, such as a denied tool call, an unavailable provider and a request that must not leave your environment.
+
+If the agent already exists and needs access to an approved API or internal tool, my [MCP integration consulting](/services/mcp-integration-consultant) covers the connector, permission checks, evaluation cases and handover. For model routing, fallback behavior and application integration, see the [freelance AI engineering service](/services/fractional-ai-engineer).
+
+For a broader deployment that needs discovery with operators and ongoing delivery inside your team, the [forward deployed engineer engagement](/services/forward-deployed-engineer) covers that scope. The gateway is one component of the system; the acceptance criteria should describe the workflow it supports.`,
         },
     ],
     cta: {
-        text: 'Wiring an AI gateway into a real product? Let us get the routing, fallback, and provider-compliance right the first time — in weeks, not incidents.',
-        href: '/services/6-week-mvp',
+        text: 'Scope your agent-to-API integration',
+        href: '/services/mcp-integration-consultant',
     },
 };
