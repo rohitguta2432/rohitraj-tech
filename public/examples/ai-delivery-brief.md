@@ -25,6 +25,21 @@ Editable planning template. Replace every placeholder with a project decision; e
 | Dependency failure | Use the agreed fallback without duplicate actions | Failure drill | Agree before testing |
 | Source update or deletion | Refresh or remove derived content | Replayable update/deletion test | Agree freshness window |
 
+### Evaluation report and release decision
+
+Complete this record before comparing a baseline and candidate. It is an acceptance plan, not a benchmark result. [Anthropic explains why variable agent behavior needs multiple trials](https://www.anthropic.com/research/demystifying-evals-for-ai-agents). Agree the repeat count and test budget for this workflow; rerunning until one answer passes is not the same as consistent performance.
+
+| Decision | Record before testing | Evidence for review |
+|---|---|---|
+| Case coverage | Held-out question IDs, source snapshot, routine/ambiguous/sensitive groups and approved exclusions | Distinct questions per group; missing coverage remains visible |
+| Repeated attempts | Runs per case, environment reset, model/prompt/tool versions and timeout limits | Every attempt ID and outcome; separate distinct-question counts from total attempts, and retain timeouts or interrupted runs |
+| Grading | Written pass/fail rubric, grader version, human reviewer and sample-selection rule for checking automated grades | Per-attempt grades and reasons; disagreements and ungraded outputs remain unresolved until reviewed |
+| Release | Threshold per group, mandatory permission/approval checks and named release owner | Pass/fail/unreviewed counts, inconsistent cases, hold reasons, repair owner and retest date |
+
+State each percentage's numerator and denominator. Keep unreviewed and not-run cases separate from passes; any exclusion needs a recorded reason. A high overall score does not cancel a failed mandatory check. Repeats on the same question are not additional independent questions or a guarantee about future traffic.
+
+[Microsoft's evaluation checklist separates test-case problems from agent-design problems](https://learn.microsoft.com/en-us/agents/agent-evaluation/evaluation-checklist). When a reviewer disputes a grade, preserve the original evidence and record the adjudication. If the rubric changes, version it and regrade both baseline and candidate consistently before comparing them. Keep repair examples separate from held-out acceptance cases, and link approved evidence without copying sensitive inputs into this brief.
+
 ## Structured outputs and destination changes
 
 Use for extracted records or approved updates to another system. These are proposed synthetic staging drills, not client results. Mark inapplicable checks with a reason and keep payloads in approved evidence storage.
