@@ -1526,6 +1526,50 @@ export const projects: Project[] = [
             ]
         }
     },
+    {
+        slug: "dpdp-scan",
+        seoTitle: "dpdp-scan: Find Aadhaar and PAN Leaks in Your Code",
+        seoDescription: "Explore dpdp-scan, an open-source scanner that finds Indian personal data in a codebase, maps gaps to the DPDP Act and reviews findings with a local AI model.",
+        name: "dpdp-scan — Find Where Your Code Leaks Indian Personal Data",
+        problem: "India's DPDP Rules were notified in November 2025 and the core obligations apply from 13 May 2027. The first step for any team is knowing what personal data it holds and where — Aadhaar, PAN, phone numbers, UPI IDs, health records — and today that is done by hand in spreadsheets or by consultants. Existing code scanners target GDPR and do not ship rules for Indian identifiers.",
+        solves: "Run one command on a repository and dpdp-scan lists every place personal data sits or leaks: identifier values committed to source, personal data passed to logs, high-risk columns with no visible encryption, data sent to analytics vendors, and tables with no erasure path. Each finding cites the DPDP section it touches. It also writes a personal data inventory, and a local AI model reviews every finding, explains it and suggests a fix.",
+        techStack: ["TypeScript", "Node.js 22+ (zero runtime dependencies)", "Ollama (qwen3:14b)", "SARIF 2.1.0", "GitHub Actions", "Vitest"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/dpdp-scan",
+        aiApproach: "Rules find, AI refines. Detection is deterministic — Verhoeff and GSTIN checksums, schema parsing and call-site matching — and only those findings decide the exit code. A local Ollama model then labels each finding true or false positive, explains the risk, suggests a fix and drafts purpose and retention notes for the inventory. Identifier values are replaced with placeholders before any excerpt reaches the model, and a non-local model server is refused unless explicitly allowed.",
+        image: "/images/projects/dpdp-scan-poster.jpg",
+        videoUrl: "/videos/dpdp-scan.mp4",
+        updated: "2026-11-10",
+        details: {
+            businessImpact: "A team cannot protect, disclose or erase data it has not found. dpdp-scan turns the first DPDP task — the data inventory — from a spreadsheet exercise into a command that runs on every pull request. It does not certify compliance: a code scan cannot see consent flows, contracts or data outside the repository, and the report says so.",
+            approach: [
+                "Identifier detectors for Aadhaar (Verhoeff checksum), PAN, GSTIN (checksum), UPI IDs, IFSC, +91 mobile numbers, voter ID and passport numbers",
+                "Schema parsing for SQL, Prisma, JPA entities and Django or SQLAlchemy models, with field names classified into 14 personal data categories",
+                "Call-site rules for log statements and 13 third-party SDKs such as Segment, Mixpanel, Sentry and CleverTap; prose inside string literals is ignored, interpolated values are not",
+                "Erasure check: flags tables that hold personal data when no delete or anonymise path exists anywhere in the code",
+                "Five rules, each mapped to sections of the DPDP Act, 2023 and the DPDP Rules, 2025",
+                "Output as terminal text, JSON, SARIF for GitHub code scanning, a Markdown data inventory and a single-file HTML report"
+            ],
+            decisions: [
+                "The exit code depends only on deterministic findings — AI annotates but never changes severity, so CI results are reproducible",
+                "AI runs on a local model by default, because sending a company's code and personal data to a cloud API would itself be a privacy problem",
+                "Reports never contain the identifier values, only their kind and location",
+                "Repository text is treated as untrusted: model output is schema-constrained and every report format escapes it",
+                "Positioned as a data inventory and gap finder, not a compliance certificate; risk tiers are the tool's own triage order because the Act defines no 'sensitive' class"
+            ],
+            currentStatus: "Open source (Apache-2.0) at github.com/rohitguta2432/dpdp-scan since November 10, 2026. Version 0.1.0 has 21 automated tests. On the bundled demo app it reports 19 findings across five rules, and the local model correctly marked a map-gesture variable named pan as a false positive. Detection is line and pattern based, not full data-flow analysis.",
+            roadmap: [
+                "Tree-sitter data-flow tracking across assignments and function calls",
+                "Automatic fix pull requests",
+                "TypeORM, Mongoose, Sequelize and Rails schemas",
+                "Baseline file so CI reports only new findings"
+            ],
+            improvements: [
+                "Publish to npm so the install becomes npx dpdp-scan",
+                "Have the rule-to-section mapping reviewed by a privacy lawyer"
+            ]
+        }
+    },
 ];
 
 export const repos = [
@@ -1696,6 +1740,12 @@ export const repos = [
         description: "x402-lab — local test lab, 35-check conformance suite and error decoder for x402 (HTTP 402) agent payments. Anvil + official @x402 SDKs, five chaos modes, live route-map dashboard",
         modules: ["src", "dashboard", "contracts", "test"],
         url: "https://github.com/rohitguta2432/x402-lab"
+    },
+    {
+        name: "dpdp-scan",
+        description: "dpdp-scan — scanner that finds Indian personal data (Aadhaar, PAN, UPI, GSTIN) in a codebase and maps gaps to the DPDP Act. Five rules, SARIF output, data inventory, local AI review via Ollama",
+        modules: ["src", "test", "examples", "action.yml"],
+        url: "https://github.com/rohitguta2432/dpdp-scan"
     }
 ];
 
