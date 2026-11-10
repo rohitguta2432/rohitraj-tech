@@ -325,4 +325,20 @@ export const aiProjectSummaries: AIProjectSummary[] = [
             { label: "Keys needed", value: "none" },
         ],
     },
+    {
+        title: "dpdp-scan — Find Where Your Code Leaks Indian Personal Data",
+        slug: "dpdp-scan",
+        problem: "DPDP obligations apply from 13 May 2027, and the first step is knowing what personal data a codebase holds and where. That is done by hand today, and existing scanners do not ship rules for Aadhaar, PAN or UPI.",
+        solution: "One command finds identifier values in source, personal data in logs, unprotected columns, data sent to analytics vendors and tables with no erasure path. Each finding cites its DPDP section, and a local AI model reviews it and suggests a fix.",
+        techStack: ["TypeScript", "Node.js", "Ollama", "SARIF", "GitHub Actions"],
+        aiApproach: "Rules find, AI refines. Only deterministic findings decide the exit code; a local model labels false positives and explains fixes, and identifier values are redacted before it sees any code.",
+        repoUrl: "https://github.com/rohitguta2432/dpdp-scan",
+        status: "active",
+        image: "/images/projects/dpdp-scan-poster.jpg",
+        metrics: [
+            { label: "Rules", value: "5" },
+            { label: "Identifier types", value: "8" },
+            { label: "Runtime dependencies", value: "0" },
+        ],
+    },
 ];
