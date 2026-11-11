@@ -641,7 +641,7 @@ export const services: Service[] = [
  id: "acceptance",
  paragraphs: [
  "A useful pilot ends with evidence your team can inspect. Before implementation, we agree what the system must do, which examples will test it, and who owns the rollout decision. A polished demo alone is not an acceptance test.",
- "The release review can approve a limited rollout, hold for a specific repair, or stop with a documented handover. If a target is missed, I record the failed cases, likely cause and proposed next step. You approve any revised scope before more work begins; a pilot does not automatically become a retainer.",
+ "The release review can approve a limited rollout, hold for repair, or stop with a documented handover. Record missed targets and their proposed repairs against the agreed criteria. When operators discover a new workflow during the pilot, your product owner decides what it displaces before it enters the delivery plan. I document the affected systems, access dependencies, acceptance checks, support responsibilities and milestone effect. Keep the request pending until that owner approves, defers or declines it; a standup suggestion is not approval to expand the pilot. Save the original scope and the decision in the delivery brief. Added work does not silently extend the pilot or turn it into a retainer.",
  "For a retrieval replacement, agree whether users can tolerate a planned pause or need the existing index to keep serving during a separate build. Reconcile source updates, deletions and permission changes before switching traffic. Keep the query encoder and its matching index together during rollout and rollback. Your release owner reviews the comparison results and a staging switch-back drill; an older index is only a recovery option if its data and permissions still meet the agreed requirements. Otherwise use the documented fallback. Record these decisions in the delivery brief.",
  ],
  bullets: [
@@ -753,7 +753,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-10",
+ updated: "2026-11-11",
  related: [
  {
  href: "/projects/orderpilot",
@@ -965,7 +965,7 @@ export const services: Service[] = [
  heading: "What to hire a freelance AI engineer for",
  paragraphs: [
  "Start with a workflow and a way to tell whether it improved. Useful scopes include searching internal documents with source citations, turning business questions into read-only database queries, or adding a narrowly scoped agent to an existing product. The architecture choice follows the task: some problems need retrieval or tools; others are better solved with ordinary application code.",
- "I work across design and implementation. The output includes the integration, tests and evaluation examples, deployment configuration, and documentation. If the data or acceptance criteria are not ready, the first deliverable is a clear assessment of those gaps before a larger build is agreed.",
+ "If the data or acceptance criteria are not ready, the first deliverable is an assessment of those gaps. During a build, a new data source, language or action needs an impact review before it enters the agreed scope. We record the added integration and evaluation work, access dependencies, estimate and milestone effect. You can defer it, exchange it for named work or approve an extension. A failure against an existing acceptance criterion stays visible as a defect to resolve under the agreement; we do not quietly redefine success. The delivery brief includes a scope-change record.",
  ],
  },
  {
@@ -1088,7 +1088,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-10",
+ updated: "2026-11-11",
  related: [
  {
  href: "/projects/orderpilot",

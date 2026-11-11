@@ -14,6 +14,23 @@ Editable planning template. Replace every placeholder with a project decision; e
 - Implementation scope and estimate assumptions:
 - Monthly usage, infrastructure and maintenance assumptions:
 
+## Scope changes during delivery
+
+Use this record when a request changes the agreed deliverable, inputs, actions or operating responsibilities. Compare it with the current scope first: a failure to meet an existing acceptance criterion is a defect to resolve under the agreement, not automatically an added feature. Keep the original criteria and evidence visible.
+
+- Request, requester, reason and current scope version:
+- Existing requirement to repair, clarification, or proposed addition; evidence for that classification:
+- Added or removed deliverables, data sources, users and allowed actions:
+- Integration, evaluation, access and support work affected; unresolved dependencies and their owners:
+- Effort estimate and assumptions; effect on delivery dates and the agreed engagement:
+- Decision: repair within scope, defer, decline, exchange named work, or approve an extension:
+- Authorized product owner, written decision and date; any separate data or system-owner approvals:
+- Revised scope version, acceptance cases and milestones; notify the people whose work changes:
+
+For a fractional backlog, record which committed item moves out when a new priority moves in. For a fixed pilot, record the approved revision before starting the added work. A request remains pending until decided; a discussion or demo does not update the agreement by itself.
+
+Illustrative AI build: adding scanned invoices to a text-document search scope may require extraction checks and source-owner review. Illustrative FDE pilot: adding CRM updates to read-only ticket triage introduces a write boundary, an approval path and a receiving-system owner. These are scoping examples, not delivered client projects. Record the actual impact instead of assuming either request fits the original milestone.
+
 ## Acceptance matrix
 
 | Case | Expected behavior | Evidence | Threshold / reviewer |
