@@ -162,7 +162,30 @@ Use when a person must review an output or approve an action. This is a proposed
 | Primary reviewer is unavailable | Backup notification, acknowledgement and overdue-item status | Keep required approvals enforced; waiting longer never authorizes an action |
 | Approval arrives after a task expired or was completed manually | Request ID, terminal status, late approval and destination check | Reject execution of the old request; any renewed work needs current inputs, permissions and approval |
 
-Measure submission-to-result time separately from model latency and active review time. Record the release version, observed results, reviewer and repair/retest date. If a required drill fails, hold that workflow's rollout. Expiry prevents a pending action from starting; it does not undo an action already in progress or completed. Reconcile an unknown write using the next section. Retain the decision record without copying sensitive payloads into this brief.
+Measure submission-to-result time separately from model latency and active review time. Record the release version, observed results, reviewer and repair/retest date. If a required drill fails, hold that workflow's rollout. Expiry prevents a pending action from starting; it does not undo an action already in progress or completed. Reconcile an unknown write using the write-outcome and retry drills below. Retain the decision record without copying sensitive payloads into this brief.
+
+## Task cancellation and operator stop rehearsal
+
+Use for workflows with queued work, approval waits or background actions. These are proposed staging checks using approved synthetic inputs, not measured client results. Agree what the stop control can prevent and what it cannot recall before enabling the workflow.
+
+[Microsoft documents that terminating a Durable Task orchestration does not stop its running activities or sub-orchestrations](https://learn.microsoft.com/en-us/azure/durable-task/common/durable-task-instance-management#terminate-orchestration-instances). This is one platform example, not a universal cancellation contract. Check the actual worker, model provider and destination API used by the engagement; a closed chat or acknowledged stop request alone does not establish the final business outcome.
+
+- Task identifier, release/configuration and authorized stop requester:
+- Cancellation boundary: queued work, approval waits, model calls and external actions covered:
+- Where workers check the recorded cancellation state before starting another action:
+- Expected time to observe a stop; user-visible pending and final states:
+- Destination lookup, unresolved-outcome owner and escalation time:
+
+| Staging drill | Evidence to review | Hold or repair condition |
+|---|---|---|
+| Cancel a queued task, then allow a worker to pick it up | Recorded cancellation and worker decision; destination checks show the action did not start | Worker executes the cancelled request |
+| Cancel while awaiting approval, then deliver the old approval | Approval remains unusable for the cancelled task; any renewed work needs a new decision with current inputs and permissions | Late approval revives cancelled work |
+| Request a stop after the destination accepts an action but before its response arrives | Separate stop-request time from destination outcome; reconcile the action identifier and retain a late response as evidence | Interface reports cancellation as proof of no side effect, or automatically repeats the action |
+| Request a stop during one step of a multi-step workflow | Record completed, prevented and unresolved steps; verify that late results do not dispatch further work after cancellation is enforced | Later steps run without a renewed decision, or completed effects disappear from the record |
+
+Keep cancellation and business correction separate. A completed external action may need an explicitly approved correction, and some effects cannot be undone. Use the write-outcome drills below for unresolved actions. Record races or non-cancellable operations as limits; do not promise an immediate stop across systems. Check that a user cannot cancel another user's task without the required authority.
+
+For an AI build, the receiving engineer reviews state transitions and destination evidence. For an FDE pilot, the operator performs the drill using the runbook and identifies the person who resolves each remaining item. Save the actual result, evidence links, reviewer, repair owner and retest date before accepting the stop procedure.
 
 ## Write outcome and retry drills
 

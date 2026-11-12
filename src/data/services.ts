@@ -651,7 +651,7 @@ export const services: Service[] = [
  "Model outage: rehearse provider timeouts and rate-limit failures with your operator in staging. Confirm that only an approved model route can receive the task; if it is unavailable too, show the agreed hold or manual workflow after bounded retries. The operator identifies delayed or stopped work, the model used and the escalation owner. Agree who can resume service and how outstanding work is reconciled; record the drill in the delivery brief",
  "Incident evidence: have your operator investigate a staged failure using a request identifier instead of pasting the conversation into a support ticket. With their assigned access, they should find the failed step, approval and destination outcome, then escalate to the named engineer. Check that an unauthorized support role cannot open restricted traces or exports. Agree any separately approved content access and record the rehearsal in the delivery brief",
  "Limited rollout: agree the first users, allowed actions, review period and stop criteria before enabling the feature. Your release owner reviews incorrect actions, operator corrections, latency and cost before expanding access",
- "Recovery: disabling the agent stops new work but does not undo completed actions. Keep a record of affected items and outcomes; rehearse a partial failure in staging and agree which corrections need system-owner approval or manual handling. Do not overwrite later human changes or resend messages as a rollback",
+ "Stop and recovery rehearsal: your operator cancels a queued task, then requests a stop while another task is already calling an integration. Verify which work stopped before execution and which actions completed or still need reconciliation. A stop request is not proof that an external action was cancelled. Keep affected items visible, assign unresolved outcomes to the system owner and record who may authorize new work. Rehearse a partial failure too; corrections need the agreed approval or manual handling, without overwriting later human changes or resending messages as a rollback. Save the evidence in the delivery brief",
  "Release decision: your named release owner reviews the evaluation results, latency and cost against the agreed limits, plus unresolved risks, before authorizing production access",
  "Handover: source code, deployment instructions, evaluation results and a runbook; name the receiving engineer, alert destination, support hours and escalation contact before rollout",
  ],
@@ -753,7 +753,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-11",
+ updated: "2026-11-12",
  related: [
  {
  href: "/projects/orderpilot",
@@ -997,6 +997,7 @@ export const services: Service[] = [
  "Access checks: test the same question as users with different permissions, verifying that restricted content stays out of retrieved context, answers and citations. Repeat with a populated answer cache so one user's result cannot bypass another user's access rules",
  "Revocation checks: remove a test user's document access after starting a conversation and caching an answer. Repeat the question and a follow-up to check that newly generated answers, retrieved context and citations stop using that document within the agreed revocation window. Record the permission-change time and observed enforcement time; agree how retained conversation history is restricted or cleared. Previously delivered content cannot be recalled from the user's own copies",
  "Instruction-boundary checks: treat retrieved documents and tool results as untrusted input. Test approved examples containing instructions to ignore the task, expose restricted data or call an unrelated tool; record the attempted action and whether application permissions and approval checks reject it",
+ "Cancellation checks: agree who may stop a task and how the application checks cancellation before dispatching its next action. Test cancellation while queued, awaiting approval and already running, including a late approval or tool response. Show the difference between a requested stop, work prevented from starting and an external action that completed or remains unresolved. Closing the chat must not be presented as proof that background work stopped. You receive the observed states, destination checks and reconciliation owner; the delivery brief includes the rehearsal record",
  "Delivery evidence: code and evaluation cases in your repository, per-case results and unresolved failures, measured latency and operating cost, plus deployment, fallback and handover instructions",
  ],
  },
@@ -1088,7 +1089,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-11",
+ updated: "2026-11-12",
  related: [
  {
  href: "/projects/orderpilot",
