@@ -126,6 +126,25 @@ If required content is missing or altered, hold the affected source or workflow,
 - Review decision and approved exclusions:
 - Repair owner, retest date and remaining coverage limits:
 
+### Source authority and conflicting answers
+
+A source can be readable and permitted yet unsuitable for the question. Agree the governing source with the business owner; upload time and search rank are not approval or effective dates. The checks below are synthetic planning examples, not observed project results. Apply them only within the user's permitted sources.
+
+- Source IDs/versions, approval status, effective-from/to dates and superseded versions:
+- Applicable product, region or workflow; how missing context is clarified:
+- Business owner's precedence rule and evidence of its approval:
+- Conflict reviewer, held workflow, correction owner and review deadline:
+
+| Synthetic case | Expected decision to agree | Evidence to retain |
+|---|---|---|
+| An approved policy says 30 days; a more recently uploaded draft says 60 | Use the approved policy if applicable; do not treat the draft's upload time as approval | Retrieved versions and status, selected passage, answer and citation |
+| A question asks about a date before the current policy took effect | Use the permitted version applicable on that date; ask for the date if needed, or explain that historical evidence is unavailable | Question date, source validity interval and expected/observed answer |
+| Two approved sources disagree for the same date and scope, with no approved precedence rule | Show the unresolved conflict using permitted evidence and route it to the named owner; hold any dependent action | Both passages, visible review status, owner decision and correction/retest record |
+
+First check whether the intended evidence was retrieved; then check whether the answer follows the agreed rule. Record missing metadata as a gap rather than guessing a version or authority. Reordering search results must not change the business rule. After a source is corrected or superseded, repeat the relevant retrieval, answer, citation and permission checks, including any cached answer path.
+
+[Research on conflicting sources in RAG documents failures in how models handle disagreement](https://arxiv.org/abs/2506.08500). This worksheet is a proposed acceptance process, not a claim to solve every conflict. Enforce approved source eligibility in the retrieval/application layer where possible; for example, [Azure AI Search supports filters on nonvector metadata fields](https://learn.microsoft.com/en-us/azure/search/vector-search-filters). A filter can apply a recorded rule, but cannot decide which business source is authoritative.
+
 ## Permission-change acceptance
 
 Use synthetic users, documents and queued jobs in staging. These are proposed acceptance cases, not measured results. A successful login or a connector's broad access does not establish the requesting user's permission. [OWASP recommends validating authorization on every request](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html#validate-the-permissions-on-every-request).

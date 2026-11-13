@@ -626,7 +626,8 @@ export const services: Service[] = [
  heading: "What I need from your side",
  paragraphs: [
  "To scope the work and identify dependencies before implementation, I ask for:",
- "For a document-based pilot, bring a small approved sample covering the formats, languages and layouts users rely on, including scans and tables when relevant. Name a source owner who can review extraction errors and approve corrections or exclusions. The first milestone records which content is usable, which files failed or were only partly read, and what needs repair. If required evidence cannot be read reliably, agree a corrected source, a narrower pilot or a hold before rollout. Use the source-readiness record in the delivery brief to capture the decision.",
+ "For a document-based pilot, bring a small approved sample covering the formats, languages and layouts users rely on, including scans and tables when relevant. Name a source owner who can review extraction errors and approve corrections or exclusions. The first milestone records usable content, failed or partly read files and required repairs. If required evidence cannot be read reliably, agree a corrected source, a narrower pilot or a hold before rollout. Record the decision in the delivery brief.",
+ "Your source owner also decides which document governs when approved sources disagree. Before rollout, have an operator review a staged conflict: identify the versions, effective dates and affected workflow, then route the question to that owner. Keep the disputed answer or action on hold until the applicable rule is confirmed; the operator must not quietly choose whichever document search ranks first. Record the decision, correction owner and retest date. The delivery brief includes draft-versus-approved, historical-version and unresolved-conflict cases so the team can repeat the review after source updates.",
  ],
  bullets: [
  "One named owner on your side who can make product calls the same day",
@@ -753,7 +754,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-12",
+ updated: "2026-11-13",
  related: [
  {
  href: "/projects/orderpilot",
@@ -988,7 +989,7 @@ export const services: Service[] = [
  bullets: [
  "Design and baseline: document the data flow and model choice, then compare the staging feature with your current search or manual process on the same held-out questions",
  "Document readiness: agree supported formats and languages, then sample scanned pages, tables and difficult layouts. Check extracted content against the original before tuning retrieval: preserve the labels, units and source locations needed to interpret an answer. Record empty, partial or rejected files and any approved exclusions; a completed import alone does not establish usable evidence",
- "Retrieval checks: for each answerable question, record the expected source passage and whether permitted evidence reached the model. Trace a miss back through extraction, chunking and search; include missing and outdated documents so a parser failure is not mistaken for a model failure",
+ "Retrieval checks: record the expected source passage and whether permitted evidence reached the model; trace misses through extraction, chunking and search. For conflicting documents, agree the authoritative source, approval status, effective dates and applicable product or region with your domain owner. A newer upload or higher search score does not make a document authoritative. Test an approved policy against a newer draft, a historical question against the version effective then, and two unresolved contradictory sources. Check source selection and answer behavior separately: ask for missing context or disclose the unresolved conflict and route it for review. You receive the source versions, expected decision and observed answer in the acceptance evidence",
  "Answer checks: use a written rubric for source support, completeness and appropriate clarification or refusal. Agree repeat runs for variable answers before testing; keep every output and its grade instead of selecting the best attempt. Report distinct questions and total attempts separately, including failures, timeouts and ungraded outputs. If an automated grader is used, compare its decisions with a domain reviewer's grades on an agreed sample and inspect disagreements. You receive the rubric, grader version and per-attempt evidence in the acceptance report; one successful answer does not establish consistent behavior",
  "Structured-output checks: valid JSON can still contain the wrong customer, unit or total. For document-to-record work, validate required fields and allowed values in application code, then check identifiers, units and totals against approved sources and business rules. Include schema-valid but incorrect examples in acceptance; missing or conflicting evidence goes to review before downstream use. Record the field, source, failed rule and correction decision in the delivery brief",
  "Chat-to-SQL checks: agree the business meaning, reporting period and units before generating a query. Compare returned rows and totals with domain-owner-approved answers on a fixed data snapshot; include duplicate joins, empty results and ambiguous questions that need clarification. Successful SQL execution alone does not establish a correct answer",
@@ -1089,7 +1090,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-12",
+ updated: "2026-11-13",
  related: [
  {
  href: "/projects/orderpilot",
