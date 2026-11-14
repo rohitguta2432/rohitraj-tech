@@ -524,7 +524,9 @@ export const services: Service[] = [
  title: "Plan your FDE pilot and team handover",
  links: [
  { label: "Pilot plan", href: "#pilot-plan" },
- { label: "Acceptance and rollout", href: "#acceptance" },
+ { label: "Acceptance and release decision", href: "#acceptance" },
+ { label: "Limited rollout and cutover", href: "#rollout-plan" },
+ { label: "Operator drills and handover", href: "#operator-readiness" },
  { label: "Action permissions", href: "#action-permissions" },
  { label: "Public engineering evidence", href: "#project-evidence" },
  { label: "Handover and engagement FAQs", href: "#service-faqs" },
@@ -643,17 +645,30 @@ export const services: Service[] = [
  paragraphs: [
  "A useful pilot ends with evidence your team can inspect. Before implementation, we agree what the system must do, which examples will test it, and who owns the rollout decision. A polished demo alone is not an acceptance test.",
  "The release review can approve a limited rollout, hold for repair, or stop with a documented handover. Record missed targets and their proposed repairs against the agreed criteria. When operators discover a new workflow during the pilot, your product owner decides what it displaces before it enters the delivery plan. I document the affected systems, access dependencies, acceptance checks, support responsibilities and milestone effect. Keep the request pending until that owner approves, defers or declines it; a standup suggestion is not approval to expand the pilot. Save the original scope and the decision in the delivery brief. Added work does not silently extend the pilot or turn it into a retainer.",
- "For a retrieval replacement, agree whether users can tolerate a planned pause or need the existing index to keep serving during a separate build. Reconcile source updates, deletions and permission changes before switching traffic. Keep the query encoder and its matching index together during rollout and rollback. Your release owner reviews the comparison results and a staging switch-back drill; an older index is only a recovery option if its data and permissions still meet the agreed requirements. Otherwise use the documented fallback. Record these decisions in the delivery brief.",
  ],
  bullets: [
  "Scope: one named workflow, its users and integrations, plus an explicit list of tasks the pilot will not attempt",
  "Quality: agree a written scoring rubric with your workflow owner before testing held-out examples. Review routine, ambiguous and sensitive cases separately, with pass, fail and unreviewed counts for each group. Repeat variable cases under the agreed test plan and retain every attempt. Your release owner reviews inconsistent results and disputed grades with the operator before approving rollout. An overall pass rate cannot override a failed permission or approval check. Record the decision, remaining gaps and repair owner in the delivery brief",
  "Safety: permission checks, audit logs and tests showing that disallowed actions fail safely",
+ "Release decision: your named release owner reviews the evaluation results, latency and cost against the agreed limits, plus unresolved risks, before authorizing production access",
+ ],
+ },
+ {
+ heading: "Plan a limited rollout and retrieval cutover",
+ id: "rollout-plan",
+ paragraphs: [
+ "Limited rollout: agree the first users, allowed actions, review period and stop criteria before enabling the feature. Your release owner reviews incorrect actions, operator corrections, latency and cost before expanding access",
+ "For a retrieval replacement, agree whether users can tolerate a planned pause or need the existing index to keep serving during a separate build. Reconcile source updates, deletions and permission changes before switching traffic. Keep the query encoder and its matching index together during rollout and rollback. Your release owner reviews the comparison results and a staging switch-back drill; an older index is only a recovery option if its data and permissions still meet the agreed requirements. Otherwise use the documented fallback. Record these decisions in the delivery brief.",
+ ],
+ },
+ {
+ heading: "Rehearse incidents, recovery and team handover",
+ id: "operator-readiness",
+ paragraphs: [],
+ bullets: [
  "Model outage: rehearse provider timeouts and rate-limit failures with your operator in staging. Confirm that only an approved model route can receive the task; if it is unavailable too, show the agreed hold or manual workflow after bounded retries. The operator identifies delayed or stopped work, the model used and the escalation owner. Agree who can resume service and how outstanding work is reconciled; record the drill in the delivery brief",
  "Incident evidence: have your operator investigate a staged failure using a request identifier instead of pasting the conversation into a support ticket. With their assigned access, they should find the failed step, approval and destination outcome, then escalate to the named engineer. Check that an unauthorized support role cannot open restricted traces or exports. Agree any separately approved content access and record the rehearsal in the delivery brief",
- "Limited rollout: agree the first users, allowed actions, review period and stop criteria before enabling the feature. Your release owner reviews incorrect actions, operator corrections, latency and cost before expanding access",
  "Stop and recovery rehearsal: your operator cancels a queued task, then requests a stop while another task is already calling an integration. Verify which work stopped before execution and which actions completed or still need reconciliation. A stop request is not proof that an external action was cancelled. Keep affected items visible, assign unresolved outcomes to the system owner and record who may authorize new work. Rehearse a partial failure too; corrections need the agreed approval or manual handling, without overwriting later human changes or resending messages as a rollback. Save the evidence in the delivery brief",
- "Release decision: your named release owner reviews the evaluation results, latency and cost against the agreed limits, plus unresolved risks, before authorizing production access",
  "Handover: source code, deployment instructions, evaluation results and a runbook; name the receiving engineer, alert destination, support hours and escalation contact before rollout",
  ],
  },
@@ -754,7 +769,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-13",
+ updated: "2026-11-14",
  related: [
  {
  href: "/projects/orderpilot",
@@ -923,6 +938,9 @@ export const services: Service[] = [
  links: [
  { label: "Project or fractional scope", href: "#engagement-scope" },
  { label: "Deliverables and acceptance checks", href: "#acceptance" },
+ { label: "Document and retrieval checks", href: "#retrieval-checks" },
+ { label: "Answer and result checks", href: "#answer-checks" },
+ { label: "Permissions and cancellation", href: "#permission-checks" },
  { label: "Data access and retention", href: "#data-boundaries" },
  { label: "Operating budget and limits", href: "#operating-budget" },
  { label: "Handover and engagement FAQs", href: "#service-faqs" },
@@ -982,24 +1000,47 @@ export const services: Service[] = [
  id: "acceptance",
  paragraphs: [
  "We agree acceptance criteria before building: the examples the system must handle, which actions it may take, and the limits on response time and operating cost. Targets depend on your task and baseline; a demonstration is not a measured production result.",
- "For an internal-document search feature, the evaluation separates finding the right evidence from writing a supported answer. A correct-looking answer can still cite the wrong source. We review these checks separately so the next fix addresses retrieval, answer generation or access control as appropriate.",
- "Retrieved content can contain instructions aimed at the agent. A relevant search result is evidence to assess, not permission to change the task or use another tool. We include these attempts in the release review; passing the recorded cases does not establish immunity to prompt injection.",
- "After launch, review task outcomes as well as service uptime. Agree a privacy-approved sample of real questions for a named reviewer to check for supported answers, missed evidence, unnecessary refusals and human corrections. Record the review schedule, escalation thresholds and fallback owner in the handover. Turn approved failure examples into regression cases while keeping a separate acceptance set; a successful API response alone does not establish answer quality.",
  ],
  bullets: [
  "Design and baseline: document the data flow and model choice, then compare the staging feature with your current search or manual process on the same held-out questions",
+ "Delivery evidence: code and evaluation cases in your repository, per-case results and unresolved failures, measured latency and operating cost, plus deployment, fallback and handover instructions",
+ ],
+ },
+ {
+ heading: "Check document readiness and retrieval quality",
+ id: "retrieval-checks",
+ paragraphs: [],
+ bullets: [
  "Document readiness: agree supported formats and languages, then sample scanned pages, tables and difficult layouts. Check extracted content against the original before tuning retrieval: preserve the labels, units and source locations needed to interpret an answer. Record empty, partial or rejected files and any approved exclusions; a completed import alone does not establish usable evidence",
  "Retrieval checks: record the expected source passage and whether permitted evidence reached the model; trace misses through extraction, chunking and search. For conflicting documents, agree the authoritative source, approval status, effective dates and applicable product or region with your domain owner. A newer upload or higher search score does not make a document authoritative. Test an approved policy against a newer draft, a historical question against the version effective then, and two unresolved contradictory sources. Check source selection and answer behavior separately: ask for missing context or disclose the unresolved conflict and route it for review. You receive the source versions, expected decision and observed answer in the acceptance evidence",
+ "Freshness checks: agree how quickly source changes must reach search, then update and remove approved test documents to verify the new content appears and removed content stops being retrieved within that window",
+ "Sync failure handling: make the last successful sync and failed updates visible, test the agreed stale-data fallback, and name the receiving engineer who owns ingestion failures after handover",
+ ],
+ },
+ {
+ heading: "Evaluate answers, structured records and SQL results",
+ id: "answer-checks",
+ paragraphs: [
+ "For an internal-document search feature, the evaluation separates finding the right evidence from writing a supported answer. A correct-looking answer can still cite the wrong source. We review these checks separately so the next fix addresses retrieval, answer generation or access control as appropriate.",
+ "After launch, review task outcomes as well as service uptime. Agree a privacy-approved sample of real questions for a named reviewer to check for supported answers, missed evidence, unnecessary refusals and human corrections. Record the review schedule, escalation thresholds and fallback owner in the handover. Turn approved failure examples into regression cases while keeping a separate acceptance set; a successful API response alone does not establish answer quality.",
+ ],
+ bullets: [
  "Answer checks: use a written rubric for source support, completeness and appropriate clarification or refusal. Agree repeat runs for variable answers before testing; keep every output and its grade instead of selecting the best attempt. Report distinct questions and total attempts separately, including failures, timeouts and ungraded outputs. If an automated grader is used, compare its decisions with a domain reviewer's grades on an agreed sample and inspect disagreements. You receive the rubric, grader version and per-attempt evidence in the acceptance report; one successful answer does not establish consistent behavior",
  "Structured-output checks: valid JSON can still contain the wrong customer, unit or total. For document-to-record work, validate required fields and allowed values in application code, then check identifiers, units and totals against approved sources and business rules. Include schema-valid but incorrect examples in acceptance; missing or conflicting evidence goes to review before downstream use. Record the field, source, failed rule and correction decision in the delivery brief",
  "Chat-to-SQL checks: agree the business meaning, reporting period and units before generating a query. Compare returned rows and totals with domain-owner-approved answers on a fixed data snapshot; include duplicate joins, empty results and ambiguous questions that need clarification. Successful SQL execution alone does not establish a correct answer",
- "Freshness checks: agree how quickly source changes must reach search, then update and remove approved test documents to verify the new content appears and removed content stops being retrieved within that window",
- "Sync failure handling: make the last successful sync and failed updates visible, test the agreed stale-data fallback, and name the receiving engineer who owns ingestion failures after handover",
+ ],
+ },
+ {
+ heading: "Test permissions, untrusted inputs and cancellation",
+ id: "permission-checks",
+ paragraphs: [
+ "Retrieved content can contain instructions aimed at the agent. A relevant search result is evidence to assess, not permission to change the task or use another tool. We include these attempts in the release review; passing the recorded cases does not establish immunity to prompt injection.",
+ ],
+ bullets: [
  "Access checks: test the same question as users with different permissions, verifying that restricted content stays out of retrieved context, answers and citations. Repeat with a populated answer cache so one user's result cannot bypass another user's access rules",
  "Revocation checks: remove a test user's document access after starting a conversation and caching an answer. Repeat the question and a follow-up to check that newly generated answers, retrieved context and citations stop using that document within the agreed revocation window. Record the permission-change time and observed enforcement time; agree how retained conversation history is restricted or cleared. Previously delivered content cannot be recalled from the user's own copies",
  "Instruction-boundary checks: treat retrieved documents and tool results as untrusted input. Test approved examples containing instructions to ignore the task, expose restricted data or call an unrelated tool; record the attempted action and whether application permissions and approval checks reject it",
  "Cancellation checks: agree who may stop a task and how the application checks cancellation before dispatching its next action. Test cancellation while queued, awaiting approval and already running, including a late approval or tool response. Show the difference between a requested stop, work prevented from starting and an external action that completed or remains unresolved. Closing the chat must not be presented as proof that background work stopped. You receive the observed states, destination checks and reconciliation owner; the delivery brief includes the rehearsal record",
- "Delivery evidence: code and evaluation cases in your repository, per-case results and unresolved failures, measured latency and operating cost, plus deployment, fallback and handover instructions",
  ],
  },
  {
@@ -1090,7 +1131,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-13",
+ updated: "2026-11-14",
  related: [
  {
  href: "/projects/orderpilot",
