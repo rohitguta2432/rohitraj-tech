@@ -669,7 +669,7 @@ export const services: Service[] = [
  "Model outage: rehearse provider timeouts and rate-limit failures with your operator in staging. Confirm that only an approved model route can receive the task; if it is unavailable too, show the agreed hold or manual workflow after bounded retries. The operator identifies delayed or stopped work, the model used and the escalation owner. Agree who can resume service and how outstanding work is reconciled; record the drill in the delivery brief",
  "Incident evidence: have your operator investigate a staged failure using a request identifier instead of pasting the conversation into a support ticket. With their assigned access, they should find the failed step, approval and destination outcome, then escalate to the named engineer. Check that an unauthorized support role cannot open restricted traces or exports. Agree any separately approved content access and record the rehearsal in the delivery brief",
  "Stop and recovery rehearsal: your operator cancels a queued task, then requests a stop while another task is already calling an integration. Verify which work stopped before execution and which actions completed or still need reconciliation. A stop request is not proof that an external action was cancelled. Keep affected items visible, assign unresolved outcomes to the system owner and record who may authorize new work. Rehearse a partial failure too; corrections need the agreed approval or manual handling, without overwriting later human changes or resending messages as a rollback. Save the evidence in the delivery brief",
- "Handover: source code, deployment instructions, evaluation results and a runbook; name the receiving engineer, alert destination, support hours and escalation contact before rollout",
+ "Handover: source code, deployment instructions, evaluation results and a runbook; name the receiving engineer, alert destination, support hours and escalation contact before rollout. Rehearse an expired integration credential with your operator: identify affected work, route the alert to the account owner and keep work visible while access is restored. The receiving engineer follows the approved renewal procedure; the operator checks current permissions, approvals and unresolved outcomes before resuming. Do not substitute a personal or more privileged account to clear the error. Record the recovery and remaining gaps in the delivery brief",
  ],
  },
  {
@@ -769,7 +769,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-14",
+ updated: "2026-11-16",
  related: [
  {
  href: "/projects/orderpilot",
@@ -1055,7 +1055,7 @@ export const services: Service[] = [
  "Review the chosen provider's processing region, retention and training-use settings against your requirements. Record constraints and unresolved approvals before using sensitive data; local inference is an option to evaluate when external processing is restricted",
  "Map stored copies before agreeing deletion: source uploads, extracted text and embeddings, answer caches, conversation history, evaluation fixtures, traces and provider-managed files. For each, name the owner, removal or expiry mechanism, retention window and any backup or audit-record exception",
  "Rehearse deletion with a synthetic document in staging. Record its identifiers, the removal request, checks of the affected stores and any pending expiry. Keep deletion evidence separate from a search test: no retrieved result does not prove every stored copy is gone. Document remaining copies and their access restrictions; the delivery brief provides the record",
- "Use your repository and provider accounts with scoped access. Document secret storage, billing ownership and credential revocation so your team controls the system after handover",
+ "Use your repository and provider accounts with scoped access. Document secret storage, billing ownership and the person who can renew or revoke each integration credential. Before handover, your receiving engineer replaces a staging credential through the approved secret store and verifies that the application uses the replacement with the same intended permissions. Check that the retired credential is rejected after the agreed overlap ends, including in background workers. Record credential identifiers, observed results and any restart or reload steps, never secret values; the delivery brief includes the rehearsal",
  ],
  },
  {
@@ -1131,7 +1131,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-14",
+ updated: "2026-11-16",
  related: [
  {
  href: "/projects/orderpilot",

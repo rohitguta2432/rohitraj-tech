@@ -310,6 +310,26 @@ Agree what support needs to diagnose a failed task and which fields may be recor
 - Known limitations and accepted exceptions:
 - Access removal and receiving-owner sign-off:
 
+## Integration credential handover
+
+Use approved test credentials in staging. These are proposed checks for the receiving team, not recorded client results. [OWASP's secrets-management guidance covers rotation, revocation, expiry and dependency ownership](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html#27-secret-lifecycle). Choose the procedure for the actual provider and credential type; do not assume every API supports overlapping keys or immediate session invalidation.
+
+- Integration, credential identifier and approved permissions (no secret values):
+- Account owner, authorized renewal operator and alert destination:
+- Secret-store reference, expiry or renewal trigger, and approved replacement procedure:
+- Applications, scheduled jobs and workers consuming it; reload or restart requirements:
+- Permitted overlap, old-credential retirement check and recovery plan:
+
+| Staging drill | Evidence to retain | Hold or repair condition |
+|---|---|---|
+| Receiving engineer replaces a test credential using the runbook | Credential version identifiers, replacement time and an approved task from each consuming process; intended permissions remain unchanged | A process still depends on the old credential or requires broader access |
+| Retire the old credential after the agreed overlap | A controlled request using the retired credential is rejected; record any separately issued sessions or tokens and their invalidation limits | Old access persists beyond the agreed boundary or a consumer's state is unknown |
+| Expire a test credential while work is pending | Operator finds affected task IDs and alert; authorized owner restores access through the documented procedure | Silent dropped work, unbounded retries or substitution of a personal or more privileged account |
+
+Before resuming held work, recheck current permissions, approval validity and destination outcomes. Restoring authentication does not renew an expired approval or resolve a previously unknown write. Keep such items on hold for the named owner.
+
+Save the release/configuration, redacted evidence links, reviewer, repair owner and retest date. Never paste keys or tokens into this brief, screenshots or tickets. For suspected exposure, use the incident procedure; a planned overlap is not permission to keep a compromised credential active. If the rehearsal fails, repair the procedure and repeat the affected check before accepting credential handover.
+
 ## Handover rehearsal record
 
 Agree the required tasks before the final review. Use approved test inputs in staging and the receiving team's accounts. The receiving person performs the task using the runbook while the delivering engineer observes. These are planning checks, not recorded client results or a certification.
