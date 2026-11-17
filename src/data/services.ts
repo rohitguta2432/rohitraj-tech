@@ -664,7 +664,9 @@ export const services: Service[] = [
  {
  heading: "Rehearse incidents, recovery and team handover",
  id: "operator-readiness",
- paragraphs: [],
+ paragraphs: [
+ "For workflows with stored tasks, agree a recovery drill before handover: restored queues stay paused while your operator reconciles completed and unresolved actions against the destination systems, including work handled manually during the outage. An older task snapshot must not resend a message or repeat a completed write. Recheck current permissions and approvals before releasing any remaining work. Record missing task history, recovery time, unresolved items and the system owner's resume-or-hold decision in the delivery brief. Rehearse with synthetic tasks in isolated staging; do not replay restored work into production.",
+ ],
  bullets: [
  "Model outage: rehearse provider timeouts and rate-limit failures with your operator in staging. Confirm that only an approved model route can receive the task; if it is unavailable too, show the agreed hold or manual workflow after bounded retries. The operator identifies delayed or stopped work, the model used and the escalation owner. Agree who can resume service and how outstanding work is reconciled; record the drill in the delivery brief",
  "Incident evidence: have your operator investigate a staged failure using a request identifier instead of pasting the conversation into a support ticket. With their assigned access, they should find the failed step, approval and destination outcome, then escalate to the named engineer. Check that an unauthorized support role cannot open restricted traces or exports. Agree any separately approved content access and record the rehearsal in the delivery brief",
@@ -769,7 +771,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-16",
+ updated: "2026-11-17",
  related: [
  {
  href: "/projects/orderpilot",
@@ -1106,6 +1108,10 @@ export const services: Service[] = [
  answer: "Your receiving engineer runs the handover checks in staging from a clean checkout, using your team's accounts and the documented setup. They build the application, run the versioned evaluation command, deploy the agreed release and locate a failed request in the approved logs. They also exercise the documented fallback. We save the release version, commands, results and any steps that needed my help, then correct the instructions and repeat blocked tasks. This makes missing access or undocumented setup visible before ownership transfers. The delivery brief includes a record for these checks; a screen-share demonstration is not a substitute for your engineer running them.",
  },
  {
+ question: "How do we recover stored AI data after an outage?",
+ answer: "For stateful features, agree which data needs backup and which indexes can be rebuilt, the acceptable interruption and data-loss window, and who owns recovery. Your receiving engineer follows the runbook to restore an approved backup into an isolated staging environment or rebuild from approved sources, then runs the agreed retrieval and access checks. Reconcile source deletions and permission changes made since the recovery point before serving users; if current authority cannot be established, keep the affected data unavailable. Record the recovered state, elapsed time, missing updates and repair owner in the delivery brief. A successful backup job alone does not demonstrate recovery.",
+ },
+ {
  question: "How can my team change models or prompts after handover?",
  answer: "The handover records the released generation model, prompt, tools, embedding model and index version. Compare proposed prompt or generation-model changes against the released version on the same acceptance cases, including permissions and failure paths, and review quality, latency and cost together. Changing the embedding model is a data migration, not just a configuration switch: scope re-embedding the corpus and pair the new query encoder with its matching index. Equal vector dimensions alone do not establish compatibility. Keep the existing index available during validation where required, and record rebuild time, temporary storage and failed documents alongside retrieval and answer checks. Your release owner approves the change. Rehearse restoring a compatible configuration and index in staging, or use the documented fallback if the old model or valid index is unavailable. The delivery brief includes a migration record; passing recorded cases does not guarantee future behavior.",
  },
@@ -1131,7 +1137,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-16",
+ updated: "2026-11-17",
  related: [
  {
  href: "/projects/orderpilot",

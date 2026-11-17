@@ -330,6 +330,26 @@ Before resuming held work, recheck current permissions, approval validity and de
 
 Save the release/configuration, redacted evidence links, reviewer, repair owner and retest date. Never paste keys or tokens into this brief, screenshots or tickets. For suspected exposure, use the incident procedure; a planned overlap is not permission to keep a compromised credential active. If the rehearsal fails, repair the procedure and repeat the affected check before accepting credential handover.
 
+## Stored-state recovery rehearsal
+
+Use for stateful workflows; mark inapplicable when no application state is retained. These are proposed staging checks, not completed client results. Agree the recovery scope and owner before choosing a backup or rebuild approach. [AWS recommends exercising recovery to the specified time and state and correcting the runbook from the results](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_dr_tested.html).
+
+- Stores requiring backup; indexes or derived data that can be rebuilt from approved sources:
+- Acceptable interruption and data-loss window; recovery owner and dependencies:
+- Backup or source snapshot identifier and timestamp; compatible application, schema and index versions:
+- Isolated staging target, approved synthetic data and controls preventing real messages or writes:
+- Authoritative source for current deletions, permissions, approvals and destination outcomes:
+
+Keep workers, schedules and outgoing triggers disabled in the restored environment until reconciliation is complete. A snapshot can contain outdated permissions and tasks whose external effects already happened. Reapply current access and deletion decisions before exposing restored content; keep affected paths unavailable if those decisions cannot be established.
+
+| Synthetic staging case | Required review before resuming | Evidence to retain |
+|---|---|---|
+| Restore a backup or rebuild an index with its compatible configuration | Receiving engineer checks representative retrieval and application state against the approved source snapshot | Snapshot and release IDs, commands, recovered timestamps, elapsed time and missing updates |
+| After the snapshot, delete a test source and revoke a user's access; then restore | Reconcile the later deletion and permission changes; check retrieval, caches and newly generated answers before allowing users back | Current authority used, rejected access and excluded source checks, unresolved gaps |
+| Snapshot a queued task, complete its external action in a test destination, then restore the older queue | Operator confirms the destination outcome and suppresses replay; unresolved outcomes stay on hold | Task and destination IDs, manual actions, reconciliation result and current approval decision |
+
+Record the actual interruption and recovered-data gap against the agreed limits, who authorizes resumption, any repairs and the retest date. Infrastructure starting successfully is only one check; the receiving engineer and operator must verify the restored workflow. Do not copy private payloads or credentials into this record.
+
 ## Handover rehearsal record
 
 Agree the required tasks before the final review. Use approved test inputs in staging and the receiving team's accounts. The receiving person performs the task using the runbook while the delivering engineer observes. These are planning checks, not recorded client results or a certification.
