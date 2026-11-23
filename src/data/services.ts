@@ -668,6 +668,7 @@ export const services: Service[] = [
  "For workflows with stored tasks, agree a recovery drill before handover: restored queues stay paused while your operator reconciles completed and unresolved actions against the destination systems, including work handled manually during the outage. An older task snapshot must not resend a message or repeat a completed write. Recheck current permissions and approvals before releasing any remaining work. Record missing task history, recovery time, unresolved items and the system owner's resume-or-hold decision in the delivery brief. Rehearse with synthetic tasks in isolated staging; do not replay restored work into production.",
  ],
  bullets: [
+ "Source-sync handover: your operator reviews an interrupted source sync before accepting a complete import. They locate the last completed sync, missing or failed items and affected workflows, then route the gap to the connector or source owner. Rehearse recovery against an approved source inventory; matching counts alone can conceal missing IDs or wrong versions. Keep unsupported answers and actions on hold under the agreed fallback until coverage is reconciled. Record exclusions, current access checks and the owner's resume-or-hold decision in the delivery brief",
  "Model outage: rehearse provider timeouts and rate-limit failures with your operator in staging. Confirm that only an approved model route can receive the task; if it is unavailable too, show the agreed hold or manual workflow after bounded retries. The operator identifies delayed or stopped work, the model used and the escalation owner. Agree who can resume service and how outstanding work is reconciled; record the drill in the delivery brief",
  "Incident evidence: have your operator investigate a staged failure using a request identifier instead of pasting the conversation into a support ticket. With their assigned access, they should find the failed step, approval and destination outcome, then escalate to the named engineer. Check that an unauthorized support role cannot open restricted traces or exports. Agree any separately approved content access and record the rehearsal in the delivery brief",
  "Stop and recovery rehearsal: your operator cancels a queued task, then requests a stop while another task is already calling an integration. Verify which work stopped before execution and which actions completed or still need reconciliation. A stop request is not proof that an external action was cancelled. Keep affected items visible, assign unresolved outcomes to the system owner and record who may authorize new work. Rehearse a partial failure too; corrections need the agreed approval or manual handling, without overwriting later human changes or resending messages as a rollback. Save the evidence in the delivery brief",
@@ -771,7 +772,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-17",
+ updated: "2026-11-23",
  related: [
  {
  href: "/projects/orderpilot",
@@ -1016,7 +1017,7 @@ export const services: Service[] = [
  "Document readiness: agree supported formats and languages, then sample scanned pages, tables and difficult layouts. Check extracted content against the original before tuning retrieval: preserve the labels, units and source locations needed to interpret an answer. Record empty, partial or rejected files and any approved exclusions; a completed import alone does not establish usable evidence",
  "Retrieval checks: record the expected source passage and whether permitted evidence reached the model; trace misses through extraction, chunking and search. For conflicting documents, agree the authoritative source, approval status, effective dates and applicable product or region with your domain owner. A newer upload or higher search score does not make a document authoritative. Test an approved policy against a newer draft, a historical question against the version effective then, and two unresolved contradictory sources. Check source selection and answer behavior separately: ask for missing context or disclose the unresolved conflict and route it for review. You receive the source versions, expected decision and observed answer in the acceptance evidence",
  "Freshness checks: agree how quickly source changes must reach search, then update and remove approved test documents to verify the new content appears and removed content stops being retrieved within that window",
- "Sync failure handling: make the last successful sync and failed updates visible, test the agreed stale-data fallback, and name the receiving engineer who owns ingestion failures after handover",
+ "Sync completeness: reconcile source IDs and versions against indexed, failed and explicitly excluded items within the approved source scope. In staging, interrupt a multi-page import and resume it; verify missing pages remain visible and the last completed checkpoint advances only after processing finishes. Do not treat an item absent from an incomplete listing as deleted. Keep current permission checks enforced, with affected content unavailable when access cannot be established. You receive the coverage report, last successful sync, stale-data fallback and named ingestion owner; the delivery brief records the rehearsal",
  ],
  },
  {
@@ -1137,7 +1138,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-17",
+ updated: "2026-11-23",
  related: [
  {
  href: "/projects/orderpilot",

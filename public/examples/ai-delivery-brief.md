@@ -126,6 +126,25 @@ If required content is missing or altered, hold the affected source or workflow,
 - Review decision and approved exclusions:
 - Repair owner, retest date and remaining coverage limits:
 
+### Source-sync coverage and interrupted imports
+
+Use for paginated or incremental connectors. These are proposed synthetic staging checks, not measured project results. Define the authorized source scope before claiming coverage; a search result or a successful first page does not establish that every required item was processed.
+
+- Source owner, connector/version, permitted collections and inventory snapshot or reconciliation boundary:
+- Source IDs/versions expected within that scope; indexed, failed and explicitly excluded IDs with reasons:
+- Last completed sync, in-progress checkpoint, freshness limit and alert owner:
+- Source change/deletion signals, current permission checks and fallback for incomplete coverage:
+
+[Microsoft Graph distinguishes continuation pages from the end of a change-tracking round](https://learn.microsoft.com/en-us/graph/delta-query-overview). An empty page can still have a continuation link, and an entity can appear more than once. Follow the actual connector's documented pagination and change semantics; this example is not a universal API contract. Keep opaque tokens and private payloads out of this brief.
+
+| Synthetic staging case | Required observation | Decision and evidence |
+|---|---|---|
+| Interrupt an import after an early page, then resume | Incomplete status and missing IDs remain visible; resume without skipping required versions or creating duplicate indexed records | Save expected/observed IDs, completion boundary, repair owner and retest result |
+| Return an empty intermediate page with a continuation, or repeat an item across pages where the API permits it | Follow continuation; reconcile distinct IDs and versions, not just total counts | Confirm all required items were handled before recording a completed sync |
+| A listing stops early and omits an existing item; separately revoke access to a test item | Do not infer deletion from the incomplete listing; the revoked item stays inaccessible under current authorization | Record the authoritative deletion/access signals and hold affected content if permission cannot be established |
+
+After recovery, the operator identifies affected questions or actions and checks coverage with the source owner. Re-run retrieval, answer and access cases for repaired sources. Record approved exclusions, remaining gaps and the resume-or-hold decision; a completed import does not by itself establish answer quality. Apply the agreed stale-data fallback while repairs remain open.
+
 ### Source authority and conflicting answers
 
 A source can be readable and permitted yet unsuitable for the question. Agree the governing source with the business owner; upload time and search rank are not approval or effective dates. The checks below are synthetic planning examples, not observed project results. Apply them only within the user's permitted sources.
