@@ -583,7 +583,7 @@ export const services: Service[] = [
  },
  {
  question: "How fast can you start, and what happens first?",
- answer: "Start with a free 30-minute scoping call; an NDA can be signed beforehand. Bring the workflow, representative input and output examples, the systems involved, and the person who can approve the result. I confirm availability and the first milestone after reviewing the scope and access requirements. The first build targets one complete path in staging; its delivery date depends on the integration and data being ready.",
+ answer: "Start with a free 30-minute scoping call; an NDA can be signed beforehand. Use the short scoping brief to name the operator, current workflow steps and systems crossed by the pilot. Bring approved input and output examples, an acceptance owner and the people who can grant access. Mark missing access, unavailable reviewers and deadline dependencies for review rather than assuming they are ready. I confirm availability and the first milestone after reviewing those constraints. The first build targets one complete path in staging; its delivery date depends on the integration and data being ready.",
  },
  {
  question: "How does our team take over when the FDE pilot ends?",
@@ -772,8 +772,13 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-23",
+ updated: "2026-11-24",
  related: [
+ {
+ href: "/examples/ai-project-scoping-brief.md",
+ label: "Start here: short AI project scoping brief",
+ description: "Prepare one workflow, its operator and access owners, with unresolved dependencies visible before planning the pilot.",
+ },
  {
  href: "/projects/orderpilot",
  label: "Order review demo: operator decisions before export",
@@ -1118,7 +1123,7 @@ export const services: Service[] = [
  },
  {
  question: "What should I prepare before hiring a freelance AI engineer?",
- answer: "Bring the workflow you want to improve, a few approved input and expected-output examples, the systems involved, and the person who will accept the result. Include access constraints, known failure cases and any deadline dependencies. We use those materials to define the deliverable, evaluation criteria, repository and account ownership, and the handover. Sensitive production data can stay in your approved environment.",
+ answer: "Start with the short scoping brief: describe one feature, bring a few approved input and expected-output examples, and name the person who will accept it. Mark the current baseline, data readiness and deadline dependencies as known or unknown; you do not need a chosen model or a completed evaluation plan to discuss scope. Include existing code and observed failures when taking over a prototype. Keep sensitive data in your approved environment and use redacted or synthetic examples initially. Once the scope is clearer, use the separate delivery brief to agree acceptance and handover.",
  },
  {
  question: "What does an AI architect do before any code is written?",
@@ -1138,8 +1143,13 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-23",
+ updated: "2026-11-24",
  related: [
+ {
+ href: "/examples/ai-project-scoping-brief.md",
+ label: "Start here: short AI project scoping brief",
+ description: "Describe one feature, approved examples and your current baseline; leave unknowns visible for the first scope review.",
+ },
  {
  href: "/projects/orderpilot",
  label: "Document extraction: inspect the review workflow",
