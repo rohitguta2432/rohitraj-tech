@@ -80,6 +80,27 @@ Where an HTTP API supports it, [RFC 9110 defines If-Match with strong entity tag
 
 Save the release version, actual observations, reviewer and repair/retest date. A version conflict differs from an unknown write outcome: use the retry drills below if a write may already have completed. Duplicate prevention does not establish that the destination still matches the state the person reviewed.
 
+## Integration compatibility and API changes
+
+Use for a feature that consumes another system's API or tool responses. These are proposed staging checks with approved or synthetic fixtures, not measured client results. Review only the fields and meanings the workflow relies on; an unrelated added field need not break a compatible integration.
+
+- Integration owner, workflow and dependent answers/actions:
+- Operation, requested API version where supported, adapter release and contract reference:
+- Required response fields, types, units, identifiers and status meanings; who approves the mapping:
+- Contract-mismatch alert, held-work location and agreed manual or unavailable response:
+- Evidence links, repair owner, retest date and release owner's resume-or-hold decision:
+
+[GitHub documents removed response fields and changed types as examples of breaking API changes](https://docs.github.com/en/rest/about-the-rest-api/breaking-changes). Check your actual provider's contract and version policy; pinning a version does not replace testing the responses your workflow consumes. Keep private payloads in approved storage and retain redacted fixture references here.
+
+| Proposed staging case | Expected behavior to agree | Evidence and decision |
+|---|---|---|
+| A successful HTTP response omits a required field or changes its type | Application validation identifies the mismatch before dependent answers or writes; do not coerce missing data into a plausible default | Expected/observed field, adapter version, held task and alert owner |
+| A returned status has no approved business meaning | Hold the dependent decision for review; do not infer success or let the model invent a mapping | Unrecognized value, affected workflow and mapping owner's decision |
+| An unrelated optional field is added | Preserve supported behavior without treating the addition itself as permission for a new action | Existing-case results, permission checks and any required adapter change |
+| The owner repairs or approves a mapping | Repeat failed and previously passing workflow cases, including access and write-outcome checks, before resuming | Per-case results, remaining held work and release owner's dated decision |
+
+Have the FDE operator locate affected and held tasks using their normal access and route the mismatch to the integration owner. Record the user-visible state and who may resume work. For the receiving AI engineer, retain fixtures and the validation command alongside the adapter. If a write might already have completed, use the write-outcome reconciliation procedure before retrying; fixing a response parser does not establish that the write failed.
+
 ## Model outage and fallback decision
 
 Use this record before enabling an alternate model or provider. These are proposed staging checks, not availability promises or recorded client results. An alternate must meet the agreed task requirements and data-handling boundaries before it receives inputs, conversation history or tool results.

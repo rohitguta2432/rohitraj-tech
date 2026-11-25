@@ -669,6 +669,7 @@ export const services: Service[] = [
  ],
  bullets: [
  "Source-sync handover: your operator reviews an interrupted source sync before accepting a complete import. They locate the last completed sync, missing or failed items and affected workflows, then route the gap to the connector or source owner. Rehearse recovery against an approved source inventory; matching counts alone can conceal missing IDs or wrong versions. Keep unsupported answers and actions on hold under the agreed fallback until coverage is reconciled. Record exclusions, current access checks and the owner's resume-or-hold decision in the delivery brief",
+ "Integration change: your operator investigates a staged API response with a missing required field or unfamiliar status. They identify the affected workflow, locate held tasks and route the mismatch to the named integration owner. Do not interpret unreadable data as an empty result or let the agent guess a replacement field. Recheck the repaired mapping, permissions and destination outcome before the release owner resumes dependent work. Record the tested contract and decision in the delivery brief",
  "Model outage: rehearse provider timeouts and rate-limit failures with your operator in staging. Confirm that only an approved model route can receive the task; if it is unavailable too, show the agreed hold or manual workflow after bounded retries. The operator identifies delayed or stopped work, the model used and the escalation owner. Agree who can resume service and how outstanding work is reconciled; record the drill in the delivery brief",
  "Incident evidence: have your operator investigate a staged failure using a request identifier instead of pasting the conversation into a support ticket. With their assigned access, they should find the failed step, approval and destination outcome, then escalate to the named engineer. Check that an unauthorized support role cannot open restricted traces or exports. Agree any separately approved content access and record the rehearsal in the delivery brief",
  "Stop and recovery rehearsal: your operator cancels a queued task, then requests a stop while another task is already calling an integration. Verify which work stopped before execution and which actions completed or still need reconciliation. A stop request is not proof that an external action was cancelled. Keep affected items visible, assign unresolved outcomes to the system owner and record who may authorize new work. Rehearse a partial failure too; corrections need the agreed approval or manual handling, without overwriting later human changes or resending messages as a rollback. Save the evidence in the delivery brief",
@@ -772,7 +773,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-24",
+ updated: "2026-11-25",
  related: [
  {
  href: "/examples/ai-project-scoping-brief.md",
@@ -1012,6 +1013,7 @@ export const services: Service[] = [
  bullets: [
  "Design and baseline: document the data flow and model choice, then compare the staging feature with your current search or manual process on the same held-out questions",
  "Delivery evidence: code and evaluation cases in your repository, per-case results and unresolved failures, measured latency and operating cost, plus deployment, fallback and handover instructions",
+ "Integration compatibility: record the upstream API version where available, the fields and values the feature relies on, and the engineer who owns the mapping. In staging, test a removed required field, a changed type and an unfamiliar status before enabling dependent actions. Validate responses in application code; missing evidence must not become a guessed value, a false success or a downstream write. You receive the failing fixtures, observed hold or fallback and repair checks in the delivery brief",
  ],
  },
  {
@@ -1143,7 +1145,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-24",
+ updated: "2026-11-25",
  related: [
  {
  href: "/examples/ai-project-scoping-brief.md",
