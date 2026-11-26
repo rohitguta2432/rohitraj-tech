@@ -390,6 +390,25 @@ Keep workers, schedules and outgoing triggers disabled in the restored environme
 
 Record the actual interruption and recovered-data gap against the agreed limits, who authorizes resumption, any repairs and the retest date. Infrastructure starting successfully is only one check; the receiving engineer and operator must verify the restored workflow. Do not copy private payloads or credentials into this record.
 
+## User interface acceptance rehearsal
+
+Use when a user or operator interface is part of the agreed delivery; mark inapplicable for a backend-only scope. These are proposed staging checks, not completed user research or an accessibility conformance claim. Agree the tasks with representative users, including people who use the supported assistive technology.
+
+- Workflow, user roles and representative participants:
+- Supported browser, device and assistive-technology combinations:
+- Release, approved synthetic inputs and expected task outcomes:
+- Required checks, receiving owner and evidence location:
+
+| Staging task | Evidence to record | Repair or hold condition |
+|---|---|---|
+| Inspect source evidence, correct a proposed value, then approve or reject using only the keyboard | Reachable controls, visible focus and logical focus order; observed task outcome and any help needed | A required control or source cannot be reached, or the user cannot review the actual proposed change |
+| Submit a missing or invalid field, then correct it | Text identifies the affected field and problem; record whether the user can find it, retain valid entries and complete the correction | An unexplained failure or lost work prevents completion |
+| Wait for a delayed task, then encounter a confirmed failure or an unresolved external outcome | Visible status and what the agreed screen reader announces; user identifies the next step without a misleading success claim | State is conveyed only by color or a spinner, is not announced when required, or suggests repeating an unresolved write |
+
+[W3C explains keyboard operation](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html), [identifying input errors in text](https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html) and [making status messages available to assistive technology without moving focus](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html). Use those references to design the relevant checks; this short rehearsal does not cover every accessibility requirement. Automated scans alone cannot establish whether users can complete the workflow.
+
+Record each attempted task, observed behavior, participant assistance, untested combinations, repair owner and retest date. Keep participant details and sensitive content in approved storage. The receiving owner reviews unresolved barriers before accepting the interface; rerun repaired steps with the affected input method. For an unknown external write, follow the reconciliation procedure rather than offering an unconditional retry.
+
 ## Handover rehearsal record
 
 Agree the required tasks before the final review. Use approved test inputs in staging and the receiving team's accounts. The receiving person performs the task using the runbook while the delivering engineer observes. These are planning checks, not recorded client results or a certification.

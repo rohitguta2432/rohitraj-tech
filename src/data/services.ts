@@ -587,7 +587,7 @@ export const services: Service[] = [
  },
  {
  question: "How does our team take over when the FDE pilot ends?",
- answer: "We agree the transfer tasks before the final review. Your operator and receiving engineer lead a staging rehearsal using the runbook: complete an approved task, handle a failed integration, find its recorded outcome and route unresolved work to the named owner. I observe and correct missing instructions. Record which tasks they completed, where help was needed and who owns each remaining gap. Before closing, confirm the support end date, escalation route and removal of my access. If a required task is still blocked, agree a repair or keep that workflow disabled; a handover meeting alone is not acceptance.",
+ answer: "We agree the transfer tasks before the final review. Your operator and receiving engineer lead a staging rehearsal using the runbook: complete an approved task, handle a failed integration, find its recorded outcome and route unresolved work to the named owner. For an operator interface, rehearse a keyboard-only review and correction with your users; record blocked controls, unclear errors and status changes they cannot perceive. Check the agreed browser and assistive technology before accepting that workflow. I observe and correct missing instructions. Record which tasks they completed, where help was needed and who owns each remaining gap in the delivery brief. Before closing, confirm the support end date, escalation route and removal of my access. If a required task is still blocked, agree a repair or keep that workflow disabled; a handover meeting alone is not acceptance.",
  },
  {
  question: "What happens to integrations and data if we stop the pilot?",
@@ -773,7 +773,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-25",
+ updated: "2026-11-26",
  related: [
  {
  href: "/examples/ai-project-scoping-brief.md",
@@ -1014,6 +1014,7 @@ export const services: Service[] = [
  "Design and baseline: document the data flow and model choice, then compare the staging feature with your current search or manual process on the same held-out questions",
  "Delivery evidence: code and evaluation cases in your repository, per-case results and unresolved failures, measured latency and operating cost, plus deployment, fallback and handover instructions",
  "Integration compatibility: record the upstream API version where available, the fields and values the feature relies on, and the engineer who owns the mapping. In staging, test a removed required field, a changed type and an unfamiliar status before enabling dependent actions. Validate responses in application code; missing evidence must not become a guessed value, a false success or a downstream write. You receive the failing fixtures, observed hold or fallback and repair checks in the delivery brief",
+ "Interface acceptance, when a user interface is in scope: have a representative user inspect source evidence, correct a proposed value and complete or reject the task using a keyboard. Agree supported browsers and assistive technology, then test focus order, field-error text and announced waiting or completion states. You receive task observations, blocked steps and repair decisions in the delivery brief alongside the model evaluation",
  ],
  },
  {
@@ -1145,7 +1146,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-25",
+ updated: "2026-11-26",
  related: [
  {
  href: "/examples/ai-project-scoping-brief.md",
