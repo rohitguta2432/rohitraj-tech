@@ -657,7 +657,7 @@ export const services: Service[] = [
  heading: "Plan a limited rollout and retrieval cutover",
  id: "rollout-plan",
  paragraphs: [
- "Limited rollout: agree the first users, allowed actions, review period and stop criteria before enabling the feature. Your release owner reviews incorrect actions, operator corrections, latency and cost before expanding access",
+ "Limited rollout: agree the first users, allowed actions, review period and stop criteria before enabling the feature. At the review, compare the current workflow with the pilot on similar work: record eligible tasks, attempted tasks, accepted outcomes and work completed manually or still unresolved. Ask operators why they bypassed or corrected the feature, and include that effort alongside latency and cost. Your workflow owner reviews the evidence before expanding, repairing or stopping the pilot. Keep adoption separate from correctness: a frequently used feature can still produce unacceptable results. The delivery brief includes this review record; deployment alone does not demonstrate a useful workflow.",
  "For a retrieval replacement, agree whether users can tolerate a planned pause or need the existing index to keep serving during a separate build. Reconcile source updates, deletions and permission changes before switching traffic. Keep the query encoder and its matching index together during rollout and rollback. Your release owner reviews the comparison results and a staging switch-back drill; an older index is only a recovery option if its data and permissions still meet the agreed requirements. Otherwise use the documented fallback. Record these decisions in the delivery brief.",
  ],
  },
@@ -773,7 +773,7 @@ export const services: Service[] = [
  ],
  },
  cta: "Discuss Your Project",
- updated: "2026-11-26",
+ updated: "2026-11-27",
  related: [
  {
  href: "/examples/ai-project-scoping-brief.md",
@@ -1011,7 +1011,7 @@ export const services: Service[] = [
  "We agree acceptance criteria before building: the examples the system must handle, which actions it may take, and the limits on response time and operating cost. Targets depend on your task and baseline; a demonstration is not a measured production result.",
  ],
  bullets: [
- "Design and baseline: document the data flow and model choice, then compare the staging feature with your current search or manual process on the same held-out questions",
+ "Design and baseline: document the data flow and model choice, then compare the staging feature with your current search or manual process on the same held-out tasks. Agree what counts as an accepted result and measure total human effort, including review, corrections and manual fallback. Keep elapsed completion time separate from active work, and retain failed or unfinished cases in the report. You receive the comparison and its sample limits in the delivery brief; faster model responses alone are not evidence of time saved by your team",
  "Delivery evidence: code and evaluation cases in your repository, per-case results and unresolved failures, measured latency and operating cost, plus deployment, fallback and handover instructions",
  "Integration compatibility: record the upstream API version where available, the fields and values the feature relies on, and the engineer who owns the mapping. In staging, test a removed required field, a changed type and an unfamiliar status before enabling dependent actions. Validate responses in application code; missing evidence must not become a guessed value, a false success or a downstream write. You receive the failing fixtures, observed hold or fallback and repair checks in the delivery brief",
  "Interface acceptance, when a user interface is in scope: have a representative user inspect source evidence, correct a proposed value and complete or reject the task using a keyboard. Agree supported browsers and assistive technology, then test focus order, field-error text and announced waiting or completion states. You receive task observations, blocked steps and repair decisions in the delivery brief alongside the model evaluation",
@@ -1146,7 +1146,7 @@ export const services: Service[] = [
  },
  ],
  cta: "Start the Conversation",
- updated: "2026-11-26",
+ updated: "2026-11-27",
  related: [
  {
  href: "/examples/ai-project-scoping-brief.md",

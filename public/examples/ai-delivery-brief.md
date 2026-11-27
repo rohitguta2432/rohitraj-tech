@@ -14,6 +14,31 @@ Editable planning template. Replace every placeholder with a project decision; e
 - Implementation scope and estimate assumptions:
 - Monthly usage, infrastructure and maintenance assumptions:
 
+## Workflow value and pilot review
+
+Use this alongside technical acceptance to decide whether the feature is useful to the people doing the work. This is a proposed measurement record, not a savings estimate or a client result. Agree the comparison before observing results; a deployed feature or a fast model response does not establish a better workflow.
+
+- Task boundary, eligible users and what counts as an accepted business outcome:
+- Current manual/search process, comparison period and case-selection rule:
+- Agreed quality and access requirements, improvement target and review date:
+- Reviewer, workflow owner and approved evidence location:
+
+| Measure | Record for the current process and AI-assisted workflow |
+|---|---|
+| Coverage and outcomes | Eligible and attempted tasks, accepted outcomes, failed/unfinished tasks and manual completions; state each rate's numerator and denominator |
+| Human effort | Active time across all participating roles, including preparation, review, correction and fallback; include effort spent on failed attempts |
+| Elapsed time | Start-to-accepted-outcome time and pending work at the cutoff; report waiting separately from active effort |
+| Quality and operating cost | Reviewed errors, reopened work and unresolved outcomes; provider/infrastructure usage separately from human effort |
+| Actual use during rollout | Who could use the feature, who used it and reasons for bypassing or abandoning it; usage is not proof of correctness |
+
+For a staging comparison, use the same approved held-out tasks and outcome rubric. For a live pilot, document differences in task difficulty, volume and users; an uncontrolled before/after comparison cannot isolate the feature's effect. Keep exclusions, missing measurements and incomplete work visible. Do not convert measured minutes into cash savings without explicit staffing and cost assumptions.
+
+[AWS recommends describing and measuring the human workflow before assessing agent value](https://aws.amazon.com/blogs/machine-learning/optimizing-cost-per-task-and-proving-agent-roi-on-amazon-bedrock/). [Google Cloud starts use-case selection from measurable business goals](https://docs.cloud.google.com/docs/ai-ml/generative-ai/evaluate-define-generative-ai-use-case). This record applies those principles; it does not impose a universal success threshold.
+
+- Review decision: expand within agreed limits / repair and remeasure / stop:
+- Evidence, limitations, unresolved tasks and their owners:
+- Next measurement date; any scope change to approve separately:
+
 ## Scope changes during delivery
 
 Use this record when a request changes the agreed deliverable, inputs, actions or operating responsibilities. Compare it with the current scope first: a failure to meet an existing acceptance criterion is a defect to resolve under the agreement, not automatically an added feature. Keep the original criteria and evidence visible.
