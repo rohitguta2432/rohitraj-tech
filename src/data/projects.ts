@@ -1570,6 +1570,55 @@ export const projects: Project[] = [
             ]
         }
     },
+    {
+        slug: "ballast",
+        seoTitle: "Ballast: Run Meta Ads with AI, Safely",
+        seoDescription: "Open-source app to launch and run Meta ads with AI through Meta's Ads MCP. A Rust guardrail engine runs, holds or blocks every change. 53M+ signals/s.",
+        name: "Ballast — Run Meta Ads with AI, Safely",
+        problem: "Meta opened its Ads MCP server to AI agents in 2026, so an agent can now create, edit and activate campaigns on its own. Nothing stands between the model and the budget: eager edits reset Meta's learning phase, spend drifts past what the business meant to risk, and nobody can audit why a change happened.",
+        solves: "Ballast is a self-hosted app anyone can run on their own Meta ad account. Connect the account with a token, describe a product and get three AI-written ads with a live feed preview, and Ballast creates the campaign, ad set, creative and ad through Meta's Ads MCP, all paused. An AI autopilot then manages budgets. Every change, from creating a campaign to turning it on, passes a Rust guardrail engine that runs it, holds it for your approval or blocks it, and records it in a SHA-256 hash-chained audit log.",
+        techStack: ["Rust", "axum", "tokio", "rayon", "Next.js 16", "TypeScript", "AI SDK 7", "@ai-sdk/mcp", "Meta Ads MCP", "Ollama (Qwen 3.5 9B)", "Tailwind CSS 4", "Playwright"],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/ballast-ads",
+        aiApproach: "The model plans and never executes. It reads a snapshot of every ad set and calls propose_change with a rationale that cites the numbers. The engine's verdict comes back as the tool result, so the model can retry a blocked change as a smaller step. It runs on a local Qwen 3.5 9B through Ollama, on Vercel AI Gateway, or on a deterministic rules planner when no model is available.",
+        image: "/images/projects/ballast-poster.jpg",
+        videoUrl: "/videos/ballast.mp4",
+        updated: "2026-11-28",
+        details: {
+            businessImpact: "Agencies and in-house teams want AI to manage Meta ads, but one bad edit can burn a day's budget or reset weeks of learning. Ballast makes the AI's freedom explicit: small changes inside limits run on their own, bigger ones wait for a person, and hard limits never move. In the sandbox demo the local model proposed scaling the best ad set by 20% and cutting the worst by 20%; both were held for approval because they passed the 15% auto step, and a spend spike was detected (z = 16.7) and paused within the guardrails.",
+            approach: [
+                "Rust engine (axum, tokio): pure decision core, 256-way sharded signal store with pre-hashed keys, EWMA spend-spike detection, approvals, and a SHA-256 hash-chained JSONL audit log",
+                "Thirteen guardrail checks, including a daily spend cap, per-ad-set cap, max budget step, auto-approve step, learning-phase lock, edit cooldown, activation review, anomaly hold and an action allow-list, under Observe, Assist or Autopilot mode",
+                "Allowed changes are reserved at decision time, so parallel proposals cannot jointly break the cap, and rolled back if the Meta write fails",
+                "AI SDK 7 planner with a single propose_change tool; Meta's write tools stay with Ballast, never with the model",
+                "Launch flow: brief → three AI ad drafts (local Qwen with reasoning off, about 7 s) → live feed preview → campaign, ad set, creative and ad created paused through ads_create_* MCP tools → go-live through ads_activate_entity only after the guardrails or a human approve",
+                "Account page: anyone pastes a Meta token, Ballast asks Meta's Ads MCP server which ad accounts it can see, and saves the connection on the local machine only",
+                "Sandbox account that speaks the same Meta Ads MCP tools and validates arguments like Meta, so every feature works before connecting a real account",
+                "Light dashboard in Next.js 16: ad sets with CPA and ROAS against targets, approval inbox, guardrail sliders and the verified audit trail"
+            ],
+            decisions: [
+                "The engine trusts its own view of the current budget, not the caller's, so a stale proposal cannot slip past the step limit",
+                "Accounts nobody configured fail closed in Observe mode, and guardrails and cooldowns are replayed from the audit log after a restart",
+                "Paused ad sets count toward the spend cap, so turning one back on can never break it",
+                "No CORS on the engine, an optional bearer token, and same-origin plus JSON-only checks on the dashboard's write routes",
+                "If the audit log cannot be written, the decision is blocked: nothing reaches Meta without a record",
+                "An independent AI code review ran before release; its three high-severity findings (stale budgets, concurrent proposals, fail-open restart) were fixed and covered by tests"
+            ],
+            currentStatus: "Open source (MIT) at github.com/rohitguta2432/ballast-ads. 22 Rust integration tests, a typed Next.js build and two end-to-end scripts (autopilot, and launch from brief to live campaign) against the sandbox. The connection to mcp.facebook.com/ads is verified; the create and update tool calls follow Marketing API field names but have not yet been run against a real ad account. Measured on an Apple M5 Pro: 53–60M signals/s and 6.2–6.5M guardrail decisions/s over HTTP (target 2M/s).",
+            roadmap: [
+                "Verify the launch and autopilot tool calls against real ad accounts and publish the mapping",
+                "Image upload once Meta's Ads MCP server exposes it (today ads use a public image URL)",
+                "Persist the approval queue",
+                "Conversion-aware anomaly model and day-parting",
+                "Slack and WhatsApp approvals",
+                "Google Ads and TikTok lanes behind the same engine"
+            ],
+            improvements: [
+                "Multi-node engine with a shared audit store",
+                "Per-client roles and login on the dashboard"
+            ]
+        }
+    },
 ];
 
 export const repos = [
@@ -1746,6 +1795,12 @@ export const repos = [
         description: "dpdp-scan — scanner that finds Indian personal data (Aadhaar, PAN, UPI, GSTIN) in a codebase and maps gaps to the DPDP Act. Five rules, SARIF output, data inventory, local AI review via Ollama",
         modules: ["src", "test", "examples", "action.yml"],
         url: "https://github.com/rohitguta2432/dpdp-scan"
+    },
+    {
+        name: "ballast-ads",
+        description: "Ballast — guardrails for AI-run Meta ads. Rust engine judges every AI proposal (run, hold for approval, block), SHA-256 hash-chained audit log, 53M+ signals/s; Next.js dashboard, AI SDK planner, Meta Ads MCP client",
+        modules: ["engine", "web", "scripts", "docs"],
+        url: "https://github.com/rohitguta2432/ballast-ads"
     }
 ];
 
