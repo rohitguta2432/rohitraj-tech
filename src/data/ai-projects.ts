@@ -342,10 +342,10 @@ export const aiProjectSummaries: AIProjectSummary[] = [
         ],
     },
     {
-        title: "Ballast — Guardrails for AI-Run Meta Ads",
+        title: "Ballast — Run Meta Ads with AI, Safely",
         slug: "ballast",
-        problem: "Meta's Ads MCP lets AI agents edit and activate campaigns, but nothing stops a model from resetting learning, overspending or leaving no audit trail.",
-        solution: "The AI only proposes. A Rust engine runs, holds for approval or blocks each change against per-account guardrails, and writes every decision to a hash-chained audit log.",
+        problem: "Meta's Ads MCP lets AI create, edit and activate campaigns, but nothing stops a model from overspending, resetting learning or leaving no audit trail.",
+        solution: "Self-hosted app: connect your own ad account, launch campaigns from AI-written ads (created paused), and let an AI autopilot manage budgets. A Rust engine runs, holds or blocks every change and logs it in a hash chain.",
         techStack: ["Rust", "axum", "Next.js 16", "AI SDK 7", "Meta Ads MCP", "Ollama"],
         aiApproach: "A local Qwen 3.5 9B (or AI Gateway) plans through one propose_change tool. The model never holds Meta's write tools, and the engine's verdict comes back as the tool result.",
         repoUrl: "https://github.com/rohitguta2432/ballast-ads",
@@ -354,7 +354,7 @@ export const aiProjectSummaries: AIProjectSummary[] = [
         metrics: [
             { label: "HTTP ingest", value: "53M+/s" },
             { label: "Guardrail checks", value: "13" },
-            { label: "Rust tests", value: "20" },
+            { label: "Rust tests", value: "22" },
         ],
     },
 ];
