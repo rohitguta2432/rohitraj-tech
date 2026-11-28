@@ -55,7 +55,11 @@ Configured in `next.config.ts`: HSTS, X-Frame-Options DENY, CSP-adjacent headers
 
 ## Landing page sections (in render order)
 
-Header > Hero > HireBlock > WorkIndex > WritingIndex > Testimonials > FAQ > ClosingCta > Footer — all in `src/components/`. Most receive dictionary props for i18n.
+Header > Hero > SixWeeks > Asks > Billboards > Who > WritingIndex > Testimonials > StreetNext > Footer. The four night sections and the closing call live in `src/components/landing/` and are styled by `src/app/landing.css` (classes prefixed `nx-`), which only the home page imports.
+
+The home page tells the film's story: today's street goes in, the finished city comes out. `SixWeeks` is that as a drag between the film's opening frame and `public/images/megacity/full-city.webp`, playing itself until the visitor takes the handle. `Asks` is three things founders say, each linking to the service page that answers it. `Billboards` is a marquee of every project with a recorded demo, followed by a text link to every project and agent. `Who` is the portrait and four promises. `StreetNext` is the closing call. In the hero, `HeroFlap` turns through what founders ask for, and `HeroLens` shows the finished city through a ring that follows the mouse (it writes custom properties, not React state, so it costs the film nothing).
+
+The home page shows no prices and no FAQ, by the owner's decision (2026-11-28). Every promise on it restates one the site already makes elsewhere; don't add new claims there. `WritingIndex` keeps its white sheet because its links are how the notes get crawled, and `Billboards` links every project for the same reason. `HireBlock`, `WorkIndex`, `FAQ` and `ClosingCta` are no longer on the home page.
 
 Below the hero, each section enters on scroll through `src/components/Reveal.tsx` (Motion's WAAPI `animate` and `inView`), with a move that fits what it reveals: the terms card is laid down (`lay`), the engagement tickets are dealt in (`deal`), index rows tick in (`rows`) and headings `rise`. The server HTML stays fully visible. After hydration only targets still below the fold are parked in their start pose, and each is handed back to its stylesheet once it lands. Reduced motion, no-JS, crawlers and print get the plain page. Don't give the same elements a second, CSS load-time entrance.
 
