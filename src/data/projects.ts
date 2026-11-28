@@ -1619,6 +1619,469 @@ export const projects: Project[] = [
             ]
         }
     },
+    {
+        slug: "citeguard",
+        updated: "2026-11-29",
+        seoTitle: "CiteGuard: Check Legal Briefs for Fake Cases and Quotes",
+        seoDescription: "Explore CiteGuard, a free open-source checker that finds fabricated case citations, wrong case names and invented quotes in a legal brief, with no API key.",
+        name: "CiteGuard — Check a Legal Brief for Fake Cases and Invented Quotes",
+        problem: "Lawyers keep getting sanctioned for filing briefs that cite cases which were never decided. An AI assistant makes up a case name, a volume and a page number, the citation looks normal, and nobody notices until a judge tries to read it. Quotes fail the same way: the case is real, but the sentence in quotation marks was never written by that court.",
+        solves: "Paste a brief and CiteGuard resolves every citation against CourtListener, flags cases that do not exist or that point to a different case than the one named, and matches each quotation against the real opinion text. A quote is only called accurate on an exact match, and when it is not found the closest real wording from the opinion is shown next to it.",
+        techStack: [
+            "TypeScript",
+            "Next.js 15",
+            "React 19",
+            "Tailwind CSS 4",
+            "Vitest",
+            "Python (optional eyecite service)",
+            "FastAPI",
+            "Ollama (optional)"
+        ],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/citeguard",
+        aiApproach: "The core checks (does the case exist, is it the case you named, is the quote in the opinion) use no model at all: citation lookup and plain string matching. A language model is used only for one optional check, where a local Ollama model reads the opinion and reports whether it supports the sentence in the brief. It runs on your own machine and is off by default.",
+        image: "/images/projects/citeguard-poster.jpg",
+        videoUrl: "/videos/citeguard.mp4",
+        details: {
+            businessImpact: "Lawyers and clerks who draft with AI tools, and anyone who reviews filings, need a fast way to catch invented authority before a court does. Checking each citation and quote by hand is simple but tedious, and it gets skipped under deadline. CiteGuard turns that into one paste-and-check step on the user's own machine, with no account or key, so a firm can try it without a procurement process.",
+            approach: [
+                "A Next.js app with one API route that streams results line by line, so each citation's verdict appears as soon as it is known",
+                "Citations are extracted with a built-in regex over US reporters; an optional FastAPI service using eyecite also picks up Id. and supra back-references",
+                "Each citation is resolved through the CourtListener citation redirect, and the case name in the brief is compared with the case it resolves to",
+                "Opinion text is fetched from the Caselaw Access Project static mirror, and every quotation near a citation is matched against it",
+                "Later-history lookup lists opinions that cite the case and use the word overruled about it, as a reading list with links",
+                "An optional deep mode sends the opinion to a local Ollama model to check whether it supports the claim"
+            ],
+            decisions: [
+                "A citation is called fabricated only on a definite 404 from CourtListener; anything else is reported as not checked, to avoid falsely accusing a real case",
+                "Only an exact match earns 'quote is accurate'. Similarity scores are not trusted, because adding a single 'not' to a long sentence reverses the holding while barely changing the score",
+                "Later history is a reading list, not a verdict, because the same search returns nineteen opinions for both Roe (overruled) and Miranda (not overruled)",
+                "Keyless by design: no account and no API key, and only the volume, reporter and page of each citation (plus party names of resolved cases) leave the machine",
+                "The Python extractor and the Ollama check are optional add-ons, so npm install and npm run dev are the whole setup",
+                "The reporter list lives at the top of one file, so supporting another reporter takes one line"
+            ],
+            currentStatus: "Public and open source under the MIT licence at github.com/rohitguta2432/citeguard, with unit tests (vitest) for citations, quotes and later history, and a Python test for the extractor. Install with npm install and npm run dev (port 4622).",
+            roadmap: [
+                "Restore the later-history check, which reports 'not checked' when CourtListener's search API refuses requests without credentials",
+                "Cover opinions newer than the Caselaw Access Project mirror, which ends around 2020",
+                "Support reporters outside the US"
+            ],
+            improvements: [
+                "Quote and opinion-reading checks are unavailable for recent cases, because the opinion text source ends around 2020",
+                "Only US reporters are recognised, and the built-in extractor misses Id. and supra unless the Python service is running"
+            ]
+        }
+    },
+    {
+        slug: "tracelens",
+        updated: "2026-11-29",
+        seoTitle: "TraceLens: local flight recorder for AI agents",
+        seoDescription: "Explore a local-first trace viewer for AI agents: replay any run step by step, see where the money went, and tail logs live. No SDK, no signup, no cloud.",
+        name: "TraceLens — Local-First Flight Recorder For AI Agents",
+        problem: "When an AI agent misbehaves or runs up a bill, the usual answer is a cloud dashboard that needs an SDK around every LLM call, an account, and your API keys. Meanwhile the agent already writes logs that nobody can read easily.",
+        solves: "TraceLens reads the JSONL transcript your agent already produces (OpenAI, Anthropic or a generic event format) and turns it into a scrubbable timeline with cost per step. It can also follow a log file live, and tap the Anthropic API traffic of an agent like Claude Code. Everything runs on your machine.",
+        techStack: [
+            "Next.js 15",
+            "React 19",
+            "TypeScript",
+            "Python",
+            "FastAPI",
+            "Uvicorn",
+            "httpx",
+            "Server-Sent Events"
+        ],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/tracelens",
+        aiApproach: "TraceLens does not call any LLM itself. It parses and measures what other agents did: a per-line format detector, a static price table per model, and token counts from the logs. Nothing is sent to a cloud service.",
+        image: "/images/projects/tracelens-poster.jpg",
+        videoUrl: "/videos/tracelens.mp4",
+        details: {
+            businessImpact: "It is for developers who build or run AI agents and want to know what an agent did and what it cost, without wiring in a vendor SDK or sending transcripts to a third party. The cost view shows which steps used the most money, and the replay shows where a run hit an error. Because it works from logs that already exist, it can be tried on a past run in a minute.",
+            approach: [
+                "A FastAPI backend parses JSONL with a universal parser that detects the format per line (Anthropic, OpenAI or generic event) and keeps unknown lines as raw message steps.",
+                "A pricing module holds a static USD-per-million-token table, matched by model name substring, to compute per-step and cumulative cost.",
+                "An analytics step builds totals, cost by model, tool usage and the three most expensive steps.",
+                "A live tail endpoint streams new lines from a growing log file to the browser over Server-Sent Events.",
+                "A wire tap proxy sits in front of the Anthropic API, forwards requests untouched, and splits each one into system prompt, tool schemas, history and the text the user typed.",
+                "The Next.js frontend is hand-styled with no component library, and proxies /api calls to the backend."
+            ],
+            decisions: [
+                "Read existing logs instead of requiring an SDK, so any agent that writes a transcript works with no code changes.",
+                "Keep unknown lines as raw message steps, so nothing is silently dropped.",
+                "Store parsed runs as files under backend/data/runs and keep everything on the local machine, so no trace data leaves it.",
+                "Forward auth headers through the wire tap but never write them to disk.",
+                "Use a static price table rather than a live pricing lookup, so cost estimates work offline.",
+                "Ship a mock Anthropic server and a demo script, so the wire tap can be tried without an API key."
+            ],
+            currentStatus: "Working and open source under the MIT license. Run the FastAPI backend with uvicorn and the Next.js frontend with npm run dev, then press Load demo run to replay the bundled sample trace. No automated test suite is included in the repository.",
+            roadmap: [
+                "Add automated tests for the parser and the pricing table.",
+                "Support more trace formats beyond OpenAI, Anthropic and the generic event format.",
+                "Keep the price table current as new models are released.",
+                "Add search and filtering across stored runs."
+            ],
+            improvements: [
+                "Costs come from a hard-coded price table, so they are estimates and need manual updates when providers change prices.",
+                "The backend port (4651) is hard-coded in the frontend config and wire tap page, so changing it means editing source files."
+            ]
+        }
+    },
+    {
+        slug: "agentgrade",
+        updated: "2026-11-29",
+        seoTitle: "agentgrade: Production-Readiness Audit for AI Agents",
+        seoDescription: "Explore agentgrade, a Claude Code skill that grades an AI agent repo on evaluation, tracing, data, orchestration and governance, and lists the gaps to fix first.",
+        name: "agentgrade — Production-Readiness Auditor For AI Agents",
+        problem: "Most AI agents work in a demo and then fail with real users, because nobody can say whether the agent is getting worse, what it actually did on a bad answer, or who owns it when it breaks. Teams find out they have no evals, no tracing and no owner only after users complain.",
+        solves: "agentgrade audits an agent repo against five pillars (evaluation, observability, data foundation, orchestration, governance) plus an incident playbook check. It cites file and line for every claim, gives a demo-grade, pilot-grade or production-grade verdict, and lists the top gaps with the exact file to build next.",
+        techStack: [
+            "Claude Code skill",
+            "Python 3 (stdlib only)",
+            "Markdown rubric",
+            "Claude Code plugin marketplace"
+        ],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/agentgrade",
+        aiApproach: "The judgment layer is Claude running inside the user's own Claude Code session: it reads the flagged files, applies a written rubric with anchored 0-5 scores, and writes the report. The evidence step is deliberately not an LLM: a stdlib-only Python scanner sweeps the repo the same way every run, so the grade is a lookup from evidence and not a mood.",
+        image: "/images/projects/agentgrade-poster.jpg",
+        videoUrl: "/videos/agentgrade.mp4",
+        details: {
+            businessImpact: "agentgrade is for teams about to put an AI agent in front of real users, and for consultants who need to review someone else's agent repo quickly. It turns the vague question of whether an agent is ready into a short ranked list of missing pieces. Because every score points at a file and line, or at a search that found nothing, the report can be checked and argued with. Internal tools can stay at pilot-grade, and customer-facing agents get a clear bar to reach.",
+            approach: [
+                "A Claude Code skill (SKILL.md) that scopes the agent first: LLM SDKs, framework, single or multi-agent, RAG or not, and the likely deployment context.",
+                "scripts/scan.py, a stdlib-only scanner, matches rubric signals per pillar, prints hits as file:line excerpts, checks for an eval folder, CI, playbook, prompt changelog and container, and lists what is absent per pillar.",
+                "references/rubric.md defines anchored scores from 0 to 5 for each pillar and when a pillar is N/A.",
+                "The skill must open flagged files and confirm before scoring, then emit a fixed report: scorecard, verdict, top 3 gaps, and what cannot be verified statically.",
+                "It ends by offering to scaffold the number-one missing artifact, such as an eval dataset, incident playbook, prompt changelog or LLM-judge prompt."
+            ],
+            decisions: [
+                "Scanner hits are treated as leads, not verdicts, because a keyword in a README or a commented-out import should not earn a score.",
+                "Absence is reported on purpose: the per-pillar absent list lets the report say what was searched and not found.",
+                "Anything that needs runtime data, such as duplicate tool calls or loops, is reported as unverifiable statically instead of guessed.",
+                "Verdict thresholds sit in the rubric and deployment context sets the bar, so an internal tool is not held to a customer-facing standard.",
+                "The audit is read-only by default; files are written only if the user accepts a scaffold.",
+                "It ships as a skill and not a linter, since judging whether an eval file is a living golden set takes reading it."
+            ],
+            currentStatus: "Version 0.3.1, MIT licensed. Install through the Claude Code plugin marketplace (/plugin marketplace add rohitguta2432/agentgrade) or copy skills/agentgrade into ~/.claude/skills. The scanner has a built-in --self-test and runs with plain python3; the repo has no other test suite.",
+            roadmap: [
+                "Trace-file audits: accept exported Langfuse, OTel or MLflow traces so duplicate tool calls, loops and cost per request can be verified.",
+                "Calibration fixtures: small repos with known scores so rubric changes can be regression-tested.",
+                "CI mode: run the scanner in GitHub Actions and fail pull requests that drop a pillar below its floor."
+            ],
+            improvements: [
+                "The scanner is regex-based and produces false positives (for example, the word 'scrub' matching a PII signal), so the audit depends on the model confirming each hit by reading the file.",
+                "Only static evidence is covered today; runtime behavior is reported as unverifiable until trace audits exist."
+            ]
+        }
+    },
+    {
+        slug: "ordermez",
+        updated: "2026-11-29",
+        seoTitle: "Ordermez: Menu Engineering for Food Businesses",
+        seoDescription: "Explore Ordermez, an open-source menu engineer. Paste dish costs, prices and sales to get a profit quadrant, reprice ideas, a weekly plan and a risk check.",
+        name: "Ordermez — Menu Engineering That Shows Which Dishes to Reprice",
+        problem: "Most restaurants know their total sales but not which dishes make the money. A popular dish can earn little per plate, and a high-margin dish can sit unnoticed at the bottom of the menu. Tools that do this analysis are usually paid, and a price rise is a guess, since nobody knows how many regulars it will lose.",
+        solves: "Paste a menu with food cost, price and weekly sales, or import a POS export as CSV. Ordermez sorts every dish into Stars, Plowhorses, Puzzles or Dogs, suggests charm-priced increases for popular dishes that under-earn, and ranks the next moves by estimated yearly profit. A Python Monte Carlo check then shows the range of outcomes for each reprice, not just the promise.",
+        techStack: [
+            "Next.js 16 (App Router)",
+            "React 19",
+            "TypeScript",
+            "Tailwind CSS 4",
+            "Python 3 (stdlib only)",
+            "Anthropic SDK (optional)"
+        ],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/ordermez",
+        aiApproach: "The analysis itself is plain code with no model: quadrants, margins and price suggestions come from deterministic functions. Claude is optional and only writes menu-item descriptions and the weekly action plan when ANTHROPIC_API_KEY is set. Without a key, a template copywriter and an offline planner produce the output and are labelled as offline, so the tool runs with no key and no network call.",
+        image: "/images/projects/ordermez-poster.jpg",
+        videoUrl: "/videos/ordermez.mp4",
+        details: {
+            businessImpact: "Restaurant owners and small food businesses can run menu engineering on data they already have, a POS export or a napkin list, without paying for a SaaS tool. The weekly plan puts the few price and menu changes worth making first at the top, with an estimated yearly impact for each. The risk check tells the owner how likely a reprice is to pay off, which makes the change easier to try.",
+            approach: [
+                "Pure functions in src/lib/menu-engineering.ts implement the Kasavana-Smith matrix from popularity share and contribution margin, shared by the API routes",
+                "Four Next.js route handlers: /api/analyze, /api/describe, /api/plan and /api/simulate",
+                "A single-page UI with an editable menu table, a P&L snapshot (weekly revenue, gross profit, food-cost %, average margin per plate) and a scatter plot of the matrix",
+                "CSV import with header aliases for Square and Toast-style columns, and CSV export of the full analysis",
+                "backend/simulate.py runs 5,000 simulated years per repriced dish with demand noise and price elasticity, called per request over stdin and stdout"
+            ],
+            decisions: [
+                "Popularity uses the 70%-of-fair-share rule and margins are demand-weighted, so the quadrant cutoffs follow the classic method rather than a custom score",
+                "Price suggestions are charm-priced and capped, so a raise does not scare regular customers",
+                "The AI layer is optional and degrades to a deterministic template and planner, so the app works with no API key",
+                "The simulation is Python standard library only, with no pip install and no second server",
+                "The sample bistro menu is preloaded and analysed on first load, so the tool is useful before any data is entered"
+            ],
+            currentStatus: "Public and open source under the MIT license at github.com/rohitguta2432/ordermez. Install with npm install and npm run dev, then open localhost:3000. Python 3 is needed on the server for the risk check. The repo has no automated test suite.",
+            roadmap: [
+                "Add automated tests for the menu-engineering functions",
+                "Let the elasticity and demand-noise values be set from the UI",
+                "Save menus between visits instead of re-importing the CSV"
+            ],
+            improvements: [
+                "The risk check assumes a fixed price elasticity of -1.1 and 15% demand noise, so it is a model of risk and not a forecast for one restaurant",
+                "The action plan assumes sales hold after a reprice, and the offline planner does not use any of the restaurant's own history"
+            ]
+        }
+    },
+    {
+        slug: "swarm",
+        updated: "2026-11-29",
+        seoTitle: "Swarm: AI-first community for agent builders",
+        seoDescription: "Explore Swarm, a niche community for developers building AI agents, where an AI triage agent answers every question first and builders refine it after.",
+        name: "Swarm — An AI-First Community For Agent Builders",
+        problem: "A normal developer forum is empty until hundreds of strangers show up every day, which a solo founder cannot fix. Someone who posts a question about an MCP server or a Claude Code skill and hears nothing back never returns.",
+        solves: "Swarm gives every question an AI answer the moment it is posted, so the room is useful even when no human is online. Builders then reply on top of that first pass, and an accepted answer marks the thread as solved. It is limited to agent builders on purpose, so a small group of people feels busy.",
+        techStack: [
+            "Next.js 16",
+            "React 19",
+            "TypeScript",
+            "Tailwind CSS v4",
+            "Auth.js v5",
+            "Supabase",
+            "Vercel"
+        ],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/swarm",
+        liveUrl: "https://swarm.rohitraj.tech",
+        aiApproach: "Each question goes to an AI backend that tries Ollama first, then OpenAI, then Anthropic, depending on which is configured. If none is set up, a built-in rule-based triage still returns an answer, so the app never shows an empty result. The AI only gives the first reply; people refine it. A /learn page also has an ask-the-knowledge-base helper.",
+        image: "/images/projects/swarm-poster.jpg",
+        videoUrl: "/videos/swarm.mp4",
+        details: {
+            businessImpact: "Swarm is for people building Claude Code skills, MCP servers, multi-agent systems and local-LLM stacks. About 50 active builders is enough for it to feel busy, so the community does not need thousands of members to be worth visiting. A visitor gets a useful answer on the first visit, which is the part most new forums fail at. It also gives its builder a home base for reaching that audience.",
+            approach: [
+                "Next.js App Router app with pages for the feed, ask, thread, live rooms, learn and news.",
+                "POST /api/ai-answer returns the instant AI reply shown on the Ask page and at the top of each thread.",
+                "Google sign-in through Auth.js v5 with JWT sessions, so auth needs no database.",
+                "Threads and replies are stored in Supabase through a server-only service-role client, with an in-memory fallback when Supabase is not configured.",
+                "Live rooms use Supabase Realtime presence and broadcast, with a local-only offline mode when no keys are set.",
+                "Seeded with real agent-builder threads so the feed is not empty on first load."
+            ],
+            decisions: [
+                "AI answers first, because an empty forum gives a new visitor no reason to stay.",
+                "Niche audience instead of a general dev forum, so a small number of active people is enough.",
+                "Tiered AI backend (Ollama, then OpenAI, then Anthropic) with a deterministic offline fallback, so it builds and runs with zero secrets.",
+                "Writes go through the server with the service-role key and are gated on a valid session; the key is never sent to the browser and tables have row-level security on with no public policies.",
+                "Posting is only for signed-in users, and the UI shows a sign-in prompt instead of an action that would fail."
+            ],
+            currentStatus: "Live at swarm.rohitraj.tech. Run it locally with npm install and npm run dev; it works without any keys. Google sign-in, Supabase and a hosted AI provider are optional and set through environment variables. No automated tests yet.",
+            roadmap: [
+                "Accepted-answer and reputation mechanics, so the asker can accept a reply",
+                "Durable live-room history and send-side authorization",
+                "A README badge or embed so threads can spread"
+            ],
+            improvements: [
+                "Without an AI provider configured, the instant answer is a generic rule-based triage, not a real model reply to the specific question.",
+                "Live-room messages are ephemeral and are not saved, and there are no automated tests."
+            ]
+        }
+    },
+    {
+        slug: "ledgermatch",
+        updated: "2026-11-29",
+        seoTitle: "LedgerMatch: Open-Source Payment Reconciliation",
+        seoDescription: "Explore LedgerMatch, a self-hosted tool that matches Stripe, Square and PayPal exports to your orders and bank statement and lists money that never arrived.",
+        name: "LedgerMatch — Open-Source Payment Reconciliation For Small Businesses",
+        problem: "A Stripe payout is one lump sum that covers dozens of orders, with the fees buried inside. Square and PayPal do the same thing in their own way, and bank feeds do not break the lump sums apart. So every month an owner or bookkeeper spends 2 to 10 hours in a spreadsheet to learn whether the money actually arrived.",
+        solves: "You load your order export, your Stripe, Square and PayPal exports and a bank statement. LedgerMatch matches each order to its payment, rebuilds each payout from its charges and fees, and finds that payout in the bank. What is left is a ranked list of exceptions: missing payments, orphan payments, amount mismatches, unlinked refunds, payouts that never landed and payouts that landed short.",
+        techStack: [
+            "Python",
+            "FastAPI",
+            "Uvicorn",
+            "Next.js 16",
+            "React 19",
+            "TypeScript",
+            "Tailwind CSS",
+            "pytest",
+            "Playwright"
+        ],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/ledgermatch",
+        aiApproach: "No AI or LLM is used. Matching is plain rule-based code: first by order reference, then by exact amount within 3 days, then by amount within $0.02. Every result can be traced to a rule and a date window, so the same files always give the same ledger.",
+        image: "/images/projects/ledgermatch-poster.jpg",
+        videoUrl: "/videos/ledgermatch.mp4",
+        details: {
+            businessImpact: "Small online sellers lose track of money in the gap between an order, a processor payout and a bank deposit. A missing payment or a payout held back by a reserve is easy to miss when it sits inside a lump sum. LedgerMatch turns the monthly spreadsheet job into one run and shows a cash gap, the sum of payouts that never arrived and the amounts that landed short. It is positioned as a free, self-hosted alternative to paid reconciliation services, and all data stays on the owner's machine.",
+            approach: [
+                "FastAPI backend with CSV parsers for orders, Stripe, Square, PayPal and bank statements; columns are found by header name, and the source is detected from the filename or headers",
+                "Order-to-payment matching in three passes, highest confidence first: by reference, exact amount within 3 days, then amount within $0.02 within 3 days",
+                "Payout rebuild: charges and refunds are grouped by processor and settlement day (Stripe 2 days, Square 1, PayPal same day), net = gross - fees - refunds",
+                "Payout-to-bank ladder: exact net within 3 days, then combined transfers (up to 4 payouts in one credit, subset-sum), then short landings at 50 to 120% of expected net",
+                "Next.js dashboard with match rate, money at risk, cash gap, fees per processor, an exceptions list sorted by severity and amount, and a payouts-to-bank table",
+                "A /console page replays a real engine run from an events file the engine wrote, with millisecond timestamps"
+            ],
+            decisions: [
+                "Rules, not a model: reconciliation has to be explainable to a bookkeeper, so each match names the pass that made it",
+                "Match by header name instead of column position so standard processor exports work without edits",
+                "Rebuild payouts from charges instead of waiting for payout exports, so a plain payments export is enough",
+                "Subset-sum for combined bank transfers, capped at 4 payouts, to handle several payouts landing as one credit without searching the whole statement",
+                "Everything runs on localhost with in-memory state for one merchant; nothing is uploaded or stored, which keeps transaction data private",
+                "CORS only allows localhost origins, so the API is not open to other sites"
+            ],
+            currentStatus: "Public and open source under the MIT license at github.com/rohitguta2432/ledgermatch. Version 0.2.0 includes payout-level reconciliation and a bundled demo of 48 orders, 3 processors and a bank statement with planted discrepancies. The backend has 15 pytest tests for the payout logic. Run it with a Python 3.11+ virtualenv and uvicorn for the API, and npm run dev for the dashboard.",
+            roadmap: [
+                "Use Stripe payouts.csv as the payout source of truth instead of rebuilding from charges",
+                "Export the matched ledger as a QuickBooks or Xero journal",
+                "More processors: Razorpay, Adyen and Klarna",
+                "Scheduled runs with an email digest of new exceptions"
+            ],
+            improvements: [
+                "State is held in memory for a single workspace, so results are lost on restart and there is no multi-user mode",
+                "The dashboard formats every amount as USD, and the automated tests cover the payout logic only"
+            ]
+        }
+    },
+    {
+        slug: "scribecheck",
+        updated: "2026-11-29",
+        seoTitle: "scribecheck: audit AI scribe notes vs. the transcript",
+        seoDescription: "Explore scribecheck, an open-source auditor that checks an AI medical scribe's notes against the visit transcript and flags flipped, dropped and invented claims.",
+        name: "scribecheck — Audit AI Scribe Notes Against The Visit Transcript",
+        problem: "Ambient AI scribes write the clinical note for a visit, and every vendor claims it is accurate. None publish hallucination rates with a method a clinic can rerun on its own notes. A note that says the patient reports chest pain when the patient said no chest pain, or that leaves out a stated penicillin allergy, is easy to miss in a quick read.",
+        solves: "scribecheck compares each note with the transcript it came from and reports three kinds of error: flipped statements, dropped drugs, doses and allergies, and invented claims. Every finding shows the note text next to the transcript line and timestamp behind it, so a reviewer can check the call in seconds.",
+        techStack: [
+            "Python",
+            "Ollama",
+            "Next.js",
+            "React",
+            "TypeScript"
+        ],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/scribecheck",
+        aiApproach: "Flipped and dropped findings use no model at all: they are string matching against the transcript, so reruns give identical results. Only the invented check uses a local Ollama model, which must name a real transcript timestamp for each claim it supports. The recommended model is qwen2.5:14b. Nothing needs an API key, so notes stay on the clinic's machine.",
+        image: "/images/projects/scribecheck-poster.jpg",
+        videoUrl: "/videos/scribecheck.mp4",
+        details: {
+            businessImpact: "scribecheck is for clinics, health-tech teams and anyone evaluating an AI scribe vendor. It gives them a method they can rerun on their own notes instead of relying on a vendor's accuracy claim. Because the CLI exits non-zero on unsafe findings, it can gate a vendor or model upgrade in CI. It ships with synthetic transcripts, so it can be evaluated without any patient data.",
+            approach: [
+                "A Python command line tool with no runtime dependencies; an encounter is a folder with transcript.txt and note.txt.",
+                "Parses the transcript into timestamped turns and the note into claims, then runs three checks: flipped, dropped, invented.",
+                "Flipped (negation) and dropped (drug, dose, allergy) checks are deterministic string matching, with a seed drug lexicon in scribecheck/lexicon.py.",
+                "The invented check asks a local Ollama model to select the supporting transcript span for each claim, then verifies the timestamp exists.",
+                "Writes findings.json, which the Next.js viewer reads to show note and transcript side by side; an optional events.jsonl records each run step for the viewer's replay console."
+            ],
+            decisions: [
+                "Deterministic checks and the model check are separate layers, and every finding carries a detector field, so a reader knows whether a rule or a model made the call.",
+                "The invented check is posed as span selection rather than entailment, so the model must point to evidence that can be verified.",
+                "Severity follows the model's own confidence: only a confident miss is marked unsafe, other model findings are review.",
+                "Ollama by default and no API keys, because a clinic cannot point a tool at real notes if it sends them to a hosted service.",
+                "findings.json is the contract between the CLI and the viewer, so others can build their own checker against it.",
+                "The exit code is non-zero on unsafe findings, with a --fail-on option, to make it usable as a CI gate."
+            ],
+            currentStatus: "Alpha (0.1.0), MIT licensed. Install with pip install scribecheck and run scribecheck fixtures --model qwen2.5:14b; use --skip-model for the deterministic checks only. Four synthetic encounters are bundled, and deterministic tests run with python tests/test_checks.py. The viewer runs with npm install and npm run dev inside the viewer folder.",
+            roadmap: [
+                "Replace the seed drug list of about 35 names with a real RxNorm dump.",
+                "Add attribution flips, such as a patient-reported symptom charted as clinician-observed.",
+                "Validate the checks with practising clinicians before the numbers are presented as clinical evidence."
+            ],
+            improvements: [
+                "The drug lexicon is a small seed list, so dropped-drug coverage is limited to the names it contains.",
+                "The invented check depends on the local model and can raise review-level false positives on terse note fragments; the checks have not been validated by clinicians."
+            ]
+        }
+    },
+    {
+        slug: "scrollscape",
+        updated: "2026-11-29",
+        seoTitle: "scrollscape: Scroll Through a Real-Time 3D Brand World",
+        seoDescription: "Explore scrollscape, an open-source Next.js and Three.js demo where scrolling flies a camera through a 3D world of one brand's value chain, with no video renders.",
+        name: "scrollscape — Turn Any Brand Into a Scrollable 3D World",
+        problem: "Scroll-driven product pages that fly a camera through a connected world are usually built from AI-generated video clips scrubbed by scroll position. Each scene costs render credits, takes minutes to generate, and every edit means a re-render and re-encode. The result is tens of MB of video that you cannot relight or reframe.",
+        solves: "scrollscape builds the same experience in live 3D. The whole world is one config file, and scrolling moves a camera along a curve through procedurally built islands: farm, roastery, café, delivery and the final cup in the demo brand. Change the config and a different brand's value chain becomes a flythrough.",
+        techStack: [
+            "Next.js 14",
+            "React 18",
+            "TypeScript",
+            "Three.js",
+            "react-three-fiber",
+            "drei",
+            "@react-three/postprocessing"
+        ],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/scrollscape",
+        aiApproach: "No AI in the pipeline, on purpose. The point is that no AI render step or per-scene generation credits are needed: the world is geometry, light and a scrollbar, drawn in real time in the browser.",
+        image: "/images/projects/scrollscape-poster.jpg",
+        videoUrl: "/videos/scrollscape.mp4",
+        details: {
+            businessImpact: "Brand and marketing teams that want a cinematic scroll story usually pay per rendered clip and wait for each change. scrollscape shows the same effect can run live in the browser from a config file, so a copy edit or a new scene is a code change rather than a re-render. It is a starting point for developers building brand sites, and the demo brand (Altura, a coffee world) shows the idea end to end.",
+            approach: [
+                "The world is data: lib/world.ts lists each section's position, copy and accent colour",
+                "The camera flight is derived from that data: two anchors per scene, a high establishing view and a dive-in, chained into one Catmull-Rom curve",
+                "A requestAnimationFrame loop maps scroll position to a 0..1 progress value and the camera eases toward that point on the curve; scrolling up plays the flight in reverse",
+                "Each island is built from primitive meshes in components/Dioramas.tsx, with emissive windows and signs",
+                "Post-processing adds selective bloom and a vignette; fog fades distant islands so each one appears as the camera approaches",
+                "A key light follows the camera so the active scene keeps crisp shadows"
+            ],
+            decisions: [
+                "Real-time Three.js instead of scrubbed video, so there is no render cost per scene and no video weight",
+                "The world is a config file, so a new brand means editing sections rather than touching scene code",
+                "Per-scene camScale and focus values let sparse scenes get a closer dive and tall subjects like the hero cup get a higher look-at point",
+                "Easing is delta-time aware, so the motion stays smooth on a throttled tab or a weak device",
+                "Emissive materials are not tone-mapped so they bloom cleanly",
+                "Reduced-motion and small screens are handled by hiding the side rail and calming animations"
+            ],
+            currentStatus: "Public and open source under the MIT license. No backend and no API keys. Install with npm install and run npm run dev. No automated tests are in the repository.",
+            roadmap: [
+                "More diorama kinds for other industries, such as a fab line, a vineyard or a data center",
+                "Load the world config from a file or CMS instead of editing code",
+                "Add tests for the flight-path maths"
+            ],
+            improvements: [
+                "Scenes are built from primitive shapes, so the look is low-poly clay rather than detailed models, and every new kind of scene needs hand-written geometry",
+                "It needs WebGL and gets heavy on weak GPUs, since everything is drawn live in the browser"
+            ]
+        }
+    },
+    {
+        slug: "toast",
+        updated: "2026-11-29",
+        seoTitle: "Toast: behavioral diffing for AI-generated PRs",
+        seoDescription: "Explore toast, a Python CLI that runs old and new versions of every changed function on the same inputs and shows exactly where behavior diverged. No LLM.",
+        name: "Toast — Behavioral Diffing For AI-Generated Pull Requests",
+        problem: "AI-written code is often almost right but not quite, and that kind of bug reads as correct, so a human review does not catch it. A 500-line AI pull request leaves a reviewer reading everything by hand, or trusting it.",
+        solves: "Toast checks out the base version of the repo in a temporary git worktree, then runs the old and new version of every changed function on the same generated inputs. It lists each input where the return value or exception differs, so the reviewer sees evidence instead of an opinion.",
+        techStack: [
+            "Python 3.12",
+            "Hypothesis",
+            "Rich",
+            "Git worktrees",
+            "Hatchling",
+            "GitHub Actions",
+            "pytest"
+        ],
+        status: "active",
+        repoUrl: "https://github.com/rohitguta2432/toast",
+        aiApproach: "Deliberately no LLM and no API keys. Findings come from executing code, not from a model's opinion. Inputs come from literals in the function, harvested test arguments, Hypothesis strategies from type hints, and a corpus of awkward values, and the run is deterministic for a given seed.",
+        image: "/images/projects/toast-poster.jpg",
+        videoUrl: "/videos/toast.mp4",
+        details: {
+            businessImpact: "Toast is for teams that merge AI-generated pull requests and want something firmer than a read-through. It sorts every changed function into identical, diverged, or could-not-be-checked, so the report accounts for the whole diff. A reviewer can start with the diverged functions and the exact inputs that break, instead of rereading all of it.",
+            approach: [
+                "Git is the oracle: the base commit is loaded through a temporary git worktree and compared with the head version.",
+                "Each changed function is called with the same generated inputs in sandboxed subprocesses, and any difference in return value or raised exception is recorded.",
+                "Inputs are mined in order from literals in the function (plus and minus one, to catch off-by-one changes), literal arguments from the project's own tests, Hypothesis strategies built from type hints, and a corpus of gnarly values.",
+                "Changed functions are risk-ranked into a reading order using signals such as comparison changes, removed returns or raises, error-path edits, and risky identifiers.",
+                "Output is a terminal report, with --json and --markdown modes, and a GitHub Action that posts the brief as a PR comment."
+            ],
+            decisions: [
+                "Every changed function lands in exactly one bucket (identical, diverged, unverifiable), so nothing is skipped silently.",
+                "Functions that do I/O or use nondeterminism are detected with the AST and gated, not run, because running them would have side effects.",
+                "Output says 'identical across N probes' and prints N, and never says 'verified', since probing is evidence and not proof.",
+                "Methods, async functions and nested functions are reported unverifiable with a reason instead of being guessed at.",
+                "Runs are deterministic for a given --seed, so a finding can be reproduced.",
+                "The CI gate (--fail-on diverged) is off by default, so the tool starts out informational."
+            ],
+            currentStatus: "Version 0.1.0, MIT licensed, with a pytest suite covering boundary flips, dropped exception handlers, pure refactors, I/O gating and bucket accounting. Install with uv tool install toastcheck or pip install toastcheck, then run toast check --base main inside any git repo.",
+            roadmap: [
+                "Support methods, async functions and nested functions, which are reported unverifiable today",
+                "Support languages other than Python",
+                "Offer stronger isolation than subprocess plus timeout"
+            ],
+            improvements: [
+                "Python only, and only module-level functions in v1. Anything else is reported unverifiable.",
+                "The sandbox is a subprocess with a timeout and is not a security boundary, so it should not be run on code you do not trust to execute."
+            ]
+        }
+    },
 ];
 
 export const repos = [
