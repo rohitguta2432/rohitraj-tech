@@ -4977,7 +4977,15 @@ code,
 
 /* Demos are recorded at mixed shapes (16:9, 16:10, square): show all of each. */
 .reel-media video {
+  /* Positioned so it paints over its poster image once it has frames. */
+  position: relative;
   object-fit: contain;
+}
+
+/* A demo's poster frame sits under the video and is framed the same way. */
+.reel-media img.reel-poster {
+  object-fit: contain;
+  object-position: center;
 }
 
 .reel-media img {

@@ -40,8 +40,8 @@ const pad = (n: number) => String(n).padStart(2, "0");
  * scrolls with no carousel library; the arrows, the arrow keys and a click on a
  * neighbouring card all bring a card to the middle. Only the card in the middle
  * plays its demo, muted and looping, and only while the reel is on screen: every
- * video is `preload="none"` behind its poster, so the 21 demos cost nothing
- * until one is actually looked at. One control pauses them all (WCAG 2.2.2), and
+ * video is `preload="none"` over a lazy-loaded poster image, so the demos cost
+ * nothing until one is actually looked at. One control pauses them all (WCAG 2.2.2), and
  * reduced-motion visitors start paused. Every card is a server-rendered link to
  * its project or agent page, so nothing is lost to crawlers or to no-JS.
  */
@@ -190,7 +190,15 @@ export default function WorkReel({ items }: { items: ReelItem[] }) {
                     >
                         <div className="reel-media">
                             {item.video ? (
-                                <video src={item.video} poster={item.image} muted loop playsInline preload="none" aria-label={`${item.name} demo`} />
+                                <>
+                                    {/* The poster frame is a lazy, resized image under the video, not a
+                                        `poster` attribute: browsers fetch every poster eagerly and at
+                                        full size, which starved the hero image on slow connections. */}
+                                    {item.image && (
+                                        <Image src={item.image} alt="" fill sizes="(max-width: 720px) 86vw, 680px" className="reel-poster" />
+                                    )}
+                                    <video src={item.video} muted loop playsInline preload="none" aria-label={`${item.name} demo`} />
+                                </>
                             ) : item.image ? (
                                 <Image src={item.image} alt={`${item.name} screenshot`} fill sizes="(max-width: 720px) 86vw, 680px" />
                             ) : (
