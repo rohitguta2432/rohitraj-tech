@@ -161,7 +161,7 @@ The failure mode I actively watch for is the one the README never warns about: *
 
 Do not over-rotate. If you write most of your own code, build a normal pipeline, not a harness. But if agents are opening PRs against your repo every day, the leverage has already moved — and the teams that build the scaffolding now will out-ship the ones still perfecting prompts. As OpenAI put it, the discipline shows up "more in the scaffolding rather than the code."
 
-If you want an AI product built so the agent-first patterns — repo-local legibility, golden-rule enforcement, agent review loops — are wired in from commit one instead of bolted on after the slop piles up, that is the work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp) and take [founding-engineer engagements](/services/hire-founding-engineer-india) for teams building on the agent-first stack.`,
+If you want an AI product built so the agent-first patterns — repo-local legibility, golden-rule enforcement, agent review loops — are wired in from commit one instead of bolted on after the slop piles up, that is the work I do. I ship [production MVPs in 6 weeks](/services/6-week-mvp) and take [founding-engineer engagements](/services/hire-founding-engineer-india) for teams building on the agent-first stack. For teams that want to run this themselves, [AI Engineering Foundations](/services/ai-engineering-foundations) is the training: spec-driven development, repo instruction files, and model choice, taught on your own tickets.`,
         },
     ],
     cta: {

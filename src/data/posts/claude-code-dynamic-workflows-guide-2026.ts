@@ -160,7 +160,7 @@ The failure mode I watch hardest is **silent truncation**. A workflow that quiet
 
 The integration the README will not push on you: **save the good runs.** Once a branch-review or auth-audit workflow does what I want, \`s\` saves it as a \`/command\`, and now the same orchestration runs on every branch — a one-off becomes a repeatable quality gate, which is most of the value. It is the same instinct behind a hardened [MCP server you can trust in production](/notes/secure-mcp-server-typescript-2026): codify the thing once, run it the same way every time.
 
-If you want this kind of agent-assisted engineering wired into a build correctly — the orchestration, the cost controls, the verification that actually catches bugs — that is the work I do. I run [fixed-scope 6-week MVP builds](/services/6-week-mvp), or you can [hire a founding engineer in India](/services/hire-founding-engineer-india) to own the whole pipeline end to end, the same way I built the AI features on [myFinancial](/projects) to be both cheap to run and trustworthy.`,
+If you want this kind of agent-assisted engineering wired into a build correctly — the orchestration, the cost controls, the verification that actually catches bugs — that is the work I do. I run [fixed-scope 6-week MVP builds](/services/6-week-mvp), or you can [hire a founding engineer in India](/services/hire-founding-engineer-india) to own the whole pipeline end to end, the same way I built the AI features on [myFinancial](/projects) to be both cheap to run and trustworthy. If you would rather your own engineers learn to judge when a workflow is worth its tokens, that is part of the [AI Engineering Foundations](/services/ai-engineering-foundations) training.`,
     },
   ],
   cta: {
