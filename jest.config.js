@@ -8,6 +8,7 @@ const config = {
     }],
   },
   moduleNameMapper: {
+    '\\.(webp|png|jpe?g|gif|avif|svg)$': '<rootDir>/test/imageStub.js',
     '^@/(.*)$': '<rootDir>/src/$1',
   },
 };
