@@ -49,6 +49,11 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: new URL('.', import.meta.url).pathname,
   },
+  images: {
+    // Optimized images are keyed by URL and the source files rarely change,
+    // so let browsers and the CDN keep them for a month (default is 4 hours).
+    minimumCacheTTL: 2678400,
+  },
   async headers() {
     return [
       {
