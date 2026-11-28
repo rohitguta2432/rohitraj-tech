@@ -4,6 +4,10 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import DuckBot from "@/components/brand/DuckBot";
 import type { Film } from "@/components/megacity/engine";
 import { FILM_DURATION, phaseAt } from "@/components/megacity/timeline";
+// Imported, not referenced by its /images path: the bundler serves it from a
+// content-hashed URL with a one-year immutable cache, where files requested
+// straight from public/ are only cached for five seconds by the host.
+import poster from "../../public/images/megacity/poster.webp";
 
 type Status = "idle" | "loading" | "ready" | "failed";
 
@@ -154,7 +158,7 @@ export function HeroFilm({ className, children }: { className: string; children:
                 <div className="poster-film" aria-hidden="true">
                     {/* The opening frame, painted before the film exists; it doubles as the no-WebGL fallback. */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/megacity/poster.webp" alt="" width={1600} height={900} fetchPriority="high" decoding="async" />
+                    <img src={poster.src} alt="" width={poster.width} height={poster.height} fetchPriority="high" decoding="async" />
                     <canvas ref={canvasRef} />
                 </div>
                 <div className="poster-scrim" aria-hidden="true" />
