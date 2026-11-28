@@ -31,7 +31,7 @@ export const inkling975bRunLocallyVramGuide2026: BlogPost = {
         },
         {
             heading: 'Inkling 975B: free weights, $46,206-a-month hardware',
-            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Forty-six thousand dollars a month. That's what the machine costs.
 

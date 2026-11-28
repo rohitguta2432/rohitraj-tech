@@ -41,7 +41,7 @@ Full content of every post (single fetch, no crawl): https://rohitraj.tech/llms-
 - [How to Audit an Agent Skill Before You Install It (2026 Playbook)](https://rohitraj.tech/notes/audit-agent-skills-security-claude-code-2026)
 - [NVIDIA RTX PRO 5500 Blackwell: What Actually Fits in 84GB for Local LLMs (2026)](https://rohitraj.tech/notes/rtx-pro-5500-blackwell-84gb-local-llm-2026)
 - [DeepSeek V4.1 Flash Hardware Requirements: The 510GB Model Everyone Is Calling 8B (2026)](https://rohitraj.tech/notes/deepseek-v4-1-flash-hardware-requirements-2026)
-- [Forward Deployed Engineer: What the Role Involves and When to Hire One](https://rohitraj.tech/notes/what-does-a-forward-deployed-engineer-do-2026)
+- [What Is a Forward Deployed Engineer? Role, Skills and When to Hire One](https://rohitraj.tech/notes/what-does-a-forward-deployed-engineer-do-2026)
 - [Qwen3.8-Flash-Next vs Qwen3.8-27B: The Local Memory Math Behind the "12GB VRAM" Headline (2026)](https://rohitraj.tech/notes/qwen3-8-flash-next-vs-27b-local-memory-2026)
 - [This Week in AI Dev: The Price War Reaches Anthropic's Flagship (Week 35 of 2026)](https://rohitraj.tech/notes/ai-dev-week-2026-35)
 - [Qwen3.8-27B as Your Local Coding Agent: 24GB Setup, Quant Pick, and Claude Code Wiring (2026)](https://rohitraj.tech/notes/qwen3-8-27b-local-coding-agent-claude-code-2026)

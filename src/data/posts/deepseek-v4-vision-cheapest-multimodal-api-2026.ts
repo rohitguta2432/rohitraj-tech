@@ -31,7 +31,7 @@ export const deepseekV4VisionCheapestMultimodalApi2026: BlogPost = {
         },
         {
             heading: 'DeepSeek V4 Vision: The Cheapest Multimodal API to Ship in Production (2026)',
-            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 When DeepSeek V4 shipped on April 24, 2026, it was a text and coding model — fast, absurdly cheap, and explicitly *not* multimodal. I checked at the time: the [public V4 spec sheets](https://www.morphllm.com/deepseek-v4) listed a 1M-token context window, DeepSeek Sparse Attention, and SWE-bench numbers, with zero vision benchmarks. So the interesting thing about this week is not "a new model dropped." It is that DeepSeek bolted vision onto the V4 family it already serves at commodity prices, and the result is the first genuinely *cheap* production multimodal API.
 

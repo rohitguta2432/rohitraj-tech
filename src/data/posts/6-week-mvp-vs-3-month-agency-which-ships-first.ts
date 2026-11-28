@@ -30,7 +30,7 @@ export const sixWeekMvpVs3MonthAgencyWhichShipsFirst: BlogPost = {
     },
 {
       heading: '6-Week MVP Sprint vs 3-Month Agency Build — Which One Actually Ships First in 2026?',
-      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 When a founder gets two MVP quotes — a $20K 6-week sprint from a senior contractor and an $80K 3-month build from an agency — the assumption is the agency build is "more serious" and the sprint is "scrappy". The reality from 30+ MVPs I have observed: the 6-week sprint ships in 6 weeks 90% of the time, and the 3-month agency build ships in 18-24 weeks 70% of the time.
 

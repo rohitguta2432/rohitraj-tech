@@ -31,7 +31,7 @@ export const mistralOcr4VsTextractGoogleDocumentAi2026: BlogPost = {
         },
         {
             heading: 'Mistral OCR 4 vs AWS Textract vs Google Document AI: The Cheapest Accurate Document API (2026)',
-            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 Every "best OCR API" comparison currently ranking on Google was written before yesterday. [Mistral shipped OCR 4 on June 23, 2026](https://mistral.ai/news/ocr-4/), and the pages that rank for *document OCR comparison* either benchmark only AWS Textract and Google Document AI ([braincuber's 1,000-doc test](https://www.braincuber.com/blog/aws-textract-vs-google-document-ai-ocr-comparison)) or still cite Mistral **OCR 3** numbers. That gap is the whole reason this post exists: if you are choosing an OCR engine this week, you are choosing with stale data.
 

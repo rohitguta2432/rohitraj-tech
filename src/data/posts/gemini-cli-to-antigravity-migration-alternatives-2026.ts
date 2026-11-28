@@ -31,7 +31,7 @@ export const geminiCliToAntigravityMigrationAlternatives2026: BlogPost = {
     },
     {
       heading: 'What Just Changed (and the Exact 24-Day Clock)',
-      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On 2026-05-19 at Google I/O, Google announced that Gemini CLI — the Apache-2.0-licensed terminal coding agent that shipped in mid-2025 and accepted **roughly 6,000 community contributions** ([source](https://www.techtimes.com/articles/317056/20260523/google-accepted-6000-gemini-cli-contributions-then-closed-tool-enterprise-only.htm)) — is being **transitioned into Antigravity CLI**. The HN front-page thread hit [404 points and 210 comments](https://news.ycombinator.com/item?id=48196867) and the reaction across [The Register](https://www.theregister.com/ai-ml/2026/05/20/bye-bye-gemini-cli-google-nudges-devs-toward-antigravity/5243605), TechRadar, and KuCoin has been negative for one specific reason: Antigravity CLI is closed-source.
 

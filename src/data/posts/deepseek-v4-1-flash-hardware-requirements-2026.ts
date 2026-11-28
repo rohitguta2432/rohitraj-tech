@@ -32,7 +32,7 @@ export const deepseekV41FlashHardwareRequirements2026: BlogPost = {
     {
       heading:
         'DeepSeek V4.1 Flash Hardware Requirements: What Shipped on September 10, 2026',
-      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 DeepSeek released [DeepSeek-V4.1-Flash](https://www.deepseek.com/en/news/deepseek-v4-1-flash/) on **September 10, 2026**. Inside twenty-four hours it was **#1 trending on Hugging Face**, the [Hacker News thread](https://news.ycombinator.com/item?id=49639090) was near the top of the front page, and r/LocalLLaMA had five separate top-of-day threads — most of them arguing about size rather than quality. One was titled, accurately, *"I find it funny that a flash model is now 512GB."*
 

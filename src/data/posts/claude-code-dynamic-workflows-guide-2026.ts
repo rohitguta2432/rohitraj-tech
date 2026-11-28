@@ -31,7 +31,7 @@ export const claudeCodeDynamicWorkflowsGuide2026: BlogPost = {
     },
     {
       heading: 'Claude Code Dynamic Workflows: What They Are and Why They Matter',
-      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On May 28, 2026, Anthropic [introduced dynamic workflows in Claude Code](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), shipping the feature alongside Claude Opus 4.8. A dynamic workflow is a JavaScript script that Claude Code writes for the task you describe, and a runtime executes it in the background while your session stays responsive. [TechCrunch covered it](https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/) as the headline tool of the release, and the [official docs](https://code.claude.com/docs/en/workflows) cap a single run at 1,000 subagents with up to 16 running at once.
 

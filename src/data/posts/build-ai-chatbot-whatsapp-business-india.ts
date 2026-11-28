@@ -22,7 +22,7 @@ export const buildAiChatbotWhatsappBusinessIndia: BlogPost = {
     },
 {
       heading: 'The AI Chatbot Hype vs Reality',
-      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 To build an AI chatbot for your business, you need to choose the right intelligence level (rule-based, intent classification, or full LLM), select a messaging platform your customers already use (WhatsApp dominates in India with 500M+ users), and architect a webhook-driven backend with session management and intent routing. Most businesses get the best ROI from a Level 2 intent-classification bot that costs $5,000-$10,000 to build and under $100/month to run.
 

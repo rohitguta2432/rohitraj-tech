@@ -32,7 +32,7 @@ export const rtxPro5500Blackwell84gbLocalLlm2026: BlogPost = {
     {
       heading:
         'RTX PRO 5500 Blackwell: What NVIDIA Actually Listed on September 12, 2026',
-      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 NVIDIA did not hold an event for this one. Around **September 12, 2026** the [RTX PRO 5500 Blackwell product page](https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-5500/) appeared across NVIDIA's regional sites, [PNY listed the board](https://www.pny.com/nvidia-rtx-pro-5500-blackwell), and by September 14 [TechPowerUp](https://www.techpowerup.com/352678/nvidia-unveils-rtx-pro-5500-blackwell-workstation-gpu-with-84-gb-gddr7-memory), [VideoCardz](https://videocardz.com/newz/nvidia-introduces-rtx-pro-5500-blackwell-with-84gb-gddr7-and-600w-power-limit), and an r/LocalLLaMA top-of-day thread had picked it up.
 

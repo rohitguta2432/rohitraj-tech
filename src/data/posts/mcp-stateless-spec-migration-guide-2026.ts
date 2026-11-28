@@ -31,7 +31,7 @@ export const mcpStatelessSpecMigrationGuide2026: BlogPost = {
         },
         {
             heading: 'MCP just deleted the session — and that changes how you deploy',
-            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 The [Model Context Protocol](https://modelcontextprotocol.io) is getting its biggest revision since launch, and it shipped quietly. The **2026-07-28** release candidate has been public since the [official spec post](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/), the [beta SDKs landed on June 29](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/), and the **final specification is dated July 28, 2026** — nine days out as I write this. If you maintain an MCP server, that is your migration window, not a "someday."
 

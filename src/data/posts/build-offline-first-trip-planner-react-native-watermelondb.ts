@@ -22,7 +22,7 @@ export const buildOfflineFirstTripPlannerReactNativeWatermelondb: BlogPost = {
     },
 {
       heading: 'Group Trip Planning Is Broken',
-      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 I built TripHive, an offline-first collaborative trip planner using React Native, WatermelonDB, PowerSync, and MapLibre with downloadable Protomaps tiles that replaces five separate tools — Google Docs for itineraries, Google Maps for navigation, Splitwise for expenses, WhatsApp for polls, and shared sheets for packing lists — with one app that works without internet by default.
 

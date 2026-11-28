@@ -31,7 +31,7 @@ export const geminiComputerUseVsClaudeOpenai2026: BlogPost = {
         },
         {
             heading: 'Gemini Computer Use vs Claude vs OpenAI: Best Browser Agent 2026',
-            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On June 24, 2026, Google did the thing the whole "computer use" category had been waiting for: it stopped treating screen control as a separate preview model and [baked it straight into Gemini 3.5 Flash](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/) as a first-class tool. The same fast, cheap model you'd reach for in a chat app can now look at a screenshot and drive a browser, a phone, or a desktop to finish a task.
 

@@ -32,7 +32,7 @@ export const tencentdbAgentMemoryTeamHubReview2026: BlogPost = {
     },
     {
       heading: 'Tencent Just Productized the Memory Stack I Hand-Roll Every Day',
-      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For the past year my daily setup has been a hand-rolled version of exactly this product: a tree-sitter code graph served over MCP for structural code questions, a Karpathy-style LLM wiki for project knowledge, a skills directory for reusable workflows, and per-project memory files for preferences and decisions. It works — and every part of it is duct tape. Nothing syncs across machines, nothing has access control, and when a memory goes stale I find out the hard way, mid-task.
 

@@ -32,7 +32,7 @@ export const auditAgentSkillsSecurityClaudeCode2026: BlogPost = {
     {
       heading:
         'Why Auditing Agent Skills Suddenly Matters: the Vendor Wave of September 2026',
-      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **September 18, 2026**, GitHub's daily trending list had five separate Agent Skills repositories on it at once. [Cloudflare's security-audit-skill](https://github.com/cloudflare/security-audit-skill) sat at the top with **12.5k stars and 675 forks** under MIT. [Alibaba's open-code-review](https://github.com/alibaba/open-code-review) — Apache-2.0, **36.3k stars, 734 commits on main** — ships as both a skill and a set of per-agent plugins. [Tencent's BrowserSkill](https://github.com/Tencent/BrowserSkill) (MIT, **5k stars**) bridges an agent to a real browser window through a \`bsk\` CLI and names **nine** supported runtimes. Alongside them: [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) at **96.2k stars** with **25 skills, 4 agent personas and 9 slash commands**.
 
