@@ -32,7 +32,7 @@ export const bestOpenSourceDeepResearchAgentSelfHost2026: BlogPost = {
         },
         {
             heading: 'Best Open-Source Deep Research Agent to Self-Host in 2026 (Onyx vs DeerFlow vs Perplexica)',
-            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 For most of 2024 and 2025, "deep research" meant renting it. You paid OpenAI, Gemini, or Perplexity, sent them your query, and got back a cited report — along with whatever they logged about what you were researching. Self-hosting an equivalent meant accepting a big quality gap.
 

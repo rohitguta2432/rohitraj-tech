@@ -31,7 +31,7 @@ export const v0ByVercelVsHireDeveloper2026: BlogPost = {
     },
 {
       heading: 'v0 by Vercel vs Hiring a Developer in 2026 — The Honest Answer Up Front',
-      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you need a clickable Next.js + shadcn prototype to show three customers tomorrow, v0 at $20 per month is the fastest dollar a non-technical founder can spend in 2026. The crossover happens on roughly day 30, when the prototype gets a paying user — and now you need real auth, row-level security, Stripe webhook idempotency, a database that survives a redeploy, and an environment-variable strategy that does not leak your service-role key into the client bundle. v0 ships none of those by default.
 

@@ -32,7 +32,7 @@ export const shieldstralVsLlamaGuardOpenaiModeration2026: BlogPost = {
     },
     {
       heading: 'Every Chat Feature Ships With a Moderation Problem Nobody Budgeted For',
-      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 You add a chat box, a comment field, or an image upload to an MVP, and two sprints later someone asks "what stops a user from pasting something illegal into this." Most teams bolt on the OpenAI Moderation API because it is four lines of code, ship it, and move on — until a client needs a policy the fixed taxonomy cannot express, like "block phone numbers in the first message" for a marketplace app trying to stop users from taking payment off-platform.
 

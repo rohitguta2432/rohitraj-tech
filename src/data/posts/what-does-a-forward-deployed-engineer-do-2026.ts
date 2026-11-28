@@ -2,16 +2,19 @@ import type { BlogPost } from '@/types/blog';
 
 export const whatDoesAForwardDeployedEngineerDo2026: BlogPost = {
   slug: 'what-does-a-forward-deployed-engineer-do-2026',
-  updated: "2026-10-24",
-  seoTitle: "Forward Deployed Engineer: Role, Skills and Hiring",
-  seoDescription: "What is a forward deployed engineer? Understand the responsibilities, delivery work and skills, and when to hire an FDE or a freelance AI engineer.",
-  title: 'Forward Deployed Engineer: What the Role Involves and When to Hire One',
+  updated: "2026-11-28",
+  seoTitle: "What Is a Forward Deployed Engineer (FDE)? Role and Skills",
+  seoDescription: "What is a forward deployed engineer (FDE)? A plain definition, what the role does week to week, the FDSE and Delta titles, skills, and when to hire one.",
+  title: 'What Is a Forward Deployed Engineer? Role, Skills and When to Hire One',
   date: '2026-09-05',
   excerpt:
     'A forward deployed engineer works with customers to turn a business problem into deployed software. This guide explains the day-to-day responsibilities, relevant skills, how the role differs across teams, and when an embedded FDE or freelance AI engineer fits the work.',
-  readingTime: '10 min read',
+  readingTime: '12 min read',
   keywords: [
     'forward deployed engineer',
+    'what is a forward deployed engineer',
+    'forward deployed software engineer',
+    'forward deployed engineering',
     'what does a forward deployed engineer do',
     'forward deployed engineer meaning',
     'forward deployed engineer role',
@@ -31,22 +34,41 @@ export const whatDoesAForwardDeployedEngineerDo2026: BlogPost = {
       content: `A **forward deployed engineer (FDE)** is a customer-facing software engineer who turns a specific customer's problem into working software: understanding the workflow, integrating data and systems, deploying the solution, and checking whether it works for users. Responsibilities vary by company; the defining feature is close involvement in the customer's delivery outcome. If you need that embedded ownership, [hire a forward deployed engineer](/services/forward-deployed-engineer). If you need hands-on AI delivery for an existing product backlog, compare the [freelance AI engineer engagement](/services/fractional-ai-engineer).`,
     },
     {
-      heading: 'What evidence should an FDE hand over?',
-      content: `Ask for a small delivery pack that another engineer can run: the agreed workflow and exclusions, source code, deployment instructions, evaluation cases, known limitations and a named operational owner. For an AI retrieval feature, include tenant-boundary and missing-evidence tests alongside successful examples.
-
-Use the [downloadable AI delivery brief](/examples/ai-delivery-brief.md) to record acceptance criteria before work begins. The [RAG evaluation guide](/notes/rag-evaluation-harness-retrieval-permissions) shows an executable example, while the [RAG budget worksheet](/notes/rag-implementation-cost-worked-budget) separates implementation from maintenance. These artifacts help a buyer evaluate delivery evidence instead of relying on a role title.`,
-    },
-    {
       heading: 'What is a forward deployed engineer?',
       content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 A **forward deployed engineer** is a software engineer who works from inside the customer's organisation rather than from inside the vendor's product team. The "forward deployed" phrase is borrowed from the military: forward deployed units operate at the front, close to where things actually happen, instead of at headquarters.
 
-Applied to software, that means the FDE sits with the customer — in their meetings, their data, their compliance rules, their half-documented legacy systems — and builds the thing that makes a product work *for that customer specifically*. They are not writing a ticket for someone else to pick up in two sprints. They are the person who ships it, deploys it into the customer's environment, and answers for it when it breaks.
+Applied to software, that means the FDE sits with the customer — in their meetings, their data, their compliance rules, their half-documented legacy systems — and builds the thing that makes a product work for that customer specifically. They are not writing a ticket for someone else to pick up in two sprints. They are the person who ships it, deploys it into the customer's environment, and answers for it when it breaks.
 
 Palantir made the role famous. Its engineers were split into product developers who built the platform and forward deployed engineers who lived at customer sites making the platform useful against real data. The insight was blunt: enterprise software fails at the last mile, and the last mile is different at every customer.
 
 The title is strongly associated with Palantir. Its [description of software engineering and forward deployed engineering](https://www.palantir.com/careers/students-and-early-talent/) distinguishes engineers building a capability for many customers from engineers combining capabilities to solve a particular customer's problem. That is a useful starting point; read an actual job or engagement description to understand the scope, travel, customer contact and production responsibilities.`,
+    },
+    {
+      heading: 'FDE, FDSE and Delta: one role, several titles',
+      content: `Search for the role and you will meet three names for the same job.
+
+- **Forward deployed engineer (FDE)** is the common industry title.
+- **Forward deployed software engineer (FDSE)** is the title Palantir uses for the role.
+- **Delta** is Palantir's internal name for the same engineers. Its product engineers are called Devs.
+
+Palantir's own post, [Dev versus Delta](https://blog.palantir.com/dev-versus-delta-demystifying-engineering-roles-at-palantir-ad44c2a6e87), sums up the split in two lines: a Dev works on one capability for many customers, and a Delta works on many capabilities for one customer. The post is a few years old and describes one company, so treat it as the origin of the idea, not a rule for every employer.
+
+Other companies use nearby titles for overlapping work: solutions architect, deployment engineer, customer engineer, agent engineer, technical delivery engineer. The title tells you little. Ask three things instead: does this person write production code, do they work in the customer's environment, and do they stay responsible after launch? Three yes answers mean the job is forward deployed engineering, whatever the title says.`,
+    },
+    {
+      heading: 'What is forward deployed engineering?',
+      content: `**Forward deployed engineering** is the practice, not the person: a company places engineers with a customer so the software is built and corrected where it is used. A team that works this way is often called an FDE function or a forward deployed team.
+
+A working FDE function needs four things in place:
+
+1. **A named customer outcome.** One workflow and one measure of success, written down before any code.
+2. **Access.** Real data, real systems and the people who do the work today.
+3. **Authority to ship.** The engineer can deploy inside agreed limits without waiting on a remote product queue.
+4. **A path back to product.** Fixes that will repeat at the next customer move into the core product, so each deployment is not a one-off.
+
+Without the fourth, the function turns into custom consulting. Without the second and third, it turns into pre-sales. If you are setting one up, the [fractional engagement model](/notes/fractional-forward-deployed-engineer-engagement-model-2026) shows how to start with one engineer before committing headcount.`,
     },
     {
       heading: 'What an FDE actually does, week to week',
@@ -68,7 +90,7 @@ A useful way to assess delivery is to ask for an inspectable artifact. The [Stel
     },
     {
       heading: 'Forward deployed engineer vs software engineer vs solutions engineer vs consultant',
-      content: `The titles overlap and hiring managers mix them up constantly. The clean separation is *where the person sits* and *what they own*.
+      content: `The titles overlap and hiring managers mix them up constantly. The clean separation is where the person sits and what they own.
 
 | Role | Sits where | Owns | Writes production code? | Typical failure mode |
 |---|---|---|---|---|
@@ -79,7 +101,7 @@ A useful way to assess delivery is to ask for an inspectable artifact. The [Stel
 
 These are typical working patterns, not universal rules. In-house engineers and implementation consultants can also own production outcomes. When hiring an FDE, ask who will work with users, write the integration code, make deployment decisions and support the system after launch.
 
-If you want the extended version of this comparison, the [forward deployed engineer vs solutions engineer](/services/forward-deployed-engineer) question is the one I get asked most on scoping calls, and the answer is almost always "you have plenty of people who can demo it — you need the person who deploys it."`,
+If you want the extended version of this comparison, the [forward deployed engineer vs solutions engineer vs consultant](/notes/fde-vs-solutions-engineer-vs-consultant-2026) question is the one I get asked most on scoping calls, and the answer is almost always "you have plenty of people who can demo it — you need the person who deploys it."`,
     },
     {
       heading: 'Why AI delivery needs customer-facing engineering',
@@ -118,10 +140,16 @@ Notice how little of that list is "prompting". The model is the cheap part. The 
 - **Ownership.** The defining trait. The FDE does not hand off at "deployed"; they hand off at "your team can run this without me".`,
     },
     {
+      heading: 'What evidence should an FDE hand over?',
+      content: `Ask for a small delivery pack that another engineer can run: the agreed workflow and exclusions, source code, deployment instructions, evaluation cases, known limitations and a named operational owner. For an AI retrieval feature, include tenant-boundary and missing-evidence tests alongside successful examples.
+
+Use the [downloadable AI delivery brief](/examples/ai-delivery-brief.md) to record acceptance criteria before work begins. The [RAG evaluation guide](/notes/rag-evaluation-harness-retrieval-permissions) shows an executable example, while the [RAG budget worksheet](/notes/rag-implementation-cost-worked-budget) separates implementation from maintenance. These artifacts help a buyer evaluate delivery evidence instead of relying on a role title.`,
+    },
+    {
       heading: 'Three ways to get forward deployed engineering capacity',
       content: `If your AI work is stuck between pilot and production, you have three options.
 
-**1. Hire an FDE in-house.** Right when the AI workload reliably fills a full week, shapes your core roadmap, and you can win a scarce profile against the model vendors hiring for the same title. Expect a long search and a ramp before the first system ships.
+**1. Hire an FDE in-house.** Right when the AI workload reliably fills a full week, shapes your core roadmap, and you can win a scarce profile against the model vendors hiring for the same title. Expect a long search and a ramp before the first system ships. The [forward deployed engineer hiring process](/notes/forward-deployed-engineer-hiring-process-2026) covers the scorecard and paid work sample.
 
 **2. Use your model vendor's FDE team.** OpenAI, Anthropic, and the large platforms embed engineers with strategic customers. Excellent if you qualify, but the engagement is naturally biased toward the vendor's platform and reserved for accounts above a certain size.
 
@@ -153,7 +181,19 @@ Because AI models generate value only once they are integrated with a customer's
 Full-stack engineering with integration depth, comfort with ambiguity, security and permission instincts, evaluation discipline for AI systems, clear communication with non-engineers, and end-to-end ownership of production outcomes.
 
 **Q: Can I hire a forward deployed engineer on contract or fractionally?**
-Yes. Contract engagements are typically a fixed-scope pilot with one defined production outcome; fractional engagements are a fixed number of days per week on an ongoing retainer. Both keep the embedded, production-owning nature of the role without a full-time hire.`,
+Yes. Contract engagements are typically a fixed-scope pilot with one defined production outcome; fractional engagements are a fixed number of days per week on an ongoing retainer. Both keep the embedded, production-owning nature of the role without a full-time hire.
+
+**Q: What is a forward deployed software engineer (FDSE)?**
+The same role under Palantir's job title. FDSE, FDE and Palantir's internal name Delta all describe an engineer who builds and deploys software for a specific customer inside that customer's environment.
+
+**Q: What is forward deployed engineering?**
+The practice of placing engineers with a customer so software is built, deployed and corrected where it is used, with repeatable fixes fed back into the core product.
+
+**Q: Is a forward deployed engineer the same as a solutions architect?**
+Not usually. A solutions architect designs how a product fits the customer's systems and often stops at the design or the proof of concept. A forward deployed engineer writes and deploys the production code and stays responsible for it after launch. Some companies blur the two, so check who writes the code and who supports it.
+
+**Q: Does a forward deployed engineer have to be on site or in the customer's time zone?**
+Not always. The role needs access to users, data and systems, plus enough shared working hours to make decisions quickly. Many engagements run remotely with planned visits for discovery and launch. Agree the overlap hours, response times and visit schedule before work starts.`,
     },
     {
       heading: 'Bottom line',

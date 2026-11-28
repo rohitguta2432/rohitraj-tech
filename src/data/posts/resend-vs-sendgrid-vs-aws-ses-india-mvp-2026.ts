@@ -33,7 +33,7 @@ Skip all three and use Postmark if your only use case is OTP and inbox-placement
     },
     {
       heading: 'Resend vs SendGrid vs AWS SES — The Honest Answer Before You Sign the Annual Contract',
-      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you are picking a transactional email provider for an India MVP in 2026, the honest answer is Resend up to 50K emails/month, AWS SES above that if you have AWS muscle, and SendGrid only when you genuinely need the support contract. I have shipped email for four India-stack projects in the last 18 months — the [MyFinancial](/projects/myfinancial) personal-finance app (OTP + statement delivery), an enterprise deal-matching engine running on Spring Boot, a Sanskrit-to-SQL research assistant ([StellarMIND](/projects/stellarmind)), and a healthcare clinic-booking flow on the [WhatsApp Business API](/notes/whatsapp-business-api-integration-guide-india). Same provider choice came up every single time, and the answer was different in three of the four projects.
 

@@ -32,7 +32,7 @@ export const microsoftAgentFrameworkVsLangGraphCrewai2026: BlogPost = {
         },
         {
             heading: 'Microsoft Agent Framework vs LangGraph vs CrewAI: Which to Use Now That AutoGen Is Dead (2026)',
-            content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+            content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 If you bookmarked a "best multi-agent framework" comparison from last year, throw it out. The whole shape of the question changed in 2026 when Microsoft stopped shipping AutoGen and Semantic Kernel as separate products and folded both into one supported SDK: the [Microsoft Agent Framework](https://github.com/microsoft/agent-framework). AutoGen — which was on nearly every "top 3 frameworks" list — is now in maintenance mode. So is Semantic Kernel.
 

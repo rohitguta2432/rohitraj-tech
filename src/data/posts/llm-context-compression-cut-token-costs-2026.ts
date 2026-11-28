@@ -31,7 +31,7 @@ export const llmContextCompressionCutTokenCosts2026: BlogPost = {
     },
     {
       heading: 'LLM Context Compression: Paying for Signal, Not Noise',
-      content: `By [Rohit Raj](/about) — AI Consultant · Forward Deployed Engineer · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
+      content: `By [Rohit Raj](/about) — AI Consultant · [Forward Deployed Engineer](/notes/what-does-a-forward-deployed-engineer-do-2026) · [LinkedIn](https://www.linkedin.com/in/rohitraj2/)
 
 On **June 4, 2026**, a tool called [Headroom](https://github.com/chopratejas/headroom) shipped **v0.23.0** and shot to **#1 on GitHub Trending with +3,139 stars in a single day**. It does one unglamorous thing: it compresses the text you send an LLM — tool outputs, logs, files, RAG chunks — before it ever reaches the model. That a context-compression library, not a new model, was the day's top repo tells you where the real pain sits in 2026: not raw capability, but the bill.
 
