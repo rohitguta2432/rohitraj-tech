@@ -1649,20 +1649,20 @@ export const projects: Project[] = [
                 "Citations are extracted with a built-in regex over US reporters; an optional FastAPI service using eyecite also picks up Id. and supra back-references",
                 "Each citation is resolved through the CourtListener citation redirect, and the case name in the brief is compared with the case it resolves to",
                 "Opinion text is fetched from the Caselaw Access Project static mirror, and every quotation near a citation is matched against it",
-                "Later-history lookup lists opinions that cite the case and use the word overruled about it, as a reading list with links",
+                "Optional later-history lookup (with a free CourtListener token) lists opinions that cite the case and use the word overruled about it, as a reading list with links",
                 "An optional deep mode sends the opinion to a local Ollama model to check whether it supports the claim"
             ],
             decisions: [
                 "A citation is called fabricated only on a definite 404 from CourtListener; anything else is reported as not checked, to avoid falsely accusing a real case",
                 "Only an exact match earns 'quote is accurate'. Similarity scores are not trusted, because adding a single 'not' to a long sentence reverses the holding while barely changing the score",
                 "Later history is a reading list, not a verdict, because the same search returns nineteen opinions for both Roe (overruled) and Miranda (not overruled)",
-                "Keyless by design: no account and no API key, and only the volume, reporter and page of each citation (plus party names of resolved cases) leave the machine",
+                "Keyless core: the citation and quote checks need no account and no API key, and only the volume, reporter and page of each citation (plus party names of resolved cases) leave the machine",
                 "The Python extractor and the Ollama check are optional add-ons, so npm install and npm run dev are the whole setup",
                 "The reporter list lives at the top of one file, so supporting another reporter takes one line"
             ],
             currentStatus: "Public and open source under the MIT licence at github.com/rohitguta2432/citeguard, with unit tests (vitest) for citations, quotes and later history, and a Python test for the extractor. Install with npm install and npm run dev (port 4622).",
             roadmap: [
-                "Restore the later-history check, which reports 'not checked' when CourtListener's search API refuses requests without credentials",
+                "Find a keyless source for later history, which now needs a free CourtListener token since its search API stopped answering anonymous requests",
                 "Cover opinions newer than the Caselaw Access Project mirror, which ends around 2020",
                 "Support reporters outside the US"
             ],
