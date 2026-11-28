@@ -1,0 +1,814 @@
+/* The home page below the film. The film ends on the finished city, so the page
+   stays in it: night sections either side of one vermilion band of billboards,
+   and the closing call set in the full city. Everything is prefixed nx- and only
+   the home page imports this file. */
+
+.stage {
+  --nx-night: #07090d;
+  --nx-cyan: #7df3ff;
+  --nx-violet: #c9a2ff;
+  --nx-amber: #ffb35c;
+  --nx-ink: #fff4e8;
+  --nx-dim: #c9d3dc;
+}
+
+.nx-night {
+  background: var(--nx-night);
+  color: var(--nx-ink);
+  padding: clamp(4rem, 8vw, 6.5rem) 0;
+}
+
+.nx-night p,
+.nx-bills p,
+.nx-next p {
+  color: inherit;
+}
+
+.nx-cyan { color: var(--nx-cyan); }
+.nx-amber { color: var(--nx-amber); }
+
+.nx-eyebrow {
+  display: block;
+  margin: 0;
+  font: 500 0.75rem/1.4 var(--font-mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.nx-h2 {
+  margin: 0;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.75rem, 7vw, 6.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+/* ---------- Hero additions ---------- */
+
+.nx-flapline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.875rem;
+  margin: 0 0 1.125rem;
+  color: var(--on-brand);
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3.2vw, 2.75rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.nx-flap-board {
+  display: inline-flex;
+  gap: 3px;
+  padding: 4px;
+  background: #0b0d12;
+  border: 1px solid rgba(125, 243, 255, 0.5);
+  perspective: 300px;
+  text-shadow: none;
+}
+
+.nx-flap-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(1.375rem, 2.8vw, 2.375rem);
+  height: clamp(2rem, 4vw, 3.25rem);
+  background: linear-gradient(180deg, #1a2230 0 49%, #0f141d 51% 100%);
+  color: #7df3ff;
+  font: 600 clamp(1rem, 2.2vw, 1.875rem)/1 var(--font-mono);
+  animation: nx-flap 0.45s ease-out both;
+  animation-delay: calc(var(--i) * 50ms);
+}
+
+@keyframes nx-flap {
+  from { transform: rotateX(-90deg); }
+  to { transform: rotateX(0); }
+}
+
+.nx-shimmer {
+  background: linear-gradient(90deg, #7df3ff, #ffffff, #c9a2ff, #7df3ff);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 0 22px rgba(125, 243, 255, 0.4));
+  animation: nx-shimmer 7s linear infinite;
+}
+
+/* The decode glyphs keep their own lit colour while the line tunes in. */
+.nx-shimmer .film-scramble-glyph {
+  color: #ff7a4d;
+}
+
+@keyframes nx-shimmer {
+  from { background-position: 0% 0; }
+  to { background-position: 300% 0; }
+}
+
+.nx-cta {
+  gap: 0.75rem;
+  min-height: 56px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  box-shadow: 6px 6px 0 var(--brand-flood);
+  text-shadow: none;
+}
+
+.nx-cta:hover {
+  box-shadow: 9px 9px 0 var(--brand-flood);
+}
+
+/* The lens: the finished city seen through a ring that follows the mouse. */
+.nx-lens {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.nx-lens[data-on] {
+  opacity: 1;
+}
+
+.nx-lens img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1.2) saturate(1.15);
+  -webkit-mask-image: radial-gradient(circle 170px at var(--lx, 50%) var(--ly, 50%), #000 62%, transparent 100%);
+  mask-image: radial-gradient(circle 170px at var(--lx, 50%) var(--ly, 50%), #000 62%, transparent 100%);
+}
+
+.nx-lens-ring {
+  position: absolute;
+  left: -170px;
+  top: -170px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 36px 4px rgba(125, 243, 255, 0.5), inset 0 0 44px rgba(201, 162, 255, 0.4);
+  transform: translate(var(--lx, 0), var(--ly, 0));
+}
+
+.nx-lens-tag {
+  position: absolute;
+  left: 50%;
+  bottom: -1.5rem;
+  transform: translateX(-50%);
+  font: 500 0.6875rem/1 var(--font-mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #7df3ff;
+  white-space: nowrap;
+}
+
+.nx-motes {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.nx-mote {
+  position: absolute;
+  bottom: -10px;
+  left: var(--x);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #bff8ff;
+  box-shadow: 0 0 10px 3px rgba(125, 243, 255, 0.8);
+  animation: nx-mote var(--t) linear var(--d) infinite;
+}
+
+@keyframes nx-mote {
+  0% { transform: translate(0, 0); opacity: 0; }
+  12% { opacity: 1; }
+  100% { transform: translate(36px, -640px); opacity: 0; }
+}
+
+/* ---------- The six weeks ---------- */
+
+.nx-weeks-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  margin-bottom: 2rem;
+}
+
+.nx-weeks-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  flex: 0 1 24rem;
+  min-height: 7.5rem;
+}
+
+.nx-weeks-title {
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.nx-weeks-detail {
+  color: var(--nx-dim);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.nx-weeks-frame {
+  --p: 55;
+  position: relative;
+  aspect-ratio: 1512 / 737;
+  overflow: hidden;
+  border: 1px solid rgba(255, 244, 232, 0.25);
+  background: #03050b;
+}
+
+.nx-weeks-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nx-weeks-city {
+  clip-path: inset(0 calc(100% - var(--p) * 1%) 0 0);
+}
+
+.nx-weeks-beam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--p) * 1%);
+  width: 4px;
+  margin-left: -2px;
+  background: #fff;
+  box-shadow: 0 0 24px 8px rgba(125, 243, 255, 0.7), 0 0 60px 18px rgba(201, 162, 255, 0.35);
+}
+
+.nx-weeks-tag {
+  position: absolute;
+  top: 1rem;
+  padding: 0.375rem 0.625rem;
+  background: rgba(7, 9, 13, 0.78);
+  font: 500 0.6875rem/1 var(--font-mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.nx-weeks-tag[data-at="l"] { left: 1rem; }
+.nx-weeks-tag[data-at="r"] { right: 1rem; }
+
+.nx-weeks-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.nx-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.nx-range::-webkit-slider-runnable-track {
+  height: 4px;
+  background: linear-gradient(90deg, var(--nx-amber), var(--nx-cyan));
+}
+
+.nx-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 36px;
+  height: 36px;
+  margin-top: -16px;
+  border-radius: 50%;
+  background: var(--nx-ink);
+  border: 4px solid var(--brand-flood);
+  box-shadow: 0 0 0 6px rgba(125, 243, 255, 0.25);
+}
+
+.nx-range::-moz-range-track {
+  height: 4px;
+  background: linear-gradient(90deg, var(--nx-amber), var(--nx-cyan));
+}
+
+.nx-range::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--nx-ink);
+  border: 4px solid var(--brand-flood);
+}
+
+.nx-range:focus-visible {
+  outline: 2px solid var(--nx-cyan);
+  outline-offset: 4px;
+}
+
+.nx-weeks-marks {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--nx-dim);
+  font: 400 0.75rem/1.5 var(--font-mono);
+  letter-spacing: 0.06em;
+}
+
+.nx-weeks-marks span {
+  display: block;
+  color: var(--nx-ink);
+  text-transform: uppercase;
+}
+
+.nx-weeks-marks li:last-child {
+  text-align: right;
+}
+
+/* ---------- What founders say ---------- */
+
+.nx-asks {
+  padding-top: 0;
+}
+
+.nx-asks-list {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--nx-ink);
+}
+
+.nx-ask {
+  border-bottom: 1px solid rgba(255, 244, 232, 0.35);
+}
+
+.nx-ask-hit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  padding: 1.625rem 0;
+  color: var(--nx-ink);
+  text-decoration: none;
+  transition: background 250ms ease, transform 250ms ease;
+}
+
+.nx-ask-hit:hover,
+.nx-ask-hit:focus-visible {
+  background: rgba(125, 243, 255, 0.08);
+  transform: translateX(14px);
+}
+
+.nx-ask-say {
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 6.4vw, 5.75rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.nx-ask-detail {
+  flex: 0 1 21rem;
+  color: var(--nx-dim);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.nx-asks-also,
+.nx-bills-more {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin: 1.5rem 0 0;
+}
+
+.nx-asks-also a,
+.nx-bills-more a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  color: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-color: rgba(255, 244, 232, 0.45);
+}
+
+.nx-asks-also a:hover,
+.nx-bills-more a:hover {
+  text-decoration-color: currentColor;
+}
+
+/* ---------- Billboards ---------- */
+
+.nx-bills {
+  padding: clamp(4rem, 8vw, 6.5rem) 0;
+  overflow: hidden;
+  color: var(--on-brand);
+}
+
+.nx-bills-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 3rem;
+  margin-bottom: 3rem;
+}
+
+.nx-bills-head p {
+  flex: 0 1 23rem;
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+.nx-bills-track {
+  overflow: hidden;
+}
+
+.nx-bills-run {
+  display: flex;
+  gap: 1.75rem;
+  width: max-content;
+  padding: 1rem 0 1.75rem;
+  animation: nx-marquee 90s linear infinite;
+}
+
+.nx-bills-track:hover .nx-bills-run,
+.nx-bills-track:focus-within .nx-bills-run {
+  animation-play-state: paused;
+}
+
+@keyframes nx-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 0.875rem)); }
+}
+
+.nx-bill {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: min(420px, 78vw);
+  color: var(--on-brand);
+  text-decoration: none;
+  transition: transform 300ms ease;
+}
+
+.nx-bill[data-tilt="l"] { transform: rotate(-1.2deg); }
+.nx-bill[data-tilt="r"] { transform: rotate(1.2deg); }
+
+.nx-bill:hover,
+.nx-bill:focus-visible {
+  transform: translateY(-10px) rotate(0deg);
+}
+
+.nx-bill img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 4px solid var(--on-brand);
+  box-shadow: 10px 10px 0 rgba(40, 6, 0, 0.75);
+}
+
+/* A streak of light crossing each board, like foil catching a passing car. */
+.nx-bill::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(110deg, transparent 38%, rgba(255, 255, 255, 0.45) 50%, transparent 62%) no-repeat;
+  background-size: 250% 100%;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: nx-sheen 5s linear infinite;
+}
+
+@keyframes nx-sheen {
+  from { background-position: 120% 0; }
+  to { background-position: -120% 0; }
+}
+
+.nx-bill-name {
+  margin-top: 0.5rem;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 800;
+  font-size: 1.875rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.nx-bill-desc {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--on-cloth-muted);
+}
+
+.nx-bills-all {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--on-brand);
+}
+
+.nx-bills-all a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 0.625rem;
+  border: 1px solid rgba(255, 244, 232, 0.4);
+  color: var(--on-brand);
+  font: 500 0.75rem/1 var(--font-mono);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.nx-bills-all a:hover,
+.nx-bills-all a:focus-visible {
+  background: var(--on-brand);
+  color: var(--brand-flood);
+}
+
+/* ---------- Who ---------- */
+
+.nx-who-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.5rem;
+  align-items: stretch;
+}
+
+.nx-who-photo {
+  position: relative;
+  flex: 1 1 18rem;
+  max-width: 24rem;
+  min-height: 28rem;
+  border: 4px solid var(--nx-ink);
+  box-shadow: 14px 14px 0 var(--brand-flood);
+  overflow: hidden;
+}
+
+.nx-who-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 8%;
+}
+
+.nx-who-body {
+  flex: 999 1 26rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.nx-who-lede {
+  max-width: 36rem;
+  margin: 0;
+  font-size: 1.1875rem;
+  line-height: 1.55;
+}
+
+.nx-who-terms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nx-who-terms li {
+  display: flex;
+  gap: 0.875rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 244, 232, 0.35);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.nx-who-terms li span {
+  font: 500 0.8125rem/1.8 var(--font-mono);
+}
+
+/* The notes card keeps its own sheet, sewn into the cloth below the night. */
+.stage > .sheet {
+  margin-block: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+/* ---------- Your street is next ---------- */
+
+.nx-next {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: min(92vh, 760px);
+  padding: clamp(4rem, 9vw, 7rem) 0;
+  overflow: hidden;
+  background: var(--nx-night);
+  color: var(--nx-ink);
+}
+
+.nx-next-film {
+  position: absolute;
+  inset: 0;
+}
+
+.nx-next-film img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nx-next-film::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 9, 13, 0.9) 0%, rgba(7, 9, 13, 0.5) 30%, rgba(7, 9, 13, 0.82) 100%);
+}
+
+.nx-ring {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  z-index: 1;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 2px solid rgba(125, 243, 255, 0.8);
+  box-shadow: 0 0 30px rgba(201, 162, 255, 0.6);
+  opacity: 0;
+  animation: nx-ring 4.5s ease-out infinite;
+}
+
+.nx-ring:nth-child(3) { animation-delay: 1.5s; }
+.nx-ring:nth-child(4) { animation-delay: 3s; }
+
+@keyframes nx-ring {
+  0% { transform: translate(-50%, -50%) scale(0.15); opacity: 0.9; }
+  100% { transform: translate(-50%, -50%) scale(3.4); opacity: 0; }
+}
+
+.nx-next-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.nx-next-h2 {
+  margin: 0;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 800;
+  font-size: clamp(3.5rem, 11vw, 10.5rem);
+  line-height: 0.84;
+  text-transform: uppercase;
+  color: var(--nx-ink);
+}
+
+.nx-next-body {
+  max-width: 34rem;
+  margin: 0;
+  font-size: 1.1875rem;
+  line-height: 1.5;
+}
+
+.nx-next-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nx-ghost {
+  display: inline-flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 1.5rem;
+  border: 2px solid var(--nx-ink);
+  background: rgba(7, 9, 13, 0.5);
+  color: var(--nx-ink);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.nx-ghost:hover {
+  background: var(--nx-ink);
+  color: var(--nx-night);
+}
+
+.nx-next-fine {
+  margin: 0;
+  font: 400 0.75rem/1.6 var(--font-mono);
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+
+.nx-night :focus-visible,
+.nx-next :focus-visible,
+.nx-bills :focus-visible {
+  outline: 2px solid var(--nx-cyan);
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .nx-weeks-marks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nx-weeks-marks li:last-child { text-align: left; }
+  .nx-weeks-frame { aspect-ratio: 4 / 3; }
+  .nx-who-photo { min-height: 22rem; max-width: none; }
+  .nx-ask-hit:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-flap-tile,
+  .nx-shimmer,
+  .nx-bills-run,
+  .nx-bill::after {
+    animation: none;
+  }
+
+  .nx-motes,
+  .nx-ring,
+  .nx-lens {
+    display: none;
+  }
+
+  .nx-bills-track {
+    overflow-x: auto;
+  }
+
+  .nx-ask-hit,
+  .nx-bill {
+    transition: none;
+  }
+}
+
+@media print {
+  .nx-motes,
+  .nx-ring,
+  .nx-lens,
+  .nx-weeks-control {
+    display: none;
+  }
+}
+
+/* Room for the duck to walk the rail under the hero's actions. */
+.poster-body {
+  padding-bottom: 5rem;
+}
+
+/* The site's link hover turns vermilion, which vanishes on the night and the cloth. */
+.nx-ask-hit:hover,
+.nx-asks-also a:hover,
+.nx-who .nx-bills-more a:hover {
+  color: var(--nx-ink);
+}
+
+.nx-bill:hover,
+.nx-bills .nx-bills-more a:hover {
+  color: var(--on-brand);
+}

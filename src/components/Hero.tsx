@@ -1,5 +1,5 @@
-import ContactActions from "@/components/ContactActions";
 import { FilmDuck, FilmScramble, HeroFilm, HeroFilmControls } from "@/components/HeroFilm";
+import { HeroFlap, HeroLens, Motes } from "@/components/landing/HeroMagic";
 import Link from "next/link";
 import type { HomeDictionary } from "@/lib/i18n";
 import { projects } from "@/data/projects";
@@ -16,6 +16,10 @@ const FILM_FALLBACK: NonNullable<HomeDictionary["film"]> = {
 
 /**
  * Hero — the "poster" direction, now set over a live film.
+ *
+ * The headline says what a founder gets (an idea goes in, a product comes out) and a
+ * small flap board above it turns through what they usually ask for. One ask only:
+ * the booking link. A lens follows the mouse and shows the finished city through it.
  *
  * One enormous condensed headline over Megacity Awakening, a 15-second WebGL film of a
  * rainy South Asian street rebuilding itself into an AI-connected city. The headline
@@ -41,20 +45,31 @@ export default function Hero({ dict }: HeroProps) {
 
     return (
         <HeroFilm className="poster">
+            <HeroLens />
+            <Motes />
             <div className="container poster-inner">
                 <HeroFilmControls playLabel={film.play} pauseLabel={film.pause} />
 
                 <div className="poster-body">
+                    <p className="nx-flapline">
+                        <span>I build your</span> <HeroFlap />
+                    </p>
                     <h1 className="poster-title">
                         <FilmScramble text={dict.hero.titleLine1} wideOnly />
                         <br />
-                        <FilmScramble text={dict.hero.titleLine2} delay={220} wideOnly />
+                        <span className="nx-shimmer">
+                            <FilmScramble text={dict.hero.titleLine2} delay={220} wideOnly />
+                        </span>
                     </h1>
 
                     <p className="poster-deck">{dict.hero.deck ?? dict.hero.subtitle}</p>
 
-                    <ContactActions poster />
+                    {/* One ask. Call, WhatsApp and the brief form are on /contact and in the closing call. */}
                     <div className="poster-actions">
+                        <Link href="/contact" className="poster-cta nx-cta">
+                            Book a free 30-min call <span aria-hidden="true">→</span>
+                        </Link>
+                        <Link href="#weeks" className="poster-alt">Watch the 6 weeks happen <span aria-hidden="true">↓</span></Link>
                         <Link href="#work" className="poster-alt">See what shipped <span aria-hidden="true">→</span></Link>
                     </div>
                 </div>

@@ -1,14 +1,13 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import HireBlock from "@/components/HireBlock";
-import WorkIndex from "@/components/WorkIndex";
 import WritingIndex from "@/components/WritingIndex";
 import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import ClosingCta from "@/components/ClosingCta";
 import Footer from "@/components/Footer";
+import SixWeeks from "@/components/landing/SixWeeks";
+import { Asks, Billboards, StreetNext, Who } from "@/components/landing/Sections";
 import { getDictionary } from "@/lib/i18n";
-import { webSiteSchema, generateFAQSchema } from "@/lib/seo-config";
+import { webSiteSchema } from "@/lib/seo-config";
+import "./landing.css";
 
 
 export default async function Home() {
@@ -16,34 +15,25 @@ export default async function Home() {
 
     const dict = await getDictionary();
 
-    const faqSchema = dict.home.faq
-        ? generateFAQSchema(
-              dict.home.faq.items.map((item) => ({
-                  question: item.q,
-                  answer: item.a,
-              }))
-          )
-        : null;
-
     return (
         <>
             <script type="application/ld+json">{JSON.stringify(webSiteSchema)}</script>
-            {faqSchema && (
-                <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-            )}
             <Header dict={dict.common} />
-            {/* The film and the closing call sit on the cloth; everything between
-                them is one sheet. */}
+            {/* The film opens on today's street and ends on the finished city, and the
+                page stays in that city: the six weeks as a drag, what founders ask for,
+                the work as billboards, who they are hiring, then the closing call. The
+                notes card keeps its sheet, since its links are how the posts get crawled. */}
             <main id="main" className="stage">
                 <Hero dict={dict.home} />
+                <SixWeeks />
+                <Asks />
+                <Billboards />
+                <Who />
                 <div className="sheet">
-                    <HireBlock dict={dict.home} />
-                    <WorkIndex />
                     <WritingIndex />
                     <Testimonials />
-                    <FAQ dict={dict.home} />
                 </div>
-                <ClosingCta />
+                <StreetNext />
             </main>
             <Footer dict={dict.common} />
         </>
